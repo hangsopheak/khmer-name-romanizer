@@ -1,6 +1,6 @@
 {
   "name": "khmer-name-romanizer",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Khmer script to Latin transliteration for Cambodian personal names - token dictionary + rule engine, zero dependencies",
   "license": "MIT",
   "author": "hangsopheak",
@@ -36,7 +36,8 @@
     "scrape:names": "python3 scripts/scrape_names.py",
     "eval:scraped": "node scripts/eval-scraped.mjs",
     "mine:tokens": "node scripts/mine-tokens.mjs",
-    "prepublishOnly": "npm run build"
+    "merge:tokens": "node scripts/merge-tokens.mjs && npm run build",
+    "prepublishOnly": "npm test && npm run build"
   },
   "keywords": [
     "khmer",

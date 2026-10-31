@@ -1,11 +1,11 @@
 {
- "generated": "2026-10-31T05:11:38.159Z",
- "aligned": 428,
+ "generated": "2026-10-31T06:37:25.438Z",
+ "aligned": 483,
  "tokens": [
   {
    "khmer": "នរោត្តម",
    "latin": "Norodom",
-   "count": 12,
+   "count": 18,
    "variants": {
     "Soma": 1
    },
@@ -15,7 +15,7 @@
   {
    "khmer": "កែវ",
    "latin": "Keo",
-   "count": 7,
+   "count": 8,
    "variants": {},
    "status": "agree",
    "bundledLatin": "Keo"
@@ -85,13 +85,6 @@
    "bundledLatin": "Khieu"
   },
   {
-   "khmer": "ចៅចមមាតាអ្នកអង្គ",
-   "latin": "Ang",
-   "count": 3,
-   "variants": {},
-   "status": "new"
-  },
-  {
    "khmer": "ប្រាក់",
    "latin": "Prak",
    "count": 3,
@@ -156,7 +149,18 @@
    "latin": "Sin",
    "count": 3,
    "variants": {},
-   "status": "new"
+   "status": "agree",
+   "bundledLatin": "Sin"
+  },
+  {
+   "khmer": "សុវណ្ណ",
+   "latin": "Sovann",
+   "count": 3,
+   "variants": {
+    "Sovan": 1
+   },
+   "status": "agree",
+   "bundledLatin": "Sovann"
   },
   {
    "khmer": "ហែម",
@@ -173,6 +177,13 @@
    "variants": {},
    "status": "agree",
    "bundledLatin": "Long"
+  },
+  {
+   "khmer": "អង្គ",
+   "latin": "Ang",
+   "count": 3,
+   "variants": {},
+   "status": "new"
   },
   {
    "khmer": "អ៊ុក",
@@ -207,6 +218,21 @@
    "bundledLatin": "Khom"
   },
   {
+   "khmer": "ចន្ថា",
+   "latin": "Chantha",
+   "count": 2,
+   "variants": {},
+   "status": "agree",
+   "bundledLatin": "Chantha"
+  },
+  {
+   "khmer": "ឆន",
+   "latin": "Chhorn",
+   "count": 2,
+   "variants": {},
+   "status": "new"
+  },
+  {
    "khmer": "ជុំ",
    "latin": "Chum",
    "count": 2,
@@ -219,7 +245,8 @@
    "latin": "Chhin",
    "count": 2,
    "variants": {},
-   "status": "new"
+   "status": "agree",
+   "bundledLatin": "Chhin"
   },
   {
    "khmer": "ឈុន",
@@ -234,7 +261,16 @@
    "latin": "Duong",
    "count": 2,
    "variants": {},
-   "status": "new"
+   "status": "agree",
+   "bundledLatin": "Duong"
+  },
+  {
+   "khmer": "ឌី",
+   "latin": "Dy",
+   "count": 2,
+   "variants": {},
+   "status": "agree",
+   "bundledLatin": "Dy"
   },
   {
    "khmer": "ណាត",
@@ -251,7 +287,8 @@
    "variants": {
     "Nub": 1
    },
-   "status": "new"
+   "status": "agree",
+   "bundledLatin": "Nop"
   },
   {
    "khmer": "ទៀ",
@@ -274,11 +311,20 @@
    "latin": "Truong",
    "count": 2,
    "variants": {},
-   "status": "new"
+   "status": "agree",
+   "bundledLatin": "Truong"
   },
   {
    "khmer": "និល",
    "latin": "Nil",
+   "count": 2,
+   "variants": {},
+   "status": "agree",
+   "bundledLatin": "Nil"
+  },
+  {
+   "khmer": "នឹម",
+   "latin": "Nim",
    "count": 2,
    "variants": {},
    "status": "new"
@@ -292,11 +338,30 @@
    "bundledLatin": "Bun"
   },
   {
+   "khmer": "ប៉ែន",
+   "latin": "Pen",
+   "count": 2,
+   "variants": {
+    "Penn": 1
+   },
+   "status": "conflict",
+   "bundledLatin": "Penn"
+  },
+  {
    "khmer": "ម៉េង",
    "latin": "Meng",
    "count": 2,
    "variants": {},
-   "status": "new"
+   "status": "agree",
+   "bundledLatin": "Meng"
+  },
+  {
+   "khmer": "រណឫទ្ធិ",
+   "latin": "Ranariddh",
+   "count": 2,
+   "variants": {},
+   "status": "agree",
+   "bundledLatin": "Ranariddh"
   },
   {
    "khmer": "រតនា",
@@ -379,7 +444,8 @@
    "latin": "Samheng",
    "count": 2,
    "variants": {},
-   "status": "new"
+   "status": "agree",
+   "bundledLatin": "Samheng"
   },
   {
    "khmer": "សាយ",
@@ -410,7 +476,8 @@
    "latin": "Savoeun",
    "count": 2,
    "variants": {},
-   "status": "new"
+   "status": "agree",
+   "bundledLatin": "Savoeun"
   },
   {
    "khmer": "ស៊ីម",
@@ -419,6 +486,14 @@
    "variants": {},
    "status": "agree",
    "bundledLatin": "Sim"
+  },
+  {
+   "khmer": "សីហមុនី",
+   "latin": "Sihamoni",
+   "count": 2,
+   "variants": {},
+   "status": "agree",
+   "bundledLatin": "Sihamoni"
   },
   {
    "khmer": "សឺន",
@@ -439,14 +514,12 @@
    "bundledLatin": "Sokha"
   },
   {
-   "khmer": "សុវណ្ណ",
-   "latin": "Sovann",
+   "khmer": "សុរាម្រិត",
+   "latin": "Suramarit",
    "count": 2,
-   "variants": {
-    "Sovan": 1
-   },
+   "variants": {},
    "status": "agree",
-   "bundledLatin": "Sovann"
+   "bundledLatin": "Suramarit"
   },
   {
    "khmer": "ហុក",
@@ -455,6 +528,16 @@
    "variants": {},
    "status": "agree",
    "bundledLatin": "Hok"
+  },
+  {
+   "khmer": "ហ៊ូ",
+   "latin": "Hou",
+   "count": 2,
+   "variants": {
+    "Hu": 1
+   },
+   "status": "agree",
+   "bundledLatin": "Hou"
   },
   {
    "khmer": "ហួត",
@@ -502,6 +585,13 @@
    },
    "status": "agree",
    "bundledLatin": "Ung"
+  },
+  {
+   "khmer": "អ៊ុំ",
+   "latin": "Um",
+   "count": 2,
+   "variants": {},
+   "status": "new"
   },
   {
    "khmer": "អៀង",
@@ -640,6 +730,14 @@
    "status": "new"
   },
   {
+   "khmer": "កើស",
+   "latin": "Koeus",
+   "count": 1,
+   "variants": {},
+   "status": "agree",
+   "bundledLatin": "Koeus"
+  },
+  {
    "khmer": "កេង",
    "latin": "Keng",
    "count": 1,
@@ -701,7 +799,21 @@
    "status": "new"
   },
   {
+   "khmer": "កោណ្ឌញ្ញៈ",
+   "latin": "Kaundinya",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
    "khmer": "កៅណ្ឌិន្យ",
+   "latin": "Kaundinya",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "កៅណ្ឌិន្យវរ្ម័ន",
    "latin": "Kaundinya",
    "count": 1,
    "variants": {},
@@ -989,14 +1101,6 @@
    "status": "new"
   },
   {
-   "khmer": "ចន្ថា",
-   "latin": "Chantha",
-   "count": 1,
-   "variants": {},
-   "status": "agree",
-   "bundledLatin": "Chantha"
-  },
-  {
    "khmer": "ចន្ថាកា",
    "latin": "Chanteaka",
    "count": 1,
@@ -1048,6 +1152,13 @@
   {
    "khmer": "ច័ន្ទសុភ័ក្រ្ត",
    "latin": "Chansopheak",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ចន្ទាកា",
+   "latin": "Chanteaka",
    "count": 1,
    "variants": {},
    "status": "new"
@@ -1116,6 +1227,13 @@
    "status": "new"
   },
   {
+   "khmer": "ចូលី",
+   "latin": "Jolie",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
    "khmer": "ចៀម",
    "latin": "Chiem",
    "count": 1,
@@ -1136,6 +1254,13 @@
    "variants": {},
    "status": "agree",
    "bundledLatin": "Cheng"
+  },
+  {
+   "khmer": "ចេណ្ណា",
+   "latin": "Jenna",
+   "count": 1,
+   "variants": {},
+   "status": "new"
   },
   {
    "khmer": "ចេន",
@@ -1184,13 +1309,6 @@
   {
    "khmer": "ចៅហ្វាទឡ្ហៈមូ",
    "latin": "Talaha",
-   "count": 1,
-   "variants": {},
-   "status": "new"
-  },
-  {
-   "khmer": "ឆន",
-   "latin": "Chhorn",
    "count": 1,
    "variants": {},
    "status": "new"
@@ -1247,7 +1365,21 @@
    "status": "new"
   },
   {
+   "khmer": "ជ័យទេវី",
+   "latin": "Jayadevi",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
    "khmer": "ជយរាជទេវី",
+   "latin": "Jayarajadevi",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ជ័យរាជទេវី",
    "latin": "Jayarajadevi",
    "count": 1,
    "variants": {},
@@ -1264,6 +1396,13 @@
   {
    "khmer": "ជយវីរវម៌្ម",
    "latin": "Jayaviravarman",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ជ័យវីរៈវរ្ម័ន",
+   "latin": "Jayavirahvarman",
    "count": 1,
    "variants": {},
    "status": "new"
@@ -1516,14 +1655,6 @@
    "bundledLatin": "Dith"
   },
   {
-   "khmer": "ឌី",
-   "latin": "Dy",
-   "count": 1,
-   "variants": {},
-   "status": "agree",
-   "bundledLatin": "Dy"
-  },
-  {
    "khmer": "ឌីណា",
    "latin": "Dina",
    "count": 1,
@@ -1592,6 +1723,13 @@
    "status": "new"
   },
   {
+   "khmer": "ណារ៉េនដ្រា",
+   "latin": "Narendra",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
    "khmer": "ណាំហុង",
    "latin": "Namhong",
    "count": 1,
@@ -1647,6 +1785,13 @@
   {
    "khmer": "តាកាគី",
    "latin": "Takaki",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "តាកាម៉ាសា",
+   "latin": "Takamasa",
    "count": 1,
    "variants": {},
    "status": "new"
@@ -1834,6 +1979,13 @@
    "status": "new"
   },
   {
+   "khmer": "ធរណីន្ទ្រវរ្ម័ន",
+   "latin": "Dharanindravarman",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
    "khmer": "ធរណេន្ទ្រទេវី",
    "latin": "Dharanindradevi",
    "count": 1,
@@ -1892,6 +2044,13 @@
    "status": "new"
   },
   {
+   "khmer": "នរាយណ៍រាជា",
+   "latin": "Outey",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
    "khmer": "នរិន្ទ",
    "latin": "Norin",
    "count": 1,
@@ -1901,6 +2060,13 @@
   {
    "khmer": "នរិន្ទដេត",
    "latin": "Norindeth",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "នរិន្ទ្រពង្ស",
+   "latin": "Narindrapong",
    "count": 1,
    "variants": {},
    "status": "new"
@@ -1941,13 +2107,6 @@
    "status": "new"
   },
   {
-   "khmer": "នឹម",
-   "latin": "Nim",
-   "count": 1,
-   "variants": {},
-   "status": "new"
-  },
-  {
    "khmer": "នុត",
    "latin": "Nouth",
    "count": 1,
@@ -1982,6 +2141,13 @@
   {
    "khmer": "នេត",
    "latin": "Neth",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ន្ឫបតីន្ទ្រវម៌្ម",
+   "latin": "Nripatindravarman",
    "count": 1,
    "variants": {},
    "status": "new"
@@ -2242,16 +2408,6 @@
    "status": "new"
   },
   {
-   "khmer": "ប៉ែន",
-   "latin": "Pen",
-   "count": 1,
-   "variants": {
-    "Penn": 1
-   },
-   "status": "conflict",
-   "bundledLatin": "Penn"
-  },
-  {
    "khmer": "ប្រថិវេន្ទ្រវម៌្ម",
    "latin": "Virahcarman",
    "count": 1,
@@ -2436,6 +2592,13 @@
    "status": "new"
   },
   {
+   "khmer": "ព្រះនាងនីឡាទេវី",
+   "latin": "Niladevi",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
    "khmer": "ព្រះបាទនារាយណ៍រាជាទី២អង្តតន់",
    "latin": "Outey",
    "count": 1,
@@ -2486,6 +2649,13 @@
    "status": "new"
   },
   {
+   "khmer": "ភីលីប",
+   "latin": "Philipp",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
    "khmer": "ភីសា",
    "latin": "Pisa",
    "count": 1,
@@ -2499,6 +2669,14 @@
    "variants": {},
    "status": "conflict",
    "bundledLatin": "Phoem"
+  },
+  {
+   "khmer": "ភូ",
+   "latin": "Sopheap",
+   "count": 1,
+   "variants": {},
+   "status": "conflict",
+   "bundledLatin": "Phou"
   },
   {
    "khmer": "ភូថង",
@@ -2539,8 +2717,22 @@
    "status": "new"
   },
   {
+   "khmer": "មហាមោគ្គលាន",
+   "latin": "Maudgalyayana",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
    "khmer": "មហីបតិវម៌្ម",
    "latin": "Mahipativarman",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "មហេន្ទ្រវម៌្ម",
+   "latin": "Mahendravarman",
    "count": 1,
    "variants": {},
    "status": "new"
@@ -2577,6 +2769,20 @@
   {
    "khmer": "ម៉ាត់",
    "latin": "Mat",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ម៉ាថាយ",
+   "latin": "Matthew",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ម៉ាទ្យាស",
+   "latin": "Matthias",
    "count": 1,
    "variants": {},
    "status": "new"
@@ -2710,6 +2916,13 @@
    "status": "new"
   },
   {
+   "khmer": "ម៉ូឌី",
+   "latin": "Modi",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
    "khmer": "ម៉ូនីកា",
    "latin": "Monica",
    "count": 1,
@@ -2747,6 +2960,13 @@
    "status": "new"
   },
   {
+   "khmer": "ម៉ៃឃែល",
+   "latin": "Michael",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
    "khmer": "យជ្ញវរហ",
    "latin": "Yajnavaraha",
    "count": 1,
@@ -2757,7 +2977,9 @@
    "khmer": "យន់",
    "latin": "Yun",
    "count": 1,
-   "variants": {},
+   "variants": {
+    "Yuon": 1
+   },
    "status": "conflict",
    "bundledLatin": "Yuon"
   },
@@ -2799,6 +3021,13 @@
   {
    "khmer": "យ៉ាទី",
    "latin": "Yaty",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "យាយ",
+   "latin": "Choeung",
    "count": 1,
    "variants": {},
    "status": "new"
@@ -2855,6 +3084,13 @@
    "status": "new"
   },
   {
+   "khmer": "យ៉ូស៊ីអាគី",
+   "latin": "Yoshiaki",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
    "khmer": "រង្ស៊ី",
    "latin": "Rainsy",
    "count": 1,
@@ -2876,14 +3112,6 @@
    "variants": {},
    "status": "agree",
    "bundledLatin": "Rachana"
-  },
-  {
-   "khmer": "រណឫទ្ធិ",
-   "latin": "Ranariddh",
-   "count": 1,
-   "variants": {},
-   "status": "agree",
-   "bundledLatin": "Ranariddh"
   },
   {
    "khmer": "រណឬទ្ធិ",
@@ -2919,6 +3147,20 @@
   {
    "khmer": "រាជ",
    "latin": "Reach",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "រាជេន្ទ្រវម៌្ម",
+   "latin": "Rajendravarman",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "រាជេន្ទ្រវរ្ម័ន",
+   "latin": "Rajendravarman",
    "count": 1,
    "variants": {},
    "status": "new"
@@ -3048,6 +3290,13 @@
   {
    "khmer": "លូ",
    "latin": "Luu",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "លូដវីក",
+   "latin": "Ludwig",
    "count": 1,
    "variants": {},
    "status": "new"
@@ -3227,11 +3476,26 @@
    "status": "new"
   },
   {
+   "khmer": "វិចទ័រ",
+   "latin": "Victor",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
    "khmer": "វិចិត្",
    "latin": "Vichet",
    "count": 1,
    "variants": {},
    "status": "new"
+  },
+  {
+   "khmer": "វិចិត្រ",
+   "latin": "Vichet",
+   "count": 1,
+   "variants": {},
+   "status": "agree",
+   "bundledLatin": "Vichet"
   },
   {
    "khmer": "វិជយេន្ទ្រលក្ឝ្មី",
@@ -3264,6 +3528,13 @@
   {
    "khmer": "វិនធៀន",
    "latin": "Wentian",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "វិសាខា",
+   "latin": "Visakha",
    "count": 1,
    "variants": {},
    "status": "new"
@@ -3395,6 +3666,13 @@
    "bundledLatin": "Samphan"
   },
   {
+   "khmer": "សម្ដេចព្រះទេវីក្សត្រី",
+   "latin": "Devikshatri",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
    "khmer": "សម្ភុវម៌្ម",
    "latin": "Shambhuvarman",
    "count": 1,
@@ -3471,6 +3749,13 @@
    "status": "new"
   },
   {
+   "khmer": "សារ៉ាត់",
+   "latin": "Sarath",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
    "khmer": "សារ៉ាពេជ្រ",
    "latin": "Sarapich",
    "count": 1,
@@ -3497,6 +3782,14 @@
    "count": 1,
    "variants": {},
    "status": "new"
+  },
+  {
+   "khmer": "សាវេត",
+   "latin": "Saveth",
+   "count": 1,
+   "variants": {},
+   "status": "agree",
+   "bundledLatin": "Saveth"
   },
   {
    "khmer": "សាវ៉េត",
@@ -3625,14 +3918,6 @@
    "bundledLatin": "Sihanouk"
   },
   {
-   "khmer": "សីហមុនី",
-   "latin": "Sihamoni",
-   "count": 1,
-   "variants": {},
-   "status": "agree",
-   "bundledLatin": "Sihamoni"
-  },
-  {
    "khmer": "សីហា",
    "latin": "Seiha",
    "count": 1,
@@ -3720,6 +4005,13 @@
   {
    "khmer": "សុគន្ធវឌ្ឍនា",
    "latin": "Pang",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "សុគ្រិវ",
+   "latin": "Sugriva",
    "count": 1,
    "variants": {},
    "status": "new"
@@ -3862,14 +4154,6 @@
    "status": "new"
   },
   {
-   "khmer": "សុរាម្រិត",
-   "latin": "Suramarit",
-   "count": 1,
-   "variants": {},
-   "status": "agree",
-   "bundledLatin": "Suramarit"
-  },
-  {
    "khmer": "សុវណ៌",
    "latin": "Sarvani",
    "count": 1,
@@ -3899,6 +4183,14 @@
    "variants": {},
    "status": "agree",
    "bundledLatin": "Sovannara"
+  },
+  {
+   "khmer": "សុវណ្ណារាជ",
+   "latin": "Sovannareach",
+   "count": 1,
+   "variants": {},
+   "status": "agree",
+   "bundledLatin": "Sovannareach"
   },
   {
    "khmer": "សុវត្ថិ",
@@ -4170,12 +4462,26 @@
    "status": "new"
   },
   {
+   "khmer": "ហស៌វរ្ម័ន",
+   "latin": "Harshavarman",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
    "khmer": "ហាច",
    "latin": "Hach",
    "count": 1,
    "variants": {},
    "status": "conflict",
    "bundledLatin": "Harch"
+  },
+  {
+   "khmer": "ហាន់ស",
+   "latin": "Hans",
+   "count": 1,
+   "variants": {},
+   "status": "new"
   },
   {
    "khmer": "ហាបាគុក",
@@ -4262,14 +4568,6 @@
    "bundledLatin": "Ho"
   },
   {
-   "khmer": "ហ៊ូ",
-   "latin": "Hou",
-   "count": 1,
-   "variants": {},
-   "status": "agree",
-   "bundledLatin": "Hou"
-  },
-  {
    "khmer": "ហ៊ែល",
    "latin": "Hell",
    "count": 1,
@@ -4306,6 +4604,13 @@
    "status": "new"
   },
   {
+   "khmer": "ហ្គេអ័រគ",
+   "latin": "Georg",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
    "khmer": "ហ្គៃ",
    "latin": "Gai",
    "count": 1,
@@ -4315,6 +4620,13 @@
   {
    "khmer": "ហ្វាទីម៉ា",
    "latin": "Fatima",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ហ្វ្រីដរីខ",
+   "latin": "Friedrich",
    "count": 1,
    "variants": {},
    "status": "new"
@@ -4406,8 +4718,22 @@
    "status": "new"
   },
   {
+   "khmer": "អរុណរស្មី",
+   "latin": "Arunrasmy",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
    "khmer": "អាំង",
    "latin": "Ang",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "អាតឺរ",
+   "latin": "Arthur",
    "count": 1,
    "variants": {},
    "status": "new"
@@ -4437,6 +4763,13 @@
   {
    "khmer": "អាន់ឌ្រេ",
    "latin": "Andre",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "អាន់តុន",
+   "latin": "Anton",
    "count": 1,
    "variants": {},
    "status": "new"
@@ -4512,6 +4845,13 @@
    "status": "new"
   },
   {
+   "khmer": "អ៊ីប៉ូក្រាត",
+   "latin": "Hippocrates",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
    "khmer": "អ៊ឹម",
    "latin": "Im",
    "count": 1,
@@ -4522,13 +4862,6 @@
   {
    "khmer": "អឺរ៉ាតូស្តែន",
    "latin": "Eratosthenes",
-   "count": 1,
-   "variants": {},
-   "status": "new"
-  },
-  {
-   "khmer": "អ៊ុំ",
-   "latin": "Um",
    "count": 1,
    "variants": {},
    "status": "new"
@@ -4578,8 +4911,22 @@
    "bundledLatin": "Ouch"
   },
   {
+   "khmer": "អូតូ",
+   "latin": "Otto",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
    "khmer": "អូនីល",
    "latin": "O'neill",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "អូលីវើរ",
+   "latin": "Oliver",
    "count": 1,
    "variants": {},
    "status": "new"
@@ -4613,6 +4960,14 @@
    "status": "new"
   },
   {
+   "khmer": "អៀវ",
+   "latin": "Ieu",
+   "count": 1,
+   "variants": {},
+   "status": "agree",
+   "bundledLatin": "Ieu"
+  },
+  {
    "khmer": "អេ",
    "latin": "Eh",
    "count": 1,
@@ -4629,6 +4984,20 @@
   {
    "khmer": "អេហ្វស៊ី",
    "latin": "F.c.",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "អែនជេលីណា",
+   "latin": "Angelina",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "អោហ្គុស",
+   "latin": "August",
    "count": 1,
    "variants": {},
    "status": "new"
@@ -4676,6 +5045,20 @@
    "status": "new"
   },
   {
+   "khmer": "ឦសាន",
+   "latin": "Ishana",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ឧទ័យទិត្យវរ្ម័ន",
+   "latin": "Udayadityavarman",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
    "khmer": "ឧទ័យរាជា",
    "latin": "Outey",
    "count": 1,
@@ -4692,6 +5075,13 @@
   {
    "khmer": "ឧបាលិ",
    "latin": "Upali",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ឧប្បលវណ្ណា",
+   "latin": "Uppalavanna",
    "count": 1,
    "variants": {},
    "status": "new"

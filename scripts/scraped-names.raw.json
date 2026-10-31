@@ -1,1 +1,1 @@
-{"rows": 2546, "endpoint": "https://query.wikidata.org/sparql", "buckets": {"unknown": 169, "cambodian": 386, "foreign": 961}}
+{"rows": 5, "endpoint": "https://query.wikidata.org/sparql", "sources": {"wikidata/kmwiki-humans": 2135, "wikidata/cambodian-citizens": 411, "wikipedia/km-en-titles": 2064, "wikidata/name-items": 31, "wikidata/all-humans": 359}, "buckets": {"foreign": 1187, "cambodian": 416, "unknown": 205}}
