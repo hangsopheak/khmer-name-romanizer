@@ -99,7 +99,7 @@ The leave-one-out rows are the honest numbers — dictionaries are rebuilt witho
 | + historical/regnal names | 598 | 128 (21.4%) | 181 (30.3%) | 0.724 |
 | Foreign names written in Khmer (out of domain) | 1198 | 23 (1.9%) | 36 (3.0%) | 0.622 |
 
-On unseen Cambodian-citizen names the package lands within its leave-one-out range (28.5% vs 23.5% exact) — correct generalization, with the rest of the truth in `candidates`. Known weak spot: regnal names, a different register this package does not target. `scripts/mined-tokens.json` keeps 472 candidate tokens and 48 canonical conflicts for review; tokens with ≥2 attestations are already merged.
+On unseen Cambodian-citizen names the package lands within its leave-one-out range (28.5% vs 23.5% exact) — correct generalization, with the rest of the truth in `candidates`. Known weak spot: regnal names, a different register this package does not target. `scripts/mined-tokens.json` keeps 472 candidate tokens for review; tokens with ≥2 attestations are merged, and conflicting corpus spellings with ≥2 attestations (Samnang for សំណាង, Rattana for រតនា…) are folded in as `variants` while the verified canonicals stay untouched.
 
 **One-to-many is inherent.** The dictionary stores the most frequent spelling per token (ties go closest to the rule reading) and keeps alternatives in `variants`. When you know a person's official spelling, keep your own Khmer→Latin map and override tokens via `tokenDict`.
 

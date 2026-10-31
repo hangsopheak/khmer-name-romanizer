@@ -43,7 +43,29 @@ const conflicts = []
 for (const m of mined) {
     const existing = merged[m.khmer]
     if (existing) {
-        if (titleCase(existing.latin) !== m.latin) conflicts.push(m)
+        if (titleCase(existing.latin) !== m.latin) {
+            conflicts.push(m)
+            // Adjudicated rule: a conflicting corpus spelling with >= min
+            // attestations is a legitimate alternative romanization (all
+            // cases reviewed: Samnang/Kakada/Khim/Pen/Rattana/Sambath) —
+            // expose it as a variant; the canonical stays untouched.
+            // Single-attestation conflicts stay held back (label junk:
+            // ខាន់ -> "Jessa" was caught exactly this way).
+            if (m.count >= min) {
+                const known = new Set([
+                    titleCase(existing.latin),
+                    ...Object.keys(existing.variants ?? {}).map(titleCase),
+                ])
+                if (!known.has(titleCase(m.latin))) {
+                    merged[m.khmer] = {
+                        ...existing,
+                        variants: { ...(existing.variants ?? {}), [m.latin]: m.count },
+                    }
+                    enriched++
+                    enrichments.push({ khmer: m.khmer, added: [m.latin] })
+                }
+            }
+        }
         // fold corpus-observed spellings into variants (never the canonical)
         const known = new Set([
             titleCase(existing.latin),
