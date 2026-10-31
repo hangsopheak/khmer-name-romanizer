@@ -1,0 +1,52 @@
+{
+  "name": "khmer-name-romanizer",
+  "version": "0.1.0",
+  "description": "Khmer script to Latin transliteration for Cambodian personal names - token dictionary + rule engine, zero dependencies",
+  "license": "MIT",
+  "author": "hangsopheak",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hangsopheak/khmer-name-romanizer.git"
+  },
+  "bugs": {
+    "url": "https://github.com/hangsopheak/khmer-name-romanizer/issues"
+  },
+  "homepage": "https://github.com/hangsopheak/khmer-name-romanizer#readme",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "bin": {
+    "khmer-name-romanizer": "./bin/cli.js"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "vitest run",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "khmer",
+    "cambodian",
+    "transliteration",
+    "romanization",
+    "names",
+    "cli"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.3",
+    "vitest": "^4.0.16"
+  }
+}
