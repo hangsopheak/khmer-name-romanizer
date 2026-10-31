@@ -14,6 +14,10 @@ const CONS: Record<string, string> = {
     'ត': 't', 'ថ': 'th', 'ទ': 't', 'ធ': 'th', 'ន': 'n',
     'ប': 'p', 'ផ': 'ph', 'ព': 'p', 'ភ': 'ph', 'ម': 'm',
     'យ': 'y', 'រ': 'r', 'ល': 'l', 'វ': 'v', 'ស': 's',
+    // obsolete Sanskrit sibilants used in Angkorian/regnal names
+    // (ឝ្រុត Shruta, ឝម្ភុវម៌្ម Shambhuvarman, ហ Shapiro៌ Harshavarman, បុ Shapiro្ករាក្ស Pushkaraksha);
+    // ឞ has no corpus attestation — 'sh' by analogy (Sanskrit sa)
+    'ឝ': 'sh', 'ឞ': 'sh',
     'ហ': 'h', 'ឡ': 'l', 'អ': ''
 }
 

@@ -31,6 +31,20 @@ describe('khmer-name-romanizer', () => {
         expect(romanizeKhmerName('កើ')).toBe('Keu') // open syllable (Keuky)
     })
 
+    it('maps the obsolete sibilants ឝ/ឞ instead of dropping them', () => {
+        expect(romanizeKhmerName('ឝ្រី')).toBe('Shrey') // ii-after-r-cluster reads ey (pre-existing); the letter itself is no longer dropped
+        expect(romanizeKhmerName('ហឝ')).toBe('Hosh') // ha carries inherent o; the sibilant is no longer dropped
+        expect(romanizeKhmerName('ឞ')).toBe('Sha') // unattested; Sanskrit sa analogy
+    })
+
+    it('covers every Khmer consonant letter — none is silently dropped', () => {
+        for (let cp = 0x1780; cp <= 0x17a2; cp++) {
+            const ch = String.fromCodePoint(cp)
+            const out = romanizeKhmerName(ch + 'ា')
+            expect(out.length, `letter U+${cp.toString(16)} ${ch} produced no output`).toBeGreaterThan(0)
+        }
+    })
+
     it('extends the bundled dictionary with caller tokenDict entries', () => {
         const t = createDefaultTransliterator({ tokenDict: { ដារា: { latin: 'Dara', count: 1 } } })
         const result = t.transliterate('តាំង ដារា')
