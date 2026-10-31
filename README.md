@@ -109,6 +109,15 @@ The leave-one-out rows are the honest numbers — dictionaries are rebuilt witho
 
 The k-fold figure is the honest unseen-name number, in line with the roster leave-one-out (23.5% exact). Note what leakage inflates: exact-form recall drops 8.4pp, but mean similarity barely moves (0.783 → 0.765) — unseen guesses stay near-misses, with the official spelling usually still in `candidates`. Known weak spot: regnal names, a different register this package does not target. `scripts/mined-tokens.json` keeps candidate tokens for review; tokens with ≥2 attestations are merged, conflicting corpus spellings with ≥2 attestations (Samnang for សំណាង, Rattana for រតនា…) are folded in as `variants`, kname tokens are trusted at a single attestation (measured 25/30 agreement + 5 legitimate variants vs the verified dictionary), and hand-reviewed junk is block-listed (bible-apostle titles, citizenship-less foreign figures, mis-aligned birth-name/redirect artifacts).
 
+**The frozen lockbox.** `npm run split:corpus` freezes a held-out test split (~15%, content-hash assignment — refreshes never reshuffle it) that is never mined and never tuned on; `npm run eval:holdout` scores it against the counterfactual dictionary the package would ship without it. This is the number every improvement round is judged by:
+
+| Frozen test split (108 in-domain) | Exact | Top-5 | Mean sim |
+|---|---|---|---|
+| Shipped dictionary (upper bound) | 24 (22.2%) | 33 (30.6%) | 0.714 |
+| **Holdout counterfactual (lockbox)** | **19 (17.6%)** | **28 (25.9%)** | **0.705** |
+
+Cambodian-citizen rows: 10/63 shipped vs **6/63 holdout** exact — the gap is leakage, the lockbox row is the truth.
+
 **One-to-many is inherent.** The dictionary stores the most frequent spelling per token (ties go closest to the rule reading) and keeps alternatives in `variants`. When you know a person's official spelling, keep your own Khmer→Latin map and override tokens via `tokenDict`.
 
 ## Extending the dictionary
