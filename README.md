@@ -39,6 +39,7 @@ Only the name owner knows their official spelling — no algorithm can know what
 ```text
 Khmer input
   │ 0. normalize      strip zero-width chars, ':' → ៈ, collapse whitespace
+  │ 0b. strip         leading honorifics/titles removed (reported as `honorifics`)
   │ 1. tokenize       split on spaces → surname / given-name tokens
   │ 2. per token, first hit wins:
   │      a. tokenDict       776 learned Khmer → Latin word entries
@@ -51,7 +52,7 @@ Khmer input
 { value, source, tokens, candidates }
 ```
 
-- **Normalize** — strip zero-width characters, map roster-typo `:` → ៈ, collapse whitespace.
+- **Normalize & strip** — strip zero-width characters, map roster-typo `:` → ៈ, collapse whitespace. Leading honorifics/titles (ព្រះ, សម្តេច, ព្រះបាទ, លោក, អ្នកម្នាង, ឧកញ៉ា, ពញា…, royal compounds even when glued to the name) are not part of a personal name: they are removed before resolving and reported in an optional `honorifics` field — `សម្តេច ហ៊ុន សេន` → `"Hun Sen"` with `honorifics: ["សម្តេច"]`.
 - **Tokenize** — space-separated surname/given-name tokens; unspaced input (តាំងលាងខៃ) is segmented against dictionary keys first.
 - **Resolve each token**, strongest tier first: **token dictionary** (776 entries learned from verified bilingual rosters, well-known people, and Wikidata mining; a hit returns the canonical `latin`, its `variants` lead the alternatives) → **segmentation** (longest-match DP, trusted only when every non-dictionary remainder is ≥ 3 characters) → **FST** (readings pre-computed with pynini, injected as a lookup map via `t.fstInputs()` — the library stays pure and synchronous) → **rules** (`romanizeKhmer`, a grapheme-level fallback calibrated on the same rosters).
 - **Alternatives & ranking** — each token collects spellings from dictionary `variants`, other tiers' readings, and attested alternations (nh/gn, t/th, n/nn, u/ou, i/y…); top options compose ranked full-name candidates, deduped and capped at `maxCandidates` (default 5).

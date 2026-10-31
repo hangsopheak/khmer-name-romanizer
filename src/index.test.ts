@@ -45,6 +45,37 @@ describe('khmer-name-romanizer', () => {
         }
     })
 
+    it('strips leading honorifics from the value and reports them', () => {
+        const r = createDefaultTransliterator().transliterate('សម្តេច ហ៊ុន សេន')
+        expect(r.value).toBe('Hun Sen')
+        expect(r.honorifics).toEqual(['សម្តេច'])
+    })
+
+    it('strips royal titles glued to the name', () => {
+        const r = createDefaultTransliterator().transliterate('ព្រះបាទសម្តេចព្រះនរោត្ដម បរមរាមាទេវតា')
+        expect(r.value.startsWith('Norodom')).toBe(true)
+        expect(r.honorifics).toEqual(['ព្រះបាទ', 'សម្តេច', 'ព្រះ'])
+    })
+
+    it('never strips a bare title into nothing and leaves title-free names untouched', () => {
+        const bare = createDefaultTransliterator().transliterate('សម្តេច')
+        expect(bare.value.length).toBeGreaterThan(0)
+        expect(bare.honorifics).toBeUndefined()
+        const plain = createDefaultTransliterator().transliterate('តាំង ដារា')
+        expect(plain.value).toBe('Tang Dara')
+        expect(plain.honorifics).toBeUndefined()
+    })
+
+    it('does not over-strip names that merely start like titles', () => {
+        // ចៅ is a title only in compounds (ចៅពញា); real names start with it
+        const r = createDefaultTransliterator().transliterate('ចៅ សុវណ្ណរាជ')
+        expect(r.honorifics ?? []).toEqual([])
+        expect(r.value).toContain('Chao')
+        // សម្បត្តិ is a name, not សម្តេច
+        const s = createDefaultTransliterator().transliterate('សម្បត្តិ មេថៈនី')
+        expect(s.honorifics ?? []).toEqual([])
+    })
+
     it('extends the bundled dictionary with caller tokenDict entries', () => {
         const t = createDefaultTransliterator({ tokenDict: { ដារា: { latin: 'Dara', count: 1 } } })
         const result = t.transliterate('តាំង ដារា')

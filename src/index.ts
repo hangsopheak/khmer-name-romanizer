@@ -7,8 +7,8 @@
  */
 
 export { romanizeKhmer, romanizeKhmerName, normalizeKhmerText } from './rules.js'
-export { normalizeName, normalizeKhmerKey, splitTokens, segmentToken } from './tokenizer.js'
-export type { Segment, SegmentOptions } from './tokenizer.js'
+export { normalizeName, normalizeKhmerKey, splitTokens, segmentToken, stripHonorifics } from './tokenizer.js'
+export type { Segment, SegmentOptions, StrippedHonorifics } from './tokenizer.js'
 export { createTransliterator } from './transliterate.js'
 export { spellingAlternates } from './alternatives.js'
 export type { Transliterator } from './transliterate.js'

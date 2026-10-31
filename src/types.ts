@@ -32,6 +32,12 @@ export interface TranslitResult {
      * these as choices when the official spelling is unknown.
      */
     candidates: string[]
+    /**
+     * Leading honorifics/titles stripped from the input (outermost first),
+     * e.g. ["សម្តេច"] — present only when something was stripped. The
+     * passport-style `value`/`candidates` never contain them.
+     */
+    honorifics?: string[]
 }
 
 /** Entry in the token dictionary JSON (canonical spelling + variants). */

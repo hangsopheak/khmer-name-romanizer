@@ -25,6 +25,73 @@ export function splitTokens(name: string): string[] {
     return normalizeName(name).split(' ').filter(Boolean)
 }
 
+/**
+ * Royal/noble/religious titles: safe to strip even when glued directly to
+ * the name (ព្រះបាទសម្តេចព្រះនរោត្ដម), guarded by requiring a plausible
+ * name remainder. Sorted longest-first at module load.
+ *
+ * Extends the scraper's list (scrape_names.py KHMER_TITLES) with forms the
+ * corpus shows it missed: the សម្ដេច (ដ) spelling variant, អ្នកម្នាង,
+ * អ្នកអង្គម្ចាស់, ឱកញា, and bare ពញា — all attested with title-less Latin.
+ */
+const PREFIX_TITLES = [
+    'សម្តេចព្រះ', 'សម្ដេចព្រះ', 'សម្តេចអគ្គ', 'សម្តេច', 'សម្ដេច',
+    'ព្រះករុណា', 'ព្រះបាទ', 'ព្រះអង្គ', 'ព្រះអរហន្ត', 'ព្រះថេរ', 'ព្រះនាង', 'ព្រះ',
+    'ចៅចមមាតាអ្នក', 'ចៅចមមាតា', 'ចៅពញា',
+    'អ្នកអង្គម្ចាស់', 'អ្នកឧកញ៉ា', 'អ្នកម្នាង', 'អ្នកនាង', 'អ្នកស្រី',
+    'ឧកញ៉ា', 'ឱកញា', 'ពញា',
+].sort((a, b) => b.length - a.length)
+
+/**
+ * Courtesy/profession titles: stripped only as whole leading tokens (with a
+ * following space). Glued forms could be real names, so they stay. Bare ចៅ
+ * is never a title: real names (ចៅ សុភា) start with it.
+ */
+const TOKEN_TITLES = [
+    'លោកនាង', 'លោកស្រី', 'លោកជំទាវ', 'លោកគ្រូ', 'លោក',
+    'ម៉ែស', 'មិសស', 'ដុកតឺរ', 'ប្រធាន',
+].sort((a, b) => b.length - a.length)
+
+const KHMER_LETTER = /[\u1780-\u17b2]/
+
+export interface StrippedHonorifics {
+    /** Name with leading titles removed (unchanged if nothing was stripped). */
+    name: string
+    /** Titles removed, outermost first (e.g. ['ព្រះបាទ', 'សម្តេចព្រះ']). */
+    honorifics: string[]
+}
+
+/**
+ * Strips leading honorifics/titles — repeatedly, because they stack
+ * (សម្តេចព្រះ ...), and royal titles also when written without a space
+ * before the name. Never strips the whole string: a bare title reverts.
+ */
+export function stripHonorifics(name: string): StrippedHonorifics {
+    const stripped: string[] = []
+    let text = name
+    let changed = true
+    while (changed) {
+        changed = false
+        for (const title of TOKEN_TITLES) {
+            if (text === title || text.startsWith(title + ' ')) {
+                text = text.slice(title.length).trim()
+                stripped.push(title)
+                changed = true
+            }
+        }
+        for (const title of PREFIX_TITLES) {
+            const rest = text.slice(title.length).trimStart()
+            if (text.startsWith(title) && rest.replace(/ /g, '').length >= 2 && KHMER_LETTER.test(rest)) {
+                text = rest
+                stripped.push(title)
+                changed = true
+            }
+        }
+    }
+    if (!stripped.length || !text.replace(/ /g, '').length) return { name, honorifics: [] }
+    return { name: text, honorifics: stripped }
+}
+
 export interface Segment {
     text: string
     inDict: boolean

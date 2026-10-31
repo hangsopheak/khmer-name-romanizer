@@ -16,7 +16,7 @@
 
 import { spellingAlternates } from './alternatives.js'
 import { romanizeKhmerName } from './rules.js'
-import { normalizeName, segmentToken, splitTokens } from './tokenizer.js'
+import { normalizeName, segmentToken, splitTokens, stripHonorifics } from './tokenizer.js'
 import { TokenEntry, TokenSource, TranslitResult, TranslitToken, TransliteratorOptions } from './types.js'
 
 export interface Transliterator {
@@ -217,8 +217,11 @@ export function createTransliterator(options: TransliteratorOptions = {}): Trans
 
     const transliterate = (nameKh: string): TranslitResult => {
         const normalized = normalizeName(nameKh)
-        const tokens = splitTokens(normalized)
-        const wholeFst = fst?.get(normalized)
+        // Leading honorifics/titles are not part of a personal name: strip
+        // them before resolving (they are reported in `honorifics`).
+        const { name, honorifics } = stripHonorifics(normalized)
+        const tokens = splitTokens(name)
+        const wholeFst = fst?.get(name)
         const wholeFstValue = wholeFst ? wholeFst.split(/\s+/).map(titleCaseWords).join(' ') : ''
 
         // A completely unspaced name: if it fully segments into dictionary
@@ -243,16 +246,17 @@ export function createTransliterator(options: TransliteratorOptions = {}): Trans
             source: weakest === 'tokenDict' ? 'tokens' : weakest,
             tokens: resolved,
             candidates: candidatesFor(resolved, wholeFstValue),
+            ...(honorifics.length ? { honorifics } : {}),
         }
     }
 
     const fstInputs = (names: string[]): string[] => {
         const inputs = new Set<string>()
-        for (const name of names) {
-            const normalized = normalizeName(name)
-            if (!normalized) continue
-            inputs.add(normalized)
-            for (const token of splitTokens(normalized)) {
+        for (const raw of names) {
+            const { name } = stripHonorifics(normalizeName(raw))
+            if (!name) continue
+            inputs.add(name)
+            for (const token of splitTokens(name)) {
                 inputs.add(token)
                 if (tokenDict.has(token)) continue
                 for (const seg of partialSegments(token) ?? []) {
