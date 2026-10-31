@@ -6,7 +6,7 @@
 export type TokenSource = 'tokenDict' | 'fst' | 'rules'
 
 /** How a full name was resolved. */
-export type NameSource = 'wholeNameDict' | 'tokens' | 'fst' | 'rules'
+export type NameSource = 'tokens' | 'fst' | 'rules'
 
 export interface TranslitToken {
     /** Original Khmer token (or segmented sub-tokens rendered as one). */
@@ -43,12 +43,7 @@ export interface TokenEntry {
 
 export type TokenDictionaryData = Record<string, TokenEntry>
 
-/** Whole-name dictionary: normalized Khmer key -> official Latin name. */
-export type WholeNameDictionaryData = Record<string, string>
-
 export interface TransliteratorOptions {
-    /** Whole-name dictionary (normalized, space-stripped Khmer keys). */
-    wholeNameDict?: WholeNameDictionaryData
     /** Token-level dictionary (Khmer word -> canonical Latin word). */
     tokenDict?: TokenDictionaryData
     /**

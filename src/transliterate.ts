@@ -1,8 +1,7 @@
 /**
  * Token-level transliteration chain:
  *
- *   whole-name dictionary
- *     -> per-token dictionary (with segmentation for unspaced names)
+ *   per-token dictionary (with segmentation for unspaced names)
  *     -> injected FST results
  *     -> rule-based fallback
  *
@@ -17,7 +16,7 @@
 
 import { spellingAlternates } from './alternatives.js'
 import { romanizeKhmerName } from './rules.js'
-import { normalizeKhmerKey, normalizeName, segmentToken, splitTokens } from './tokenizer.js'
+import { normalizeName, segmentToken, splitTokens } from './tokenizer.js'
 import { TokenEntry, TokenSource, TranslitResult, TranslitToken, TransliteratorOptions } from './types.js'
 
 export interface Transliterator {
@@ -107,7 +106,6 @@ function composeCandidates(optionLists: string[][], limit: number, separator = '
 }
 
 export function createTransliterator(options: TransliteratorOptions = {}): Transliterator {
-    const wholeNameDict = options.wholeNameDict ?? {}
     const tokenDict = new Map<string, TokenEntry>(Object.entries(options.tokenDict ?? {}))
     const fst = options.fstResults
     const maxCandidates = Math.max(1, options.maxCandidates ?? DEFAULT_MAX_CANDIDATES)
@@ -233,16 +231,6 @@ export function createTransliterator(options: TransliteratorOptions = {}): Trans
             }
         }
         resolved ??= tokens.map(resolveToken)
-
-        const whole = wholeNameDict[normalizeKhmerKey(normalized)]
-        if (whole) {
-            return {
-                value: whole,
-                source: 'wholeNameDict',
-                tokens: resolved,
-                candidates: uniqueSpellings([whole, ...candidatesFor(resolved, wholeFstValue)]).slice(0, maxCandidates),
-            }
-        }
 
         // Name-level source is the weakest token source: 'tokens' only when
         // every token came from the dictionary. Per-token composition beats

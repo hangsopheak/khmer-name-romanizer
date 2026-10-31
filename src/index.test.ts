@@ -23,10 +23,16 @@ describe('khmer-name-romanizer', () => {
         expect(result.candidates).toEqual(expect.arrayContaining(['So Panha', 'So Pagna']))
     })
 
-    it('supports extra dictionaries (e.g. official spellings)', () => {
-        const t = createDefaultTransliterator({
-            wholeNameDict: { តាំងលាងខៃ: 'Taing Leangkhai' },
-        })
-        expect(t.transliterate('តាំង លាងខៃ').value).toBe('Taing Leangkhai')
+    it('extends the bundled dictionary with caller tokenDict entries', () => {
+        const t = createDefaultTransliterator({ tokenDict: { ដារា: { latin: 'Dara', count: 1 } } })
+        const result = t.transliterate('តាំង ដារា')
+        expect(result.value).toBe('Tang Dara')
+        expect(result.source).toBe('tokens')
+    })
+
+    it('romanizes well-known names (king, prime minister)', () => {
+        expect(transliterateName('នរោត្តម សីហមុនី')).toBe('Norodom Sihamoni')
+        expect(transliterateName('ហ៊ុន ម៉ាណែត')).toBe('Hun Manet')
+        expect(transliterateName('ហ៊ុន សែន')).toBe('Hun Sen')
     })
 })

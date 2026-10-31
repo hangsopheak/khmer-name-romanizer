@@ -1,0 +1,4730 @@
+{
+ "generated": "2026-10-31T05:11:38.159Z",
+ "aligned": 428,
+ "tokens": [
+  {
+   "khmer": "នរោត្តម",
+   "latin": "Norodom",
+   "count": 12,
+   "variants": {
+    "Soma": 1
+   },
+   "status": "agree",
+   "bundledLatin": "Norodom"
+  },
+  {
+   "khmer": "កែវ",
+   "latin": "Keo",
+   "count": 7,
+   "variants": {},
+   "status": "agree",
+   "bundledLatin": "Keo"
+  },
+  {
+   "khmer": "ស៊ីសុវត្ថិ",
+   "latin": "Sisowath",
+   "count": 7,
+   "variants": {},
+   "status": "agree",
+   "bundledLatin": "Sisowath"
+  },
+  {
+   "khmer": "នរោត្ដម",
+   "latin": "Norodom",
+   "count": 6,
+   "variants": {},
+   "status": "agree",
+   "bundledLatin": "Norodom"
+  },
+  {
+   "khmer": "សុខ",
+   "latin": "Sok",
+   "count": 6,
+   "variants": {},
+   "status": "agree",
+   "bundledLatin": "Sok"
+  },
+  {
+   "khmer": "ចាន់",
+   "latin": "Chan",
+   "count": 5,
+   "variants": {},
+   "status": "agree",
+   "bundledLatin": "Chan"
+  },
+  {
+   "khmer": "ជា",
+   "latin": "Chea",
+   "count": 5,
+   "variants": {},
+   "status": "agree",
+   "bundledLatin": "Chea"
+  },
+  {
+   "khmer": "ហ៊ុន",
+   "latin": "Hun",
+   "count": 5,
+   "variants": {},
+   "status": "agree",
+   "bundledLatin": "Hun"
+  },
+  {
+   "khmer": "ហេង",
+   "latin": "Heng",
+   "count": 4,
+   "variants": {},
+   "status": "agree",
+   "bundledLatin": "Heng"
+  },
+  {
+   "khmer": "ខៀវ",
+   "latin": "Khieu",
+   "count": 3,
+   "variants": {},
+   "status": "agree",
+   "bundledLatin": "Khieu"
+  },
+  {
+   "khmer": "ចៅចមមាតាអ្នកអង្គ",
+   "latin": "Ang",
+   "count": 3,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ប្រាក់",
+   "latin": "Prak",
+   "count": 3,
+   "variants": {
+    "Brak": 1
+   },
+   "status": "agree",
+   "bundledLatin": "Prak"
+  },
+  {
+   "khmer": "ពេជ្រ",
+   "latin": "Pich",
+   "count": 3,
+   "variants": {},
+   "status": "agree",
+   "bundledLatin": "Pich"
+  },
+  {
+   "khmer": "មាស",
+   "latin": "Meas",
+   "count": 3,
+   "variants": {
+    "Huoy": 1
+   },
+   "status": "agree",
+   "bundledLatin": "Meas"
+  },
+  {
+   "khmer": "ម៉ៅ",
+   "latin": "Mao",
+   "count": 3,
+   "variants": {},
+   "status": "agree",
+   "bundledLatin": "Mao"
+  },
+  {
+   "khmer": "យ៉ែម",
+   "latin": "Yem",
+   "count": 3,
+   "variants": {},
+   "status": "agree",
+   "bundledLatin": "Yem"
+  },
+  {
+   "khmer": "លន់",
+   "latin": "Lon",
+   "count": 3,
+   "variants": {},
+   "status": "agree",
+   "bundledLatin": "Lon"
+  },
+  {
+   "khmer": "សំណាង",
+   "latin": "Samnang",
+   "count": 3,
+   "variants": {},
+   "status": "conflict",
+   "bundledLatin": "Somnang"
+  },
+  {
+   "khmer": "ស៊ិន",
+   "latin": "Sin",
+   "count": 3,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ហែម",
+   "latin": "Hem",
+   "count": 3,
+   "variants": {},
+   "status": "agree",
+   "bundledLatin": "Hem"
+  },
+  {
+   "khmer": "ឡុង",
+   "latin": "Long",
+   "count": 3,
+   "variants": {},
+   "status": "agree",
+   "bundledLatin": "Long"
+  },
+  {
+   "khmer": "អ៊ុក",
+   "latin": "Ouk",
+   "count": 3,
+   "variants": {},
+   "status": "agree",
+   "bundledLatin": "Ouk"
+  },
+  {
+   "khmer": "កក្កដា",
+   "latin": "Kakada",
+   "count": 2,
+   "variants": {},
+   "status": "conflict",
+   "bundledLatin": "Kakda"
+  },
+  {
+   "khmer": "គង់",
+   "latin": "Kong",
+   "count": 2,
+   "variants": {},
+   "status": "agree",
+   "bundledLatin": "Kong"
+  },
+  {
+   "khmer": "ឃឹម",
+   "latin": "Khim",
+   "count": 2,
+   "variants": {},
+   "status": "conflict",
+   "bundledLatin": "Khom"
+  },
+  {
+   "khmer": "ជុំ",
+   "latin": "Chum",
+   "count": 2,
+   "variants": {},
+   "status": "agree",
+   "bundledLatin": "Chum"
+  },
+  {
+   "khmer": "ឈិន",
+   "latin": "Chhin",
+   "count": 2,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ឈុន",
+   "latin": "Chhun",
+   "count": 2,
+   "variants": {},
+   "status": "agree",
+   "bundledLatin": "Chhun"
+  },
+  {
+   "khmer": "ដួង",
+   "latin": "Duong",
+   "count": 2,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ណាត",
+   "latin": "Nath",
+   "count": 2,
+   "variants": {},
+   "status": "agree",
+   "bundledLatin": "Nath"
+  },
+  {
+   "khmer": "ណុប",
+   "latin": "Nop",
+   "count": 2,
+   "variants": {
+    "Nub": 1
+   },
+   "status": "new"
+  },
+  {
+   "khmer": "ទៀ",
+   "latin": "Tea",
+   "count": 2,
+   "variants": {},
+   "status": "agree",
+   "bundledLatin": "Tea"
+  },
+  {
+   "khmer": "ទេព",
+   "latin": "Tep",
+   "count": 2,
+   "variants": {},
+   "status": "agree",
+   "bundledLatin": "Tep"
+  },
+  {
+   "khmer": "ទ្រឿង",
+   "latin": "Truong",
+   "count": 2,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "និល",
+   "latin": "Nil",
+   "count": 2,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ប៊ុន",
+   "latin": "Bun",
+   "count": 2,
+   "variants": {},
+   "status": "agree",
+   "bundledLatin": "Bun"
+  },
+  {
+   "khmer": "ម៉េង",
+   "latin": "Meng",
+   "count": 2,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "រតនា",
+   "latin": "Rattana",
+   "count": 2,
+   "variants": {
+    "Rotana": 1
+   },
+   "status": "conflict",
+   "bundledLatin": "Ratana"
+  },
+  {
+   "khmer": "រស់",
+   "latin": "Ros",
+   "count": 2,
+   "variants": {},
+   "status": "agree",
+   "bundledLatin": "Ros"
+  },
+  {
+   "khmer": "លឹម",
+   "latin": "Lim",
+   "count": 2,
+   "variants": {},
+   "status": "agree",
+   "bundledLatin": "Lim"
+  },
+  {
+   "khmer": "វង្ស",
+   "latin": "Vong",
+   "count": 2,
+   "variants": {},
+   "status": "agree",
+   "bundledLatin": "Vong"
+  },
+  {
+   "khmer": "វណ្ណ",
+   "latin": "Vann",
+   "count": 2,
+   "variants": {},
+   "status": "agree",
+   "bundledLatin": "Vann"
+  },
+  {
+   "khmer": "វិសាល",
+   "latin": "Visal",
+   "count": 2,
+   "variants": {},
+   "status": "agree",
+   "bundledLatin": "Visal"
+  },
+  {
+   "khmer": "ស",
+   "latin": "Sar",
+   "count": 2,
+   "variants": {
+    "Sor": 1
+   },
+   "status": "agree",
+   "bundledLatin": "Sar"
+  },
+  {
+   "khmer": "សម",
+   "latin": "Sam",
+   "count": 2,
+   "variants": {},
+   "status": "agree",
+   "bundledLatin": "Sam"
+  },
+  {
+   "khmer": "សម្បត្តិ",
+   "latin": "Sambath",
+   "count": 2,
+   "variants": {},
+   "status": "conflict",
+   "bundledLatin": "Sombath"
+  },
+  {
+   "khmer": "សំហេង",
+   "latin": "Samheng",
+   "count": 2,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "សាយ",
+   "latin": "Say",
+   "count": 2,
+   "variants": {},
+   "status": "agree",
+   "bundledLatin": "Say"
+  },
+  {
+   "khmer": "សារី",
+   "latin": "Sary",
+   "count": 2,
+   "variants": {},
+   "status": "agree",
+   "bundledLatin": "Sary"
+  },
+  {
+   "khmer": "សារ៉េត",
+   "latin": "Sareth",
+   "count": 2,
+   "variants": {},
+   "status": "agree",
+   "bundledLatin": "Sareth"
+  },
+  {
+   "khmer": "សាវឿន",
+   "latin": "Savoeun",
+   "count": 2,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ស៊ីម",
+   "latin": "Sim",
+   "count": 2,
+   "variants": {},
+   "status": "agree",
+   "bundledLatin": "Sim"
+  },
+  {
+   "khmer": "សឺន",
+   "latin": "Son",
+   "count": 2,
+   "variants": {
+    "Chavay": 1
+   },
+   "status": "agree",
+   "bundledLatin": "Son"
+  },
+  {
+   "khmer": "សុខា",
+   "latin": "Sokha",
+   "count": 2,
+   "variants": {},
+   "status": "agree",
+   "bundledLatin": "Sokha"
+  },
+  {
+   "khmer": "សុវណ្ណ",
+   "latin": "Sovann",
+   "count": 2,
+   "variants": {
+    "Sovan": 1
+   },
+   "status": "agree",
+   "bundledLatin": "Sovann"
+  },
+  {
+   "khmer": "ហុក",
+   "latin": "Hok",
+   "count": 2,
+   "variants": {},
+   "status": "agree",
+   "bundledLatin": "Hok"
+  },
+  {
+   "khmer": "ហួត",
+   "latin": "Huot",
+   "count": 2,
+   "variants": {},
+   "status": "agree",
+   "bundledLatin": "Huot"
+  },
+  {
+   "khmer": "ហោ",
+   "latin": "Hor",
+   "count": 2,
+   "variants": {},
+   "status": "agree",
+   "bundledLatin": "Hor"
+  },
+  {
+   "khmer": "ឡេង",
+   "latin": "Leng",
+   "count": 2,
+   "variants": {
+    "Ouch": 1
+   },
+   "status": "agree",
+   "bundledLatin": "Leng"
+  },
+  {
+   "khmer": "អ៊ិន",
+   "latin": "In",
+   "count": 2,
+   "variants": {
+    "Leakena": 1
+   },
+   "status": "agree",
+   "bundledLatin": "In"
+  },
+  {
+   "khmer": "អ៊ឹង",
+   "latin": "Ung",
+   "count": 2,
+   "variants": {
+    "Eng": 1,
+    "Loung": 1
+   },
+   "status": "agree",
+   "bundledLatin": "Ung"
+  },
+  {
+   "khmer": "អៀង",
+   "latin": "Ieng",
+   "count": 2,
+   "variants": {},
+   "status": "agree",
+   "bundledLatin": "Ieng"
+  },
+  {
+   "khmer": "កន",
+   "latin": "Kan",
+   "count": 1,
+   "variants": {},
+   "status": "conflict",
+   "bundledLatin": "Kon"
+  },
+  {
+   "khmer": "កន្តុល",
+   "latin": "Kantol",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "កន្ធុល",
+   "latin": "Kanthoul",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "កំម៉ានដាំ",
+   "latin": "Kommandam",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "កម្វុជរាជលក្ឝ្មី",
+   "latin": "Kambujarajalakshmi",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "កា",
+   "latin": "Ka",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "កាង",
+   "latin": "Cang",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "កាំង",
+   "latin": "Kang",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "កាញ៉ុល",
+   "latin": "Kanhol",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "កាឌែរ",
+   "latin": "Coulibaly",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "កាម៉ា",
+   "latin": "Karma",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "កាអុន",
+   "latin": "Kaonn",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "កឹម",
+   "latin": "Kem",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "កឹស",
+   "latin": "Koeus",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "កុយ",
+   "latin": "Koy",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "កុសមៈ",
+   "latin": "Kossamak",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "កុសល",
+   "latin": "Kosal",
+   "count": 1,
+   "variants": {},
+   "status": "agree",
+   "bundledLatin": "Kosal"
+  },
+  {
+   "khmer": "កើត",
+   "latin": "Koeut",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "កេង",
+   "latin": "Keng",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "កេន",
+   "latin": "Sidney",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "កេននី",
+   "latin": "Kenny",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "កែ",
+   "latin": "Ke",
+   "count": 1,
+   "variants": {
+    "Keh": 1
+   },
+   "status": "agree",
+   "bundledLatin": "Ke"
+  },
+  {
+   "khmer": "កែន",
+   "latin": "Ken",
+   "count": 1,
+   "variants": {},
+   "status": "agree",
+   "bundledLatin": "Ken"
+  },
+  {
+   "khmer": "កែប",
+   "latin": "Keb",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "កែម",
+   "latin": "Kem",
+   "count": 1,
+   "variants": {},
+   "status": "agree",
+   "bundledLatin": "Kem"
+  },
+  {
+   "khmer": "កែរ",
+   "latin": "Ker",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "កៅណ្ឌិន្យ",
+   "latin": "Kaundinya",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ក្សិតេន្ទ្រាទិត្យ",
+   "latin": "Ksitindraditya",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ខាឌីចា",
+   "latin": "Khadija",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ខាត់",
+   "latin": "Khat",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ខាន់",
+   "latin": "Jessa",
+   "count": 1,
+   "variants": {},
+   "status": "conflict",
+   "bundledLatin": "Khan"
+  },
+  {
+   "khmer": "ខាវ",
+   "latin": "Keo",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ខឹម",
+   "latin": "Khem",
+   "count": 1,
+   "variants": {},
+   "status": "agree",
+   "bundledLatin": "Khem"
+  },
+  {
+   "khmer": "ខុជ្ជុត្តរា",
+   "latin": "Khujjuttara",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ខុន",
+   "latin": "Khon",
+   "count": 1,
+   "variants": {},
+   "status": "conflict",
+   "bundledLatin": "Khun"
+  },
+  {
+   "khmer": "ខូយ",
+   "latin": "Khoy",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ខូរ៉ាឌីន",
+   "latin": "Khoradin",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ខេង",
+   "latin": "Kheng",
+   "count": 1,
+   "variants": {},
+   "status": "agree",
+   "bundledLatin": "Kheng"
+  },
+  {
+   "khmer": "ខេនដេត",
+   "latin": "Kendeth",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ខេមរៈ",
+   "latin": "Khemarak",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "គង់សំរ៉េច",
+   "latin": "Kungsomrach",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "គង្គ",
+   "latin": "Kong",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "គល់",
+   "latin": "Koul",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "គវម្បតិ",
+   "latin": "Gavampati",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "គាំ",
+   "latin": "Korm",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "គាត",
+   "latin": "Keat",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "គិមយ៉ា",
+   "latin": "Kimya",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "គីន",
+   "latin": "Kin",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "គីម",
+   "latin": "Kim",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "គឹមថា",
+   "latin": "Kimtha",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "គឹមហ៊ុយ",
+   "latin": "Kimhuy",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "គុណវរ្ម័ន",
+   "latin": "Gunavarman",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "គុយ",
+   "latin": "Kuy",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "គ្រី",
+   "latin": "Kry",
+   "count": 1,
+   "variants": {},
+   "status": "agree",
+   "bundledLatin": "Kry"
+  },
+  {
+   "khmer": "គ្រីយ៉ា",
+   "latin": "Krya",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "គ្រីស្ទៀន",
+   "latin": "Cristian",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ឃឹន",
+   "latin": "Khin",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ឃូលីបាលី",
+   "latin": "Abdel",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ឃូវេលីដ",
+   "latin": "Khuwaylid",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ឃួង",
+   "latin": "Khuong",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ឃួន",
+   "latin": "Khoun",
+   "count": 1,
+   "variants": {
+    "Khuon": 1
+   },
+   "status": "new"
+  },
+  {
+   "khmer": "ងា",
+   "latin": "Ngea",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ង៉ែត",
+   "latin": "Ngeth",
+   "count": 1,
+   "variants": {},
+   "status": "conflict",
+   "bundledLatin": "Nget"
+  },
+  {
+   "khmer": "ចក្រ",
+   "latin": "Chakr",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ចក្រពង្ស",
+   "latin": "Chakrapong",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ចក្រាវុធ",
+   "latin": "Chakravuth",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ចន្ថា",
+   "latin": "Chantha",
+   "count": 1,
+   "variants": {},
+   "status": "agree",
+   "bundledLatin": "Chantha"
+  },
+  {
+   "khmer": "ចន្ថាកា",
+   "latin": "Chanteaka",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ច័ន្ទ",
+   "latin": "Chan",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ច័ន្ទឆាយា",
+   "latin": "Chanchhaya",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ច័ន្ទតារាវត្តី",
+   "latin": "Chandravathi",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ច័ន្ទបូរណ៍",
+   "latin": "Chanbo",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ច័ន្ទមុនី",
+   "latin": "Chanmony",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ចន្ទរង្សី",
+   "latin": "Chantaraingsey",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ច័ន្ទសុភ័ក្រ្ត",
+   "latin": "Chansopheak",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ចន្ទ្រវម៌្ម",
+   "latin": "Candravarman",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ចន្ធា",
+   "latin": "Chanthea",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ចម",
+   "latin": "Cham",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ចាង",
+   "latin": "Shanghai",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ចាន់ចាវ",
+   "latin": "Chanchav",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ចាន់ថុល",
+   "latin": "Chanthol",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ចាន់នីរ័ត្ន",
+   "latin": "Channiroth",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ចាន់ប៉ូលីន",
+   "latin": "Chanpolin",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ចាន់រស្មី",
+   "latin": "Chanraksmey",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ចៀម",
+   "latin": "Chiem",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ចៀវ",
+   "latin": "Chieu",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ចេង",
+   "latin": "Cheng",
+   "count": 1,
+   "variants": {},
+   "status": "agree",
+   "bundledLatin": "Cheng"
+  },
+  {
+   "khmer": "ចេន",
+   "latin": "Chen",
+   "count": 1,
+   "variants": {},
+   "status": "agree",
+   "bundledLatin": "Chen"
+  },
+  {
+   "khmer": "ចេសា",
+   "latin": "Khan",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ចែម",
+   "latin": "Chaem",
+   "count": 1,
+   "variants": {},
+   "status": "conflict",
+   "bundledLatin": "Chem"
+  },
+  {
+   "khmer": "ចៅឃុនព្រះប្រាយុនរ៉ាវ៉ុង",
+   "latin": "Prayuravongse",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ចៅចន្ថារ័ត្ន",
+   "latin": "Chantharath",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ចៅហ្វាទឡ្ហៈប៉ុក",
+   "latin": "Talaha",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ចៅហ្វាទឡ្ហៈមូ",
+   "latin": "Talaha",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ឆន",
+   "latin": "Chhorn",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ឆាក",
+   "latin": "Chhak",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ឆាយ",
+   "latin": "Chai",
+   "count": 1,
+   "variants": {},
+   "status": "conflict",
+   "bundledLatin": "Chhay"
+  },
+  {
+   "khmer": "ឆាលេស",
+   "latin": "Charles",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ឆាវ៉ាលីត",
+   "latin": "Chavalit",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ឆុំ",
+   "latin": "Chhom",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ឆេង",
+   "latin": "Cheng",
+   "count": 1,
+   "variants": {},
+   "status": "conflict",
+   "bundledLatin": "Chheng"
+  },
+  {
+   "khmer": "ជយទេវី",
+   "latin": "Jayadevi",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ជយរាជទេវី",
+   "latin": "Jayarajadevi",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ជ័យវរ្ម័ន",
+   "latin": "Jayavarman",
+   "count": 1,
+   "variants": {},
+   "status": "agree",
+   "bundledLatin": "Jayavarman"
+  },
+  {
+   "khmer": "ជយវីរវម៌្ម",
+   "latin": "Jayaviravarman",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ជ័យវុទ្ធីវង្ស",
+   "latin": "Jayavuthivong",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ជុតិមា",
+   "latin": "Chutema",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ជូ",
+   "latin": "Chou",
+   "count": 1,
+   "variants": {
+    "Davy": 1
+   },
+   "status": "new"
+  },
+  {
+   "khmer": "ជូន",
+   "latin": "Thiounn",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ជូនៀរ",
+   "latin": "Jr.",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ជូលាន",
+   "latin": "Choulean",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ជូឡុង",
+   "latin": "Tioulong",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ជួន",
+   "latin": "Choun",
+   "count": 1,
+   "variants": {
+    "Chuon": 1,
+    "Thiounn": 1
+   },
+   "status": "conflict",
+   "bundledLatin": "Chuon"
+  },
+  {
+   "khmer": "ជួប",
+   "latin": "Chuop",
+   "count": 1,
+   "variants": {},
+   "status": "conflict",
+   "bundledLatin": "Choup"
+  },
+  {
+   "khmer": "ជឿន",
+   "latin": "Thioeunn",
+   "count": 1,
+   "variants": {},
+   "status": "conflict",
+   "bundledLatin": "Choeurn"
+  },
+  {
+   "khmer": "ជេនណា",
+   "latin": "Jenna",
+   "count": 1,
+   "variants": {},
+   "status": "agree",
+   "bundledLatin": "Jenna"
+  },
+  {
+   "khmer": "ជេសស៊ី",
+   "latin": "Jessi",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ឈន់",
+   "latin": "Chhon",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ឈាន",
+   "latin": "Chhean",
+   "count": 1,
+   "variants": {},
+   "status": "agree",
+   "bundledLatin": "Chhean"
+  },
+  {
+   "khmer": "ឈីវ",
+   "latin": "Chhiv",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ឈីវកេក",
+   "latin": "Galabru",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ឈឺន",
+   "latin": "Chhoeun",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ឈុំ",
+   "latin": "Chhum",
+   "count": 1,
+   "variants": {},
+   "status": "agree",
+   "bundledLatin": "Chhum"
+  },
+  {
+   "khmer": "ឈុត",
+   "latin": "Chut",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ឈឿង",
+   "latin": "Choeung",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ឈឿន",
+   "latin": "Chhoeun",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ញាណ",
+   "latin": "Nhean",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ញឹក",
+   "latin": "Nhiek",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ញ៉ុក",
+   "latin": "Nhok",
+   "count": 1,
+   "variants": {},
+   "status": "agree",
+   "bundledLatin": "Nhok"
+  },
+  {
+   "khmer": "ដាញ់",
+   "latin": "Danh",
+   "count": 1,
+   "variants": {},
+   "status": "agree",
+   "bundledLatin": "Danh"
+  },
+  {
+   "khmer": "ដារ៉ា",
+   "latin": "Dara",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ដាវី",
+   "latin": "Chou",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ដាវីន",
+   "latin": "Prasath",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ដឺ",
+   "latin": "Deux",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ដៀន",
+   "latin": "Dien",
+   "count": 1,
+   "variants": {},
+   "status": "agree",
+   "bundledLatin": "Dien"
+  },
+  {
+   "khmer": "ដេវិត",
+   "latin": "Devit",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ដែល",
+   "latin": "Del",
+   "count": 1,
+   "variants": {},
+   "status": "agree",
+   "bundledLatin": "Del"
+  },
+  {
+   "khmer": "ឌិត",
+   "latin": "Dith",
+   "count": 1,
+   "variants": {},
+   "status": "agree",
+   "bundledLatin": "Dith"
+  },
+  {
+   "khmer": "ឌី",
+   "latin": "Dy",
+   "count": 1,
+   "variants": {},
+   "status": "agree",
+   "bundledLatin": "Dy"
+  },
+  {
+   "khmer": "ឌីណា",
+   "latin": "Dina",
+   "count": 1,
+   "variants": {},
+   "status": "agree",
+   "bundledLatin": "Dina"
+  },
+  {
+   "khmer": "ឌីម៉ង់",
+   "latin": "Dimong",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ឌីមីទ្រី",
+   "latin": "Dimitri",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ឌួង",
+   "latin": "Duong",
+   "count": 1,
+   "variants": {},
+   "status": "agree",
+   "bundledLatin": "Duong"
+  },
+  {
+   "khmer": "ណាក់",
+   "latin": "Nak",
+   "count": 1,
+   "variants": {},
+   "status": "agree",
+   "bundledLatin": "Nak"
+  },
+  {
+   "khmer": "ណារិទ្ធ",
+   "latin": "Narith",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ណារី",
+   "latin": "Nary",
+   "count": 1,
+   "variants": {},
+   "status": "agree",
+   "bundledLatin": "Nary"
+  },
+  {
+   "khmer": "ណារ៉ុង",
+   "latin": "Narong",
+   "count": 1,
+   "variants": {},
+   "status": "agree",
+   "bundledLatin": "Narong"
+  },
+  {
+   "khmer": "ណារ៉ុន",
+   "latin": "Naron",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ណាំហុង",
+   "latin": "Namhong",
+   "count": 1,
+   "variants": {},
+   "status": "agree",
+   "bundledLatin": "Namhong"
+  },
+  {
+   "khmer": "ណុន",
+   "latin": "Non",
+   "count": 1,
+   "variants": {},
+   "status": "agree",
+   "bundledLatin": "Non"
+  },
+  {
+   "khmer": "ណូយ",
+   "latin": "Noy",
+   "count": 1,
+   "variants": {},
+   "status": "agree",
+   "bundledLatin": "Noy"
+  },
+  {
+   "khmer": "ណូរ៉ា",
+   "latin": "Nora",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ណែម",
+   "latin": "Nem",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ណៃ",
+   "latin": "Nay",
+   "count": 1,
+   "variants": {},
+   "status": "conflict",
+   "bundledLatin": "Nai"
+  },
+  {
+   "khmer": "តាំ",
+   "latin": "Tam",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "តាកាគី",
+   "latin": "Takaki",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "តាំង",
+   "latin": "Taing",
+   "count": 1,
+   "variants": {},
+   "status": "conflict",
+   "bundledLatin": "Tang"
+  },
+  {
+   "khmer": "តាត",
+   "latin": "Tat",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "តារា",
+   "latin": "Dara",
+   "count": 1,
+   "variants": {},
+   "status": "agree",
+   "bundledLatin": "Dara"
+  },
+  {
+   "khmer": "តឹឡាមេឌ៏",
+   "latin": "Talamidaw",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "តុលា",
+   "latin": "Tola",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "តូ",
+   "latin": "To",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ត្រង់",
+   "latin": "Trente",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ត្រិភុវនាទិត្យវម៌្ម",
+   "latin": "Tribhuvanadityavarman",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ត្រឹង",
+   "latin": "Tran",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ថង",
+   "latin": "Thang",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ថងញ៉ុត",
+   "latin": "Thongyout",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ថែម",
+   "latin": "Them",
+   "count": 1,
+   "variants": {},
+   "status": "agree",
+   "bundledLatin": "Them"
+  },
+  {
+   "khmer": "ថោង",
+   "latin": "Thong",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ទិត",
+   "latin": "Tit",
+   "count": 1,
+   "variants": {},
+   "status": "conflict",
+   "bundledLatin": "Tet"
+  },
+  {
+   "khmer": "ទិត្យ",
+   "latin": "Tith",
+   "count": 1,
+   "variants": {
+    "Vichara": 1
+   },
+   "status": "new"
+  },
+  {
+   "khmer": "ទិត្យសុវឌ្ឍនៈ",
+   "latin": "Titsovathanak",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ទី",
+   "latin": "Sa",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ទីម",
+   "latin": "Sokhieng",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ទីវ",
+   "latin": "Tiv",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ទឹក",
+   "latin": "Tuk",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ទុយ",
+   "latin": "Tuy",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ទូច",
+   "latin": "Touch",
+   "count": 1,
+   "variants": {},
+   "status": "agree",
+   "bundledLatin": "Touch"
+  },
+  {
+   "khmer": "ទៀង",
+   "latin": "Teang",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ទៀប",
+   "latin": "Teab",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ទ្រីញ",
+   "latin": "Trinh",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ធរណេន្ទ្រទេវី",
+   "latin": "Dharanindradevi",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ធរណេន្ទ្រវម៌្ម",
+   "latin": "Dharanindravarman",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ធារ៉ា",
+   "latin": "Theara",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ធីរិទ្ធ",
+   "latin": "Thirith",
+   "count": 1,
+   "variants": {},
+   "status": "agree",
+   "bundledLatin": "Thirith"
+  },
+  {
+   "khmer": "ធីវ៉ា",
+   "latin": "Thiva",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ធួន",
+   "latin": "Thuon",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ធឿន",
+   "latin": "Thoeun",
+   "count": 1,
+   "variants": {},
+   "status": "conflict",
+   "bundledLatin": "Thoeurn"
+  },
+  {
+   "khmer": "នរៈទីប៉ោ",
+   "latin": "Naradipo",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "នរិន្ទ",
+   "latin": "Norin",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "នរិន្ទដេត",
+   "latin": "Norindeth",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "នរិន្រ្ទពង្ស",
+   "latin": "Narindrapong",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "នរេន្ទ្រលក្ឝ្មី",
+   "latin": "Narendralakshmi",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "នល់",
+   "latin": "Nol",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "និសា",
+   "latin": "Nisa",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "នីតូ",
+   "latin": "Nieto",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "នឹម",
+   "latin": "Nim",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "នុត",
+   "latin": "Nouth",
+   "count": 1,
+   "variants": {
+    "Nuth": 1
+   },
+   "status": "conflict",
+   "bundledLatin": "Nuth"
+  },
+  {
+   "khmer": "នូ",
+   "latin": "Nou",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "នូរណ",
+   "latin": "Noron",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "នួន",
+   "latin": "Nuon",
+   "count": 1,
+   "variants": {},
+   "status": "agree",
+   "bundledLatin": "Nuon"
+  },
+  {
+   "khmer": "នេត",
+   "latin": "Neth",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ន្ឫបតេន្ទ្រវម៌្ម",
+   "latin": "Nripatindravarman",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ប៉ង់",
+   "latin": "Vatana",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "បញ្ញា",
+   "latin": "Panha",
+   "count": 1,
+   "variants": {},
+   "status": "agree",
+   "bundledLatin": "Panha"
+  },
+  {
+   "khmer": "បទុមកេសរ",
+   "latin": "Kesar",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "បរមចន្ទារពិសេស",
+   "latin": "Kesar",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ប៊ល៏ត្ឆាន់ធ៏",
+   "latin": "Bawlawkyantaw",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ប៉ា",
+   "latin": "Pa",
+   "count": 1,
+   "variants": {},
+   "status": "agree",
+   "bundledLatin": "Pa"
+  },
+  {
+   "khmer": "ប៉ាង",
+   "latin": "Pang",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ប៉ាច",
+   "latin": "Pach",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ប៉ាន់",
+   "latin": "Rithy",
+   "count": 1,
+   "variants": {},
+   "status": "conflict",
+   "bundledLatin": "Panh"
+  },
+  {
+   "khmer": "បាយ៉ារិទ្ធិ",
+   "latin": "Bayyareth",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "បារាំង",
+   "latin": "Baraing",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "បារ៉ាប៊ី",
+   "latin": "Baraby",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "បាសាត",
+   "latin": "Basat",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "បាអាត",
+   "latin": "Baat",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ប៊ិន",
+   "latin": "Bin",
+   "count": 1,
+   "variants": {},
+   "status": "agree",
+   "bundledLatin": "Bin"
+  },
+  {
+   "khmer": "ប៊ីន",
+   "latin": "Bint",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ប៊ីស៊ីវូ",
+   "latin": "Bisiwu",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "បុង",
+   "latin": "Bong",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "បុញ្ញឫទ្ធិ",
+   "latin": "Ponhearith",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ប៊ុនឆាយ",
+   "latin": "Bunchay",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ប៊ុនឆៃ",
+   "latin": "Bunchhai",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ប៊ុនឈឿន",
+   "latin": "Bunchhoeun",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ប៊ុនថន",
+   "latin": "Bunthorn",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ប៊ុនទីង",
+   "latin": "Bunting",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ប៊ុនធឿន",
+   "latin": "Bunthoeun",
+   "count": 1,
+   "variants": {
+    "Bunthoeurn": 1
+   },
+   "status": "new"
+  },
+  {
+   "khmer": "បុស្ករាក្ស",
+   "latin": "Pushkaraksha",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ប៊ូ",
+   "latin": "Bou",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "បូរ៉ា",
+   "latin": "Bora",
+   "count": 1,
+   "variants": {},
+   "status": "agree",
+   "bundledLatin": "Bora"
+  },
+  {
+   "khmer": "បូរី",
+   "latin": "Borey",
+   "count": 1,
+   "variants": {},
+   "status": "agree",
+   "bundledLatin": "Borey"
+  },
+  {
+   "khmer": "បូរេ៉ត",
+   "latin": "Boret",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ប៉ូលីន",
+   "latin": "Polin",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "បួរ",
+   "latin": "Bour",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ប៉េង",
+   "latin": "Peng",
+   "count": 1,
+   "variants": {
+    "Phan": 1
+   },
+   "status": "new"
+  },
+  {
+   "khmer": "បេនតូ",
+   "latin": "Bento",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ប៉ែន",
+   "latin": "Pen",
+   "count": 1,
+   "variants": {
+    "Penn": 1
+   },
+   "status": "conflict",
+   "bundledLatin": "Penn"
+  },
+  {
+   "khmer": "ប្រថិវេន្ទ្រវម៌្ម",
+   "latin": "Virahcarman",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ប្រន",
+   "latin": "Pran",
+   "count": 1,
+   "variants": {},
+   "status": "agree",
+   "bundledLatin": "Pran"
+  },
+  {
+   "khmer": "ប្រសិទ្ធ",
+   "latin": "Prasidh",
+   "count": 1,
+   "variants": {
+    "Prasith": 1
+   },
+   "status": "conflict",
+   "bundledLatin": "Broseth"
+  },
+  {
+   "khmer": "ប្រាសាទ",
+   "latin": "Davin",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ផល្លីន",
+   "latin": "Phallin",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ផាច",
+   "latin": "Phach",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ផាត់",
+   "latin": "Phat",
+   "count": 1,
+   "variants": {},
+   "status": "agree",
+   "bundledLatin": "Phat"
+  },
+  {
+   "khmer": "ផាន់",
+   "latin": "Peng",
+   "count": 1,
+   "variants": {},
+   "status": "conflict",
+   "bundledLatin": "Phan"
+  },
+  {
+   "khmer": "ផូ",
+   "latin": "Pho",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ផេង",
+   "latin": "Pheng",
+   "count": 1,
+   "variants": {},
+   "status": "agree",
+   "bundledLatin": "Pheng"
+  },
+  {
+   "khmer": "ពក",
+   "latin": "Pauk",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ពង្សានមុនី",
+   "latin": "Pongsanmoni",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ពញាកែវ",
+   "latin": "Keo",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ពញាទ័យ",
+   "latin": "Daya",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ពណ្ណារី",
+   "latin": "Ponnary",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ពិម្ពិសារ",
+   "latin": "Bimbisara",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ពិសិដ្ឋ",
+   "latin": "Pisith",
+   "count": 1,
+   "variants": {},
+   "status": "agree",
+   "bundledLatin": "Pisith"
+  },
+  {
+   "khmer": "ពិសុទ្ធ",
+   "latin": "Pisoth",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ពិសេន",
+   "latin": "Pisen",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ពីលីកា",
+   "latin": "Pilika",
+   "count": 1,
+   "variants": {},
+   "status": "agree",
+   "bundledLatin": "Pilika"
+  },
+  {
+   "khmer": "ពុង",
+   "latin": "Kek",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ពេជ",
+   "latin": "Pich",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ពៅ",
+   "latin": "Pou",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ព្រំ",
+   "latin": "Prom",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ព្រះកច្ចាយណៈ",
+   "latin": "Katyayana",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ព្រះបាទនារាយណ៍រាជាទី២អង្តតន់",
+   "latin": "Outey",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ព្រះបាទឥន្រ្ទវរ្ម័ន",
+   "latin": "Indravarman",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ព្រះសត្ថាទី២អង្គជី",
+   "latin": "Satha",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ព្រាប",
+   "latin": "Preap",
+   "count": 1,
+   "variants": {},
+   "status": "agree",
+   "bundledLatin": "Preap"
+  },
+  {
+   "khmer": "ព្រឿង",
+   "latin": "Proeung",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ភវវរ្ម័ន",
+   "latin": "Bhavavarman",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ភារ៉ាត់",
+   "latin": "Phearath",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ភីសា",
+   "latin": "Pisa",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ភឹម",
+   "latin": "Phim",
+   "count": 1,
+   "variants": {},
+   "status": "conflict",
+   "bundledLatin": "Phoem"
+  },
+  {
+   "khmer": "ភូថង",
+   "latin": "Phouthang",
+   "count": 1,
+   "variants": {
+    "Phoutong": 1,
+    "Phuthong": 1
+   },
+   "status": "new"
+  },
+  {
+   "khmer": "ភូរីស្សរ៉ា",
+   "latin": "Phurissara",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "មន្ត្រីយ៍",
+   "latin": "Monetrey",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ម៉ម",
+   "latin": "Mam",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "មហាម៉េដ",
+   "latin": "Muhammad",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "មហីបតិវម៌្ម",
+   "latin": "Mahipativarman",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ម៉ាក",
+   "latin": "Mak",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ម៉ាណាហ្វ",
+   "latin": "Manaf",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ម៉ាណិត",
+   "latin": "Manith",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ម៉ាណែត",
+   "latin": "Manet",
+   "count": 1,
+   "variants": {},
+   "status": "agree",
+   "bundledLatin": "Manet"
+  },
+  {
+   "khmer": "ម៉ាត់",
+   "latin": "Mat",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "មាន",
+   "latin": "Mean",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ម៉ានី",
+   "latin": "Mani",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ម៉ារី",
+   "latin": "Marie",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "មាលី",
+   "latin": "Mealy",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ម៉ាឡាគី",
+   "latin": "Malachi",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ម៉ិច",
+   "latin": "Mic",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "មិថុនា",
+   "latin": "Mithuna",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "មិន",
+   "latin": "Min",
+   "count": 1,
+   "variants": {},
+   "status": "agree",
+   "bundledLatin": "Min"
+  },
+  {
+   "khmer": "មី",
+   "latin": "Mey",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ម៉ី",
+   "latin": "Mey",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "មីចឡែន",
+   "latin": "Mijland",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "មីរហ្សាវ",
+   "latin": "Mirzaev",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ម៉ុង",
+   "latin": "Mong",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "មុនីកេសន",
+   "latin": "Monikessan",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "មុនីនាថ",
+   "latin": "Arunrasmy",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "មុនីពង្ស",
+   "latin": "Monipong",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "មុនីរ័ត្ន",
+   "latin": "Monirath",
+   "count": 1,
+   "variants": {},
+   "status": "conflict",
+   "bundledLatin": "Monyroth"
+  },
+  {
+   "khmer": "មុន្នីរ៉េត",
+   "latin": "Monireth",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ម៉ូនីកា",
+   "latin": "Monica",
+   "count": 1,
+   "variants": {},
+   "status": "agree",
+   "bundledLatin": "Monica"
+  },
+  {
+   "khmer": "មូរ",
+   "latin": "Mu",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "មូលីវណ្ណ",
+   "latin": "Molyvann",
+   "count": 1,
+   "variants": {},
+   "status": "agree",
+   "bundledLatin": "Molyvann"
+  },
+  {
+   "khmer": "មេត្រី",
+   "latin": "Meas",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ម៉ែន",
+   "latin": "Men",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "យជ្ញវរហ",
+   "latin": "Yajnavaraha",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "យន់",
+   "latin": "Yun",
+   "count": 1,
+   "variants": {},
+   "status": "conflict",
+   "bundledLatin": "Yuon"
+  },
+  {
+   "khmer": "យស",
+   "latin": "Yol",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "យសរាជា",
+   "latin": "Yosrachea",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "យសោវរ្ម័ន",
+   "latin": "Yasovarman",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "យ៉ាង",
+   "latin": "Yang",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "យ៉ាត",
+   "latin": "Yat",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "យ៉ាទី",
+   "latin": "Yaty",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "យឹម",
+   "latin": "Yim",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "យុត្តិវង្ស",
+   "latin": "Youtevong",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "យុទ្ធថន",
+   "latin": "Yuthorn",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "យុន",
+   "latin": "Yun",
+   "count": 1,
+   "variants": {
+    "Yuon": 1
+   },
+   "status": "new"
+  },
+  {
+   "khmer": "យុវនាថ",
+   "latin": "Yuvaneath",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "យូឌៃ",
+   "latin": "Yudai",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "យូរ៉ាន់",
+   "latin": "Youran",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "រង្ស៊ី",
+   "latin": "Rainsy",
+   "count": 1,
+   "variants": {},
+   "status": "agree",
+   "bundledLatin": "Rainsy"
+  },
+  {
+   "khmer": "រំចង់",
+   "latin": "Rumchong",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "រចនា",
+   "latin": "Rachana",
+   "count": 1,
+   "variants": {},
+   "status": "agree",
+   "bundledLatin": "Rachana"
+  },
+  {
+   "khmer": "រណឫទ្ធិ",
+   "latin": "Ranariddh",
+   "count": 1,
+   "variants": {},
+   "status": "agree",
+   "bundledLatin": "Ranariddh"
+  },
+  {
+   "khmer": "រណឬទ្ធិ",
+   "latin": "Ranariddh",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "រតនៈ",
+   "latin": "Ratanak",
+   "count": 1,
+   "variants": {},
+   "status": "conflict",
+   "bundledLatin": "Rathanak"
+  },
+  {
+   "khmer": "រ៉ន",
+   "latin": "Ran",
+   "count": 1,
+   "variants": {},
+   "status": "conflict",
+   "bundledLatin": "Rorn"
+  },
+  {
+   "khmer": "រស្មី",
+   "latin": "Raksmey",
+   "count": 1,
+   "variants": {},
+   "status": "agree",
+   "bundledLatin": "Raksmey"
+  },
+  {
+   "khmer": "រាជ",
+   "latin": "Reach",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "រ៉ានី",
+   "latin": "Rany",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "រាមាធិបតី",
+   "latin": "Reameathiptei",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "រ៉ាយត៍",
+   "latin": "Wright",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "រិទ្ធ",
+   "latin": "Rith",
+   "count": 1,
+   "variants": {},
+   "status": "agree",
+   "bundledLatin": "Rith"
+  },
+  {
+   "khmer": "រិទ្ធី",
+   "latin": "Panh",
+   "count": 1,
+   "variants": {},
+   "status": "conflict",
+   "bundledLatin": "Rithy"
+  },
+  {
+   "khmer": "រិនដារ៉ូ",
+   "latin": "Rundaro",
+   "count": 1,
+   "variants": {},
+   "status": "conflict",
+   "bundledLatin": "Rindaro"
+  },
+  {
+   "khmer": "រី",
+   "latin": "Ry",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "រីតារ៉ាវង្ស",
+   "latin": "Ritharavong",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "រីនប៉ូឆេ",
+   "latin": "Rinpoche",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "រីម",
+   "latin": "Rim",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "រ៉ុង",
+   "latin": "Rong",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "រុមា",
+   "latin": "Ruma",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "រ៉ុហ្គេ",
+   "latin": "Roque",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "រ៉េត",
+   "latin": "Sarita",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "លក្ខិណា",
+   "latin": "In",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "លីវ",
+   "latin": "Liev",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "លីវយី",
+   "latin": "Liuye",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "លូ",
+   "latin": "Luu",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "លូសៀ",
+   "latin": "Lucea",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "លឿង",
+   "latin": "Ung",
+   "count": 1,
+   "variants": {},
+   "status": "conflict",
+   "bundledLatin": "Loung"
+  },
+  {
+   "khmer": "លោកឌីអូហ្គូ",
+   "latin": "Diogo",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "លោកពញា",
+   "latin": "Laukpya",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ល្វី",
+   "latin": "Louis",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "វង្សី",
+   "latin": "Vongsey",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "វឌ្ឍឆាយាវង្ស",
+   "latin": "Watchayavong",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "វឌ្ឍនៈ",
+   "latin": "Vathanak",
+   "count": 1,
+   "variants": {},
+   "status": "conflict",
+   "bundledLatin": "Vathanaka"
+  },
+  {
+   "khmer": "វឌ្ឍនាកា",
+   "latin": "Vathanaka",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "វណ្ឌី",
+   "latin": "Vandy",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "វណ្ណៈ",
+   "latin": "Vannak",
+   "count": 1,
+   "variants": {},
+   "status": "agree",
+   "bundledLatin": "Vannak"
+  },
+  {
+   "khmer": "វណ្ណសូដានី",
+   "latin": "Vansodany",
+   "count": 1,
+   "variants": {},
+   "status": "agree",
+   "bundledLatin": "Vansodany"
+  },
+  {
+   "khmer": "វណ្ណា",
+   "latin": "Hay",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "វ័ន",
+   "latin": "Voan",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "វ៉ន",
+   "latin": "Vorn",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "វ៉ម",
+   "latin": "Vam",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "វ៉ា",
+   "latin": "Var",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "វ៉ាង",
+   "latin": "Wang",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "វ៉ាញ",
+   "latin": "Hoanh",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "វ៉ាន់ឌី",
+   "latin": "Vandy",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "វ៉ាន់ណេត",
+   "latin": "Vanneth",
+   "count": 1,
+   "variants": {},
+   "status": "conflict",
+   "bundledLatin": "Vannet"
+  },
+  {
+   "khmer": "វ៉ាន់សាក់",
+   "latin": "Vannsak",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "វាសនា",
+   "latin": "Veasna",
+   "count": 1,
+   "variants": {},
+   "status": "agree",
+   "bundledLatin": "Veasna"
+  },
+  {
+   "khmer": "វិក្រាន្តវម៌្ម",
+   "latin": "Vikrantavarman",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "វិចិត្",
+   "latin": "Vichet",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "វិជយេន្ទ្រលក្ឝ្មី",
+   "latin": "Vijayendralakshmi",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "វិជ្ជរ៉ាដានី",
+   "latin": "Dany",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "វិជ្ជា",
+   "latin": "Vichea",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "វិញ",
+   "latin": "Vinh",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "វិនធៀន",
+   "latin": "Wentian",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "វិសិដ្ឋ",
+   "latin": "Viseth",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "វិស្សុត",
+   "latin": "Vissoth",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "វីរៈ",
+   "latin": "Ou",
+   "count": 1,
+   "variants": {
+    "Virak": 1,
+    "Vireak": 1
+   },
+   "status": "conflict",
+   "bundledLatin": "Virak"
+  },
+  {
+   "khmer": "វីល",
+   "latin": "Will",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "វុទ្ធី",
+   "latin": "Wutty",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "វឿន",
+   "latin": "Sokpoly",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "វេងស្រេង",
+   "latin": "Austin",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "វេជ្ជរ៉ា",
+   "latin": "Vichara",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "វេត",
+   "latin": "Vet",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "វ៉េត",
+   "latin": "Veth",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "វេឡូសូ",
+   "latin": "Veloso",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ឝ្រីន្ទ្រជយវម៌្ម",
+   "latin": "Indrajayavarman",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "សំ",
+   "latin": "Sam",
+   "count": 1,
+   "variants": {},
+   "status": "agree",
+   "bundledLatin": "Sam"
+  },
+  {
+   "khmer": "សក់",
+   "latin": "Sak",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ស៊ន",
+   "latin": "Sorn",
+   "count": 1,
+   "variants": {},
+   "status": "agree",
+   "bundledLatin": "Sorn"
+  },
+  {
+   "khmer": "សំបូរ",
+   "latin": "Sambaur",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "សំផន",
+   "latin": "Samphan",
+   "count": 1,
+   "variants": {},
+   "status": "agree",
+   "bundledLatin": "Samphan"
+  },
+  {
+   "khmer": "សម្ភុវម៌្ម",
+   "latin": "Shambhuvarman",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "សំរិន",
+   "latin": "Samrin",
+   "count": 1,
+   "variants": {},
+   "status": "agree",
+   "bundledLatin": "Samrin"
+  },
+  {
+   "khmer": "សាក់",
+   "latin": "Saksi",
+   "count": 1,
+   "variants": {},
+   "status": "conflict",
+   "bundledLatin": "Sak"
+  },
+  {
+   "khmer": "ស៊ាដាច",
+   "latin": "Ceadach",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "សាន",
+   "latin": "Sam",
+   "count": 1,
+   "variants": {
+    "San": 1,
+    "Sann": 1
+   },
+   "status": "conflict",
+   "bundledLatin": "Sann"
+  },
+  {
+   "khmer": "សាម៉ន",
+   "latin": "Samon",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "សាំយូអ៊េល",
+   "latin": "Samuel",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "សារ",
+   "latin": "Ty",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "សារ៉ន",
+   "latin": "Saron",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "សារ៉ាត",
+   "latin": "Sarath",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "សារ៉ាពេជ្រ",
+   "latin": "Sarapich",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "សារិន",
+   "latin": "Sarin",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "សារីតា",
+   "latin": "Reth",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "សារុន",
+   "latin": "Sarun",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "សាវ៉េត",
+   "latin": "Saveth",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "សាវ៉ៃ",
+   "latin": "Savay",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "សាហ្គោ",
+   "latin": "Sagoe",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ស៊ិនទី",
+   "latin": "Sinti",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "សិរីមន្ត",
+   "latin": "Sereymun",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "សិរីវុឌ្ឍ",
+   "latin": "Sirivudh",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ស៊ី",
+   "latin": "Sy",
+   "count": 1,
+   "variants": {},
+   "status": "agree",
+   "bundledLatin": "Sy"
+  },
+  {
+   "khmer": "ស៊ីដនី",
+   "latin": "Ken",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ស៊ីធី",
+   "latin": "City",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ស៊ីន",
+   "latin": "Sin",
+   "count": 1,
+   "variants": {
+    "Sinn": 1
+   },
+   "status": "conflict",
+   "bundledLatin": "Sinn"
+  },
+  {
+   "khmer": "ស៊ីនួន",
+   "latin": "Sinoun",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ស៊ីវន",
+   "latin": "Sivorn",
+   "count": 1,
+   "variants": {},
+   "status": "agree",
+   "bundledLatin": "Sivorn"
+  },
+  {
+   "khmer": "ស៊ីសៈងាម",
+   "latin": "Siraniama",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ស៊ីសាមុត",
+   "latin": "Sisamouth",
+   "count": 1,
+   "variants": {},
+   "status": "agree",
+   "bundledLatin": "Sisamouth"
+  },
+  {
+   "khmer": "ស៊ីសុវតិ្ថ",
+   "latin": "Sisowath",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ស៊ីស្បោង",
+   "latin": "Sbong",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "សីហនុ",
+   "latin": "Sihanouk",
+   "count": 1,
+   "variants": {},
+   "status": "agree",
+   "bundledLatin": "Sihanouk"
+  },
+  {
+   "khmer": "សីហមុនី",
+   "latin": "Sihamoni",
+   "count": 1,
+   "variants": {},
+   "status": "agree",
+   "bundledLatin": "Sihamoni"
+  },
+  {
+   "khmer": "សីហា",
+   "latin": "Seiha",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ស៊ឹម",
+   "latin": "Sim",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "សឺវ៉ាន់ដ្សទីយាន",
+   "latin": "Srvandztiants",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "សុះ",
+   "latin": "Sos",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "សុខប៉ូលី",
+   "latin": "Voeun",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "សុខផេង",
+   "latin": "Sokpheng",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "សុខសិលា",
+   "latin": "Soksela",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "សុខសោភា",
+   "latin": "Soksophea",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "សុខហួរ",
+   "latin": "Sochua",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "សុខុន",
+   "latin": "Sokhon",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "សុគន្ធ",
+   "latin": "Sokun",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "សុគន្ធកញ្ញា",
+   "latin": "Sokunkanha",
+   "count": 1,
+   "variants": {},
+   "status": "agree",
+   "bundledLatin": "Sokunkanha"
+  },
+  {
+   "khmer": "សុគន្ធវឌ្ឍនា",
+   "latin": "Pang",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "សុឃៀង",
+   "latin": "Tim",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "សុចិត្រា",
+   "latin": "Sochetra",
+   "count": 1,
+   "variants": {},
+   "status": "agree",
+   "bundledLatin": "Sochetra"
+  },
+  {
+   "khmer": "សុជាតិក្សត្រី",
+   "latin": "Devikshatri",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "សុជាតិវង្ស",
+   "latin": "Socheatvong",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "សុជាវីឡា",
+   "latin": "Socheavila",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "សុដារី",
+   "latin": "Sodary",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ស៊ុតសាខន",
+   "latin": "Sutsakhan",
+   "count": 1,
+   "variants": {},
+   "status": "agree",
+   "bundledLatin": "Sutsakhan"
+  },
+  {
+   "khmer": "សុទ្ធ",
+   "latin": "Soth",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "សុធាវឌ្ឍនា",
+   "latin": "Sotheavathana",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ស៊ុន",
+   "latin": "Sun",
+   "count": 1,
+   "variants": {},
+   "status": "agree",
+   "bundledLatin": "Sun"
+  },
+  {
+   "khmer": "ស៊ុននិច",
+   "latin": "Sunnix",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "សុបញ្ញា",
+   "latin": "Sopanha",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "សុផល",
+   "latin": "Sophal",
+   "count": 1,
+   "variants": {},
+   "status": "agree",
+   "bundledLatin": "Sophal"
+  },
+  {
+   "khmer": "សុផាណាត",
+   "latin": "Sophanat",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "សុផាន់",
+   "latin": "Sophann",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "សុផារ៉ា",
+   "latin": "Sophara",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "សុភ័ណ្",
+   "latin": "Sophorn",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "សុភាព",
+   "latin": "Sopheap",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ស៊ុយ",
+   "latin": "Suy",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "សុរាម្រិត",
+   "latin": "Suramarit",
+   "count": 1,
+   "variants": {},
+   "status": "agree",
+   "bundledLatin": "Suramarit"
+  },
+  {
+   "khmer": "សុវណ៌",
+   "latin": "Sarvani",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "សុវណ្ណមករា",
+   "latin": "Sovannmakara",
+   "count": 1,
+   "variants": {},
+   "status": "agree",
+   "bundledLatin": "Sovannmakara"
+  },
+  {
+   "khmer": "សុវណ្ណរាជ",
+   "latin": "Sovannareach",
+   "count": 1,
+   "variants": {},
+   "status": "conflict",
+   "bundledLatin": "Sovanreach"
+  },
+  {
+   "khmer": "សុវណ្ណារ៉ា",
+   "latin": "Sovannara",
+   "count": 1,
+   "variants": {},
+   "status": "agree",
+   "bundledLatin": "Sovannara"
+  },
+  {
+   "khmer": "សុវត្ថិ",
+   "latin": "Sovath",
+   "count": 1,
+   "variants": {},
+   "status": "agree",
+   "bundledLatin": "Sovath"
+  },
+  {
+   "khmer": "សុវិជ្ជា",
+   "latin": "Sovichea",
+   "count": 1,
+   "variants": {},
+   "status": "agree",
+   "bundledLatin": "Sovichea"
+  },
+  {
+   "khmer": "សុស៊ីដាន",
+   "latin": "Sosidan",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "សុិន",
+   "latin": "Sin",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "សូ",
+   "latin": "So",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ស៊ូ",
+   "latin": "Sou",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "សូកាំ",
+   "latin": "Saukam",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "សូដាវីដ",
+   "latin": "Sodavid",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "សូណង់ដូ",
+   "latin": "Sonando",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "សូនីតា",
+   "latin": "Sonyta",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ស៊ូប៊ែរ្តិ៍",
+   "latin": "Soubert",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "សូរ្យវរ្ម័ន",
+   "latin": "Suryavarman",
+   "count": 1,
+   "variants": {},
+   "status": "agree",
+   "bundledLatin": "Suryavarman"
+  },
+  {
+   "khmer": "ស៊ូហាណា",
+   "latin": "Suhana",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "សឿត",
+   "latin": "Seut",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "សឿយ",
+   "latin": "Soeuy",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "សៀ",
+   "latin": "Zeng",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "សៀង",
+   "latin": "Sieng",
+   "count": 1,
+   "variants": {},
+   "status": "conflict",
+   "bundledLatin": "Seang"
+  },
+  {
+   "khmer": "សៀងហៃ",
+   "latin": "Chang",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "សៀម",
+   "latin": "Seam",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "សៀវម៉ី",
+   "latin": "Seavmey",
+   "count": 1,
+   "variants": {},
+   "status": "agree",
+   "bundledLatin": "Seavmey"
+  },
+  {
+   "khmer": "សេលើស្ស",
+   "latin": "Sailors",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "សែន",
+   "latin": "Sen",
+   "count": 1,
+   "variants": {},
+   "status": "agree",
+   "bundledLatin": "Sen"
+  },
+  {
+   "khmer": "សែនសូនីតា",
+   "latin": "Sensonita",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "សែម",
+   "latin": "Sem",
+   "count": 1,
+   "variants": {},
+   "status": "conflict",
+   "bundledLatin": "Seom"
+  },
+  {
+   "khmer": "ស៊ែរជីអូ",
+   "latin": "Sergio",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "សោ",
+   "latin": "So",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "សោភា",
+   "latin": "Sophea",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "សោភាព",
+   "latin": "Sopheap",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "សោម",
+   "latin": "Saom",
+   "count": 1,
+   "variants": {},
+   "status": "agree",
+   "bundledLatin": "Saom"
+  },
+  {
+   "khmer": "សោមា",
+   "latin": "Soma",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "សោម៉ា",
+   "latin": "Norodom",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "សៅ",
+   "latin": "Sao",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ស្រីមុំ",
+   "latin": "Sreymom",
+   "count": 1,
+   "variants": {},
+   "status": "agree",
+   "bundledLatin": "Sreymom"
+  },
+  {
+   "khmer": "ស្រីឥន្ទ្រវរ្ម័ន",
+   "latin": "Srindravarman",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ស្រេង",
+   "latin": "Sreng",
+   "count": 1,
+   "variants": {},
+   "status": "agree",
+   "bundledLatin": "Sreng"
+  },
+  {
+   "khmer": "ហង់ជួន",
+   "latin": "Hangchuon",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ហឝ៌វម៌្ម",
+   "latin": "Harshavarman",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ហាច",
+   "latin": "Hach",
+   "count": 1,
+   "variants": {},
+   "status": "conflict",
+   "bundledLatin": "Harch"
+  },
+  {
+   "khmer": "ហាបាគុក",
+   "latin": "Habakkuk",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ហារីម៉ាន់អានណូស",
+   "latin": "Harriman-annous",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ហាស៊ីម",
+   "latin": "Hashim",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ហ៊ិន",
+   "latin": "Hin",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ហ៊ឹម",
+   "latin": "Him",
+   "count": 1,
+   "variants": {},
+   "status": "agree",
+   "bundledLatin": "Him"
+  },
+  {
+   "khmer": "ហុង",
+   "latin": "Hong",
+   "count": 1,
+   "variants": {},
+   "status": "agree",
+   "bundledLatin": "Hong"
+  },
+  {
+   "khmer": "ហ៊ុនទៀន",
+   "latin": "Huntian",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ហ៊ុយ",
+   "latin": "Hoy",
+   "count": 1,
+   "variants": {
+    "Huy": 1
+   },
+   "status": "conflict",
+   "bundledLatin": "Huy"
+  },
+  {
+   "khmer": "ហ៊ុល",
+   "latin": "Hul",
+   "count": 1,
+   "variants": {},
+   "status": "agree",
+   "bundledLatin": "Hul"
+  },
+  {
+   "khmer": "ហុិន",
+   "latin": "Hin",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ហូ",
+   "latin": "Hu",
+   "count": 1,
+   "variants": {},
+   "status": "conflict",
+   "bundledLatin": "Ho"
+  },
+  {
+   "khmer": "ហ៊ូ",
+   "latin": "Hou",
+   "count": 1,
+   "variants": {},
+   "status": "agree",
+   "bundledLatin": "Hou"
+  },
+  {
+   "khmer": "ហ៊ែល",
+   "latin": "Hell",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ហៃ",
+   "latin": "Vanna",
+   "count": 1,
+   "variants": {},
+   "status": "conflict",
+   "bundledLatin": "Hai"
+  },
+  {
+   "khmer": "ហ្កិច",
+   "latin": "Kek",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ហ្គារីហ្គិន",
+   "latin": "Garegin",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ហ្គីធូ",
+   "latin": "Guytho",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ហ្គៃ",
+   "latin": "Gai",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ហ្វាទីម៉ា",
+   "latin": "Fatima",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ហ្ស៊ី",
+   "latin": "Zhi",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ហ្សូបេ",
+   "latin": "Zogbe",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ឡងឌី",
+   "latin": "Lundy",
+   "count": 1,
+   "variants": {},
+   "status": "agree",
+   "bundledLatin": "Lundy"
+  },
+  {
+   "khmer": "ឡាបូរ៉ាវី",
+   "latin": "Laboravy",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ឡាយ",
+   "latin": "Lay",
+   "count": 1,
+   "variants": {},
+   "status": "agree",
+   "bundledLatin": "Lay"
+  },
+  {
+   "khmer": "ឡាយអិន",
+   "latin": "Lion",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ឡី",
+   "latin": "Ley",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ឡូតូ",
+   "latin": "Loto",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "អ៊ន",
+   "latin": "Orn",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "អនុរុទ្ធ",
+   "latin": "Aniruddha",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "អនោរថា",
+   "latin": "Anawrahta",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "អភ័យវង្ស",
+   "latin": "Apaiwong",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "អាំង",
+   "latin": "Ang",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "អាន",
+   "latin": "An",
+   "count": 1,
+   "variants": {},
+   "status": "agree",
+   "bundledLatin": "An"
+  },
+  {
+   "khmer": "អាន់ដ្រេស",
+   "latin": "Andres",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "អាន់ឌើរសុន",
+   "latin": "Anderson",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "អាន់ឌ្រេ",
+   "latin": "Andre",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "អាប់",
+   "latin": "'abd",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "អាបឌែល",
+   "latin": "Kader",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "អាយុទ្ធ",
+   "latin": "Ayuth",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "អាំរ៉ាម",
+   "latin": "Amram",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "អារីសស្ដូថូល",
+   "latin": "Aristotle",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "អាលីសឺរ",
+   "latin": "Alisher",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "អ៊ាវ",
+   "latin": "Iew",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "អ៉ិត",
+   "latin": "Ith",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "អី",
+   "latin": "Ei",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "អ៊ីបន",
+   "latin": "Ibn",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "អ៊ឹម",
+   "latin": "Im",
+   "count": 1,
+   "variants": {},
+   "status": "agree",
+   "bundledLatin": "Im"
+  },
+  {
+   "khmer": "អឺរ៉ាតូស្តែន",
+   "latin": "Eratosthenes",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "អ៊ុំ",
+   "latin": "Um",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "អ៊ុង",
+   "latin": "Ong",
+   "count": 1,
+   "variants": {},
+   "status": "conflict",
+   "bundledLatin": "Ung"
+  },
+  {
+   "khmer": "អុល",
+   "latin": "Ol",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "អុីអាហ្គោ",
+   "latin": "Iago",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "អ៊ូ",
+   "latin": "Virak",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "អូកាវ៉ា",
+   "latin": "Ogawa",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "អ៊ូច",
+   "latin": "Leng",
+   "count": 1,
+   "variants": {},
+   "status": "conflict",
+   "bundledLatin": "Ouch"
+  },
+  {
+   "khmer": "អូនីល",
+   "latin": "O'neill",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "អូសេ",
+   "latin": "Ose",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "អូស្ម័ន",
+   "latin": "Ousman",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "អូឡារាំង",
+   "latin": "Aularong",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "អៀ",
+   "latin": "Ieu",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "អេ",
+   "latin": "Eh",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "អេស្តេបាន",
+   "latin": "Esteban",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "អេហ្វស៊ី",
+   "latin": "F.c.",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "អ្នកព្រះមាតាបាន",
+   "latin": "Ban",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "អ្នកម្នាងកែវ",
+   "latin": "Keo",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "អ្នកម្នាងទេវី",
+   "latin": "Tevi",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "អ្នកម្នាងទៃ",
+   "latin": "Tey",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ឥន្ទរាជា",
+   "latin": "Intharacha",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ឥន្ទ្រវរ្ម័ន",
+   "latin": "Indravarman",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ឧទ័យរាជា",
+   "latin": "Outey",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ឧទយាទិត្យវម៌្ម",
+   "latin": "Udayadityavarman",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ឧបាលិ",
+   "latin": "Upali",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ឫទ្ធី",
+   "latin": "Reththy",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  },
+  {
+   "khmer": "ឯម",
+   "latin": "Em",
+   "count": 1,
+   "variants": {},
+   "status": "agree",
+   "bundledLatin": "Em"
+  },
+  {
+   "khmer": "ឱក",
+   "latin": "Aok",
+   "count": 1,
+   "variants": {},
+   "status": "agree",
+   "bundledLatin": "Aok"
+  },
+  {
+   "khmer": "ឱកញាឱង",
+   "latin": "Ong",
+   "count": 1,
+   "variants": {},
+   "status": "new"
+  }
+ ]
+}

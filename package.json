@@ -32,6 +32,10 @@
   "scripts": {
     "build": "tsc -p tsconfig.json",
     "test": "vitest run",
+    "eval:famous": "node scripts/eval-famous.mjs",
+    "scrape:names": "python3 scripts/scrape_names.py",
+    "eval:scraped": "node scripts/eval-scraped.mjs",
+    "mine:tokens": "node scripts/mine-tokens.mjs",
     "prepublishOnly": "npm run build"
   },
   "keywords": [

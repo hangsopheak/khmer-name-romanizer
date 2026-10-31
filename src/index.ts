@@ -22,5 +22,4 @@ export type {
     TranslitToken,
     TranslitResult,
     TransliteratorOptions,
-    WholeNameDictionaryData,
 } from './types.js'
