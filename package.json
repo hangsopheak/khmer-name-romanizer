@@ -27,7 +27,7 @@
     "LICENSE"
   ],
   "bin": {
-    "khmer-name-romanizer": "./bin/cli.js"
+    "khmer-name-romanizer": "bin/cli.js"
   },
   "scripts": {
     "build": "tsc -p tsconfig.json",

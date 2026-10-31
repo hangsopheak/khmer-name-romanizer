@@ -91,13 +91,13 @@ The leave-one-out rows are the honest numbers — dictionaries are rebuilt witho
 
 **Famous names (72)** — royalty, Angkor kings, prime ministers, film stars, singers, monks (`npm run eval:famous`): **70/72 exact**, 0.989 mean. Before these tokens were bundled, the same kind of name scored 15% — the dictionary is what famous-name accuracy is made of.
 
-**Wikimedia corpus** — ~1,800 scraped Khmer↔Latin pairs from five SPARQL passes (kmwiki humans, Cambodian citizens, all humans with km+en labels, km/en article *titles*, given-/family-name items — the latter are foreign transcriptions and land in the out-of-domain bucket). Scraping is incremental and failure-tolerant; the full refresh loop is `scrape:names` → `eval:scraped` → `mine:tokens` → `merge:tokens`, where `merge:tokens` regenerates `src/token-data.ts` in-repo:
+**Wikimedia corpus** — ~2,000 scraped Khmer↔Latin pairs from five SPARQL passes (kmwiki humans, Cambodian citizens, all humans with km+en labels, km/en article *titles*, given-/family-name items — the latter are foreign transcriptions and land in the out-of-domain bucket). Scraping is incremental and failure-tolerant; the full refresh loop is `scrape:names` → `eval:scraped` → `mine:tokens` → `merge:tokens`, where `merge:tokens` regenerates `src/token-data.ts` in-repo:
 
 | Corpus | n | Exact | Top-5 | Mean sim |
 |---|---|---|---|---|
 | Cambodian citizens | 414 | 118 (28.5%) | 167 (40.3%) | 0.804 |
 | + historical/regnal names | 598 | 128 (21.4%) | 181 (30.3%) | 0.724 |
-| Foreign names written in Khmer (out of domain) | 1198 | 23 (1.9%) | 36 (3.0%) | 0.622 |
+| Foreign names written in Khmer (out of domain) | 1421 | 28 (2.0%) | 43 (3.0%) | 0.632 |
 
 On unseen Cambodian-citizen names the package lands within its leave-one-out range (28.5% vs 23.5% exact) — correct generalization, with the rest of the truth in `candidates`. Known weak spot: regnal names, a different register this package does not target. `scripts/mined-tokens.json` keeps 472 candidate tokens for review; tokens with ≥2 attestations are merged, and conflicting corpus spellings with ≥2 attestations (Samnang for សំណាង, Rattana for រតនា…) are folded in as `variants` while the verified canonicals stay untouched.
 
