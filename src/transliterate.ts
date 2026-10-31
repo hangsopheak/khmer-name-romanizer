@@ -234,6 +234,10 @@ export function createTransliterator(options: TransliteratorOptions = {}): Trans
             }
         }
         resolved ??= tokens.map(resolveToken)
+        // Tokens that render empty (stray marks, e.g. a lone ៈ left by a
+        // roster typo) are noise: drop them so value/candidates never get
+        // double spaces.
+        resolved = resolved.filter((t) => t.latin.length > 0)
 
         // Name-level source is the weakest token source: 'tokens' only when
         // every token came from the dictionary. Per-token composition beats

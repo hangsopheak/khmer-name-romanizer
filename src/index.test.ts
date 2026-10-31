@@ -76,6 +76,12 @@ describe('khmer-name-romanizer', () => {
         expect(s.honorifics ?? []).toEqual([])
     })
 
+    it('drops tokens that render empty instead of double-spacing', () => {
+        const r = createDefaultTransliterator().transliterate('ចន្ទ ៈ បុត្រ')
+        expect(r.value).toBe('Chan Pot') // single space, was "Chan␣␣Pot"
+        expect(r.candidates.every((c) => !/\s{2,}/.test(c))).toBe(true)
+    })
+
     it('extends the bundled dictionary with caller tokenDict entries', () => {
         const t = createDefaultTransliterator({ tokenDict: { ដារា: { latin: 'Dara', count: 1 } } })
         const result = t.transliterate('តាំង ដារា')
