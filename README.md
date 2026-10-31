@@ -2,7 +2,7 @@
 
 Khmer script → Latin transliteration for **Cambodian personal names** (passport/roster style romanization). Zero runtime dependencies. TypeScript.
 
-**Accuracy (unseen names):** 86/366 exact roster matches · 154/366 with the optional FST tier · 70/72 famous Cambodians — [full benchmarks](#accuracy)
+**Accuracy (held-out names):** 86/366 roster (leave-one-out) · 81/414 Wikidata citizens (5-fold CV) · 154/366 with the optional FST tier · 70/72 famous Cambodians (in-sample) — [full benchmarks](#accuracy)
 
 ```bash
 npx khmer-name-romanizer "ហង្ស សុភ័ក្រ្ត"     # Hang Sopheak
@@ -91,7 +91,7 @@ The leave-one-out rows are the honest numbers — dictionaries are rebuilt witho
 
 **Famous names (72)** — royalty, Angkor kings, prime ministers, film stars, singers, monks (`npm run eval:famous`): **70/72 exact**, 0.989 mean. Before these tokens were bundled, the same kind of name scored 15% — the dictionary is what famous-name accuracy is made of.
 
-**Wikimedia corpus** — ~2,000 scraped Khmer↔Latin pairs from five SPARQL passes (kmwiki humans, Cambodian citizens, all humans with km+en labels, km/en article *titles*, given-/family-name items — the latter are foreign transcriptions and land in the out-of-domain bucket). Scraping is incremental and failure-tolerant; the full refresh loop is `scrape:names` → `eval:scraped` → `mine:tokens` → `merge:tokens`, where `merge:tokens` regenerates `src/token-data.ts` in-repo:
+**Wikimedia corpus** — ~2,400 scraped Khmer↔Latin pairs from five SPARQL passes (kmwiki humans, Cambodian citizens, all humans with km+en labels, km/en article *titles*, given-/family-name items — the latter are foreign transcriptions and land in the out-of-domain bucket). Scraping is incremental and failure-tolerant; the full refresh loop is `scrape:names` → `eval:scraped` → `mine:tokens` → `merge:tokens`, where `merge:tokens` regenerates `src/token-data.ts` in-repo:
 
 | Corpus | n | Exact | Top-5 | Mean sim |
 |---|---|---|---|---|
@@ -99,7 +99,14 @@ The leave-one-out rows are the honest numbers — dictionaries are rebuilt witho
 | + historical/regnal names | 598 | 128 (21.4%) | 181 (30.3%) | 0.724 |
 | Foreign names written in Khmer (out of domain) | 1421 | 28 (2.0%) | 43 (3.0%) | 0.632 |
 
-On unseen Cambodian-citizen names the package lands within its leave-one-out range (28.5% vs 23.5% exact) — correct generalization, with the rest of the truth in `candidates`. Known weak spot: regnal names, a different register this package does not target. `scripts/mined-tokens.json` keeps 472 candidate tokens for review; tokens with ≥2 attestations are merged, and conflicting corpus spellings with ≥2 attestations (Samnang for សំណាង, Rattana for រតនា…) are folded in as `variants` while the verified canonicals stay untouched.
+**How honest are those numbers?** The table scores the shipped dictionary on this corpus — but that dictionary already contains ≥2-attestation tokens mined *from* it, so the figures are partly in-sample. `npm run eval:kfold` runs 5-fold cross-validation: per fold it rebuilds the leakage-free dictionary the package would ship without the test fold, then scores only that fold:
+
+| Citizens (414) | Exact | Top-5 | Mean sim |
+|---|---|---|---|
+| Shipped dictionary (partly in-sample) | 118 (28.5%) | 167 (40.3%) | 0.804 |
+| **5-fold CV (leakage-free)** | **81 (19.6%)** | **125 (30.2%)** | 0.786 |
+
+The k-fold figure is the honest unseen-name number, in line with the roster leave-one-out (23.5% exact); it is identical at k=10. Note what leakage inflates: exact-form recall drops 8.9pp, but mean similarity barely moves (0.804 → 0.786) — unseen guesses stay near-misses, with the official spelling usually still in `candidates`. Known weak spot: regnal names, a different register this package does not target. `scripts/mined-tokens.json` keeps 472 candidate tokens for review; tokens with ≥2 attestations are merged, and conflicting corpus spellings with ≥2 attestations (Samnang for សំណាង, Rattana for រតនា…) are folded in as `variants` while the verified canonicals stay untouched.
 
 **One-to-many is inherent.** The dictionary stores the most frequent spelling per token (ties go closest to the rule reading) and keeps alternatives in `variants`. When you know a person's official spelling, keep your own Khmer→Latin map and override tokens via `tokenDict`.
 

@@ -80,9 +80,9 @@ function bucketReport(list) {
     return { n: list.length, exact, exactAnyOrder, top5, ge90, ge75, meanSim: +meanSim.toFixed(3) }
 }
 
-const buckets = { cambodian: [], unknown: [], foreign: [] }
+const buckets = { cambodian: [], unknown: [], curated: [], foreign: [] }
 for (const r of results) (buckets[r.bucket] ??= []).push(r)
-const inDomain = [...buckets.cambodian, ...buckets.unknown]
+const inDomain = [...buckets.cambodian, ...buckets.unknown, ...buckets.curated]
 
 const fmt = (label, rep) =>
     rep
@@ -91,9 +91,10 @@ const fmt = (label, rep) =>
 
 console.log('Scraped-corpus reliability (scripts/scraped-names.json)')
 console.log(`rows: ${pairs.length} unique scraped, ${excluded.length} excluded as junk`)
-console.log(fmt('IN-DOMAIN (cambodian+unknown)', bucketReport(inDomain)))
+console.log(fmt('IN-DOMAIN (cambodian+unknown+curated)', bucketReport(inDomain)))
 console.log(fmt('  cambodian citizens', bucketReport(buckets.cambodian)))
 console.log(fmt('  unknown (ancient kings etc.)', bucketReport(buckets.unknown)))
+console.log(fmt('  curated lists (kname, CC0 surnames)', bucketReport(buckets.curated)))
 console.log(fmt('foreign (out of domain)', bucketReport(buckets.foreign)))
 
 const misses = inDomain.filter((r) => !r.hit && !r.orderOnly).sort((a, b) => a.sim - b.sim)

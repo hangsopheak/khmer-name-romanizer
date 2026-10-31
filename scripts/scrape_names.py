@@ -1,21 +1,34 @@
 #!/usr/bin/env python3
 """Scrape Khmer <-> Latin person-name pairs for khmer-name-romanizer.
 
-Sources (all Wikimedia, all openly licensed — no election/government
-sites are touched):
+Sources (all openly licensed — no election/government sites are touched):
 
-  1. Wikidata SPARQL — humans with a Khmer Wikipedia article, Khmer and
-     English labels as the attested pair.
-  2. Wikidata SPARQL — any Cambodian citizen (P27=Q424) with both labels,
-     even without a Khmer Wikipedia article.
-  3. Wikidata SPARQL — any human with both labels (widens the foreign
-     bucket: Khmer renderings of international names).
-  4. Wikidata SPARQL — humans with BOTH a km.wikipedia and en.wikipedia
-     article, using the article *titles* as the pair (a second attestation
-     path that catches items whose labels are missing or stale).
-  5. Wikidata SPARQL — given-name / family-name items (P31=Q12308941 /
-     Q101352) with both labels: pure name tokens, the highest-value
-     dictionary material.
+  Wikidata SPARQL (CC0):
+  1. humans with a Khmer Wikipedia article, Khmer and English labels as
+     the attested pair.
+  2. any Cambodian citizen (P27=Q424) with both labels, even without a
+     Khmer Wikipedia article.
+  3. any human with both labels (widens the foreign bucket: Khmer
+     renderings of international names) — paged, tolerates partial runs.
+  4. humans with BOTH a km.wikipedia and en.wikipedia article, using the
+     article *titles* as the pair.
+  5. given-name / family-name items — foreign transcriptions, eval-only.
+  6. P1559 "name in native language" statements in Khmer + English label:
+     people (overwhelmingly Cambodian) whose native name is a statement
+     rather than a km label — a population the label passes never see.
+  7. P1477 birth-name statements in Khmer + English label, same shape.
+
+  Curated static datasets (scripts/sources/, committed with license +
+  provenance headers):
+  8. kname (MIT) — Cambodian given-name/surname tokens with romanizations.
+  9. sigpwned/popular-names-by-country (CC0) — most common KH surnames,
+     Google-Translate artifacts filtered out.
+
+  Wikipedia redirects (MediaWiki API — healthy even when SPARQL is not):
+ 10. km.wikipedia redirects to a corpus article are alternate KHMER
+     spellings of a known pair -> new corpus rows. en.wikipedia redirects
+     are alternate LATIN spellings, stored on the parent row as `altLatin`
+     (attestation material for the token miner, not eval targets).
 
 Stdlib only, no pip dependencies. Writes scripts/scraped-names.json
 (and a raw dump next to it for provenance). A query that times out or
@@ -119,11 +132,52 @@ SELECT ?item ?km ?en ("foreign" AS ?bucket) WHERE {
 LIMIT %d
 """
 
+# Sixth pass: P1559 "name in native language" statements in Khmer with an
+# English label. These are people — overwhelmingly Cambodians — whose
+# native name lives in a *statement* because the item has no km label, so
+# no label-based pass ever sees them. In-domain gold.
+QUERY_NATIVE_NAMES = """
+SELECT ?item ?km ?en (IF(BOUND(?khmerCtz), "cambodian", IF(BOUND(?otherCtz), "foreign", "unknown")) AS ?bucket) WHERE {
+  ?item wdt:P31 wd:Q5 .
+  ?item wdt:P1559 ?km . FILTER(LANG(?km) = "km")
+  ?item rdfs:label ?en . FILTER(LANG(?en) = "en")
+  OPTIONAL { ?item wdt:P27 wd:Q424 . BIND("x" AS ?khmerCtz) }
+  OPTIONAL { ?item wdt:P27 ?anyCtz . FILTER(?anyCtz != wd:Q424) BIND("x" AS ?otherCtz) }
+}
+LIMIT %d
+"""
+
+# Seventh pass: P1477 "birth name" statements in Khmer with an English
+# label — same rationale as P1559.
+QUERY_BIRTH_NAMES = """
+SELECT ?item ?km ?en (IF(BOUND(?khmerCtz), "cambodian", IF(BOUND(?otherCtz), "foreign", "unknown")) AS ?bucket) WHERE {
+  ?item wdt:P31 wd:Q5 .
+  ?item wdt:P1477 ?km . FILTER(LANG(?km) = "km")
+  ?item rdfs:label ?en . FILTER(LANG(?en) = "en")
+  OPTIONAL { ?item wdt:P27 wd:Q424 . BIND("x" AS ?khmerCtz) }
+  OPTIONAL { ?item wdt:P27 ?anyCtz . FILTER(?anyCtz != wd:Q424) BIND("x" AS ?otherCtz) }
+}
+LIMIT %d
+"""
+
+# Curated static datasets, committed under scripts/sources/ with license
+# and provenance headers. Rows land in the "curated" bucket: in-domain for
+# dictionary mining, reported as its own eval line.
+# (path, source tag, human note)
+STATIC_SOURCES = [
+    ("scripts/sources/kname-names.json", "static/kname",
+     "kname: MIT-licensed Cambodian name tokens with romanizations"),
+    ("scripts/sources/sigpwned-kh.json", "static/sigpwned",
+     "sigpwned most-common KH surnames (CC0), translate-junk filtered"),
+]
+
 # (query, per-query limit, source tag, human note) — processed in order of
 # trust, so the first source to see a Khmer name owns its `source` field.
 SOURCES = [
     (QUERY, 20000, "wikidata/kmwiki-humans", "kmwiki humans with en labels"),
     (QUERY_CAMBODIANS, 20000, "wikidata/cambodian-citizens", "Cambodian citizens with km+en labels"),
+    (QUERY_NATIVE_NAMES, 20000, "wikidata/native-names", "P1559 native-name statements with en labels"),
+    (QUERY_BIRTH_NAMES, 20000, "wikidata/birth-names", "P1477 birth-name statements with en labels"),
     (QUERY_SITELINK_TITLES, 50000, "wikipedia/km-en-titles", "humans with kmwiki+enwiki article titles"),
     (QUERY_GIVEN_NAMES, 20000, "wikidata/given-names", "given-name items with km+en labels"),
     (QUERY_FAMILY_NAMES, 20000, "wikidata/family-names", "family-name items with km+en labels"),
@@ -304,6 +358,127 @@ def fetch_sparql_paged(query: str, page: int, offset: int, note: str, attempts: 
     return rows
 
 
+def load_static(path: str, source: str) -> list:
+    """Load a curated static dataset into SPARQL-row shape for absorb().
+
+    Each file under scripts/sources/ carries its license and origin so
+    provenance travels with the data; pairs are single-token name pairs
+    (bucket "curated").
+    """
+    file = Path(path)
+    if not file.exists():
+        print(f"  static source missing: {path} (skipped)", file=sys.stderr)
+        return []
+    data = json.loads(file.read_text(encoding="utf-8"))
+    origin = data.get("origin", source)
+    return [
+        {
+            "item": {"value": origin},
+            "km": {"value": p["khmer"]},
+            "en": {"value": p["latin"]},
+            "bucket": {"value": p.get("bucket", "curated")},
+        }
+        for p in data.get("pairs", [])
+    ]
+
+
+def _mw_api(host: str, params: dict, attempts: int = 2) -> dict:
+    """One MediaWiki API call with light retry; {} on failure."""
+    url = f"https://{host}/w/api.php?" + urllib.parse.urlencode(params)
+    request = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
+    for attempt in range(1, attempts + 1):
+        try:
+            with urllib.request.urlopen(request, timeout=60) as response:
+                return json.loads(response.read().decode("utf-8"))
+        except Exception as exc:  # noqa: BLE001 — a failed batch is skipped, not fatal
+            if attempt == attempts:
+                print(f"  api call FAILED ({exc}); skipping batch", file=sys.stderr)
+                return {}
+            time.sleep(5 * attempt)
+    return {}
+
+
+def fetch_redirect_spellings(pairs: list) -> list:
+    """Alternate spellings from Wikipedia redirects (MediaWiki API).
+
+    Redirect titles are facts: every redirect to a person's article is a
+    spelling someone considered canonical enough to link. Khmer-side
+    redirects become NEW corpus rows (a distinct Khmer key: an alternate
+    Khmer spelling attested against the parent's Latin name). Latin-side
+    redirects are stored on the parent row as `altLatin` — attestation
+    material for the token miner, never a second eval target.
+
+    Strict same-token-count on both sides: redirects are attestation
+    fuel, and a misaligned pair would be pure noise.
+    """
+    def rows_from(parent: dict, khmer: str, latin: str, source: str) -> dict:
+        return {
+            "item": {"value": parent.get("qid", "")},
+            "km": {"value": khmer},
+            "en": {"value": latin},
+            "bucket": {"value": parent["bucket"]},
+        }
+
+    out = []
+    batches = [pairs[i:i + 40] for i in range(0, len(pairs), 40)]
+
+    # --- Khmer side: km.wikipedia redirects to a corpus article title ---
+    found_km = 0
+    for batch in batches:
+        data = _mw_api("km.wikipedia.org", {
+            "action": "query", "prop": "redirects", "format": "json",
+            "formatversion": 2, "rdlimit": 30,
+            "titles": "|".join(p["khmer"] for p in batch),
+        })
+        by_title = {p["khmer"]: p for p in batch}
+        for page in data.get("query", {}).get("pages", []):
+            parent = by_title.get(page.get("title", ""))
+            if not parent:
+                continue
+            for rd in page.get("redirects", []):
+                alt = khmer_ordinal_stripped(clean_khmer(rd["title"]))
+                latin = parent["latin"]
+                if alt == parent["khmer"]:
+                    continue
+                if not looks_like_name_pair(alt, latin):
+                    continue
+                if len(alt.split(" ")) != len(latin.split(" ")):
+                    continue
+                out.append(rows_from(parent, alt, latin, "wikipedia/redirects-km"))
+                found_km += 1
+        time.sleep(0.2)
+    print(f"  km-side redirect spellings found: {found_km}", file=sys.stderr)
+
+    # --- Latin side: en.wikipedia redirects -> altLatin on the parent row ---
+    found_en = 0
+    for batch in batches:
+        data = _mw_api("en.wikipedia.org", {
+            "action": "query", "prop": "redirects", "format": "json",
+            "formatversion": 2, "rdlimit": 30,
+            "titles": "|".join(p["latin"] for p in batch),
+        })
+        by_title = {p["latin"]: p for p in batch}
+        for page in data.get("query", {}).get("pages", []):
+            parent = by_title.get(page.get("title", ""))
+            if not parent:
+                continue
+            for rd in page.get("redirects", []):
+                alt = clean_latin(rd["title"])
+                if alt.lower() == parent["latin"].lower():
+                    continue
+                if not looks_like_name_pair(parent["khmer"], alt):
+                    continue
+                if len(alt.split(" ")) != len(parent["khmer"].split(" ")):
+                    continue
+                alts = parent.setdefault("altLatin", [])
+                if alt not in alts:
+                    alts.append(alt)
+                    found_en += 1
+        time.sleep(0.2)
+    print(f"  en-side redirect spellings found: {found_en}", file=sys.stderr)
+    return out
+
+
 def reclean(pairs: list) -> list:
     """Re-apply cleaning/shape filters to already-stored corpus rows.
 
@@ -390,6 +565,15 @@ def main() -> int:
 
     for query, limit, source, note in SOURCES:
         absorb(fetch_sparql(query, args.limit or limit, note), source)
+
+    for path, source, note in STATIC_SOURCES:
+        print(f"loading static source: {note} ...", file=sys.stderr)
+        absorb(load_static(path, source), source)
+
+    print("fetching Wikipedia redirect spellings (MediaWiki API) ...", file=sys.stderr)
+    redirect_rows = fetch_redirect_spellings(
+        [p for p in seen.values() if p.get("bucket") in ("cambodian", "unknown", "foreign")])
+    absorb(redirect_rows, "wikipedia/redirects-km")
 
     for query, page, max_pages, source, note in PAGED_SOURCES:
         if args.limit:

@@ -35,6 +35,7 @@
     "eval:famous": "node scripts/eval-famous.mjs",
     "scrape:names": "python3 scripts/scrape_names.py",
     "eval:scraped": "node scripts/eval-scraped.mjs",
+    "eval:kfold": "node scripts/eval-kfold.mjs",
     "mine:tokens": "node scripts/mine-tokens.mjs",
     "merge:tokens": "node scripts/merge-tokens.mjs && npm run build",
     "prepublishOnly": "npm test && npm run build"

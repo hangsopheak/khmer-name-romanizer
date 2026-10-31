@@ -1,0 +1,334 @@
+{
+ "generated": "2026-10-31T13:17:34.217Z",
+ "k": 10,
+ "min": 2,
+ "evalRows": 598,
+ "folds": [
+  {
+   "fold": 0,
+   "testRows": 60,
+   "dictSize": 763,
+   "removed": 13,
+   "addedByTrain": 0,
+   "enrichedByTrain": 0,
+   "perFold": {
+    "n": 60,
+    "exact": 7,
+    "exactPct": 11.7,
+    "anyOrder": 8,
+    "top5": 14,
+    "top5Pct": 23.3,
+    "meanSim": 0.741
+   }
+  },
+  {
+   "fold": 1,
+   "testRows": 60,
+   "dictSize": 767,
+   "removed": 9,
+   "addedByTrain": 0,
+   "enrichedByTrain": 0,
+   "perFold": {
+    "n": 60,
+    "exact": 11,
+    "exactPct": 18.3,
+    "anyOrder": 11,
+    "top5": 15,
+    "top5Pct": 25,
+    "meanSim": 0.688
+   }
+  },
+  {
+   "fold": 2,
+   "testRows": 60,
+   "dictSize": 767,
+   "removed": 9,
+   "addedByTrain": 0,
+   "enrichedByTrain": 0,
+   "perFold": {
+    "n": 60,
+    "exact": 12,
+    "exactPct": 20,
+    "anyOrder": 12,
+    "top5": 17,
+    "top5Pct": 28.3,
+    "meanSim": 0.709
+   }
+  },
+  {
+   "fold": 3,
+   "testRows": 60,
+   "dictSize": 769,
+   "removed": 7,
+   "addedByTrain": 0,
+   "enrichedByTrain": 0,
+   "perFold": {
+    "n": 60,
+    "exact": 10,
+    "exactPct": 16.7,
+    "anyOrder": 11,
+    "top5": 13,
+    "top5Pct": 21.7,
+    "meanSim": 0.714
+   }
+  },
+  {
+   "fold": 4,
+   "testRows": 60,
+   "dictSize": 759,
+   "removed": 17,
+   "addedByTrain": 0,
+   "enrichedByTrain": 0,
+   "perFold": {
+    "n": 60,
+    "exact": 5,
+    "exactPct": 8.3,
+    "anyOrder": 5,
+    "top5": 9,
+    "top5Pct": 15,
+    "meanSim": 0.697
+   }
+  },
+  {
+   "fold": 5,
+   "testRows": 60,
+   "dictSize": 765,
+   "removed": 11,
+   "addedByTrain": 0,
+   "enrichedByTrain": 0,
+   "perFold": {
+    "n": 60,
+    "exact": 7,
+    "exactPct": 11.7,
+    "anyOrder": 8,
+    "top5": 13,
+    "top5Pct": 21.7,
+    "meanSim": 0.733
+   }
+  },
+  {
+   "fold": 6,
+   "testRows": 60,
+   "dictSize": 751,
+   "removed": 25,
+   "addedByTrain": 0,
+   "enrichedByTrain": 0,
+   "perFold": {
+    "n": 60,
+    "exact": 9,
+    "exactPct": 15,
+    "anyOrder": 9,
+    "top5": 12,
+    "top5Pct": 20,
+    "meanSim": 0.767
+   }
+  },
+  {
+   "fold": 7,
+   "testRows": 60,
+   "dictSize": 766,
+   "removed": 10,
+   "addedByTrain": 0,
+   "enrichedByTrain": 0,
+   "perFold": {
+    "n": 60,
+    "exact": 11,
+    "exactPct": 18.3,
+    "anyOrder": 11,
+    "top5": 17,
+    "top5Pct": 28.3,
+    "meanSim": 0.721
+   }
+  },
+  {
+   "fold": 8,
+   "testRows": 59,
+   "dictSize": 764,
+   "removed": 12,
+   "addedByTrain": 0,
+   "enrichedByTrain": 0,
+   "perFold": {
+    "n": 59,
+    "exact": 10,
+    "exactPct": 16.9,
+    "anyOrder": 10,
+    "top5": 15,
+    "top5Pct": 25.4,
+    "meanSim": 0.7
+   }
+  },
+  {
+   "fold": 9,
+   "testRows": 59,
+   "dictSize": 765,
+   "removed": 11,
+   "addedByTrain": 0,
+   "enrichedByTrain": 0,
+   "perFold": {
+    "n": 59,
+    "exact": 9,
+    "exactPct": 15.3,
+    "anyOrder": 10,
+    "top5": 13,
+    "top5Pct": 22,
+    "meanSim": 0.638
+   }
+  }
+ ],
+ "perFold": [
+  {
+   "n": 60,
+   "exact": 7,
+   "exactPct": 11.7,
+   "anyOrder": 8,
+   "top5": 14,
+   "top5Pct": 23.3,
+   "meanSim": 0.741
+  },
+  {
+   "n": 60,
+   "exact": 11,
+   "exactPct": 18.3,
+   "anyOrder": 11,
+   "top5": 15,
+   "top5Pct": 25,
+   "meanSim": 0.688
+  },
+  {
+   "n": 60,
+   "exact": 12,
+   "exactPct": 20,
+   "anyOrder": 12,
+   "top5": 17,
+   "top5Pct": 28.3,
+   "meanSim": 0.709
+  },
+  {
+   "n": 60,
+   "exact": 10,
+   "exactPct": 16.7,
+   "anyOrder": 11,
+   "top5": 13,
+   "top5Pct": 21.7,
+   "meanSim": 0.714
+  },
+  {
+   "n": 60,
+   "exact": 5,
+   "exactPct": 8.3,
+   "anyOrder": 5,
+   "top5": 9,
+   "top5Pct": 15,
+   "meanSim": 0.697
+  },
+  {
+   "n": 60,
+   "exact": 7,
+   "exactPct": 11.7,
+   "anyOrder": 8,
+   "top5": 13,
+   "top5Pct": 21.7,
+   "meanSim": 0.733
+  },
+  {
+   "n": 60,
+   "exact": 9,
+   "exactPct": 15,
+   "anyOrder": 9,
+   "top5": 12,
+   "top5Pct": 20,
+   "meanSim": 0.767
+  },
+  {
+   "n": 60,
+   "exact": 11,
+   "exactPct": 18.3,
+   "anyOrder": 11,
+   "top5": 17,
+   "top5Pct": 28.3,
+   "meanSim": 0.721
+  },
+  {
+   "n": 59,
+   "exact": 10,
+   "exactPct": 16.9,
+   "anyOrder": 10,
+   "top5": 15,
+   "top5Pct": 25.4,
+   "meanSim": 0.7
+  },
+  {
+   "n": 59,
+   "exact": 9,
+   "exactPct": 15.3,
+   "anyOrder": 10,
+   "top5": 13,
+   "top5Pct": 22,
+   "meanSim": 0.638
+  }
+ ],
+ "shipped": {
+  "cambodian": {
+   "n": 414,
+   "exact": 118,
+   "exactPct": 28.5,
+   "anyOrder": 123,
+   "top5": 167,
+   "top5Pct": 40.3,
+   "meanSim": 0.804
+  },
+  "unknown": {
+   "n": 184,
+   "exact": 10,
+   "exactPct": 5.4,
+   "anyOrder": 11,
+   "top5": 14,
+   "top5Pct": 7.6,
+   "meanSim": 0.546
+  },
+  "curated": {
+   "n": 0
+  },
+  "inDomain": {
+   "n": 598,
+   "exact": 128,
+   "exactPct": 21.4,
+   "anyOrder": 134,
+   "top5": 181,
+   "top5Pct": 30.3,
+   "meanSim": 0.724
+  }
+ },
+ "kfold": {
+  "cambodian": {
+   "n": 414,
+   "exact": 81,
+   "exactPct": 19.6,
+   "anyOrder": 84,
+   "top5": 125,
+   "top5Pct": 30.2,
+   "meanSim": 0.785
+  },
+  "unknown": {
+   "n": 184,
+   "exact": 10,
+   "exactPct": 5.4,
+   "anyOrder": 11,
+   "top5": 13,
+   "top5Pct": 7.1,
+   "meanSim": 0.544
+  },
+  "curated": {
+   "n": 0
+  },
+  "inDomain": {
+   "n": 598,
+   "exact": 91,
+   "exactPct": 15.2,
+   "anyOrder": 95,
+   "top5": 138,
+   "top5Pct": 23.1,
+   "meanSim": 0.711
+  }
+ }
+}

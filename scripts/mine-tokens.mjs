@@ -21,25 +21,36 @@ const top = Number(process.argv.includes('--top')
     : 30)
 
 const pairs = JSON.parse(readFileSync(new URL('./scraped-names.json', import.meta.url), 'utf8'))
-const inDomain = pairs.filter((p) => p.bucket === 'cambodian' || p.bucket === 'unknown')
+const inDomain = pairs.filter((p) => ['cambodian', 'unknown', 'curated'].includes(p.bucket))
 
 const counts = new Map()
 let aligned = 0
-for (const p of inDomain) {
-    const kt = p.khmer.split(' ')
-    const lw = p.latin.split(' ')
-    if (kt.length !== lw.length) continue
-    aligned++
+const countAttestation = (kt, words, source) => {
     kt.forEach((k, i) => {
-        const word = lw[i]
+        const word = words[i]
         const latin = word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()
         if (!counts.has(k)) counts.set(k, new Map())
         const m = counts.get(k)
         const hit = m.get(latin) ?? { count: 0, sources: new Set() }
         hit.count += 1
-        hit.sources.add(p.source ?? 'unknown')
+        hit.sources.add(source)
         m.set(latin, hit)
     })
+}
+for (const p of inDomain) {
+    const kt = p.khmer.split(' ')
+    const lw = p.latin.split(' ')
+    if (kt.length === lw.length) {
+        aligned++
+        countAttestation(kt, lw, p.source ?? 'unknown')
+    }
+    // alternate Latin spellings harvested from en.wikipedia redirects:
+    // extra attestations (variant material), never counted as alignments
+    for (const alt of p.altLatin ?? []) {
+        const aw = alt.split(' ')
+        if (aw.length !== kt.length) continue
+        countAttestation(kt, aw, 'wikipedia/redirects-en')
+    }
 }
 
 const titleCase = (w) => w.split(' ').map((x) => x[0].toUpperCase() + x.slice(1).toLowerCase()).join(' ')

@@ -1,0 +1,296 @@
+{
+ "license": "MIT",
+ "origin": "https://github.com/kennntech/kname assets/khmer_names.json (fetched 2026-10-31); unique given-name and surname tokens with their romanizations",
+ "pairs": [
+  {
+   "khmer": "គន់",
+   "latin": "Kon",
+   "bucket": "curated"
+  },
+  {
+   "khmer": "គឹម",
+   "latin": "Kim",
+   "bucket": "curated"
+  },
+  {
+   "khmer": "គុណ",
+   "latin": "Kun",
+   "bucket": "curated"
+  },
+  {
+   "khmer": "ចក្រា",
+   "latin": "Chakra",
+   "bucket": "curated"
+  },
+  {
+   "khmer": "ចន្ទ្នារី",
+   "latin": "Channary",
+   "bucket": "curated"
+  },
+  {
+   "khmer": "ចន្ទ្រា",
+   "latin": "Chantrea",
+   "bucket": "curated"
+  },
+  {
+   "khmer": "ចាន់",
+   "latin": "Chan",
+   "bucket": "curated"
+  },
+  {
+   "khmer": "ឆន",
+   "latin": "Chan",
+   "bucket": "curated"
+  },
+  {
+   "khmer": "ឆៃ",
+   "latin": "Chhay",
+   "bucket": "curated"
+  },
+  {
+   "khmer": "ជា",
+   "latin": "Chea",
+   "bucket": "curated"
+  },
+  {
+   "khmer": "ជឹង",
+   "latin": "Cheung",
+   "bucket": "curated"
+  },
+  {
+   "khmer": "ជឿន",
+   "latin": "Cheurn",
+   "bucket": "curated"
+  },
+  {
+   "khmer": "ដារា",
+   "latin": "Dara",
+   "bucket": "curated"
+  },
+  {
+   "khmer": "ថាច់",
+   "latin": "Thach",
+   "bucket": "curated"
+  },
+  {
+   "khmer": "ថោង",
+   "latin": "Thong",
+   "bucket": "curated"
+  },
+  {
+   "khmer": "នួន",
+   "latin": "Nuon",
+   "bucket": "curated"
+  },
+  {
+   "khmer": "បុប្ផា",
+   "latin": "Bopha",
+   "bucket": "curated"
+  },
+  {
+   "khmer": "បុរី",
+   "latin": "Borey",
+   "bucket": "curated"
+  },
+  {
+   "khmer": "ប៊ុន",
+   "latin": "Bun",
+   "bucket": "curated"
+  },
+  {
+   "khmer": "ពេជ្រ",
+   "latin": "Pich",
+   "bucket": "curated"
+  },
+  {
+   "khmer": "មនោ",
+   "latin": "Manou",
+   "bucket": "curated"
+  },
+  {
+   "khmer": "មេត្តា",
+   "latin": "Metta",
+   "bucket": "curated"
+  },
+  {
+   "khmer": "យី",
+   "latin": "Yi",
+   "bucket": "curated"
+  },
+  {
+   "khmer": "រិទ្ធ",
+   "latin": "Rith",
+   "bucket": "curated"
+  },
+  {
+   "khmer": "លក្ខិណា",
+   "latin": "Lakhena",
+   "bucket": "curated"
+  },
+  {
+   "khmer": "លី",
+   "latin": "Ly",
+   "bucket": "curated"
+  },
+  {
+   "khmer": "លុច",
+   "latin": "Luch",
+   "bucket": "curated"
+  },
+  {
+   "khmer": "វង្ស",
+   "latin": "Vong",
+   "bucket": "curated"
+  },
+  {
+   "khmer": "វណ្ណ",
+   "latin": "Vann",
+   "bucket": "curated"
+  },
+  {
+   "khmer": "វិចិត្រ",
+   "latin": "Vichetr",
+   "bucket": "curated"
+  },
+  {
+   "khmer": "វិជ្ជា",
+   "latin": "Vichhea",
+   "bucket": "curated"
+  },
+  {
+   "khmer": "វិបុល",
+   "latin": "Vibol",
+   "bucket": "curated"
+  },
+  {
+   "khmer": "វ៉ាន់",
+   "latin": "Van",
+   "bucket": "curated"
+  },
+  {
+   "khmer": "សាន",
+   "latin": "San",
+   "bucket": "curated"
+  },
+  {
+   "khmer": "សាន្ត",
+   "latin": "San",
+   "bucket": "curated"
+  },
+  {
+   "khmer": "សិទ្ធិ",
+   "latin": "Sith",
+   "bucket": "curated"
+  },
+  {
+   "khmer": "សិរី",
+   "latin": "Serey",
+   "bucket": "curated"
+  },
+  {
+   "khmer": "សុខ",
+   "latin": "Sok",
+   "bucket": "curated"
+  },
+  {
+   "khmer": "សុខា",
+   "latin": "Sokha",
+   "bucket": "curated"
+  },
+  {
+   "khmer": "សុខុន",
+   "latin": "Sokhon",
+   "bucket": "curated"
+  },
+  {
+   "khmer": "សុភា",
+   "latin": "Sophea",
+   "bucket": "curated"
+  },
+  {
+   "khmer": "សេង",
+   "latin": "Seng",
+   "bucket": "curated"
+  },
+  {
+   "khmer": "សេន",
+   "latin": "Sen",
+   "bucket": "curated"
+  },
+  {
+   "khmer": "សែន",
+   "latin": "Saen",
+   "bucket": "curated"
+  },
+  {
+   "khmer": "សោភា",
+   "latin": "Sophea",
+   "bucket": "curated"
+  },
+  {
+   "khmer": "សោម",
+   "latin": "Saom",
+   "bucket": "curated"
+  },
+  {
+   "khmer": "ស៊ុំ",
+   "latin": "Sum",
+   "bucket": "curated"
+  },
+  {
+   "khmer": "ស្រី",
+   "latin": "Srey",
+   "bucket": "curated"
+  },
+  {
+   "khmer": "ស្រីណា",
+   "latin": "Sreyna",
+   "bucket": "curated"
+  },
+  {
+   "khmer": "ហាក់",
+   "latin": "Hak",
+   "bucket": "curated"
+  },
+  {
+   "khmer": "ហួត",
+   "latin": "Huot",
+   "bucket": "curated"
+  },
+  {
+   "khmer": "ហឿន",
+   "latin": "Heoun",
+   "bucket": "curated"
+  },
+  {
+   "khmer": "ហេង",
+   "latin": "Heng",
+   "bucket": "curated"
+  },
+  {
+   "khmer": "ឡុង",
+   "latin": "Long",
+   "bucket": "curated"
+  },
+  {
+   "khmer": "អនុ",
+   "latin": "Anu",
+   "bucket": "curated"
+  },
+  {
+   "khmer": "អភិ",
+   "latin": "Api",
+   "bucket": "curated"
+  },
+  {
+   "khmer": "អ៊ុំ",
+   "latin": "Um",
+   "bucket": "curated"
+  },
+  {
+   "khmer": "អ៊ូច",
+   "latin": "Ouch",
+   "bucket": "curated"
+  }
+ ]
+}
