@@ -82,6 +82,13 @@ describe('khmer-name-romanizer', () => {
         expect(romanizeKhmerName('ប៉ែន')).toBe('Pen') // Penn/Pen dominate attestations
     })
 
+    it('passes Latin letters and digits through instead of dropping them', () => {
+        expect(romanizeKhmerName('សុភ REAL 1987')).toContain('REAL 1987')
+        const r = createDefaultTransliterator().transliterate('សុភ REAL 1987')
+        expect(r.value).toContain('Real 1987') // name pipeline normalizes case
+        expect(r.value).not.toContain('REAL REAL') // sanity
+    })
+
     it('drops tokens that render empty instead of double-spacing', () => {
         const r = createDefaultTransliterator().transliterate('ចន្ទ ៈ បុត្រ')
         expect(r.value).toBe('Chan Pot') // single space, was "Chan␣␣Pot"

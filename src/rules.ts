@@ -111,6 +111,10 @@ export function romanizeKhmer(input: string): string {
             continue
         }
         if (!isConsonant(ch)) {
+            // Latin letters, digits and name-safe punctuation pass through
+            // unchanged: mixed-script input ("សុភ REAL 1987") keeps its
+            // Latin part instead of silently losing it.
+            if (/[A-Za-z0-9.'-]/.test(ch)) out.push(ch)
             i++
             continue
         }
