@@ -265,6 +265,10 @@ export function romanizeKhmer(input: string): string {
             // ឆ្នើម Chhnoeum — both series) and "eu" when open (កើ Keuky)
             if (vow === 'ើ') v = final === '' ? 'eu' : 'oeu'
             if (vow === '័') v = inherentO ? 'o' : 'a'
+            // muusikatoan-shifted ែ reads "e" in names, not "ae": ង៉ែត Nget,
+            // ញ៉ែម Nhem, ប៉ែត Pet, យ៉ែម Yem — and e-spellings dominate ប៉ែន
+            // attestations too (Penn/Pen vs Pan)
+            if (vow === 'ែ' && muusikatoan) v = 'e'
             // ័ + final ក after a 2nd-series consonant reads "eak" (សុភ័ក្ត ->
             // sopheak, ល័ក្ខណ៍ -> leak)
             if (vow === '័' && final === 'k' && secondSeries) v = 'ea'

@@ -76,6 +76,12 @@ describe('khmer-name-romanizer', () => {
         expect(s.honorifics ?? []).toEqual([])
     })
 
+    it('reads muusikatoan-shifted ែ as "e" (attested spellings)', () => {
+        expect(romanizeKhmerName('ប៉ែត')).toBe('Pet') // attested
+        expect(romanizeKhmerName('ង៉ែត')).toBe('Nget') // attested
+        expect(romanizeKhmerName('ប៉ែន')).toBe('Pen') // Penn/Pen dominate attestations
+    })
+
     it('drops tokens that render empty instead of double-spacing', () => {
         const r = createDefaultTransliterator().transliterate('ចន្ទ ៈ បុត្រ')
         expect(r.value).toBe('Chan Pot') // single space, was "Chan␣␣Pot"
