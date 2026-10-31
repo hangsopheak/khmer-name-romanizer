@@ -91,7 +91,7 @@ The leave-one-out rows are the honest numbers — dictionaries are rebuilt witho
 
 **Famous names (72)** — royalty, Angkor kings, prime ministers, film stars, singers, monks (`npm run eval:famous`): **70/72 exact**, 0.989 mean. Before these tokens were bundled, the same kind of name scored 15% — the dictionary is what famous-name accuracy is made of.
 
-**Wikimedia corpus** — ~2,400 scraped Khmer↔Latin pairs from five SPARQL passes (kmwiki humans, Cambodian citizens, all humans with km+en labels, km/en article *titles*, given-/family-name items — the latter are foreign transcriptions and land in the out-of-domain bucket). Scraping is incremental and failure-tolerant; the full refresh loop is `scrape:names` → `eval:scraped` → `mine:tokens` → `merge:tokens`, where `merge:tokens` regenerates `src/token-data.ts` in-repo:
+**Wikimedia corpus** — ~2,400 scraped Khmer↔Latin pairs from five SPARQL passes (kmwiki humans, Cambodian citizens, all humans with km+en labels, km/en article *titles*, given-/family-name items — the latter are foreign transcriptions and land in the out-of-domain bucket). Scraping is incremental and failure-tolerant; the full refresh loop is `scrape:names` → `split:corpus` → `eval:scraped` → `mine:tokens` → `merge:tokens`, where `split:corpus` first freezes a held-out test split and `merge:tokens` regenerates `src/token-data.ts` in-repo. The frozen test split (`scripts/test-split.json`, ~15%, content-hash assignment so refreshes never reshuffle it) is the project's lockbox — never mined into the dictionary, never used for tuning: `mine:tokens` reads only `dev-split.json`, and `npm run split:corpus -- --check` verifies the frozen files against the corpus.
 
 | Corpus | n | Exact | Top-5 | Mean sim |
 |---|---|---|---|---|

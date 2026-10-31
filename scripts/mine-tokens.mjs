@@ -12,6 +12,10 @@
  *
  * Output: scripts/mined-tokens.json (review before merging anything into
  * src/token-data.ts). Usage: node scripts/mine-tokens.mjs [--top 30]
+ *
+ * Input is scripts/dev-split.json — the corpus minus the frozen test split
+ * (scripts/test-split.json, see split-corpus.mjs) — so mining can never
+ * learn from held-out rows.
  */
 import { readFileSync, writeFileSync } from 'node:fs'
 import { defaultTokenDict } from '../dist/index.js'
@@ -20,7 +24,14 @@ const top = Number(process.argv.includes('--top')
     ? process.argv[process.argv.indexOf('--top') + 1]
     : 30)
 
-const pairs = JSON.parse(readFileSync(new URL('./scraped-names.json', import.meta.url), 'utf8'))
+let pairs
+try {
+    pairs = JSON.parse(readFileSync(new URL('./dev-split.json', import.meta.url), 'utf8'))
+} catch {
+    console.error('scripts/dev-split.json not found — run `npm run split:corpus` first.')
+    console.error('(The dev split excludes the frozen test split, so mining never learns from it.)')
+    process.exit(1)
+}
 const inDomain = pairs.filter((p) => ['cambodian', 'unknown', 'curated'].includes(p.bucket))
 
 const counts = new Map()
