@@ -20,7 +20,7 @@ const CONS: Record<string, string> = {
 const VOWELS: Record<string, string> = {
     'ា': 'a', 'ិ': 'i', 'ី': 'i', 'ឹ': 'i', 'ឺ': 'eu',
     'ុ': 'o', 'ូ': 'u', 'ួ': 'uo', 'ឿ': 'oeu', 'ៀ': 'ie',
-    'េ': 'e', 'ែ': 'ae', 'ៃ': 'ai', 'ោ': 'o', 'ៅ': 'ov', '័': 'a'
+    'េ': 'e', 'ែ': 'ae', 'ៃ': 'ai', 'ោ': 'o', 'ៅ': 'ov', '័': 'a', 'ើ': 'oeu'
 }
 
 const INDEPENDENT_VOWELS: Record<string, string> = {
@@ -257,6 +257,9 @@ export function romanizeKhmer(input: string): string {
             // closed (ទូច touch, ឡូត lout)
             if (vow === 'ូ') v = final === '' ? 'o' : 'ou'
             if (vow === 'ុ' && final === 'y') v = 'ou'
+            // ើ reads "oeu" when closed (កើត Koeut, រើន Roeun, កើស Koeus,
+            // ឆ្នើម Chhnoeum — both series) and "eu" when open (កើ Keuky)
+            if (vow === 'ើ') v = final === '' ? 'eu' : 'oeu'
             if (vow === '័') v = inherentO ? 'o' : 'a'
             // ័ + final ក after a 2nd-series consonant reads "eak" (សុភ័ក្ត ->
             // sopheak, ល័ក្ខណ៍ -> leak)

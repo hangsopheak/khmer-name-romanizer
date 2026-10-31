@@ -23,6 +23,14 @@ describe('khmer-name-romanizer', () => {
         expect(result.candidates).toEqual(expect.arrayContaining(['So Panha', 'So Pagna']))
     })
 
+    it('romanizes the vowel ើ (U+17BE) instead of dropping it', () => {
+        expect(romanizeKhmerName('ត្រើន')).toBe('Troeun') // was "Trano" — vowel dropped
+        expect(romanizeKhmerName('កើត')).toBe('Koeut') // attested Koeut Rith
+        expect(romanizeKhmerName('រើន')).toBe('Roeun') // attested
+        expect(romanizeKhmerName('កើស')).toBe('Koeus') // attested Ieu Koeus
+        expect(romanizeKhmerName('កើ')).toBe('Keu') // open syllable (Keuky)
+    })
+
     it('extends the bundled dictionary with caller tokenDict entries', () => {
         const t = createDefaultTransliterator({ tokenDict: { ដារា: { latin: 'Dara', count: 1 } } })
         const result = t.transliterate('តាំង ដារា')
