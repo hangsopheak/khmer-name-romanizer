@@ -14091,7 +14091,7 @@
   "khmer": "តាកាម៉ាសា",
   "latin": "Takamasa",
   "qid": "Q7677128",
-  "bucket": "unknown",
+  "bucket": "foreign",
   "source": "wikidata/name-items",
   "attestations": 2
  },
@@ -14147,7 +14147,7 @@
   "khmer": "ភីលីប",
   "latin": "Philipp",
   "qid": "Q18145728",
-  "bucket": "unknown",
+  "bucket": "foreign",
   "source": "wikidata/name-items",
   "attestations": 2
  },
@@ -14163,7 +14163,7 @@
   "khmer": "ម៉ាថាយ",
   "latin": "Matthew",
   "qid": "Q4927231",
-  "bucket": "unknown",
+  "bucket": "foreign",
   "source": "wikidata/name-items",
   "attestations": 2
  },
@@ -14179,7 +14179,7 @@
   "khmer": "ម៉ាទ្យាស",
   "latin": "Matthias",
   "qid": "Q4927273",
-  "bucket": "unknown",
+  "bucket": "foreign",
   "source": "wikidata/name-items",
   "attestations": 2
  },
@@ -14195,7 +14195,7 @@
   "khmer": "ម៉ៃឃែល",
   "latin": "Michael",
   "qid": "Q4927524",
-  "bucket": "unknown",
+  "bucket": "foreign",
   "source": "wikidata/name-items",
   "attestations": 2
  },
@@ -14219,7 +14219,7 @@
   "khmer": "យ៉ូស៊ីអាគី",
   "latin": "Yoshiaki",
   "qid": "Q23309265",
-  "bucket": "unknown",
+  "bucket": "foreign",
   "source": "wikidata/name-items",
   "attestations": 2
  },
@@ -14251,7 +14251,7 @@
   "khmer": "លូដវីក",
   "latin": "Ludwig",
   "qid": "Q14159020",
-  "bucket": "unknown",
+  "bucket": "foreign",
   "source": "wikidata/name-items",
   "attestations": 2
  },
@@ -14259,7 +14259,7 @@
   "khmer": "វិចទ័រ",
   "latin": "Victor",
   "qid": "Q539581",
-  "bucket": "unknown",
+  "bucket": "foreign",
   "source": "wikidata/name-items",
   "attestations": 2
  },
@@ -14315,7 +14315,7 @@
   "khmer": "ហាន់ស",
   "latin": "Hans",
   "qid": "Q632842",
-  "bucket": "unknown",
+  "bucket": "foreign",
   "source": "wikidata/name-items",
   "attestations": 2
  },
@@ -14331,7 +14331,7 @@
   "khmer": "ហ្គេអ័រគ",
   "latin": "Georg",
   "qid": "Q1985538",
-  "bucket": "unknown",
+  "bucket": "foreign",
   "source": "wikidata/name-items",
   "attestations": 2
  },
@@ -14347,7 +14347,7 @@
   "khmer": "ហ្វ្រីដរីខ",
   "latin": "Friedrich",
   "qid": "Q14038597",
-  "bucket": "unknown",
+  "bucket": "foreign",
   "source": "wikidata/name-items",
   "attestations": 2
  },
@@ -14371,7 +14371,7 @@
   "khmer": "អាតឺរ",
   "latin": "Arthur",
   "qid": "Q1778168",
-  "bucket": "unknown",
+  "bucket": "foreign",
   "source": "wikidata/name-items",
   "attestations": 2
  },
@@ -14387,7 +14387,7 @@
   "khmer": "អាន់តុន",
   "latin": "Anton",
   "qid": "Q5401576",
-  "bucket": "unknown",
+  "bucket": "foreign",
   "source": "wikidata/name-items",
   "attestations": 2
  },
@@ -14395,7 +14395,7 @@
   "khmer": "អូតូ",
   "latin": "Otto",
   "qid": "Q18029644",
-  "bucket": "unknown",
+  "bucket": "foreign",
   "source": "wikidata/name-items",
   "attestations": 2
  },
@@ -14403,7 +14403,7 @@
   "khmer": "អូលីវើរ",
   "latin": "Oliver",
   "qid": "Q2110096",
-  "bucket": "unknown",
+  "bucket": "foreign",
   "source": "wikidata/name-items",
   "attestations": 2
  },
@@ -14443,7 +14443,7 @@
   "khmer": "អោហ្គុស",
   "latin": "August",
   "qid": "Q370731",
-  "bucket": "unknown",
+  "bucket": "foreign",
   "source": "wikidata/name-items",
   "attestations": 2
  },
@@ -14459,7 +14459,7 @@
   "khmer": "ឦសាន",
   "latin": "Ishana",
   "qid": "Q608366",
-  "bucket": "unknown",
+  "bucket": "foreign",
   "source": "wikidata/name-items",
   "attestations": 2
  }

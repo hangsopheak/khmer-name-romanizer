@@ -35,23 +35,28 @@ for (const p of inDomain) {
         const latin = word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()
         if (!counts.has(k)) counts.set(k, new Map())
         const m = counts.get(k)
-        m.set(latin, (m.get(latin) ?? 0) + 1)
+        const hit = m.get(latin) ?? { count: 0, sources: new Set() }
+        hit.count += 1
+        hit.sources.add(p.source ?? 'unknown')
+        m.set(latin, hit)
     })
 }
 
 const titleCase = (w) => w.split(' ').map((x) => x[0].toUpperCase() + x.slice(1).toLowerCase()).join(' ')
 const mined = []
 for (const [khmer, spellings] of counts) {
-    const ranked = [...spellings.entries()].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))
-    const [canonical, canonicalCount] = ranked[0]
-    const variants = Object.fromEntries(ranked.slice(1))
+    const ranked = [...spellings.entries()].sort((a, b) => b[1].count - a[1].count || a[0].localeCompare(b[0]))
+    const [canonical, canonicalHit] = ranked[0]
+    const variants = Object.fromEntries(ranked.slice(1).map(([sp, hit]) => [sp, hit.count]))
+    const sources = [...new Set(ranked.flatMap(([, hit]) => [...hit.sources]))]
     const bundled = defaultTokenDict[khmer]
     const status = !bundled ? 'new' : titleCase(bundled.latin) === canonical ? 'agree' : 'conflict'
     mined.push({
         khmer,
         latin: canonical,
-        count: canonicalCount,
+        count: canonicalHit.count,
         variants,
+        sources,
         status,
         bundledLatin: bundled ? titleCase(bundled.latin) : undefined,
     })

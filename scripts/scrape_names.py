@@ -95,12 +95,14 @@ LIMIT %d
 """
 
 # Fifth pass: given-name (Q12308941) and family-name (Q101352) items with
-# both labels — single-token pairs, the purest dictionary material. No
-# citizenship applies, so they land in the in-domain "unknown" bucket.
+# both labels. NOTE: Wikidata barely models Khmer names as items — this
+# source is overwhelmingly FOREIGN names transcribed in Khmer (Michael,
+# Georg…), so it lands in the foreign bucket and never feeds dictionary
+# mining; it broadens the out-of-domain eval set instead.
 # One query PER type: a combined VALUES clause plans badly on WDQS and
 # times out; the plain per-type shape runs in ~30s.
 QUERY_GIVEN_NAMES = """
-SELECT ?item ?km ?en ("unknown" AS ?bucket) WHERE {
+SELECT ?item ?km ?en ("foreign" AS ?bucket) WHERE {
   ?item wdt:P31 wd:Q12308941 .
   ?item rdfs:label ?km . FILTER(LANG(?km) = "km")
   ?item rdfs:label ?en . FILTER(LANG(?en) = "en")
@@ -109,7 +111,7 @@ LIMIT %d
 """
 
 QUERY_FAMILY_NAMES = """
-SELECT ?item ?km ?en ("unknown" AS ?bucket) WHERE {
+SELECT ?item ?km ?en ("foreign" AS ?bucket) WHERE {
   ?item wdt:P31 wd:Q101352 .
   ?item rdfs:label ?km . FILTER(LANG(?km) = "km")
   ?item rdfs:label ?en . FILTER(LANG(?en) = "en")
@@ -123,8 +125,8 @@ SOURCES = [
     (QUERY, 20000, "wikidata/kmwiki-humans", "kmwiki humans with en labels"),
     (QUERY_CAMBODIANS, 20000, "wikidata/cambodian-citizens", "Cambodian citizens with km+en labels"),
     (QUERY_SITELINK_TITLES, 50000, "wikipedia/km-en-titles", "humans with kmwiki+enwiki article titles"),
-    (QUERY_GIVEN_NAMES, 20000, "wikidata/name-items", "given-name items with km+en labels"),
-    (QUERY_FAMILY_NAMES, 20000, "wikidata/name-items", "family-name items with km+en labels"),
+    (QUERY_GIVEN_NAMES, 20000, "wikidata/given-names", "given-name items with km+en labels"),
+    (QUERY_FAMILY_NAMES, 20000, "wikidata/family-names", "family-name items with km+en labels"),
 ]
 
 # Paged sources: (query, page size, max pages, source tag, note). Each
@@ -317,11 +319,16 @@ def reclean(pairs: list) -> list:
         if not looks_like_name_pair(khmer, latin):
             dropped += 1
             continue
+        # name-item sources are foreign transcriptions (Wikidata has no
+        # Khmer name items) — re-bucket stored rows accordingly
+        bucket = pair["bucket"]
+        if pair.get("source") in ("wikidata/name-items", "wikidata/given-names", "wikidata/family-names"):
+            bucket = "foreign"
         key = khmer.replace(" ", "")
         if key in seen:
             seen[key]["attestations"] = seen[key].get("attestations", 1) + 1
             continue
-        pair = {**pair, "khmer": khmer, "latin": latin}
+        pair = {**pair, "khmer": khmer, "latin": latin, "bucket": bucket}
         seen[key] = pair
     print(f"recleaned: kept {len(seen)}, dropped {dropped}, merged collisions", file=sys.stderr)
     return sorted(seen.values(), key=lambda p: (-p["attestations"], p["khmer"]))

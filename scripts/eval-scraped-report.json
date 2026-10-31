@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-31T06:36:27.956Z",
+ "generated": "2026-10-31T12:43:23.208Z",
  "scraped": 1808,
  "excluded": [
   {
@@ -64,40 +64,40 @@
   }
  ],
  "inDomain": {
-  "n": 615,
-  "exact": 127,
-  "exactAnyOrder": 133,
+  "n": 598,
+  "exact": 128,
+  "exactAnyOrder": 134,
   "top5": 181,
-  "ge90": 209,
-  "ge75": 351,
-  "meanSim": 0.718
+  "ge90": 210,
+  "ge75": 347,
+  "meanSim": 0.724
  },
  "buckets": {
   "cambodian": {
    "n": 414,
-   "exact": 116,
-   "exactAnyOrder": 121,
-   "top5": 166,
-   "ge90": 191,
-   "ge75": 304,
-   "meanSim": 0.801
+   "exact": 118,
+   "exactAnyOrder": 123,
+   "top5": 167,
+   "ge90": 193,
+   "ge75": 305,
+   "meanSim": 0.804
   },
   "unknown": {
-   "n": 201,
-   "exact": 11,
-   "exactAnyOrder": 12,
-   "top5": 15,
-   "ge90": 18,
-   "ge75": 47,
-   "meanSim": 0.547
+   "n": 184,
+   "exact": 10,
+   "exactAnyOrder": 11,
+   "top5": 14,
+   "ge90": 17,
+   "ge75": 42,
+   "meanSim": 0.546
   },
   "foreign": {
-   "n": 1181,
-   "exact": 22,
-   "exactAnyOrder": 23,
-   "top5": 35,
-   "ge90": 60,
-   "ge75": 331,
+   "n": 1198,
+   "exact": 23,
+   "exactAnyOrder": 24,
+   "top5": 36,
+   "ge90": 61,
+   "ge75": 338,
    "meanSim": 0.622
   }
  },
@@ -279,14 +279,6 @@
    "bucket": "unknown"
   },
   {
-   "khmer": "អោហ្គុស",
-   "latin": "August",
-   "got": "Ohkos",
-   "sim": 0.167,
-   "inTop5": false,
-   "bucket": "unknown"
-  },
-  {
    "khmer": "តាន់ អេលែន",
    "latin": "Allen Dodgson Tan",
    "got": "Tan Elaen",
@@ -319,14 +311,6 @@
    "bucket": "unknown"
   },
   {
-   "khmer": "ចៅចមមាតាអ្នកអង្គ មី",
-   "latin": "Ang Mey",
-   "got": "Chovchmomatakaang Mi",
-   "sim": 0.2,
-   "inTop5": false,
-   "bucket": "cambodian"
-  },
-  {
    "khmer": "ឧទ័យរាជា",
    "latin": "Outey",
    "got": "Otayrachea",
@@ -347,14 +331,6 @@
    "latin": "Kesar Mealea",
    "got": "Nakamneangkesro",
    "sim": 0.2,
-   "inTop5": false,
-   "bucket": "unknown"
-  },
-  {
-   "khmer": "ចៅចមមាតាអ្នកអង្គ អី",
-   "latin": "Ang Ei",
-   "got": "Chovchmomatakaang I",
-   "sim": 0.211,
    "inTop5": false,
    "bucket": "unknown"
   },
@@ -519,28 +495,12 @@
    "bucket": "unknown"
   },
   {
-   "khmer": "ចៅពញាអភ័យធីបែសបែន",
-   "latin": "Chaophraya Aphaiphubet",
-   "got": "Chovpnaphaythipaespaen",
-   "sim": 0.273,
-   "inTop5": false,
-   "bucket": "unknown"
-  },
-  {
    "khmer": "ចៅហ្វាទឡ្ហៈមូ",
    "latin": "Talaha",
    "got": "Chovfatalhakmo",
    "sim": 0.286,
    "inTop5": false,
    "bucket": "cambodian"
-  },
-  {
-   "khmer": "ចៅចមមាតាអ្នកអង្គ ពៅ",
-   "latin": "Ang Pou",
-   "got": "Chovchmomatakaang Pov",
-   "sim": 0.286,
-   "inTop5": false,
-   "bucket": "unknown"
   },
   {
    "khmer": "ពញាទ័យ",
@@ -554,14 +514,6 @@
    "khmer": "អ្នកម្នាងទេវី",
    "latin": "Tevi",
    "got": "Nakamneangtevi",
-   "sim": 0.286,
-   "inTop5": false,
-   "bucket": "unknown"
-  },
-  {
-   "khmer": "ហ្គេអ័រគ",
-   "latin": "Georg",
-   "got": "Hkearka",
    "sim": 0.286,
    "inTop5": false,
    "bucket": "unknown"
@@ -751,6 +703,14 @@
    "bucket": "unknown"
   },
   {
+   "khmer": "អភ័យធីបែសបែន",
+   "latin": "Chaophraya Aphaiphubet",
+   "got": "Aphaythipaespaen",
+   "sim": 0.364,
+   "inTop5": false,
+   "bucket": "unknown"
+  },
+  {
    "khmer": "អ៊ូ វីរៈ",
    "latin": "Virak Ou",
    "got": "O Virak",
@@ -919,14 +879,6 @@
    "bucket": "unknown"
   },
   {
-   "khmer": "លូដវីក",
-   "latin": "Ludwig",
-   "got": "Loutvik",
-   "sim": 0.429,
-   "inTop5": false,
-   "bucket": "unknown"
-  },
-  {
    "khmer": "សួង អរុណ ដេវិដ",
    "latin": "Soung David",
    "got": "Suong Arun Devit",
@@ -1002,14 +954,6 @@
    "khmer": "តឹឡាមេឌ៏",
    "latin": "Talamidaw",
    "got": "Tilamet",
-   "sim": 0.444,
-   "inTop5": false,
-   "bucket": "unknown"
-  },
-  {
-   "khmer": "ហ្វ្រីដរីខ",
-   "latin": "Friedrich",
-   "got": "Freytrik",
    "sim": 0.444,
    "inTop5": false,
    "bucket": "unknown"
@@ -1186,14 +1130,6 @@
    "khmer": "ជយទេវី",
    "latin": "Jayadevi",
    "got": "Chaytevi",
-   "sim": 0.5,
-   "inTop5": false,
-   "bucket": "unknown"
-  },
-  {
-   "khmer": "ឦសាន",
-   "latin": "Ishana",
-   "got": "Eisan",
    "sim": 0.5,
    "inTop5": false,
    "bucket": "unknown"
@@ -1439,14 +1375,6 @@
    "bucket": "unknown"
   },
   {
-   "khmer": "ម៉ាថាយ",
-   "latin": "Matthew",
-   "got": "Mathay",
-   "sim": 0.571,
-   "inTop5": false,
-   "bucket": "unknown"
-  },
-  {
    "khmer": "នរោត្ដម រណឬទ្ធិ",
    "latin": "Norodom Ranariddh",
    "got": "Norodom Ronrueutthi",
@@ -1650,14 +1578,6 @@
    "khmer": "អាចារ្យស្វា",
    "latin": "Acha Xoa",
    "got": "Acharsva",
-   "sim": 0.625,
-   "inTop5": false,
-   "bucket": "unknown"
-  },
-  {
-   "khmer": "ម៉ាទ្យាស",
-   "latin": "Matthias",
-   "got": "Matyeas",
    "sim": 0.625,
    "inTop5": false,
    "bucket": "unknown"
@@ -1919,22 +1839,6 @@
    "bucket": "unknown"
   },
   {
-   "khmer": "អាតឺរ",
-   "latin": "Arthur",
-   "got": "Ateur",
-   "sim": 0.667,
-   "inTop5": false,
-   "bucket": "unknown"
-  },
-  {
-   "khmer": "អូលីវើរ",
-   "latin": "Oliver",
-   "got": "Olivro",
-   "sim": 0.667,
-   "inTop5": false,
-   "bucket": "unknown"
-  },
-  {
    "khmer": "មិថុនា ភូថង",
    "latin": "Mithuna Phuthong",
    "got": "Mithona Phoutngo",
@@ -2079,6 +1983,14 @@
    "bucket": "cambodian"
   },
   {
+   "khmer": "អង្គ មី",
+   "latin": "Ang Mey",
+   "got": "Ang Mi",
+   "sim": 0.714,
+   "inTop5": false,
+   "bucket": "cambodian"
+  },
+  {
    "khmer": "ទុយ រី",
    "latin": "Tuy Ry",
    "got": "Touy Ri",
@@ -2098,14 +2010,6 @@
    "khmer": "ម៉ាឡាគី",
    "latin": "Malachi",
    "got": "Malaki",
-   "sim": 0.714,
-   "inTop5": false,
-   "bucket": "unknown"
-  },
-  {
-   "khmer": "វិចទ័រ",
-   "latin": "Victor",
-   "got": "Vichtar",
    "sim": 0.714,
    "inTop5": false,
    "bucket": "unknown"
@@ -2178,14 +2082,6 @@
    "khmer": "យ៉ូសែប ឆ្មារសាឡាស់",
    "latin": "Joseph Chhmar Salas",
    "got": "Yosaep Chmarsalas",
-   "sim": 0.737,
-   "inTop5": false,
-   "bucket": "cambodian"
-  },
-  {
-   "khmer": "ឆន សុវណ្ណរាជ",
-   "latin": "Chhorn Sovannareach",
-   "got": "Chan Sovanreach",
    "sim": 0.737,
    "inTop5": false,
    "bucket": "cambodian"
@@ -2362,30 +2258,6 @@
    "khmer": "រុមា",
    "latin": "Ruma",
    "got": "Roma",
-   "sim": 0.75,
-   "inTop5": false,
-   "bucket": "unknown"
-  },
-  {
-   "khmer": "ម៉ៃឃែល",
-   "latin": "Michael",
-   "got": "Maikhael",
-   "sim": 0.75,
-   "inTop5": false,
-   "bucket": "unknown"
-  },
-  {
-   "khmer": "យ៉ូស៊ីអាគី",
-   "latin": "Yoshiaki",
-   "got": "Yosyaki",
-   "sim": 0.75,
-   "inTop5": false,
-   "bucket": "unknown"
-  },
-  {
-   "khmer": "អូតូ",
-   "latin": "Otto",
-   "got": "Oto",
    "sim": 0.75,
    "inTop5": false,
    "bucket": "unknown"
@@ -2743,22 +2615,6 @@
    "bucket": "unknown"
   },
   {
-   "khmer": "ហាន់ស",
-   "latin": "Hans",
-   "got": "Hanso",
-   "sim": 0.8,
-   "inTop5": false,
-   "bucket": "unknown"
-  },
-  {
-   "khmer": "អាន់តុន",
-   "latin": "Anton",
-   "got": "Antun",
-   "sim": 0.8,
-   "inTop5": false,
-   "bucket": "unknown"
-  },
-  {
    "khmer": "នរោត្តម សិរីវុឌ្ឍ",
    "latin": "Norodom Sirivudh",
    "got": "Norodom Sirivot",
@@ -2935,12 +2791,12 @@
    "bucket": "unknown"
   },
   {
-   "khmer": "ឆន សុវណ្ណារាជ",
-   "latin": "Chhorn Sovannareach",
-   "got": "Chan Sovannareach",
-   "sim": 0.842,
+   "khmer": "អង្គ អី",
+   "latin": "Ang Ei",
+   "got": "Ang I",
+   "sim": 0.833,
    "inTop5": false,
-   "bucket": "cambodian"
+   "bucket": "unknown"
   },
   {
    "khmer": "ទូច ស៊ុននិច",
@@ -3103,9 +2959,9 @@
    "bucket": "unknown"
   },
   {
-   "khmer": "ភីលីប",
-   "latin": "Philipp",
-   "got": "Philip",
+   "khmer": "អង្គ ពៅ",
+   "latin": "Ang Pou",
+   "got": "Ang Pov",
    "sim": 0.857,
    "inTop5": false,
    "bucket": "unknown"
@@ -3295,14 +3151,6 @@
    "bucket": "cambodian"
   },
   {
-   "khmer": "អង្គដួង",
-   "latin": "Ang Duong",
-   "got": "Angduong",
-   "sim": 0.889,
-   "inTop5": true,
-   "bucket": "cambodian"
-  },
-  {
    "khmer": "អ៊ុំ វិចិត្",
    "latin": "Um Vichet",
    "got": "Um Vichit",
@@ -3323,6 +3171,14 @@
    "latin": "Heng Vong Bunchhat",
    "got": "Heng Vongbunchat",
    "sim": 0.889,
+   "inTop5": false,
+   "bucket": "cambodian"
+  },
+  {
+   "khmer": "ឆន សុវណ្ណរាជ",
+   "latin": "Chhorn Sovannareach",
+   "got": "Chhorn Sovanreach",
+   "sim": 0.895,
    "inTop5": false,
    "bucket": "cambodian"
   },

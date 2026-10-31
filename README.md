@@ -2,6 +2,8 @@
 
 Khmer script → Latin transliteration for **Cambodian personal names** (passport/roster style romanization). Zero runtime dependencies. TypeScript.
 
+**Accuracy (unseen names):** 86/366 exact roster matches · 154/366 with the optional FST tier · 70/72 famous Cambodians — [full benchmarks](#accuracy)
+
 ```bash
 npx khmer-name-romanizer "ហង្ស សុភ័ក្រ្ត"     # Hang Sopheak
 npx khmer-name-romanizer --all "សូ បញ្ញា"     # So Panha | So Pagna
@@ -89,15 +91,15 @@ The leave-one-out rows are the honest numbers — dictionaries are rebuilt witho
 
 **Famous names (72)** — royalty, Angkor kings, prime ministers, film stars, singers, monks (`npm run eval:famous`): **70/72 exact**, 0.989 mean. Before these tokens were bundled, the same kind of name scored 15% — the dictionary is what famous-name accuracy is made of.
 
-**Wikimedia corpus** — ~1,800 scraped Khmer↔Latin pairs from five SPARQL passes (kmwiki humans, Cambodian citizens, all humans with km+en labels, km/en article *titles*, given-/family-name items). Scraping is incremental and failure-tolerant; the full refresh loop is `scrape:names` → `eval:scraped` → `mine:tokens` → `merge:tokens`, where `merge:tokens` regenerates `src/token-data.ts` in-repo:
+**Wikimedia corpus** — ~1,800 scraped Khmer↔Latin pairs from five SPARQL passes (kmwiki humans, Cambodian citizens, all humans with km+en labels, km/en article *titles*, given-/family-name items — the latter are foreign transcriptions and land in the out-of-domain bucket). Scraping is incremental and failure-tolerant; the full refresh loop is `scrape:names` → `eval:scraped` → `mine:tokens` → `merge:tokens`, where `merge:tokens` regenerates `src/token-data.ts` in-repo:
 
 | Corpus | n | Exact | Top-5 | Mean sim |
 |---|---|---|---|---|
-| Cambodian citizens | 414 | 116 (28.0%) | 166 (40.1%) | 0.801 |
-| + historical/regnal names | 615 | 127 (20.6%) | 181 (29.4%) | 0.718 |
-| Foreign names written in Khmer (out of domain) | 1181 | 22 (1.9%) | 35 (3.0%) | 0.622 |
+| Cambodian citizens | 414 | 118 (28.5%) | 167 (40.3%) | 0.804 |
+| + historical/regnal names | 598 | 128 (21.4%) | 181 (30.3%) | 0.724 |
+| Foreign names written in Khmer (out of domain) | 1198 | 23 (1.9%) | 36 (3.0%) | 0.622 |
 
-On unseen Cambodian-citizen names the package lands within its leave-one-out range (28.0% vs 23.5% exact) — correct generalization, with the rest of the truth in `candidates`. Known weak spot: regnal names, a different register this package does not target. `scripts/mined-tokens.json` keeps 493 candidate tokens and 48 canonical conflicts for review; tokens with ≥2 attestations are already merged.
+On unseen Cambodian-citizen names the package lands within its leave-one-out range (28.5% vs 23.5% exact) — correct generalization, with the rest of the truth in `candidates`. Known weak spot: regnal names, a different register this package does not target. `scripts/mined-tokens.json` keeps 472 candidate tokens and 48 canonical conflicts for review; tokens with ≥2 attestations are already merged.
 
 **One-to-many is inherent.** The dictionary stores the most frequent spelling per token (ties go closest to the rule reading) and keeps alternatives in `variants`. When you know a person's official spelling, keep your own Khmer→Latin map and override tokens via `tokenDict`.
 

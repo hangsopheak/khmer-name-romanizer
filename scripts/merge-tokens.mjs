@@ -7,13 +7,17 @@
  * place — this repo owns its dictionary now; no external source
  * repository is needed.
  *
- * Merge policy (deliberately conservative):
+ * Merge policy:
  *   new + count >= --min (default 2)   -> added
- *   agree                              -> kept as-is (bundle wins)
- *   conflict                           -> kept as-is, logged for review
+ *   agree / conflict                   -> canonical kept; corpus-observed
+ *        variants (count >= min) folded into `variants`
  *
- * Existing entries are never modified: the verified gold set stays
- * byte-stable, and the diff stays reviewable.
+ * A single attestation is never enough, whatever the source: Wikidata's
+ * name items are foreign transcriptions (it barely models Khmer names),
+ * and one-shot label alignments produce junk (ខាន់ → Jessa was caught
+ * exactly this way). Canonical spellings and counts of existing entries
+ * are never touched: the verified gold set stays authoritative, and the
+ * diff stays reviewable.
  *
  * Usage: node scripts/merge-tokens.mjs [--min 2] [--dry]
  */
@@ -33,11 +37,30 @@ const { tokens: mined } = JSON.parse(readFileSync(new URL('./mined-tokens.json',
 
 const merged = { ...defaultTokenDict }
 let added = 0
+let enriched = 0
+const enrichments = []
 const conflicts = []
 for (const m of mined) {
-    if (merged[m.khmer]) {
-        if (titleCase(merged[m.khmer].latin) !== m.latin) conflicts.push(m)
-        continue // agree or conflict — bundle wins either way
+    const existing = merged[m.khmer]
+    if (existing) {
+        if (titleCase(existing.latin) !== m.latin) conflicts.push(m)
+        // fold corpus-observed spellings into variants (never the canonical)
+        const known = new Set([
+            titleCase(existing.latin),
+            ...Object.keys(existing.variants ?? {}).map(titleCase),
+        ])
+        const additions = Object.entries(m.variants ?? {}).filter(
+            ([sp, n]) => n >= min && !known.has(titleCase(sp)),
+        )
+        if (additions.length) {
+            merged[m.khmer] = {
+                ...existing,
+                variants: { ...(existing.variants ?? {}), ...Object.fromEntries(additions) },
+            }
+            enriched++
+            enrichments.push({ khmer: m.khmer, added: additions.map(([sp]) => sp) })
+        }
+        continue
     }
     if (m.count < min) continue
     const entry = { latin: m.latin, count: m.count }
@@ -78,10 +101,16 @@ ${lines.join('\n')}
 }
 `
 
-console.log(`bundled: ${Object.keys(defaultTokenDict).length}  mined: ${mined.length}  ->  merged: ${Object.keys(merged).length} (+${added} added, min ${min} attestation${min === 1 ? '' : 's'})`)
+console.log(`bundled: ${Object.keys(defaultTokenDict).length}  mined: ${mined.length}  ->  merged: ${Object.keys(merged).length} (+${added} added, ${enriched} enriched with variants, min ${min} attestation${min === 1 ? '' : 's'})`)
 console.log(`conflicts held back for review: ${conflicts.length}`)
 for (const c of conflicts.slice(0, 15)) {
     console.log(`  ${c.khmer}  bundled: ${titleCase(merged[c.khmer].latin)}  vs  corpus: ${c.latin} (x${c.count})`)
+}
+if (enrichments.length) {
+    console.log(`\nvariant enrichments (${Math.min(10, enrichments.length)} shown):`)
+    for (const e of enrichments.slice(0, 10)) {
+        console.log(`  ${e.khmer}  +${e.added.join(', +')}`)
+    }
 }
 
 if (dry) {

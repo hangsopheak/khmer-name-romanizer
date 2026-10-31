@@ -1,6 +1,6 @@
 {
- "generated": "2026-10-31T06:37:25.438Z",
- "aligned": 483,
+ "generated": "2026-10-31T12:42:58.440Z",
+ "aligned": 466,
  "tokens": [
   {
    "khmer": "នរោត្តម",
@@ -9,6 +9,10 @@
    "variants": {
     "Soma": 1
    },
+   "sources": [
+    "wikidata/kmwiki-humans",
+    "wikipedia/km-en-titles"
+   ],
    "status": "agree",
    "bundledLatin": "Norodom"
   },
@@ -17,6 +21,11 @@
    "latin": "Keo",
    "count": 8,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans",
+    "wikipedia/km-en-titles",
+    "wikidata/cambodian-citizens"
+   ],
    "status": "agree",
    "bundledLatin": "Keo"
   },
@@ -25,6 +34,9 @@
    "latin": "Sisowath",
    "count": 7,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "agree",
    "bundledLatin": "Sisowath"
   },
@@ -33,6 +45,9 @@
    "latin": "Norodom",
    "count": 6,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "agree",
    "bundledLatin": "Norodom"
   },
@@ -41,6 +56,10 @@
    "latin": "Sok",
    "count": 6,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans",
+    "wikidata/cambodian-citizens"
+   ],
    "status": "agree",
    "bundledLatin": "Sok"
   },
@@ -49,6 +68,10 @@
    "latin": "Chan",
    "count": 5,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans",
+    "wikidata/cambodian-citizens"
+   ],
    "status": "agree",
    "bundledLatin": "Chan"
   },
@@ -57,6 +80,10 @@
    "latin": "Chea",
    "count": 5,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans",
+    "wikidata/cambodian-citizens"
+   ],
    "status": "agree",
    "bundledLatin": "Chea"
   },
@@ -65,6 +92,9 @@
    "latin": "Hun",
    "count": 5,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "agree",
    "bundledLatin": "Hun"
   },
@@ -73,6 +103,10 @@
    "latin": "Heng",
    "count": 4,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans",
+    "wikidata/cambodian-citizens"
+   ],
    "status": "agree",
    "bundledLatin": "Heng"
   },
@@ -81,6 +115,9 @@
    "latin": "Khieu",
    "count": 3,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "agree",
    "bundledLatin": "Khieu"
   },
@@ -91,6 +128,10 @@
    "variants": {
     "Brak": 1
    },
+   "sources": [
+    "wikidata/kmwiki-humans",
+    "wikidata/cambodian-citizens"
+   ],
    "status": "agree",
    "bundledLatin": "Prak"
   },
@@ -99,6 +140,9 @@
    "latin": "Pich",
    "count": 3,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "agree",
    "bundledLatin": "Pich"
   },
@@ -109,6 +153,9 @@
    "variants": {
     "Huoy": 1
    },
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "agree",
    "bundledLatin": "Meas"
   },
@@ -117,6 +164,9 @@
    "latin": "Mao",
    "count": 3,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "agree",
    "bundledLatin": "Mao"
   },
@@ -125,6 +175,9 @@
    "latin": "Yem",
    "count": 3,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "agree",
    "bundledLatin": "Yem"
   },
@@ -133,6 +186,9 @@
    "latin": "Lon",
    "count": 3,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "agree",
    "bundledLatin": "Lon"
   },
@@ -141,6 +197,9 @@
    "latin": "Samnang",
    "count": 3,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "conflict",
    "bundledLatin": "Somnang"
   },
@@ -149,6 +208,10 @@
    "latin": "Sin",
    "count": 3,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans",
+    "wikidata/cambodian-citizens"
+   ],
    "status": "agree",
    "bundledLatin": "Sin"
   },
@@ -159,6 +222,11 @@
    "variants": {
     "Sovan": 1
    },
+   "sources": [
+    "wikipedia/km-en-titles",
+    "wikidata/kmwiki-humans",
+    "wikidata/cambodian-citizens"
+   ],
    "status": "agree",
    "bundledLatin": "Sovann"
   },
@@ -167,6 +235,10 @@
    "latin": "Hem",
    "count": 3,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans",
+    "wikidata/cambodian-citizens"
+   ],
    "status": "agree",
    "bundledLatin": "Hem"
   },
@@ -175,6 +247,9 @@
    "latin": "Long",
    "count": 3,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "agree",
    "bundledLatin": "Long"
   },
@@ -183,13 +258,21 @@
    "latin": "Ang",
    "count": 3,
    "variants": {},
-   "status": "new"
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
+   "status": "agree",
+   "bundledLatin": "Ang"
   },
   {
    "khmer": "អ៊ុក",
    "latin": "Ouk",
    "count": 3,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans",
+    "wikidata/cambodian-citizens"
+   ],
    "status": "agree",
    "bundledLatin": "Ouk"
   },
@@ -198,6 +281,9 @@
    "latin": "Kakada",
    "count": 2,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "conflict",
    "bundledLatin": "Kakda"
   },
@@ -206,6 +292,9 @@
    "latin": "Kong",
    "count": 2,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "agree",
    "bundledLatin": "Kong"
   },
@@ -214,6 +303,9 @@
    "latin": "Khim",
    "count": 2,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "conflict",
    "bundledLatin": "Khom"
   },
@@ -222,6 +314,10 @@
    "latin": "Chantha",
    "count": 2,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans",
+    "wikipedia/km-en-titles"
+   ],
    "status": "agree",
    "bundledLatin": "Chantha"
   },
@@ -230,13 +326,21 @@
    "latin": "Chhorn",
    "count": 2,
    "variants": {},
-   "status": "new"
+   "sources": [
+    "wikidata/kmwiki-humans",
+    "wikipedia/km-en-titles"
+   ],
+   "status": "agree",
+   "bundledLatin": "Chhorn"
   },
   {
    "khmer": "ជុំ",
    "latin": "Chum",
    "count": 2,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "agree",
    "bundledLatin": "Chum"
   },
@@ -245,6 +349,9 @@
    "latin": "Chhin",
    "count": 2,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "agree",
    "bundledLatin": "Chhin"
   },
@@ -253,6 +360,10 @@
    "latin": "Chhun",
    "count": 2,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans",
+    "wikidata/cambodian-citizens"
+   ],
    "status": "agree",
    "bundledLatin": "Chhun"
   },
@@ -261,6 +372,9 @@
    "latin": "Duong",
    "count": 2,
    "variants": {},
+   "sources": [
+    "wikidata/cambodian-citizens"
+   ],
    "status": "agree",
    "bundledLatin": "Duong"
   },
@@ -269,6 +383,10 @@
    "latin": "Dy",
    "count": 2,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans",
+    "wikipedia/km-en-titles"
+   ],
    "status": "agree",
    "bundledLatin": "Dy"
   },
@@ -277,6 +395,9 @@
    "latin": "Nath",
    "count": 2,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "agree",
    "bundledLatin": "Nath"
   },
@@ -287,6 +408,9 @@
    "variants": {
     "Nub": 1
    },
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "agree",
    "bundledLatin": "Nop"
   },
@@ -295,6 +419,9 @@
    "latin": "Tea",
    "count": 2,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "agree",
    "bundledLatin": "Tea"
   },
@@ -303,6 +430,9 @@
    "latin": "Tep",
    "count": 2,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "agree",
    "bundledLatin": "Tep"
   },
@@ -311,6 +441,9 @@
    "latin": "Truong",
    "count": 2,
    "variants": {},
+   "sources": [
+    "wikidata/cambodian-citizens"
+   ],
    "status": "agree",
    "bundledLatin": "Truong"
   },
@@ -319,6 +452,9 @@
    "latin": "Nil",
    "count": 2,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "agree",
    "bundledLatin": "Nil"
   },
@@ -327,13 +463,21 @@
    "latin": "Nim",
    "count": 2,
    "variants": {},
-   "status": "new"
+   "sources": [
+    "wikidata/kmwiki-humans",
+    "wikipedia/km-en-titles"
+   ],
+   "status": "agree",
+   "bundledLatin": "Nim"
   },
   {
    "khmer": "ប៊ុន",
    "latin": "Bun",
    "count": 2,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "agree",
    "bundledLatin": "Bun"
   },
@@ -344,6 +488,10 @@
    "variants": {
     "Penn": 1
    },
+   "sources": [
+    "wikipedia/km-en-titles",
+    "wikidata/kmwiki-humans"
+   ],
    "status": "conflict",
    "bundledLatin": "Penn"
   },
@@ -352,6 +500,10 @@
    "latin": "Meng",
    "count": 2,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans",
+    "wikidata/cambodian-citizens"
+   ],
    "status": "agree",
    "bundledLatin": "Meng"
   },
@@ -360,6 +512,10 @@
    "latin": "Ranariddh",
    "count": 2,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans",
+    "wikipedia/km-en-titles"
+   ],
    "status": "agree",
    "bundledLatin": "Ranariddh"
   },
@@ -370,6 +526,10 @@
    "variants": {
     "Rotana": 1
    },
+   "sources": [
+    "wikidata/kmwiki-humans",
+    "wikidata/cambodian-citizens"
+   ],
    "status": "conflict",
    "bundledLatin": "Ratana"
   },
@@ -378,6 +538,9 @@
    "latin": "Ros",
    "count": 2,
    "variants": {},
+   "sources": [
+    "wikidata/cambodian-citizens"
+   ],
    "status": "agree",
    "bundledLatin": "Ros"
   },
@@ -386,6 +549,10 @@
    "latin": "Lim",
    "count": 2,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans",
+    "wikidata/cambodian-citizens"
+   ],
    "status": "agree",
    "bundledLatin": "Lim"
   },
@@ -394,6 +561,10 @@
    "latin": "Vong",
    "count": 2,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans",
+    "wikidata/cambodian-citizens"
+   ],
    "status": "agree",
    "bundledLatin": "Vong"
   },
@@ -402,6 +573,9 @@
    "latin": "Vann",
    "count": 2,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "agree",
    "bundledLatin": "Vann"
   },
@@ -410,6 +584,9 @@
    "latin": "Visal",
    "count": 2,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "agree",
    "bundledLatin": "Visal"
   },
@@ -420,6 +597,9 @@
    "variants": {
     "Sor": 1
    },
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "agree",
    "bundledLatin": "Sar"
   },
@@ -428,6 +608,9 @@
    "latin": "Sam",
    "count": 2,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "agree",
    "bundledLatin": "Sam"
   },
@@ -436,6 +619,9 @@
    "latin": "Sambath",
    "count": 2,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "conflict",
    "bundledLatin": "Sombath"
   },
@@ -444,6 +630,9 @@
    "latin": "Samheng",
    "count": 2,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "agree",
    "bundledLatin": "Samheng"
   },
@@ -452,6 +641,9 @@
    "latin": "Say",
    "count": 2,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "agree",
    "bundledLatin": "Say"
   },
@@ -460,6 +652,9 @@
    "latin": "Sary",
    "count": 2,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "agree",
    "bundledLatin": "Sary"
   },
@@ -468,6 +663,9 @@
    "latin": "Sareth",
    "count": 2,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "agree",
    "bundledLatin": "Sareth"
   },
@@ -476,6 +674,9 @@
    "latin": "Savoeun",
    "count": 2,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "agree",
    "bundledLatin": "Savoeun"
   },
@@ -484,6 +685,9 @@
    "latin": "Sim",
    "count": 2,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "agree",
    "bundledLatin": "Sim"
   },
@@ -492,6 +696,10 @@
    "latin": "Sihamoni",
    "count": 2,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans",
+    "wikipedia/km-en-titles"
+   ],
    "status": "agree",
    "bundledLatin": "Sihamoni"
   },
@@ -502,6 +710,10 @@
    "variants": {
     "Chavay": 1
    },
+   "sources": [
+    "wikidata/kmwiki-humans",
+    "wikidata/cambodian-citizens"
+   ],
    "status": "agree",
    "bundledLatin": "Son"
   },
@@ -510,6 +722,9 @@
    "latin": "Sokha",
    "count": 2,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "agree",
    "bundledLatin": "Sokha"
   },
@@ -518,6 +733,10 @@
    "latin": "Suramarit",
    "count": 2,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans",
+    "wikipedia/km-en-titles"
+   ],
    "status": "agree",
    "bundledLatin": "Suramarit"
   },
@@ -526,6 +745,9 @@
    "latin": "Hok",
    "count": 2,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "agree",
    "bundledLatin": "Hok"
   },
@@ -536,6 +758,10 @@
    "variants": {
     "Hu": 1
    },
+   "sources": [
+    "wikidata/kmwiki-humans",
+    "wikipedia/km-en-titles"
+   ],
    "status": "agree",
    "bundledLatin": "Hou"
   },
@@ -544,6 +770,9 @@
    "latin": "Huot",
    "count": 2,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "agree",
    "bundledLatin": "Huot"
   },
@@ -552,6 +781,10 @@
    "latin": "Hor",
    "count": 2,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans",
+    "wikidata/cambodian-citizens"
+   ],
    "status": "agree",
    "bundledLatin": "Hor"
   },
@@ -562,6 +795,10 @@
    "variants": {
     "Ouch": 1
    },
+   "sources": [
+    "wikidata/kmwiki-humans",
+    "wikidata/cambodian-citizens"
+   ],
    "status": "agree",
    "bundledLatin": "Leng"
   },
@@ -572,6 +809,9 @@
    "variants": {
     "Leakena": 1
    },
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "agree",
    "bundledLatin": "In"
   },
@@ -583,6 +823,10 @@
     "Eng": 1,
     "Loung": 1
    },
+   "sources": [
+    "wikidata/kmwiki-humans",
+    "wikidata/cambodian-citizens"
+   ],
    "status": "agree",
    "bundledLatin": "Ung"
   },
@@ -591,13 +835,21 @@
    "latin": "Um",
    "count": 2,
    "variants": {},
-   "status": "new"
+   "sources": [
+    "wikidata/kmwiki-humans",
+    "wikipedia/km-en-titles"
+   ],
+   "status": "agree",
+   "bundledLatin": "Um"
   },
   {
    "khmer": "អៀង",
    "latin": "Ieng",
    "count": 2,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "agree",
    "bundledLatin": "Ieng"
   },
@@ -606,6 +858,9 @@
    "latin": "Kan",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "conflict",
    "bundledLatin": "Kon"
   },
@@ -614,6 +869,9 @@
    "latin": "Kantol",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -621,6 +879,9 @@
    "latin": "Kanthoul",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -628,6 +889,9 @@
    "latin": "Kommandam",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -635,6 +899,9 @@
    "latin": "Kambujarajalakshmi",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -642,6 +909,9 @@
    "latin": "Ka",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -649,6 +919,9 @@
    "latin": "Cang",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/cambodian-citizens"
+   ],
    "status": "new"
   },
   {
@@ -656,6 +929,9 @@
    "latin": "Kang",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -663,6 +939,9 @@
    "latin": "Kanhol",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -670,6 +949,9 @@
    "latin": "Coulibaly",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -677,6 +959,9 @@
    "latin": "Karma",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -684,6 +969,9 @@
    "latin": "Kaonn",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -691,6 +979,9 @@
    "latin": "Kem",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -698,6 +989,9 @@
    "latin": "Koeus",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -705,6 +999,9 @@
    "latin": "Koy",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -712,6 +1009,9 @@
    "latin": "Kossamak",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -719,6 +1019,9 @@
    "latin": "Kosal",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "agree",
    "bundledLatin": "Kosal"
   },
@@ -727,6 +1030,9 @@
    "latin": "Koeut",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -734,6 +1040,9 @@
    "latin": "Koeus",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikipedia/km-en-titles"
+   ],
    "status": "agree",
    "bundledLatin": "Koeus"
   },
@@ -742,6 +1051,9 @@
    "latin": "Keng",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -749,6 +1061,9 @@
    "latin": "Sidney",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/cambodian-citizens"
+   ],
    "status": "new"
   },
   {
@@ -756,6 +1071,9 @@
    "latin": "Kenny",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -765,6 +1083,9 @@
    "variants": {
     "Keh": 1
    },
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "agree",
    "bundledLatin": "Ke"
   },
@@ -773,6 +1094,9 @@
    "latin": "Ken",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "agree",
    "bundledLatin": "Ken"
   },
@@ -781,6 +1105,9 @@
    "latin": "Keb",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -788,6 +1115,9 @@
    "latin": "Kem",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "agree",
    "bundledLatin": "Kem"
   },
@@ -796,6 +1126,9 @@
    "latin": "Ker",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/cambodian-citizens"
+   ],
    "status": "new"
   },
   {
@@ -803,6 +1136,9 @@
    "latin": "Kaundinya",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikipedia/km-en-titles"
+   ],
    "status": "new"
   },
   {
@@ -810,6 +1146,9 @@
    "latin": "Kaundinya",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -817,6 +1156,9 @@
    "latin": "Kaundinya",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikipedia/km-en-titles"
+   ],
    "status": "new"
   },
   {
@@ -824,6 +1166,9 @@
    "latin": "Ksitindraditya",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -831,6 +1176,9 @@
    "latin": "Khadija",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -838,6 +1186,9 @@
    "latin": "Khat",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -845,6 +1196,9 @@
    "latin": "Jessa",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "conflict",
    "bundledLatin": "Khan"
   },
@@ -853,6 +1207,9 @@
    "latin": "Keo",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/cambodian-citizens"
+   ],
    "status": "new"
   },
   {
@@ -860,6 +1217,9 @@
    "latin": "Khem",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "agree",
    "bundledLatin": "Khem"
   },
@@ -868,6 +1228,9 @@
    "latin": "Khujjuttara",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -875,6 +1238,9 @@
    "latin": "Khon",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "conflict",
    "bundledLatin": "Khun"
   },
@@ -883,6 +1249,9 @@
    "latin": "Khoy",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -890,6 +1259,9 @@
    "latin": "Khoradin",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/cambodian-citizens"
+   ],
    "status": "new"
   },
   {
@@ -897,6 +1269,9 @@
    "latin": "Kheng",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "agree",
    "bundledLatin": "Kheng"
   },
@@ -905,6 +1280,9 @@
    "latin": "Kendeth",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/cambodian-citizens"
+   ],
    "status": "new"
   },
   {
@@ -912,6 +1290,9 @@
    "latin": "Khemarak",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -919,6 +1300,9 @@
    "latin": "Kungsomrach",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/cambodian-citizens"
+   ],
    "status": "new"
   },
   {
@@ -926,6 +1310,9 @@
    "latin": "Kong",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -933,6 +1320,9 @@
    "latin": "Koul",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -940,6 +1330,9 @@
    "latin": "Gavampati",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -947,6 +1340,9 @@
    "latin": "Korm",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -954,6 +1350,9 @@
    "latin": "Keat",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -961,6 +1360,9 @@
    "latin": "Kimya",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/cambodian-citizens"
+   ],
    "status": "new"
   },
   {
@@ -968,6 +1370,9 @@
    "latin": "Kin",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -975,6 +1380,9 @@
    "latin": "Kim",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -982,6 +1390,9 @@
    "latin": "Kimtha",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/cambodian-citizens"
+   ],
    "status": "new"
   },
   {
@@ -989,6 +1400,9 @@
    "latin": "Kimhuy",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -996,6 +1410,9 @@
    "latin": "Gunavarman",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -1003,6 +1420,9 @@
    "latin": "Kuy",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -1010,6 +1430,9 @@
    "latin": "Kry",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "agree",
    "bundledLatin": "Kry"
   },
@@ -1018,6 +1441,9 @@
    "latin": "Krya",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -1025,6 +1451,9 @@
    "latin": "Cristian",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -1032,6 +1461,9 @@
    "latin": "Khin",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -1039,6 +1471,9 @@
    "latin": "Abdel",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -1046,6 +1481,9 @@
    "latin": "Khuwaylid",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -1053,6 +1491,9 @@
    "latin": "Khuong",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -1062,6 +1503,9 @@
    "variants": {
     "Khuon": 1
    },
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -1069,6 +1513,9 @@
    "latin": "Ngea",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -1076,6 +1523,9 @@
    "latin": "Ngeth",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "conflict",
    "bundledLatin": "Nget"
   },
@@ -1084,6 +1534,9 @@
    "latin": "Chakr",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -1091,6 +1544,9 @@
    "latin": "Chakrapong",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -1098,6 +1554,9 @@
    "latin": "Chakravuth",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -1105,6 +1564,9 @@
    "latin": "Chanteaka",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -1112,6 +1574,9 @@
    "latin": "Chan",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/cambodian-citizens"
+   ],
    "status": "new"
   },
   {
@@ -1119,6 +1584,9 @@
    "latin": "Chanchhaya",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/cambodian-citizens"
+   ],
    "status": "new"
   },
   {
@@ -1126,6 +1594,9 @@
    "latin": "Chandravathi",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -1133,6 +1604,9 @@
    "latin": "Chanbo",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -1140,6 +1614,9 @@
    "latin": "Chanmony",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -1147,6 +1624,9 @@
    "latin": "Chantaraingsey",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -1154,6 +1634,9 @@
    "latin": "Chansopheak",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -1161,6 +1644,9 @@
    "latin": "Chanteaka",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikipedia/km-en-titles"
+   ],
    "status": "new"
   },
   {
@@ -1168,6 +1654,9 @@
    "latin": "Candravarman",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -1175,6 +1664,9 @@
    "latin": "Chanthea",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -1182,6 +1674,9 @@
    "latin": "Cham",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -1189,6 +1684,9 @@
    "latin": "Shanghai",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/cambodian-citizens"
+   ],
    "status": "new"
   },
   {
@@ -1196,6 +1694,9 @@
    "latin": "Chanchav",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -1203,6 +1704,9 @@
    "latin": "Chanthol",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -1210,6 +1714,9 @@
    "latin": "Channiroth",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -1217,6 +1724,9 @@
    "latin": "Chanpolin",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -1224,6 +1734,9 @@
    "latin": "Chanraksmey",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -1231,6 +1744,9 @@
    "latin": "Jolie",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikipedia/km-en-titles"
+   ],
    "status": "new"
   },
   {
@@ -1238,6 +1754,9 @@
    "latin": "Chiem",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -1245,6 +1764,9 @@
    "latin": "Chieu",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -1252,6 +1774,9 @@
    "latin": "Cheng",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "agree",
    "bundledLatin": "Cheng"
   },
@@ -1260,6 +1785,9 @@
    "latin": "Jenna",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikipedia/km-en-titles"
+   ],
    "status": "new"
   },
   {
@@ -1267,6 +1795,9 @@
    "latin": "Chen",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "agree",
    "bundledLatin": "Chen"
   },
@@ -1275,6 +1806,9 @@
    "latin": "Khan",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -1282,6 +1816,9 @@
    "latin": "Chaem",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/cambodian-citizens"
+   ],
    "status": "conflict",
    "bundledLatin": "Chem"
   },
@@ -1290,6 +1827,9 @@
    "latin": "Prayuravongse",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -1297,6 +1837,9 @@
    "latin": "Chantharath",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -1304,6 +1847,9 @@
    "latin": "Talaha",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -1311,6 +1857,9 @@
    "latin": "Talaha",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -1318,6 +1867,9 @@
    "latin": "Chhak",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -1325,6 +1877,9 @@
    "latin": "Chai",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/cambodian-citizens"
+   ],
    "status": "conflict",
    "bundledLatin": "Chhay"
   },
@@ -1333,6 +1888,9 @@
    "latin": "Charles",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -1340,6 +1898,9 @@
    "latin": "Chavalit",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -1347,6 +1908,9 @@
    "latin": "Chhom",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -1354,6 +1918,9 @@
    "latin": "Cheng",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "conflict",
    "bundledLatin": "Chheng"
   },
@@ -1362,6 +1929,9 @@
    "latin": "Jayadevi",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -1369,6 +1939,9 @@
    "latin": "Jayadevi",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikipedia/km-en-titles"
+   ],
    "status": "new"
   },
   {
@@ -1376,6 +1949,9 @@
    "latin": "Jayarajadevi",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -1383,6 +1959,9 @@
    "latin": "Jayarajadevi",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikipedia/km-en-titles"
+   ],
    "status": "new"
   },
   {
@@ -1390,6 +1969,9 @@
    "latin": "Jayavarman",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "agree",
    "bundledLatin": "Jayavarman"
   },
@@ -1398,6 +1980,9 @@
    "latin": "Jayaviravarman",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -1405,6 +1990,9 @@
    "latin": "Jayavirahvarman",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikipedia/km-en-titles"
+   ],
    "status": "new"
   },
   {
@@ -1412,6 +2000,9 @@
    "latin": "Jayavuthivong",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -1419,6 +2010,9 @@
    "latin": "Chutema",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -1428,6 +2022,9 @@
    "variants": {
     "Davy": 1
    },
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -1435,6 +2032,9 @@
    "latin": "Thiounn",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/cambodian-citizens"
+   ],
    "status": "new"
   },
   {
@@ -1442,6 +2042,9 @@
    "latin": "Jr.",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -1449,6 +2052,9 @@
    "latin": "Choulean",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -1456,6 +2062,9 @@
    "latin": "Tioulong",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -1466,6 +2075,9 @@
     "Chuon": 1,
     "Thiounn": 1
    },
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "conflict",
    "bundledLatin": "Chuon"
   },
@@ -1474,6 +2086,9 @@
    "latin": "Chuop",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "conflict",
    "bundledLatin": "Choup"
   },
@@ -1482,6 +2097,9 @@
    "latin": "Thioeunn",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/cambodian-citizens"
+   ],
    "status": "conflict",
    "bundledLatin": "Choeurn"
   },
@@ -1490,6 +2108,9 @@
    "latin": "Jenna",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "agree",
    "bundledLatin": "Jenna"
   },
@@ -1498,6 +2119,9 @@
    "latin": "Jessi",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -1505,6 +2129,9 @@
    "latin": "Chhon",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -1512,6 +2139,9 @@
    "latin": "Chhean",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "agree",
    "bundledLatin": "Chhean"
   },
@@ -1520,6 +2150,9 @@
    "latin": "Chhiv",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/cambodian-citizens"
+   ],
    "status": "new"
   },
   {
@@ -1527,6 +2160,9 @@
    "latin": "Galabru",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -1534,6 +2170,9 @@
    "latin": "Chhoeun",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -1541,6 +2180,9 @@
    "latin": "Chhum",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "agree",
    "bundledLatin": "Chhum"
   },
@@ -1549,6 +2191,9 @@
    "latin": "Chut",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -1556,6 +2201,9 @@
    "latin": "Choeung",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -1563,6 +2211,9 @@
    "latin": "Chhoeun",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -1570,6 +2221,9 @@
    "latin": "Nhean",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -1577,6 +2231,9 @@
    "latin": "Nhiek",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -1584,6 +2241,9 @@
    "latin": "Nhok",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "agree",
    "bundledLatin": "Nhok"
   },
@@ -1592,6 +2252,9 @@
    "latin": "Danh",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "agree",
    "bundledLatin": "Danh"
   },
@@ -1600,6 +2263,9 @@
    "latin": "Dara",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -1607,6 +2273,9 @@
    "latin": "Chou",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -1614,6 +2283,9 @@
    "latin": "Prasath",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -1621,6 +2293,9 @@
    "latin": "Deux",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -1628,6 +2303,9 @@
    "latin": "Dien",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "agree",
    "bundledLatin": "Dien"
   },
@@ -1636,6 +2314,9 @@
    "latin": "Devit",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -1643,6 +2324,9 @@
    "latin": "Del",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "agree",
    "bundledLatin": "Del"
   },
@@ -1651,6 +2335,9 @@
    "latin": "Dith",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "agree",
    "bundledLatin": "Dith"
   },
@@ -1659,6 +2346,9 @@
    "latin": "Dina",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/cambodian-citizens"
+   ],
    "status": "agree",
    "bundledLatin": "Dina"
   },
@@ -1667,6 +2357,9 @@
    "latin": "Dimong",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -1674,6 +2367,9 @@
    "latin": "Dimitri",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -1681,6 +2377,9 @@
    "latin": "Duong",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "agree",
    "bundledLatin": "Duong"
   },
@@ -1689,6 +2388,9 @@
    "latin": "Nak",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "agree",
    "bundledLatin": "Nak"
   },
@@ -1697,6 +2399,9 @@
    "latin": "Narith",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/cambodian-citizens"
+   ],
    "status": "new"
   },
   {
@@ -1704,6 +2409,9 @@
    "latin": "Nary",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "agree",
    "bundledLatin": "Nary"
   },
@@ -1712,6 +2420,9 @@
    "latin": "Narong",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "agree",
    "bundledLatin": "Narong"
   },
@@ -1720,6 +2431,9 @@
    "latin": "Naron",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -1727,6 +2441,9 @@
    "latin": "Narendra",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikipedia/km-en-titles"
+   ],
    "status": "new"
   },
   {
@@ -1734,6 +2451,9 @@
    "latin": "Namhong",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "agree",
    "bundledLatin": "Namhong"
   },
@@ -1742,6 +2462,9 @@
    "latin": "Non",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "agree",
    "bundledLatin": "Non"
   },
@@ -1750,6 +2473,9 @@
    "latin": "Noy",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "agree",
    "bundledLatin": "Noy"
   },
@@ -1758,6 +2484,9 @@
    "latin": "Nora",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -1765,6 +2494,9 @@
    "latin": "Nem",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -1772,6 +2504,9 @@
    "latin": "Nay",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "conflict",
    "bundledLatin": "Nai"
   },
@@ -1780,6 +2515,9 @@
    "latin": "Tam",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -1787,13 +2525,9 @@
    "latin": "Takaki",
    "count": 1,
    "variants": {},
-   "status": "new"
-  },
-  {
-   "khmer": "តាកាម៉ាសា",
-   "latin": "Takamasa",
-   "count": 1,
-   "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -1801,6 +2535,9 @@
    "latin": "Taing",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "conflict",
    "bundledLatin": "Tang"
   },
@@ -1809,6 +2546,9 @@
    "latin": "Tat",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -1816,6 +2556,9 @@
    "latin": "Dara",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "agree",
    "bundledLatin": "Dara"
   },
@@ -1824,6 +2567,9 @@
    "latin": "Talamidaw",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -1831,6 +2577,9 @@
    "latin": "Tola",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -1838,6 +2587,9 @@
    "latin": "To",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -1845,6 +2597,9 @@
    "latin": "Trente",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -1852,6 +2607,9 @@
    "latin": "Tribhuvanadityavarman",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -1859,6 +2617,9 @@
    "latin": "Tran",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -1866,6 +2627,9 @@
    "latin": "Thang",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -1873,6 +2637,9 @@
    "latin": "Thongyout",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/cambodian-citizens"
+   ],
    "status": "new"
   },
   {
@@ -1880,6 +2647,9 @@
    "latin": "Them",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "agree",
    "bundledLatin": "Them"
   },
@@ -1888,6 +2658,9 @@
    "latin": "Thong",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -1895,6 +2668,9 @@
    "latin": "Tit",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "conflict",
    "bundledLatin": "Tet"
   },
@@ -1905,6 +2681,10 @@
    "variants": {
     "Vichara": 1
    },
+   "sources": [
+    "wikidata/cambodian-citizens",
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -1912,6 +2692,9 @@
    "latin": "Titsovathanak",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -1919,6 +2702,9 @@
    "latin": "Sa",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -1926,6 +2712,9 @@
    "latin": "Sokhieng",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -1933,6 +2722,9 @@
    "latin": "Tiv",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -1940,6 +2732,9 @@
    "latin": "Tuk",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -1947,6 +2742,9 @@
    "latin": "Tuy",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/cambodian-citizens"
+   ],
    "status": "new"
   },
   {
@@ -1954,6 +2752,9 @@
    "latin": "Touch",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "agree",
    "bundledLatin": "Touch"
   },
@@ -1962,6 +2763,9 @@
    "latin": "Teang",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -1969,6 +2773,9 @@
    "latin": "Teab",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/cambodian-citizens"
+   ],
    "status": "new"
   },
   {
@@ -1976,6 +2783,9 @@
    "latin": "Trinh",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -1983,6 +2793,9 @@
    "latin": "Dharanindravarman",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikipedia/km-en-titles"
+   ],
    "status": "new"
   },
   {
@@ -1990,6 +2803,9 @@
    "latin": "Dharanindradevi",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -1997,6 +2813,9 @@
    "latin": "Dharanindravarman",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -2004,6 +2823,9 @@
    "latin": "Theara",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -2011,6 +2833,9 @@
    "latin": "Thirith",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "agree",
    "bundledLatin": "Thirith"
   },
@@ -2019,6 +2844,9 @@
    "latin": "Thiva",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -2026,6 +2854,9 @@
    "latin": "Thuon",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -2033,6 +2864,9 @@
    "latin": "Thoeun",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "conflict",
    "bundledLatin": "Thoeurn"
   },
@@ -2041,6 +2875,9 @@
    "latin": "Naradipo",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -2048,6 +2885,9 @@
    "latin": "Outey",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikipedia/km-en-titles"
+   ],
    "status": "new"
   },
   {
@@ -2055,6 +2895,9 @@
    "latin": "Norin",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/cambodian-citizens"
+   ],
    "status": "new"
   },
   {
@@ -2062,6 +2905,9 @@
    "latin": "Norindeth",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -2069,6 +2915,9 @@
    "latin": "Narindrapong",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikipedia/km-en-titles"
+   ],
    "status": "new"
   },
   {
@@ -2076,6 +2925,9 @@
    "latin": "Narindrapong",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -2083,6 +2935,9 @@
    "latin": "Narendralakshmi",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -2090,6 +2945,9 @@
    "latin": "Nol",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -2097,6 +2955,9 @@
    "latin": "Nisa",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -2104,6 +2965,9 @@
    "latin": "Nieto",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -2113,6 +2977,10 @@
    "variants": {
     "Nuth": 1
    },
+   "sources": [
+    "wikidata/kmwiki-humans",
+    "wikidata/cambodian-citizens"
+   ],
    "status": "conflict",
    "bundledLatin": "Nuth"
   },
@@ -2121,6 +2989,9 @@
    "latin": "Nou",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -2128,6 +2999,9 @@
    "latin": "Noron",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -2135,6 +3009,9 @@
    "latin": "Nuon",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "agree",
    "bundledLatin": "Nuon"
   },
@@ -2143,6 +3020,9 @@
    "latin": "Neth",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -2150,6 +3030,9 @@
    "latin": "Nripatindravarman",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikipedia/km-en-titles"
+   ],
    "status": "new"
   },
   {
@@ -2157,6 +3040,9 @@
    "latin": "Nripatindravarman",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -2164,6 +3050,9 @@
    "latin": "Vatana",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/cambodian-citizens"
+   ],
    "status": "new"
   },
   {
@@ -2171,6 +3060,9 @@
    "latin": "Panha",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "agree",
    "bundledLatin": "Panha"
   },
@@ -2179,6 +3071,9 @@
    "latin": "Kesar",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -2186,6 +3081,9 @@
    "latin": "Kesar",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -2193,6 +3091,9 @@
    "latin": "Bawlawkyantaw",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -2200,6 +3101,9 @@
    "latin": "Pa",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "agree",
    "bundledLatin": "Pa"
   },
@@ -2208,6 +3112,9 @@
    "latin": "Pang",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -2215,6 +3122,9 @@
    "latin": "Pach",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -2222,6 +3132,9 @@
    "latin": "Rithy",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "conflict",
    "bundledLatin": "Panh"
   },
@@ -2230,6 +3143,9 @@
    "latin": "Bayyareth",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -2237,6 +3153,9 @@
    "latin": "Baraing",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -2244,6 +3163,9 @@
    "latin": "Baraby",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -2251,6 +3173,9 @@
    "latin": "Basat",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -2258,6 +3183,9 @@
    "latin": "Baat",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -2265,6 +3193,9 @@
    "latin": "Bin",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "agree",
    "bundledLatin": "Bin"
   },
@@ -2273,6 +3204,9 @@
    "latin": "Bint",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -2280,6 +3214,9 @@
    "latin": "Bisiwu",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -2287,6 +3224,9 @@
    "latin": "Bong",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -2294,6 +3234,9 @@
    "latin": "Ponhearith",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -2301,6 +3244,9 @@
    "latin": "Bunchay",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -2308,6 +3254,9 @@
    "latin": "Bunchhai",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -2315,6 +3264,9 @@
    "latin": "Bunchhoeun",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -2322,6 +3274,9 @@
    "latin": "Bunthorn",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -2329,6 +3284,9 @@
    "latin": "Bunting",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/cambodian-citizens"
+   ],
    "status": "new"
   },
   {
@@ -2338,6 +3296,10 @@
    "variants": {
     "Bunthoeurn": 1
    },
+   "sources": [
+    "wikidata/kmwiki-humans",
+    "wikidata/cambodian-citizens"
+   ],
    "status": "new"
   },
   {
@@ -2345,6 +3307,9 @@
    "latin": "Pushkaraksha",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -2352,6 +3317,9 @@
    "latin": "Bou",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -2359,6 +3327,9 @@
    "latin": "Bora",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "agree",
    "bundledLatin": "Bora"
   },
@@ -2367,6 +3338,9 @@
    "latin": "Borey",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "agree",
    "bundledLatin": "Borey"
   },
@@ -2375,6 +3349,9 @@
    "latin": "Boret",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -2382,6 +3359,9 @@
    "latin": "Polin",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -2389,6 +3369,9 @@
    "latin": "Bour",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -2398,6 +3381,9 @@
    "variants": {
     "Phan": 1
    },
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -2405,6 +3391,9 @@
    "latin": "Bento",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -2412,6 +3401,9 @@
    "latin": "Virahcarman",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -2419,6 +3411,9 @@
    "latin": "Pran",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "agree",
    "bundledLatin": "Pran"
   },
@@ -2429,6 +3424,9 @@
    "variants": {
     "Prasith": 1
    },
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "conflict",
    "bundledLatin": "Broseth"
   },
@@ -2437,6 +3435,9 @@
    "latin": "Davin",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -2444,6 +3445,9 @@
    "latin": "Phallin",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -2451,6 +3455,9 @@
    "latin": "Phach",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -2458,6 +3465,9 @@
    "latin": "Phat",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "agree",
    "bundledLatin": "Phat"
   },
@@ -2466,6 +3476,9 @@
    "latin": "Peng",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "conflict",
    "bundledLatin": "Phan"
   },
@@ -2474,6 +3487,9 @@
    "latin": "Pho",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -2481,6 +3497,9 @@
    "latin": "Pheng",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "agree",
    "bundledLatin": "Pheng"
   },
@@ -2489,6 +3508,9 @@
    "latin": "Pauk",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -2496,6 +3518,9 @@
    "latin": "Pongsanmoni",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -2503,6 +3528,9 @@
    "latin": "Keo",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -2510,6 +3538,9 @@
    "latin": "Daya",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -2517,6 +3548,9 @@
    "latin": "Ponnary",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -2524,6 +3558,9 @@
    "latin": "Bimbisara",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -2531,6 +3568,9 @@
    "latin": "Pisith",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "agree",
    "bundledLatin": "Pisith"
   },
@@ -2539,6 +3579,9 @@
    "latin": "Pisoth",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -2546,6 +3589,9 @@
    "latin": "Pisen",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/cambodian-citizens"
+   ],
    "status": "new"
   },
   {
@@ -2553,6 +3599,9 @@
    "latin": "Pilika",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "agree",
    "bundledLatin": "Pilika"
   },
@@ -2561,6 +3610,9 @@
    "latin": "Kek",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -2568,6 +3620,9 @@
    "latin": "Pich",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -2575,6 +3630,9 @@
    "latin": "Pou",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -2582,6 +3640,9 @@
    "latin": "Prom",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -2589,6 +3650,9 @@
    "latin": "Katyayana",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -2596,6 +3660,9 @@
    "latin": "Niladevi",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikipedia/km-en-titles"
+   ],
    "status": "new"
   },
   {
@@ -2603,6 +3670,9 @@
    "latin": "Outey",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -2610,6 +3680,9 @@
    "latin": "Indravarman",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -2617,6 +3690,9 @@
    "latin": "Satha",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -2624,6 +3700,9 @@
    "latin": "Preap",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "agree",
    "bundledLatin": "Preap"
   },
@@ -2632,6 +3711,9 @@
    "latin": "Proeung",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -2639,6 +3721,9 @@
    "latin": "Bhavavarman",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -2646,13 +3731,9 @@
    "latin": "Phearath",
    "count": 1,
    "variants": {},
-   "status": "new"
-  },
-  {
-   "khmer": "ភីលីប",
-   "latin": "Philipp",
-   "count": 1,
-   "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -2660,6 +3741,9 @@
    "latin": "Pisa",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -2667,6 +3751,9 @@
    "latin": "Phim",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "conflict",
    "bundledLatin": "Phoem"
   },
@@ -2675,6 +3762,9 @@
    "latin": "Sopheap",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikipedia/km-en-titles"
+   ],
    "status": "conflict",
    "bundledLatin": "Phou"
   },
@@ -2686,6 +3776,10 @@
     "Phoutong": 1,
     "Phuthong": 1
    },
+   "sources": [
+    "wikidata/kmwiki-humans",
+    "wikidata/cambodian-citizens"
+   ],
    "status": "new"
   },
   {
@@ -2693,6 +3787,9 @@
    "latin": "Phurissara",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -2700,6 +3797,9 @@
    "latin": "Monetrey",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/cambodian-citizens"
+   ],
    "status": "new"
   },
   {
@@ -2707,6 +3807,9 @@
    "latin": "Mam",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -2714,6 +3817,9 @@
    "latin": "Muhammad",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -2721,6 +3827,9 @@
    "latin": "Maudgalyayana",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikipedia/km-en-titles"
+   ],
    "status": "new"
   },
   {
@@ -2728,6 +3837,9 @@
    "latin": "Mahipativarman",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -2735,6 +3847,9 @@
    "latin": "Mahendravarman",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -2742,6 +3857,9 @@
    "latin": "Mak",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -2749,6 +3867,9 @@
    "latin": "Manaf",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -2756,6 +3877,9 @@
    "latin": "Manith",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -2763,6 +3887,9 @@
    "latin": "Manet",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "agree",
    "bundledLatin": "Manet"
   },
@@ -2771,20 +3898,9 @@
    "latin": "Mat",
    "count": 1,
    "variants": {},
-   "status": "new"
-  },
-  {
-   "khmer": "ម៉ាថាយ",
-   "latin": "Matthew",
-   "count": 1,
-   "variants": {},
-   "status": "new"
-  },
-  {
-   "khmer": "ម៉ាទ្យាស",
-   "latin": "Matthias",
-   "count": 1,
-   "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -2792,6 +3908,9 @@
    "latin": "Mean",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -2799,6 +3918,9 @@
    "latin": "Mani",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -2806,6 +3928,9 @@
    "latin": "Marie",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -2813,6 +3938,9 @@
    "latin": "Mealy",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/cambodian-citizens"
+   ],
    "status": "new"
   },
   {
@@ -2820,6 +3948,9 @@
    "latin": "Malachi",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -2827,6 +3958,9 @@
    "latin": "Mic",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/cambodian-citizens"
+   ],
    "status": "new"
   },
   {
@@ -2834,6 +3968,9 @@
    "latin": "Mithuna",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/cambodian-citizens"
+   ],
    "status": "new"
   },
   {
@@ -2841,6 +3978,9 @@
    "latin": "Min",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "agree",
    "bundledLatin": "Min"
   },
@@ -2849,6 +3989,9 @@
    "latin": "Mey",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -2856,6 +3999,9 @@
    "latin": "Mey",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -2863,6 +4009,9 @@
    "latin": "Mijland",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -2870,6 +4019,9 @@
    "latin": "Mirzaev",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -2877,6 +4029,9 @@
    "latin": "Mong",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -2884,6 +4039,9 @@
    "latin": "Monikessan",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -2891,6 +4049,9 @@
    "latin": "Arunrasmy",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -2898,6 +4059,9 @@
    "latin": "Monipong",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -2905,6 +4069,9 @@
    "latin": "Monirath",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/cambodian-citizens"
+   ],
    "status": "conflict",
    "bundledLatin": "Monyroth"
   },
@@ -2913,6 +4080,9 @@
    "latin": "Monireth",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -2920,6 +4090,9 @@
    "latin": "Modi",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikipedia/km-en-titles"
+   ],
    "status": "new"
   },
   {
@@ -2927,6 +4100,9 @@
    "latin": "Monica",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "agree",
    "bundledLatin": "Monica"
   },
@@ -2935,6 +4111,9 @@
    "latin": "Mu",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -2942,6 +4121,9 @@
    "latin": "Molyvann",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "agree",
    "bundledLatin": "Molyvann"
   },
@@ -2950,6 +4132,9 @@
    "latin": "Meas",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -2957,13 +4142,9 @@
    "latin": "Men",
    "count": 1,
    "variants": {},
-   "status": "new"
-  },
-  {
-   "khmer": "ម៉ៃឃែល",
-   "latin": "Michael",
-   "count": 1,
-   "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -2971,6 +4152,9 @@
    "latin": "Yajnavaraha",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -2980,6 +4164,10 @@
    "variants": {
     "Yuon": 1
    },
+   "sources": [
+    "wikidata/kmwiki-humans",
+    "wikipedia/km-en-titles"
+   ],
    "status": "conflict",
    "bundledLatin": "Yuon"
   },
@@ -2988,6 +4176,9 @@
    "latin": "Yol",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -2995,6 +4186,9 @@
    "latin": "Yosrachea",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -3002,6 +4196,9 @@
    "latin": "Yasovarman",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -3009,6 +4206,9 @@
    "latin": "Yang",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/cambodian-citizens"
+   ],
    "status": "new"
   },
   {
@@ -3016,6 +4216,9 @@
    "latin": "Yat",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -3023,6 +4226,9 @@
    "latin": "Yaty",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -3030,6 +4236,9 @@
    "latin": "Choeung",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikipedia/km-en-titles"
+   ],
    "status": "new"
   },
   {
@@ -3037,6 +4246,9 @@
    "latin": "Yim",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -3044,6 +4256,9 @@
    "latin": "Youtevong",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -3051,6 +4266,9 @@
    "latin": "Yuthorn",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -3060,6 +4278,9 @@
    "variants": {
     "Yuon": 1
    },
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -3067,6 +4288,9 @@
    "latin": "Yuvaneath",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -3074,6 +4298,9 @@
    "latin": "Yudai",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -3081,13 +4308,9 @@
    "latin": "Youran",
    "count": 1,
    "variants": {},
-   "status": "new"
-  },
-  {
-   "khmer": "យ៉ូស៊ីអាគី",
-   "latin": "Yoshiaki",
-   "count": 1,
-   "variants": {},
+   "sources": [
+    "wikidata/cambodian-citizens"
+   ],
    "status": "new"
   },
   {
@@ -3095,6 +4318,9 @@
    "latin": "Rainsy",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "agree",
    "bundledLatin": "Rainsy"
   },
@@ -3103,6 +4329,9 @@
    "latin": "Rumchong",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -3110,6 +4339,9 @@
    "latin": "Rachana",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/cambodian-citizens"
+   ],
    "status": "agree",
    "bundledLatin": "Rachana"
   },
@@ -3118,6 +4350,9 @@
    "latin": "Ranariddh",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -3125,6 +4360,9 @@
    "latin": "Ratanak",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "conflict",
    "bundledLatin": "Rathanak"
   },
@@ -3133,6 +4371,9 @@
    "latin": "Ran",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "conflict",
    "bundledLatin": "Rorn"
   },
@@ -3141,6 +4382,9 @@
    "latin": "Raksmey",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/cambodian-citizens"
+   ],
    "status": "agree",
    "bundledLatin": "Raksmey"
   },
@@ -3149,6 +4393,9 @@
    "latin": "Reach",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -3156,6 +4403,9 @@
    "latin": "Rajendravarman",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -3163,6 +4413,9 @@
    "latin": "Rajendravarman",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikipedia/km-en-titles"
+   ],
    "status": "new"
   },
   {
@@ -3170,6 +4423,9 @@
    "latin": "Rany",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -3177,6 +4433,9 @@
    "latin": "Reameathiptei",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -3184,6 +4443,9 @@
    "latin": "Wright",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -3191,6 +4453,9 @@
    "latin": "Rith",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "agree",
    "bundledLatin": "Rith"
   },
@@ -3199,6 +4464,9 @@
    "latin": "Panh",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "conflict",
    "bundledLatin": "Rithy"
   },
@@ -3207,6 +4475,9 @@
    "latin": "Rundaro",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "conflict",
    "bundledLatin": "Rindaro"
   },
@@ -3215,6 +4486,9 @@
    "latin": "Ry",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/cambodian-citizens"
+   ],
    "status": "new"
   },
   {
@@ -3222,6 +4496,9 @@
    "latin": "Ritharavong",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -3229,6 +4506,9 @@
    "latin": "Rinpoche",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -3236,6 +4516,9 @@
    "latin": "Rim",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -3243,6 +4526,9 @@
    "latin": "Rong",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/cambodian-citizens"
+   ],
    "status": "new"
   },
   {
@@ -3250,6 +4536,9 @@
    "latin": "Ruma",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -3257,6 +4546,9 @@
    "latin": "Roque",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -3264,6 +4556,9 @@
    "latin": "Sarita",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -3271,6 +4566,9 @@
    "latin": "In",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -3278,6 +4576,9 @@
    "latin": "Liev",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -3285,6 +4586,9 @@
    "latin": "Liuye",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -3292,13 +4596,9 @@
    "latin": "Luu",
    "count": 1,
    "variants": {},
-   "status": "new"
-  },
-  {
-   "khmer": "លូដវីក",
-   "latin": "Ludwig",
-   "count": 1,
-   "variants": {},
+   "sources": [
+    "wikidata/cambodian-citizens"
+   ],
    "status": "new"
   },
   {
@@ -3306,6 +4606,9 @@
    "latin": "Lucea",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -3313,6 +4616,9 @@
    "latin": "Ung",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/cambodian-citizens"
+   ],
    "status": "conflict",
    "bundledLatin": "Loung"
   },
@@ -3321,6 +4627,9 @@
    "latin": "Diogo",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -3328,6 +4637,9 @@
    "latin": "Laukpya",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -3335,6 +4647,9 @@
    "latin": "Louis",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -3342,6 +4657,9 @@
    "latin": "Vongsey",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -3349,6 +4667,9 @@
    "latin": "Watchayavong",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -3356,6 +4677,9 @@
    "latin": "Vathanak",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/cambodian-citizens"
+   ],
    "status": "conflict",
    "bundledLatin": "Vathanaka"
   },
@@ -3364,6 +4688,9 @@
    "latin": "Vathanaka",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -3371,6 +4698,9 @@
    "latin": "Vandy",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/cambodian-citizens"
+   ],
    "status": "new"
   },
   {
@@ -3378,6 +4708,9 @@
    "latin": "Vannak",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "agree",
    "bundledLatin": "Vannak"
   },
@@ -3386,6 +4719,9 @@
    "latin": "Vansodany",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "agree",
    "bundledLatin": "Vansodany"
   },
@@ -3394,6 +4730,9 @@
    "latin": "Hay",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -3401,6 +4740,9 @@
    "latin": "Voan",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/cambodian-citizens"
+   ],
    "status": "new"
   },
   {
@@ -3408,6 +4750,9 @@
    "latin": "Vorn",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -3415,6 +4760,9 @@
    "latin": "Vam",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -3422,6 +4770,9 @@
    "latin": "Var",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -3429,6 +4780,9 @@
    "latin": "Wang",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -3436,6 +4790,9 @@
    "latin": "Hoanh",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -3443,6 +4800,9 @@
    "latin": "Vandy",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -3450,6 +4810,9 @@
    "latin": "Vanneth",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "conflict",
    "bundledLatin": "Vannet"
   },
@@ -3458,6 +4821,9 @@
    "latin": "Vannsak",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -3465,6 +4831,9 @@
    "latin": "Veasna",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "agree",
    "bundledLatin": "Veasna"
   },
@@ -3473,13 +4842,9 @@
    "latin": "Vikrantavarman",
    "count": 1,
    "variants": {},
-   "status": "new"
-  },
-  {
-   "khmer": "វិចទ័រ",
-   "latin": "Victor",
-   "count": 1,
-   "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -3487,6 +4852,9 @@
    "latin": "Vichet",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -3494,6 +4862,9 @@
    "latin": "Vichet",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikipedia/km-en-titles"
+   ],
    "status": "agree",
    "bundledLatin": "Vichet"
   },
@@ -3502,6 +4873,9 @@
    "latin": "Vijayendralakshmi",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -3509,6 +4883,9 @@
    "latin": "Dany",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -3516,6 +4893,9 @@
    "latin": "Vichea",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -3523,6 +4903,9 @@
    "latin": "Vinh",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -3530,6 +4913,9 @@
    "latin": "Wentian",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -3537,6 +4923,9 @@
    "latin": "Visakha",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikipedia/km-en-titles"
+   ],
    "status": "new"
   },
   {
@@ -3544,6 +4933,9 @@
    "latin": "Viseth",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/cambodian-citizens"
+   ],
    "status": "new"
   },
   {
@@ -3551,6 +4943,9 @@
    "latin": "Vissoth",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -3561,6 +4956,9 @@
     "Virak": 1,
     "Vireak": 1
    },
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "conflict",
    "bundledLatin": "Virak"
   },
@@ -3569,6 +4967,9 @@
    "latin": "Will",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -3576,6 +4977,9 @@
    "latin": "Wutty",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -3583,6 +4987,9 @@
    "latin": "Sokpoly",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -3590,6 +4997,9 @@
    "latin": "Austin",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -3597,6 +5007,9 @@
    "latin": "Vichara",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -3604,6 +5017,9 @@
    "latin": "Vet",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -3611,6 +5027,9 @@
    "latin": "Veth",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -3618,6 +5037,9 @@
    "latin": "Veloso",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -3625,6 +5047,9 @@
    "latin": "Indrajayavarman",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -3632,6 +5057,9 @@
    "latin": "Sam",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "agree",
    "bundledLatin": "Sam"
   },
@@ -3640,6 +5068,9 @@
    "latin": "Sak",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -3647,6 +5078,9 @@
    "latin": "Sorn",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "agree",
    "bundledLatin": "Sorn"
   },
@@ -3655,6 +5089,9 @@
    "latin": "Sambaur",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -3662,6 +5099,9 @@
    "latin": "Samphan",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "agree",
    "bundledLatin": "Samphan"
   },
@@ -3670,6 +5110,9 @@
    "latin": "Devikshatri",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikipedia/km-en-titles"
+   ],
    "status": "new"
   },
   {
@@ -3677,6 +5120,9 @@
    "latin": "Shambhuvarman",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -3684,6 +5130,9 @@
    "latin": "Samrin",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "agree",
    "bundledLatin": "Samrin"
   },
@@ -3692,6 +5141,9 @@
    "latin": "Saksi",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "conflict",
    "bundledLatin": "Sak"
   },
@@ -3700,6 +5152,9 @@
    "latin": "Ceadach",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -3710,6 +5165,10 @@
     "San": 1,
     "Sann": 1
    },
+   "sources": [
+    "wikidata/kmwiki-humans",
+    "wikidata/cambodian-citizens"
+   ],
    "status": "conflict",
    "bundledLatin": "Sann"
   },
@@ -3718,6 +5177,9 @@
    "latin": "Samon",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -3725,6 +5187,9 @@
    "latin": "Samuel",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -3732,6 +5197,9 @@
    "latin": "Ty",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -3739,6 +5207,9 @@
    "latin": "Saron",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/cambodian-citizens"
+   ],
    "status": "new"
   },
   {
@@ -3746,6 +5217,9 @@
    "latin": "Sarath",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -3753,6 +5227,9 @@
    "latin": "Sarath",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikipedia/km-en-titles"
+   ],
    "status": "new"
   },
   {
@@ -3760,6 +5237,9 @@
    "latin": "Sarapich",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -3767,6 +5247,9 @@
    "latin": "Sarin",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -3774,6 +5257,9 @@
    "latin": "Reth",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -3781,6 +5267,9 @@
    "latin": "Sarun",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/cambodian-citizens"
+   ],
    "status": "new"
   },
   {
@@ -3788,6 +5277,9 @@
    "latin": "Saveth",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikipedia/km-en-titles"
+   ],
    "status": "agree",
    "bundledLatin": "Saveth"
   },
@@ -3796,6 +5288,9 @@
    "latin": "Saveth",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -3803,6 +5298,9 @@
    "latin": "Savay",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/cambodian-citizens"
+   ],
    "status": "new"
   },
   {
@@ -3810,6 +5308,9 @@
    "latin": "Sagoe",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -3817,6 +5318,9 @@
    "latin": "Sinti",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -3824,6 +5328,9 @@
    "latin": "Sereymun",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -3831,6 +5338,9 @@
    "latin": "Sirivudh",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -3838,6 +5348,9 @@
    "latin": "Sy",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "agree",
    "bundledLatin": "Sy"
   },
@@ -3846,6 +5359,9 @@
    "latin": "Ken",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/cambodian-citizens"
+   ],
    "status": "new"
   },
   {
@@ -3853,6 +5369,9 @@
    "latin": "City",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -3862,6 +5381,10 @@
    "variants": {
     "Sinn": 1
    },
+   "sources": [
+    "wikidata/cambodian-citizens",
+    "wikidata/kmwiki-humans"
+   ],
    "status": "conflict",
    "bundledLatin": "Sinn"
   },
@@ -3870,6 +5393,9 @@
    "latin": "Sinoun",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/cambodian-citizens"
+   ],
    "status": "new"
   },
   {
@@ -3877,6 +5403,9 @@
    "latin": "Sivorn",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "agree",
    "bundledLatin": "Sivorn"
   },
@@ -3885,6 +5414,9 @@
    "latin": "Siraniama",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -3892,6 +5424,9 @@
    "latin": "Sisamouth",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "agree",
    "bundledLatin": "Sisamouth"
   },
@@ -3900,6 +5435,9 @@
    "latin": "Sisowath",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -3907,6 +5445,9 @@
    "latin": "Sbong",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -3914,6 +5455,9 @@
    "latin": "Sihanouk",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "agree",
    "bundledLatin": "Sihanouk"
   },
@@ -3922,6 +5466,9 @@
    "latin": "Seiha",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -3929,6 +5476,9 @@
    "latin": "Sim",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -3936,6 +5486,9 @@
    "latin": "Srvandztiants",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -3943,6 +5496,9 @@
    "latin": "Sos",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -3950,6 +5506,9 @@
    "latin": "Voeun",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -3957,6 +5516,9 @@
    "latin": "Sokpheng",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/cambodian-citizens"
+   ],
    "status": "new"
   },
   {
@@ -3964,6 +5526,9 @@
    "latin": "Soksela",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -3971,6 +5536,9 @@
    "latin": "Soksophea",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -3978,6 +5546,9 @@
    "latin": "Sochua",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -3985,6 +5556,9 @@
    "latin": "Sokhon",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -3992,6 +5566,9 @@
    "latin": "Sokun",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -3999,6 +5576,9 @@
    "latin": "Sokunkanha",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "agree",
    "bundledLatin": "Sokunkanha"
   },
@@ -4007,6 +5587,9 @@
    "latin": "Pang",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/cambodian-citizens"
+   ],
    "status": "new"
   },
   {
@@ -4014,6 +5597,9 @@
    "latin": "Sugriva",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikipedia/km-en-titles"
+   ],
    "status": "new"
   },
   {
@@ -4021,6 +5607,9 @@
    "latin": "Tim",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -4028,6 +5617,9 @@
    "latin": "Sochetra",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "agree",
    "bundledLatin": "Sochetra"
   },
@@ -4036,6 +5628,9 @@
    "latin": "Devikshatri",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -4043,6 +5638,9 @@
    "latin": "Socheatvong",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -4050,6 +5648,9 @@
    "latin": "Socheavila",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -4057,6 +5658,9 @@
    "latin": "Sodary",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -4064,6 +5668,9 @@
    "latin": "Sutsakhan",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "agree",
    "bundledLatin": "Sutsakhan"
   },
@@ -4072,6 +5679,9 @@
    "latin": "Soth",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -4079,6 +5689,9 @@
    "latin": "Sotheavathana",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/cambodian-citizens"
+   ],
    "status": "new"
   },
   {
@@ -4086,6 +5699,9 @@
    "latin": "Sun",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "agree",
    "bundledLatin": "Sun"
   },
@@ -4094,6 +5710,9 @@
    "latin": "Sunnix",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -4101,6 +5720,9 @@
    "latin": "Sopanha",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/cambodian-citizens"
+   ],
    "status": "new"
   },
   {
@@ -4108,6 +5730,9 @@
    "latin": "Sophal",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "agree",
    "bundledLatin": "Sophal"
   },
@@ -4116,6 +5741,9 @@
    "latin": "Sophanat",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -4123,6 +5751,9 @@
    "latin": "Sophann",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -4130,6 +5761,9 @@
    "latin": "Sophara",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -4137,6 +5771,9 @@
    "latin": "Sophorn",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/cambodian-citizens"
+   ],
    "status": "new"
   },
   {
@@ -4144,6 +5781,9 @@
    "latin": "Sopheap",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -4151,6 +5791,9 @@
    "latin": "Suy",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -4158,6 +5801,9 @@
    "latin": "Sarvani",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -4165,6 +5811,9 @@
    "latin": "Sovannmakara",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "agree",
    "bundledLatin": "Sovannmakara"
   },
@@ -4173,6 +5822,9 @@
    "latin": "Sovannareach",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "conflict",
    "bundledLatin": "Sovanreach"
   },
@@ -4181,6 +5833,9 @@
    "latin": "Sovannara",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/cambodian-citizens"
+   ],
    "status": "agree",
    "bundledLatin": "Sovannara"
   },
@@ -4189,6 +5844,9 @@
    "latin": "Sovannareach",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikipedia/km-en-titles"
+   ],
    "status": "agree",
    "bundledLatin": "Sovannareach"
   },
@@ -4197,6 +5855,9 @@
    "latin": "Sovath",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "agree",
    "bundledLatin": "Sovath"
   },
@@ -4205,6 +5866,9 @@
    "latin": "Sovichea",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/cambodian-citizens"
+   ],
    "status": "agree",
    "bundledLatin": "Sovichea"
   },
@@ -4213,6 +5877,9 @@
    "latin": "Sosidan",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -4220,6 +5887,9 @@
    "latin": "Sin",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -4227,6 +5897,9 @@
    "latin": "So",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -4234,6 +5907,9 @@
    "latin": "Sou",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -4241,6 +5917,9 @@
    "latin": "Saukam",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -4248,6 +5927,9 @@
    "latin": "Sodavid",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -4255,6 +5937,9 @@
    "latin": "Sonando",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -4262,6 +5947,9 @@
    "latin": "Sonyta",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -4269,6 +5957,9 @@
    "latin": "Soubert",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/cambodian-citizens"
+   ],
    "status": "new"
   },
   {
@@ -4276,6 +5967,9 @@
    "latin": "Suryavarman",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "agree",
    "bundledLatin": "Suryavarman"
   },
@@ -4284,6 +5978,9 @@
    "latin": "Suhana",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -4291,6 +5988,9 @@
    "latin": "Seut",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -4298,6 +5998,9 @@
    "latin": "Soeuy",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -4305,6 +6008,9 @@
    "latin": "Zeng",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -4312,6 +6018,9 @@
    "latin": "Sieng",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "conflict",
    "bundledLatin": "Seang"
   },
@@ -4320,6 +6029,9 @@
    "latin": "Chang",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/cambodian-citizens"
+   ],
    "status": "new"
   },
   {
@@ -4327,6 +6039,9 @@
    "latin": "Seam",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -4334,6 +6049,9 @@
    "latin": "Seavmey",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "agree",
    "bundledLatin": "Seavmey"
   },
@@ -4342,6 +6060,9 @@
    "latin": "Sailors",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -4349,6 +6070,9 @@
    "latin": "Sen",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "agree",
    "bundledLatin": "Sen"
   },
@@ -4357,6 +6081,9 @@
    "latin": "Sensonita",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -4364,6 +6091,9 @@
    "latin": "Sem",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "conflict",
    "bundledLatin": "Seom"
   },
@@ -4372,6 +6102,9 @@
    "latin": "Sergio",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -4379,6 +6112,9 @@
    "latin": "So",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -4386,6 +6122,9 @@
    "latin": "Sophea",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -4393,6 +6132,9 @@
    "latin": "Sopheap",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/cambodian-citizens"
+   ],
    "status": "new"
   },
   {
@@ -4400,6 +6142,9 @@
    "latin": "Saom",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "agree",
    "bundledLatin": "Saom"
   },
@@ -4408,6 +6153,9 @@
    "latin": "Soma",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -4415,6 +6163,9 @@
    "latin": "Norodom",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -4422,6 +6173,9 @@
    "latin": "Sao",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/cambodian-citizens"
+   ],
    "status": "new"
   },
   {
@@ -4429,6 +6183,9 @@
    "latin": "Sreymom",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "agree",
    "bundledLatin": "Sreymom"
   },
@@ -4437,6 +6194,9 @@
    "latin": "Srindravarman",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -4444,6 +6204,9 @@
    "latin": "Sreng",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "agree",
    "bundledLatin": "Sreng"
   },
@@ -4452,6 +6215,9 @@
    "latin": "Hangchuon",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -4459,6 +6225,9 @@
    "latin": "Harshavarman",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -4466,6 +6235,9 @@
    "latin": "Harshavarman",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikipedia/km-en-titles"
+   ],
    "status": "new"
   },
   {
@@ -4473,21 +6245,20 @@
    "latin": "Hach",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "conflict",
    "bundledLatin": "Harch"
-  },
-  {
-   "khmer": "ហាន់ស",
-   "latin": "Hans",
-   "count": 1,
-   "variants": {},
-   "status": "new"
   },
   {
    "khmer": "ហាបាគុក",
    "latin": "Habakkuk",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -4495,6 +6266,9 @@
    "latin": "Harriman-annous",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -4502,6 +6276,9 @@
    "latin": "Hashim",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -4509,6 +6286,9 @@
    "latin": "Hin",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -4516,6 +6296,9 @@
    "latin": "Him",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "agree",
    "bundledLatin": "Him"
   },
@@ -4524,6 +6307,9 @@
    "latin": "Hong",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "agree",
    "bundledLatin": "Hong"
   },
@@ -4532,6 +6318,9 @@
    "latin": "Huntian",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -4541,6 +6330,9 @@
    "variants": {
     "Huy": 1
    },
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "conflict",
    "bundledLatin": "Huy"
   },
@@ -4549,6 +6341,9 @@
    "latin": "Hul",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "agree",
    "bundledLatin": "Hul"
   },
@@ -4557,6 +6352,9 @@
    "latin": "Hin",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -4564,6 +6362,9 @@
    "latin": "Hu",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "conflict",
    "bundledLatin": "Ho"
   },
@@ -4572,6 +6373,9 @@
    "latin": "Hell",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -4579,6 +6383,9 @@
    "latin": "Vanna",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "conflict",
    "bundledLatin": "Hai"
   },
@@ -4587,6 +6394,9 @@
    "latin": "Kek",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -4594,6 +6404,9 @@
    "latin": "Garegin",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -4601,13 +6414,9 @@
    "latin": "Guytho",
    "count": 1,
    "variants": {},
-   "status": "new"
-  },
-  {
-   "khmer": "ហ្គេអ័រគ",
-   "latin": "Georg",
-   "count": 1,
-   "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -4615,6 +6424,9 @@
    "latin": "Gai",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -4622,13 +6434,9 @@
    "latin": "Fatima",
    "count": 1,
    "variants": {},
-   "status": "new"
-  },
-  {
-   "khmer": "ហ្វ្រីដរីខ",
-   "latin": "Friedrich",
-   "count": 1,
-   "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -4636,6 +6444,9 @@
    "latin": "Zhi",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -4643,6 +6454,9 @@
    "latin": "Zogbe",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -4650,6 +6464,9 @@
    "latin": "Lundy",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "agree",
    "bundledLatin": "Lundy"
   },
@@ -4658,6 +6475,9 @@
    "latin": "Laboravy",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -4665,6 +6485,9 @@
    "latin": "Lay",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/cambodian-citizens"
+   ],
    "status": "agree",
    "bundledLatin": "Lay"
   },
@@ -4673,6 +6496,9 @@
    "latin": "Lion",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -4680,6 +6506,9 @@
    "latin": "Ley",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -4687,6 +6516,9 @@
    "latin": "Loto",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -4694,6 +6526,9 @@
    "latin": "Orn",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -4701,6 +6536,9 @@
    "latin": "Aniruddha",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -4708,6 +6546,9 @@
    "latin": "Anawrahta",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -4715,6 +6556,9 @@
    "latin": "Apaiwong",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -4722,6 +6566,9 @@
    "latin": "Arunrasmy",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikipedia/km-en-titles"
+   ],
    "status": "new"
   },
   {
@@ -4729,13 +6576,9 @@
    "latin": "Ang",
    "count": 1,
    "variants": {},
-   "status": "new"
-  },
-  {
-   "khmer": "អាតឺរ",
-   "latin": "Arthur",
-   "count": 1,
-   "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -4743,6 +6586,9 @@
    "latin": "An",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "agree",
    "bundledLatin": "An"
   },
@@ -4751,6 +6597,9 @@
    "latin": "Andres",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -4758,6 +6607,9 @@
    "latin": "Anderson",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -4765,13 +6617,9 @@
    "latin": "Andre",
    "count": 1,
    "variants": {},
-   "status": "new"
-  },
-  {
-   "khmer": "អាន់តុន",
-   "latin": "Anton",
-   "count": 1,
-   "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -4779,6 +6627,9 @@
    "latin": "'abd",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -4786,6 +6637,9 @@
    "latin": "Kader",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -4793,6 +6647,9 @@
    "latin": "Ayuth",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -4800,6 +6657,9 @@
    "latin": "Amram",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -4807,6 +6667,9 @@
    "latin": "Aristotle",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -4814,6 +6677,9 @@
    "latin": "Alisher",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -4821,6 +6687,9 @@
    "latin": "Iew",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -4828,6 +6697,9 @@
    "latin": "Ith",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -4835,6 +6707,9 @@
    "latin": "Ei",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -4842,6 +6717,9 @@
    "latin": "Ibn",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -4849,6 +6727,9 @@
    "latin": "Hippocrates",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/all-humans"
+   ],
    "status": "new"
   },
   {
@@ -4856,6 +6737,9 @@
    "latin": "Im",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/cambodian-citizens"
+   ],
    "status": "agree",
    "bundledLatin": "Im"
   },
@@ -4864,6 +6748,9 @@
    "latin": "Eratosthenes",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -4871,6 +6758,9 @@
    "latin": "Ong",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "conflict",
    "bundledLatin": "Ung"
   },
@@ -4879,6 +6769,9 @@
    "latin": "Ol",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -4886,6 +6779,9 @@
    "latin": "Iago",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -4893,6 +6789,9 @@
    "latin": "Virak",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -4900,6 +6799,9 @@
    "latin": "Ogawa",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -4907,28 +6809,20 @@
    "latin": "Leng",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/cambodian-citizens"
+   ],
    "status": "conflict",
    "bundledLatin": "Ouch"
-  },
-  {
-   "khmer": "អូតូ",
-   "latin": "Otto",
-   "count": 1,
-   "variants": {},
-   "status": "new"
   },
   {
    "khmer": "អូនីល",
    "latin": "O'neill",
    "count": 1,
    "variants": {},
-   "status": "new"
-  },
-  {
-   "khmer": "អូលីវើរ",
-   "latin": "Oliver",
-   "count": 1,
-   "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -4936,6 +6830,9 @@
    "latin": "Ose",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -4943,6 +6840,9 @@
    "latin": "Ousman",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -4950,6 +6850,9 @@
    "latin": "Aularong",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -4957,6 +6860,9 @@
    "latin": "Ieu",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -4964,6 +6870,9 @@
    "latin": "Ieu",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikipedia/km-en-titles"
+   ],
    "status": "agree",
    "bundledLatin": "Ieu"
   },
@@ -4972,6 +6881,9 @@
    "latin": "Eh",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -4979,6 +6891,9 @@
    "latin": "Esteban",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -4986,6 +6901,9 @@
    "latin": "F.c.",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -4993,13 +6911,9 @@
    "latin": "Angelina",
    "count": 1,
    "variants": {},
-   "status": "new"
-  },
-  {
-   "khmer": "អោហ្គុស",
-   "latin": "August",
-   "count": 1,
-   "variants": {},
+   "sources": [
+    "wikipedia/km-en-titles"
+   ],
    "status": "new"
   },
   {
@@ -5007,6 +6921,9 @@
    "latin": "Ban",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -5014,6 +6931,9 @@
    "latin": "Keo",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -5021,6 +6941,9 @@
    "latin": "Tevi",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -5028,6 +6951,9 @@
    "latin": "Tey",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -5035,6 +6961,9 @@
    "latin": "Intharacha",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -5042,13 +6971,9 @@
    "latin": "Indravarman",
    "count": 1,
    "variants": {},
-   "status": "new"
-  },
-  {
-   "khmer": "ឦសាន",
-   "latin": "Ishana",
-   "count": 1,
-   "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -5056,6 +6981,9 @@
    "latin": "Udayadityavarman",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikipedia/km-en-titles"
+   ],
    "status": "new"
   },
   {
@@ -5063,6 +6991,9 @@
    "latin": "Outey",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -5070,6 +7001,9 @@
    "latin": "Udayadityavarman",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -5077,6 +7011,9 @@
    "latin": "Upali",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -5084,6 +7021,9 @@
    "latin": "Uppalavanna",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikipedia/km-en-titles"
+   ],
    "status": "new"
   },
   {
@@ -5091,6 +7031,9 @@
    "latin": "Reththy",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   },
   {
@@ -5098,6 +7041,9 @@
    "latin": "Em",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "agree",
    "bundledLatin": "Em"
   },
@@ -5106,6 +7052,9 @@
    "latin": "Aok",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "agree",
    "bundledLatin": "Aok"
   },
@@ -5114,6 +7063,9 @@
    "latin": "Ong",
    "count": 1,
    "variants": {},
+   "sources": [
+    "wikidata/kmwiki-humans"
+   ],
    "status": "new"
   }
  ]
