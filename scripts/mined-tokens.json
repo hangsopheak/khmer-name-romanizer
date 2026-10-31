@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-31T13:47:33.237Z",
+ "generated": "2026-10-31T13:49:29.418Z",
  "aligned": 596,
  "tokens": [
   {
@@ -338,8 +338,7 @@
     "wikidata/kmwiki-humans",
     "wikipedia/redirects-en"
    ],
-   "status": "agree",
-   "bundledLatin": "Chut"
+   "status": "new"
   },
   {
    "khmer": "ដួង",
@@ -511,8 +510,7 @@
     "wikidata/native-names",
     "wikipedia/redirects-en"
    ],
-   "status": "agree",
-   "bundledLatin": "Sopheap"
+   "status": "new"
   },
   {
    "khmer": "សុវណ្ណ",
@@ -602,8 +600,7 @@
     "wikidata/kmwiki-humans",
     "static/sigpwned"
    ],
-   "status": "agree",
-   "bundledLatin": "Khat"
+   "status": "new"
   },
   {
    "khmer": "គង់",
@@ -648,8 +645,7 @@
     "wikidata/kmwiki-humans",
     "wikipedia/redirects-en"
    ],
-   "status": "agree",
-   "bundledLatin": "Cham"
+   "status": "new"
   },
   {
    "khmer": "ចេង",
@@ -706,8 +702,7 @@
     "wikidata/kmwiki-humans",
     "wikidata/native-names"
    ],
-   "status": "agree",
-   "bundledLatin": "Chou"
+   "status": "new"
   },
   {
    "khmer": "ជឿន",
@@ -760,8 +755,7 @@
     "static/sigpwned",
     "wikidata/kmwiki-humans"
    ],
-   "status": "agree",
-   "bundledLatin": "Nhek"
+   "status": "new"
   },
   {
    "khmer": "ដាញ់",
@@ -810,8 +804,7 @@
    "sources": [
     "wikipedia/redirects-km"
    ],
-   "status": "agree",
-   "bundledLatin": "Dith"
+   "status": "new"
   },
   {
    "khmer": "ឌីត",
@@ -821,8 +814,7 @@
    "sources": [
     "wikipedia/redirects-km"
    ],
-   "status": "agree",
-   "bundledLatin": "Dith"
+   "status": "new"
   },
   {
    "khmer": "ឌួង",
@@ -882,8 +874,7 @@
     "wikidata/kmwiki-humans",
     "static/kname"
    ],
-   "status": "agree",
-   "bundledLatin": "Thong"
+   "status": "new"
   },
   {
    "khmer": "ទិត្យ",
@@ -897,8 +888,7 @@
     "wikidata/native-names",
     "wikidata/kmwiki-humans"
    ],
-   "status": "agree",
-   "bundledLatin": "Tith"
+   "status": "new"
   },
   {
    "khmer": "ទ្រឿង",
@@ -960,8 +950,7 @@
     "wikidata/kmwiki-humans",
     "wikipedia/redirects-en"
    ],
-   "status": "agree",
-   "bundledLatin": "Neth"
+   "status": "new"
   },
   {
    "khmer": "ប៊ុនឆៃ",
@@ -974,8 +963,7 @@
     "wikipedia/redirects-en",
     "wikidata/kmwiki-humans"
    ],
-   "status": "agree",
-   "bundledLatin": "Bunchhai"
+   "status": "new"
   },
   {
    "khmer": "ប៊ុនណាល់",
@@ -1068,8 +1056,7 @@
    "sources": [
     "wikipedia/redirects-km"
    ],
-   "status": "agree",
-   "bundledLatin": "Pran"
+   "status": "new"
   },
   {
    "khmer": "ប្រាន",
@@ -1079,8 +1066,7 @@
    "sources": [
     "wikipedia/redirects-km"
    ],
-   "status": "agree",
-   "bundledLatin": "Pran"
+   "status": "new"
   },
   {
    "khmer": "ព្រះបាទនរោត្តម",
@@ -1090,8 +1076,7 @@
    "sources": [
     "wikipedia/redirects-km"
    ],
-   "status": "agree",
-   "bundledLatin": "Norodom"
+   "status": "new"
   },
   {
    "khmer": "ម៉ម",
@@ -1106,8 +1091,7 @@
     "wikipedia/redirects-en",
     "wikidata/native-names"
    ],
-   "status": "agree",
-   "bundledLatin": "Mam"
+   "status": "new"
   },
   {
    "khmer": "មីចឡែន",
@@ -1152,8 +1136,7 @@
     "wikidata/kmwiki-humans",
     "wikidata/native-names"
    ],
-   "status": "agree",
-   "bundledLatin": "Yim"
+   "status": "new"
   },
   {
    "khmer": "យុន",
@@ -1166,8 +1149,7 @@
     "wikidata/kmwiki-humans",
     "static/sigpwned"
    ],
-   "status": "agree",
-   "bundledLatin": "Yun"
+   "status": "new"
   },
   {
    "khmer": "យ៉ែម",
@@ -1267,8 +1249,7 @@
     "wikipedia/redirects-en",
     "wikidata/kmwiki-humans"
    ],
-   "status": "agree",
-   "bundledLatin": "Wuthy"
+   "status": "new"
   },
   {
    "khmer": "វេឡូសូ",
@@ -1294,8 +1275,7 @@
     "wikidata/kmwiki-humans",
     "wikipedia/redirects-en"
    ],
-   "status": "agree",
-   "bundledLatin": "Sak"
+   "status": "new"
   },
   {
    "khmer": "សម",
@@ -1450,8 +1430,7 @@
     "wikidata/kmwiki-humans",
     "static/sigpwned"
    ],
-   "status": "agree",
-   "bundledLatin": "Suy"
+   "status": "new"
   },
   {
    "khmer": "សុរាម្រិត",
@@ -1474,8 +1453,7 @@
     "wikidata/kmwiki-humans",
     "static/sigpwned"
    ],
-   "status": "agree",
-   "bundledLatin": "So"
+   "status": "new"
   },
   {
    "khmer": "សៀង",
@@ -1524,8 +1502,7 @@
     "wikidata/kmwiki-humans",
     "static/kname"
    ],
-   "status": "agree",
-   "bundledLatin": "Sophea"
+   "status": "new"
   },
   {
    "khmer": "សោម",
@@ -2106,8 +2083,7 @@
    "sources": [
     "static/kname"
    ],
-   "status": "agree",
-   "bundledLatin": "Kon"
+   "status": "new"
   },
   {
    "khmer": "គល់",
@@ -2208,8 +2184,7 @@
    "sources": [
     "static/kname"
    ],
-   "status": "agree",
-   "bundledLatin": "Kun"
+   "status": "new"
   },
   {
    "khmer": "គុណវរ្ម័ន",
@@ -2229,8 +2204,7 @@
    "sources": [
     "wikipedia/redirects-km"
    ],
-   "status": "agree",
-   "bundledLatin": "Kuy"
+   "status": "new"
   },
   {
    "khmer": "គួច",
@@ -2379,8 +2353,7 @@
    "sources": [
     "static/kname"
    ],
-   "status": "agree",
-   "bundledLatin": "Chakra"
+   "status": "new"
   },
   {
    "khmer": "ចក្រាវុធ",
@@ -2470,8 +2443,7 @@
    "sources": [
     "wikidata/kmwiki-humans"
    ],
-   "status": "agree",
-   "bundledLatin": "Chantaraingsey"
+   "status": "new"
   },
   {
    "khmer": "ចន្ទាកា",
@@ -2491,8 +2463,7 @@
    "sources": [
     "static/kname"
    ],
-   "status": "agree",
-   "bundledLatin": "Channary"
+   "status": "new"
   },
   {
    "khmer": "ចន្ទ្រវម៌្ម",
@@ -2512,8 +2483,7 @@
    "sources": [
     "static/kname"
    ],
-   "status": "agree",
-   "bundledLatin": "Chantrea"
+   "status": "new"
   },
   {
    "khmer": "ចន្ធា",
@@ -2771,8 +2741,7 @@
    "sources": [
     "static/kname"
    ],
-   "status": "agree",
-   "bundledLatin": "Chhay"
+   "status": "new"
   },
   {
    "khmer": "ជ័យ",
@@ -2905,8 +2874,7 @@
    "sources": [
     "static/kname"
    ],
-   "status": "agree",
-   "bundledLatin": "Cheung"
+   "status": "new"
   },
   {
    "khmer": "ជឹម",
@@ -3456,8 +3424,7 @@
    "sources": [
     "static/sigpwned"
    ],
-   "status": "agree",
-   "bundledLatin": "Tat"
+   "status": "new"
   },
   {
    "khmer": "តារា",
@@ -3568,8 +3535,7 @@
    "sources": [
     "static/kname"
    ],
-   "status": "agree",
-   "bundledLatin": "Thach"
+   "status": "new"
   },
   {
    "khmer": "ថែម",
@@ -4042,8 +4008,7 @@
    "sources": [
     "wikidata/kmwiki-humans"
    ],
-   "status": "agree",
-   "bundledLatin": "Pang"
+   "status": "new"
   },
   {
    "khmer": "ប៉ាច",
@@ -4221,8 +4186,7 @@
    "sources": [
     "static/kname"
    ],
-   "status": "agree",
-   "bundledLatin": "Bopha"
+   "status": "new"
   },
   {
    "khmer": "បុរី",
@@ -4232,8 +4196,7 @@
    "sources": [
     "static/kname"
    ],
-   "status": "agree",
-   "bundledLatin": "Borey"
+   "status": "new"
   },
   {
    "khmer": "ប៉ុល",
@@ -4561,8 +4524,7 @@
    "sources": [
     "wikidata/kmwiki-humans"
    ],
-   "status": "agree",
-   "bundledLatin": "Prom"
+   "status": "new"
   },
   {
    "khmer": "ព្រះកច្ចាយណៈ",
@@ -4797,8 +4759,7 @@
    "sources": [
     "static/kname"
    ],
-   "status": "agree",
-   "bundledLatin": "Manou"
+   "status": "new"
   },
   {
    "khmer": "មហាទេវី",
@@ -5100,8 +5061,7 @@
    "sources": [
     "static/kname"
    ],
-   "status": "agree",
-   "bundledLatin": "Metta"
+   "status": "new"
   },
   {
    "khmer": "មេត្រី",
@@ -5573,8 +5533,7 @@
    "sources": [
     "static/kname"
    ],
-   "status": "agree",
-   "bundledLatin": "Luch"
+   "status": "new"
   },
   {
    "khmer": "លុន",
@@ -5754,8 +5713,7 @@
    "sources": [
     "static/kname"
    ],
-   "status": "agree",
-   "bundledLatin": "Van"
+   "status": "new"
   },
   {
    "khmer": "វ៉ាន់ឌី",
@@ -5864,8 +5822,7 @@
     "wikidata/kmwiki-humans",
     "static/kname"
    ],
-   "status": "agree",
-   "bundledLatin": "Vichea"
+   "status": "new"
   },
   {
    "khmer": "វិនធៀន",
@@ -6159,8 +6116,7 @@
    "sources": [
     "static/kname"
    ],
-   "status": "agree",
-   "bundledLatin": "San"
+   "status": "new"
   },
   {
    "khmer": "សាម៉ន",
@@ -6312,8 +6268,7 @@
    "sources": [
     "static/kname"
    ],
-   "status": "agree",
-   "bundledLatin": "Sith"
+   "status": "new"
   },
   {
    "khmer": "សិន",
@@ -6353,8 +6308,7 @@
    "sources": [
     "static/kname"
    ],
-   "status": "agree",
-   "bundledLatin": "Serey"
+   "status": "new"
   },
   {
    "khmer": "សិរីមន្ត",
@@ -6490,8 +6444,7 @@
    "sources": [
     "static/kname"
    ],
-   "status": "agree",
-   "bundledLatin": "Sum"
+   "status": "new"
   },
   {
    "khmer": "សុខប៉ូលី",
@@ -6884,8 +6837,7 @@
     "wikidata/kmwiki-humans",
     "static/sigpwned"
    ],
-   "status": "agree",
-   "bundledLatin": "Sou"
+   "status": "new"
   },
   {
    "khmer": "សូកាំ",
@@ -7134,8 +7086,7 @@
    "sources": [
     "static/kname"
    ],
-   "status": "agree",
-   "bundledLatin": "Srey"
+   "status": "new"
   },
   {
    "khmer": "ស្រីណា",
@@ -7145,8 +7096,7 @@
    "sources": [
     "static/kname"
    ],
-   "status": "agree",
-   "bundledLatin": "Sreyna"
+   "status": "new"
   },
   {
    "khmer": "ស្រីមុំ",
@@ -7378,8 +7328,7 @@
    "sources": [
     "static/kname"
    ],
-   "status": "agree",
-   "bundledLatin": "Heoun"
+   "status": "new"
   },
   {
    "khmer": "ហ៊ែល",
@@ -7567,8 +7516,7 @@
    "sources": [
     "static/kname"
    ],
-   "status": "agree",
-   "bundledLatin": "Anu"
+   "status": "new"
   },
   {
    "khmer": "អនុរុទ្ធ",
@@ -7619,8 +7567,7 @@
    "sources": [
     "static/kname"
    ],
-   "status": "agree",
-   "bundledLatin": "Api"
+   "status": "new"
   },
   {
    "khmer": "អរុណយុគន្ធរ",

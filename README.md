@@ -2,7 +2,7 @@
 
 Khmer script → Latin transliteration for **Cambodian personal names** (passport/roster style romanization). Zero runtime dependencies. TypeScript.
 
-**Accuracy (held-out names):** 86/366 roster (leave-one-out) · 81/414 Wikidata citizens (5-fold CV) · 154/366 with the optional FST tier · 70/72 famous Cambodians (in-sample) — [full benchmarks](#accuracy)
+**Accuracy (held-out names):** 86/366 roster (leave-one-out) · 99/488 Wikidata citizens (5-fold CV) · 154/366 with the optional FST tier · 70/72 famous Cambodians (in-sample) — [full benchmarks](#accuracy)
 
 ```bash
 npx khmer-name-romanizer "ហង្ស សុភ័ក្រ្ត"     # Hang Sopheak
@@ -91,22 +91,23 @@ The leave-one-out rows are the honest numbers — dictionaries are rebuilt witho
 
 **Famous names (72)** — royalty, Angkor kings, prime ministers, film stars, singers, monks (`npm run eval:famous`): **70/72 exact**, 0.989 mean. Before these tokens were bundled, the same kind of name scored 15% — the dictionary is what famous-name accuracy is made of.
 
-**Wikimedia corpus** — ~2,400 scraped Khmer↔Latin pairs from five SPARQL passes (kmwiki humans, Cambodian citizens, all humans with km+en labels, km/en article *titles*, given-/family-name items — the latter are foreign transcriptions and land in the out-of-domain bucket). Scraping is incremental and failure-tolerant; the full refresh loop is `scrape:names` → `split:corpus` → `eval:scraped` → `mine:tokens` → `merge:tokens`, where `split:corpus` first freezes a held-out test split and `merge:tokens` regenerates `src/token-data.ts` in-repo. The frozen test split (`scripts/test-split.json`, ~15%, content-hash assignment so refreshes never reshuffle it) is the project's lockbox — never mined into the dictionary, never used for tuning: `mine:tokens` reads only `dev-split.json`, and `npm run split:corpus -- --check` verifies the frozen files against the corpus.
+**Wikimedia + curated corpus** — ~2,400 scraped Khmer↔Latin pairs from seven SPARQL passes (kmwiki humans, Cambodian citizens, P1559 *native-name* and P1477 *birth-name* statements — Cambodians whose native name never appears as a label, km/en article *titles*, all humans with both labels, given-/family-name items — the latter are foreign transcriptions and land in the out-of-domain bucket), **Wikipedia redirects** (km-side alternate spellings become new rows; en-side spellings feed `variants` via `altLatin`), and two curated openly-licensed name lists (`scripts/sources/`: [kname](https://github.com/kennntech/kname), MIT — Cambodian name tokens; [popular-names-by-country](https://github.com/sigpwned/popular-names-by-country-dataset), CC0 — most-common KH surnames with Google-Translate artifacts filtered out). Scraping is incremental and failure-tolerant; the full refresh loop is `scrape:names` → `split:corpus` → `eval:scraped` → `mine:tokens` → `merge:tokens`, where `split:corpus` first freezes a held-out test split and `merge:tokens` regenerates `src/token-data.ts` in-repo. The frozen test split (`scripts/test-split.json`, ~15%, content-hash assignment so refreshes never reshuffle it) is the project's lockbox — never mined into the dictionary, never used for tuning: `mine:tokens` reads only `dev-split.json`, and `npm run split:corpus -- --check` verifies the frozen files against the corpus.
 
 | Corpus | n | Exact | Top-5 | Mean sim |
 |---|---|---|---|---|
-| Cambodian citizens | 414 | 118 (28.5%) | 167 (40.3%) | 0.804 |
-| + historical/regnal names | 598 | 128 (21.4%) | 181 (30.3%) | 0.724 |
-| Foreign names written in Khmer (out of domain) | 1421 | 28 (2.0%) | 43 (3.0%) | 0.632 |
+| Cambodian citizens | 488 | 140 (28.7%) | 194 (39.8%) | 0.783 |
+| Curated name lists (MIT/CC0) | 129 | 98 (76.0%) | 110 (85.3%) | 0.920 |
+| All in-domain (+ historical/regnal) | 834 | 251 (30.1%) | 323 (38.7%) | 0.740 |
+| Foreign names written in Khmer (out of domain) | 1544 | 30 (1.9%) | 47 (3.0%) | 0.631 |
 
-**How honest are those numbers?** The table scores the shipped dictionary on this corpus — but that dictionary already contains ≥2-attestation tokens mined *from* it, so the figures are partly in-sample. `npm run eval:kfold` runs 5-fold cross-validation: per fold it rebuilds the leakage-free dictionary the package would ship without the test fold, then scores only that fold:
+**How honest are those numbers?** The table scores the shipped dictionary on this corpus — but that dictionary already contains ≥2-attestation tokens mined *from* the dev split, so those rows are partly in-sample. `npm run eval:kfold` runs 5-fold cross-validation: per fold it rebuilds the leakage-free dictionary the package would ship without the test fold, then scores only that fold:
 
-| Citizens (414) | Exact | Top-5 | Mean sim |
+| Citizens (488) | Exact | Top-5 | Mean sim |
 |---|---|---|---|
-| Shipped dictionary (partly in-sample) | 118 (28.5%) | 167 (40.3%) | 0.804 |
-| **5-fold CV (leakage-free)** | **81 (19.6%)** | **125 (30.2%)** | 0.786 |
+| Shipped dictionary (partly in-sample) | 140 (28.7%) | 194 (39.8%) | 0.783 |
+| **5-fold CV (leakage-free)** | **99 (20.3%)** | **150 (30.7%)** | 0.765 |
 
-The k-fold figure is the honest unseen-name number, in line with the roster leave-one-out (23.5% exact); it is identical at k=10. Note what leakage inflates: exact-form recall drops 8.9pp, but mean similarity barely moves (0.804 → 0.786) — unseen guesses stay near-misses, with the official spelling usually still in `candidates`. Known weak spot: regnal names, a different register this package does not target. `scripts/mined-tokens.json` keeps 472 candidate tokens for review; tokens with ≥2 attestations are merged, and conflicting corpus spellings with ≥2 attestations (Samnang for សំណាង, Rattana for រតនា…) are folded in as `variants` while the verified canonicals stay untouched.
+The k-fold figure is the honest unseen-name number, in line with the roster leave-one-out (23.5% exact). Note what leakage inflates: exact-form recall drops 8.4pp, but mean similarity barely moves (0.783 → 0.765) — unseen guesses stay near-misses, with the official spelling usually still in `candidates`. Known weak spot: regnal names, a different register this package does not target. `scripts/mined-tokens.json` keeps candidate tokens for review; tokens with ≥2 attestations are merged, conflicting corpus spellings with ≥2 attestations (Samnang for សំណាង, Rattana for រតនា…) are folded in as `variants`, kname tokens are trusted at a single attestation (measured 25/30 agreement + 5 legitimate variants vs the verified dictionary), and hand-reviewed junk is block-listed (bible-apostle titles, citizenship-less foreign figures, mis-aligned birth-name/redirect artifacts).
 
 **One-to-many is inherent.** The dictionary stores the most frequent spelling per token (ties go closest to the rule reading) and keeps alternatives in `variants`. When you know a person's official spelling, keep your own Khmer→Latin map and override tokens via `tokenDict`.
 
