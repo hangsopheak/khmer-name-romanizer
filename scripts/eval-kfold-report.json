@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-31T13:50:47.963Z",
+ "generated": "2026-11-01T02:50:46.721Z",
  "k": 5,
  "min": 2,
  "evalRows": 834,
@@ -18,7 +18,7 @@
     "anyOrder": 40,
     "top5": 52,
     "top5Pct": 31.1,
-    "meanSim": 0.731
+    "meanSim": 0.737
    }
   },
   {
@@ -30,12 +30,12 @@
    "enrichedByTrain": 2,
    "perFold": {
     "n": 167,
-    "exact": 34,
-    "exactPct": 20.4,
-    "anyOrder": 35,
-    "top5": 53,
-    "top5Pct": 31.7,
-    "meanSim": 0.714
+    "exact": 35,
+    "exactPct": 21,
+    "anyOrder": 36,
+    "top5": 55,
+    "top5Pct": 32.9,
+    "meanSim": 0.723
    }
   },
   {
@@ -47,12 +47,12 @@
    "enrichedByTrain": 2,
    "perFold": {
     "n": 167,
-    "exact": 36,
-    "exactPct": 21.6,
-    "anyOrder": 38,
-    "top5": 50,
-    "top5Pct": 29.9,
-    "meanSim": 0.707
+    "exact": 37,
+    "exactPct": 22.2,
+    "anyOrder": 39,
+    "top5": 51,
+    "top5Pct": 30.5,
+    "meanSim": 0.719
    }
   },
   {
@@ -64,12 +64,12 @@
    "enrichedByTrain": 2,
    "perFold": {
     "n": 167,
-    "exact": 41,
-    "exactPct": 24.6,
-    "anyOrder": 42,
-    "top5": 55,
-    "top5Pct": 32.9,
-    "meanSim": 0.738
+    "exact": 44,
+    "exactPct": 26.3,
+    "anyOrder": 45,
+    "top5": 58,
+    "top5Pct": 34.7,
+    "meanSim": 0.747
    }
   },
   {
@@ -81,12 +81,12 @@
    "enrichedByTrain": 2,
    "perFold": {
     "n": 166,
-    "exact": 39,
-    "exactPct": 23.5,
-    "anyOrder": 39,
-    "top5": 48,
-    "top5Pct": 28.9,
-    "meanSim": 0.714
+    "exact": 43,
+    "exactPct": 25.9,
+    "anyOrder": 43,
+    "top5": 52,
+    "top5Pct": 31.3,
+    "meanSim": 0.728
    }
   }
  ],
@@ -98,63 +98,63 @@
    "anyOrder": 40,
    "top5": 52,
    "top5Pct": 31.1,
-   "meanSim": 0.731
+   "meanSim": 0.737
   },
   {
    "n": 167,
-   "exact": 34,
-   "exactPct": 20.4,
-   "anyOrder": 35,
-   "top5": 53,
-   "top5Pct": 31.7,
-   "meanSim": 0.714
-  },
-  {
-   "n": 167,
-   "exact": 36,
-   "exactPct": 21.6,
-   "anyOrder": 38,
-   "top5": 50,
-   "top5Pct": 29.9,
-   "meanSim": 0.707
-  },
-  {
-   "n": 167,
-   "exact": 41,
-   "exactPct": 24.6,
-   "anyOrder": 42,
+   "exact": 35,
+   "exactPct": 21,
+   "anyOrder": 36,
    "top5": 55,
    "top5Pct": 32.9,
-   "meanSim": 0.738
+   "meanSim": 0.723
+  },
+  {
+   "n": 167,
+   "exact": 37,
+   "exactPct": 22.2,
+   "anyOrder": 39,
+   "top5": 51,
+   "top5Pct": 30.5,
+   "meanSim": 0.719
+  },
+  {
+   "n": 167,
+   "exact": 44,
+   "exactPct": 26.3,
+   "anyOrder": 45,
+   "top5": 58,
+   "top5Pct": 34.7,
+   "meanSim": 0.747
   },
   {
    "n": 166,
-   "exact": 39,
-   "exactPct": 23.5,
-   "anyOrder": 39,
-   "top5": 48,
-   "top5Pct": 28.9,
-   "meanSim": 0.714
+   "exact": 43,
+   "exactPct": 25.9,
+   "anyOrder": 43,
+   "top5": 52,
+   "top5Pct": 31.3,
+   "meanSim": 0.728
   }
  ],
  "shipped": {
   "cambodian": {
    "n": 488,
-   "exact": 140,
-   "exactPct": 28.7,
-   "anyOrder": 145,
-   "top5": 194,
-   "top5Pct": 39.8,
-   "meanSim": 0.783
+   "exact": 144,
+   "exactPct": 29.5,
+   "anyOrder": 149,
+   "top5": 198,
+   "top5Pct": 40.6,
+   "meanSim": 0.787
   },
   "unknown": {
    "n": 217,
-   "exact": 13,
-   "exactPct": 6,
-   "anyOrder": 15,
-   "top5": 19,
-   "top5Pct": 8.8,
-   "meanSim": 0.535
+   "exact": 17,
+   "exactPct": 7.8,
+   "anyOrder": 19,
+   "top5": 23,
+   "top5Pct": 10.6,
+   "meanSim": 0.562
   },
   "curated": {
    "n": 129,
@@ -167,32 +167,32 @@
   },
   "inDomain": {
    "n": 834,
-   "exact": 251,
-   "exactPct": 30.1,
-   "anyOrder": 258,
-   "top5": 323,
-   "top5Pct": 38.7,
-   "meanSim": 0.74
+   "exact": 259,
+   "exactPct": 31.1,
+   "anyOrder": 266,
+   "top5": 331,
+   "top5Pct": 39.7,
+   "meanSim": 0.749
   }
  },
  "kfold": {
   "cambodian": {
    "n": 488,
-   "exact": 99,
-   "exactPct": 20.3,
-   "anyOrder": 102,
-   "top5": 150,
-   "top5Pct": 30.7,
-   "meanSim": 0.765
+   "exact": 104,
+   "exactPct": 21.3,
+   "anyOrder": 107,
+   "top5": 156,
+   "top5Pct": 32,
+   "meanSim": 0.77
   },
   "unknown": {
    "n": 217,
-   "exact": 12,
-   "exactPct": 5.5,
-   "anyOrder": 13,
-   "top5": 17,
-   "top5Pct": 7.8,
-   "meanSim": 0.533
+   "exact": 16,
+   "exactPct": 7.4,
+   "anyOrder": 17,
+   "top5": 21,
+   "top5Pct": 9.7,
+   "meanSim": 0.559
   },
   "curated": {
    "n": 129,
@@ -205,12 +205,12 @@
   },
   "inDomain": {
    "n": 834,
-   "exact": 190,
-   "exactPct": 22.8,
-   "anyOrder": 194,
-   "top5": 258,
-   "top5Pct": 30.9,
-   "meanSim": 0.721
+   "exact": 199,
+   "exactPct": 23.9,
+   "anyOrder": 203,
+   "top5": 268,
+   "top5Pct": 32.1,
+   "meanSim": 0.731
   }
  }
 }

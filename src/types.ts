@@ -21,6 +21,19 @@ export interface TranslitToken {
     alternatives: string[]
 }
 
+/** A full-name candidate spelling with its probability score. */
+export interface ScoredCandidate {
+    value: string
+    /**
+     * Σ log P(spelling | khmer token) across the name's tokens — always
+     * ≤ 0; closer to 0 means more probable. Masses come from dictionary
+     * attestation counts; rule readings act as a smoothing prior, and
+     * unattested spellings get a small floor, so scores are comparable
+     * across names (useful for confidence thresholds in match workflows).
+     */
+    score: number
+}
+
 export interface TranslitResult {
     /** Full transliterated name, e.g. "Tang Leangkhai". */
     value: string
@@ -32,6 +45,13 @@ export interface TranslitResult {
      * these as choices when the official spelling is unknown.
      */
     candidates: string[]
+    /**
+     * `candidates` with their scores — same values, same order (`value` is
+     * `scoredCandidates[0].value`). Each score is the summed log-probability
+     * of that spelling given the Khmer tokens; present whenever candidates
+     * are produced.
+     */
+    scoredCandidates?: ScoredCandidate[]
     /**
      * Leading honorifics/titles stripped from the input (outermost first),
      * e.g. ["សម្តេច"] — present only when something was stripped. The

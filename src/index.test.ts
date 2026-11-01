@@ -118,6 +118,42 @@ describe('khmer-name-romanizer', () => {
         expect(result.source).toBe('tokens')
     })
 
+    it('scores candidates as log-probabilities mirroring the candidate list', () => {
+        const r = createDefaultTransliterator().transliterate('ប៉ែន នុត')
+        expect(r.scoredCandidates).toBeDefined()
+        expect(r.scoredCandidates!.map((c) => c.value)).toEqual(r.candidates)
+        expect(r.scoredCandidates![0].value).toBe(r.value)
+        // probabilities: every score ≤ 0, strictly decreasing down the list
+        const scores = r.scoredCandidates!.map((c) => c.score)
+        expect(scores.every((s) => s <= 0)).toBe(true)
+        expect(scores.every((s, i) => i === 0 || scores[i - 1] >= s)).toBe(true)
+    })
+
+    it('keeps a reviewed canonical ahead of higher-count corpus variants', () => {
+        // ស is bundled as Sar (count 1) with variant Sor (count 2): the
+        // canonical is a reviewed decision, raw corpus counts do not
+        // outvote it (calibrated CANONICAL_MASS_BONUS).
+        const r = createDefaultTransliterator().transliterate('ស ខេង')
+        expect(r.value).toBe('Sar Kheng')
+        expect(r.candidates).toContain('Sor Kheng')
+    })
+
+    it('promotes a variant only when it decisively out-attests the canonical', () => {
+        const t = createDefaultTransliterator({
+            tokenDict: { ដារា: { latin: 'Dara', count: 1, variants: { Tara: 6 } } },
+        })
+        expect(t.transliterate('ដារា').value).toBe('Tara')
+    })
+
+    it('scores order-flipped candidates alongside their source spelling', () => {
+        const t = createDefaultTransliterator({ flipOrderCandidates: true })
+        const r = t.transliterate('អ៊ឹង លឿង')
+        expect(r.scoredCandidates!.map((c) => c.value)).toEqual(r.candidates)
+        const ung = r.scoredCandidates!.find((c) => c.value === 'Loung Ung')!
+        const source = r.scoredCandidates!.find((c) => c.value === 'Ung Loung')!
+        expect(ung.score).toBe(source.score) // same spelling, other word order
+    })
+
     it('romanizes well-known names (king, prime minister)', () => {
         expect(transliterateName('នរោត្តម សីហមុនី')).toBe('Norodom Sihamoni')
         expect(transliterateName('ហ៊ុន ម៉ាណែត')).toBe('Hun Manet')
