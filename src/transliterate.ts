@@ -17,6 +17,7 @@
 import { spellingAlternates } from './alternatives.js'
 import { romanizeKhmerName } from './rules.js'
 import { normalizeName, segmentToken, splitTokens, stripHonorifics } from './tokenizer.js'
+import type { Segment } from './tokenizer.js'
 import { TokenEntry, TokenSource, TranslitResult, TranslitToken, TransliteratorOptions } from './types.js'
 
 export interface Transliterator {
@@ -123,13 +124,28 @@ export function createTransliterator(options: TransliteratorOptions = {}): Trans
     let maxDictKeyLen = 0
     for (const key of tokenDict.keys()) maxDictKeyLen = Math.max(maxDictKeyLen, key.length)
 
+    // Segmentation and rule readings are pure per instance, and roster
+    // batches repeat the same tokens heavily — memoize them (bounded).
+    const MEMO_LIMIT = 5000
+    const segCache = new Map<string, Segment[] | null>()
+    const rulesCache = new Map<string, string>()
+    const cachedSegment = (key: string, compute: () => Segment[] | null): Segment[] | null => {
+        if (segCache.has(key)) return segCache.get(key) ?? null
+        if (segCache.size >= MEMO_LIMIT) segCache.clear()
+        const value = compute()
+        segCache.set(key, value)
+        return value
+    }
+
     /**
      * Partial segmentation of a token, or null when it is not trustworthy:
      * orphan vowel signs (មិនា -> មិន + ា) would be shredded by the rules.
      */
     const partialSegments = (token: string) => {
         if (tokenDict.size === 0) return null
-        const segments = segmentToken(token, tokenDict, { maxKeyLen: maxDictKeyLen })
+        const segments = cachedSegment(`p|${token}`, () =>
+            segmentToken(token, tokenDict, { maxKeyLen: maxDictKeyLen })
+        )
         if (!segments) return null
         return segments.every((seg) => seg.inDict || seg.text.length >= MIN_REMAINDER_LEN) ? segments : null
     }
@@ -139,7 +155,14 @@ export function createTransliterator(options: TransliteratorOptions = {}): Trans
         return value ? titleCaseWords(joinSyllables(value)) : ''
     }
 
-    const rulesReading = (text: string): string => titleCaseWords(joinSyllables(romanizeKhmerName(text)))
+    const rulesReading = (text: string): string => {
+        const hit = rulesCache.get(text)
+        if (hit !== undefined) return hit
+        if (rulesCache.size >= MEMO_LIMIT) rulesCache.clear()
+        const value = titleCaseWords(joinSyllables(romanizeKhmerName(text)))
+        rulesCache.set(text, value)
+        return value
+    }
 
     /** Best reading + alternatives for one Khmer token. */
     const resolveToken = (token: string): TranslitToken => {
@@ -241,10 +264,12 @@ export function createTransliterator(options: TransliteratorOptions = {}): Trans
         // words, those words are the name components -> join with spaces.
         let resolved: TranslitToken[] | null = null
         if (tokens.length === 1 && tokenDict.size > 0) {
-            const segs = segmentToken(tokens[0], tokenDict, {
-                minKeyLen: FULL_SEGMENT_MIN_KEY_LEN,
-                maxKeyLen: maxDictKeyLen,
-            })
+            const segs = cachedSegment(`f|${tokens[0]}`, () =>
+                segmentToken(tokens[0], tokenDict, {
+                    minKeyLen: FULL_SEGMENT_MIN_KEY_LEN,
+                    maxKeyLen: maxDictKeyLen,
+                })
+            )
             if (segs && segs.every((seg) => seg.inDict)) {
                 resolved = segs.map((seg) => resolveToken(seg.text))
             }
