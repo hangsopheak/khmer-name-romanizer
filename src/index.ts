@@ -13,6 +13,7 @@ export { createTransliterator } from './transliterate.js'
 export { spellingAlternates } from './alternatives.js'
 export type { Transliterator } from './transliterate.js'
 export { defaultTokenDict } from './token-data.js'
+export { defaultFstDistill } from './fst-distill-data.js'
 export { transliterateName, createDefaultTransliterator } from './convenience.js'
 export type {
     NameSource,

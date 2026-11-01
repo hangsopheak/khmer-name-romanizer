@@ -2,7 +2,7 @@
 
 Khmer script → Latin transliteration for **Cambodian personal names** (passport/roster style romanization). Zero runtime dependencies. TypeScript.
 
-**Accuracy (held-out names):** 86/366 roster (leave-one-out) · 104/488 Wikidata citizens (5-fold CV) · 154/366 with the optional FST tier · 70/72 famous Cambodians (in-sample) — [full benchmarks](#accuracy)
+**Accuracy (held-out names):** 86/366 roster (leave-one-out) · 105/488 Wikidata citizens (5-fold CV) · 154/366 with the optional FST tier · 70/72 famous Cambodians (in-sample) — [full benchmarks](#accuracy)
 
 ```bash
 npx khmer-name-romanizer "ហង្ស សុភ័ក្រ្ត"     # Hang Sopheak
@@ -54,7 +54,7 @@ Khmer input
 
 - **Normalize & strip** — strip zero-width characters, map roster-typo `:` → ៈ, collapse whitespace. Leading honorifics/titles (ព្រះ, សម្តេច, ព្រះបាទ, លោក, អ្នកម្នាង, ឧកញ៉ា, ពញា…, royal compounds even when glued to the name) are not part of a personal name: they are removed before resolving and reported in an optional `honorifics` field — `សម្តេច ហ៊ុន សេន` → `"Hun Sen"` with `honorifics: ["សម្តេច"]`.
 - **Tokenize** — space-separated surname/given-name tokens; unspaced input (តាំងលាងខៃ) is segmented against dictionary keys first.
-- **Resolve each token**, strongest tier first: **token dictionary** (776 entries learned from verified bilingual rosters, well-known people, and Wikidata mining; a hit returns the canonical `latin`, its `variants` lead the alternatives) → **segmentation** (longest-match DP, trusted only when every non-dictionary remainder is ≥ 3 characters) → **FST** (readings pre-computed with pynini, injected as a lookup map via `t.fstInputs()` — the library stays pure and synchronous) → **rules** (`romanizeKhmer`, a grapheme-level fallback calibrated on the same rosters).
+- **Resolve each token**, strongest tier first: **token dictionary** (776 entries learned from verified bilingual rosters, well-known people, and Wikidata mining; a hit returns the canonical `latin`, its `variants` lead the alternatives) → **segmentation** (longest-match DP, trusted only when every non-dictionary remainder is ≥ 3 characters) → **FST** (readings pre-computed with pynini, injected as a lookup map via `t.fstInputs()` — `createDefaultTransliterator` already injects the bundled distilled subset; the library stays pure and synchronous) → **rules** (`romanizeKhmer`, a grapheme-level fallback calibrated on the same rosters).
 - **Alternatives & ranking** — each token collects spellings from dictionary `variants`, other tiers' readings, and attested alternations (nh/gn, t/th, n/nn, u/ou, i/y…); the composer scores every combination as **Σ log P(spelling | Khmer token)** and returns the top ones, deduped and capped at `maxCandidates` (default 5). Masses come from dictionary attestation counts; a reviewed canonical spelling carries extra trust (it is a human decision, not a frequency sample — corpus counts alone never demote it), rule/FST readings act as a smoothing prior, and unattested spellings get a small floor. The same scores are exposed as `scoredCandidates` for confidence thresholds in match workflows; constants are calibrated on the dev split + famous names only (`npm run` `scripts/calibrate-scoring.mjs`).
 
 ### Result shape
@@ -103,6 +103,8 @@ const t = createDefaultTransliterator({ fstResults: new Map(Object.entries(fst))
 
 Injected readings fill token gaps the dictionary and rules miss, and join `candidates` with prior-grade probability mass — they suggest, never override: dictionary canonicals still lead. On the 366-pair roster benchmark (leave-one-out), the injected tier lifts exact match from 86 to **154/366** (216 in top-5). The tier is the same one the student-management roster pipeline uses in production.
 
+**Distilled subset — no Python needed.** `src/fst-distill-data.ts` bundles FST readings for **314 Khmer name tokens the dictionary doesn't cover** (dev-split cambodian + curated tokens; regnal names excluded — out of scope, and the FST drops syllables there: ឥន្ទ្រវរ្ម័ន → "Vrm", filtered by a length guard). `createDefaultTransliterator` injects it automatically, still as prior-grade readings: corpus attestations outrank them, callers override per key with their own `fstResults`, and the leakage-free evals re-filter the map by eligibility recomputed from their own train rows (`distillMapFor` in `scripts/lib/corpus-tools.mjs`) so folds and the frozen split can never ride along. Regenerate after a corpus refresh with `node scripts/fst-distill.mjs` (needs the pip packages). Measured effect: leakage-free k-fold 199 → **201/834** exact; lockbox mean 0.717 → **0.721** at identical exact (21/108).
+
 ## Accuracy
 
 Benchmarked on 366 verified Khmer↔English pairs from university rosters (exact match; similarity = difflib ratio):
@@ -122,29 +124,28 @@ The leave-one-out rows are the honest numbers — dictionaries are rebuilt witho
 
 | Corpus | n | Exact | Top-5 | Mean sim |
 |---|---|---|---|---|
-| Cambodian citizens | 488 | 144 (29.5%) | 198 (40.6%) | 0.787 |
-| Curated name lists (MIT/CC0) | 129 | 98 (76.0%) | 110 (85.3%) | 0.920 |
-| All in-domain (+ historical/regnal) | 834 | 259 (31.1%) | 331 (39.7%) | 0.749 |
+| Cambodian citizens | 488 | 159 (32.6%) | 224 (45.9%) | 0.795 |
+| Curated name lists (MIT/CC0) | 129 | 104 (80.6%) | 116 (90.0%) | 0.944 |
+| All in-domain (+ historical/regnal) | 834 | 281 (33.7%) | 364 (43.6%) | 0.758 |
 | Foreign names written in Khmer (out of domain) | 1544 | 32 (2.1%) | 49 (3.2%) | 0.634 |
 
 **How honest are those numbers?** The table scores the shipped dictionary on this corpus — but that dictionary already contains ≥2-attestation tokens mined *from* the dev split, so those rows are partly in-sample. `npm run eval:kfold` runs 5-fold cross-validation: per fold it rebuilds the leakage-free dictionary the package would ship without the test fold, then scores only that fold:
 
 | Citizens (488) | Exact | Top-5 | Mean sim |
 |---|---|---|---|
-| Shipped dictionary (partly in-sample) | 144 (29.5%) | 198 (40.6%) | 0.787 |
-| **5-fold CV (leakage-free)** | **104 (21.3%)** | **156 (32.0%)** | 0.770 |
+| Shipped dictionary + distill (partly in-sample) | 159 (32.6%) | 224 (45.9%) | 0.795 |
+| **5-fold CV (leakage-free)** | **105 (21.5%)** | **158 (32.4%)** | 0.771 |
 
-The k-fold figure is the honest unseen-name number, in line with the roster leave-one-out (23.5% exact). Note what leakage inflates: exact-form recall drops 8.2pp, but mean similarity barely moves (0.787 → 0.770) — unseen guesses stay near-misses, with the official spelling usually still in `candidates`. Known weak spot: regnal names, a different register this package does not target. `scripts/mined-tokens.json` keeps candidate tokens for review; tokens with ≥2 attestations are merged, conflicting corpus spellings with ≥2 attestations (Samnang for សំណាង, Rattana for រតនា…) are folded in as `variants`, kname tokens are trusted at a single attestation (measured 25/30 agreement + 5 legitimate variants vs the verified dictionary), and hand-reviewed junk is block-listed (bible-apostle titles, citizenship-less foreign figures, mis-aligned birth-name/redirect artifacts).
+The k-fold figure is the honest unseen-name number, in line with the roster leave-one-out (23.5% exact). Note what leakage inflates: exact-form recall drops 11.1pp, but mean similarity barely moves (0.795 → 0.771) — unseen guesses stay near-misses, with the official spelling usually still in `candidates`. Known weak spot: regnal names, a different register this package does not target. `scripts/mined-tokens.json` keeps candidate tokens for review; tokens with ≥2 attestations are merged, conflicting corpus spellings with ≥2 attestations (Samnang for សំណាង, Rattana for រតនា…) are folded in as `variants`, kname tokens are trusted at a single attestation (measured 25/30 agreement + 5 legitimate variants vs the verified dictionary), and hand-reviewed junk is block-listed (bible-apostle titles, citizenship-less foreign figures, mis-aligned birth-name/redirect artifacts).
 
 **The frozen lockbox.** `npm run split:corpus` freezes a held-out test split (~15%, content-hash assignment — refreshes never reshuffle it) that is never mined and never tuned on; `npm run eval:holdout` scores it against the counterfactual dictionary the package would ship without it. This is the number every improvement round is judged by:
 
 | Frozen test split (108 in-domain) | Exact | Top-5 | Mean sim |
 |---|---|---|---|
-| Shipped dictionary (upper bound) | 26 (24.1%) | 35 (32.4%) | 0.727 |
-| **Holdout counterfactual (lockbox)** | **21 (19.4%)** | **30 (27.8%)** | **0.717** |
+| Shipped dictionary + distill (upper bound) | 27 (25.0%) | 37 (34.3%) | 0.731 |
+| **Holdout counterfactual (lockbox)** | **21 (19.4%)** | **31 (28.7%)** | **0.721** |
 
 Cambodian-citizen rows: 11/63 shipped vs **7/63 holdout** exact — the gap is leakage, the lockbox row is the truth.
-
 **One-to-many is inherent.** The dictionary stores a reviewed canonical spelling per token and keeps alternatives in `variants`; probability ranking (`scoredCandidates`) can promote a variant only when it decisively out-attests the canonical, because corpus counts alone are noisier than the reviewed choice — calibrating that threshold against the famous-name set showed raw counts wrongly demoting 18 reviewed canonicals (Sar Kheng → "Sor", Chan Sy → "Chan"…). Sometimes both spellings are genuinely official for different people: ប៉ែន is *Penn Nuth* the politician and *Pan Ron* the singer, so one canonical can never serve both — the official spelling for the *other* person rides in `candidates`/`variants`. When you know a person's official spelling, keep your own Khmer→Latin map and override tokens via `tokenDict`.
 
 ## Extending the dictionary

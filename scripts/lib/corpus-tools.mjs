@@ -175,3 +175,33 @@ export const counterfactualDict = ({ bundled, trainRows, testRows, fullSupport, 
     const { dict, added, enriched } = applyMergePolicy(base, mineTokens(trainRows), min)
     return { dict, removed, added, enriched }
 }
+
+/**
+ * Khmer tokens eligible for the bundled FST distillation, recomputed from
+ * the caller's OWN train rows (1:1-aligned cambodian+curated rows — the
+ * same scope scripts/fst-distill.mjs distilled from). Counterfactual
+ * evals filter the bundled map down to these keys so a fold's or the
+ * frozen split's rows can never ride along as distilled readings.
+ */
+export const distillCandidates = (rows) => {
+    const tokens = new Set()
+    for (const p of rows) {
+        if (!['cambodian', 'curated'].includes(p.bucket)) continue
+        const kt = p.khmer.split(' ')
+        const lw = p.latin.split(' ')
+        if (kt.length !== lw.length) continue
+        for (const k of kt) tokens.add(k)
+    }
+    return tokens
+}
+
+/** Filter a bundled distill map to keys eligible for the given train rows
+ *  and not already covered by the caller's (counterfactual) dictionary. */
+export const distillMapFor = (bundledMap, trainRows, dict) => {
+    const eligible = distillCandidates(trainRows)
+    const out = new Map()
+    for (const [k, v] of Object.entries(bundledMap)) {
+        if (eligible.has(k) && !dict[k]) out.set(k, v)
+    }
+    return out
+}

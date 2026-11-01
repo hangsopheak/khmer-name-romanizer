@@ -30,9 +30,10 @@
  * Usage: node scripts/eval-kfold.mjs [--k 5] [--min 2]
  */
 import { readFileSync, writeFileSync } from 'node:fs'
-import { createDefaultTransliterator, createTransliterator, defaultTokenDict } from '../dist/index.js'
+import { createDefaultTransliterator, createTransliterator, defaultFstDistill, defaultTokenDict } from '../dist/index.js'
 import {
     counterfactualDict,
+    distillMapFor,
     isInDomain,
     norm,
     passesHygiene,
@@ -113,7 +114,7 @@ for (let f = 0; f < K; f++) {
         fullSupport,
         min: MIN,
     })
-    const t = createTransliterator({ tokenDict: dict })
+    const t = createTransliterator({ tokenDict: dict, fstResults: distillMapFor(defaultFstDistill, trainRows, dict) })
     const results = evaluate(testRows, t)
     foldResults.push(...results)
     foldMeta.push({ fold: f, testRows: testRows.length, dictSize: Object.keys(dict).length, removed, addedByTrain: added, enrichedByTrain: enriched, perFold: report(results) })

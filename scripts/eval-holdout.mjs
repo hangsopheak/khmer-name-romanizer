@@ -23,9 +23,10 @@
  * Usage: node scripts/eval-holdout.mjs [--top 15]
  */
 import { readFileSync, writeFileSync } from 'node:fs'
-import { createDefaultTransliterator, createTransliterator, defaultTokenDict } from '../dist/index.js'
+import { createDefaultTransliterator, createTransliterator, defaultFstDistill, defaultTokenDict } from '../dist/index.js'
 import {
     counterfactualDict,
+    distillMapFor,
     isInDomain,
     norm,
     passesHygiene,
@@ -90,7 +91,7 @@ const report = (rows) => {
     }
 }
 
-const holdoutResults = evaluate(testInDomain, createTransliterator({ tokenDict: dict }))
+const holdoutResults = evaluate(testInDomain, createTransliterator({ tokenDict: dict, fstResults: distillMapFor(defaultFstDistill, devInDomain, dict) }))
 const shippedResults = evaluate(testInDomain, createDefaultTransliterator())
 const foreignResults = evaluate(testForeign, createTransliterator({ tokenDict: dict }))
 

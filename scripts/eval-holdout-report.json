@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-01T02:50:46.941Z",
+ "generated": "2026-11-01T03:15:08.206Z",
  "testRows": 355,
  "evalRows": 108,
  "dict": {
@@ -14,18 +14,18 @@
    "exact": 11,
    "exactPct": 17.5,
    "anyOrder": 11,
-   "top5": 17,
-   "top5Pct": 27,
-   "meanSim": 0.747
+   "top5": 18,
+   "top5Pct": 28.6,
+   "meanSim": 0.753
   },
   "unknown": {
    "n": 29,
-   "exact": 3,
-   "exactPct": 10.3,
-   "anyOrder": 3,
-   "top5": 3,
-   "top5Pct": 10.3,
-   "meanSim": 0.561
+   "exact": 4,
+   "exactPct": 13.8,
+   "anyOrder": 4,
+   "top5": 4,
+   "top5Pct": 13.8,
+   "meanSim": 0.565
   },
   "curated": {
    "n": 16,
@@ -38,12 +38,12 @@
   },
   "inDomain": {
    "n": 108,
-   "exact": 26,
-   "exactPct": 24.1,
-   "anyOrder": 26,
-   "top5": 35,
-   "top5Pct": 32.4,
-   "meanSim": 0.727
+   "exact": 27,
+   "exactPct": 25,
+   "anyOrder": 27,
+   "top5": 37,
+   "top5Pct": 34.3,
+   "meanSim": 0.731
   }
  },
  "holdout": {
@@ -52,9 +52,9 @@
    "exact": 7,
    "exactPct": 11.1,
    "anyOrder": 7,
-   "top5": 13,
-   "top5Pct": 20.6,
-   "meanSim": 0.739
+   "top5": 14,
+   "top5Pct": 22.2,
+   "meanSim": 0.745
   },
   "unknown": {
    "n": 29,
@@ -63,7 +63,7 @@
    "anyOrder": 3,
    "top5": 3,
    "top5Pct": 10.3,
-   "meanSim": 0.557
+   "meanSim": 0.561
   },
   "curated": {
    "n": 16,
@@ -79,9 +79,9 @@
    "exact": 21,
    "exactPct": 19.4,
    "anyOrder": 21,
-   "top5": 30,
-   "top5Pct": 27.8,
-   "meanSim": 0.717
+   "top5": 31,
+   "top5Pct": 28.7,
+   "meanSim": 0.721
   }
  },
  "foreign": {
@@ -148,7 +148,7 @@
    "khmer": "សារ ទី",
    "latin": "Ty Sa",
    "bucket": "cambodian",
-   "got": "Sar Ti",
+   "got": "Sar Ty",
    "hit": false,
    "orderOnly": false,
    "inTop5": false,
@@ -173,6 +173,16 @@
    "orderOnly": false,
    "inTop5": false,
    "sim": 0.235
+  },
+  {
+   "khmer": "ប៉ង់ សុគន្ធវឌ្ឍនា",
+   "latin": "Vatana Pang",
+   "bucket": "cambodian",
+   "got": "Pang Sokvathana",
+   "hit": false,
+   "orderOnly": false,
+   "inTop5": false,
+   "sim": 0.267
   },
   {
    "khmer": "រ៉េត សារីតា",
@@ -223,16 +233,6 @@
    "orderOnly": false,
    "inTop5": false,
    "sim": 0.333
-  },
-  {
-   "khmer": "ប៉ង់ សុគន្ធវឌ្ឍនា",
-   "latin": "Vatana Pang",
-   "bucket": "cambodian",
-   "got": "Pang Sokanvathana",
-   "hit": false,
-   "orderOnly": false,
-   "inTop5": false,
-   "sim": 0.353
   },
   {
    "khmer": "ស្រីធម្មរាជា",
@@ -345,16 +345,6 @@
    "sim": 0.571
   },
   {
-   "khmer": "អង្គម៉ី",
-   "latin": "Ang Mey",
-   "bucket": "cambodian",
-   "got": "Angmi",
-   "hit": false,
-   "orderOnly": false,
-   "inTop5": false,
-   "sim": 0.571
-  },
-  {
    "khmer": "នរោត្ដម រណឬទ្ធិ",
    "latin": "Norodom Ranariddh",
    "bucket": "cambodian",
@@ -418,7 +408,7 @@
    "khmer": "សិនសី សាមុត",
    "latin": "Sinn Sisamouth",
    "bucket": "cambodian",
-   "got": "Sinsi Samot",
+   "got": "Sinsi Samut",
    "hit": false,
    "orderOnly": false,
    "inTop5": false,
@@ -473,16 +463,6 @@
    "orderOnly": false,
    "inTop5": false,
    "sim": 0.667
-  },
-  {
-   "khmer": "មិថុនា ភូថង",
-   "latin": "Mithuna Phuthong",
-   "bucket": "cambodian",
-   "got": "Mithona Phoutngo",
-   "hit": false,
-   "orderOnly": false,
-   "inTop5": false,
-   "sim": 0.688
   },
   {
    "khmer": "ណារិនដ្រាម៉ូឌី",
@@ -625,16 +605,6 @@
    "sim": 0.778
   },
   {
-   "khmer": "ព្រំ ញ៉ែម",
-   "latin": "Prom Nhem",
-   "bucket": "unknown",
-   "got": "Pram Nem",
-   "hit": false,
-   "orderOnly": false,
-   "inTop5": false,
-   "sim": 0.778
-  },
-  {
    "khmer": "ហ៊ីង ប៊ុនហ៊ាង",
    "latin": "Hing Bun Hieng",
    "bucket": "cambodian",
@@ -708,7 +678,7 @@
    "khmer": "នរោត្តម ចន្ទរង្សី",
    "latin": "Norodom Chantaraingsey",
    "bucket": "cambodian",
-   "got": "Norodom Chanrainsy",
+   "got": "Norodom Charangsey",
    "hit": false,
    "orderOnly": false,
    "inTop5": false,
@@ -755,6 +725,16 @@
    "sim": 0.833
   },
   {
+   "khmer": "មិថុនា ភូថង",
+   "latin": "Mithuna Phuthong",
+   "bucket": "cambodian",
+   "got": "Mithona Phouthorng",
+   "hit": false,
+   "orderOnly": false,
+   "inTop5": false,
+   "sim": 0.833
+  },
+  {
    "khmer": "សុខុន",
    "latin": "Sokhon",
    "bucket": "curated",
@@ -775,10 +755,20 @@
    "sim": 0.846
   },
   {
+   "khmer": "អង្គម៉ី",
+   "latin": "Ang Mey",
+   "bucket": "cambodian",
+   "got": "Angmey",
+   "hit": false,
+   "orderOnly": false,
+   "inTop5": true,
+   "sim": 0.857
+  },
+  {
    "khmer": "ស៊ូ ម៉េត",
    "latin": "Sou Met",
    "bucket": "cambodian",
-   "got": "So Met",
+   "got": "Su Met",
    "hit": false,
    "orderOnly": false,
    "inTop5": false,
@@ -829,6 +819,16 @@
    "latin": "Hem Chieu",
    "bucket": "cambodian",
    "got": "Hem Chiev",
+   "hit": false,
+   "orderOnly": false,
+   "inTop5": false,
+   "sim": 0.889
+  },
+  {
+   "khmer": "ព្រំ ញ៉ែម",
+   "latin": "Prom Nhem",
+   "bucket": "unknown",
+   "got": "Prom Nem",
    "hit": false,
    "orderOnly": false,
    "inTop5": false,
