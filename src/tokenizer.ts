@@ -113,6 +113,12 @@ export const MIN_SEGMENT_KEY_LEN = 3
 export interface SegmentOptions {
     /** Minimum dictionary key length allowed as a segment (default 3). */
     minKeyLen?: number
+    /**
+     * Precomputed maximum dictionary key length (any minKeyLen): skips the
+     * per-call scan of every key. The len >= minKeyLen loop guard subsumes
+     * the per-minimum refinement, so one value serves all callers.
+     */
+    maxKeyLen?: number
 }
 
 /**
@@ -128,12 +134,9 @@ export function segmentToken(
     if (token.length === 0 || dict.size === 0) return null
     const minKeyLen = Math.max(1, options.minKeyLen ?? MIN_SEGMENT_KEY_LEN)
 
-    let maxKeyLen = 0
-    for (const key of dict.keys()) {
-        if (key.length < minKeyLen) continue
-        maxKeyLen = Math.max(maxKeyLen, key.length)
-    }
-    if (maxKeyLen === 0) return null
+    let maxKeyLen = options.maxKeyLen ?? 0
+    if (maxKeyLen <= 0) for (const key of dict.keys()) maxKeyLen = Math.max(maxKeyLen, key.length)
+    if (maxKeyLen < minKeyLen) return null
     const isSegmentKey = (text: string): boolean =>
         text.length >= minKeyLen && dict.has(text)
 

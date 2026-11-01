@@ -118,13 +118,18 @@ export function createTransliterator(options: TransliteratorOptions = {}): Trans
     const maxCandidates = Math.max(1, options.maxCandidates ?? DEFAULT_MAX_CANDIDATES)
     const flipOrderCandidates = options.flipOrderCandidates ?? false
 
+    // Longest dictionary key, computed once: segmentation calls reuse it
+    // instead of rescanning every key per call.
+    let maxDictKeyLen = 0
+    for (const key of tokenDict.keys()) maxDictKeyLen = Math.max(maxDictKeyLen, key.length)
+
     /**
      * Partial segmentation of a token, or null when it is not trustworthy:
      * orphan vowel signs (មិនា -> មិន + ា) would be shredded by the rules.
      */
     const partialSegments = (token: string) => {
         if (tokenDict.size === 0) return null
-        const segments = segmentToken(token, tokenDict)
+        const segments = segmentToken(token, tokenDict, { maxKeyLen: maxDictKeyLen })
         if (!segments) return null
         return segments.every((seg) => seg.inDict || seg.text.length >= MIN_REMAINDER_LEN) ? segments : null
     }
@@ -236,7 +241,10 @@ export function createTransliterator(options: TransliteratorOptions = {}): Trans
         // words, those words are the name components -> join with spaces.
         let resolved: TranslitToken[] | null = null
         if (tokens.length === 1 && tokenDict.size > 0) {
-            const segs = segmentToken(tokens[0], tokenDict, { minKeyLen: FULL_SEGMENT_MIN_KEY_LEN })
+            const segs = segmentToken(tokens[0], tokenDict, {
+                minKeyLen: FULL_SEGMENT_MIN_KEY_LEN,
+                maxKeyLen: maxDictKeyLen,
+            })
             if (segs && segs.every((seg) => seg.inDict)) {
                 resolved = segs.map((seg) => resolveToken(seg.text))
             }
