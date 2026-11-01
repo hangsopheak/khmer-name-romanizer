@@ -138,6 +138,25 @@ describe('khmer-name-romanizer', () => {
         expect(r.candidates).toContain('Sor Kheng')
     })
 
+    it('injects official alternates the per-token option cap discards', () => {
+        // ស៊ីន carries the canonical plus three variant readings, so its
+        // official doubled spelling "Sinn" (attested final-n alternation)
+        // sits past the OPTIONS_PER_TOKEN cap and can never compose into
+        // a full-name candidate. The single-substitution swap injects it,
+        // ranked below the leader — never displacing the value.
+        const t = createTransliterator({
+            tokenDict: { ស៊ីន: { latin: 'Sin', count: 9, variants: { Syn: 3, Seng: 2, Sen: 2 } } },
+        })
+        const r = t.transliterate('ស៊ីន ដារា')
+        expect(r.value).toBe('Sin Dara') // swaps cannot outscore the leader
+        expect(r.candidates).toContain('Sinn Dara')
+        expect(r.candidates).toContain('Syn Dara') // within-cap options still compose
+        expect(r.scoredCandidates![0].value).toBe('Sin Dara')
+        const scores = r.scoredCandidates!.map((c) => c.score)
+        expect(scores.every((s, i) => i === 0 || scores[i - 1] >= scores[i])).toBe(true)
+        expect(r.candidates.length).toBeLessThanOrEqual(5)
+    })
+
     it('promotes a variant only when it decisively out-attests the canonical', () => {
         const t = createDefaultTransliterator({
             tokenDict: { ដារា: { latin: 'Dara', count: 1, variants: { Tara: 6 } } },

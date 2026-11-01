@@ -328,6 +328,36 @@ export function createTransliterator(options: TransliteratorOptions = {}): Trans
                 .map((value) => ({ value, mass: masses.get(massKey(value)) ?? UNSEEN_OPTION_MASS })),
         )
         const composed = composeScored(optionLists, maxCandidates)
+        // The per-token cap discards tail options: once a token offers
+        // variants plus FST/rule readings, its attested spelling
+        // alternations sit beyond it (alternates always join last), so an
+        // official spelling one alternation away from the primary ("Sin"
+        // -> "Sinn") can never compose into a full-name candidate. Inject
+        // those spellings as single-substitution variants of the leader:
+        // per token, its top discarded option replaces that token's word,
+        // scored with the same mass maps (the per-token normalizer
+        // cancels, so the swap's score is the leader's plus the mass
+        // ratio). A swap trades the leader's top-mass option for a
+        // lighter one, so it can never outscore the leader — equal-mass
+        // ties keep the composed spelling ahead — it only competes for
+        // the lower candidate slots.
+        const leader = composed[0]
+        const swaps: ScoredCandidate[] = []
+        if (leader) {
+            const leaderWords = optionLists.map((options) => options[0].value)
+            resolved.forEach(({ token, masses }, t) => {
+                const swappedIn = token.alternatives[OPTIONS_PER_TOKEN - 1]
+                if (!swappedIn) return
+                const mass = masses.get(massKey(swappedIn)) ?? UNSEEN_OPTION_MASS
+                swaps.push({
+                    value: [...leaderWords.slice(0, t), swappedIn, ...leaderWords.slice(t + 1)].join(' '),
+                    score: leader.score + Math.log(mass / optionLists[t][0].mass),
+                })
+            })
+            swaps.sort((a, b) => b.score - a.score)
+        }
+        // Stable sort keeps composed candidates ahead of equal-scored swaps.
+        const ranked = swaps.length ? [...composed, ...swaps].sort((a, b) => b.score - a.score) : composed
         // The whole-name FST (a different segmentation of the syllable
         // stream) goes right after the best composed reading, unless it
         // dropped syllables (ហង្ស ចាន់វត្តី -> "Hang Vatey"). It has no
@@ -335,10 +365,10 @@ export function createTransliterator(options: TransliteratorOptions = {}): Trans
         // as an equal-trust alternative, not a counted spelling.
         const letters = (value: string) => value.replace(/\s/g, '').length
         const keepFst =
-            composed.length > 0 && wholeFstValue !== '' && letters(wholeFstValue) >= MIN_WHOLE_FST_LENGTH_RATIO * letters(composed[0].value)
+            ranked.length > 0 && wholeFstValue !== '' && letters(wholeFstValue) >= MIN_WHOLE_FST_LENGTH_RATIO * letters(ranked[0].value)
         const withFst = keepFst
-            ? [composed[0], { value: wholeFstValue, score: composed[0].score }, ...composed.slice(1)]
-            : composed
+            ? [ranked[0], { value: wholeFstValue, score: ranked[0].score }, ...ranked.slice(1)]
+            : ranked
         // Case-insensitive dedupe keeps the first (best-scored) spelling.
         const seen = new Set<string>()
         return withFst.filter((c) => {
