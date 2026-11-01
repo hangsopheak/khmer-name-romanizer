@@ -107,6 +107,8 @@ Injected readings fill token gaps the dictionary and rules miss, and join `candi
 
 **Syllable compositor — evaluated, not shipped.** A learned alternative for unknown tokens (syllable lexicon harvested from attested pairs, product-scored composition) was probed and rejected on evidence (`scripts/probe-syllable-compositor.mjs`, reproducible): it **loses to the rule engine as a single guess** (72 vs 76 exact on 248 leave-one-out composable tokens), so its readings could only ever ride below the rules; and the distilled FST already covers the same token population with better readings. Its residual value is top-5 recall on genuinely novel names — a +8.4pp ceiling (+61/726 rows) in the leakage-free unseen-token scenario, roughly halved by candidate crowd-out — judged not worth a second generated lexicon and compositor tier. Revisit if the corpus grows several-fold.
 
+**Segmentation upgrades — evaluated, none shipped.** The plan's final phase targeted the segmentation DP. Measured against the counterfactual pipeline (`scripts/probe-segmentation.mjs`): the DP already beats whole-token rules on trusted splits (18 vs 13 exact of 126); relaxing the remainder-trust rule gains nothing (0 of 87 untrusted tokens had a fully-dict-coverable split); n-best alternative splits rescue at most 3/102 misses (upper bound, in-sample). The dominant failure bucket is the 560 tokens with no dictionary prefix at all — a **vocabulary** problem (grow the corpus through `scrape:names` → `mine:tokens` → `merge:tokens` and re-distill), not an algorithm problem.
+
 ## Accuracy
 
 Benchmarked on 366 verified Khmer↔English pairs from university rosters (exact match; similarity = difflib ratio):
