@@ -136,7 +136,7 @@ export const defaultTokenDict: TokenDictionaryData = {
     "ជុំ": { latin: "Chum", count: 2, variants: {"Chom":1} },
     "ជូ": { latin: "Chou", count: 2 },
     "ជួង": { latin: "Choung", count: 1 },
-    "ជួន": { latin: "Chuon", count: 1, variants: {"Thiounn":2} },
+    "ជួន": { latin: "Chuon", count: 1, variants: {"Thiounn":2,"Choun":3} },
     "ជួប": { latin: "Choup", count: 1 },
     "ជឿន": { latin: "Choeurn", count: 2, variants: {"Thioeunn":2} },
     "ជឿនមករា": { latin: "Choeunmakara", count: 1 },

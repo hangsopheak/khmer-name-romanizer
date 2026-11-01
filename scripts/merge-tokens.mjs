@@ -39,13 +39,17 @@ const TRUSTED_STATIC = new Set(['static/kname'])
 // is Hun Sen's FAMILY name; បូរ៉េត -> "Long" is Long Boret's GIVEN name;
 // សាមុត -> "Sisamouth" is half of Sinn Sisamouth), and one bad
 // alphabetical tie-break (លក្ខិណា -> "In" overrode the correct Lakhena).
+// 2026-11-01 refresh: បូរេ៉ត is a combining-mark reordering of the
+// junk-blocked បូរ៉េត (same Long Boret mis-alignment, different bytes).
 const REVIEWED_JUNK = new Set([
-    'សាវក', 'សាវ័កបាថូឡូមេ', 'ប៊ុនណាល់', 'បូរ៉េត', 'មីចឡែន', 'ម៉ូឌី',
+    'សាវក', 'សាវ័កបាថូឡូមេ', 'ប៊ុនណាល់', 'បូរ៉េត', 'បូរេ៉ត', 'មីចឡែន', 'ម៉ូឌី',
     'លោកឌីអូហ្គូ', 'សឺវ៉ាន់ដ្សទីយាន', 'ហ្គារីហ្គិន', 'វេឡូសូ', 'អ៊ូ', 'សាមុត',
     'លក្ខិណា',
 ])
-// variant-level blocks ("khmer|Latin"): mis-alignments, not spellings
-const REVIEWED_JUNK_VARIANTS = new Set(['ស|Pot'])
+// variant-level blocks ("khmer|Latin"): mis-alignments, not spellings.
+// ឡុង|Boret / ឡុង|Boreth: Khmer "ឡុង បូរ៉េត" rows aligned against
+// reversed Latin ("Boret Long") — the Long Boret family again.
+const REVIEWED_JUNK_VARIANTS = new Set(['ស|Pot', 'ឡុង|Boret', 'ឡុង|Boreth'])
 
 const args = process.argv.slice(2)
 const flag = (name) => args.includes(name)

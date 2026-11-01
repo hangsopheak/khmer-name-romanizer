@@ -1,11 +1,11 @@
 {
- "generated": "2026-11-01T04:08:40.420Z",
- "testRows": 355,
+ "generated": "2026-11-01T09:50:44.442Z",
+ "testRows": 365,
  "evalRows": 108,
  "dict": {
-  "size": 818,
+  "size": 819,
   "removed": 14,
-  "added": 9,
+  "added": 10,
   "enriched": 2
  },
  "shipped": {
@@ -85,13 +85,13 @@
   }
  },
  "foreign": {
-  "n": 246,
+  "n": 256,
   "exact": 8,
-  "exactPct": 3.3,
+  "exactPct": 3.1,
   "anyOrder": 8,
   "top5": 13,
-  "top5Pct": 5.3,
-  "meanSim": 0.644
+  "top5Pct": 5.1,
+  "meanSim": 0.645
  },
  "misses": [
   {
@@ -485,20 +485,20 @@
    "sim": 0.7
   },
   {
-   "khmer": "ម៉ាត់ នូរណ",
-   "latin": "Mat Noron",
+   "khmer": "សម រង្ស៊ី",
+   "latin": "Sam Rainsy",
    "bucket": "cambodian",
-   "got": "Mat Nourno",
+   "got": "Sam Rongsy",
    "hit": false,
    "orderOnly": false,
    "inTop5": false,
    "sim": 0.7
   },
   {
-   "khmer": "សម រង្ស៊ី",
-   "latin": "Sam Rainsy",
+   "khmer": "ម៉ាត់ នូរណ",
+   "latin": "Mat Noron",
    "bucket": "cambodian",
-   "got": "Sam Rongsy",
+   "got": "Mat Nourno",
    "hit": false,
    "orderOnly": false,
    "inTop5": false,

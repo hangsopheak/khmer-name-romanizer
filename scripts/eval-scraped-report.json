@@ -1,6 +1,6 @@
 {
- "generated": "2026-11-01T04:08:32.744Z",
- "scraped": 2390,
+ "generated": "2026-11-01T09:50:38.174Z",
+ "scraped": 2432,
  "excluded": [
   {
    "khmer": "អាអ៊ូហ្គូស្ធីនូស នៃ ហុីបផូ",
@@ -18,13 +18,13 @@
    "why": "non-name latin"
   },
   {
-   "khmer": "បុត្រីរបស់ កន្ទប៌ធម៌",
-   "latin": "Daughter of Kandarpadharma",
+   "khmer": "ព្រះបាទសម្តេចព្រះនរោត្ដម បរមរាមាទេវតា",
+   "latin": "Norodom of Cambodia",
    "why": "non-name latin"
   },
   {
-   "khmer": "ព្រះបាទសម្តេចព្រះនរោត្ដម បរមរាមាទេវតា",
-   "latin": "Norodom of Cambodia",
+   "khmer": "បុត្រីរបស់ កន្ទប៌ធម៌",
+   "latin": "Daughter of Kandarpadharma",
    "why": "non-name latin"
   },
   {
@@ -64,23 +64,23 @@
   }
  ],
  "inDomain": {
-  "n": 834,
-  "exact": 281,
-  "exactAnyOrder": 292,
+  "n": 835,
+  "exact": 282,
+  "exactAnyOrder": 293,
   "top5": 364,
-  "ge90": 363,
-  "ge75": 531,
+  "ge90": 364,
+  "ge75": 532,
   "meanSim": 0.758
  },
  "buckets": {
   "cambodian": {
-   "n": 488,
-   "exact": 159,
-   "exactAnyOrder": 168,
+   "n": 489,
+   "exact": 160,
+   "exactAnyOrder": 169,
    "top5": 224,
-   "ge90": 232,
-   "ge75": 357,
-   "meanSim": 0.795
+   "ge90": 233,
+   "ge75": 358,
+   "meanSim": 0.796
   },
   "unknown": {
    "n": 217,
@@ -101,12 +101,12 @@
    "meanSim": 0.944
   },
   "foreign": {
-   "n": 1544,
+   "n": 1585,
    "exact": 32,
    "exactAnyOrder": 33,
    "top5": 49,
    "ge90": 85,
-   "ge75": 480,
+   "ge75": 491,
    "meanSim": 0.634
   }
  },
@@ -425,17 +425,17 @@
    "bucket": "unknown"
   },
   {
-   "khmer": "ហៃ វណ្ណា",
-   "latin": "Vanna Hay",
-   "got": "Hai Vanna",
+   "khmer": "សាឡុត ស",
+   "latin": "Pol Pot",
+   "got": "Salot Sar",
    "sim": 0.222,
    "inTop5": false,
    "bucket": "cambodian"
   },
   {
-   "khmer": "សាឡុត ស",
-   "latin": "Pol Pot",
-   "got": "Salot Sar",
+   "khmer": "ហៃ វណ្ណា",
+   "latin": "Vanna Hay",
+   "got": "Hai Vanna",
    "sim": 0.222,
    "inTop5": false,
    "bucket": "cambodian"
@@ -1393,6 +1393,14 @@
    "bucket": "unknown"
   },
   {
+   "khmer": "ជយទេវី",
+   "latin": "Jayadevi",
+   "got": "Chaytevi",
+   "sim": 0.5,
+   "inTop5": false,
+   "bucket": "unknown"
+  },
+  {
    "khmer": "ឝ្រេឝ្ឋវម៌្ម",
    "latin": "Shreshtha Varman",
    "got": "Shreshvom",
@@ -1412,14 +1420,6 @@
    "khmer": "ឧទ័យទិត្យវរ្ម័ន",
    "latin": "Udayadityavarman",
    "got": "Otaytithvormon",
-   "sim": 0.5,
-   "inTop5": false,
-   "bucket": "unknown"
-  },
-  {
-   "khmer": "ជយទេវី",
-   "latin": "Jayadevi",
-   "got": "Chaytevi",
    "sim": 0.5,
    "inTop5": false,
    "bucket": "unknown"
@@ -1477,7 +1477,7 @@
    "latin": "Thiounn Prasith",
    "got": "Chuon Broseth",
    "sim": 0.533,
-   "inTop5": true,
+   "inTop5": false,
    "bucket": "cambodian"
   },
   {
@@ -1629,7 +1629,7 @@
    "latin": "Thiounn Thioeunn",
    "got": "Chuon Choeurn",
    "sim": 0.563,
-   "inTop5": true,
+   "inTop5": false,
    "bucket": "cambodian"
   },
   {
@@ -2137,6 +2137,14 @@
    "bucket": "unknown"
   },
   {
+   "khmer": "ហាស៊ីម អ៊ីបន អាប់ ម៉ាណាហ្វ",
+   "latin": "Hashim ibn 'Abd Manaf",
+   "got": "Hasim Ipno Ap Manah",
+   "sim": 0.667,
+   "inTop5": false,
+   "bucket": "unknown"
+  },
+  {
    "khmer": "សាន យន់",
    "latin": "Sam Yun",
    "got": "Sann Yuon",
@@ -2148,14 +2156,6 @@
    "khmer": "ស៊ាដាច អូនីល",
    "latin": "Ceadach O'Neill",
    "got": "Seardach Onil",
-   "sim": 0.667,
-   "inTop5": false,
-   "bucket": "unknown"
-  },
-  {
-   "khmer": "ហាស៊ីម អ៊ីបន អាប់ ម៉ាណាហ្វ",
-   "latin": "Hashim ibn 'Abd Manaf",
-   "got": "Hasim Ipno Ap Manah",
    "sim": 0.667,
    "inTop5": false,
    "bucket": "unknown"
@@ -2785,17 +2785,17 @@
    "bucket": "cambodian"
   },
   {
-   "khmer": "វណ្ណ ម៉ូលីវណ្ណ",
-   "latin": "Vann Molyvann",
-   "got": "Vann Molyv",
+   "khmer": "ហាក់ ឆៃហុក",
+   "latin": "Hak Chhay Hok",
+   "got": "Hak Chaihok",
    "sim": 0.769,
    "inTop5": false,
    "bucket": "cambodian"
   },
   {
-   "khmer": "ហាក់ ឆៃហុក",
-   "latin": "Hak Chhay Hok",
-   "got": "Hak Chaihok",
+   "khmer": "វណ្ណ ម៉ូលីវណ្ណ",
+   "latin": "Vann Molyvann",
+   "got": "Vann Molyv",
    "sim": 0.769,
    "inTop5": false,
    "bucket": "cambodian"
@@ -3493,7 +3493,7 @@
    "latin": "Choun Chanchav",
    "got": "Chuon Chanchav",
    "sim": 0.857,
-   "inTop5": false,
+   "inTop5": true,
    "bucket": "cambodian"
   },
   {
