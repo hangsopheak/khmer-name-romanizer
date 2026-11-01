@@ -28,6 +28,7 @@ import {
     counterfactualDict,
     distillMapFor,
     isInDomain,
+    isShapeMatchable,
     norm,
     passesHygiene,
     similarity,
@@ -74,12 +75,15 @@ const evaluate = (rows, t) =>
             orderOnly: !hit && sortedNorm(r.value) === sortedNorm(p.latin),
             inTop5: r.candidates.some((c) => norm(c) === norm(p.latin)),
             sim: +similarity(r.value, p.latin).toFixed(3),
+            matchable: isShapeMatchable(p),
         }
     })
 
 const report = (rows) => {
     if (!rows.length) return { n: 0 }
     const exact = rows.filter((r) => r.hit).length
+    const matchable = rows.filter((r) => r.matchable)
+    const top5Matchable = matchable.filter((r) => r.inTop5).length
     return {
         n: rows.length,
         exact,
@@ -88,6 +92,9 @@ const report = (rows) => {
         top5: rows.filter((r) => r.inTop5).length,
         top5Pct: +(100 * (rows.filter((r) => r.inTop5).length / rows.length)).toFixed(1),
         meanSim: +(rows.reduce((a, r) => a + r.sim, 0) / rows.length).toFixed(3),
+        matchableN: matchable.length,
+        top5Matchable,
+        top5MatchablePct: matchable.length ? +((100 * top5Matchable) / matchable.length).toFixed(1) : 0,
     }
 }
 
@@ -126,6 +133,9 @@ console.log(fmt('  cambodian citizens', holdout.cambodian))
 console.log(fmt('  unknown (ancient kings etc.)', holdout.unknown))
 console.log(fmt('  curated', holdout.curated))
 console.log(fmt('  foreign (out-of-domain ref.)', report(foreignResults)))
+console.log(
+    `\n  in-domain top-5 over shape-matchable rows only: ${holdout.inDomain.top5Matchable}/${holdout.inDomain.matchableN} (${holdout.inDomain.top5MatchablePct}%) — ${holdout.inDomain.n - holdout.inDomain.matchableN} of ${holdout.inDomain.n} rows are structurally unmatchable`,
+)
 
 const misses = holdoutResults
     .filter((r) => !r.hit)

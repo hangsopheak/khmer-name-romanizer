@@ -90,6 +90,14 @@ The full loop ran: `scrape:names` → `split:corpus` (lockbox verified) →
   Wikidata's in-domain name coverage is saturated at this scale; the next
   meaningful step is a qualitatively different source (civil-registry
   extracts, news bylines), not a re-scrape.
+- **Matchable ceiling added to all eval reports**: top-5 now also counted
+  over shape-matchable rows only (expected Latin word count == engine
+  Khmer token count). 148/835 in-domain rows (~18%) are structurally
+  unmatchable — no candidate the composer can build will ever equal them
+  (corpus short-forms, reversed alignments, title fragments). Fair-recall
+  view: kfold top-5 **250/687 (36.4%)** vs 33.1% raw; lockbox **27/89
+  (30.3%)** vs 28.7% raw. Gate numbers (exact/mean/top-5 over all rows)
+  are unchanged and remain the judge.
 
 ## 6. Conclusion — what is left
 

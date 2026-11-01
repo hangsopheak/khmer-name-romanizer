@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-01T09:50:38.313Z",
+ "generated": "2026-11-01T09:55:26.566Z",
  "k": 5,
  "min": 2,
  "evalRows": 835,
@@ -18,7 +18,10 @@
     "anyOrder": 37,
     "top5": 50,
     "top5Pct": 29.9,
-    "meanSim": 0.738
+    "meanSim": 0.738,
+    "matchableN": 131,
+    "top5Matchable": 43,
+    "top5MatchablePct": 32.8
    }
   },
   {
@@ -35,7 +38,10 @@
     "anyOrder": 41,
     "top5": 57,
     "top5Pct": 34.1,
-    "meanSim": 0.708
+    "meanSim": 0.708,
+    "matchableN": 134,
+    "top5Matchable": 53,
+    "top5MatchablePct": 39.6
    }
   },
   {
@@ -52,7 +58,10 @@
     "anyOrder": 39,
     "top5": 52,
     "top5Pct": 31.1,
-    "meanSim": 0.732
+    "meanSim": 0.732,
+    "matchableN": 142,
+    "top5Matchable": 47,
+    "top5MatchablePct": 33.1
    }
   },
   {
@@ -69,7 +78,10 @@
     "anyOrder": 40,
     "top5": 52,
     "top5Pct": 31.1,
-    "meanSim": 0.74
+    "meanSim": 0.74,
+    "matchableN": 141,
+    "top5Matchable": 47,
+    "top5MatchablePct": 33.3
    }
   },
   {
@@ -86,7 +98,10 @@
     "anyOrder": 51,
     "top5": 65,
     "top5Pct": 38.9,
-    "meanSim": 0.747
+    "meanSim": 0.747,
+    "matchableN": 139,
+    "top5Matchable": 60,
+    "top5MatchablePct": 43.2
    }
   }
  ],
@@ -98,7 +113,10 @@
    "anyOrder": 37,
    "top5": 50,
    "top5Pct": 29.9,
-   "meanSim": 0.738
+   "meanSim": 0.738,
+   "matchableN": 131,
+   "top5Matchable": 43,
+   "top5MatchablePct": 32.8
   },
   {
    "n": 167,
@@ -107,7 +125,10 @@
    "anyOrder": 41,
    "top5": 57,
    "top5Pct": 34.1,
-   "meanSim": 0.708
+   "meanSim": 0.708,
+   "matchableN": 134,
+   "top5Matchable": 53,
+   "top5MatchablePct": 39.6
   },
   {
    "n": 167,
@@ -116,7 +137,10 @@
    "anyOrder": 39,
    "top5": 52,
    "top5Pct": 31.1,
-   "meanSim": 0.732
+   "meanSim": 0.732,
+   "matchableN": 142,
+   "top5Matchable": 47,
+   "top5MatchablePct": 33.1
   },
   {
    "n": 167,
@@ -125,7 +149,10 @@
    "anyOrder": 40,
    "top5": 52,
    "top5Pct": 31.1,
-   "meanSim": 0.74
+   "meanSim": 0.74,
+   "matchableN": 141,
+   "top5Matchable": 47,
+   "top5MatchablePct": 33.3
   },
   {
    "n": 167,
@@ -134,7 +161,10 @@
    "anyOrder": 51,
    "top5": 65,
    "top5Pct": 38.9,
-   "meanSim": 0.747
+   "meanSim": 0.747,
+   "matchableN": 139,
+   "top5Matchable": 60,
+   "top5MatchablePct": 43.2
   }
  ],
  "shipped": {
@@ -145,7 +175,10 @@
    "anyOrder": 169,
    "top5": 224,
    "top5Pct": 45.8,
-   "meanSim": 0.796
+   "meanSim": 0.796,
+   "matchableN": 407,
+   "top5Matchable": 198,
+   "top5MatchablePct": 48.6
   },
   "unknown": {
    "n": 217,
@@ -154,7 +187,10 @@
    "anyOrder": 20,
    "top5": 24,
    "top5Pct": 11.1,
-   "meanSim": 0.562
+   "meanSim": 0.562,
+   "matchableN": 151,
+   "top5Matchable": 22,
+   "top5MatchablePct": 14.6
   },
   "curated": {
    "n": 129,
@@ -163,7 +199,10 @@
    "anyOrder": 104,
    "top5": 116,
    "top5Pct": 89.9,
-   "meanSim": 0.944
+   "meanSim": 0.944,
+   "matchableN": 129,
+   "top5Matchable": 116,
+   "top5MatchablePct": 89.9
   },
   "inDomain": {
    "n": 835,
@@ -172,7 +211,10 @@
    "anyOrder": 293,
    "top5": 364,
    "top5Pct": 43.6,
-   "meanSim": 0.758
+   "meanSim": 0.758,
+   "matchableN": 687,
+   "top5Matchable": 336,
+   "top5MatchablePct": 48.9
   }
  },
  "kfold": {
@@ -183,7 +225,10 @@
    "anyOrder": 112,
    "top5": 164,
    "top5Pct": 33.5,
-   "meanSim": 0.773
+   "meanSim": 0.773,
+   "matchableN": 407,
+   "top5Matchable": 140,
+   "top5MatchablePct": 34.4
   },
   "unknown": {
    "n": 217,
@@ -192,7 +237,10 @@
    "anyOrder": 17,
    "top5": 21,
    "top5Pct": 9.7,
-   "meanSim": 0.56
+   "meanSim": 0.56,
+   "matchableN": 151,
+   "top5Matchable": 19,
+   "top5MatchablePct": 12.6
   },
   "curated": {
    "n": 129,
@@ -201,7 +249,10 @@
    "anyOrder": 79,
    "top5": 91,
    "top5Pct": 70.5,
-   "meanSim": 0.871
+   "meanSim": 0.871,
+   "matchableN": 129,
+   "top5Matchable": 91,
+   "top5MatchablePct": 70.5
   },
   "inDomain": {
    "n": 835,
@@ -210,7 +261,10 @@
    "anyOrder": 208,
    "top5": 276,
    "top5Pct": 33.1,
-   "meanSim": 0.733
+   "meanSim": 0.733,
+   "matchableN": 687,
+   "top5Matchable": 250,
+   "top5MatchablePct": 36.4
   }
  }
 }

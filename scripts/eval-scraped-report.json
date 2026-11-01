@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-01T09:50:38.174Z",
+ "generated": "2026-11-01T09:55:26.368Z",
  "scraped": 2432,
  "excluded": [
   {
@@ -70,7 +70,10 @@
   "top5": 364,
   "ge90": 364,
   "ge75": 532,
-  "meanSim": 0.758
+  "meanSim": 0.758,
+  "matchableN": 687,
+  "top5Matchable": 336,
+  "top5MatchablePct": 48.9
  },
  "buckets": {
   "cambodian": {
@@ -80,7 +83,10 @@
    "top5": 224,
    "ge90": 233,
    "ge75": 358,
-   "meanSim": 0.796
+   "meanSim": 0.796,
+   "matchableN": 407,
+   "top5Matchable": 198,
+   "top5MatchablePct": 48.6
   },
   "unknown": {
    "n": 217,
@@ -89,7 +95,10 @@
    "top5": 24,
    "ge90": 27,
    "ge75": 56,
-   "meanSim": 0.562
+   "meanSim": 0.562,
+   "matchableN": 151,
+   "top5Matchable": 22,
+   "top5MatchablePct": 14.6
   },
   "curated": {
    "n": 129,
@@ -98,7 +107,10 @@
    "top5": 116,
    "ge90": 104,
    "ge75": 118,
-   "meanSim": 0.944
+   "meanSim": 0.944,
+   "matchableN": 129,
+   "top5Matchable": 116,
+   "top5MatchablePct": 89.9
   },
   "foreign": {
    "n": 1585,
@@ -107,7 +119,10 @@
    "top5": 49,
    "ge90": 85,
    "ge75": 491,
-   "meanSim": 0.634
+   "meanSim": 0.634,
+   "matchableN": 1395,
+   "top5Matchable": 47,
+   "top5MatchablePct": 3.4
   }
  },
  "orderFlips": [

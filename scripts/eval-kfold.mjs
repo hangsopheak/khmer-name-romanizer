@@ -35,6 +35,7 @@ import {
     counterfactualDict,
     distillMapFor,
     isInDomain,
+    isShapeMatchable,
     norm,
     passesHygiene,
     similarity,
@@ -79,12 +80,15 @@ const evaluate = (rows, t) =>
             orderOnly: !hit && sortedNorm(r.value) === sortedNorm(p.latin),
             inTop5: r.candidates.some((c) => norm(c) === norm(p.latin)),
             sim: similarity(r.value, p.latin),
+            matchable: isShapeMatchable(p),
         }
     })
 
 const report = (rows) => {
     if (!rows.length) return { n: 0 }
     const exact = rows.filter((r) => r.hit).length
+    const matchable = rows.filter((r) => r.matchable)
+    const top5Matchable = matchable.filter((r) => r.inTop5).length
     return {
         n: rows.length,
         exact,
@@ -93,6 +97,9 @@ const report = (rows) => {
         top5: rows.filter((r) => r.inTop5).length,
         top5Pct: +(100 * (rows.filter((r) => r.inTop5).length / rows.length)).toFixed(1),
         meanSim: +(rows.reduce((a, r) => a + r.sim, 0) / rows.length).toFixed(3),
+        matchableN: matchable.length,
+        top5Matchable,
+        top5MatchablePct: matchable.length ? +((100 * top5Matchable) / matchable.length).toFixed(1) : 0,
     }
 }
 
@@ -160,6 +167,9 @@ console.log(fmt('  unknown (ancient kings etc.)', kfold.unknown))
 const foldRates = perFold.filter((r) => r.n).map((r) => r.exactPct)
 if (foldRates.length)
     console.log(`  per-fold in-domain exact: ${foldRates.map((r) => r + '%').join('  ')}  (spread ${Math.min(...foldRates)}–${Math.max(...foldRates)}%)`)
+console.log(
+    `  in-domain top-5 over shape-matchable rows only: ${kfold.inDomain.top5Matchable}/${kfold.inDomain.matchableN} (${kfold.inDomain.top5MatchablePct}%) — ${kfold.inDomain.n - kfold.inDomain.matchableN} of ${kfold.inDomain.n} rows are structurally unmatchable`,
+)
 
 writeFileSync(
     new URL('./eval-kfold-report.json', import.meta.url),

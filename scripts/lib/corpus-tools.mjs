@@ -27,6 +27,28 @@ export const titleCase = (w) =>
     w.split(' ').map((x) => x[0].toUpperCase() + x.slice(1).toLowerCase()).join(' ')
 
 /* ------------------------------------------------------------------ */
+/* shape matchability                                                  */
+/* ------------------------------------------------------------------ */
+
+import { normalizeName, splitTokens, stripHonorifics } from '../../dist/index.js'
+
+/** Token count of the Khmer side as the engine sees it (normalized,
+ *  honorifics stripped, space-split). */
+export const khmerTokenCount = (khmer) =>
+    splitTokens(stripHonorifics(normalizeName(khmer)).name).length
+
+/**
+ * A row is shape-matchable when the expected Latin word count equals the
+ * engine's Khmer token count — the only shape the candidate composer can
+ * ever produce (one word per token). Mismatched rows (~18% of in-domain
+ * corpus: corpus short-forms like គឹមហួន -> "Kim", reversed alignments,
+ * title fragments) are structurally unreachable, so top-5 rates counted
+ * over matchable rows alone are the fair recall view.
+ */
+export const isShapeMatchable = (p) =>
+    khmerTokenCount(p.khmer) === p.latin.split(/\s+/).filter(Boolean).length
+
+/* ------------------------------------------------------------------ */
 /* metrics                                                             */
 /* ------------------------------------------------------------------ */
 export const levenshtein = (a, b) => {
