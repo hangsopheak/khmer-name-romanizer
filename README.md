@@ -80,6 +80,29 @@ const result = t.transliterate('តាំង ដារា')
 
 The CLI prints candidates pipe-separated with `--all`.
 
+### The optional FST tier
+
+Tier 3 readings come from [khmer-latin-name-transformer](https://pypi.org/project/khmer-latin-name-transformer/) — a pynini FST, and the strongest grapheme-level engine for Cambodian names. It stays **optional and out-of-process**: this package has zero dependencies and never requires Python; callers who want the tier pre-compute readings and inject them.
+
+```bash
+# macOS ARM has no pynini wheels — build against brew openfst once:
+brew install openfst
+CPLUS_INCLUDE_PATH=$(brew --prefix openfst)/include \
+LIBRARY_PATH=$(brew --prefix openfst)/lib \
+pip install pynini khmer-latin-name-transformer
+
+echo '["ហង្ស សុភ័ក្រ្ត"]' | npm run fst:readings   # -> scripts/fst-results.json
+```
+
+`fst:readings` expands the names via `t.fstInputs()` (whole names, tokens, and segmentation remainders), batches them through `scripts/khmer_to_latin.py` in one process (the model loads once), and writes a flat `{ khmer: latin }` map. Override the interpreter with `KHMER_TRANLIT_PYTHON` (e.g. a venv python).
+
+```ts
+import fst from './fst-results.json' with { type: 'json' }
+const t = createDefaultTransliterator({ fstResults: new Map(Object.entries(fst)) })
+```
+
+Injected readings fill token gaps the dictionary and rules miss, and join `candidates` with prior-grade probability mass — they suggest, never override: dictionary canonicals still lead. On the 366-pair roster benchmark (leave-one-out), the injected tier lifts exact match from 86 to **154/366** (216 in top-5). The tier is the same one the student-management roster pipeline uses in production.
+
 ## Accuracy
 
 Benchmarked on 366 verified Khmer↔English pairs from university rosters (exact match; similarity = difflib ratio):
