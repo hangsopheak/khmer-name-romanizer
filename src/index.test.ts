@@ -95,6 +95,22 @@ describe('khmer-name-romanizer', () => {
         expect(r.candidates.every((c) => !/\s{2,}/.test(c))).toBe(true)
     })
 
+    it('appends order-flipped candidates when opted in; value stays untouched', () => {
+        const t = createDefaultTransliterator({ flipOrderCandidates: true })
+        const r = t.transliterate('អ៊ឹង លឿង')
+        expect(r.value).toBe('Ung Loung') // passport-style value unchanged
+        expect(r.candidates).toContain('Ung Loung')
+        expect(r.candidates).toContain('Loung Ung') // the other famous-miss spelling
+        // default stays byte-identical: no flip, no extra candidates
+        const plain = createDefaultTransliterator().transliterate('អ៊ឹង លឿង')
+        const plainFlip = createDefaultTransliterator({ flipOrderCandidates: false }).transliterate('អ៊ឹង លឿង')
+        expect(plain.candidates).not.toContain('Loung Ung')
+        expect(plainFlip.candidates).toEqual(plain.candidates)
+        // single-token names gain nothing
+        const one = t.transliterate('តាំងលាងខៃ')
+        expect(one.candidates.length).toBeLessThanOrEqual(5)
+    })
+
     it('extends the bundled dictionary with caller tokenDict entries', () => {
         const t = createDefaultTransliterator({ tokenDict: { ដារា: { latin: 'Dara', count: 1 } } })
         const result = t.transliterate('តាំង ដារា')

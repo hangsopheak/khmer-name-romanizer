@@ -60,4 +60,12 @@ export interface TransliteratorOptions {
     fstResults?: Map<string, string>
     /** Maximum number of full-name `candidates` returned (default 5). */
     maxCandidates?: number
+    /**
+     * Matching workflows only (KYC/dedup): also append given<->surname
+     * order-swapped spellings to `candidates` (Khmer writes the surname
+     * first; Latin records often put it last, e.g. Ung Loung / Loung Ung).
+     * `value` is never affected — passport-style output stays untouched.
+     * Default false.
+     */
+    flipOrderCandidates?: boolean
 }

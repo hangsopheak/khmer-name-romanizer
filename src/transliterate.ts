@@ -79,6 +79,13 @@ function uniqueSpellings(values: string[]): string[] {
     return out
 }
 
+/** given<->surname swap: first and last word exchange (Ung Loung -> Loung Ung). */
+function flipOrder(candidate: string): string {
+    const words = candidate.split(' ')
+    if (words.length < 2) return ''
+    return [words[words.length - 1], ...words.slice(1, -1), words[0]].join(' ')
+}
+
 function variantsByCount(entry: TokenEntry | undefined): string[] {
     if (!entry?.variants) return []
     return Object.entries(entry.variants)
@@ -109,6 +116,7 @@ export function createTransliterator(options: TransliteratorOptions = {}): Trans
     const tokenDict = new Map<string, TokenEntry>(Object.entries(options.tokenDict ?? {}))
     const fst = options.fstResults
     const maxCandidates = Math.max(1, options.maxCandidates ?? DEFAULT_MAX_CANDIDATES)
+    const flipOrderCandidates = options.flipOrderCandidates ?? false
 
     /**
      * Partial segmentation of a token, or null when it is not trustworthy:
@@ -245,11 +253,20 @@ export function createTransliterator(options: TransliteratorOptions = {}): Trans
         // 153 vs 149 exact), so the whole-name FST is only a candidate.
         const weakest = weakestSource(resolved.map((t) => t.source))
         const value = resolved.map((t) => titleCaseWords(t.latin)).join(' ')
+        const candidates = candidatesFor(resolved, wholeFstValue)
+        // Order-flipped spellings ride along AFTER the regular candidates
+        // (match-mode aid): capped at 2x maxCandidates, value untouched.
+        const flipped = flipOrderCandidates
+            ? uniqueSpellings([...candidates, ...candidates.map(flipOrder).filter(Boolean)]).slice(
+                  0,
+                  maxCandidates * 2,
+              )
+            : candidates
         return {
             value,
             source: weakest === 'tokenDict' ? 'tokens' : weakest,
             tokens: resolved,
-            candidates: candidatesFor(resolved, wholeFstValue),
+            candidates: flipped,
             ...(honorifics.length ? { honorifics } : {}),
         }
     }
