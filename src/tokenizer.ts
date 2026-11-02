@@ -46,9 +46,14 @@ const PREFIX_TITLES = [
  * Courtesy/profession titles: stripped only as whole leading tokens (with a
  * following space). Glued forms could be real names, so they stay. Bare ចៅ
  * is never a title: real names (ចៅ សុភា) start with it.
+ *
+ * ឯកឧត្តម / ឯកឧត្ដម ("His/Her Excellency", both orthographies): the
+ * workhorse honorific of official Cambodian documents — 173 of 217 unique
+ * senator names on senate.gov.kh carry one of the two spellings.
  */
 const TOKEN_TITLES = [
     'លោកនាង', 'លោកស្រី', 'លោកជំទាវ', 'លោកគ្រូ', 'លោក',
+    'ឯកឧត្តម', 'ឯកឧត្ដម',
     'ម៉ែស', 'មិសស', 'ដុកតឺរ', 'ប្រធាន',
 ].sort((a, b) => b.length - a.length)
 

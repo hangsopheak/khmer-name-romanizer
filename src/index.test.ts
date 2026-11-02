@@ -51,6 +51,18 @@ describe('khmer-name-romanizer', () => {
         expect(r.honorifics).toEqual(['សម្តេច'])
     })
 
+    it('strips His/Her Excellency in both orthographies (senate.gov.kh attestations)', () => {
+        // ឯកឧត្តម (modern) and ឯកឧត្ដម (classic coeng ត្ដ) prefix 173 of 217
+        // unique senator names on the official Senate roster — the engine
+        // used to render them as a name token.
+        const a = createDefaultTransliterator().transliterate('ឯកឧត្តម លី គឹមហាន')
+        expect(a.honorifics).toEqual(['ឯកឧត្តម'])
+        expect(a.value).toBe('Ly Kimhan')
+        const b = createDefaultTransliterator().transliterate('ឯកឧត្ដម ស៊ិន ពិនសេន')
+        expect(b.honorifics).toEqual(['ឯកឧត្ដម'])
+        expect(b.value).not.toMatch(/Ekodom|Ekat/i) // title never renders as a word
+    })
+
     it('strips royal titles glued to the name', () => {
         const r = createDefaultTransliterator().transliterate('ព្រះបាទសម្តេចព្រះនរោត្ដម បរមរាមាទេវតា')
         expect(r.value.startsWith('Norodom')).toBe(true)
