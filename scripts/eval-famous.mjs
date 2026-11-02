@@ -12,6 +12,10 @@ import { createDefaultTransliterator } from '../dist/index.js'
 
 const names = JSON.parse(readFileSync(new URL('./famous-people.json', import.meta.url), 'utf8'))
 const verbose = process.argv.includes('--verbose')
+/** Regression gate for CI: exit 1 when exact drops below N. */
+const minExact = Number(process.argv.includes('--min-exact')
+    ? process.argv[process.argv.indexOf('--min-exact') + 1]
+    : 0)
 
 function levenshtein(a, b) {
     const dp = Array.from({ length: a.length + 1 }, (_, i) => [i, ...Array(b.length).fill(0)])
@@ -61,4 +65,9 @@ if (misses.length) {
         console.log(`    got:      ${m.got}${m.inTop5 ? '   [official spelling IS in top-5]' : ''}`)
         if (verbose) console.log(`    candidates: ${m.candidates.join(' | ')}`)
     }
+}
+
+if (minExact && exact < minExact) {
+    console.error(`\nGATE FAILED: famous exact ${exact} < ${minExact}`)
+    process.exit(1)
 }

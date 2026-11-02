@@ -17,6 +17,10 @@ import { isShapeMatchable } from './lib/corpus-tools.mjs'
 const maxMisses = Number(process.argv.includes('--max-misses')
     ? process.argv[process.argv.indexOf('--max-misses') + 1]
     : 30)
+/** Regression gate for CI: exit 1 when in-domain exact drops below N. */
+const minExact = Number(process.argv.includes('--min-exact')
+    ? process.argv[process.argv.indexOf('--min-exact') + 1]
+    : 0)
 
 function levenshtein(a, b) {
     const dp = Array.from({ length: a.length + 1 }, (_, i) => [i, ...Array(b.length).fill(0)])
@@ -144,3 +148,8 @@ writeFileSync(
     }, null, 1),
 )
 console.log('\nfull report -> scripts/eval-scraped-report.json')
+
+if (minExact && bucketReport(inDomain).exact < minExact) {
+    console.error(`GATE FAILED: in-domain exact ${bucketReport(inDomain).exact} < ${minExact}`)
+    process.exit(1)
+}

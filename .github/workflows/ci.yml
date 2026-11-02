@@ -20,3 +20,9 @@ jobs:
       - run: npm test
       - run: npm run build
       - run: node bin/cli.js "តាំង លាងខៃ"
+      # Accuracy regression gates (no lockbox reads — famous is in-sample
+      # and the scraped eval uses the committed corpus; both are
+      # deterministic). Thresholds have headroom below current baselines
+      # (famous 70/72, in-domain 282/835) so only real regressions trip.
+      - run: node scripts/eval-famous.mjs --min-exact 70
+      - run: node scripts/eval-scraped.mjs --min-exact 270
