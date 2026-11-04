@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-02T14:13:04.539Z",
+ "generated": "2026-11-04T13:41:36.291Z",
  "testRows": 365,
  "evalRows": 108,
  "dict": {
@@ -11,15 +11,15 @@
  "shipped": {
   "cambodian": {
    "n": 63,
-   "exact": 11,
-   "exactPct": 17.5,
-   "anyOrder": 11,
-   "top5": 18,
-   "top5Pct": 28.6,
-   "meanSim": 0.753,
+   "exact": 12,
+   "exactPct": 19,
+   "anyOrder": 12,
+   "top5": 19,
+   "top5Pct": 30.2,
+   "meanSim": 0.754,
    "matchableN": 50,
-   "top5Matchable": 14,
-   "top5MatchablePct": 28
+   "top5Matchable": 15,
+   "top5MatchablePct": 30
   },
   "unknown": {
    "n": 29,
@@ -35,27 +35,27 @@
   },
   "curated": {
    "n": 16,
-   "exact": 12,
-   "exactPct": 75,
-   "anyOrder": 12,
-   "top5": 15,
-   "top5Pct": 93.8,
-   "meanSim": 0.946,
+   "exact": 13,
+   "exactPct": 81.3,
+   "anyOrder": 13,
+   "top5": 16,
+   "top5Pct": 100,
+   "meanSim": 0.956,
    "matchableN": 16,
-   "top5Matchable": 15,
-   "top5MatchablePct": 93.8
+   "top5Matchable": 16,
+   "top5MatchablePct": 100
   },
   "inDomain": {
    "n": 108,
-   "exact": 27,
-   "exactPct": 25,
-   "anyOrder": 27,
-   "top5": 37,
-   "top5Pct": 34.3,
-   "meanSim": 0.731,
+   "exact": 29,
+   "exactPct": 26.9,
+   "anyOrder": 29,
+   "top5": 39,
+   "top5Pct": 36.1,
+   "meanSim": 0.733,
    "matchableN": 89,
-   "top5Matchable": 33,
-   "top5MatchablePct": 37.1
+   "top5Matchable": 35,
+   "top5MatchablePct": 39.3
   }
  },
  "holdout": {

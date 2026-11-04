@@ -20,12 +20,14 @@
  * canonical's trust bonus, corpus attestations still outrank them, and
  * callers can still override per key.
  *
- * Source rows: scripts/dev-split.json ONLY (buckets cambodian+curated,
- * 1:1-aligned Khmer/Latin rows — same alignment as mine-tokens). The
- * frozen test split is never read: tokens held only by test rows are
- * never distilled, and eval-holdout/eval-kfold re-filter the bundled
- * map by eligibility recomputed from their own train rows, keeping the
- * counterfactual arms leakage-free.
+ * Source rows: scripts/dev-split.json (buckets cambodian+curated,
+ * 1:1-aligned Khmer/Latin rows — same alignment as mine-tokens) plus the
+ * Khmer-only tokens of scripts/sources/kh_parliament.json (official
+ * parliamentary rosters; no official Latin exists for them, so they are
+ * distill-scope only). The frozen test split is never read: tokens held
+ * only by test rows are never distilled, and eval-holdout/eval-kfold
+ * re-filter the bundled map by eligibility recomputed from their own
+ * train rows, keeping the counterfactual arms leakage-free.
  *
  * Readings are deterministic, so evals never need Python: they filter
  * the bundled map; only this generator runs the FST.
@@ -35,7 +37,7 @@
 import { readFileSync, writeFileSync } from 'node:fs'
 import { spawnSync } from 'node:child_process'
 import { fileURLToPath } from 'node:url'
-import { defaultTokenDict } from '../dist/index.js'
+import { defaultTokenDict, normalizeName, splitTokens, stripHonorifics } from '../dist/index.js'
 
 /** Latin letters shorter than this share of the Khmer token dropped
  *  syllables (FST regnal garbage: ឥន្ទ្រវរ្ម័ន -> "Vrm"). */
@@ -56,6 +58,32 @@ for (const p of rows) {
         if (!tokens.has(k)) tokens.set(k, p.bucket)
     })
 }
+
+// Official parliamentary rosters (scripts/sources/kh_parliament.json):
+// Khmer-only names harvested from senate.gov.kh (live AJAX endpoint) and
+// archived nac.org.kh rosters. The sites publish no official Latin, so
+// these names never enter the corpus or the dictionary — but they are
+// verified person-name tokens of high-lookup (political) names, so they
+// join the DISTILL SCOPE and get prior-grade FST readings. Leakage-free
+// by construction: counterfactual evals filter the bundled map by their
+// own train rows (distillMapFor), so corpus-independent keys like these
+// are inert in kfold/holdout and active only in the default chain.
+try {
+    const parliament = JSON.parse(readFileSync(new URL('./sources/kh_parliament.json', import.meta.url), 'utf8'))
+    let added = 0
+    for (const entry of parliament.members ?? []) {
+        const bare = stripHonorifics(normalizeName(entry.name)).name
+        for (const token of splitTokens(bare)) {
+            if (!token || tokens.has(token)) continue
+            tokens.set(token, 'parliament')
+            added++
+        }
+    }
+    console.log(`parliament roster tokens joining distill scope: ${added}`)
+} catch {
+    console.log('no scripts/sources/kh_parliament.json — parliament distill scope skipped')
+}
+
 const uncovered = [...tokens.keys()].filter((k) => !defaultTokenDict[k])
 
 const result = spawnSync(
@@ -102,8 +130,10 @@ writeFileSync(
  * Generated FST distillation — DO NOT EDIT BY HAND.
  * Prior-grade readings for Khmer name tokens the bundled dictionary does
  * not cover; injected as fstResults by createDefaultTransliterator.
- * Source rows: dev split (cambodian + curated buckets) only — never the
- * frozen test split. Regenerate with the pynini packages installed:
+ * Source rows: dev split (cambodian + curated buckets) plus the official
+ * parliamentary rosters (scripts/sources/kh_parliament.json, Khmer-only
+ * tokens) — never the frozen test split. Regenerate with the pynini
+ * packages installed:
  *
  *   npm run build && node scripts/fst-distill.mjs
  */
