@@ -25,6 +25,7 @@
 import { readFileSync, writeFileSync } from 'node:fs'
 import { createDefaultTransliterator, createTransliterator, defaultFstDistill, defaultTokenDict } from '../dist/index.js'
 import {
+    classifyMiss,
     counterfactualDict,
     distillMapFor,
     isInDomain,
@@ -33,7 +34,9 @@ import {
     passesHygiene,
     similarity,
     sortedNorm,
+    strictEqual,
     supportOf,
+    wilson,
 } from './lib/corpus-tools.mjs'
 
 const top = Number(process.argv.includes('--top')
@@ -66,6 +69,7 @@ const evaluate = (rows, t) =>
     rows.map((p) => {
         const r = t.transliterate(p.khmer)
         const hit = r.value.toLowerCase() === p.latin.toLowerCase()
+        const inTop5 = r.candidates.some((c) => norm(c) === norm(p.latin))
         return {
             khmer: p.khmer,
             latin: p.latin,
@@ -73,9 +77,13 @@ const evaluate = (rows, t) =>
             got: r.value,
             hit,
             orderOnly: !hit && sortedNorm(r.value) === sortedNorm(p.latin),
-            inTop5: r.candidates.some((c) => norm(c) === norm(p.latin)),
+            inTop5,
+            strictTop5: r.candidates.some((c) => strictEqual(c, p.latin)),
             sim: +similarity(r.value, p.latin).toFixed(3),
             matchable: isShapeMatchable(p),
+            missClass: !hit && !inTop5
+                ? classifyMiss({ got: r.value, tokens: r.tokens, pair: p })
+                : undefined,
         }
     })
 
@@ -84,17 +92,24 @@ const report = (rows) => {
     const exact = rows.filter((r) => r.hit).length
     const matchable = rows.filter((r) => r.matchable)
     const top5Matchable = matchable.filter((r) => r.inTop5).length
+    const misses = rows.filter((r) => r.missClass)
+    const taxonomy = {}
+    for (const r of misses) taxonomy[r.missClass] = (taxonomy[r.missClass] ?? 0) + 1
     return {
         n: rows.length,
         exact,
         exactPct: +(100 * (exact / rows.length)).toFixed(1),
+        exactCI: wilson(exact, rows.length),
         anyOrder: rows.filter((r) => r.hit || r.orderOnly).length,
         top5: rows.filter((r) => r.inTop5).length,
         top5Pct: +(100 * (rows.filter((r) => r.inTop5).length / rows.length)).toFixed(1),
+        top5CI: wilson(rows.filter((r) => r.inTop5).length, rows.length),
+        strictTop5: rows.filter((r) => r.strictTop5).length,
         meanSim: +(rows.reduce((a, r) => a + r.sim, 0) / rows.length).toFixed(3),
         matchableN: matchable.length,
         top5Matchable,
         top5MatchablePct: matchable.length ? +((100 * top5Matchable) / matchable.length).toFixed(1) : 0,
+        missTaxonomy: taxonomy,
     }
 }
 
@@ -135,6 +150,12 @@ console.log(fmt('  curated', holdout.curated))
 console.log(fmt('  foreign (out-of-domain ref.)', report(foreignResults)))
 console.log(
     `\n  in-domain top-5 over shape-matchable rows only: ${holdout.inDomain.top5Matchable}/${holdout.inDomain.matchableN} (${holdout.inDomain.top5MatchablePct}%) — ${holdout.inDomain.n - holdout.inDomain.matchableN} of ${holdout.inDomain.n} rows are structurally unmatchable`,
+)
+console.log(
+    `  exact 95% CI: ${holdout.inDomain.exactCI.low}–${holdout.inDomain.exactCI.high}% (point ${holdout.inDomain.exactPct}%) · top-5 CI: ${holdout.inDomain.top5CI.low}–${holdout.inDomain.top5CI.high}% · strict top-5: ${holdout.inDomain.strictTop5}/${holdout.inDomain.n}`,
+)
+console.log(
+    `  miss autopsy: ${Object.entries(holdout.inDomain.missTaxonomy).sort((a, b) => b[1] - a[1]).map(([k, v]) => `${k} ${v}`).join(' · ')}`,
 )
 
 const misses = holdoutResults

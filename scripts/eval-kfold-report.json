@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-04T13:41:36.193Z",
+ "generated": "2026-11-08T04:49:31.519Z",
  "k": 5,
  "min": 2,
  "evalRows": 835,
@@ -15,13 +15,28 @@
     "n": 167,
     "exact": 37,
     "exactPct": 22.2,
+    "exactCI": {
+     "pct": 22.2,
+     "low": 16.5,
+     "high": 29
+    },
     "anyOrder": 37,
     "top5": 50,
     "top5Pct": 29.9,
+    "top5CI": {
+     "pct": 29.9,
+     "low": 23.5,
+     "high": 37.3
+    },
+    "strictTop5": 47,
     "meanSim": 0.738,
     "matchableN": 131,
     "top5Matchable": 43,
-    "top5MatchablePct": 32.8
+    "top5MatchablePct": 32.8,
+    "missTaxonomy": {
+     "vocab-gap": 88,
+     "unmatchable-shape": 29
+    }
    }
   },
   {
@@ -35,13 +50,29 @@
     "n": 167,
     "exact": 42,
     "exactPct": 25.1,
+    "exactCI": {
+     "pct": 25.1,
+     "low": 19.2,
+     "high": 32.2
+    },
     "anyOrder": 42,
     "top5": 58,
     "top5Pct": 34.7,
+    "top5CI": {
+     "pct": 34.7,
+     "low": 27.9,
+     "high": 42.2
+    },
+    "strictTop5": 55,
     "meanSim": 0.709,
     "matchableN": 134,
     "top5Matchable": 54,
-    "top5MatchablePct": 40.3
+    "top5MatchablePct": 40.3,
+    "missTaxonomy": {
+     "vocab-gap": 79,
+     "unmatchable-shape": 29,
+     "option-not-chosen": 1
+    }
    }
   },
   {
@@ -55,13 +86,29 @@
     "n": 167,
     "exact": 36,
     "exactPct": 21.6,
+    "exactCI": {
+     "pct": 21.6,
+     "low": 16,
+     "high": 28.4
+    },
     "anyOrder": 39,
     "top5": 52,
     "top5Pct": 31.1,
+    "top5CI": {
+     "pct": 31.1,
+     "low": 24.6,
+     "high": 38.5
+    },
+    "strictTop5": 50,
     "meanSim": 0.732,
     "matchableN": 142,
     "top5Matchable": 47,
-    "top5MatchablePct": 33.1
+    "top5MatchablePct": 33.1,
+    "missTaxonomy": {
+     "unmatchable-shape": 20,
+     "vocab-gap": 92,
+     "order-flip": 3
+    }
    }
   },
   {
@@ -75,13 +122,29 @@
     "n": 167,
     "exact": 39,
     "exactPct": 23.4,
+    "exactCI": {
+     "pct": 23.4,
+     "low": 17.6,
+     "high": 30.3
+    },
     "anyOrder": 40,
     "top5": 52,
     "top5Pct": 31.1,
+    "top5CI": {
+     "pct": 31.1,
+     "low": 24.6,
+     "high": 38.5
+    },
+    "strictTop5": 47,
     "meanSim": 0.74,
     "matchableN": 141,
     "top5Matchable": 47,
-    "top5MatchablePct": 33.3
+    "top5MatchablePct": 33.3,
+    "missTaxonomy": {
+     "unmatchable-shape": 21,
+     "vocab-gap": 93,
+     "order-flip": 1
+    }
    }
   },
   {
@@ -95,13 +158,29 @@
     "n": 167,
     "exact": 51,
     "exactPct": 30.5,
+    "exactCI": {
+     "pct": 30.5,
+     "low": 24.1,
+     "high": 37.9
+    },
     "anyOrder": 51,
     "top5": 65,
     "top5Pct": 38.9,
+    "top5CI": {
+     "pct": 38.9,
+     "low": 31.9,
+     "high": 46.5
+    },
+    "strictTop5": 61,
     "meanSim": 0.747,
     "matchableN": 139,
     "top5Matchable": 60,
-    "top5MatchablePct": 43.2
+    "top5MatchablePct": 43.2,
+    "missTaxonomy": {
+     "vocab-gap": 78,
+     "unmatchable-shape": 23,
+     "option-not-chosen": 1
+    }
    }
   }
  ],
@@ -110,61 +189,140 @@
    "n": 167,
    "exact": 37,
    "exactPct": 22.2,
+   "exactCI": {
+    "pct": 22.2,
+    "low": 16.5,
+    "high": 29
+   },
    "anyOrder": 37,
    "top5": 50,
    "top5Pct": 29.9,
+   "top5CI": {
+    "pct": 29.9,
+    "low": 23.5,
+    "high": 37.3
+   },
+   "strictTop5": 47,
    "meanSim": 0.738,
    "matchableN": 131,
    "top5Matchable": 43,
-   "top5MatchablePct": 32.8
+   "top5MatchablePct": 32.8,
+   "missTaxonomy": {
+    "vocab-gap": 88,
+    "unmatchable-shape": 29
+   }
   },
   {
    "n": 167,
    "exact": 42,
    "exactPct": 25.1,
+   "exactCI": {
+    "pct": 25.1,
+    "low": 19.2,
+    "high": 32.2
+   },
    "anyOrder": 42,
    "top5": 58,
    "top5Pct": 34.7,
+   "top5CI": {
+    "pct": 34.7,
+    "low": 27.9,
+    "high": 42.2
+   },
+   "strictTop5": 55,
    "meanSim": 0.709,
    "matchableN": 134,
    "top5Matchable": 54,
-   "top5MatchablePct": 40.3
+   "top5MatchablePct": 40.3,
+   "missTaxonomy": {
+    "vocab-gap": 79,
+    "unmatchable-shape": 29,
+    "option-not-chosen": 1
+   }
   },
   {
    "n": 167,
    "exact": 36,
    "exactPct": 21.6,
+   "exactCI": {
+    "pct": 21.6,
+    "low": 16,
+    "high": 28.4
+   },
    "anyOrder": 39,
    "top5": 52,
    "top5Pct": 31.1,
+   "top5CI": {
+    "pct": 31.1,
+    "low": 24.6,
+    "high": 38.5
+   },
+   "strictTop5": 50,
    "meanSim": 0.732,
    "matchableN": 142,
    "top5Matchable": 47,
-   "top5MatchablePct": 33.1
+   "top5MatchablePct": 33.1,
+   "missTaxonomy": {
+    "unmatchable-shape": 20,
+    "vocab-gap": 92,
+    "order-flip": 3
+   }
   },
   {
    "n": 167,
    "exact": 39,
    "exactPct": 23.4,
+   "exactCI": {
+    "pct": 23.4,
+    "low": 17.6,
+    "high": 30.3
+   },
    "anyOrder": 40,
    "top5": 52,
    "top5Pct": 31.1,
+   "top5CI": {
+    "pct": 31.1,
+    "low": 24.6,
+    "high": 38.5
+   },
+   "strictTop5": 47,
    "meanSim": 0.74,
    "matchableN": 141,
    "top5Matchable": 47,
-   "top5MatchablePct": 33.3
+   "top5MatchablePct": 33.3,
+   "missTaxonomy": {
+    "unmatchable-shape": 21,
+    "vocab-gap": 93,
+    "order-flip": 1
+   }
   },
   {
    "n": 167,
    "exact": 51,
    "exactPct": 30.5,
+   "exactCI": {
+    "pct": 30.5,
+    "low": 24.1,
+    "high": 37.9
+   },
    "anyOrder": 51,
    "top5": 65,
    "top5Pct": 38.9,
+   "top5CI": {
+    "pct": 38.9,
+    "low": 31.9,
+    "high": 46.5
+   },
+   "strictTop5": 61,
    "meanSim": 0.747,
    "matchableN": 139,
    "top5Matchable": 60,
-   "top5MatchablePct": 43.2
+   "top5MatchablePct": 43.2,
+   "missTaxonomy": {
+    "vocab-gap": 78,
+    "unmatchable-shape": 23,
+    "option-not-chosen": 1
+   }
   }
  ],
  "shipped": {
@@ -172,49 +330,113 @@
    "n": 489,
    "exact": 161,
    "exactPct": 32.9,
+   "exactCI": {
+    "pct": 32.9,
+    "low": 28.9,
+    "high": 37.2
+   },
    "anyOrder": 170,
    "top5": 225,
    "top5Pct": 46,
+   "top5CI": {
+    "pct": 46,
+    "low": 41.6,
+    "high": 50.4
+   },
+   "strictTop5": 210,
    "meanSim": 0.796,
    "matchableN": 407,
    "top5Matchable": 199,
-   "top5MatchablePct": 48.9
+   "top5MatchablePct": 48.9,
+   "missTaxonomy": {
+    "vocab-gap": 197,
+    "unmatchable-shape": 56,
+    "order-flip": 9,
+    "option-not-chosen": 2
+   }
   },
   "unknown": {
    "n": 217,
    "exact": 18,
    "exactPct": 8.3,
+   "exactCI": {
+    "pct": 8.3,
+    "low": 5.3,
+    "high": 12.7
+   },
    "anyOrder": 20,
    "top5": 24,
    "top5Pct": 11.1,
+   "top5CI": {
+    "pct": 11.1,
+    "low": 7.5,
+    "high": 15.9
+   },
+   "strictTop5": 22,
    "meanSim": 0.563,
    "matchableN": 151,
    "top5Matchable": 22,
-   "top5MatchablePct": 14.6
+   "top5MatchablePct": 14.6,
+   "missTaxonomy": {
+    "unmatchable-shape": 64,
+    "vocab-gap": 127,
+    "order-flip": 2
+   }
   },
   "curated": {
    "n": 129,
    "exact": 105,
    "exactPct": 81.4,
+   "exactCI": {
+    "pct": 81.4,
+    "low": 73.8,
+    "high": 87.2
+   },
    "anyOrder": 105,
    "top5": 117,
    "top5Pct": 90.7,
+   "top5CI": {
+    "pct": 90.7,
+    "low": 84.4,
+    "high": 94.6
+   },
+   "strictTop5": 117,
    "meanSim": 0.945,
    "matchableN": 129,
    "top5Matchable": 117,
-   "top5MatchablePct": 90.7
+   "top5MatchablePct": 90.7,
+   "missTaxonomy": {
+    "vocab-gap": 12
+   }
   },
   "inDomain": {
    "n": 835,
    "exact": 284,
    "exactPct": 34,
+   "exactCI": {
+    "pct": 34,
+    "low": 30.9,
+    "high": 37.3
+   },
    "anyOrder": 295,
    "top5": 366,
    "top5Pct": 43.8,
+   "top5CI": {
+    "pct": 43.8,
+    "low": 40.5,
+    "high": 47.2
+   },
+   "strictTop5": 349,
    "meanSim": 0.759,
    "matchableN": 687,
    "top5Matchable": 338,
-   "top5MatchablePct": 49.2
+   "top5MatchablePct": 49.2,
+   "missTaxonomy": {
+    "vocab-gap": 336,
+    "unmatchable-shape": 120,
+    "order-flip": 11,
+    "option-not-chosen": 2
+   }
   }
  },
  "kfold": {
@@ -222,49 +444,113 @@
    "n": 489,
    "exact": 109,
    "exactPct": 22.3,
+   "exactCI": {
+    "pct": 22.3,
+    "low": 18.8,
+    "high": 26.2
+   },
    "anyOrder": 112,
    "top5": 164,
    "top5Pct": 33.5,
+   "top5CI": {
+    "pct": 33.5,
+    "low": 29.5,
+    "high": 37.8
+   },
+   "strictTop5": 149,
    "meanSim": 0.773,
    "matchableN": 407,
    "top5Matchable": 140,
-   "top5MatchablePct": 34.4
+   "top5MatchablePct": 34.4,
+   "missTaxonomy": {
+    "vocab-gap": 262,
+    "unmatchable-shape": 58,
+    "option-not-chosen": 2,
+    "order-flip": 3
+   }
   },
   "unknown": {
    "n": 217,
    "exact": 16,
    "exactPct": 7.4,
+   "exactCI": {
+    "pct": 7.4,
+    "low": 4.6,
+    "high": 11.6
+   },
    "anyOrder": 17,
    "top5": 21,
    "top5Pct": 9.7,
+   "top5CI": {
+    "pct": 9.7,
+    "low": 6.4,
+    "high": 14.3
+   },
+   "strictTop5": 19,
    "meanSim": 0.56,
    "matchableN": 151,
    "top5Matchable": 19,
-   "top5MatchablePct": 12.6
+   "top5MatchablePct": 12.6,
+   "missTaxonomy": {
+    "vocab-gap": 131,
+    "unmatchable-shape": 64,
+    "order-flip": 1
+   }
   },
   "curated": {
    "n": 129,
    "exact": 80,
    "exactPct": 62,
+   "exactCI": {
+    "pct": 62,
+    "low": 53.4,
+    "high": 69.9
+   },
    "anyOrder": 80,
    "top5": 92,
    "top5Pct": 71.3,
+   "top5CI": {
+    "pct": 71.3,
+    "low": 63,
+    "high": 78.4
+   },
+   "strictTop5": 92,
    "meanSim": 0.872,
    "matchableN": 129,
    "top5Matchable": 92,
-   "top5MatchablePct": 71.3
+   "top5MatchablePct": 71.3,
+   "missTaxonomy": {
+    "vocab-gap": 37
+   }
   },
   "inDomain": {
    "n": 835,
    "exact": 205,
    "exactPct": 24.6,
+   "exactCI": {
+    "pct": 24.6,
+    "low": 21.8,
+    "high": 27.6
+   },
    "anyOrder": 209,
    "top5": 277,
    "top5Pct": 33.2,
+   "top5CI": {
+    "pct": 33.2,
+    "low": 30.1,
+    "high": 36.4
+   },
+   "strictTop5": 260,
    "meanSim": 0.733,
    "matchableN": 687,
    "top5Matchable": 251,
-   "top5MatchablePct": 36.5
+   "top5MatchablePct": 36.5,
+   "missTaxonomy": {
+    "vocab-gap": 430,
+    "unmatchable-shape": 122,
+    "option-not-chosen": 2,
+    "order-flip": 4
+   }
   }
  }
 }

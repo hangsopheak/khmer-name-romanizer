@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-04T13:41:36.291Z",
+ "generated": "2026-11-08T04:50:34.205Z",
  "testRows": 365,
  "evalRows": 108,
  "dict": {
@@ -13,49 +13,106 @@
    "n": 63,
    "exact": 12,
    "exactPct": 19,
+   "exactCI": {
+    "pct": 19,
+    "low": 11.2,
+    "high": 30.4
+   },
    "anyOrder": 12,
    "top5": 19,
    "top5Pct": 30.2,
+   "top5CI": {
+    "pct": 30.2,
+    "low": 20.2,
+    "high": 42.4
+   },
+   "strictTop5": 15,
    "meanSim": 0.754,
    "matchableN": 50,
    "top5Matchable": 15,
-   "top5MatchablePct": 30
+   "top5MatchablePct": 30,
+   "missTaxonomy": {
+    "vocab-gap": 35,
+    "unmatchable-shape": 9
+   }
   },
   "unknown": {
    "n": 29,
    "exact": 4,
    "exactPct": 13.8,
+   "exactCI": {
+    "pct": 13.8,
+    "low": 5.5,
+    "high": 30.6
+   },
    "anyOrder": 4,
    "top5": 4,
    "top5Pct": 13.8,
+   "top5CI": {
+    "pct": 13.8,
+    "low": 5.5,
+    "high": 30.6
+   },
+   "strictTop5": 4,
    "meanSim": 0.565,
    "matchableN": 23,
    "top5Matchable": 4,
-   "top5MatchablePct": 17.4
+   "top5MatchablePct": 17.4,
+   "missTaxonomy": {
+    "vocab-gap": 19,
+    "unmatchable-shape": 6
+   }
   },
   "curated": {
    "n": 16,
    "exact": 13,
    "exactPct": 81.3,
+   "exactCI": {
+    "pct": 81.3,
+    "low": 57,
+    "high": 93.4
+   },
    "anyOrder": 13,
    "top5": 16,
    "top5Pct": 100,
+   "top5CI": {
+    "pct": 100,
+    "low": 80.6,
+    "high": 100
+   },
+   "strictTop5": 16,
    "meanSim": 0.956,
    "matchableN": 16,
    "top5Matchable": 16,
-   "top5MatchablePct": 100
+   "top5MatchablePct": 100,
+   "missTaxonomy": {}
   },
   "inDomain": {
    "n": 108,
    "exact": 29,
    "exactPct": 26.9,
+   "exactCI": {
+    "pct": 26.9,
+    "low": 19.4,
+    "high": 35.9
+   },
    "anyOrder": 29,
    "top5": 39,
    "top5Pct": 36.1,
+   "top5CI": {
+    "pct": 36.1,
+    "low": 27.7,
+    "high": 45.5
+   },
+   "strictTop5": 35,
    "meanSim": 0.733,
    "matchableN": 89,
    "top5Matchable": 35,
-   "top5MatchablePct": 39.3
+   "top5MatchablePct": 39.3,
+   "missTaxonomy": {
+    "vocab-gap": 54,
+    "unmatchable-shape": 15
+   }
   }
  },
  "holdout": {
@@ -63,62 +120,136 @@
    "n": 63,
    "exact": 7,
    "exactPct": 11.1,
+   "exactCI": {
+    "pct": 11.1,
+    "low": 5.5,
+    "high": 21.2
+   },
    "anyOrder": 7,
    "top5": 14,
    "top5Pct": 22.2,
+   "top5CI": {
+    "pct": 22.2,
+    "low": 13.7,
+    "high": 33.9
+   },
+   "strictTop5": 10,
    "meanSim": 0.745,
    "matchableN": 50,
    "top5Matchable": 10,
-   "top5MatchablePct": 20
+   "top5MatchablePct": 20,
+   "missTaxonomy": {
+    "vocab-gap": 40,
+    "unmatchable-shape": 9
+   }
   },
   "unknown": {
    "n": 29,
    "exact": 3,
    "exactPct": 10.3,
+   "exactCI": {
+    "pct": 10.3,
+    "low": 3.6,
+    "high": 26.4
+   },
    "anyOrder": 3,
    "top5": 3,
    "top5Pct": 10.3,
+   "top5CI": {
+    "pct": 10.3,
+    "low": 3.6,
+    "high": 26.4
+   },
+   "strictTop5": 3,
    "meanSim": 0.561,
    "matchableN": 23,
    "top5Matchable": 3,
-   "top5MatchablePct": 13
+   "top5MatchablePct": 13,
+   "missTaxonomy": {
+    "vocab-gap": 20,
+    "unmatchable-shape": 6
+   }
   },
   "curated": {
    "n": 16,
    "exact": 11,
    "exactPct": 68.8,
+   "exactCI": {
+    "pct": 68.8,
+    "low": 44.4,
+    "high": 85.8
+   },
    "anyOrder": 11,
    "top5": 14,
    "top5Pct": 87.5,
+   "top5CI": {
+    "pct": 87.5,
+    "low": 64,
+    "high": 96.5
+   },
+   "strictTop5": 14,
    "meanSim": 0.92,
    "matchableN": 16,
    "top5Matchable": 14,
-   "top5MatchablePct": 87.5
+   "top5MatchablePct": 87.5,
+   "missTaxonomy": {
+    "vocab-gap": 2
+   }
   },
   "inDomain": {
    "n": 108,
    "exact": 21,
    "exactPct": 19.4,
+   "exactCI": {
+    "pct": 19.4,
+    "low": 13.1,
+    "high": 27.9
+   },
    "anyOrder": 21,
    "top5": 31,
    "top5Pct": 28.7,
+   "top5CI": {
+    "pct": 28.7,
+    "low": 21,
+    "high": 37.9
+   },
+   "strictTop5": 27,
    "meanSim": 0.721,
    "matchableN": 89,
    "top5Matchable": 27,
-   "top5MatchablePct": 30.3
+   "top5MatchablePct": 30.3,
+   "missTaxonomy": {
+    "vocab-gap": 62,
+    "unmatchable-shape": 15
+   }
   }
  },
  "foreign": {
   "n": 256,
   "exact": 8,
   "exactPct": 3.1,
+  "exactCI": {
+   "pct": 3.1,
+   "low": 1.6,
+   "high": 6
+  },
   "anyOrder": 8,
   "top5": 13,
   "top5Pct": 5.1,
+  "top5CI": {
+   "pct": 5.1,
+   "low": 3,
+   "high": 8.5
+  },
+  "strictTop5": 13,
   "meanSim": 0.645,
   "matchableN": 220,
   "top5Matchable": 13,
-  "top5MatchablePct": 5.9
+  "top5MatchablePct": 5.9,
+  "missTaxonomy": {
+   "vocab-gap": 207,
+   "unmatchable-shape": 36
+  }
  },
  "misses": [
   {
@@ -129,8 +260,10 @@
    "hit": false,
    "orderOnly": false,
    "inTop5": false,
+   "strictTop5": false,
    "sim": 0.077,
-   "matchable": false
+   "matchable": false,
+   "missClass": "unmatchable-shape"
   },
   {
    "khmer": "នាងនាគ",
@@ -140,8 +273,10 @@
    "hit": false,
    "orderOnly": false,
    "inTop5": false,
+   "strictTop5": false,
    "sim": 0.111,
-   "matchable": true
+   "matchable": true,
+   "missClass": "vocab-gap"
   },
   {
    "khmer": "លោកអ៊ុក អ៊ូ",
@@ -151,8 +286,10 @@
    "hit": false,
    "orderOnly": false,
    "inTop5": false,
+   "strictTop5": false,
    "sim": 0.111,
-   "matchable": true
+   "matchable": true,
+   "missClass": "vocab-gap"
   },
   {
    "khmer": "នារាយណ៍រាជា",
@@ -162,8 +299,10 @@
    "hit": false,
    "orderOnly": false,
    "inTop5": false,
+   "strictTop5": false,
    "sim": 0.143,
-   "matchable": true
+   "matchable": true,
+   "missClass": "vocab-gap"
   },
   {
    "khmer": "ព្រះបាទនរាយណ៍រាជា",
@@ -173,8 +312,10 @@
    "hit": false,
    "orderOnly": false,
    "inTop5": false,
+   "strictTop5": false,
    "sim": 0.143,
-   "matchable": true
+   "matchable": true,
+   "missClass": "vocab-gap"
   },
   {
    "khmer": "សារ ទី",
@@ -184,8 +325,10 @@
    "hit": false,
    "orderOnly": false,
    "inTop5": false,
+   "strictTop5": false,
    "sim": 0.167,
-   "matchable": true
+   "matchable": true,
+   "missClass": "vocab-gap"
   },
   {
    "khmer": "មហាមោគ្គលាន",
@@ -195,8 +338,10 @@
    "hit": false,
    "orderOnly": false,
    "inTop5": false,
+   "strictTop5": false,
    "sim": 0.231,
-   "matchable": true
+   "matchable": true,
+   "missClass": "vocab-gap"
   },
   {
    "khmer": "លោកតាដំបងក្រញូង",
@@ -206,8 +351,10 @@
    "hit": false,
    "orderOnly": false,
    "inTop5": false,
+   "strictTop5": false,
    "sim": 0.235,
-   "matchable": false
+   "matchable": false,
+   "missClass": "unmatchable-shape"
   },
   {
    "khmer": "ប៉ង់ សុគន្ធវឌ្ឍនា",
@@ -217,8 +364,10 @@
    "hit": false,
    "orderOnly": false,
    "inTop5": false,
+   "strictTop5": false,
    "sim": 0.267,
-   "matchable": true
+   "matchable": true,
+   "missClass": "vocab-gap"
   },
   {
    "khmer": "រ៉េត សារីតា",
@@ -228,8 +377,10 @@
    "hit": false,
    "orderOnly": false,
    "inTop5": false,
+   "strictTop5": false,
    "sim": 0.273,
-   "matchable": true
+   "matchable": true,
+   "missClass": "vocab-gap"
   },
   {
    "khmer": "ចៅហ្វាទឡ្ហៈមូ",
@@ -239,8 +390,10 @@
    "hit": false,
    "orderOnly": false,
    "inTop5": false,
+   "strictTop5": false,
    "sim": 0.286,
-   "matchable": true
+   "matchable": true,
+   "missClass": "vocab-gap"
   },
   {
    "khmer": "ព្រះសត្ថាទី២អង្គជី",
@@ -250,8 +403,10 @@
    "hit": false,
    "orderOnly": false,
    "inTop5": false,
+   "strictTop5": false,
    "sim": 0.286,
-   "matchable": true
+   "matchable": true,
+   "missClass": "vocab-gap"
   },
   {
    "khmer": "សឺន គុយ",
@@ -261,8 +416,10 @@
    "hit": false,
    "orderOnly": false,
    "inTop5": false,
+   "strictTop5": false,
    "sim": 0.3,
-   "matchable": true
+   "matchable": true,
+   "missClass": "vocab-gap"
   },
   {
    "khmer": "អ្នកម្នាងទៃ",
@@ -272,8 +429,10 @@
    "hit": false,
    "orderOnly": false,
    "inTop5": false,
+   "strictTop5": false,
    "sim": 0.333,
-   "matchable": true
+   "matchable": true,
+   "missClass": "vocab-gap"
   },
   {
    "khmer": "ស្រីធម្មរាជា",
@@ -283,8 +442,10 @@
    "hit": false,
    "orderOnly": false,
    "inTop5": false,
+   "strictTop5": false,
    "sim": 0.357,
-   "matchable": false
+   "matchable": false,
+   "missClass": "unmatchable-shape"
   },
   {
    "khmer": "អភ័យធីបែសបែន",
@@ -294,8 +455,10 @@
    "hit": false,
    "orderOnly": false,
    "inTop5": false,
+   "strictTop5": false,
    "sim": 0.364,
-   "matchable": false
+   "matchable": false,
+   "missClass": "unmatchable-shape"
   },
   {
    "khmer": "កៅណ្ឌិន្យវម៌្ម",
@@ -305,8 +468,10 @@
    "hit": false,
    "orderOnly": false,
    "inTop5": false,
+   "strictTop5": false,
    "sim": 0.4,
-   "matchable": true
+   "matchable": true,
+   "missClass": "vocab-gap"
   },
   {
    "khmer": "គុណវម៌្ម",
@@ -316,8 +481,10 @@
    "hit": false,
    "orderOnly": false,
    "inTop5": false,
+   "strictTop5": false,
    "sim": 0.4,
-   "matchable": true
+   "matchable": true,
+   "missClass": "vocab-gap"
   },
   {
    "khmer": "ន្ឫបតេន្ទ្រវម៌្ម",
@@ -327,8 +494,10 @@
    "hit": false,
    "orderOnly": false,
    "inTop5": false,
+   "strictTop5": false,
    "sim": 0.412,
-   "matchable": true
+   "matchable": true,
+   "missClass": "vocab-gap"
   },
   {
    "khmer": "សុវណ៌",
@@ -338,8 +507,10 @@
    "hit": false,
    "orderOnly": false,
    "inTop5": false,
+   "strictTop5": false,
    "sim": 0.429,
-   "matchable": true
+   "matchable": true,
+   "missClass": "vocab-gap"
   },
   {
    "khmer": "កៅណ្ឌិន្យ",
@@ -349,8 +520,10 @@
    "hit": false,
    "orderOnly": false,
    "inTop5": false,
+   "strictTop5": false,
    "sim": 0.444,
-   "matchable": true
+   "matchable": true,
+   "missClass": "vocab-gap"
   },
   {
    "khmer": "វីរវម៌្ម",
@@ -360,8 +533,10 @@
    "hit": false,
    "orderOnly": false,
    "inTop5": false,
+   "strictTop5": false,
    "sim": 0.455,
-   "matchable": false
+   "matchable": false,
+   "missClass": "unmatchable-shape"
   },
   {
    "khmer": "ហ្គារីហ្គិន សឺវ៉ាន់ដ្សទីយាន",
@@ -371,8 +546,10 @@
    "hit": false,
    "orderOnly": false,
    "inTop5": false,
+   "strictTop5": false,
    "sim": 0.48,
-   "matchable": true
+   "matchable": true,
+   "missClass": "vocab-gap"
   },
   {
    "khmer": "រាជេន្ទ្រវរ្ម័ន",
@@ -382,8 +559,10 @@
    "hit": false,
    "orderOnly": false,
    "inTop5": false,
+   "strictTop5": false,
    "sim": 0.5,
-   "matchable": true
+   "matchable": true,
+   "missClass": "vocab-gap"
   },
   {
    "khmer": "មហីបតិវម៌្ម",
@@ -393,8 +572,10 @@
    "hit": false,
    "orderOnly": false,
    "inTop5": false,
+   "strictTop5": false,
    "sim": 0.571,
-   "matchable": true
+   "matchable": true,
+   "missClass": "vocab-gap"
   },
   {
    "khmer": "នរោត្ដម រណឬទ្ធិ",
@@ -404,8 +585,10 @@
    "hit": false,
    "orderOnly": false,
    "inTop5": false,
+   "strictTop5": false,
    "sim": 0.579,
-   "matchable": true
+   "matchable": true,
+   "missClass": "vocab-gap"
   },
   {
    "khmer": "កាំង ហ្គេកអ៊ាវ",
@@ -415,8 +598,10 @@
    "hit": false,
    "orderOnly": false,
    "inTop5": false,
+   "strictTop5": false,
    "sim": 0.583,
-   "matchable": false
+   "matchable": false,
+   "missClass": "unmatchable-shape"
   },
   {
    "khmer": "សុីវត្ថា",
@@ -426,8 +611,10 @@
    "hit": false,
    "orderOnly": false,
    "inTop5": false,
+   "strictTop5": false,
    "sim": 0.625,
-   "matchable": false
+   "matchable": false,
+   "missClass": "unmatchable-shape"
   },
   {
    "khmer": "អែនជេលីណា ចូលី",
@@ -437,8 +624,10 @@
    "hit": false,
    "orderOnly": false,
    "inTop5": false,
+   "strictTop5": false,
    "sim": 0.625,
-   "matchable": true
+   "matchable": true,
+   "missClass": "vocab-gap"
   },
   {
    "khmer": "កែវ ច័ន្ទបូរណ៍",
@@ -448,8 +637,10 @@
    "hit": false,
    "orderOnly": false,
    "inTop5": false,
+   "strictTop5": false,
    "sim": 0.643,
-   "matchable": true
+   "matchable": true,
+   "missClass": "vocab-gap"
   },
   {
    "khmer": "គ្រីស្ទៀន រ៉ុហ្គេ",
@@ -459,8 +650,10 @@
    "hit": false,
    "orderOnly": false,
    "inTop5": false,
+   "strictTop5": false,
    "sim": 0.643,
-   "matchable": true
+   "matchable": true,
+   "missClass": "vocab-gap"
   },
   {
    "khmer": "សិនសី សាមុត",
@@ -470,8 +663,10 @@
    "hit": false,
    "orderOnly": false,
    "inTop5": false,
+   "strictTop5": false,
    "sim": 0.643,
-   "matchable": true
+   "matchable": true,
+   "missClass": "vocab-gap"
   },
   {
    "khmer": "កែប ជុតិមា",
@@ -481,8 +676,10 @@
    "hit": false,
    "orderOnly": false,
    "inTop5": false,
+   "strictTop5": false,
    "sim": 0.667,
-   "matchable": true
+   "matchable": true,
+   "missClass": "vocab-gap"
   },
   {
    "khmer": "ហាស៊ីម អ៊ីបន អាប់ ម៉ាណាហ្វ",
@@ -492,8 +689,10 @@
    "hit": false,
    "orderOnly": false,
    "inTop5": false,
+   "strictTop5": false,
    "sim": 0.667,
-   "matchable": true
+   "matchable": true,
+   "missClass": "vocab-gap"
   },
   {
    "khmer": "ធី",
@@ -503,6 +702,7 @@
    "hit": false,
    "orderOnly": false,
    "inTop5": true,
+   "strictTop5": true,
    "sim": 0.667,
    "matchable": true
   },
@@ -514,8 +714,10 @@
    "hit": false,
    "orderOnly": false,
    "inTop5": false,
+   "strictTop5": false,
    "sim": 0.667,
-   "matchable": false
+   "matchable": false,
+   "missClass": "unmatchable-shape"
   },
   {
    "khmer": "អ៊ុច",
@@ -525,8 +727,10 @@
    "hit": false,
    "orderOnly": false,
    "inTop5": false,
+   "strictTop5": false,
    "sim": 0.667,
-   "matchable": true
+   "matchable": true,
+   "missClass": "vocab-gap"
   },
   {
    "khmer": "ណារិនដ្រាម៉ូឌី",
@@ -536,8 +740,10 @@
    "hit": false,
    "orderOnly": false,
    "inTop5": false,
+   "strictTop5": false,
    "sim": 0.692,
-   "matchable": false
+   "matchable": false,
+   "missClass": "unmatchable-shape"
   },
   {
    "khmer": "ឥន្ទរាជា",
@@ -547,8 +753,10 @@
    "hit": false,
    "orderOnly": false,
    "inTop5": false,
+   "strictTop5": false,
    "sim": 0.7,
-   "matchable": true
+   "matchable": true,
+   "missClass": "vocab-gap"
   },
   {
    "khmer": "សម រង្ស៊ី",
@@ -558,8 +766,10 @@
    "hit": false,
    "orderOnly": false,
    "inTop5": false,
+   "strictTop5": false,
    "sim": 0.7,
-   "matchable": true
+   "matchable": true,
+   "missClass": "vocab-gap"
   },
   {
    "khmer": "ម៉ាត់ នូរណ",
@@ -569,8 +779,10 @@
    "hit": false,
    "orderOnly": false,
    "inTop5": false,
+   "strictTop5": false,
    "sim": 0.7,
-   "matchable": true
+   "matchable": true,
+   "missClass": "vocab-gap"
   },
   {
    "khmer": "កែរ វិសិដ្ឋ",
@@ -580,8 +792,10 @@
    "hit": false,
    "orderOnly": false,
    "inTop5": false,
+   "strictTop5": false,
    "sim": 0.7,
-   "matchable": true
+   "matchable": true,
+   "missClass": "vocab-gap"
   },
   {
    "khmer": "នរោត្តម សីហនុវរ្ម័ន",
@@ -591,8 +805,10 @@
    "hit": false,
    "orderOnly": false,
    "inTop5": false,
+   "strictTop5": false,
    "sim": 0.727,
-   "matchable": true
+   "matchable": true,
+   "missClass": "vocab-gap"
   },
   {
    "khmer": "ច្រឹង ពលរដ្ឋ",
@@ -602,8 +818,10 @@
    "hit": false,
    "orderOnly": false,
    "inTop5": false,
+   "strictTop5": false,
    "sim": 0.733,
-   "matchable": true
+   "matchable": true,
+   "missClass": "vocab-gap"
   },
   {
    "khmer": "លីវ ទឹក",
@@ -613,8 +831,10 @@
    "hit": false,
    "orderOnly": false,
    "inTop5": false,
+   "strictTop5": false,
    "sim": 0.75,
-   "matchable": true
+   "matchable": true,
+   "missClass": "vocab-gap"
   },
   {
    "khmer": "បាអាត",
@@ -624,8 +844,10 @@
    "hit": false,
    "orderOnly": false,
    "inTop5": false,
+   "strictTop5": false,
    "sim": 0.75,
-   "matchable": true
+   "matchable": true,
+   "missClass": "vocab-gap"
   },
   {
    "khmer": "មន្ត្រីយ៍",
@@ -635,8 +857,10 @@
    "hit": false,
    "orderOnly": false,
    "inTop5": false,
+   "strictTop5": false,
    "sim": 0.75,
-   "matchable": true
+   "matchable": true,
+   "missClass": "vocab-gap"
   },
   {
    "khmer": "ប៉ែន",
@@ -646,6 +870,7 @@
    "hit": false,
    "orderOnly": false,
    "inTop5": true,
+   "strictTop5": true,
    "sim": 0.75,
    "matchable": true
   },
@@ -657,8 +882,10 @@
    "hit": false,
    "orderOnly": false,
    "inTop5": false,
+   "strictTop5": false,
    "sim": 0.769,
-   "matchable": false
+   "matchable": false,
+   "missClass": "unmatchable-shape"
   },
   {
    "khmer": "ហាក់ ឆៃហុក",
@@ -668,8 +895,10 @@
    "hit": false,
    "orderOnly": false,
    "inTop5": false,
+   "strictTop5": false,
    "sim": 0.769,
-   "matchable": false
+   "matchable": false,
+   "missClass": "unmatchable-shape"
   },
   {
    "khmer": "ឌីហ្ស ប្រាន",
@@ -679,8 +908,10 @@
    "hit": false,
    "orderOnly": false,
    "inTop5": false,
+   "strictTop5": false,
    "sim": 0.778,
-   "matchable": true
+   "matchable": true,
+   "missClass": "vocab-gap"
   },
   {
    "khmer": "ហ៊ីង ប៊ុនហ៊ាង",
@@ -690,8 +921,10 @@
    "hit": false,
    "orderOnly": false,
    "inTop5": false,
+   "strictTop5": false,
    "sim": 0.786,
-   "matchable": false
+   "matchable": false,
+   "missClass": "unmatchable-shape"
   },
   {
    "khmer": "សម៉ាស សឡៃម៉ាន",
@@ -701,8 +934,10 @@
    "hit": false,
    "orderOnly": false,
    "inTop5": false,
+   "strictTop5": false,
    "sim": 0.786,
-   "matchable": true
+   "matchable": true,
+   "missClass": "vocab-gap"
   },
   {
    "khmer": "សុះ ស៊ូហាណា",
@@ -712,8 +947,10 @@
    "hit": false,
    "orderOnly": false,
    "inTop5": false,
+   "strictTop5": false,
    "sim": 0.8,
-   "matchable": true
+   "matchable": true,
+   "missClass": "vocab-gap"
   },
   {
    "khmer": "សាយ សំអាល់",
@@ -723,8 +960,10 @@
    "hit": false,
    "orderOnly": false,
    "inTop5": false,
+   "strictTop5": false,
    "sim": 0.8,
-   "matchable": false
+   "matchable": false,
+   "missClass": "unmatchable-shape"
   },
   {
    "khmer": "វ័ន សាវ៉ៃ",
@@ -734,8 +973,10 @@
    "hit": false,
    "orderOnly": false,
    "inTop5": false,
+   "strictTop5": false,
    "sim": 0.8,
-   "matchable": true
+   "matchable": true,
+   "missClass": "vocab-gap"
   },
   {
    "khmer": "ខៀវ",
@@ -745,6 +986,7 @@
    "hit": false,
    "orderOnly": false,
    "inTop5": true,
+   "strictTop5": true,
    "sim": 0.8,
    "matchable": true
   },
@@ -756,8 +998,10 @@
    "hit": false,
    "orderOnly": false,
    "inTop5": false,
+   "strictTop5": false,
    "sim": 0.813,
-   "matchable": false
+   "matchable": false,
+   "missClass": "unmatchable-shape"
   },
   {
    "khmer": "នរោត្តម ចន្ទរង្សី",
@@ -767,8 +1011,10 @@
    "hit": false,
    "orderOnly": false,
    "inTop5": false,
+   "strictTop5": false,
    "sim": 0.818,
-   "matchable": true
+   "matchable": true,
+   "missClass": "vocab-gap"
   },
   {
    "khmer": "គីម ទិត្យសុវឌ្ឍនៈ",
@@ -778,8 +1024,10 @@
    "hit": false,
    "orderOnly": false,
    "inTop5": false,
+   "strictTop5": false,
    "sim": 0.824,
-   "matchable": true
+   "matchable": true,
+   "missClass": "vocab-gap"
   },
   {
    "khmer": "សាន គឹមស៊ាន",
@@ -789,6 +1037,7 @@
    "hit": false,
    "orderOnly": false,
    "inTop5": true,
+   "strictTop5": false,
    "sim": 0.833,
    "matchable": false
   },
@@ -800,8 +1049,10 @@
    "hit": false,
    "orderOnly": false,
    "inTop5": false,
+   "strictTop5": false,
    "sim": 0.833,
-   "matchable": false
+   "matchable": false,
+   "missClass": "unmatchable-shape"
   },
   {
    "khmer": "ឆាវ៉ាលីត អភ័យវង្ស",
@@ -811,8 +1062,10 @@
    "hit": false,
    "orderOnly": false,
    "inTop5": false,
+   "strictTop5": false,
    "sim": 0.833,
-   "matchable": true
+   "matchable": true,
+   "missClass": "vocab-gap"
   },
   {
    "khmer": "មិថុនា ភូថង",
@@ -822,8 +1075,10 @@
    "hit": false,
    "orderOnly": false,
    "inTop5": false,
+   "strictTop5": false,
    "sim": 0.833,
-   "matchable": true
+   "matchable": true,
+   "missClass": "vocab-gap"
   },
   {
    "khmer": "សុខុន",
@@ -833,8 +1088,10 @@
    "hit": false,
    "orderOnly": false,
    "inTop5": false,
+   "strictTop5": false,
    "sim": 0.833,
-   "matchable": true
+   "matchable": true,
+   "missClass": "vocab-gap"
   },
   {
    "khmer": "ទូច ស៊ុននិច",
@@ -844,8 +1101,10 @@
    "hit": false,
    "orderOnly": false,
    "inTop5": false,
+   "strictTop5": false,
    "sim": 0.846,
-   "matchable": true
+   "matchable": true,
+   "missClass": "vocab-gap"
   },
   {
    "khmer": "អង្គម៉ី",
@@ -855,6 +1114,7 @@
    "hit": false,
    "orderOnly": false,
    "inTop5": true,
+   "strictTop5": false,
    "sim": 0.857,
    "matchable": false
   },
@@ -866,8 +1126,10 @@
    "hit": false,
    "orderOnly": false,
    "inTop5": false,
+   "strictTop5": false,
    "sim": 0.857,
-   "matchable": true
+   "matchable": true,
+   "missClass": "vocab-gap"
   },
   {
    "khmer": "នរោត្តម វេជ្ជរ៉ា",
@@ -877,8 +1139,10 @@
    "hit": false,
    "orderOnly": false,
    "inTop5": false,
+   "strictTop5": false,
    "sim": 0.867,
-   "matchable": true
+   "matchable": true,
+   "missClass": "vocab-gap"
   },
   {
    "khmer": "រស់ គង់សំរ៉េច",
@@ -888,8 +1152,10 @@
    "hit": false,
    "orderOnly": false,
    "inTop5": false,
+   "strictTop5": false,
    "sim": 0.867,
-   "matchable": true
+   "matchable": true,
+   "missClass": "vocab-gap"
   },
   {
    "khmer": "ទៀ វិញ",
@@ -899,8 +1165,10 @@
    "hit": false,
    "orderOnly": false,
    "inTop5": false,
+   "strictTop5": false,
    "sim": 0.875,
-   "matchable": true
+   "matchable": true,
+   "missClass": "vocab-gap"
   },
   {
    "khmer": "ស៊ិន សុវណ្ណមករា",
@@ -910,8 +1178,10 @@
    "hit": false,
    "orderOnly": false,
    "inTop5": false,
+   "strictTop5": false,
    "sim": 0.875,
-   "matchable": true
+   "matchable": true,
+   "missClass": "vocab-gap"
   },
   {
    "khmer": "ហែម ចៀវ",
@@ -921,8 +1191,10 @@
    "hit": false,
    "orderOnly": false,
    "inTop5": false,
+   "strictTop5": false,
    "sim": 0.889,
-   "matchable": true
+   "matchable": true,
+   "missClass": "vocab-gap"
   },
   {
    "khmer": "ព្រំ ញ៉ែម",
@@ -932,8 +1204,10 @@
    "hit": false,
    "orderOnly": false,
    "inTop5": false,
+   "strictTop5": false,
    "sim": 0.889,
-   "matchable": true
+   "matchable": true,
+   "missClass": "vocab-gap"
   },
   {
    "khmer": "ឈាន វ៉ម",
@@ -943,8 +1217,10 @@
    "hit": false,
    "orderOnly": false,
    "inTop5": false,
+   "strictTop5": false,
    "sim": 0.9,
-   "matchable": true
+   "matchable": true,
+   "missClass": "vocab-gap"
   },
   {
    "khmer": "សុទ្ធ ប៉ូលីន",
@@ -954,6 +1230,7 @@
    "hit": false,
    "orderOnly": false,
    "inTop5": true,
+   "strictTop5": true,
    "sim": 0.9,
    "matchable": true
   },
@@ -965,6 +1242,7 @@
    "hit": false,
    "orderOnly": false,
    "inTop5": true,
+   "strictTop5": true,
    "sim": 0.9,
    "matchable": true
   },
@@ -976,8 +1254,10 @@
    "hit": false,
    "orderOnly": false,
    "inTop5": false,
+   "strictTop5": false,
    "sim": 0.909,
-   "matchable": true
+   "matchable": true,
+   "missClass": "vocab-gap"
   },
   {
    "khmer": "ប្រាក់ សុខុន",
@@ -987,8 +1267,10 @@
    "hit": false,
    "orderOnly": false,
    "inTop5": false,
+   "strictTop5": false,
    "sim": 0.909,
-   "matchable": true
+   "matchable": true,
+   "missClass": "vocab-gap"
   },
   {
    "khmer": "ហ៊ុយ ផល្លីន",
@@ -998,8 +1280,10 @@
    "hit": false,
    "orderOnly": false,
    "inTop5": false,
+   "strictTop5": false,
    "sim": 0.909,
-   "matchable": true
+   "matchable": true,
+   "missClass": "vocab-gap"
   },
   {
    "khmer": "តូច ភឿន",
@@ -1009,8 +1293,10 @@
    "hit": false,
    "orderOnly": false,
    "inTop5": false,
+   "strictTop5": false,
    "sim": 0.917,
-   "matchable": true
+   "matchable": true,
+   "missClass": "vocab-gap"
   },
   {
    "khmer": "លី ធាមតេង",
@@ -1020,6 +1306,7 @@
    "hit": false,
    "orderOnly": false,
    "inTop5": true,
+   "strictTop5": false,
    "sim": 0.923,
    "matchable": false
   },
@@ -1031,8 +1318,10 @@
    "hit": false,
    "orderOnly": false,
    "inTop5": false,
+   "strictTop5": false,
    "sim": 0.929,
-   "matchable": true
+   "matchable": true,
+   "missClass": "vocab-gap"
   },
   {
    "khmer": "ឈឹម សៀកលេង",
@@ -1042,6 +1331,7 @@
    "hit": false,
    "orderOnly": false,
    "inTop5": true,
+   "strictTop5": false,
    "sim": 0.933,
    "matchable": false
   },
@@ -1053,8 +1343,10 @@
    "hit": false,
    "orderOnly": false,
    "inTop5": false,
+   "strictTop5": false,
    "sim": 0.938,
-   "matchable": true
+   "matchable": true,
+   "missClass": "vocab-gap"
   },
   {
    "khmer": "ស៊ីសុវត្ថិ មុនីពង្ស",
@@ -1064,6 +1356,7 @@
    "hit": false,
    "orderOnly": false,
    "inTop5": true,
+   "strictTop5": true,
    "sim": 0.941,
    "matchable": true
   },
@@ -1075,8 +1368,10 @@
    "hit": false,
    "orderOnly": false,
    "inTop5": false,
+   "strictTop5": false,
    "sim": 0.957,
-   "matchable": true
+   "matchable": true,
+   "missClass": "vocab-gap"
   }
  ]
 }

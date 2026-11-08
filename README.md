@@ -137,11 +137,15 @@ The leave-one-out rows are the honest numbers — dictionaries are rebuilt witho
 
 | Citizens (489) | Exact | Top-5 | Mean sim |
 |---|---|---|---|
-| Shipped dictionary + distill (partly in-sample) | 160 (32.7%) | 224 (45.8%) | 0.796 |
-| **5-fold CV (leakage-free)** | **109 (22.3%)** | **164 (33.5%)** | 0.773 |
+| Shipped dictionary + distill (partly in-sample) | 161 (32.9%) | 225 (46.0%) | 0.796 |
+| **5-fold CV (leakage-free) — the headline** | **109 (22.3%)** · 95% CI 18.8–26.2 | **164 (33.5%)** · CI 29.5–37.8 | 0.773 |
 | **5-fold CV, top-5 over shape-matchable rows only†** | — | **250/687 (36.4%)** | — |
 
-The k-fold figure is the honest unseen-name number, in line with the roster leave-one-out (23.5% exact). Note what leakage inflates: exact-form recall drops 11.1pp, but mean similarity barely moves (0.795 → 0.771) — unseen guesses stay near-misses, with the official spelling usually still in `candidates`. Known weak spot: regnal names, a different register this package does not target.
+The headline is **citizens-only** — the product-relevant population; the 217 ancient-regnal rows (8% exact, out of scope by declaration) are reported but never averaged into it. The k-fold figure is the honest unseen-name number, in line with the roster leave-one-out (23.5% exact). Note what leakage inflates: exact-form recall drops 11.1pp, but mean similarity barely moves (0.795 → 0.771) — unseen guesses stay near-misses, with the official spelling usually still in `candidates`. Known weak spot: regnal names, a different register this package does not target.
+
+**Match-mode (the KYC question).** `npm run eval:match` asks what screening workflows need — *does the candidate set recognize this person at all* (order-insensitive, `flipOrderCandidates`, top-10): **379/835 (45.4%)** in-domain, **236/489 citizens (48.3%)**, of which rank-1 (exact) is 37% — everything findable is found by rank 5; ranks 6–10 are empty.
+
+**Where misses come from (automated autopsy, every report).** Each miss is classified — k-fold in-domain: `vocab-gap 430` (the engine does not know the spelling — the dominant class and the one corpus growth fixes), `unmatchable-shape 122` (corpus artifacts no candidate can ever equal), `order-flip 4`, `option-not-chosen 2` (the ranking's entire share: the one-to-many wall is nearly all of it). Strict word-aligned top-5 (no space-stripping leniency): 260/835 vs 277 lenient.
 
 † **Matchable ceiling:** ~18% of corpus rows are *structurally unmatchable* — the expected Latin word count differs from the engine's Khmer token count (corpus short-forms like គឹមហួន → "Kim", reversed alignments, title fragments), so no candidate the composer can build will ever equal them. Counting top-5 only over shape-matchable rows is the fair recall view: 36.4% (CV) and 30.3% (lockbox, 27/89) versus 33.1% and 28.7% raw. Every eval report prints this line (`top5Matchable` in the JSON). `scripts/mined-tokens.json` keeps candidate tokens for review; tokens with ≥2 attestations are merged, conflicting corpus spellings with ≥2 attestations (Samnang for សំណាង, Rattana for រតនា…) are folded in as `variants`, kname tokens are trusted at a single attestation (measured 25/30 agreement + 5 legitimate variants vs the verified dictionary), and hand-reviewed junk is block-listed (bible-apostle titles, citizenship-less foreign figures, mis-aligned birth-name/redirect artifacts).
 
@@ -150,9 +154,9 @@ The k-fold figure is the honest unseen-name number, in line with the roster leav
 | Frozen test split (108 in-domain) | Exact | Top-5 | Mean sim |
 |---|---|---|---|
 | Shipped dictionary + distill (upper bound) | 27 (25.0%) | 37 (34.3%) | 0.731 |
-| **Holdout counterfactual (lockbox)** | **21 (19.4%)** | **31 (28.7%)** | **0.721** |
+| **Holdout counterfactual (lockbox)** | **21 (19.4%)** · 95% CI 13.1–27.9 | **31 (28.7%)** · CI 21.0–37.9 | **0.721** |
 
-Cambodian-citizen rows: 11/63 shipped vs **7/63 holdout** exact — the gap is leakage, the lockbox row is the truth.
+Cambodian-citizen rows: 11/63 shipped vs **7/63 holdout** exact — the gap is leakage, the lockbox row is the truth. Its miss autopsy: `vocab-gap 62 · unmatchable-shape 15` — zero order-flips, zero ranking failures; at this n the lockbox is a regression tripwire, not a thermometer (hence the CIs).
 **One-to-many is inherent.** The dictionary stores a reviewed canonical spelling per token and keeps alternatives in `variants`; probability ranking (`scoredCandidates`) can promote a variant only when it decisively out-attests the canonical, because corpus counts alone are noisier than the reviewed choice — calibrating that threshold against the famous-name set showed raw counts wrongly demoting 18 reviewed canonicals (Sar Kheng → "Sor", Chan Sy → "Chan"…). Sometimes both spellings are genuinely official for different people: ប៉ែន is *Penn Nuth* the politician and *Pan Ron* the singer, so one canonical can never serve both — the official spelling for the *other* person rides in `candidates`/`variants`. When you know a person's official spelling, keep your own Khmer→Latin map and override tokens via `tokenDict`.
 
 ## Extending the dictionary

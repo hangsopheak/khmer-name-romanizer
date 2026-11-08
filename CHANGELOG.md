@@ -6,6 +6,28 @@ project versions semver-style. Accuracy numbers cited below are
 reproducible via `npm run eval:famous · eval:scraped · eval:kfold ·
 eval:holdout` — see `docs/accuracy-report-2026-11.md`.
 
+## [Unreleased]
+
+### Added — benchmark v2 (reporting layer only; engine, dictionary and distill set untouched)
+- **Citizens-only headline**: reports and README lead with the product-relevant
+  population; the 217 out-of-scope regnal rows are reported but never
+  averaged into the headline.
+- **Wilson 95% CIs** on exact/top-5 in every report — the 108-row lockbox
+  reads as a range (e.g. 19.4% ± ~8pp), not an over-precise point.
+- **Match-mode eval** (`npm run eval:match`): the KYC question — order-
+  insensitive candidate recognition with `flipOrderCandidates`. First
+  reading: 45.4% in-domain matched@10, everything findable found by
+  rank 5 (ranks 6–10 empty everywhere).
+- **Automated miss autopsy** in every report: each miss classified as
+  vocab-gap / unmatchable-shape / order-flip / option-not-chosen.
+  k-fold: vocab-gap 430, unmatchable-shape 122, order-flip 4,
+  option-not-chosen 2 — the ranking's entire share is 2 rows.
+- **Strict word-aligned top-5** alongside the lenient space-stripping
+  one (260/835 vs 277/835 on k-fold).
+- **Package budget gate** in CI (`scripts/check-budget.mjs`): packed
+  size ≤80 kB, unpacked ≤320 kB, throughput ≥1k names/s (baseline
+  40.5 kB / 143.9 kB / ~76k names/s).
+
 ## [0.3.0] — 2026-11-01
 
 First public release. Engine, dictionary, and measurement round over

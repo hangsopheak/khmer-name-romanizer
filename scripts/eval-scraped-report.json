@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-04T13:41:36.049Z",
+ "generated": "2026-11-08T04:44:01.787Z",
  "scraped": 2432,
  "excluded": [
   {
@@ -71,9 +71,26 @@
   "ge90": 366,
   "ge75": 533,
   "meanSim": 0.759,
+  "exactCI": {
+   "pct": 34,
+   "low": 30.9,
+   "high": 37.3
+  },
+  "top5CI": {
+   "pct": 43.8,
+   "low": 40.5,
+   "high": 47.2
+  },
+  "strictTop5": 349,
   "matchableN": 687,
   "top5Matchable": 338,
-  "top5MatchablePct": 49.2
+  "top5MatchablePct": 49.2,
+  "missTaxonomy": {
+   "vocab-gap": 336,
+   "unmatchable-shape": 120,
+   "order-flip": 11,
+   "option-not-chosen": 2
+  }
  },
  "buckets": {
   "cambodian": {
@@ -84,9 +101,26 @@
    "ge90": 234,
    "ge75": 359,
    "meanSim": 0.796,
+   "exactCI": {
+    "pct": 32.9,
+    "low": 28.9,
+    "high": 37.2
+   },
+   "top5CI": {
+    "pct": 46,
+    "low": 41.6,
+    "high": 50.4
+   },
+   "strictTop5": 210,
    "matchableN": 407,
    "top5Matchable": 199,
-   "top5MatchablePct": 48.9
+   "top5MatchablePct": 48.9,
+   "missTaxonomy": {
+    "vocab-gap": 197,
+    "unmatchable-shape": 56,
+    "order-flip": 9,
+    "option-not-chosen": 2
+   }
   },
   "unknown": {
    "n": 217,
@@ -96,9 +130,25 @@
    "ge90": 27,
    "ge75": 56,
    "meanSim": 0.563,
+   "exactCI": {
+    "pct": 8.3,
+    "low": 5.3,
+    "high": 12.7
+   },
+   "top5CI": {
+    "pct": 11.1,
+    "low": 7.5,
+    "high": 15.9
+   },
+   "strictTop5": 22,
    "matchableN": 151,
    "top5Matchable": 22,
-   "top5MatchablePct": 14.6
+   "top5MatchablePct": 14.6,
+   "missTaxonomy": {
+    "unmatchable-shape": 64,
+    "vocab-gap": 127,
+    "order-flip": 2
+   }
   },
   "curated": {
    "n": 129,
@@ -108,9 +158,23 @@
    "ge90": 105,
    "ge75": 118,
    "meanSim": 0.945,
+   "exactCI": {
+    "pct": 81.4,
+    "low": 73.8,
+    "high": 87.2
+   },
+   "top5CI": {
+    "pct": 90.7,
+    "low": 84.4,
+    "high": 94.6
+   },
+   "strictTop5": 117,
    "matchableN": 129,
    "top5Matchable": 117,
-   "top5MatchablePct": 90.7
+   "top5MatchablePct": 90.7,
+   "missTaxonomy": {
+    "vocab-gap": 12
+   }
   },
   "foreign": {
    "n": 1585,
@@ -120,9 +184,24 @@
    "ge90": 84,
    "ge75": 491,
    "meanSim": 0.634,
+   "exactCI": {
+    "pct": 2,
+    "low": 1.4,
+    "high": 2.8
+   },
+   "top5CI": {
+    "pct": 3.1,
+    "low": 2.3,
+    "high": 4.1
+   },
+   "strictTop5": 45,
    "matchableN": 1395,
    "top5Matchable": 47,
-   "top5MatchablePct": 3.4
+   "top5MatchablePct": 3.4,
+   "missTaxonomy": {
+    "vocab-gap": 1348,
+    "unmatchable-shape": 188
+   }
   }
  },
  "orderFlips": [

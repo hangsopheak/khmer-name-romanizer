@@ -12,7 +12,7 @@
  */
 import { readFileSync, writeFileSync } from 'node:fs'
 import { createDefaultTransliterator } from '../dist/index.js'
-import { isShapeMatchable } from './lib/corpus-tools.mjs'
+import { classifyMiss, isShapeMatchable, strictEqual, wilson } from './lib/corpus-tools.mjs'
 
 const maxMisses = Number(process.argv.includes('--max-misses')
     ? process.argv[process.argv.indexOf('--max-misses') + 1]
@@ -64,14 +64,19 @@ const results = cleanPairs.map((p) => {
     const r = t.transliterate(p.khmer)
     const norm = (s) => s.toLowerCase().replace(/[^a-z]/g, '')
     const hit = r.value.toLowerCase() === p.latin.toLowerCase()
+    const inTop5 = r.candidates.some((c) => norm(c) === norm(p.latin))
     return {
         ...p,
         got: r.value,
         hit,
         orderOnly: !hit && sortedNorm(r.value) === sortedNorm(p.latin),
-        inTop5: r.candidates.some((c) => norm(c) === norm(p.latin)),
+        inTop5,
+        strictTop5: r.candidates.some((c) => strictEqual(c, p.latin)),
         sim: +similarity(r.value, p.latin).toFixed(3),
         matchable: isShapeMatchable(p),
+        missClass: !hit && !inTop5
+            ? classifyMiss({ got: r.value, tokens: r.tokens, pair: p })
+            : undefined,
     }
 })
 
@@ -85,6 +90,9 @@ function bucketReport(list) {
     const meanSim = list.reduce((a, r) => a + r.sim, 0) / list.length
     const matchable = list.filter((r) => r.matchable)
     const top5Matchable = matchable.filter((r) => r.inTop5).length
+    const misses = list.filter((r) => r.missClass)
+    const taxonomy = {}
+    for (const r of misses) taxonomy[r.missClass] = (taxonomy[r.missClass] ?? 0) + 1
     return {
         n: list.length,
         exact,
@@ -93,9 +101,13 @@ function bucketReport(list) {
         ge90,
         ge75,
         meanSim: +meanSim.toFixed(3),
+        exactCI: wilson(exact, list.length),
+        top5CI: wilson(top5, list.length),
+        strictTop5: list.filter((r) => r.strictTop5).length,
         matchableN: matchable.length,
         top5Matchable,
         top5MatchablePct: matchable.length ? +((100 * top5Matchable) / matchable.length).toFixed(1) : 0,
+        missTaxonomy: taxonomy,
     }
 }
 
@@ -125,6 +137,13 @@ const fmtMatchable = (label, rep) =>
 console.log('\ntop-5 over SHAPE-MATCHABLE rows only (expected word count == engine token count):')
 console.log(fmtMatchable('IN-DOMAIN (cambodian+unknown+curated)', bucketReport(inDomain)))
 console.log(fmtMatchable('  cambodian citizens', bucketReport(buckets.cambodian)))
+const inDomRep = bucketReport(inDomain)
+console.log(
+    `\nstrict (word-aligned) top-5: ${inDomRep.strictTop5}/${inDomRep.n} (lenient ${inDomRep.top5}) · exact 95% CI ${inDomRep.exactCI.low}–${inDomRep.exactCI.high}%`,
+)
+console.log(
+    `miss autopsy: ${Object.entries(inDomRep.missTaxonomy).sort((a, b) => b[1] - a[1]).map(([k, v]) => `${k} ${v}`).join(' · ')}`,
+)
 
 const misses = inDomain.filter((r) => !r.hit && !r.orderOnly).sort((a, b) => a.sim - b.sim)
 const orderFlips = inDomain.filter((r) => r.orderOnly)

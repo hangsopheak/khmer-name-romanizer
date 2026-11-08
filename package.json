@@ -34,6 +34,7 @@
     "build": "tsc -p tsconfig.json",
     "test": "vitest run",
     "eval:famous": "node scripts/eval-famous.mjs",
+    "eval:match": "node scripts/eval-match.mjs",
     "scrape:names": "python3 scripts/scrape_names.py",
     "eval:scraped": "node scripts/eval-scraped.mjs",
     "eval:kfold": "node scripts/eval-kfold.mjs",

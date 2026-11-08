@@ -27,7 +27,7 @@ export const titleCase = (w) =>
     w.split(' ').map((x) => x[0].toUpperCase() + x.slice(1).toLowerCase()).join(' ')
 
 /* ------------------------------------------------------------------ */
-/* shape matchability                                                  */
+/* shape matchability, intervals, strict matching, miss taxonomy       */
 /* ------------------------------------------------------------------ */
 
 import { normalizeName, splitTokens, stripHonorifics } from '../../dist/index.js'
@@ -47,6 +47,58 @@ export const khmerTokenCount = (khmer) =>
  */
 export const isShapeMatchable = (p) =>
     khmerTokenCount(p.khmer) === p.latin.split(/\s+/).filter(Boolean).length
+
+/** Strict, word-aligned comparison: case-insensitive full-string equality
+ *  after whitespace collapse — "Sopanha" does NOT match "So Panha" (the
+ *  lenient `norm` does). The honest view for passport-style output. */
+export const strictEqual = (a, b) =>
+    a.toLowerCase().replace(/\s+/g, ' ').trim() === b.toLowerCase().replace(/\s+/g, ' ').trim()
+
+/**
+ * Wilson score interval (95%) for a binomial proportion — small-n rows
+ * (the 108-row lockbox) must not be read at face value.
+ */
+export const wilson = (successes, n, z = 1.96) => {
+    if (!n) return { pct: 0, low: 0, high: 0 }
+    const p = successes / n
+    const denom = 1 + (z * z) / n
+    const centre = p + (z * z) / (2 * n)
+    const spread = z * Math.sqrt((p * (1 - p)) / n + (z * z) / (4 * n * n))
+    return {
+        pct: +(100 * p).toFixed(1),
+        low: +(100 * Math.max(0, (centre - spread) / denom)).toFixed(1),
+        high: +(100 * Math.min(1, (centre + spread) / denom)).toFixed(1),
+    }
+}
+
+/**
+ * Classify a miss (value != expected, not in top-5) by its cause — the
+ * automated miss autopsy:
+ *
+ *   order-flip          correct words, Khmer vs Western order
+ *   unmatchable-shape   expected word count differs from token count —
+ *                       no candidate can ever equal it
+ *   vocab-gap           some differing expected word is in NO option
+ *                       list of its token — the engine does not know the
+ *                       spelling (dictionary/FST/rules all miss)
+ *   option-not-chosen   every differing word IS an option of its token —
+ *                       the spelling is known but ranking/composition did
+ *                       not surface it (includes one-to-many walls)
+ */
+export const classifyMiss = ({ got, tokens, pair }) => {
+    if (sortedNorm(got) === sortedNorm(pair.latin)) return 'order-flip'
+    if (!isShapeMatchable(pair)) return 'unmatchable-shape'
+    const gw = got.split(' ')
+    const ww = pair.latin.split(/\s+/).filter(Boolean)
+    // shape-matchable ⇒ token i renders word i
+    let allKnown = true
+    for (let i = 0; i < tokens.length; i++) {
+        if (norm(gw[i] ?? '') === norm(ww[i] ?? '')) continue
+        const options = [tokens[i].latin, ...tokens[i].alternatives].map(norm)
+        if (!options.includes(norm(ww[i] ?? ''))) allKnown = false
+    }
+    return allKnown ? 'option-not-chosen' : 'vocab-gap'
+}
 
 /* ------------------------------------------------------------------ */
 /* metrics                                                             */

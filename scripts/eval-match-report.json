@@ -1,0 +1,46 @@
+{
+ "generated": "2026-11-08T04:50:34.121Z",
+ "maxRank": 10,
+ "inDomain": {
+  "n": 835,
+  "matched": 379,
+  "matchedPct": 45.4,
+  "rank1": 310,
+  "rank1Pct": 37.1,
+  "rank2to5": 69,
+  "rank6to10": 0,
+  "meanSim": 0.759
+ },
+ "buckets": {
+  "cambodian": {
+   "n": 489,
+   "matched": 236,
+   "matchedPct": 48.3,
+   "rank1": 183,
+   "rank1Pct": 37.4,
+   "rank2to5": 53,
+   "rank6to10": 0,
+   "meanSim": 0.796
+  },
+  "unknown": {
+   "n": 217,
+   "matched": 26,
+   "matchedPct": 12,
+   "rank1": 22,
+   "rank1Pct": 10.1,
+   "rank2to5": 4,
+   "rank6to10": 0,
+   "meanSim": 0.563
+  },
+  "curated": {
+   "n": 129,
+   "matched": 117,
+   "matchedPct": 90.7,
+   "rank1": 105,
+   "rank1Pct": 81.4,
+   "rank2to5": 12,
+   "rank6to10": 0,
+   "meanSim": 0.945
+  }
+ }
+}

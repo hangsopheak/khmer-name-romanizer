@@ -26,3 +26,7 @@ jobs:
       # (famous 70/72, in-domain 282/835) so only real regressions trip.
       - run: node scripts/eval-famous.mjs --min-exact 70
       - run: node scripts/eval-scraped.mjs --min-exact 270
+      # Package budget: accuracy gates cannot see a data explosion or a
+      # pathological slowdown — caps carry big headroom (baseline 38 kB
+      # packed, ~76k names/s local; CI runners are slower).
+      - run: node scripts/check-budget.mjs --max-kb 80 --min-rate 1000
