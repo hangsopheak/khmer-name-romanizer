@@ -107,9 +107,16 @@ export interface RomanizeOptions {
  *   after ធ ទ ព គ "ea" (Chanthea).
  *   Round 3: សំ "sam" (Samnang), open ា inside a word after ធ ភ ព គ ទ ជ
  *   "ea" (Theara), word-final ៃ "ay" (Chhay), ាំង "aing" (Taing), ុយ "oy" (Koy).
+ *   Round 6 (0.6.0): closed ុ by series (Khon / Hun, Hul), o-series bare
+ *   consonant before ន់ ំ ល "o" (Chhon, Prom, Pol), ៉ + ន "orn" (Rorn),
+ *   final ញ "nh" (Danh), final ី "ey" after a-series or រ (Mey, Borey) and
+ *   "y" after ៊ (Sy, Hokhy), final ូវ "ov" (Lov),
+ *   open ា inside a word after o-series ម ល រ "ea" (Mealy).
  * Rejected after measuring: final ី -> "y" (-2 exact), ឹ -> "e" (-4:
  * Chim, Kim, Yim, Phim), final ត -> "t" (-2: Sarath, Neth, Nath), ិ +
- * final -> "e" (-15: Chin, Sin, Rith, Tith), open final ោ -> "or" (-1: So).
+ * final -> "e" (-15: Chin, Sin, Rith, Tith), open final ោ -> "or" (-1: So),
+ * medial ប -> "b" (+2/-2: Vibol vs Sopanha, Kampang), final ី -> "y" after
+ * every o-series consonant (+6/-5: Ty, Thy vs Moni, Tevi).
  * `{ plain: true }` turns them all off.
  */
 export function romanizeKhmer(input: string, options: RomanizeOptions = {}): string {
@@ -264,6 +271,8 @@ export function romanizeKhmer(input: string, options: RomanizeOptions = {}): str
             } else {
                 final = finalSound(candidate)
                 finalCh = candidate
+                // word-final ញ / ញ់ reads "nh" (Danh)
+                if (french && candidate === 'ញ') final = 'nh'
                 // inherent vowel before ណ្ណ is "a" (សុវណ្ណថា -> sovantha)
                 if (geminateNn) geminateFinal = true
                 if (candidate === 'យ' && vow === 'ុ') final = 'y'
@@ -281,7 +290,8 @@ export function romanizeKhmer(input: string, options: RomanizeOptions = {}): str
                 }
             } else {
                 // សំ reads "sam" (Samnang, Sambour); plain keeps "som"
-                const inherent = inherentO && !(french && ch === 'ស' && cluster === '') ? 'o' : 'a'
+                // an o-series consonant + ំ reads "om" (ព្រំ Prom)
+                const inherent = (inherentO || (french && secondSeries)) && !(french && ch === 'ស' && cluster === '') ? 'o' : 'a'
                 out.push(base + cluster + inherent + 'm')
                 i++
                 continue
@@ -298,9 +308,15 @@ export function romanizeKhmer(input: string, options: RomanizeOptions = {}): str
                 // inherent vowel before a final: 2nd-series consonants read "o"
                 // before ង (គង់ -> kong, ពង្ស -> pong) while 1st-series ones keep
                 // "a" (ហង្ស -> hang); otherwise the regular inherent (ចន -> chan)
-                const inherent = final === 'ng'
+                let inherent = final === 'ng'
                     ? (secondSeries ? 'o' : 'a')
                     : geminateFinal ? 'a' : inherentO ? 'o' : 'a'
+                if (french && final !== 'ng' && !geminateFinal) {
+                    // an o-series consonant before ន់ or ល reads "o" (ឈន់ Chhon, ពល Pol)
+                    if (secondSeries && ((finalCh === 'ន' && killedFinal) || finalCh === 'ល')) inherent = 'o'
+                    // a ៉-shifted consonant before ន reads "or" (រ៉ន Rorn)
+                    if (muusikatoan && finalCh === 'ន') inherent = 'or'
+                }
                 syllable = base + cluster + inherent + final
             } else {
                 const inherent = inherentO ? 'o' : 'a'
@@ -309,10 +325,18 @@ export function romanizeKhmer(input: string, options: RomanizeOptions = {}): str
         } else {
             let v = VOWELS[vow]
             if (vow === 'ុ' && (final === 'n' || final === 'm')) v = 'u'
+            if (french && vow === 'ុ' && final !== '' && final !== 'y' && final !== 'ng') {
+                // closed ុ follows the series: a-series "o" before ន / ម (ខុន Khon,
+                // សុន Son), o-series and ៊ "u" before any final (ហ៊ុន Hun, ហ៊ុល Hul, លុច Luch)
+                if (secondSeries) v = 'u'
+                else if (final === 'n' || final === 'm') v = 'o'
+            }
             // open ូ reads "o" in names (សូ so, បូ bo, ហូ ho, សូរិយា soriya)
             // ូ reads "o" when open (សូ so, បូ bo, សូរិយា soriya) and "ou" when
             // closed (ទូច touch, ឡូត lout)
             if (vow === 'ូ') v = final === '' ? 'o' : 'ou'
+            // word-final ូវ reads "ov" (ឡូវ Lov); plain keeps "ouv"
+            if (french && vow === 'ូ' && finalCh === 'វ' && (i >= n || s[i] === ' ')) v = 'o'
             // ុយ reads "oy" (Koy, Hoy); ូយ stays "ouy" (Nouy)
             if (vow === 'ុ' && final === 'y') v = french ? 'o' : 'ou'
             // ើ reads "oeu" when closed (កើត Koeut, រើន Roeun, កើស Koeus,
@@ -359,6 +383,15 @@ export function romanizeKhmer(input: string, options: RomanizeOptions = {}): str
             // word-final open ា after ធ ទ ព គ ភ reads "ea" (Chanthea, Sothea, Sophea)
             if (french && vow === 'ា' && final === '' && wordFinal && !wordInitial && 'ធទពគភ'.includes(seriesOf)) v = 'ea'
             if (etr) v = 'e'
+            // word-final ី after an a-series consonant or រ reads "ey" (ម៉ី Mey,
+            // បូរី Borey), after ៊ "y" (ស៊ី Sy, ហុកហ៊ី Hokhy); after other
+            // o-series ones it stays "i" (ទី Ti / Ty, មនី Moni)
+            if (french && vow === 'ី' && final === '' && wordFinal) {
+                if (triisap) v = 'y'
+                else if (!secondSeries || ch === 'រ') v = 'ey'
+            }
+            // open ា inside a word after an o-series ម ល រ reads "ea" (មាលី Mealy, រាជា Reachea)
+            if (french && vow === 'ា' && final === '' && !wordFinal && secondSeries && 'មលរ'.includes(seriesOf)) v = 'ea'
             // word-final open ូ after an o-series consonant reads "ou" (Chou, Nou,
             // Sou for ស៊ូ); after an a-series one it stays "o" (So for សូ)
             if (french && vow === 'ូ' && final === '' && wordFinal && secondSeries) v = 'ou'

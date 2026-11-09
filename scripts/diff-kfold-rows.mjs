@@ -11,17 +11,26 @@
  * wrong, and the exact two-sided sign-test p-value on the discordant
  * pairs. A gain only counts when gains clearly exceed losses.
  * --list prints every changed row (khmer, gold, before -> after).
+ * --folds 0,1,2 reports only rows of those folds (propose on folds 0-2,
+ * confirm on folds 3-4: a knob tuned on one half is judged on the other).
  */
 import { readFileSync } from 'node:fs'
 
-const [beforeFile, afterFile] = process.argv.slice(2).filter((a) => !a.startsWith('--'))
-const list = process.argv.includes('--list')
+const argv = process.argv.slice(2)
+const foldsIdx = argv.indexOf('--folds')
+const folds = foldsIdx !== -1 ? new Set(String(argv[foldsIdx + 1] ?? '').split(',').filter(Boolean).map(Number)) : null
+if (folds && (!folds.size || [...folds].some((f) => !Number.isInteger(f)))) {
+    console.error('--folds needs a comma-separated list of fold numbers, e.g. --folds 0,1,2')
+    process.exit(1)
+}
+const [beforeFile, afterFile] = argv.filter((a, i) => !a.startsWith('--') && !(foldsIdx !== -1 && i === foldsIdx + 1))
+const list = argv.includes('--list')
 if (!beforeFile || !afterFile) {
     console.error('usage: node scripts/diff-kfold-rows.mjs <before.json> <after.json> [--list]')
     process.exit(1)
 }
-const before = JSON.parse(readFileSync(beforeFile, 'utf8'))
-const after = JSON.parse(readFileSync(afterFile, 'utf8'))
+let before = JSON.parse(readFileSync(beforeFile, 'utf8'))
+let after = JSON.parse(readFileSync(afterFile, 'utf8'))
 if (before.length !== after.length) {
     console.error(`row count differs: ${before.length} vs ${after.length} — not the same eval rows`)
     process.exit(1)
@@ -53,7 +62,11 @@ const metrics = [
     ['top-5', 'inTop5'],
     ['match', 'matched'],
 ]
-console.log(`paired rows: ${before.length}\n`)
+if (folds) {
+    after = after.filter((r) => folds.has(r.fold))
+    before = before.filter((r) => folds.has(r.fold))
+}
+console.log(`paired rows: ${before.length}${folds ? ` (folds ${[...folds].join(',')})` : ''}\n`)
 console.log('metric   before  after   newly right  newly wrong  net   sign-test p')
 for (const [label, key] of metrics) {
     const b = before.filter((r) => r[key]).length

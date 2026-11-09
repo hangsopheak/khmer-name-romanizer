@@ -17948,7 +17948,7 @@
  },
  {
   "khmer": "នារី",
-  "latin": "Nakry",
+  "latin": "Neary",
   "qid": "compile-trusted.mjs — trusted tier of the name-list distillation pipeline",
   "bucket": "distilled",
   "source": "static/distill-verified",
@@ -23207,11 +23207,11 @@
  },
  {
   "khmer": "សោភ័ណ",
-  "latin": "Sophaep",
-  "qid": "compile-trusted.mjs — trusted tier of the name-list distillation pipeline",
-  "bucket": "distilled",
-  "source": "static/distill-verified",
-  "attestations": 2
+  "latin": "Soaphoan",
+  "qid": "manual",
+  "bucket": "curated",
+  "source": "static/manual",
+  "attestations": 1
  },
  {
   "khmer": "សោភារា",
@@ -24478,6 +24478,14 @@
  {
   "khmer": "ត្រីកា",
   "latin": "Treyka",
+  "qid": "manual",
+  "bucket": "curated",
+  "source": "static/manual",
+  "attestations": 1
+ },
+ {
+  "khmer": "បញ្ចពណ៍",
+  "latin": "Panhchapor",
   "qid": "manual",
   "bucket": "curated",
   "source": "static/manual",

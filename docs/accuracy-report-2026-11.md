@@ -109,6 +109,50 @@ are vocabulary gaps (miss autopsy: the official word is not reachable
 from any option). Most are several letters away from the rules
 reading, which letter rules cannot fix; new dictionary words can.
 
+## 0.6.0 — round 2: conventions round 5 and three rejected probes (2026-11-09)
+
+Same v2 method, same 692 dev eval rows. New guard: ideas were proposed
+on folds 0–2 and confirmed on folds 3–4 (`diff-kfold-rows.mjs
+--folds`), because four convention rounds had already been tuned on
+these rows. The lockbox was read once, at the end.
+
+| Step | K-fold exact | K-fold top-5 | Folds 3–4 (confirm) | Result |
+|---|---|---|---|---|
+| 0.5.0 baseline | 204 (29.5%) | 300 (43.4%) | — | — |
+| A: letter-model rerank of 8 learned spellings | 204 | 308 | top-5 +7/−2 | not shipped (+17/−9 overall, p ≈ 0.2) |
+| B: extra spellings for rare dictionary words | 204 | 303 | top-5 +1/−1 | not shipped |
+| C: space compound given names | −4 to −2 | 300 | exact −1 to −2 | not shipped |
+| Data fixes (នារី Neary, សោភ័ណ Soaphoan, បញ្ចពណ៍ Panhchapor) | 204 | 300 | +0/−0 | shipped |
+| E: conventions round 5 (7 of 8 kept) | 216 | 314 | exact +4/−1, top-5 +8/−2 | shipped |
+| + final ី → y after ៊, final ូវ → ov | **217 (31.4%)** | **314 (45.4%)** | exact +0/−0 | shipped |
+
+0.6.0 vs. 0.5.0, paired: exact +14/−1 (p = 0.001), top-5 +18/−4
+(p = 0.004), match mode 309 → 324. Per person: exact +14/−1, top-5
++18/−3. Citizens exact 120 → 128 (32.2%).
+
+**Lockbox release read:** exact 37 → **41/129** (28.7% → 31.8%, CI
+24.4–40.2), top-5 50 → **52/129** (38.8% → 40.3%). The ឡូវ → Lov rule
+came after the read; a confirmation re-run gave the same 41 / 52, and no
+decision used it.
+
+**Why A, B and C failed.** Only 24 of the 392 missed rows had the
+official spelling among the generated options, mostly at option rank
+4–9, and the options are genuinely ambiguous (Di / Ty / Dy). Promoting
+one spelling into the 5 name slots pushes another row's out. The
+learned rewrite table, built to fix rules readings, produces junk on
+official spellings (Nuth → Nuthh), and too few Khmer words carry two
+official spellings in the train rows to learn a second table. The
+top-5 check compares letters only, so a spacing change cannot raise it;
+spacing `value` gains as many exact rows as it loses (Pich Pisey vs.
+Sokpheng). Ranking is not the bottleneck; generating the right spelling
+is.
+
+**Data-quality finding.** A distillation alias can hide a native
+correction: `compile-trusted.mjs` keeps the first entry per Khmer key,
+`scrape_names.py` seeds from the existing corpus, and `merge-tokens.mjs`
+never replaces a canonical, so a wrong pair survives every rerun. The
+fix needs the source files, the corpus row and `src/token-data.ts`.
+
 State of accuracy after the algorithm improvement arc (Phases 3–6) and the
 2026-11-01 refresh round, measured against the committed eval reports at
 commit `c65ea84` (arc) and this round's regenerated reports.

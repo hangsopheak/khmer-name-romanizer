@@ -1,0 +1,52 @@
+diff --git a/src/transliterate.ts b/src/transliterate.ts
+index ba4c19f..ec818bc 100644
+--- a/src/transliterate.ts
++++ b/src/transliterate.ts
+@@ -282,7 +282,12 @@ export function createTransliterator(options: TransliteratorOptions = {}): Trans
+             const source = weakestSource(sources)
+             // One Khmer token renders as ONE Latin word (multi-word
+             // dictionary entries carry their own internal spaces).
+-            const readings = composeScored(segmentOptions, DEFAULT_MAX_CANDIDATES, '').map((r) => ({
++            // EXPERIMENT (workstream C): space the parts of a compound.
++            const mode = options.spaceCompounds ?? 'off'
++            const space = mode === 'all'
++                || (mode === 'full' && sources.every((x) => x === 'tokenDict'))
++                || (mode === 'dictfirst' && sources[0] === 'tokenDict' && segments[0].text.length >= 3)
++            const readings = composeScored(segmentOptions, DEFAULT_MAX_CANDIDATES, space ? ' ' : '').map((r) => ({
+                 value: titleCaseWords(r.value),
+                 mass: Math.exp(r.score),
+             }))
+diff --git a/src/types.ts b/src/types.ts
+index 9b370ad..9e19d7d 100644
+--- a/src/types.ts
++++ b/src/types.ts
+@@ -94,4 +94,6 @@ export interface TransliteratorOptions {
+     learnedAlternations?: readonly LearnedRule[]
+     /** Learned rewrites offered per rules-only token (default 2; 0 = off). */
+     maxLearnedAlternates?: number
++    /** EXPERIMENT: space the parts of a dictionary-split compound. */
++    spaceCompounds?: 'off' | 'all' | 'full' | 'dictfirst'
+ }
+--- a/scripts/eval-kfold.mjs
++++ b/scripts/eval-kfold.mjs
+@@ -71,6 +71,7 @@
+ const MIN = value('--min', 2)
+ const LEARNED = !args.includes('--no-learned')
+ const MAX_LEARNED = args.includes('--max-learned') ? value('--max-learned', undefined) : undefined
++const SPACE = args.includes('--space') ? { spaceCompounds: args[args.indexOf('--space') + 1] } : {}
+ const rowsIdx = args.indexOf('--rows')
+ const ROWS_FILE = rowsIdx !== -1 ? args[rowsIdx + 1] : undefined
+ if (rowsIdx !== -1 && !ROWS_FILE) {
+@@ -178,10 +179,10 @@
+     const learned = LEARNED
+         ? { learnedAlternations: learnRules(trainingPairs(trainRows)), maxLearnedAlternates: MAX_LEARNED }
+         : {}
+-    const t = createTransliterator({ tokenDict: dict, ...learned })
++    const t = createTransliterator({ tokenDict: dict, ...learned, ...SPACE })
+     const results = evaluate(testRows, t)
+     // match mode (KYC/dedup): same counterfactual, order-swapped candidates
+-    const tm = createTransliterator({ tokenDict: dict, flipOrderCandidates: true, ...learned })
++    const tm = createTransliterator({ tokenDict: dict, flipOrderCandidates: true, ...learned, ...SPACE })
+     for (const [i, p] of testRows.entries()) {
+         const c = tm.transliterate(p.khmer).candidates.slice(0, MATCH_MAX)
+         results[i].matched = c.some((x) => norm(x) === norm(p.latin) || sortedNorm(x) === sortedNorm(p.latin))

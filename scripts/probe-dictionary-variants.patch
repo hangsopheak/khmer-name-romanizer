@@ -1,0 +1,180 @@
+diff --git a/scripts/lib/learn-alternations.mjs b/scripts/lib/learn-alternations.mjs
+index a8db6c5..dfc643d 100644
+--- a/scripts/lib/learn-alternations.mjs
++++ b/scripts/lib/learn-alternations.mjs
+@@ -141,3 +141,64 @@ export const learnRules = (pairs, opts = {}) => {
+     }
+     return rules.sort((a, b) => a.slice(0, 4).join('|').localeCompare(b.slice(0, 4).join('|')))
+ }
++
++/* EXPERIMENT (round 2, workstream B): rewrites between official spellings.
++ * For every Khmer word with two or more distinct official spellings in
++ * the given rows, each ordered pair (a -> b) yields edits like
++ * learnRules does; opportunities are pattern occurrences over every
++ * distinct official spelling in the rows. */
++export const learnVariantRules = (rows, opts = {}) => {
++    const { alpha, minSuccess, minP } = { ...DEFAULTS, ...opts }
++    const byKhmer = new Map()
++    for (const { khmer, latin } of trainingPairs(rows)) {
++        if (!byKhmer.has(khmer)) byKhmer.set(khmer, new Set())
++        byKhmer.get(khmer).add(latin)
++    }
++    const spellings = new Set()
++    const success = new Map()
++    for (const set of byKhmer.values()) {
++        for (const w of set) spellings.add(`^${w}$`)
++        if (set.size < 2) continue
++        for (const a of set) {
++            // one success per (spelling, rewrite), however many partners
++            const seen = new Set()
++            for (const b of set) {
++                if (a === b) continue
++                const edits = alignEdits(a, b)
++                const size = edits.reduce((n, e) => n + Math.max(e.end - e.start, e.to.length), 0)
++                if (size > (opts.maxEdit ?? 2)) continue
++                const padded = `^${a}$`
++                for (const ed of edits) {
++                    for (const [l, from, r] of contexts(padded, ed.start + 1, ed.end + 1)) {
++                        const key = `${l}|${from}|${ed.to}|${r}`
++                        if (seen.has(key)) continue
++                        seen.add(key)
++                        success.set(key, (success.get(key) ?? 0) + 1)
++                    }
++                }
++            }
++        }
++    }
++    const patterns = new Map()
++    for (const key of success.keys()) {
++        const [l, from, , r] = key.split('|')
++        patterns.set(l + from + r, 0)
++    }
++    for (const padded of spellings)
++        for (const pattern of patterns.keys()) {
++            let at = padded.indexOf(pattern)
++            while (at !== -1) {
++                patterns.set(pattern, patterns.get(pattern) + 1)
++                at = padded.indexOf(pattern, at + 1)
++            }
++        }
++    const rules = []
++    for (const [key, s] of success) {
++        if (s < minSuccess) continue
++        const [l, from, to, r] = key.split('|')
++        const p = s / (patterns.get(l + from + r) + alpha)
++        if (p < minP) continue
++        rules.push([l, from, to, r, +p.toFixed(3)])
++    }
++    return rules.sort((a, b) => a.slice(0, 4).join('|').localeCompare(b.slice(0, 4).join('|')))
++}
+diff --git a/src/transliterate.ts b/src/transliterate.ts
+index ba4c19f..859115e 100644
+--- a/src/transliterate.ts
++++ b/src/transliterate.ts
+@@ -190,10 +190,11 @@ export function createTransliterator(options: TransliteratorOptions = {}): Trans
+     const maxCandidates = Math.max(1, options.maxCandidates ?? DEFAULT_MAX_CANDIDATES)
+     const flipOrderCandidates = options.flipOrderCandidates ?? false
+     const learned = createLearnedAlternator(options.learnedAlternations ?? [])
++    const variantLearned = createLearnedAlternator(options.variantAlternations ?? [])
+     const maxLearned = Math.max(0, options.maxLearnedAlternates ?? DEFAULT_MAX_LEARNED)
+     /** Learned rewrites of a rules reading, as options below it. */
+-    const learnedOptions = (rules: string): ScoredOption[] =>
+-        learned.alternates(rules, maxLearned).map((a) => ({
++    const learnedOptions = (rules: string, limit = maxLearned): ScoredOption[] =>
++        learned.alternates(rules, limit).map((a) => ({
+             value: titleCaseWords(a.value),
+             mass: RULES_PRIOR_MASS * Math.min(a.p, LEARNED_P_CAP),
+         }))
+@@ -251,10 +252,21 @@ export function createTransliterator(options: TransliteratorOptions = {}): Trans
+         const rules = rulesReading(token)
+         if (direct) {
+             const latin = titleCaseWords(direct.latin)
++            // EXPERIMENT (workstream B): learned spellings for rarely seen words.
++            const nB = options.dictLearned ?? 0
++            const extra = nB > 0 && direct.count <= (options.dictLearnedMaxCount ?? 1) && !latin.includes(' ')
++                ? variantLearned.alternates(latin.toLowerCase(), nB).map((a) => ({
++                      value: titleCaseWords(a.value),
++                      mass: RULES_PRIOR_MASS * Math.min(a.p, LEARNED_P_CAP) * (options.dictLearnedScale ?? 1),
++                  }))
++                : []
++            const early = options.dictLearnedEarly ?? false
+             return scoredToken(token, 'tokenDict', [
+                 { value: latin, mass: direct.count + CANONICAL_MASS_BONUS },
++                ...(early ? extra : []),
+                 ...variantOptions(direct),
+                 { value: rules, mass: RULES_PRIOR_MASS },
++                ...(early ? [] : extra),
+             ], latin)
+         }
+ 
+@@ -297,10 +309,17 @@ export function createTransliterator(options: TransliteratorOptions = {}): Trans
+         // French-style first guess; the plain reading stays an equal-mass
+         // alternative (both spellings are in use: Sareth / Saret, Keo / Kaev)
+         const plain = plainReading(token)
++        const vRules = (options.rulesVariant ?? 0) > 0
++            ? variantLearned.alternates(rules.toLowerCase(), options.rulesVariant!).map((a) => ({
++                  value: titleCaseWords(a.value),
++                  mass: RULES_PRIOR_MASS * Math.min(a.p, LEARNED_P_CAP) * (options.dictLearnedScale ?? 1),
++              }))
++            : []
+         return scoredToken(token, 'rules', [
+             { value: rules, mass: RULES_PRIOR_MASS },
+             { value: plain, mass: RULES_PRIOR_MASS },
+             ...learnedOptions(plain),
++            ...vRules,
+         ], rules)
+     }
+ 
+diff --git a/src/types.ts b/src/types.ts
+index 9b370ad..3b29328 100644
+--- a/src/types.ts
++++ b/src/types.ts
+@@ -94,4 +94,12 @@ export interface TransliteratorOptions {
+     learnedAlternations?: readonly LearnedRule[]
+     /** Learned rewrites offered per rules-only token (default 2; 0 = off). */
+     maxLearnedAlternates?: number
++    /** EXPERIMENT (B) */
++    dictLearned?: number
++    dictLearnedMaxCount?: number
++    dictLearnedBase?: 'canonical' | 'plain'
++    dictLearnedEarly?: boolean
++    variantAlternations?: readonly LearnedRule[]
++    dictLearnedScale?: number
++    rulesVariant?: number
+ }
+--- a/scripts/eval-kfold.mjs
++++ b/scripts/eval-kfold.mjs
+@@ -60,7 +60,7 @@
+     strictEqual,
+     wilson,
+ } from './lib/corpus-tools.mjs'
+-import { learnRules, trainingPairs } from './lib/learn-alternations.mjs'
++import { learnRules, learnVariantRules, trainingPairs } from './lib/learn-alternations.mjs'
+ 
+ const args = process.argv.slice(2)
+ const value = (name, fallback) => {
+@@ -71,6 +71,15 @@
+ const MIN = value('--min', 2)
+ const LEARNED = !args.includes('--no-learned')
+ const MAX_LEARNED = args.includes('--max-learned') ? value('--max-learned', undefined) : undefined
++// EXPERIMENT knobs (workstream B)
++const EXP = {
++    ...(args.includes('--dl') ? { dictLearned: value('--dl', 0) } : {}),
++    ...(args.includes('--dl-max') ? { dictLearnedMaxCount: value('--dl-max', 1) } : {}),
++    ...(args.includes('--dl-plain') ? { dictLearnedBase: 'plain' } : {}),
++    ...(args.includes('--dl-early') ? { dictLearnedEarly: true } : {}),
++    ...(args.includes('--dl-scale') ? { dictLearnedScale: value('--dl-scale', 1) } : {}),
++    ...(args.includes('--rv') ? { rulesVariant: value('--rv', 0) } : {}),
++}
+ const rowsIdx = args.indexOf('--rows')
+ const ROWS_FILE = rowsIdx !== -1 ? args[rowsIdx + 1] : undefined
+ if (rowsIdx !== -1 && !ROWS_FILE) {
+@@ -176,7 +185,7 @@
+     // learned alternations: TRAIN folds only (the shipped table learns
+     // from the whole dev split, so a test fold would leak through it)
+     const learned = LEARNED
+-        ? { learnedAlternations: learnRules(trainingPairs(trainRows)), maxLearnedAlternates: MAX_LEARNED }
++        ? { learnedAlternations: learnRules(trainingPairs(trainRows)), maxLearnedAlternates: MAX_LEARNED, variantAlternations: learnVariantRules(trainRows), ...EXP }
+         : {}
+     const t = createTransliterator({ tokenDict: dict, ...learned })
+     const results = evaluate(testRows, t)

@@ -6,6 +6,68 @@ project versions semver-style. Accuracy numbers cited below are
 reproducible via `npm run eval:famous · eval:scraped · eval:kfold ·
 eval:holdout` — see `docs/accuracy-report-2026-11.md`.
 
+## [0.6.0] - 2026-11-09
+
+Unseen-name accuracy, person-grouped k-fold on the dev split (692 rows),
+0.5.0 → 0.6.0: exact **29.5% → 31.4%** (204 → 217, CI 28.0–34.9), top-5
+**43.4% → 45.4%** (300 → 314, CI 41.7–49.1), match mode **44.7% →
+46.8%** (309 → 324); citizens exact 30.2% → 32.2%. Paired vs. 0.5.0:
+exact +14/−1 rows (sign test p = 0.001), top-5 +18/−4 (p = 0.004);
+counted once per person: exact +14/−1, top-5 +18/−3. Lockbox: exact
+**28.7% → 31.8%** (37 → 41 of 129, CI 24.4–40.2), top-5 **38.8% →
+40.3%** (50 → 52). Famous 70/72 held.
+
+### Changed — more French-style name conventions (round 5)
+- A native reader answered a fifth round of convention questions. The
+  candidates came from folds 0–2 of the k-fold only, and a convention
+  was kept only if it also helped on folds 3–4. The rules reading now
+  applies:
+  - closed ុ by consonant series: a-series before ន / ម → `o` (ខុន Khon,
+    សុន Son), o-series or ៊ before any final → `u` (ហ៊ុន Hun, ហ៊ុល Hul)
+  - an o-series consonant with no vowel sign before ន់ ំ ល → `o`
+    (ឈន់ Chhon, ព្រំ Prom, ពល Pol); ៉ + ន → `orn` (រ៉ន Rorn)
+  - word-final ី → `ey` after an a-series consonant or រ (ម៉ី Mey,
+    បូរី Borey), → `y` after ៊ (ស៊ី Sy, ហុកហ៊ី Hokhy)
+  - open ា inside a word after an o-series ម ល រ → `ea` (មាលី Meali,
+    រាជា Reachea)
+  - word-final ញ → `nh` (ដាញ់ Danh) and word-final ូវ → `ov` (ឡូវ Lov):
+    no measurable effect, kept on the reader's word
+- **The old reading stays available** as an equal-weight alternative
+  (Khun, Chhan, Siri), and `romanizeKhmer(text, { plain: true })`
+  returns it.
+- **Rejected after measuring:** medial ប → `b` (+2/−2: Vibol vs.
+  Sopanha, Kampang); final ី → `y` after every o-series consonant
+  (+6/−5: Ty, Thy vs. Moni, Tevi).
+- **Breaking for direct rule-engine callers:** `romanizeKhmer` and
+  `romanizeKhmerName` return the new readings by default.
+
+### Fixed — dictionary
+- នារី is **Neary** (was "Nakry"). A second-AI distillation had given
+  the name *Nakry* (ផ្កានាគ្រី) the extra Khmer spelling នារី, and the
+  trusted-list compiler keeps the first entry per Khmer word, so it hid
+  the native-reader correction. The compound នារីសុជាតា now reads
+  Nearysocheata.
+- សោភ័ណ is **Soaphoan** (was "Sophaep", the same kind of alias; Sophon
+  stays a variant).
+- Added បញ្ចពណ៍ **Panhchapor** (owner-spelled, training-only row).
+- The new readings let 9 more single-attestation corpus words pass the
+  round-trip gate (dictionary 1,608 → 1,617).
+
+### Added — eval tooling
+- `diff-kfold-rows.mjs --folds 0,1,2` reports one half of the folds
+  (propose on 0–2, confirm on 3–4). `eval-kfold.mjs --rows` also writes
+  each token's spelling options.
+- Three probes, measured and not shipped, with their numbers in the
+  header and a patch that reproduces them:
+  `scripts/probe-spelling-rerank.mjs` (letter-model rerank, top-5
+  +17/−9, p ≈ 0.2), `scripts/probe-dictionary-variants.mjs` (extra
+  spellings for rare dictionary words, +4/−1),
+  `scripts/probe-compound-spacing.mjs` (spacing compound given names:
+  top-5 cannot gain, exact falls).
+
+### Notes
+- Package 53.4 kB → 56.0 kB packed. Throughput about 40k names/s.
+
 ## [0.5.0] - 2026-11-09
 
 Unseen-name accuracy, person-grouped k-fold on the dev split (692 rows),

@@ -39,7 +39,8 @@
  *   --no-learned   turn the learned alternation tier off (0.4.0 behavior)
  *   --max-learned N  learned rewrites per rules-only token (default: engine's)
  *   --rows <file>  also write per-row results (fold, khmer, gold, value,
- *                  candidates, hit / top-5 / match flags) as JSON, so two
+ *                  candidates, per-token options, hit / top-5 / match
+ *                  flags) as JSON, so two
  *                  runs can be compared row by row (scripts/diff-kfold-rows.mjs)
  */
 import { readFileSync, writeFileSync } from 'node:fs'
@@ -196,6 +197,7 @@ for (let f = 0; f < K; f++) {
                 value: r.value,
                 candidates: r.candidates,
                 sources: r.tokens.map((x) => x.source),
+                options: r.tokens.map((x) => [x.latin, ...x.alternatives]),
                 hit: results[i].hit,
                 inTop5: results[i].inTop5,
                 matched: results[i].matched,

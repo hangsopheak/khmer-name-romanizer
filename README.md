@@ -16,7 +16,7 @@ transliterateName('ហង្ស សុភ័ក្រ្ត')   // "Hang Sopheak
 transliterateName('តាំងលាងខៃ')       // "Taing Leangkhai" (unspaced input is split for you)
 ```
 
-**How accurate is it?** For a name it has never seen, the first guess is the official spelling about **3 times in 10**, and the official spelling is in the top 5 about **4 times in 10**. For names already in its dictionary, it is right 83–97% of the time. See [Accuracy](#accuracy).
+**How accurate is it?** For popular names (well-known Cambodians), the first guess is the official spelling **97%** of the time. For names on curated name lists, 83%. For a name it has never seen, the first guess is right about **3 times in 10**, and the official spelling is in the top 5 more than **4 times in 10**. See [Accuracy](#accuracy).
 
 ## Why use it
 
@@ -92,7 +92,7 @@ sequenceDiagram
             Seg-->>E: សុភ័ក្រ្ត + ដារា → one word "Sopheakdara"
         else unknown word (ហុកហ៊ី)
             E->>Rul: read letter by letter
-            Rul-->>E: "Hokhi" (French style) + "Hokhy"
+            Rul-->>E: "Hokhy" (French style) + "Hokhi"
         end
     end
     end
@@ -103,7 +103,7 @@ sequenceDiagram
     Ran-->>App: value: "Hang Sopheak"<br/>candidates: [Hang Sopheak]
 ```
 
-A token the dictionary does not know moves down to the next source. For `តាន់ ហុកហ៊ី`, the dictionary knows `តាន់`, and the rules read the new word `ហុកហ៊ី`, giving `"Tan Hokhi"` with `Hokhy` and `Tann` as alternatives.
+A token the dictionary does not know moves down to the next source. For `តាន់ ហុកហ៊ី`, the dictionary knows `តាន់`, and the rules read the new word `ហុកហ៊ី`, giving `"Tan Hokhy"` with `Hokhi` and `Tann` as alternatives.
 
 ### Result shape
 
@@ -120,7 +120,7 @@ t.transliterate('តាំង ដារា')
 //   source: 'tokens',                             // tokens | rules (weakest source used)
 //   tokens: [...],                                // per token: khmer, latin, source, alternatives
 //   candidates: ['Taing Dara', 'Tang Dara', ...],
-//   scoredCandidates: [{ value: 'Taing Dara', score: -0.92 }, ...]  // closer to 0 = more likely
+//   scoredCandidates: [{ value: 'Taing Dara', score: -0.45 }, ...]  // closer to 0 = more likely
 // }
 ```
 
@@ -128,15 +128,15 @@ t.transliterate('តាំង ដារា')
 
 | The name is… | Top-1 exact | Official spelling in top 5 |
 |---|---|---|
-| **Not in the dictionary** (5-fold CV) | **29.5%** | **43%** |
-| Not in the dictionary (frozen lockbox) | 29% | 39% |
-| In the dictionary: famous people | 97% | 97% |
+| **Popular names** (well-known Cambodians) | **97%** | **97%** |
 | In the dictionary: curated name lists | 83% | 93% |
+| **Not in the dictionary** (5-fold CV) | **31.4%** | **45%** |
+| Not in the dictionary (frozen lockbox) | 32% | 40% |
 
 - **The bar is strict.** Most common Khmer name words have more than one official spelling (សែន is *Sen* and *Saen*). Even a perfect guesser matches the chosen spelling only about half the time on two-word names.
 - **Misses are close.** It returns `Penn Rorn` when the truth is `Pan Ron`, not nonsense. Most misses are words it has not learned yet.
-- **Top 5 is the useful number.** For order-insensitive KYC matching (top 10), it recognizes an unseen name 45% of the time.
-- **French-style spellings by default** (Sareth, Chhay, Keo, Sophea, Taing). Use `romanizeKhmer(text, { plain: true })` for the plain reading.
+- **Top 5 is the useful number.** For order-insensitive KYC matching (top 10), it recognizes an unseen name 47% of the time.
+- **French-style spellings by default** (Sareth, Chhay, Keo, Sophea, Taing, Khon, Borey). A native reader confirmed each convention. Use `romanizeKhmer(text, { plain: true })` for the plain reading.
 
 Reproduce with `npm run eval:kfold`, `eval:holdout`, `eval:famous` and `eval:scraped`.
 

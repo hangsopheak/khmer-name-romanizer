@@ -1,0 +1,195 @@
+diff --git a/scripts/eval-kfold.mjs b/scripts/eval-kfold.mjs
+index f55ac63..7792c3e 100644
+--- a/scripts/eval-kfold.mjs
++++ b/scripts/eval-kfold.mjs
+@@ -70,6 +70,13 @@ const K = value('--k', 5)
+ const MIN = value('--min', 2)
+ const LEARNED = !args.includes('--no-learned')
+ const MAX_LEARNED = args.includes('--max-learned') ? value('--max-learned', undefined) : undefined
++// EXPERIMENT knobs (workstream A)
++const EXP = {
++    ...(args.includes('--lm-weight') ? { spellingModelWeight: value('--lm-weight', 0) } : {}),
++    ...(args.includes('--pool') ? { learnedPool: value('--pool', 2) } : {}),
++    ...(args.includes('--lm-norm') ? { spellingModelLengthNorm: true } : {}),
++    ...(args.includes('--known') ? { knownSpellingBoost: value('--known', 1) } : {}),
++}
+ const rowsIdx = args.indexOf('--rows')
+ const ROWS_FILE = rowsIdx !== -1 ? args[rowsIdx + 1] : undefined
+ if (rowsIdx !== -1 && !ROWS_FILE) {
+@@ -175,7 +182,7 @@ for (let f = 0; f < K; f++) {
+     // learned alternations: TRAIN folds only (the shipped table learns
+     // from the whole dev split, so a test fold would leak through it)
+     const learned = LEARNED
+-        ? { learnedAlternations: learnRules(trainingPairs(trainRows)), maxLearnedAlternates: MAX_LEARNED }
++        ? { learnedAlternations: learnRules(trainingPairs(trainRows)), maxLearnedAlternates: MAX_LEARNED, ...EXP }
+         : {}
+     const t = createTransliterator({ tokenDict: dict, ...learned })
+     const results = evaluate(testRows, t)
+diff --git a/src/transliterate.ts b/src/transliterate.ts
+index ba4c19f..94e5855 100644
+--- a/src/transliterate.ts
++++ b/src/transliterate.ts
+@@ -15,6 +15,7 @@
+ import { spellingAlternates } from './alternatives.js'
+ import { createLearnedAlternator } from './learned-alternations.js'
+ import { romanizeKhmerName } from './rules.js'
++import { createSpellingModel } from './spelling-model.js'
+ import { normalizeName, segmentToken, splitTokens, stripHonorifics } from './tokenizer.js'
+ import type { Segment } from './tokenizer.js'
+ import { TokenEntry, TokenSource, TranslitResult, TranslitToken, TransliteratorOptions, ScoredCandidate } from './types.js'
+@@ -192,12 +193,48 @@ export function createTransliterator(options: TransliteratorOptions = {}): Trans
+     const learned = createLearnedAlternator(options.learnedAlternations ?? [])
+     const maxLearned = Math.max(0, options.maxLearnedAlternates ?? DEFAULT_MAX_LEARNED)
+     /** Learned rewrites of a rules reading, as options below it. */
+-    const learnedOptions = (rules: string): ScoredOption[] =>
+-        learned.alternates(rules, maxLearned).map((a) => ({
++    const learnedOptions = (rules: string, limit = maxLearned): ScoredOption[] =>
++        learned.alternates(rules, limit).map((a) => ({
+             value: titleCaseWords(a.value),
+             mass: RULES_PRIOR_MASS * Math.min(a.p, LEARNED_P_CAP),
+         }))
+ 
++    // EXPERIMENT (workstream A): rerank the extra readings of rules-only
++    // words with a letter model of the dictionary's own spellings.
++    const spellingWeight = options.spellingModelWeight ?? 0
++    const learnedPool = Math.max(maxLearned, options.learnedPool ?? maxLearned)
++    const lengthNorm = options.spellingModelLengthNorm ?? false
++    const knownBoost = options.knownSpellingBoost ?? 1
++    const knownSpellings = new Set(
++        [...tokenDict.values()].flatMap((e) => [e.latin, ...Object.keys(e.variants ?? {})]).flatMap((v) => v.toLowerCase().split(/[^a-z]+/)),
++    )
++    const spellingModel = spellingWeight > 0 || knownBoost !== 1
++        ? createSpellingModel(
++              [...tokenDict.values()].flatMap((e) => [e.latin, ...Object.keys(e.variants ?? {})]),
++          )
++        : null
++    const plausibility = (value: string): number => {
++        const word = value.toLowerCase().replace(/[^a-z]/g, '')
++        if (spellingWeight <= 0) return 0
++        const lp = spellingModel!.logProb(word)
++        return lengthNorm ? lp / (word.length + 1) : lp
++    }
++    /** Extra readings reordered by learned mass x letter-model plausibility
++     *  relative to the first guess, kept below the first guess's mass. */
++    const rerank = (first: string, extras: ScoredOption[]): ScoredOption[] => {
++        if (!spellingModel) return extras
++        const ref = plausibility(first)
++        return extras
++            .map((o) => ({
++                value: o.value,
++                mass: Math.min(
++                    o.mass * Math.exp(spellingWeight * (plausibility(o.value) - ref)) * (knownSpellings.has(o.value.toLowerCase()) ? knownBoost : 1),
++                    RULES_PRIOR_MASS * LEARNED_P_CAP,
++                ),
++            }))
++            .sort((a, b) => b.mass - a.mass)
++    }
++
+     // Longest dictionary key, computed once: segmentation calls reuse it
+     // instead of rescanning every key per call.
+     let maxDictKeyLen = 0
+@@ -299,8 +336,10 @@ export function createTransliterator(options: TransliteratorOptions = {}): Trans
+         const plain = plainReading(token)
+         return scoredToken(token, 'rules', [
+             { value: rules, mass: RULES_PRIOR_MASS },
+-            { value: plain, mass: RULES_PRIOR_MASS },
+-            ...learnedOptions(plain),
++            ...rerank(rules, [
++                { value: plain, mass: RULES_PRIOR_MASS },
++                ...learnedOptions(plain, spellingModel ? learnedPool : maxLearned),
++            ]),
+         ], rules)
+     }
+ 
+diff --git a/src/types.ts b/src/types.ts
+index 9b370ad..97ba985 100644
+--- a/src/types.ts
++++ b/src/types.ts
+@@ -94,4 +94,12 @@ export interface TransliteratorOptions {
+     learnedAlternations?: readonly LearnedRule[]
+     /** Learned rewrites offered per rules-only token (default 2; 0 = off). */
+     maxLearnedAlternates?: number
++    /** EXPERIMENT: letter-model rerank weight for rules-only extras (0 = off). */
++    spellingModelWeight?: number
++    /** EXPERIMENT: learned rewrites generated before the rerank. */
++    learnedPool?: number
++    /** EXPERIMENT: length-normalize the letter-model score. */
++    spellingModelLengthNorm?: boolean
++    /** EXPERIMENT: mass factor for extras that are a known dictionary spelling. */
++    knownSpellingBoost?: number
+ }
+--- /dev/null
++++ b/src/spelling-model.ts
+@@ -0,0 +1,72 @@
++/**
++ * A letter model of official name spellings, used to rerank the extra
++ * spellings offered for words the dictionary does not know.
++ *
++ * The rules and the learned rewrites often produce several readings of an
++ * unknown word (Sihno / Sihnou / Seyhno). Official spellings follow
++ * strong letter habits (-ouk, -eath, -oeun), so a character n-gram model
++ * trained on the dictionary's own Latin spellings tells a plausible name
++ * spelling from an unlikely one.
++ *
++ * The model is built from the dictionary the transliterator is given, so
++ * it ships no data of its own, and in cross-validation it only ever sees
++ * the fold's training dictionary. Interpolated Witten-Bell smoothing,
++ * `^` / `$` mark the word boundaries; every distinct spelling counts once
++ * (a frequent name cannot dominate).
++ */
++
++export interface SpellingModel {
++    /** Natural-log probability of a lower-case word, end marker included. */
++    logProb: (word: string) => number
++}
++
++const ORDER = 4
++/** Letters a name spelling can use, plus the end marker. */
++const ALPHABET_SIZE = 27
++
++export function createSpellingModel(spellings: Iterable<string>): SpellingModel {
++    // counts.get(history).get(next) for every history length 0..ORDER-1
++    const counts = new Map<string, Map<string, number>>()
++    const totals = new Map<string, number>()
++    const seen = new Set<string>()
++    for (const raw of spellings) {
++        for (const word of raw.toLowerCase().split(/[^a-z]+/)) {
++            if (!word || seen.has(word)) continue
++            seen.add(word)
++            const padded = '^'.repeat(ORDER - 1) + word + '$'
++            for (let i = ORDER - 1; i < padded.length; i++) {
++                const next = padded[i]
++                for (let n = 0; n < ORDER; n++) {
++                    const history = padded.slice(i - n, i)
++                    let row = counts.get(history)
++                    if (!row) counts.set(history, (row = new Map()))
++                    row.set(next, (row.get(next) ?? 0) + 1)
++                    totals.set(history, (totals.get(history) ?? 0) + 1)
++                }
++            }
++        }
++    }
++
++    const prob = (history: string, next: string): number => {
++        const lower = history.length ? prob(history.slice(1), next) : 1 / ALPHABET_SIZE
++        const row = counts.get(history)
++        if (!row) return lower
++        const total = totals.get(history)!
++        const types = row.size
++        return ((row.get(next) ?? 0) + types * lower) / (total + types)
++    }
++
++    const cache = new Map<string, number>()
++    return {
++        logProb: (word) => {
++            const hit = cache.get(word)
++            if (hit !== undefined) return hit
++            const padded = '^'.repeat(ORDER - 1) + word + '$'
++            let lp = 0
++            for (let i = ORDER - 1; i < padded.length; i++) lp += Math.log(prob(padded.slice(i - ORDER + 1, i), padded[i]))
++            if (cache.size >= 5000) cache.clear()
++            cache.set(word, lp)
++            return lp
++        },
++    }
++}

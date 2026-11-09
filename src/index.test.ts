@@ -96,6 +96,30 @@ describe('khmer-name-romanizer', () => {
         expect(s.honorifics ?? []).toEqual([])
     })
 
+    it('applies the round-6 conventions a native reader confirmed', () => {
+        expect(romanizeKhmerName('ខុន')).toBe('Khon') // a-series ុ + ន
+        expect(romanizeKhmerName('ហ៊ុល')).toBe('Hul') // ៊ ុ + final
+        expect(romanizeKhmerName('ឈន់')).toBe('Chhon') // o-series + ន់
+        expect(romanizeKhmerName('ព្រំ')).toBe('Prom') // o-series + ំ
+        expect(romanizeKhmerName('ពល')).toBe('Pol') // o-series + ល
+        expect(romanizeKhmerName('រ៉ន')).toBe('Rorn') // ៉ + ន
+        expect(romanizeKhmerName('ដាញ់')).toBe('Danh') // final ញ
+        expect(romanizeKhmerName('ម៉ី')).toBe('Mey') // final ី after a-series
+        expect(romanizeKhmerName('បូរី')).toBe('Borey') // final ី after រ
+        expect(romanizeKhmerName('ហុកហ៊ី')).toBe('Hokhy') // final ី after ៊
+        expect(romanizeKhmerName('ឡូវ')).toBe('Lov') // final ូវ
+        expect(romanizeKhmerName('មាលី')).toBe('Meali') // open ា after ម; final ី after o-series ល stays "i"
+        // the plain reading keeps the 0.5.0 spellings
+        expect(romanizeKhmerName('ខុន', { plain: true })).toBe('Khun')
+        expect(romanizeKhmerName('ឈន់', { plain: true })).toBe('Chhan')
+    })
+
+    it('keeps native-reader dictionary fixes (stale aliases removed)', () => {
+        expect(transliterateName('ឃុន នារី')).toBe('Khun Neary')
+        expect(transliterateName('ហេង បញ្ចពណ៍')).toBe('Heng Panhchapor')
+        expect(transliterateName('សោភ័ណ')).toBe('Soaphoan')
+    })
+
     it('reads muusikatoan-shifted ែ as "e" (attested spellings)', () => {
         expect(romanizeKhmerName('ប៉ែត', { plain: true })).toBe('Pet') // attested (French default: Peth)
         expect(romanizeKhmerName('ង៉ែត', { plain: true })).toBe('Nget') // attested
