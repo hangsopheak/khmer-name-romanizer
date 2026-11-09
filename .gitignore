@@ -29,3 +29,4 @@ docs/lowsim-watchlist.md
 
 # Demo site: the built library is copied in at deploy time
 site/lib/
+docs/khmer-ui-review.md
