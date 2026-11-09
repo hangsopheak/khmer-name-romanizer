@@ -3,11 +3,11 @@ import { transliterateName, createDefaultTransliterator, createTransliterator, r
 
 describe('khmer-name-romanizer', () => {
     it('one-shot transliteration uses the bundled dictionary', () => {
-        expect(transliterateName('តាំង លាងខៃ')).toBe('Tang Leangkhai')
+        expect(transliterateName('តាំង លាងខៃ')).toBe('Taing Leangkhai')
     })
 
     it('segments unspaced names', () => {
-        expect(transliterateName('តាំងលាងខៃ')).toBe('Tang Leangkhai')
+        expect(transliterateName('តាំងលាងខៃ')).toBe('Taing Leangkhai')
     })
 
     it('falls back to the rule engine when no dictionary knows the tokens', () => {
@@ -74,7 +74,7 @@ describe('khmer-name-romanizer', () => {
         expect(bare.value.length).toBeGreaterThan(0)
         expect(bare.honorifics).toBeUndefined()
         const plain = createDefaultTransliterator().transliterate('តាំង ដារា')
-        expect(plain.value).toBe('Tang Dara')
+        expect(plain.value).toBe('Taing Dara')
         expect(plain.honorifics).toBeUndefined()
     })
 
@@ -126,7 +126,7 @@ describe('khmer-name-romanizer', () => {
     it('extends the bundled dictionary with caller tokenDict entries', () => {
         const t = createDefaultTransliterator({ tokenDict: { ដារា: { latin: 'Dara', count: 1 } } })
         const result = t.transliterate('តាំង ដារា')
-        expect(result.value).toBe('Tang Dara')
+        expect(result.value).toBe('Taing Dara')
         expect(result.source).toBe('tokens')
     })
 

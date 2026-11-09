@@ -1,11 +1,43 @@
 [
  {
+  "khmer": "ម៉ៅ សេទុង",
+  "latin": "Mao Zedong",
+  "qid": "Q5816",
+  "bucket": "foreign",
+  "source": "wikidata/kmwiki-humans",
+  "attestations": 80
+ },
+ {
+  "khmer": "អ្នកម្តាយ តេរេសា",
+  "latin": "Mother Teresa",
+  "qid": "Q30547",
+  "bucket": "foreign",
+  "source": "wikidata/kmwiki-humans",
+  "attestations": 80
+ },
+ {
+  "khmer": "ជូ អេនឡាយ",
+  "latin": "Zhou Enlai",
+  "qid": "Q17410",
+  "bucket": "foreign",
+  "source": "wikidata/kmwiki-humans",
+  "attestations": 60
+ },
+ {
+  "khmer": "វ្លាឌីមៀរ អ៊ីលីច លេនីន",
+  "latin": "Vladimir Lenin",
+  "qid": "Q1394",
+  "bucket": "foreign",
+  "source": "wikidata/kmwiki-humans",
+  "attestations": 60
+ },
+ {
   "khmer": "សុង ឈីងលីង",
   "latin": "Soong Ching-ling",
   "qid": "Q17132",
   "bucket": "foreign",
   "source": "wikidata/kmwiki-humans",
-  "attestations": 51
+  "attestations": 60
  },
  {
   "khmer": "ហ្សូសែហ្វ ស្តាលីន",
@@ -13,39 +45,36 @@
   "qid": "Q855",
   "bucket": "foreign",
   "source": "wikidata/kmwiki-humans",
-  "attestations": 51
+  "attestations": 60
  },
  {
-  "khmer": "ហូវហាន្នេស កាយ៉ាស្នូនី",
-  "latin": "Hovhannes Katchaznouni",
-  "qid": "Q738598",
+  "khmer": "អាដុល ហ៊ីត្លែរ",
+  "latin": "Adolf Hitler",
+  "qid": "Q352",
   "bucket": "foreign",
   "source": "wikidata/kmwiki-humans",
-  "attestations": 48
- },
- {
-  "khmer": "យូរី អង់ត្រូពូវ",
-  "latin": "Yuri Andropov",
-  "qid": "Q44071",
-  "bucket": "foreign",
-  "source": "wikidata/kmwiki-humans",
-  "attestations": 47
- },
- {
-  "khmer": "រ៉ូបឺតកាប៉ា",
-  "latin": "Robert Capa",
-  "qid": "Q152524",
-  "bucket": "foreign",
-  "source": "wikidata/kmwiki-humans",
-  "attestations": 45
- },
- {
-  "khmer": "សាដាមហ៊ូសេន។",
-  "latin": "Saddam Hussein",
-  "qid": "Q1316",
-  "bucket": "foreign",
-  "source": "wikidata/kmwiki-humans",
-  "attestations": 44
+  "attestations": 47,
+  "altLatin": [
+   "Adolph Hitler",
+   "Adolf Hitlier",
+   "Adolpf Hitler",
+   "Adolph hitler",
+   "Adolf Hiler",
+   "Adolf Hitle",
+   "Herr Hitler",
+   "Adolph Hiter",
+   "Adolf Hilter",
+   "Adolf Hiedler",
+   "Aldof Hilter",
+   "Adolf Schicklegruber",
+   "The Fuehrer",
+   "The Fuhrer",
+   "Adlof hitler",
+   "Adoff Hitler",
+   "Adolf Schickelgruber",
+   "Hitler Adolf",
+   "Adolf Schicklgruber"
+  ]
  },
  {
   "khmer": "ណាយ៉ាន់ ចាន់ដា",
@@ -53,15 +82,31 @@
   "qid": "Q2879518",
   "bucket": "foreign",
   "source": "wikidata/kmwiki-humans",
-  "attestations": 36
+  "attestations": 42
  },
  {
-  "khmer": "មីខាអ៊ីល ហ្គ័របាឆូវ",
-  "latin": "Mikhail Gorbachev",
-  "qid": "Q30487",
+  "khmer": "អូបេដ វ៉ារហ្គាស",
+  "latin": "Obed Vargas",
+  "qid": "Q106778770",
   "bucket": "foreign",
   "source": "wikidata/kmwiki-humans",
-  "attestations": 34
+  "attestations": 42
+ },
+ {
+  "khmer": "ស៊ុន យ៉ាតសេន",
+  "latin": "Sun Yat-sen",
+  "qid": "Q8573",
+  "bucket": "foreign",
+  "source": "wikidata/kmwiki-humans",
+  "attestations": 40
+ },
+ {
+  "khmer": "ហ៊ូ ជីនតាវ",
+  "latin": "Hu Jintao",
+  "qid": "Q15029",
+  "bucket": "foreign",
+  "source": "wikidata/kmwiki-humans",
+  "attestations": 40
  },
  {
   "khmer": "អូសាម៉ា ប៊ីន ឡាឌែន",
@@ -69,114 +114,7 @@
   "qid": "Q1317",
   "bucket": "foreign",
   "source": "wikidata/kmwiki-humans",
-  "attestations": 34
- },
- {
-  "khmer": "អាឡាំង ដឺឡុង",
-  "latin": "Alain Delon",
-  "qid": "Q106529",
-  "bucket": "foreign",
-  "source": "wikidata/kmwiki-humans",
-  "attestations": 30,
-  "altLatin": [
-   "Alan Delon"
-  ]
- },
- {
-  "khmer": "ស៊ូហារតូ",
-  "latin": "Suharto",
-  "qid": "Q44819",
-  "bucket": "foreign",
-  "source": "wikidata/kmwiki-humans",
-  "attestations": 28
- },
- {
-  "khmer": "បេកគី",
-  "latin": "Becky",
-  "qid": "Q456604",
-  "bucket": "foreign",
-  "source": "wikidata/kmwiki-humans",
-  "attestations": 26
- },
- {
-  "khmer": "កៅណ្ឌិន្យ",
-  "latin": "Kaundinya",
-  "qid": "Q4217604",
-  "bucket": "unknown",
-  "source": "wikidata/kmwiki-humans",
-  "attestations": 24
- },
- {
-  "khmer": "គ្រីស្ធី ហ្គីបសាន",
-  "latin": "Christy Gibson",
-  "qid": "Q5113643",
-  "bucket": "foreign",
-  "source": "wikidata/kmwiki-humans",
-  "attestations": 24
- },
- {
-  "khmer": "ចូស នីកូលស៍",
-  "latin": "Josh Nichols",
-  "qid": "Q130668046",
-  "bucket": "foreign",
-  "source": "wikidata/kmwiki-humans",
-  "attestations": 24
- },
- {
-  "khmer": "ទាយស្រះ",
-  "latin": "Thai Sa",
-  "qid": "Q889133",
-  "bucket": "foreign",
-  "source": "wikidata/kmwiki-humans",
-  "attestations": 24
- },
- {
-  "khmer": "នារាយណ៍",
-  "latin": "Narai",
-  "qid": "Q718197",
-  "bucket": "foreign",
-  "source": "wikidata/kmwiki-humans",
-  "attestations": 24
- },
- {
-  "khmer": "នីកូ វីលៀមស៍",
-  "latin": "Nico Williams",
-  "qid": "Q104414736",
-  "bucket": "foreign",
-  "source": "wikidata/kmwiki-humans",
-  "attestations": 24
- },
- {
-  "khmer": "រ៉ាយ៉ាន បេឡាដ",
-  "latin": "Rayane Belaid",
-  "qid": "Q124911780",
-  "bucket": "foreign",
-  "source": "wikidata/kmwiki-humans",
-  "attestations": 24
- },
- {
-  "khmer": "រ៉ូប៊ីន លីណ័រម៉ាន់",
-  "latin": "Robin Le Normand",
-  "qid": "Q27469970",
-  "bucket": "foreign",
-  "source": "wikidata/kmwiki-humans",
-  "attestations": 24
- },
- {
-  "khmer": "សុពណ៌កល្យា",
-  "latin": "Suphankanlaya",
-  "qid": "Q15254003",
-  "bucket": "foreign",
-  "source": "wikidata/kmwiki-humans",
-  "attestations": 24
- },
- {
-  "khmer": "ស៊ើវីន សេដូហ្វ",
-  "latin": "Sherwin Seedorf",
-  "qid": "Q55993490",
-  "bucket": "foreign",
-  "source": "wikidata/kmwiki-humans",
-  "attestations": 24
+  "attestations": 40
  },
  {
   "khmer": "អាដុលហ្វ៍ ហ៊ីទ្លែរ",
@@ -184,7 +122,7 @@
   "qid": "Q352",
   "bucket": "foreign",
   "source": "wikipedia/km-en-titles",
-  "attestations": 24,
+  "attestations": 36,
   "altLatin": [
    "Adolph Hitler",
    "Adolf Hitlier",
@@ -205,32 +143,200 @@
   ]
  },
  {
-  "khmer": "អៃសា",
-  "latin": "Aisha",
-  "qid": "Q4730963",
+  "khmer": "អៃម៉ាន់ អាល់ហ្សាវ៉ាហ៊ីរី",
+  "latin": "Ayman al-Zawahiri",
+  "qid": "Q186316",
+  "bucket": "foreign",
+  "source": "wikipedia/km-en-titles",
+  "attestations": 35
+ },
+ {
+  "khmer": "ក្វាងទ្រុង",
+  "latin": "Quang Trung",
+  "qid": "Q379775",
   "bucket": "foreign",
   "source": "wikidata/kmwiki-humans",
-  "attestations": 24,
+  "attestations": 34
+ },
+ {
+  "khmer": "ដុនបូស្កូ",
+  "latin": "John Bosco",
+  "qid": "Q146183",
+  "bucket": "foreign",
+  "source": "wikidata/kmwiki-humans",
+  "attestations": 34
+ },
+ {
+  "khmer": "នូហាក់ ភូមសៈវ៉ាន់",
+  "latin": "Nouhak Phoumsavanh",
+  "qid": "Q380421",
+  "bucket": "foreign",
+  "source": "wikidata/kmwiki-humans",
+  "attestations": 34
+ },
+ {
+  "khmer": "អាលី ហាមេនៃ",
+  "latin": "Ali Khamenei",
+  "qid": "Q57336",
+  "bucket": "foreign",
+  "source": "wikidata/kmwiki-humans",
+  "attestations": 34,
   "altLatin": [
-   "Ayisha",
-   "Aysha",
-   "Aishah",
-   "A'ishah",
-   "A'isha",
-   "Ayeshah",
-   "'A'ishah",
-   "'Aisha",
-   "'A'isha",
-   "Ayesheh"
+   "Ali Khamene'i",
+   "Ali Khameneh'i",
+   "Ali Khamenehi"
   ]
  },
  {
-  "khmer": "ហេង សំរិន",
-  "latin": "Heng Samrin",
-  "qid": "Q379197",
+  "khmer": "អាឡិចសាន់ដឺ ឃេរិនស្គី",
+  "latin": "Alexander Kerensky",
+  "qid": "Q48211",
+  "bucket": "foreign",
+  "source": "wikidata/kmwiki-humans",
+  "attestations": 34,
+  "altLatin": [
+   "Aleksandr Kerensky",
+   "Alexander Karensky",
+   "Aleksander Kerensky",
+   "Alexander Kerenski",
+   "Kerensky accession"
+  ]
+ },
+ {
+  "khmer": "រាជេន្ទ្រវម៌្ម",
+  "latin": "Rajendravarman",
+  "qid": "Q130383",
   "bucket": "cambodian",
   "source": "wikidata/kmwiki-humans",
-  "attestations": 23
+  "attestations": 30
+ },
+ {
+  "khmer": "អេដូអារដូ អាម៉ាល់ឌី",
+  "latin": "Edoardo Amaldi",
+  "qid": "Q559815",
+  "bucket": "foreign",
+  "source": "wikidata/kmwiki-humans",
+  "attestations": 30
+ },
+ {
+  "khmer": "គ្រីស វូ",
+  "latin": "Kris Wu",
+  "qid": "Q6437313",
+  "bucket": "foreign",
+  "source": "wikidata/kmwiki-humans",
+  "attestations": 28
+ },
+ {
+  "khmer": "សុចារិណី វិវជរវង្ស",
+  "latin": "Sujarinee Vivacharawongse",
+  "qid": "Q16140394",
+  "bucket": "foreign",
+  "source": "wikidata/kmwiki-humans",
+  "attestations": 28
+ },
+ {
+  "khmer": "ហ្វ្រង់កូ រ៉ាសិតទី",
+  "latin": "Franco Rasetti",
+  "qid": "Q1249138",
+  "bucket": "foreign",
+  "source": "wikidata/kmwiki-humans",
+  "attestations": 28
+ },
+ {
+  "khmer": "អង់រីកូ ពែរស៊ីកូ",
+  "latin": "Enrico Persico",
+  "qid": "Q983216",
+  "bucket": "foreign",
+  "source": "wikidata/kmwiki-humans",
+  "attestations": 28
+ },
+ {
+  "khmer": "អាលី ណដុម",
+  "latin": "Aly Ndom",
+  "qid": "Q23882363",
+  "bucket": "foreign",
+  "source": "wikidata/kmwiki-humans",
+  "attestations": 28
+ },
+ {
+  "khmer": "ខៀវ សំផន",
+  "latin": "Khieu Samphan",
+  "qid": "Q379203",
+  "bucket": "cambodian",
+  "source": "wikidata/kmwiki-humans",
+  "attestations": 27
+ },
+ {
+  "khmer": "សឺន សាន",
+  "latin": "Son Sann",
+  "qid": "Q160027",
+  "bucket": "cambodian",
+  "source": "wikidata/kmwiki-humans",
+  "attestations": 27
+ },
+ {
+  "khmer": "ឥន្ទ្រទេវី",
+  "latin": "Indradevi",
+  "qid": "Q25680158",
+  "bucket": "foreign",
+  "source": "wikidata/kmwiki-humans",
+  "attestations": 27
+ },
+ {
+  "khmer": "កាំង ហ្កិច អ៊ាវ",
+  "latin": "Kang Kek Iew",
+  "qid": "Q336412",
+  "bucket": "cambodian",
+  "source": "wikidata/kmwiki-humans",
+  "attestations": 24
+ },
+ {
+  "khmer": "ឈិន ឈឿន",
+  "latin": "Chhin Chhoeun",
+  "qid": "Q5094894",
+  "bucket": "cambodian",
+  "source": "wikidata/kmwiki-humans",
+  "attestations": 24
+ },
+ {
+  "khmer": "ធរណេន្ទ្រវម៌្ម",
+  "latin": "Dharanindravarman",
+  "qid": "Q135690",
+  "bucket": "cambodian",
+  "source": "wikidata/kmwiki-humans",
+  "attestations": 24
+ },
+ {
+  "khmer": "នរោត្តម សិរីវុឌ្ឍ",
+  "latin": "Norodom Sirivudh",
+  "qid": "Q11792943",
+  "bucket": "cambodian",
+  "source": "wikidata/kmwiki-humans",
+  "attestations": 24
+ },
+ {
+  "khmer": "ប៉េង ប៊ុនឆាយ",
+  "latin": "Peng Bunchay",
+  "qid": "Q7162666",
+  "bucket": "cambodian",
+  "source": "wikidata/kmwiki-humans",
+  "attestations": 24
+ },
+ {
+  "khmer": "ម៉ៅ សារ៉េត",
+  "latin": "Mao Sareth",
+  "qid": "Q19752126",
+  "bucket": "cambodian",
+  "source": "wikidata/kmwiki-humans",
+  "attestations": 24
+ },
+ {
+  "khmer": "វណ្ណ មូលីវណ្ណ",
+  "latin": "Vann Molyvann",
+  "qid": "Q379178",
+  "bucket": "cambodian",
+  "source": "wikidata/kmwiki-humans",
+  "attestations": 24
  },
  {
   "khmer": "សុះ ស៊ូហាណា",
@@ -238,15 +344,15 @@
   "qid": "Q7563813",
   "bucket": "cambodian",
   "source": "wikidata/kmwiki-humans",
-  "attestations": 20
+  "attestations": 24
  },
  {
-  "khmer": "ស៊ីសុវត្ថិ មុនីពង្ស",
-  "latin": "Sisowath Monipong",
-  "qid": "Q3485329",
+  "khmer": "ហ៊ុយ កន្ធុល",
+  "latin": "Huy Kanthoul",
+  "qid": "Q9295276",
   "bucket": "cambodian",
   "source": "wikidata/kmwiki-humans",
-  "attestations": 20
+  "attestations": 24
  },
  {
   "khmer": "អាដុល អ៊ីចមែន",
@@ -254,7 +360,7 @@
   "qid": "Q28085",
   "bucket": "foreign",
   "source": "wikidata/all-humans",
-  "attestations": 20,
+  "attestations": 24,
   "altLatin": [
    "Adolph Eichmann",
    "Ricardo Clement",
@@ -266,29 +372,36 @@
   ]
  },
  {
-  "khmer": "ឥន្ទរាជា",
-  "latin": "Intharacha",
-  "qid": "Q13017803",
-  "bucket": "unknown",
+  "khmer": "អ៊ិន តាំ",
+  "latin": "In Tam",
+  "qid": "Q3028702",
+  "bucket": "cambodian",
   "source": "wikidata/kmwiki-humans",
-  "attestations": 20,
+  "attestations": 24,
   "altLatin": [
-   "Intraracha"
+   "Tam In"
   ]
  },
  {
-  "khmer": "សម រង្ស៊ី",
-  "latin": "Sam Rainsy",
-  "qid": "Q656817",
+  "khmer": "ចុល្លាង្ករណ៍",
+  "latin": "Chulalongkorn",
+  "qid": "Q158861",
+  "bucket": "foreign",
+  "source": "wikidata/kmwiki-humans",
+  "attestations": 23,
+  "altLatin": [
+   "Rama",
+   "Chulalongkar",
+   "Isariyabhorn"
+  ]
+ },
+ {
+  "khmer": "កែ ពក",
+  "latin": "Ke Pauk",
+  "qid": "Q919785",
   "bucket": "cambodian",
   "source": "wikidata/kmwiki-humans",
-  "attestations": 19,
-  "altLatin": [
-   "Samuel Rainsy",
-   "Sam Reangsee",
-   "Sam Reangsey",
-   "Rainsy Sam"
-  ]
+  "attestations": 21
  },
  {
   "khmer": "កែន ច័ន្ទសុភ័ក្រ្ត",
@@ -296,55 +409,70 @@
   "qid": "Q62393067",
   "bucket": "cambodian",
   "source": "wikidata/kmwiki-humans",
-  "attestations": 18
+  "attestations": 21
  },
  {
-  "khmer": "កែប ជុតិមា",
-  "latin": "Keb Chutema",
-  "qid": "Q3194577",
+  "khmer": "កែម ឡី",
+  "latin": "Kem Ley",
+  "qid": "Q25768223",
   "bucket": "cambodian",
   "source": "wikidata/kmwiki-humans",
-  "attestations": 18
+  "attestations": 21
  },
  {
-  "khmer": "គង្គ ប៊ុនឈឿន",
-  "latin": "Kong Bunchhoeun",
-  "qid": "Q23912812",
+  "khmer": "កែវ សុខសិលា",
+  "latin": "Keo Soksela",
+  "qid": "Q60734490",
   "bucket": "cambodian",
   "source": "wikidata/kmwiki-humans",
-  "attestations": 18
+  "attestations": 21
  },
  {
-  "khmer": "ង៉ូ ឌិញឌៀម",
-  "latin": "Ngo Dinh Diem",
-  "qid": "Q192502",
-  "bucket": "foreign",
-  "source": "wikipedia/km-en-titles",
-  "attestations": 18
- },
- {
-  "khmer": "ឈាន វ៉ម",
-  "latin": "Chhean Vam",
-  "qid": "Q9189638",
+  "khmer": "ឆុំ ភីសា",
+  "latin": "Chhom Pisa",
+  "qid": "Q110519169",
   "bucket": "cambodian",
   "source": "wikidata/kmwiki-humans",
-  "attestations": 18
+  "attestations": 21
  },
  {
-  "khmer": "ឈឹម សៀកលេង",
-  "latin": "Chhim Siek Leng",
-  "qid": "Q5094884",
+  "khmer": "ជួប ហ៊ែល",
+  "latin": "Chuop Hell",
+  "qid": "Q5116474",
   "bucket": "cambodian",
   "source": "wikidata/kmwiki-humans",
-  "attestations": 18
+  "attestations": 21,
+  "altLatin": [
+   "Hell Chuop"
+  ]
  },
  {
-  "khmer": "ទូច ស៊ុននិច",
-  "latin": "Touch Sunnix",
-  "qid": "Q19685391",
+  "khmer": "ឈុត វុទ្ធី",
+  "latin": "Chut Wutty",
+  "qid": "Q5118361",
   "bucket": "cambodian",
   "source": "wikidata/kmwiki-humans",
-  "attestations": 18
+  "attestations": 21,
+  "altLatin": [
+   "Chut wuthy",
+   "Chut Wuthy"
+  ]
+ },
+ {
+  "khmer": "ញាណ សុស៊ីដាន",
+  "latin": "Nhean Sosidan",
+  "qid": "Q108885112",
+  "bucket": "cambodian",
+  "source": "wikidata/kmwiki-humans",
+  "attestations": 21
+ },
+ {
+  "khmer": "ណារ៉ុង កក្កដា",
+  "latin": "Narong Kakada",
+  "qid": "Q110897703",
+  "bucket": "cambodian",
+  "source": "wikidata/kmwiki-humans",
+  "attestations": 21
  },
  {
   "khmer": "ទៀ វិញ",
@@ -352,31 +480,59 @@
   "qid": "Q117230905",
   "bucket": "cambodian",
   "source": "wikidata/kmwiki-humans",
-  "attestations": 18
+  "attestations": 21
  },
  {
-  "khmer": "នរោត្តម ម៉ារី រណឫទ្ធិ",
-  "latin": "Norodom Marie Ranariddh",
-  "qid": "Q17180859",
+  "khmer": "ទៀ សីហា",
+  "latin": "Tea Seiha",
+  "qid": "Q120956923",
   "bucket": "cambodian",
   "source": "wikidata/kmwiki-humans",
-  "attestations": 18
+  "attestations": 21
  },
  {
-  "khmer": "នរោត្តម វេជ្ជរ៉ា",
-  "latin": "Norodom Vichara",
-  "qid": "Q6581557",
+  "khmer": "នរោត្តម យុវនាថ",
+  "latin": "Norodom Yuvaneath",
+  "qid": "Q7053178",
   "bucket": "cambodian",
   "source": "wikidata/kmwiki-humans",
-  "attestations": 18
+  "attestations": 21
  },
  {
-  "khmer": "ន្ឫបតេន្ទ្រវម៌្ម",
-  "latin": "Nripatindravarman",
-  "qid": "Q19695057",
-  "bucket": "unknown",
+  "khmer": "នរោត្តម រតនាទេវី",
+  "latin": "Norodom Rattana Devi",
+  "qid": "Q7053176",
+  "bucket": "cambodian",
   "source": "wikidata/kmwiki-humans",
-  "attestations": 18
+  "attestations": 21,
+  "altLatin": [
+   "N. Ratanatevy",
+   "Norodom Rattanadevi"
+  ]
+ },
+ {
+  "khmer": "នួន កន",
+  "latin": "Nuon Kan",
+  "qid": "Q6683781",
+  "bucket": "cambodian",
+  "source": "wikidata/kmwiki-humans",
+  "attestations": 21
+ },
+ {
+  "khmer": "ប៊ុន កេននី",
+  "latin": "Bun Kenny",
+  "qid": "Q20085958",
+  "bucket": "cambodian",
+  "source": "wikidata/kmwiki-humans",
+  "attestations": 21
+ },
+ {
+  "khmer": "ប៊ុន រ៉ានី",
+  "latin": "Bun Rany",
+  "qid": "Q4997395",
+  "bucket": "cambodian",
+  "source": "wikidata/kmwiki-humans",
+  "attestations": 21
  },
  {
   "khmer": "ប្រាក់ សុខុន",
@@ -384,23 +540,15 @@
   "qid": "Q23771428",
   "bucket": "cambodian",
   "source": "wikidata/kmwiki-humans",
-  "attestations": 18
+  "attestations": 21
  },
  {
-  "khmer": "ផាច សុជាវីឡា",
-  "latin": "Phach Socheavila",
-  "qid": "Q122928566",
-  "bucket": "cambodian",
+  "khmer": "ព្រះសត្ថា",
+  "latin": "Preah Satha",
+  "qid": "Q3473928",
+  "bucket": "unknown",
   "source": "wikidata/kmwiki-humans",
-  "attestations": 18
- },
- {
-  "khmer": "ម៉ាក សែនសូនីតា",
-  "latin": "Mak Sensonita",
-  "qid": "Q38769334",
-  "bucket": "cambodian",
-  "source": "wikidata/kmwiki-humans",
-  "attestations": 18
+  "attestations": 21
  },
  {
   "khmer": "ម៉ាត់ នូរណ",
@@ -408,195 +556,177 @@
   "qid": "Q107178330",
   "bucket": "cambodian",
   "source": "wikidata/kmwiki-humans",
-  "attestations": 18,
+  "attestations": 21,
   "altLatin": [
    "Noron Mat"
   ]
  },
  {
-  "khmer": "រ៉េត សារីតា",
-  "latin": "Sarita Reth",
-  "qid": "Q64010399",
+  "khmer": "ម៉ៅ សំណាង",
+  "latin": "Mao Samnang",
+  "qid": "Q30591775",
   "bucket": "cambodian",
   "source": "wikidata/kmwiki-humans",
-  "attestations": 18,
+  "attestations": 21
+ },
+ {
+  "khmer": "យជ្ញវរហ",
+  "latin": "Yajnavaraha",
+  "qid": "Q4536315",
+  "bucket": "cambodian",
+  "source": "wikidata/kmwiki-humans",
+  "attestations": 21
+ },
+ {
+  "khmer": "យឹម សុវណ្ណ",
+  "latin": "Yim Sovann",
+  "qid": "Q16751397",
+  "bucket": "cambodian",
+  "source": "wikidata/kmwiki-humans",
+  "attestations": 21
+ },
+ {
+  "khmer": "លី គឹមលៀង",
+  "latin": "Ly Kim Leang",
+  "qid": "Q25680140",
+  "bucket": "cambodian",
+  "source": "wikidata/kmwiki-humans",
+  "attestations": 21,
   "altLatin": [
-   "Mind Cage"
+   "Ly Kimleang"
   ]
  },
  {
-  "khmer": "លី ធាមតេង",
-  "latin": "Ly Theam Teng",
-  "qid": "Q19753252",
+  "khmer": "វ៉េត រតនា",
+  "latin": "Veth Rattana",
+  "qid": "Q7923737",
   "bucket": "cambodian",
   "source": "wikidata/kmwiki-humans",
-  "attestations": 18
+  "attestations": 21
  },
  {
-  "khmer": "លីវ ទឹក",
-  "latin": "Liev Tuk",
-  "qid": "Q56274335",
+  "khmer": "សុគន្ធ និសា",
+  "latin": "Sokun Nisa",
+  "qid": "Q25679311",
   "bucket": "cambodian",
   "source": "wikidata/kmwiki-humans",
-  "attestations": 18,
+  "attestations": 21
+ },
+ {
+  "khmer": "សូកាំ ខូយ",
+  "latin": "Saukam Khoy",
+  "qid": "Q7427256",
+  "bucket": "cambodian",
+  "source": "wikidata/kmwiki-humans",
+  "attestations": 21
+ },
+ {
+  "khmer": "ហុក ឡងឌី",
+  "latin": "Hok Lundy",
+  "qid": "Q10986133",
+  "bucket": "cambodian",
+  "source": "wikidata/kmwiki-humans",
+  "attestations": 21,
   "altLatin": [
-   "Liv Tek"
+   "Hok Lundi",
+   "Hoc Lundy"
   ]
  },
  {
-  "khmer": "វណ្ណ វណ្ណៈ",
-  "latin": "Vann Vannak",
-  "qid": "Q7915083",
+  "khmer": "ហ៊ុន ម៉ាណែត",
+  "latin": "Hun Manet",
+  "qid": "Q13024351",
   "bucket": "cambodian",
   "source": "wikidata/kmwiki-humans",
-  "attestations": 18,
-  "altLatin": [
-   "Van Vanak"
-  ]
+  "attestations": 21
  },
  {
-  "khmer": "ស ខេង",
-  "latin": "Sar Kheng",
-  "qid": "Q16150274",
+  "khmer": "អង្គឥម",
+  "latin": "Ang Em",
+  "qid": "Q25418039",
   "bucket": "cambodian",
   "source": "wikidata/kmwiki-humans",
-  "attestations": 18
+  "attestations": 21
  },
  {
-  "khmer": "សាន គឹមស៊ាន",
-  "latin": "San Kim Sean",
-  "qid": "Q29452371",
+  "khmer": "អ៊ន ចាន់ប៉ូលីន",
+  "latin": "Orn Chanpolin",
+  "qid": "Q50208695",
   "bucket": "cambodian",
   "source": "wikidata/kmwiki-humans",
-  "attestations": 18
+  "attestations": 21
  },
  {
-  "khmer": "សាយ សំអាល់",
-  "latin": "Say Sam Al",
-  "qid": "Q22100150",
-  "bucket": "cambodian",
-  "source": "wikidata/kmwiki-humans",
-  "attestations": 18
- },
- {
-  "khmer": "សារ ទី",
-  "latin": "Ty Sa",
-  "qid": "Q110627682",
-  "bucket": "cambodian",
-  "source": "wikidata/kmwiki-humans",
-  "attestations": 18
- },
- {
-  "khmer": "សុទ្ធ ប៉ូលីន",
-  "latin": "Soth Polin",
-  "qid": "Q2218735",
-  "bucket": "cambodian",
-  "source": "wikidata/kmwiki-humans",
-  "attestations": 18
- },
- {
-  "khmer": "ស៊ិន សុវណ្ណមករា",
-  "latin": "Sin Sovannmakara",
-  "qid": "Q110627864",
-  "bucket": "cambodian",
-  "source": "wikidata/kmwiki-humans",
-  "attestations": 18
- },
- {
-  "khmer": "ស្រីសុរិយោពណ៌",
-  "latin": "Ponhea Yat",
-  "qid": "Q1385871",
-  "bucket": "cambodian",
-  "source": "wikidata/kmwiki-humans",
-  "attestations": 18
- },
- {
-  "khmer": "ហែម ចៀវ",
-  "latin": "Hem Chieu",
-  "qid": "Q5710862",
-  "bucket": "cambodian",
-  "source": "wikidata/kmwiki-humans",
-  "attestations": 18,
-  "altLatin": [
-   "Chieu Hem"
-  ]
- },
- {
-  "khmer": "ហ៊ុយ ផល្លីន",
-  "latin": "Hoy Phallin",
-  "qid": "Q10556034",
-  "bucket": "cambodian",
-  "source": "wikidata/kmwiki-humans",
-  "attestations": 18
- },
- {
-  "khmer": "ក្លូដ ម៉ូនេត",
-  "latin": "Claude Monet",
-  "qid": "Q296",
+  "khmer": "ខឺត កូបេន",
+  "latin": "Kurt Cobain",
+  "qid": "Q8446",
   "bucket": "foreign",
   "source": "wikidata/kmwiki-humans",
-  "attestations": 17,
-  "altLatin": [
-   "Louise Monet",
-   "Louise monet"
-  ]
+  "attestations": 20
  },
  {
-  "khmer": "ចច វ៉ឃ័រប៉ូស",
-  "latin": "George W. Bush",
-  "qid": "Q207",
+  "khmer": "ជូលីស៍ សេសារ",
+  "latin": "Julius Caesar",
+  "qid": "Q1048",
   "bucket": "foreign",
   "source": "wikidata/kmwiki-humans",
-  "attestations": 17
+  "attestations": 20
  },
  {
-  "khmer": "ដេវីដ បេកខាំ",
-  "latin": "David Beckham",
-  "qid": "Q10520",
-  "bucket": "foreign",
+  "khmer": "ថូម៉ាសអាគីណាស",
+  "latin": "Thomas Aquinas",
+  "qid": "Q9438",
+  "bucket": "unknown",
   "source": "wikidata/kmwiki-humans",
-  "attestations": 17
+  "attestations": 20
  },
  {
-  "khmer": "បារ៉ាក់ អូបាម៉ា",
-  "latin": "Barack Obama",
-  "qid": "Q76",
-  "bucket": "foreign",
+  "khmer": "នរោត្តម នរិន្រ្ទពង្ស",
+  "latin": "Norodom Narindrapong",
+  "qid": "Q6636185",
+  "bucket": "cambodian",
   "source": "wikidata/kmwiki-humans",
-  "attestations": 17,
-  "altLatin": [
-   "Barak Obama",
-   "Barach Obama",
-   "Borrack Obama",
-   "Barrak Obama",
-   "Barrack Obama",
-   "Senator Obama",
-   "Barry Obama"
-  ]
+  "attestations": 20
  },
  {
-  "khmer": "ប៊ែនហាដ រីម៉ាន",
-  "latin": "Bernhard Riemann",
-  "qid": "Q42299",
+  "khmer": "មហាត្មះគន្ធី",
+  "latin": "Mahatma Gandhi",
+  "qid": "Q1001",
   "bucket": "foreign",
   "source": "wikidata/kmwiki-humans",
-  "attestations": 17
+  "attestations": 20
  },
  {
-  "khmer": "រូហុលឡោះ ខូមៃនី",
-  "latin": "Ruhollah Khomeini",
-  "qid": "Q38823",
-  "bucket": "foreign",
+  "khmer": "មហាម៉េដ",
+  "latin": "Muhammad",
+  "qid": "Q9458",
+  "bucket": "unknown",
   "source": "wikidata/kmwiki-humans",
-  "attestations": 17
+  "attestations": 20
  },
  {
-  "khmer": "ល្វីស៍ ប៉ាស្ទ័រ",
-  "latin": "Louis Pasteur",
-  "qid": "Q529",
+  "khmer": "រ៉េមប្រ៉េន",
+  "latin": "Rembrandt",
+  "qid": "Q5598",
   "bucket": "foreign",
   "source": "wikidata/kmwiki-humans",
-  "attestations": 17
+  "attestations": 20
+ },
+ {
+  "khmer": "លេអូណាដូ ដា វីនស៊ី",
+  "latin": "Leonardo da Vinci",
+  "qid": "Q762",
+  "bucket": "foreign",
+  "source": "wikidata/kmwiki-humans",
+  "attestations": 20
+ },
+ {
+  "khmer": "លោកកៃយុសសេសារ",
+  "latin": "Caligula",
+  "qid": "Q1409",
+  "bucket": "foreign",
+  "source": "wikidata/kmwiki-humans",
+  "attestations": 20
  },
  {
   "khmer": "វឺជីល",
@@ -604,15 +734,23 @@
   "qid": "Q1398",
   "bucket": "foreign",
   "source": "wikidata/kmwiki-humans",
-  "attestations": 17
+  "attestations": 20
  },
  {
-  "khmer": "សុហ្វូគ្លេស",
-  "latin": "Sophocles",
-  "qid": "Q7235",
+  "khmer": "ហ្វឺឌីណាន់ដ៏ ម៉ាហ្សេឡង់",
+  "latin": "Ferdinand Magellan",
+  "qid": "Q1496",
   "bucket": "foreign",
   "source": "wikidata/kmwiki-humans",
-  "attestations": 17
+  "attestations": 20
+ },
+ {
+  "khmer": "ហ្វ្រេង្ស ផ្លយរ៉ាយស៍",
+  "latin": "Frank Lloyd Wright",
+  "qid": "Q5604",
+  "bucket": "foreign",
+  "source": "wikidata/kmwiki-humans",
+  "attestations": 20
  },
  {
   "khmer": "អាគីហ៊ីតុ",
@@ -620,184 +758,87 @@
   "qid": "Q37979",
   "bucket": "foreign",
   "source": "wikidata/kmwiki-humans",
-  "attestations": 17
+  "attestations": 20
  },
  {
-  "khmer": "អាប្រាហាម លីនខូន",
-  "latin": "Abraham Lincoln",
-  "qid": "Q91",
+  "khmer": "ព្រះចៅរាមា",
+  "latin": "Phutthayotfa Chulalok",
+  "qid": "Q310992",
   "bucket": "foreign",
   "source": "wikidata/kmwiki-humans",
-  "attestations": 17,
-  "altLatin": [
-   "Abe Lincoln",
-   "Honest Abe",
-   "Great Emancipator",
-   "Abe licnoln",
-   "Abraham Lincon",
-   "A. Lincoln",
-   "Abrahm Lincoln",
-   "Abe lincolin",
-   "Aberham lincoln",
-   "Abaham lincoln",
-   "Abe Lincon",
-   "Abaraham lincoln",
-   "Mr. Lincoln",
-   "Ab Lincoln",
-   "Mr Lincoln"
-  ]
+  "attestations": 18
  },
  {
-  "khmer": "អាល់ហ្វ្រិដ ណូបែល",
-  "latin": "Alfred Nobel",
-  "qid": "Q23810",
+  "khmer": "ហុង ជីនប៉ាវ",
+  "latin": "Sammo Hung",
+  "qid": "Q311219",
+  "bucket": "foreign",
+  "source": "wikidata/kmwiki-humans",
+  "attestations": 18
+ },
+ {
+  "khmer": "គេស៊ូកេ ហុងដា",
+  "latin": "Keisuke Honda",
+  "qid": "Q202054",
   "bucket": "foreign",
   "source": "wikidata/kmwiki-humans",
   "attestations": 17
  },
  {
-  "khmer": "អឹហ្កឹស្ត រ៉ូដិន",
-  "latin": "Auguste Rodin",
-  "qid": "Q30755",
+  "khmer": "គ្រីស វូដ",
+  "latin": "Chris Wood",
+  "qid": "Q74548",
   "bucket": "foreign",
   "source": "wikidata/kmwiki-humans",
   "attestations": 17
  },
  {
-  "khmer": "អូហ្គុសទុស",
-  "latin": "Augustus",
-  "qid": "Q1405",
+  "khmer": "ជីវ តាក្វាន់",
+  "latin": "Zhou Daguan",
+  "qid": "Q197958",
   "bucket": "foreign",
   "source": "wikidata/kmwiki-humans",
   "attestations": 17
  },
  {
-  "khmer": "អេដហ្គារ អាឡាន ផូ",
-  "latin": "Edgar Allan Poe",
-  "qid": "Q16867",
+  "khmer": "ប៉ូល ប៉ែល្លីយ៉ូត៍",
+  "latin": "Paul Pelliot",
+  "qid": "Q368821",
   "bucket": "foreign",
   "source": "wikidata/kmwiki-humans",
   "attestations": 17
  },
  {
-  "khmer": "ក្លូវីស",
-  "latin": "Clovis",
-  "qid": "Q82339",
+  "khmer": "បួសន បុប្ផាវណ្ណ",
+  "latin": "Bouasone Bouphavanh",
+  "qid": "Q354684",
   "bucket": "foreign",
   "source": "wikidata/kmwiki-humans",
-  "attestations": 15
+  "attestations": 17
  },
  {
-  "khmer": "ខាំតៃ ស៊ីផាន់ដន",
-  "latin": "Khamtai Siphandone",
-  "qid": "Q360138",
+  "khmer": "លី លីនជា",
+  "latin": "Jet Li",
+  "qid": "Q159577",
   "bucket": "foreign",
   "source": "wikidata/kmwiki-humans",
-  "attestations": 15
+  "attestations": 17
  },
  {
-  "khmer": "ចនវេស្លី",
-  "latin": "John Wesley",
-  "qid": "Q213393",
+  "khmer": "លូក វីលសុន",
+  "latin": "Luke Wilson",
+  "qid": "Q107769",
   "bucket": "foreign",
   "source": "wikidata/kmwiki-humans",
-  "attestations": 15
+  "attestations": 17
  },
  {
-  "khmer": "ដានីឡូ",
-  "latin": "Danilo",
-  "qid": "Q437329",
+  "khmer": "ល្វីស៍ ឌឺឡាប៉ូត៍",
+  "latin": "Louis Delaporte",
+  "qid": "Q349828",
   "bucket": "foreign",
   "source": "wikidata/kmwiki-humans",
-  "attestations": 15
- },
- {
-  "khmer": "នរោត្ដម រណឬទ្ធិ",
-  "latin": "Norodom Ranariddh",
-  "qid": "Q381817",
-  "bucket": "cambodian",
-  "source": "wikidata/kmwiki-humans",
-  "attestations": 15
- },
- {
-  "khmer": "នេវីន",
-  "latin": "Ne Win",
-  "qid": "Q315522",
-  "bucket": "foreign",
-  "source": "wikidata/kmwiki-humans",
-  "attestations": 15
- },
- {
-  "khmer": "បេនចាមីន ណេតាន់យ៉ាហ៊ូ",
-  "latin": "Benjamin Netanyahu",
-  "qid": "Q43723",
-  "bucket": "foreign",
-  "source": "wikidata/kmwiki-humans",
-  "attestations": 15,
-  "altLatin": [
-   "Binyamin Netanyahu",
-   "Benjamin Netaniahu",
-   "Bibi Netanyaho",
-   "Benjamin Netanyaho",
-   "Bibi Netanyahu",
-   "Binyamin Netenyahu",
-   "Benjamin Natanyahu",
-   "Ben Netanyahu",
-   "Benyamin Netanyahu",
-   "Benjamin Netaniyahu",
-   "Benjamin Netaniyagu",
-   "Binjamin Netanyahu",
-   "Ben Nitay",
-   "Benjamin Netenyahu"
-  ]
- },
- {
-  "khmer": "បេអាត រិចន័រ",
-  "latin": "Beat Richner",
-  "qid": "Q326456",
-  "bucket": "foreign",
-  "source": "wikidata/kmwiki-humans",
-  "attestations": 15
- },
- {
-  "khmer": "ប៉ាវ ចិន",
-  "latin": "Bao Zheng",
-  "qid": "Q337805",
-  "bucket": "foreign",
-  "source": "wikidata/kmwiki-humans",
-  "attestations": 15,
-  "altLatin": [
-   "Bao Gong",
-   "Pau Kung",
-   "Pao Kung",
-   "Justice Pao",
-   "Bao Qingtian",
-   "Bao ChingTian"
-  ]
- },
- {
-  "khmer": "ប៊ួខាវ បញ្ជាមេឃ",
-  "latin": "Buakaw Banchamek",
-  "qid": "Q366494",
-  "bucket": "foreign",
-  "source": "wikidata/kmwiki-humans",
-  "attestations": 15
- },
- {
-  "khmer": "ពុទ្ធលើសឡានភាល័យ",
-  "latin": "Phutthaloetla Naphalai",
-  "qid": "Q319675",
-  "bucket": "foreign",
-  "source": "wikidata/kmwiki-humans",
-  "attestations": 15
- },
- {
-  "khmer": "ល្វីស អេនរីកេ",
-  "latin": "Luis Enrique",
-  "qid": "Q222789",
-  "bucket": "foreign",
-  "source": "wikidata/kmwiki-humans",
-  "attestations": 15
+  "attestations": 17
  },
  {
   "khmer": "វិលហែម វុឌ",
@@ -805,50 +846,55 @@
   "qid": "Q75814",
   "bucket": "foreign",
   "source": "wikidata/kmwiki-humans",
-  "attestations": 15
+  "attestations": 17
  },
  {
-  "khmer": "ស៊ូកាណូ",
-  "latin": "Sukarno",
-  "qid": "Q76127",
+  "khmer": "វីរលក្ឝ្មី",
+  "latin": "Viralakshmi",
+  "qid": "Q25680167",
   "bucket": "foreign",
   "source": "wikidata/kmwiki-humans",
-  "attestations": 15
+  "attestations": 17
  },
  {
-  "khmer": "ស្ដេចអ័ហាប់",
-  "latin": "Ahab",
-  "qid": "Q235901",
+  "khmer": "ស៊ឹងរី",
+  "latin": "Seungri",
+  "qid": "Q428490",
   "bucket": "foreign",
   "source": "wikidata/kmwiki-humans",
-  "attestations": 15,
-  "altLatin": [
-   "Ahav",
-   "Ahabh",
-   "Achav",
-   "Ahaab",
-   "Ahaabh",
-   "Ahaav",
-   "Achaav",
-   "Ah'abh",
-   "Ah'av",
-   "Ach'av",
-   "Aha'abh",
-   "Aha'av",
-   "Acha'av",
-   "Achov",
-   "Ehav",
-   "Achaab",
-   "Ahabbu"
-  ]
+  "attestations": 17
  },
  {
-  "khmer": "ស្រីស្វាងវង្ស",
-  "latin": "Sisavang Vong",
-  "qid": "Q379794",
+  "khmer": "សឺន ហឿងមីន",
+  "latin": "Son Heung-min",
+  "qid": "Q439722",
   "bucket": "foreign",
   "source": "wikidata/kmwiki-humans",
-  "attestations": 15
+  "attestations": 17
+ },
+ {
+  "khmer": "សុខ បារ៉ាប៊ី",
+  "latin": "Sok Baraby",
+  "qid": "Q116236956",
+  "bucket": "cambodian",
+  "source": "wikidata/kmwiki-humans",
+  "attestations": 17
+ },
+ {
+  "khmer": "ស្តេមហ្វដ រ៉ាហ្វល",
+  "latin": "Thomas Stamford Raffles",
+  "qid": "Q130327",
+  "bucket": "foreign",
+  "source": "wikidata/kmwiki-humans",
+  "attestations": 17
+ },
+ {
+  "khmer": "ហាន់ ដុកស៊ូ",
+  "latin": "Han Duck-soo",
+  "qid": "Q356666",
+  "bucket": "foreign",
+  "source": "wikidata/kmwiki-humans",
+  "attestations": 17
  },
  {
   "khmer": "ហិនរី រ៉េម៉ុន",
@@ -856,7 +902,7 @@
   "qid": "Q164985",
   "bucket": "foreign",
   "source": "wikidata/kmwiki-humans",
-  "attestations": 15
+  "attestations": 17
  },
  {
   "khmer": "ហូវ៉ាត ហ្គាដណឺរ",
@@ -864,51 +910,78 @@
   "qid": "Q176515",
   "bucket": "foreign",
   "source": "wikidata/kmwiki-humans",
-  "attestations": 15
+  "attestations": 17
  },
  {
-  "khmer": "អាល់ហ្វ្រេដ វេសេនឺ",
-  "latin": "Alfred Wegener",
-  "qid": "Q76323",
+  "khmer": "ហ្វ្លរេន អាធូដ",
+  "latin": "Florence Arthaud",
+  "qid": "Q435208",
+  "bucket": "foreign",
+  "source": "wikidata/kmwiki-humans",
+  "attestations": 17
+ },
+ {
+  "khmer": "ថេរីសា តេង",
+  "latin": "Teresa Teng",
+  "qid": "Q463945",
   "bucket": "foreign",
   "source": "wikidata/kmwiki-humans",
   "attestations": 15,
   "altLatin": [
-   "Alfred wegner",
-   "Wegeners theory"
+   "Deng Li-jun",
+   "Deng Lijun",
+   "Teng Li-chun",
+   "Teresa Deng",
+   "Teresa Tang",
+   "Teng Li-chuen",
+   "Theresa Teng",
+   "Terisa Tang"
   ]
  },
  {
-  "khmer": "អេដ ស៊ីរ៉េន",
-  "latin": "Ed Sheeran",
-  "qid": "Q47447",
+  "khmer": "ថោវសុរនារី",
+  "latin": "Thao Suranari",
+  "qid": "Q467637",
   "bucket": "foreign",
   "source": "wikidata/kmwiki-humans",
   "attestations": 15
  },
  {
-  "khmer": "កុលប្រភាវតី",
-  "latin": "Kulaprabhavati",
-  "qid": "Q19684432",
+  "khmer": "ប្រីដី ព្នមយង្ស៍",
+  "latin": "Pridi Banomyong",
+  "qid": "Q714934",
   "bucket": "foreign",
   "source": "wikidata/kmwiki-humans",
-  "attestations": 14
+  "attestations": 15
  },
  {
-  "khmer": "កាល",
-  "latin": "Plautus",
-  "qid": "Q47160",
+  "khmer": "មន កែវ",
+  "latin": "Mom Kaeo",
+  "qid": "Q516984",
   "bucket": "foreign",
   "source": "wikidata/kmwiki-humans",
-  "attestations": 13
+  "attestations": 15
  },
  {
-  "khmer": "សេនីយ៍ ប្រាមោជ",
-  "latin": "Seni Pramoj",
-  "qid": "Q714042",
+  "khmer": "ម៉ារី ដូមីនិក ម៉ាសារីលូ",
+  "latin": "Maria Mazzarello",
+  "qid": "Q466565",
   "bucket": "foreign",
   "source": "wikidata/kmwiki-humans",
-  "attestations": 13
+  "attestations": 15
+ },
+ {
+  "khmer": "លី ចុងជែ",
+  "latin": "Lee Jung-jae",
+  "qid": "Q491318",
+  "bucket": "foreign",
+  "source": "wikidata/kmwiki-humans",
+  "attestations": 15,
+  "altLatin": [
+   "Jung-jae Lee",
+   "Jeong-jae Lee",
+   "Lee jungjae"
+  ]
  },
  {
   "khmer": "សែន សុរិន្ទ្រា",
@@ -916,15 +989,7 @@
   "qid": "Q634733",
   "bucket": "foreign",
   "source": "wikidata/kmwiki-humans",
-  "attestations": 13
- },
- {
-  "khmer": "ស៊ីប៊មីន",
-  "latin": "Thibaw Min",
-  "qid": "Q470986",
-  "bucket": "foreign",
-  "source": "wikidata/kmwiki-humans",
-  "attestations": 13
+  "attestations": 15
  },
  {
   "khmer": "ហាស៊ីម អ៊ីបន អាប់ ម៉ាណាហ្វ",
@@ -932,56 +997,41 @@
   "qid": "Q553241",
   "bucket": "unknown",
   "source": "wikidata/kmwiki-humans",
-  "attestations": 13
+  "attestations": 15
  },
  {
-  "khmer": "ហែងរីហ ហឺត",
-  "latin": "Heinrich Hertz",
-  "qid": "Q41257",
+  "khmer": "អនុវង្ស",
+  "latin": "Anouvong",
+  "qid": "Q560843",
   "bucket": "foreign",
   "source": "wikidata/kmwiki-humans",
-  "attestations": 13,
+  "attestations": 15,
   "altLatin": [
-   "H. Hertz",
-   "Hertzian antenna",
-   "Hertz oscillator"
+   "Anuwong",
+   "Setthathirath",
+   "Anuvong"
   ]
  },
  {
-  "khmer": "ហ្លួង វិចិត្រវាថការ",
-  "latin": "Luang Wichitwathakan",
-  "qid": "Q515565",
-  "bucket": "foreign",
+  "khmer": "អាំរ៉ាម",
+  "latin": "Amram",
+  "qid": "Q477527",
+  "bucket": "unknown",
   "source": "wikidata/kmwiki-humans",
-  "attestations": 13
- },
- {
-  "khmer": "អម្ពបាលី",
-  "latin": "Amrapali",
-  "qid": "Q688689",
-  "bucket": "foreign",
-  "source": "wikidata/kmwiki-humans",
-  "attestations": 13,
+  "attestations": 15,
   "altLatin": [
-   "Aamrapali",
-   "Ambapali"
+   "'Amram",
+   "Amrom",
+   "Imran"
   ]
  },
  {
-  "khmer": "អានុរុតថៈ",
-  "latin": "Anurutha",
-  "qid": "Q612684",
+  "khmer": "អូលីវីយ៉េ ជ្មីតហស្លេ",
+  "latin": "Olivier Schmitthaeusler",
+  "qid": "Q457372",
   "bucket": "foreign",
   "source": "wikidata/kmwiki-humans",
-  "attestations": 13
- },
- {
-  "khmer": "អាន័ន្ទ បន្យារជុន",
-  "latin": "Anand Panyarachun",
-  "qid": "Q485702",
-  "bucket": "foreign",
-  "source": "wikidata/kmwiki-humans",
-  "attestations": 13
+  "attestations": 15
  },
  {
   "khmer": "កាព្រីយ៉ែល បូរិច",
@@ -989,218 +1039,192 @@
   "qid": "Q16297876",
   "bucket": "foreign",
   "source": "wikidata/kmwiki-humans",
-  "attestations": 12
+  "attestations": 14
  },
  {
-  "khmer": "កូឌី ហ្គាក់ប៉ូ",
-  "latin": "Cody Gakpo",
-  "qid": "Q28801927",
+  "khmer": "កាលវីន រ៉ាមស៊ី",
+  "latin": "Calvin Ramsey",
+  "qid": "Q94696146",
   "bucket": "foreign",
   "source": "wikidata/kmwiki-humans",
-  "attestations": 12
+  "attestations": 14
  },
  {
-  "khmer": "កែវ ច័ន្ទបូរណ៍",
-  "latin": "Keo Chanbo",
-  "qid": "Q19684392",
-  "bucket": "cambodian",
-  "source": "wikidata/kmwiki-humans",
-  "attestations": 12
- },
- {
-  "khmer": "ក្លូឌីអូ អេឆេវើរី",
-  "latin": "Claudio Echeverri",
-  "qid": "Q116463164",
+  "khmer": "កាឡូស បាឡេបា",
+  "latin": "Carlos Baleba",
+  "qid": "Q113472432",
   "bucket": "foreign",
   "source": "wikidata/kmwiki-humans",
-  "attestations": 12
+  "attestations": 14
  },
  {
-  "khmer": "គង់ ឡេ",
-  "latin": "Kong Le",
-  "qid": "Q3917260",
+  "khmer": "កូស្តាស ធីមីកាស",
+  "latin": "Kostas Tsimikas",
+  "qid": "Q22005877",
   "bucket": "foreign",
   "source": "wikidata/kmwiki-humans",
-  "attestations": 12
+  "attestations": 14
  },
  {
-  "khmer": "គីម ទិត្យសុវឌ្ឍនៈ",
-  "latin": "Kim Titsovathanak",
-  "qid": "Q118252681",
+  "khmer": "កៅណ្ឌិន្យជ័យវរ្ម័ន",
+  "latin": "Jayavarman Kaundinya",
+  "qid": "Q4160003",
+  "bucket": "foreign",
+  "source": "wikidata/kmwiki-humans",
+  "attestations": 14
+ },
+ {
+  "khmer": "ខាលឡុម ធីមមីនស៍",
+  "latin": "Callum Timmins",
+  "qid": "Q47007074",
+  "bucket": "foreign",
+  "source": "wikidata/kmwiki-humans",
+  "attestations": 14
+ },
+ {
+  "khmer": "ខុជ្ជុត្តរា",
+  "latin": "Khujjuttara",
+  "qid": "Q3510814",
   "bucket": "unknown",
   "source": "wikidata/kmwiki-humans",
-  "attestations": 12
- },
- {
-  "khmer": "គីម មីនជេ",
-  "latin": "Kim Min-jae",
-  "qid": "Q28699707",
-  "bucket": "foreign",
-  "source": "wikidata/kmwiki-humans",
-  "attestations": 12
- },
- {
-  "khmer": "គីម យ៉ូចុង",
-  "latin": "Kim Yo-jong",
-  "qid": "Q4330912",
-  "bucket": "foreign",
-  "source": "wikidata/kmwiki-humans",
-  "attestations": 12
- },
- {
-  "khmer": "គឹកឫទ្ធិ៍ ប្រាមោជ",
-  "latin": "Kukrit Pramoj",
-  "qid": "Q959588",
-  "bucket": "foreign",
-  "source": "wikidata/kmwiki-humans",
-  "attestations": 12
- },
- {
-  "khmer": "គ្រីស្តូស ហ្សូលីស",
-  "latin": "Christos Tzolis",
-  "qid": "Q96182871",
-  "bucket": "foreign",
-  "source": "wikidata/kmwiki-humans",
-  "attestations": 12
- },
- {
-  "khmer": "គ្រីស្ទៀន រ៉ុហ្គេ",
-  "latin": "Cristian Roque",
-  "qid": "Q137774336",
-  "bucket": "unknown",
-  "source": "wikidata/kmwiki-humans",
-  "attestations": 12
- },
- {
-  "khmer": "ងួណាំថុម",
-  "latin": "Nguanamthom",
-  "qid": "Q3510561",
-  "bucket": "foreign",
-  "source": "wikidata/kmwiki-humans",
-  "attestations": 12
- },
- {
-  "khmer": "ចន ស្តូន",
-  "latin": "John Stones",
-  "qid": "Q2025900",
-  "bucket": "foreign",
-  "source": "wikidata/kmwiki-humans",
-  "attestations": 12
- },
- {
-  "khmer": "ចន្ទរាជា",
-  "latin": "Chan Reachea",
-  "qid": "Q1058198",
-  "bucket": "unknown",
-  "source": "wikidata/kmwiki-humans",
-  "attestations": 12
- },
- {
-  "khmer": "ចុង ហូយ៉ុន",
-  "latin": "Jung Ho-yeon",
-  "qid": "Q28699137",
-  "bucket": "foreign",
-  "source": "wikidata/kmwiki-humans",
-  "attestations": 12
- },
- {
-  "khmer": "ចូហ្វ្រេ តូរ៉ិនត៍",
-  "latin": "Jofre Torrents",
-  "qid": "Q133876886",
-  "bucket": "foreign",
-  "source": "wikidata/kmwiki-humans",
-  "attestations": 12
- },
- {
-  "khmer": "ចៅហ្វាទឡ្ហៈមូ",
-  "latin": "Talaha",
-  "qid": "Q61775758",
-  "bucket": "cambodian",
-  "source": "wikidata/kmwiki-humans",
-  "attestations": 12
- },
- {
-  "khmer": "ច័ររ៉េល ហាតូ",
-  "latin": "Jorrel Hato",
-  "qid": "Q115059438",
-  "bucket": "foreign",
-  "source": "wikidata/kmwiki-humans",
-  "attestations": 12
- },
- {
-  "khmer": "ឆាត់ជាតិ សិទ្ធិផាន់",
-  "latin": "Chadchart Sittipunt",
-  "qid": "Q16307757",
-  "bucket": "foreign",
-  "source": "wikidata/kmwiki-humans",
-  "attestations": 12,
+  "attestations": 14,
   "altLatin": [
-   "Chatchart Sittipunt"
+   "Kujjuttara"
   ]
  },
  {
-  "khmer": "ជីហ្យូ",
-  "latin": "Park Ji-hyo",
-  "qid": "Q22774055",
+  "khmer": "ខេមម៉ានី ពលសេនា",
+  "latin": "Khemmani Pholsena",
+  "qid": "Q106485453",
   "bucket": "foreign",
   "source": "wikidata/kmwiki-humans",
-  "attestations": 12
+  "attestations": 14,
+  "altLatin": [
+   "Khemmany Pholsena"
+  ]
  },
  {
-  "khmer": "ជូម៉ា បា",
-  "latin": "Abdulay Juma Bah",
-  "qid": "Q130457678",
+  "khmer": "គីរ៉ាន ម៉ូរីសុន",
+  "latin": "Kieran Morrison",
+  "qid": "Q118727397",
   "bucket": "foreign",
   "source": "wikidata/kmwiki-humans",
-  "attestations": 12
+  "attestations": 14
  },
  {
-  "khmer": "ជេក ផ្លេតឆើរ",
-  "latin": "Jack Fletcher",
-  "qid": "Q129631946",
-  "bucket": "foreign",
+  "khmer": "ឃុនផាមឿង",
+  "latin": "Pha Mueang",
+  "qid": "Q6583187",
+  "bucket": "unknown",
   "source": "wikidata/kmwiki-humans",
-  "attestations": 12
+  "attestations": 14
  },
  {
-  "khmer": "ជេដ្ឋាធិរាជ",
-  "latin": "Setthathirath",
-  "qid": "Q732557",
+  "khmer": "ចក្រពង្សភូវនាថ",
+  "latin": "Chakrabongse Bhuvanadh",
+  "qid": "Q2035565",
   "bucket": "foreign",
   "source": "wikidata/kmwiki-humans",
-  "attestations": 12
+  "attestations": 14
  },
  {
-  "khmer": "ជេរេមី ម៉ុងហ្គា",
-  "latin": "Jeremy Monga",
-  "qid": "Q133832511",
+  "khmer": "ចំឡង ស្រីមឿង",
+  "latin": "Chamlong Srimuang",
+  "qid": "Q1060894",
   "bucket": "foreign",
   "source": "wikidata/kmwiki-humans",
-  "attestations": 12
+  "attestations": 14,
+  "altLatin": [
+   "Lu Jinhe"
+  ]
  },
  {
-  "khmer": "ដានី សេបាឡូស",
-  "latin": "Dani Ceballos",
-  "qid": "Q16972254",
+  "khmer": "ចាវី សឺរ៉ាណូ",
+  "latin": "Javi Serrano",
+  "qid": "Q109380452",
   "bucket": "foreign",
   "source": "wikidata/kmwiki-humans",
-  "attestations": 12
+  "attestations": 14
  },
  {
-  "khmer": "ដារ៉្យា ឌូគីណា",
-  "latin": "Daria Dugina",
-  "qid": "Q113568088",
+  "khmer": "ចូស វីលសុនអេសប្រ៊ែន",
+  "latin": "Josh Wilson-Esbrand",
+  "qid": "Q105477902",
   "bucket": "foreign",
   "source": "wikidata/kmwiki-humans",
-  "attestations": 12
+  "attestations": 14
  },
  {
-  "khmer": "ដាវ លីឌុច",
-  "latin": "Dave Leduc",
-  "qid": "Q28092356",
+  "khmer": "ចូសសួ ហ្សឺកហ្ស៊ី",
+  "latin": "Joshua Zirkzee",
+  "qid": "Q65675442",
   "bucket": "foreign",
   "source": "wikidata/kmwiki-humans",
-  "attestations": 12
+  "attestations": 14
+ },
+ {
+  "khmer": "ចូឡាលង្ករណ៍",
+  "latin": "Chulalongkorn",
+  "qid": "Q158861",
+  "bucket": "foreign",
+  "source": "wikipedia/km-en-titles",
+  "attestations": 14,
+  "altLatin": [
+   "Rama",
+   "Chulalongkar",
+   "Isariyabhorn"
+  ]
+ },
+ {
+  "khmer": "ចេននី រីវឺរ៉ា",
+  "latin": "Jenni Rivera",
+  "qid": "Q714185",
+  "bucket": "foreign",
+  "source": "wikipedia/km-en-titles",
+  "attestations": 14
+ },
+ {
+  "khmer": "ឆាលេស ហ្គេសស្គី",
+  "latin": "Charles Geschke",
+  "qid": "Q2959209",
+  "bucket": "foreign",
+  "source": "wikidata/kmwiki-humans",
+  "attestations": 14,
+  "altLatin": [
+   "Chuck Geschke"
+  ]
+ },
+ {
+  "khmer": "ជីអូវ៉ាននី លេអូនី",
+  "latin": "Giovanni Leoni",
+  "qid": "Q126361834",
+  "bucket": "foreign",
+  "source": "wikidata/kmwiki-humans",
+  "attestations": 14
+ },
+ {
+  "khmer": "ជេមស៍ ម៉ាកខនណែល",
+  "latin": "James McConnell",
+  "qid": "Q118767830",
+  "bucket": "foreign",
+  "source": "wikidata/kmwiki-humans",
+  "attestations": 14
+ },
+ {
+  "khmer": "ជេរេមី ហ្វ្រីមពុង",
+  "latin": "Jeremie Frimpong",
+  "qid": "Q67198835",
+  "bucket": "foreign",
+  "source": "wikidata/kmwiki-humans",
+  "attestations": 14
+ },
+ {
+  "khmer": "ជេសស៊ី ឌើររី",
+  "latin": "Jesse Derry",
+  "qid": "Q137370106",
+  "bucket": "foreign",
+  "source": "wikidata/kmwiki-humans",
+  "attestations": 14
  },
  {
   "khmer": "ដាស្តាន សាតប៉ាយ៉េវ",
@@ -1208,7 +1232,74 @@
   "qid": "Q132861503",
   "bucket": "foreign",
   "source": "wikidata/kmwiki-humans",
-  "attestations": 12
+  "attestations": 14
+ },
+ {
+  "khmer": "ដូណូវ៉ាន់ អ៊ីវ៉ូឡូ",
+  "latin": "Donovan Ewolo",
+  "qid": "Q51335135",
+  "bucket": "foreign",
+  "source": "wikidata/kmwiki-humans",
+  "attestations": 14
+ },
+ {
+  "khmer": "ដេវីដ បូលី",
+  "latin": "David Boly",
+  "qid": "Q134608954",
+  "bucket": "foreign",
+  "source": "wikidata/kmwiki-humans",
+  "attestations": 14
+ },
+ {
+  "khmer": "ឌីមីទ្រី លូសៀ",
+  "latin": "Dimitri Lucea",
+  "qid": "Q139790713",
+  "bucket": "unknown",
+  "source": "wikidata/kmwiki-humans",
+  "attestations": 14
+ },
+ {
+  "khmer": "ឌូគី",
+  "latin": "Duki",
+  "qid": "Q62024032",
+  "bucket": "foreign",
+  "source": "wikidata/kmwiki-humans",
+  "attestations": 14,
+  "altLatin": [
+   "Dukki"
+  ]
+ },
+ {
+  "khmer": "ណាតពង្ស រឿងបញ្ញាវុត",
+  "latin": "Natthaphong Ruengpanyawut",
+  "qid": "Q126923759",
+  "bucket": "foreign",
+  "source": "wikidata/kmwiki-humans",
+  "attestations": 14
+ },
+ {
+  "khmer": "ណានថារាជ",
+  "latin": "Nan Tharat",
+  "qid": "Q889036",
+  "bucket": "foreign",
+  "source": "wikidata/kmwiki-humans",
+  "attestations": 14
+ },
+ {
+  "khmer": "ណាហ៊ូអែល ម៉ូលីណា",
+  "latin": "Nahuel Molina",
+  "qid": "Q22082590",
+  "bucket": "foreign",
+  "source": "wikidata/kmwiki-humans",
+  "attestations": 14
+ },
+ {
+  "khmer": "ណូហាំ កាម៉ារ៉ា",
+  "latin": "Noham Kamara",
+  "qid": "Q134311556",
+  "bucket": "foreign",
+  "source": "wikidata/kmwiki-humans",
+  "attestations": 14
  },
  {
   "khmer": "តាកាស៊ី អូដាវ៉ារ៉ា",
@@ -1216,136 +1307,90 @@
   "qid": "Q60675718",
   "bucket": "foreign",
   "source": "wikidata/kmwiki-humans",
-  "attestations": 12
+  "attestations": 14
  },
  {
-  "khmer": "ថៃល័រ ផ្លេតឆើរ",
-  "latin": "Tyler Fletcher",
-  "qid": "Q137384640",
-  "bucket": "foreign",
-  "source": "wikidata/kmwiki-humans",
-  "attestations": 12
- },
- {
-  "khmer": "ទីរ៉េល ម៉ាឡាស៊ី",
-  "latin": "Tyrell Malacia",
-  "qid": "Q44845374",
-  "bucket": "foreign",
-  "source": "wikidata/kmwiki-humans",
-  "attestations": 12
- },
- {
-  "khmer": "នរិន្ទសួន",
-  "latin": "Naresuan",
-  "qid": "Q515704",
-  "bucket": "foreign",
+  "khmer": "ធរណីន្ទ្រវរ្ម័ន",
+  "latin": "Dharanindravarman",
+  "qid": "Q135690",
+  "bucket": "cambodian",
   "source": "wikipedia/km-en-titles",
-  "attestations": 12
+  "attestations": 14
  },
  {
-  "khmer": "និតិភូមិ នវរ័ត្ន",
-  "latin": "Nitiphumthanat Ming-rujiralai",
-  "qid": "Q3363896",
+  "khmer": "នន្ថសេន",
+  "latin": "Nanthesan",
+  "qid": "Q889302",
   "bucket": "foreign",
   "source": "wikidata/kmwiki-humans",
-  "attestations": 12
+  "attestations": 14
  },
  {
-  "khmer": "បុងបុង ម៉ាកូស",
-  "latin": "Bongbong Marcos",
-  "qid": "Q983324",
+  "khmer": "បរមនិពាន្វបទ",
+  "latin": "Borom Nipeanbot",
+  "qid": "Q3342104",
+  "bucket": "unknown",
+  "source": "wikidata/kmwiki-humans",
+  "attestations": 14
+ },
+ {
+  "khmer": "បុឌផឹយ៉ា",
+  "latin": "Bodawpaya",
+  "qid": "Q796571",
   "bucket": "foreign",
   "source": "wikidata/kmwiki-humans",
-  "attestations": 12,
+  "attestations": 14,
   "altLatin": [
-   "Bong-Bong Marcos",
-   "Ferdinand Jr.",
-   "Marcos Jr.",
-   "Marcos jr"
+   "Bodawphaya"
   ]
  },
  {
-  "khmer": "បុញ្ញសិន ពាតក្លាង",
-  "latin": "Boonsin Padklang",
-  "qid": "Q134978290",
-  "bucket": "foreign",
+  "khmer": "បុស្ករាក្ស",
+  "latin": "Pushkaraksha",
+  "qid": "Q3411011",
+  "bucket": "cambodian",
   "source": "wikidata/kmwiki-humans",
-  "attestations": 12
+  "attestations": 14
  },
  {
-  "khmer": "បុស្បា កិតិយាករ",
-  "latin": "Busba Kitiyakara",
-  "qid": "Q6641771",
+  "khmer": "ប្រយុទ្ធ ច័ន្ទ្រ៍ឱជា",
+  "latin": "Prayut Chanocha",
+  "qid": "Q2108126",
   "bucket": "foreign",
   "source": "wikidata/kmwiki-humans",
-  "attestations": 12
+  "attestations": 14
  },
  {
-  "khmer": "ប៉ាផ្លូ បារីយ៉ូស",
-  "latin": "Pablo Barrios",
-  "qid": "Q114924158",
+  "khmer": "ប្រ៊ូណា អាប់ឌុលឡា",
+  "latin": "Bruna Abdullah",
+  "qid": "Q4120812",
   "bucket": "foreign",
   "source": "wikidata/kmwiki-humans",
-  "attestations": 12
+  "attestations": 14
  },
  {
-  "khmer": "ប៊ូកាយ៉ូ សាកា",
-  "latin": "Bukayo Saka",
-  "qid": "Q59306386",
-  "bucket": "foreign",
+  "khmer": "ពញាល៏",
+  "latin": "Binnya Law",
+  "qid": "Q16199622",
+  "bucket": "unknown",
   "source": "wikidata/kmwiki-humans",
-  "attestations": 12
+  "attestations": 14
  },
  {
-  "khmer": "ប្រជាធិបក",
-  "latin": "Prajadhipok",
-  "qid": "Q313124",
+  "khmer": "ពិធា លិមចម្រើនរ័ត្ន",
+  "latin": "Pita Limjaroenrat",
+  "qid": "Q85998709",
   "bucket": "foreign",
   "source": "wikidata/kmwiki-humans",
-  "attestations": 12
+  "attestations": 14
  },
  {
-  "khmer": "ពែទងធារ ជិនវ័ត្រ",
-  "latin": "Paetongtarn Shinawatra",
-  "qid": "Q13026319",
+  "khmer": "ព្រះយាទ្រងសុរតេជ",
+  "latin": "Phraya Songsuradet",
+  "qid": "Q3562525",
   "bucket": "foreign",
   "source": "wikidata/kmwiki-humans",
-  "attestations": 12,
-  "altLatin": [
-   "Paethongtarn Shinawatra"
-  ]
- },
- {
-  "khmer": "ព្រះយាលើថៃ",
-  "latin": "Loe Thai",
-  "qid": "Q1867787",
-  "bucket": "foreign",
-  "source": "wikidata/kmwiki-humans",
-  "attestations": 12
- },
- {
-  "khmer": "ភូមិធម្ម វេជ្ជយជ័យ",
-  "latin": "Phumtham Wechayachai",
-  "qid": "Q13018661",
-  "bucket": "foreign",
-  "source": "wikidata/kmwiki-humans",
-  "attestations": 12
- },
- {
-  "khmer": "ភូមី វង្សវិចិត្រ",
-  "latin": "Phoumi Vongvichit",
-  "qid": "Q878933",
-  "bucket": "foreign",
-  "source": "wikidata/kmwiki-humans",
-  "attestations": 12
- },
- {
-  "khmer": "មន្តស៊ិទ្ទ ខាំស្រុយ",
-  "latin": "Monsit Khamsoai",
-  "qid": "Q16141486",
-  "bucket": "foreign",
-  "source": "wikidata/kmwiki-humans",
-  "attestations": 12
+  "attestations": 14
  },
  {
   "khmer": "មហីបតិវម៌្ម",
@@ -1353,23 +1398,42 @@
   "qid": "Q3277739",
   "bucket": "unknown",
   "source": "wikidata/kmwiki-humans",
-  "attestations": 12
+  "attestations": 14
  },
  {
-  "khmer": "មីហ្គែល គូបូ",
-  "latin": "Miguel Cubo",
-  "qid": "Q139666569",
+  "khmer": "ម៉ាក ហ្គីយូ",
+  "latin": "Marc Guiu Paz",
+  "qid": "Q118472572",
   "bucket": "foreign",
   "source": "wikidata/kmwiki-humans",
-  "attestations": 12
+  "attestations": 14
  },
  {
-  "khmer": "មឹង អ៊ី",
-  "latin": "Meng Yi",
-  "qid": "Q768230",
+  "khmer": "ម៉ាកូស ប៊ែតទីណេលី",
+  "latin": "Marcus Bettinelli",
+  "qid": "Q16200385",
   "bucket": "foreign",
   "source": "wikidata/kmwiki-humans",
-  "attestations": 12
+  "attestations": 14
+ },
+ {
+  "khmer": "ម៉ាម៉ាឌួ សារ",
+  "latin": "Mamadou Sarr",
+  "qid": "Q108187024",
+  "bucket": "foreign",
+  "source": "wikidata/kmwiki-humans",
+  "attestations": 14,
+  "altLatin": [
+   "Mamodou Sarr"
+  ]
+ },
+ {
+  "khmer": "ម៉ាហ្វុម៉ាហ្វុ",
+  "latin": "Mafumafu",
+  "qid": "Q28690194",
+  "bucket": "foreign",
+  "source": "wikidata/kmwiki-humans",
+  "attestations": 14
  },
  {
   "khmer": "ម៉ូរតាឡា នឌាយេ",
@@ -1377,71 +1441,42 @@
   "qid": "Q137805708",
   "bucket": "foreign",
   "source": "wikidata/kmwiki-humans",
-  "attestations": 12
+  "attestations": 14
  },
  {
-  "khmer": "ម៉ៃឃើល វីកឃឺវី",
-  "latin": "Michael Theodore Vickery",
-  "qid": "Q23681195",
-  "bucket": "foreign",
-  "source": "wikidata/kmwiki-humans",
-  "attestations": 12
- },
- {
-  "khmer": "យី ឆេងអ៊ួ",
-  "latin": "Yi Chheng Our",
-  "qid": "Q19752183",
+  "khmer": "ម៉ែន ណាត",
+  "latin": "Men Nath",
+  "qid": "Q124485785",
   "bucket": "cambodian",
   "source": "wikidata/kmwiki-humans",
-  "attestations": 12
+  "attestations": 14
  },
  {
-  "khmer": "យីងយង់ យ៉តប៊ួង៉ាម",
-  "latin": "Yingyong Yodbuangam",
-  "qid": "Q13019175",
-  "bucket": "foreign",
-  "source": "wikidata/kmwiki-humans",
-  "attestations": 12
- },
- {
-  "khmer": "យ៉ែម ដេវិត",
-  "latin": "Yem Devit",
-  "qid": "Q137945243",
+  "khmer": "យុគន្ធរ",
+  "latin": "Norodom Yukanthor",
+  "qid": "Q11792945",
   "bucket": "unknown",
   "source": "wikidata/kmwiki-humans",
-  "attestations": 12
+  "attestations": 14,
+  "altLatin": [
+   "Yukanthor"
+  ]
  },
  {
-  "khmer": "រាជាធិរាជ",
-  "latin": "Razadarit",
-  "qid": "Q1108098",
+  "khmer": "រីកាដូ កាឡាហ្វីអូរី",
+  "latin": "Riccardo Calafiori",
+  "qid": "Q97999586",
   "bucket": "foreign",
   "source": "wikidata/kmwiki-humans",
-  "attestations": 12
+  "attestations": 14
  },
  {
-  "khmer": "រីអូ ងួម៉ូហា",
-  "latin": "Rio Ngumoha",
-  "qid": "Q131466230",
+  "khmer": "រួយ ពីរ៉េស",
+  "latin": "Rui Pires",
+  "qid": "Q26251767",
   "bucket": "foreign",
   "source": "wikidata/kmwiki-humans",
-  "attestations": 12
- },
- {
-  "khmer": "រ៉ាយ៉ាន ឆឺគី",
-  "latin": "Rayan Cherki",
-  "qid": "Q64736321",
-  "bucket": "foreign",
-  "source": "wikidata/kmwiki-humans",
-  "attestations": 12
- },
- {
-  "khmer": "លីម ចកហូយ",
-  "latin": "Lim Jock Hoi",
-  "qid": "Q47536756",
-  "bucket": "foreign",
-  "source": "wikidata/kmwiki-humans",
-  "attestations": 12
+  "attestations": 14
  },
  {
   "khmer": "លុសៃ",
@@ -1449,31 +1484,15 @@
   "qid": "Q889327",
   "bucket": "foreign",
   "source": "wikidata/kmwiki-humans",
-  "attestations": 12
+  "attestations": 14
  },
  {
-  "khmer": "លេនី យ៉ូរ៉ូ",
-  "latin": "Leny Yoro",
-  "qid": "Q112039295",
+  "khmer": "វិកទរ ហ្គោលូបេវ",
+  "latin": "Victor Goloubew",
+  "qid": "Q21093966",
   "bucket": "foreign",
   "source": "wikidata/kmwiki-humans",
-  "attestations": 12
- },
- {
-  "khmer": "លោកតាដំបងក្រញូង",
-  "latin": "Phaya Khottabong",
-  "qid": "Q61365201",
-  "bucket": "unknown",
-  "source": "wikidata/kmwiki-humans",
-  "attestations": 12
- },
- {
-  "khmer": "ល្វីស៍ ហ្វ៊ីណូត៍",
-  "latin": "Louis Finot",
-  "qid": "Q1080053",
-  "bucket": "foreign",
-  "source": "wikidata/kmwiki-humans",
-  "attestations": 12
+  "attestations": 14
  },
  {
   "khmer": "វិចទ័រ ខូលីន ដឺ ផ្លានស៊ី",
@@ -1481,39 +1500,23 @@
   "qid": "Q7925809",
   "bucket": "foreign",
   "source": "wikidata/kmwiki-humans",
-  "attestations": 12
+  "attestations": 14
  },
  {
-  "khmer": "វីទ័រ រីស",
-  "latin": "Vitor Reis",
-  "qid": "Q120277811",
+  "khmer": "វិជ័យ",
+  "latin": "Vichai",
+  "qid": "Q889260",
   "bucket": "foreign",
   "source": "wikidata/kmwiki-humans",
-  "attestations": 12
+  "attestations": 14
  },
  {
-  "khmer": "វីន ម្យីន",
-  "latin": "Win Myint",
-  "qid": "Q8023642",
+  "khmer": "វីលៀន ប៉ាចូ",
+  "latin": "Willian Pacho",
+  "qid": "Q87767569",
   "bucket": "foreign",
   "source": "wikidata/kmwiki-humans",
-  "attestations": 12
- },
- {
-  "khmer": "វីលៀម សាលីបា",
-  "latin": "William Saliba",
-  "qid": "Q56868118",
-  "bucket": "foreign",
-  "source": "wikidata/kmwiki-humans",
-  "attestations": 12
- },
- {
-  "khmer": "វៀងថង ស៊ីផាន់ដន",
-  "latin": "Viengthong Siphandone",
-  "qid": "Q136530470",
-  "bucket": "foreign",
-  "source": "wikidata/kmwiki-humans",
-  "attestations": 12
+  "attestations": 14
  },
  {
   "khmer": "សនសៃ ស៊ីផាន់ដន",
@@ -1521,111 +1524,28 @@
   "qid": "Q104914585",
   "bucket": "foreign",
   "source": "wikidata/kmwiki-humans",
-  "attestations": 12
- },
- {
-  "khmer": "សម្ដេចព្រះបិយមាវតី ស្រីព័ជ្រិន្ទ្រមាតា",
-  "latin": "Piyamavadi",
-  "qid": "Q6636216",
-  "bucket": "foreign",
-  "source": "wikidata/kmwiki-humans",
-  "attestations": 12
- },
- {
-  "khmer": "សាល់វី អេសគីវែល",
-  "latin": "Salvi Esquivel",
-  "qid": "Q134954030",
-  "bucket": "foreign",
-  "source": "wikidata/kmwiki-humans",
-  "attestations": 12
- },
- {
-  "khmer": "សាឡឺមសៃ កម្មស៊ីដ",
-  "latin": "Saleumxay Kommasith",
-  "qid": "Q25999464",
-  "bucket": "foreign",
-  "source": "wikidata/kmwiki-humans",
-  "attestations": 12,
+  "attestations": 14,
   "altLatin": [
-   "Saleumsay Kommasith"
+   "Sonesay Siphandone",
+   "Sonsay Siphandone",
+   "Sonxay Siphandone"
   ]
  },
  {
-  "khmer": "សឺន គុយ",
-  "latin": "Chavay Kuy",
-  "qid": "Q18325630",
-  "bucket": "unknown",
-  "source": "wikidata/kmwiki-humans",
-  "attestations": 12
- },
- {
-  "khmer": "សុរិយ ចឹងរុងរឿងកិច្ច",
-  "latin": "Suriya Jungrungreangkit",
-  "qid": "Q4918594",
+  "khmer": "សុខាស៊ើម",
+  "latin": "Sukkhasoem",
+  "qid": "Q2364060",
   "bucket": "foreign",
   "source": "wikidata/kmwiki-humans",
-  "attestations": 12
+  "attestations": 14
  },
  {
-  "khmer": "សុវៈណាន់ គង់យីង",
-  "latin": "Suvanant Kongying",
-  "qid": "Q988393",
+  "khmer": "សុទិតា",
+  "latin": "Suthida",
+  "qid": "Q18744506",
   "bucket": "foreign",
   "source": "wikidata/kmwiki-humans",
-  "attestations": 12
- },
- {
-  "khmer": "សេននី ម៉ាយូលូ",
-  "latin": "Senny Mayulu",
-  "qid": "Q124175192",
-  "bucket": "foreign",
-  "source": "wikidata/kmwiki-humans",
-  "attestations": 12
- },
- {
-  "khmer": "សោតិកៈ",
-  "latin": "Sotikakumman",
-  "qid": "Q2303834",
-  "bucket": "foreign",
-  "source": "wikidata/kmwiki-humans",
-  "attestations": 12,
-  "altLatin": [
-   "Sotika-Kuomane",
-   "Xotikakumman"
-  ]
- },
- {
-  "khmer": "សំចិត្រ បូថង់",
-  "latin": "Somjit Borthong",
-  "qid": "Q66721073",
-  "bucket": "foreign",
-  "source": "wikidata/kmwiki-humans",
-  "attestations": 12
- },
- {
-  "khmer": "ស៊ីម មឿកា",
-  "latin": "Shim Mheuka",
-  "qid": "Q114907868",
-  "bucket": "foreign",
-  "source": "wikidata/kmwiki-humans",
-  "attestations": 12,
-  "altLatin": [
-   "Shumaira Mheuka"
-  ]
- },
- {
-  "khmer": "ស៊ីហ្គេរុ អ៊ីស្ស៊ីបា",
-  "latin": "Shigeru Ishiba",
-  "qid": "Q1335527",
-  "bucket": "foreign",
-  "source": "wikidata/kmwiki-humans",
-  "attestations": 12,
-  "altLatin": [
-   "Ishiba Shigeru",
-   "Isiba Sigeru",
-   "Sigeru Isiba",
-   "PM Ishiba"
-  ]
+  "attestations": 14
  },
  {
   "khmer": "ស៊ុទេព ពោធិ៍ង៉ាម",
@@ -1633,55 +1553,39 @@
   "qid": "Q1851833",
   "bucket": "foreign",
   "source": "wikidata/kmwiki-humans",
-  "attestations": 12
+  "attestations": 14
  },
  {
-  "khmer": "ស៊ុនទរវោហារភូ",
-  "latin": "Sunthorn Phu",
-  "qid": "Q1209915",
-  "bucket": "foreign",
-  "source": "wikidata/kmwiki-humans",
-  "attestations": 12
- },
- {
-  "khmer": "ស៊ូកាផុន វង់ឈៀងខាំ",
-  "latin": "Soukaphone Vongchiengkham",
-  "qid": "Q3965325",
-  "bucket": "foreign",
-  "source": "wikidata/kmwiki-humans",
-  "attestations": 12
- },
- {
-  "khmer": "ស្រីធម្មរាជា",
-  "latin": "Thommo Reachea",
-  "qid": "Q3525740",
-  "bucket": "cambodian",
-  "source": "wikidata/kmwiki-humans",
-  "attestations": 12
- },
- {
-  "khmer": "ហារី ហ្គូណាតូ",
-  "latin": "Hary Gunarto",
-  "qid": "Q42297483",
-  "bucket": "foreign",
-  "source": "wikidata/kmwiki-humans",
-  "attestations": 12
- },
- {
-  "khmer": "ហុីការ៉ុ មីហ្ស៊ូណូ",
-  "latin": "Hikaru Mizuno",
-  "qid": "Q19823054",
-  "bucket": "foreign",
-  "source": "wikidata/kmwiki-humans",
-  "attestations": 12
- },
- {
-  "khmer": "ហួត តាត",
-  "latin": "Huot Tat",
-  "qid": "Q25679364",
+  "khmer": "សុផល ឌីម៉ង់",
+  "latin": "Sophal Dimong",
+  "qid": "Q137831961",
   "bucket": "unknown",
   "source": "wikidata/kmwiki-humans",
-  "attestations": 12
+  "attestations": 14
+ },
+ {
+  "khmer": "សូ វីន",
+  "latin": "Soe Win",
+  "qid": "Q19702386",
+  "bucket": "foreign",
+  "source": "wikidata/kmwiki-humans",
+  "attestations": 14
+ },
+ {
+  "khmer": "ស្ទេហ្វាន ប៉ូស",
+  "latin": "Stefan Posch",
+  "qid": "Q41447930",
+  "bucket": "foreign",
+  "source": "wikidata/kmwiki-humans",
+  "attestations": 14
+ },
+ {
+  "khmer": "ស្រីរស្មី សុវឌី",
+  "latin": "Srirasmi Suwadee",
+  "qid": "Q2276823",
+  "bucket": "foreign",
+  "source": "wikidata/kmwiki-humans",
+  "attestations": 14
  },
  {
   "khmer": "ហ៊ូហ្គោ អេគីទីកេ",
@@ -1689,26 +1593,161 @@
   "qid": "Q100602910",
   "bucket": "foreign",
   "source": "wikidata/kmwiki-humans",
-  "attestations": 12
+  "attestations": 14
  },
  {
-  "khmer": "ហ្គារីហ្គិន សឺវ៉ាន់ដ្សទីយាន",
-  "latin": "Garegin Srvandztiants",
-  "qid": "Q16376017",
-  "bucket": "unknown",
+  "khmer": "ហៃ វណ្ណា",
+  "latin": "Vanna Hay",
+  "qid": "Q28059803",
+  "bucket": "cambodian",
   "source": "wikidata/kmwiki-humans",
-  "attestations": 12,
+  "attestations": 14
+ },
+ {
+  "khmer": "ហ្វេដេរីកូ ឌីម៉ាកូ",
+  "latin": "Federico Dimarco",
+  "qid": "Q20204829",
+  "bucket": "foreign",
+  "source": "wikidata/kmwiki-humans",
+  "attestations": 14
+ },
+ {
+  "khmer": "ឡរ៉ែនស៍ វ័ង",
+  "latin": "Lawrence Wong",
+  "qid": "Q6504758",
+  "bucket": "foreign",
+  "source": "wikidata/kmwiki-humans",
+  "attestations": 14
+ },
+ {
+  "khmer": "អាការិ ណាណាវ៉ុ",
+  "latin": "Akari Nanawo",
+  "qid": "Q30923155",
+  "bucket": "foreign",
+  "source": "wikidata/kmwiki-humans",
+  "attestations": 14,
   "altLatin": [
-   "Karekin Srvandztiants",
-   "Garegin Srvandztian"
+   "Nanawo Akari"
   ]
  },
  {
-  "khmer": "ហ្វាង ហ៊ីចាន់",
-  "latin": "Hwang Hee-chan",
-  "qid": "Q18551518",
+  "khmer": "អាន់ឌី រ៉ូប៊ើតសុន",
+  "latin": "Andy Robertson",
+  "qid": "Q15915040",
   "bucket": "foreign",
   "source": "wikidata/kmwiki-humans",
+  "attestations": 14
+ },
+ {
+  "khmer": "អាឡិចស៊ីស ម៉ាក អាលីស្ទើរ",
+  "latin": "Alexis Mac Allister",
+  "qid": "Q33297140",
+  "bucket": "foreign",
+  "source": "wikidata/kmwiki-humans",
+  "attestations": 14
+ },
+ {
+  "khmer": "អ៊ុន ខាំ",
+  "latin": "Oun Kham",
+  "qid": "Q962950",
+  "bucket": "foreign",
+  "source": "wikidata/kmwiki-humans",
+  "attestations": 14
+ },
+ {
+  "khmer": "អុីគ័រ លូក",
+  "latin": "Iker Luque",
+  "qid": "Q139666472",
+  "bucket": "foreign",
+  "source": "wikidata/kmwiki-humans",
+  "attestations": 14
+ },
+ {
+  "khmer": "អ៊ូហ្គូស្ត ប៉ាវី",
+  "latin": "Auguste Pavie",
+  "qid": "Q766871",
+  "bucket": "foreign",
+  "source": "wikidata/kmwiki-humans",
+  "attestations": 14
+ },
+ {
+  "khmer": "អៀ កឹស",
+  "latin": "Ieu Koeus",
+  "qid": "Q4073728",
+  "bucket": "cambodian",
+  "source": "wikidata/kmwiki-humans",
+  "attestations": 14
+ },
+ {
+  "khmer": "អេម៉ានុយអែល ម៉ាក្រុង",
+  "latin": "Emmanuel Macron",
+  "qid": "Q3052772",
+  "bucket": "foreign",
+  "source": "wikidata/kmwiki-humans",
+  "attestations": 14
+ },
+ {
+  "khmer": "អេលីយ៉ូត អាន់ឌើរសុន",
+  "latin": "Elliot Anderson",
+  "qid": "Q104762954",
+  "bucket": "foreign",
+  "source": "wikidata/kmwiki-humans",
+  "attestations": 14
+ },
+ {
+  "khmer": "អែនឌ្រៀស គ្រីស្ទីនសិន",
+  "latin": "Andreas Christensen",
+  "qid": "Q16063229",
+  "bucket": "foreign",
+  "source": "wikidata/kmwiki-humans",
+  "attestations": 14
+ },
+ {
+  "khmer": "ឦសានវរ្ម័ន",
+  "latin": "Isanavarman",
+  "qid": "Q4205535",
+  "bucket": "foreign",
+  "source": "wikidata/kmwiki-humans",
+  "attestations": 14
+ },
+ {
+  "khmer": "ការរុករករបស់លោកគ្រីស្តុបកូឡុំ",
+  "latin": "Christopher Columbus",
+  "qid": "Q7322",
+  "bucket": "foreign",
+  "source": "wikidata/kmwiki-humans",
+  "attestations": 13
+ },
+ {
+  "khmer": "កៃសុន ផុមវិហ៉ាន",
+  "latin": "Kaysone Phomvihane",
+  "qid": "Q320100",
+  "bucket": "foreign",
+  "source": "wikidata/kmwiki-humans",
+  "attestations": 13
+ },
+ {
+  "khmer": "ម៉ៃឃើល ជេកសិន",
+  "latin": "Michael Jackson",
+  "qid": "Q2831",
+  "bucket": "foreign",
+  "source": "wikidata/kmwiki-humans",
+  "attestations": 13
+ },
+ {
+  "khmer": "ជូលីអូ អាន់ឌ្រេអូទី",
+  "latin": "Giulio Andreotti",
+  "qid": "Q50005",
+  "bucket": "foreign",
+  "source": "wikidata/all-humans",
+  "attestations": 12
+ },
+ {
+  "khmer": "ដ្រេគ",
+  "latin": "Drake",
+  "qid": "Q33240",
+  "bucket": "foreign",
+  "source": "wikidata/all-humans",
   "attestations": 12
  },
  {
@@ -1717,195 +1756,18 @@
   "qid": "Q57160",
   "bucket": "foreign",
   "source": "wikidata/all-humans",
-  "attestations": 12
- },
- {
-  "khmer": "អង្គម៉ី",
-  "latin": "Ang Mey",
-  "qid": "Q769218",
-  "bucket": "cambodian",
-  "source": "wikidata/kmwiki-humans",
-  "attestations": 12
- },
- {
-  "khmer": "អាកសែល ឌីសាស៊ី",
-  "latin": "Axel Disasi",
-  "qid": "Q23887767",
-  "bucket": "foreign",
-  "source": "wikidata/kmwiki-humans",
-  "attestations": 12
- },
- {
-  "khmer": "អាន់តូនី អេឡាងហ្គា",
-  "latin": "Anthony Elanga",
-  "qid": "Q106805131",
-  "bucket": "foreign",
-  "source": "wikidata/kmwiki-humans",
-  "attestations": 12
- },
- {
-  "khmer": "អាឡិចសាន់ដឺ អ៊ីសាក់",
-  "latin": "Alexander Isak",
-  "qid": "Q23759917",
-  "bucket": "foreign",
-  "source": "wikidata/kmwiki-humans",
-  "attestations": 12
- },
- {
-  "khmer": "អុីលលា ហ្សាបានី",
-  "latin": "Illya Zabarnyi",
-  "qid": "Q99360090",
-  "bucket": "foreign",
-  "source": "wikidata/kmwiki-humans",
-  "attestations": 12
- },
- {
-  "khmer": "អុីសរី កុនសា",
-  "latin": "Ezri Konsa",
-  "qid": "Q27063854",
-  "bucket": "foreign",
-  "source": "wikidata/kmwiki-humans",
-  "attestations": 12
- },
- {
-  "khmer": "អុីសាក ម៉ាបាយ៉ា",
-  "latin": "Isaac Mabaya",
-  "qid": "Q113434149",
-  "bucket": "foreign",
-  "source": "wikidata/kmwiki-humans",
-  "attestations": 12
- },
- {
-  "khmer": "អេលីសា ឡាម",
-  "latin": "Elisa Lam",
-  "qid": "Q14835066",
-  "bucket": "foreign",
-  "source": "wikidata/kmwiki-humans",
-  "attestations": 12
- },
- {
-  "khmer": "អ្នកម្នាងទៃ",
-  "latin": "Tey",
-  "qid": "Q65427889",
-  "bucket": "unknown",
-  "source": "wikidata/kmwiki-humans",
-  "attestations": 12
- },
- {
-  "khmer": "ឦសានវរ្ម័ន",
-  "latin": "Isanavarman",
-  "qid": "Q4205535",
-  "bucket": "foreign",
-  "source": "wikidata/kmwiki-humans",
-  "attestations": 12
- },
- {
-  "khmer": "កៃសុន ផុមវិហ៉ាន",
-  "latin": "Kaysone Phomvihane",
-  "qid": "Q320100",
-  "bucket": "foreign",
-  "source": "wikidata/kmwiki-humans",
-  "attestations": 11
- },
- {
-  "khmer": "ណារិនដ្រាម៉ូឌី",
-  "latin": "Narendra Modi",
-  "qid": "Q1058",
-  "bucket": "unknown",
-  "source": "wikidata/kmwiki-humans",
-  "attestations": 11
- },
- {
-  "khmer": "ថានីន ក្រាយវិឈាន",
-  "latin": "Thanin Kraiwichian",
-  "qid": "Q74861",
-  "bucket": "foreign",
-  "source": "wikidata/kmwiki-humans",
-  "attestations": 11
- },
- {
-  "khmer": "មឹរាសកិ សិុគិប៊ឹ",
-  "latin": "Murasaki Shikibu",
-  "qid": "Q81731",
-  "bucket": "foreign",
-  "source": "wikidata/kmwiki-humans",
-  "attestations": 11
- },
- {
-  "khmer": "ម៉ៃឃើល ជេកសិន",
-  "latin": "Michael Jackson",
-  "qid": "Q2831",
-  "bucket": "foreign",
-  "source": "wikidata/kmwiki-humans",
-  "attestations": 11
- },
- {
-  "khmer": "ហង់រី មូហូ",
-  "latin": "Henri Mouhot",
-  "qid": "Q399978",
-  "bucket": "foreign",
-  "source": "wikidata/kmwiki-humans",
-  "attestations": 11
- },
- {
-  "khmer": "សាន់ដ្រូ ប៉ែរទីនី",
-  "latin": "Sandro Pertini",
-  "qid": "Q1233",
-  "bucket": "foreign",
-  "source": "wikidata/all-humans",
-  "attestations": 10
- },
- {
-  "khmer": "ជយវរ្ម័ន",
-  "latin": "Jayavarman",
-  "qid": "Q130708",
-  "bucket": "foreign",
-  "source": "wikidata/kmwiki-humans",
-  "attestations": 9
- },
- {
-  "khmer": "រ៉ែនរឹង ហេដរីច",
-  "latin": "Reinhard Heydrich",
-  "qid": "Q60039",
-  "bucket": "foreign",
-  "source": "wikidata/all-humans",
-  "attestations": 9
- },
- {
-  "khmer": "សេលីណា ហ្គូម៉េហ្ស",
-  "latin": "Selena Gomez",
-  "qid": "Q83287",
-  "bucket": "foreign",
-  "source": "wikidata/kmwiki-humans",
-  "attestations": 9
- },
- {
-  "khmer": "ហ្គោស ចុកតុង",
-  "latin": "Goh Chok Tong",
-  "qid": "Q313300",
-  "bucket": "foreign",
-  "source": "wikidata/kmwiki-humans",
-  "attestations": 9,
+  "attestations": 12,
   "altLatin": [
-   "Wu Zuodong",
-   "Wu Tso-tung"
+   "Von Paulus"
   ]
  },
  {
-  "khmer": "ឡូរី គ្រីស្ទាន រេឡាន់ឌើរ",
-  "latin": "Lauri Kristian Relander",
-  "qid": "Q214009",
+  "khmer": "ចូ ប៊ីដិន",
+  "latin": "Joe Biden",
+  "qid": "Q6279",
   "bucket": "foreign",
-  "source": "wikidata/all-humans",
-  "attestations": 9
- },
- {
-  "khmer": "កែរ វិសិដ្ឋ",
-  "latin": "Ker Viseth",
-  "qid": "Q56886833",
-  "bucket": "cambodian",
-  "source": "wikidata/cambodian-citizens",
-  "attestations": 8
+  "source": "wikidata/kmwiki-humans",
+  "attestations": 11
  },
  {
   "khmer": "ឈេអបរាង ឤវីកុល",
@@ -1913,15 +1775,35 @@
   "qid": "Q48484847",
   "bucket": "foreign",
   "source": "wikidata/kmwiki-humans",
-  "attestations": 8
+  "attestations": 10
  },
  {
-  "khmer": "បាអាត",
-  "latin": "Baat",
-  "qid": "Q19751019",
-  "bucket": "unknown",
+  "khmer": "ធានវា រាសីធានូ",
+  "latin": "Thanwa Raseetanu",
+  "qid": "Q16138667",
+  "bucket": "foreign",
   "source": "wikidata/kmwiki-humans",
-  "attestations": 8
+  "attestations": 10
+ },
+ {
+  "khmer": "ប៊ីន្ឌ បាញ់ឬរិទ្ធ",
+  "latin": "Bin Bunluerit",
+  "qid": "Q6684256",
+  "bucket": "foreign",
+  "source": "wikidata/kmwiki-humans",
+  "attestations": 10,
+  "altLatin": [
+   "Bin Binluerit",
+   "Bin Banluerit"
+  ]
+ },
+ {
+  "khmer": "ប្រាក់ សុវណ្ណារ៉ា",
+  "latin": "Prak Sovannara",
+  "qid": "Q7238157",
+  "bucket": "cambodian",
+  "source": "wikidata/cambodian-citizens",
+  "attestations": 10
  },
  {
   "khmer": "មុកដាវ៉ាន់ សាន់តិពោន",
@@ -1929,15 +1811,47 @@
   "qid": "Q19697234",
   "bucket": "foreign",
   "source": "wikidata/kmwiki-humans",
-  "attestations": 8
+  "attestations": 10
  },
  {
-  "khmer": "រស់ គង់សំរ៉េច",
-  "latin": "Ros Kungsomrach",
-  "qid": "Q29446357",
+  "khmer": "រុទ្រវម៌្ម",
+  "latin": "Rudravarman",
+  "qid": "Q4399749",
+  "bucket": "foreign",
+  "source": "wikipedia/km-en-titles",
+  "attestations": 10
+ },
+ {
+  "khmer": "វ៉ ជីកុង",
+  "latin": "Vo Chi Cong",
+  "qid": "Q434894",
+  "bucket": "foreign",
+  "source": "wikidata/kmwiki-humans",
+  "attestations": 10
+ },
+ {
+  "khmer": "សាន ណារិទ្ធ",
+  "latin": "San Narith",
+  "qid": "Q7415003",
   "bucket": "cambodian",
   "source": "wikidata/cambodian-citizens",
-  "attestations": 8
+  "attestations": 10
+ },
+ {
+  "khmer": "ស៊ីន ច័ន្ទឆាយា",
+  "latin": "Sin Chanchhaya",
+  "qid": "Q124036879",
+  "bucket": "cambodian",
+  "source": "wikidata/cambodian-citizens",
+  "attestations": 10
+ },
+ {
+  "khmer": "សឺង ង៉ុកថាញ់",
+  "latin": "Son Ngoc Thanh",
+  "qid": "Q367210",
+  "bucket": "foreign",
+  "source": "wikidata/kmwiki-humans",
+  "attestations": 10
  },
  {
   "khmer": "ហ៊ីង ប៊ុនហ៊ាង",
@@ -1945,140 +1859,192 @@
   "qid": "Q20062903",
   "bucket": "cambodian",
   "source": "wikidata/cambodian-citizens",
+  "attestations": 10
+ },
+ {
+  "khmer": "អាគីរ៉ា",
+  "latin": "Aki Ra",
+  "qid": "Q4700859",
+  "bucket": "cambodian",
+  "source": "wikipedia/km-en-titles",
+  "attestations": 10
+ },
+ {
+  "khmer": "អ៊ុក ម៉ិច",
+  "latin": "Ouk Mic",
+  "qid": "Q7110360",
+  "bucket": "cambodian",
+  "source": "wikidata/cambodian-citizens",
+  "attestations": 10
+ },
+ {
+  "khmer": "ចូ បៃដិន",
+  "latin": "Joe Biden",
+  "qid": "Q6279",
+  "bucket": "foreign",
+  "source": "wikipedia/km-en-titles",
+  "attestations": 9
+ },
+ {
+  "khmer": "គឹម",
+  "latin": "Kim",
+  "qid": "khmer_names.json (fetched 2026-10-31); unique given-name and surname tokens with their romanizations",
+  "bucket": "curated",
+  "source": "static/kname",
   "attestations": 8
  },
  {
-  "khmer": "អផភ័នន្រ្តីផាជា",
-  "latin": "Abbhantripaja",
-  "qid": "Q4664124",
+  "khmer": "សៅវភាផង់សី",
+  "latin": "Saovabha Phongsri",
+  "qid": "Q467882",
   "bucket": "foreign",
   "source": "wikidata/kmwiki-humans",
   "attestations": 8
  },
  {
-  "khmer": "លី កាវតុង",
-  "latin": "Ly Cao Tong",
-  "qid": "Q711408",
+  "khmer": "កៃសន ព្រហ្មវិហារ",
+  "latin": "Kaysone Phomvihane",
+  "qid": "Q320100",
   "bucket": "foreign",
+  "source": "wikipedia/km-en-titles",
+  "attestations": 7
+ },
+ {
+  "khmer": "គ្រីស្តុប កូឡុំ",
+  "latin": "Christopher Columbus",
+  "qid": "Q7322",
+  "bucket": "foreign",
+  "source": "wikipedia/km-en-titles",
+  "attestations": 7,
+  "altLatin": [
+   "Cristoforo Colombo",
+   "Cristopher Colombus",
+   "Cristopher Columbus",
+   "Christopher Colombus",
+   "Columbus Quincentennial",
+   "Cristoforo Columbo",
+   "Chistopher Colombus",
+   "Cristobol Colon",
+   "Crostoforo Colombo",
+   "Christofo Columbo",
+   "Christovao Columbo",
+   "Christoper Columbus",
+   "Christopher coloumbus",
+   "Christopher columb",
+   "Cristovao Colombo",
+   "Christoffa Corombo",
+   "Christobal Colon",
+   "Cristoforo Colubmo",
+   "Christophorus Columbus",
+   "Christoph Columbus"
+  ]
+ },
+ {
+  "khmer": "ចន្ទ្រវម៌្ម",
+  "latin": "Candravarman",
+  "qid": "Q19803591",
+  "bucket": "unknown",
   "source": "wikidata/kmwiki-humans",
   "attestations": 7
  },
  {
-  "khmer": "កម្ពុជរាជលក្ស្មី",
-  "latin": "Kambuja-raja-lakshmi",
-  "qid": "Q19684144",
+  "khmer": "ចាស្ទីន ពីពេ្រ",
+  "latin": "Justin Bieber",
+  "qid": "Q34086",
   "bucket": "foreign",
-  "source": "wikidata/kmwiki-humans",
-  "attestations": 6
- },
- {
-  "khmer": "កែវ សារ៉ាត់",
-  "latin": "Keo Sarath",
-  "qid": "Q3195347",
-  "bucket": "cambodian",
   "source": "wikipedia/km-en-titles",
-  "attestations": 6
+  "attestations": 7
  },
  {
-  "khmer": "ខេ ផាកឃើ",
-  "latin": "Kay Parker",
-  "qid": "Q261159",
+  "khmer": "ចុឡាភរណ៍",
+  "latin": "Chulabhorn",
+  "qid": "Q1089410",
   "bucket": "foreign",
-  "source": "wikidata/all-humans",
-  "attestations": 6
+  "source": "wikipedia/km-en-titles",
+  "attestations": 7,
+  "altLatin": [
+   "Chulabhornwalailak",
+   "Chulabhon",
+   "Walailak",
+   "Chulabhonwalailak",
+   "Chulaporn"
+  ]
  },
  {
-  "khmer": "ខេណាន អេវរិន",
-  "latin": "Kenan Evren",
-  "qid": "Q216983",
+  "khmer": "ជា",
+  "latin": "Chea",
+  "qid": "khmer_names.json (fetched 2026-10-31); unique given-name and surname tokens with their romanizations",
+  "bucket": "curated",
+  "source": "static/kname",
+  "attestations": 7
+ },
+ {
+  "khmer": "ឈើប្រាង ឤវីកុល",
+  "latin": "Cherprang Areekul",
+  "qid": "Q48484847",
   "bucket": "foreign",
-  "source": "wikidata/all-humans",
-  "attestations": 6
+  "source": "wikipedia/km-en-titles",
+  "attestations": 7
  },
  {
-  "khmer": "ខេនណេត កូនដា",
-  "latin": "Kenneth Kaunda",
-  "qid": "Q105480",
+  "khmer": "ថាន់វ៉ា រ៉ាស៊ីធ្នូ",
+  "latin": "Thanwa Raseetanu",
+  "qid": "Q16138667",
   "bucket": "foreign",
-  "source": "wikidata/all-humans",
-  "attestations": 6
+  "source": "wikipedia/km-en-titles",
+  "attestations": 7
  },
  {
-  "khmer": "ង្វៀន ហ៊ឺវថោះ",
-  "latin": "Nguyen Huu Tho",
-  "qid": "Q983839",
-  "bucket": "foreign",
-  "source": "wikidata/kmwiki-humans",
-  "attestations": 6
- },
- {
-  "khmer": "ង្វៀន ហ្វុកង្វៀន",
-  "latin": "Nguyen Phuc Nguyen",
-  "qid": "Q3087382",
-  "bucket": "foreign",
-  "source": "wikidata/kmwiki-humans",
-  "attestations": 6
- },
- {
-  "khmer": "ឆាវ៉ាលីត អភ័យវង្ស",
-  "latin": "Chavalit Apaiwong",
-  "qid": "Q31350966",
+  "khmer": "ទីម សុឃៀង",
+  "latin": "Sokhieng Tim",
+  "qid": "Q65426546",
   "bucket": "unknown",
   "source": "wikidata/kmwiki-humans",
-  "attestations": 6
+  "attestations": 7
  },
  {
-  "khmer": "ដេនីស សាស៊ូ ងូហ្គេសូ",
-  "latin": "Denis Sassou-Nguesso",
-  "qid": "Q57418",
-  "bucket": "foreign",
-  "source": "wikidata/all-humans",
-  "attestations": 6
- },
- {
-  "khmer": "ណៃអេល ហរេន",
-  "latin": "Niall Horan",
-  "qid": "Q775231",
-  "bucket": "foreign",
-  "source": "wikipedia/km-en-titles",
-  "attestations": 6
- },
- {
-  "khmer": "ថូនីវាខារ៉ូ",
-  "latin": "Tony Vaccaro",
-  "qid": "Q1261424",
-  "bucket": "foreign",
-  "source": "wikidata/kmwiki-humans",
-  "attestations": 6
- },
- {
-  "khmer": "ប៉ង់ សុគន្ធវឌ្ឍនា",
-  "latin": "Vatana Pang",
-  "qid": "Q137926400",
+  "khmer": "នរោត្តម នរិន្ទ្រពង្ស",
+  "latin": "Norodom Narindrapong",
+  "qid": "Q6636185",
   "bucket": "cambodian",
-  "source": "wikidata/cambodian-citizens",
-  "attestations": 6
+  "source": "wikipedia/km-en-titles",
+  "attestations": 7
  },
  {
-  "khmer": "ប៉ាក ឆានយ៉ល",
-  "latin": "Park Chan-yeol",
-  "qid": "Q7137681",
-  "bucket": "foreign",
+  "khmer": "បរមរាមាធិបតី",
+  "latin": "Barom Reamea",
+  "qid": "Q2884749",
+  "bucket": "unknown",
   "source": "wikidata/kmwiki-humans",
-  "attestations": 6
+  "attestations": 7
  },
  {
-  "khmer": "ផាក ឆានយ៉ល",
-  "latin": "Chanyeol",
-  "qid": "Q7137681",
+  "khmer": "បរមសោករាជ",
+  "latin": "Barom Soccoroch",
+  "qid": "Q2884750",
+  "bucket": "unknown",
+  "source": "wikidata/kmwiki-humans",
+  "attestations": 7
+ },
+ {
+  "khmer": "ប៊ិន បាន់ឮរិទ្ធ",
+  "latin": "Bin Bunluerit",
+  "qid": "Q6684256",
   "bucket": "foreign",
   "source": "wikipedia/km-en-titles",
-  "attestations": 6,
+  "attestations": 7,
   "altLatin": [
-   "Park Chanyeol",
-   "Park Chan-yeol",
-   "Chanyeol discography"
+   "Bin Binluerit",
+   "Bin Banluerit"
   ]
+ },
+ {
+  "khmer": "ប៊េប៊ី គា",
+  "latin": "Baby Kia",
+  "qid": "Q126225586",
+  "bucket": "foreign",
+  "source": "wikidata/kmwiki-humans",
+  "attestations": 7
  },
  {
   "khmer": "ផាមហុង",
@@ -2086,15 +2052,7 @@
   "qid": "Q5433548",
   "bucket": "foreign",
   "source": "wikidata/kmwiki-humans",
-  "attestations": 6
- },
- {
-  "khmer": "ពញាកែវ",
-  "latin": "Keo",
-  "qid": "Q25680257",
-  "bucket": "unknown",
-  "source": "wikidata/kmwiki-humans",
-  "attestations": 6
+  "attestations": 7
  },
  {
   "khmer": "ព្រះនាងសិង្ខរមហាទេវី",
@@ -2102,15 +2060,15 @@
   "qid": "Q97267992",
   "bucket": "foreign",
   "source": "wikidata/kmwiki-humans",
-  "attestations": 6
+  "attestations": 7
  },
  {
-  "khmer": "ព្រះពុទ្ធ",
-  "latin": "The Buddha",
-  "qid": "Q9441",
+  "khmer": "ព្រះមណីរតនា",
+  "latin": "Mani Rattana",
+  "qid": "Q16138473",
   "bucket": "unknown",
-  "source": "wikipedia/km-en-titles",
-  "attestations": 6
+  "source": "wikidata/kmwiki-humans",
+  "attestations": 7
  },
  {
   "khmer": "ព្រះម្ចាស់ហេនរីទី៨ នៃអង់គ្លេស",
@@ -2118,7 +2076,7 @@
   "qid": "Q38370",
   "bucket": "foreign",
   "source": "wikipedia/km-en-titles",
-  "attestations": 6,
+  "attestations": 7,
   "altLatin": [
    "Henry Rex"
   ]
@@ -2129,23 +2087,7 @@
   "qid": "Q3473926",
   "bucket": "unknown",
   "source": "wikidata/kmwiki-humans",
-  "attestations": 6
- },
- {
-  "khmer": "មន្ត្រីយ៍",
-  "latin": "Monetrey",
-  "qid": "Q141756485",
-  "bucket": "cambodian",
-  "source": "wikidata/cambodian-citizens",
-  "attestations": 6
- },
- {
-  "khmer": "មហាមោគ្គលាន",
-  "latin": "Maudgalyayana",
-  "qid": "Q379814",
-  "bucket": "unknown",
-  "source": "wikipedia/km-en-titles",
-  "attestations": 6
+  "attestations": 7
  },
  {
   "khmer": "មិថុនា ភូថង",
@@ -2153,31 +2095,23 @@
   "qid": "Q127941028",
   "bucket": "cambodian",
   "source": "wikidata/cambodian-citizens",
-  "attestations": 6
+  "attestations": 7
  },
  {
-  "khmer": "ម៉ាក ហ្សុកឃឺបឺក",
-  "latin": "Mark Zuckerberg",
-  "qid": "Q36215",
+  "khmer": "មុកដាវ៉ាន់ សាន់ទិផន",
+  "latin": "Moukdavanh Santiphone",
+  "qid": "Q19697234",
   "bucket": "foreign",
   "source": "wikipedia/km-en-titles",
-  "attestations": 6
+  "attestations": 7
  },
  {
-  "khmer": "ម៉ាធីស ជាំងហ្គេអាល់",
-  "latin": "Mathis Jangeal",
-  "qid": "Q136388980",
+  "khmer": "ម៉ៃឃើល ចាកសាន់",
+  "latin": "Michael Jackson",
+  "qid": "Q2831",
   "bucket": "foreign",
-  "source": "wikidata/kmwiki-humans",
-  "attestations": 6
- },
- {
-  "khmer": "យុវរាជ",
-  "latin": "Yuvaraja",
-  "qid": "Q19752214",
-  "bucket": "foreign",
-  "source": "wikidata/kmwiki-humans",
-  "attestations": 6
+  "source": "wikipedia/km-en-titles",
+  "attestations": 7
  },
  {
   "khmer": "រាជេន្ទ្រវរ្ម័ន",
@@ -2185,23 +2119,63 @@
   "qid": "Q130383",
   "bucket": "cambodian",
   "source": "wikipedia/km-en-titles",
-  "attestations": 6
+  "attestations": 7
  },
  {
-  "khmer": "លឹម គិមយ៉ា",
-  "latin": "Lim Kimya",
-  "qid": "Q131698945",
+  "khmer": "រ៉ាយ៉ាន",
+  "latin": "Rayan",
+  "qid": "Q115937989",
+  "bucket": "foreign",
+  "source": "wikipedia/km-en-titles",
+  "attestations": 7
+ },
+ {
+  "khmer": "រ៉ាអ៊ូល ហ្វេហឺរ",
+  "latin": "Raul Feher",
+  "qid": "Q119171079",
+  "bucket": "foreign",
+  "source": "wikipedia/km-en-titles",
+  "attestations": 7
+ },
+ {
+  "khmer": "រីស៊ី ស៊ូណាក់",
+  "latin": "Rishi Sunak",
+  "qid": "Q20055561",
+  "bucket": "foreign",
+  "source": "wikipedia/km-en-titles",
+  "attestations": 7
+ },
+ {
+  "khmer": "លូ ម៉េង",
+  "latin": "Luu Meng",
+  "qid": "Q107473999",
   "bucket": "cambodian",
   "source": "wikidata/cambodian-citizens",
-  "attestations": 6
+  "attestations": 7
  },
  {
-  "khmer": "វជិរញ្ញាណសង្វរ",
-  "latin": "Vajiranyanasangvorn",
-  "qid": "Q3480753",
+  "khmer": "វជិរាលង្ករណ៍",
+  "latin": "Vajiralongkorn",
+  "qid": "Q548733",
   "bucket": "foreign",
-  "source": "wikidata/kmwiki-humans",
-  "attestations": 6
+  "source": "wikipedia/km-en-titles",
+  "attestations": 7
+ },
+ {
+  "khmer": "វណ្ឌី រតនា",
+  "latin": "Vandy Rattana",
+  "qid": "Q20966506",
+  "bucket": "cambodian",
+  "source": "wikidata/cambodian-citizens",
+  "attestations": 7
+ },
+ {
+  "khmer": "វីទីញ៉ា",
+  "latin": "Vitinha",
+  "qid": "Q66818509",
+  "bucket": "foreign",
+  "source": "wikipedia/km-en-titles",
+  "attestations": 7
  },
  {
   "khmer": "វីរវម៌្ម",
@@ -2209,47 +2183,47 @@
   "qid": "Q25680107",
   "bucket": "unknown",
   "source": "wikidata/kmwiki-humans",
-  "attestations": 6
+  "attestations": 7
  },
  {
-  "khmer": "វ៉ាតារ៉ូ អេនដូ",
-  "latin": "Wataru Endo",
-  "qid": "Q10526787",
+  "khmer": "ឝ៊ីនចៅពូ",
+  "latin": "Shin Sawbu",
+  "qid": "Q3132850",
+  "bucket": "foreign",
+  "source": "wikidata/kmwiki-humans",
+  "attestations": 7
+ },
+ {
+  "khmer": "សម្ដេចព្រះទេវីក្សត្រី",
+  "latin": "Devikshatri",
+  "qid": "Q107006975",
+  "bucket": "unknown",
+  "source": "wikipedia/km-en-titles",
+  "attestations": 7
+ },
+ {
+  "khmer": "សារោចន៍ ជវនៈវិរ័ជ",
+  "latin": "Saroj Chavanaviraj",
+  "qid": "Q6640025",
+  "bucket": "foreign",
+  "source": "wikidata/kmwiki-humans",
+  "attestations": 7
+ },
+ {
+  "khmer": "សិនីនាដ",
+  "latin": "Sineenatha",
+  "qid": "Q61117470",
   "bucket": "foreign",
   "source": "wikipedia/km-en-titles",
-  "attestations": 6
+  "attestations": 7
  },
  {
-  "khmer": "វ៉ូឡូឌីមីរ ហ្សេឡេនស្គី",
-  "latin": "Volodymyr Zelenskyy",
-  "qid": "Q3874799",
+  "khmer": "ស៊ីនសោប៊ូ",
+  "latin": "Shin Sawbu",
+  "qid": "Q3132850",
   "bucket": "foreign",
   "source": "wikipedia/km-en-titles",
-  "attestations": 6
- },
- {
-  "khmer": "វ័ន សាវ៉ៃ",
-  "latin": "Voan Savay",
-  "qid": "Q110987753",
-  "bucket": "cambodian",
-  "source": "wikidata/cambodian-citizens",
-  "attestations": 6
- },
- {
-  "khmer": "សង្ឃបាល",
-  "latin": "Sanghapala",
-  "qid": "Q7417981",
-  "bucket": "foreign",
-  "source": "wikipedia/km-en-titles",
-  "attestations": 6
- },
- {
-  "khmer": "សិរិភាចុឌាភរណ៍",
-  "latin": "Siribha Chudabhorn",
-  "qid": "Q6581650",
-  "bucket": "foreign",
-  "source": "wikipedia/km-en-titles",
-  "attestations": 6
+  "attestations": 7
  },
  {
   "khmer": "សុច្រិត្តសុដា",
@@ -2257,7 +2231,23 @@
   "qid": "Q6581554",
   "bucket": "foreign",
   "source": "wikidata/kmwiki-humans",
-  "attestations": 6
+  "attestations": 7
+ },
+ {
+  "khmer": "សុច្រិត្តសុតា",
+  "latin": "Sucharit Suda",
+  "qid": "Q6581554",
+  "bucket": "foreign",
+  "source": "wikipedia/km-en-titles",
+  "attestations": 7
+ },
+ {
+  "khmer": "សុជាតិក្សត្រី",
+  "latin": "Devikshatri",
+  "qid": "Q107006975",
+  "bucket": "unknown",
+  "source": "wikidata/kmwiki-humans",
+  "attestations": 7
  },
  {
   "khmer": "សុវណ៌",
@@ -2265,23 +2255,15 @@
   "qid": "Q25680119",
   "bucket": "unknown",
   "source": "wikidata/kmwiki-humans",
-  "attestations": 6
+  "attestations": 7
  },
  {
-  "khmer": "សុីវត្ថា",
-  "latin": "Si Votha",
-  "qid": "Q4418159",
+  "khmer": "សៅ ខូរ៉ាឌីន",
+  "latin": "Sao Khoradin",
+  "qid": "Q109644881",
   "bucket": "cambodian",
-  "source": "wikipedia/km-en-titles",
-  "attestations": 6
- },
- {
-  "khmer": "ស្រីនគរិនទ្រា",
-  "latin": "Srinagarindra",
-  "qid": "Q449433",
-  "bucket": "foreign",
-  "source": "wikipedia/km-en-titles",
-  "attestations": 6
+  "source": "wikidata/cambodian-citizens",
+  "attestations": 7
  },
  {
   "khmer": "ស្រីសុរិយោវង្ស",
@@ -2289,39 +2271,7 @@
   "qid": "Q3491224",
   "bucket": "unknown",
   "source": "wikidata/kmwiki-humans",
-  "attestations": 6
- },
- {
-  "khmer": "ហរិទេវ",
-  "latin": "Harideva",
-  "qid": "Q12452614",
-  "bucket": "foreign",
-  "source": "wikidata/kmwiki-humans",
-  "attestations": 6
- },
- {
-  "khmer": "ហាលីម៉ា យ៉ាកូប",
-  "latin": "Halimah Yacob",
-  "qid": "Q5642345",
-  "bucket": "foreign",
-  "source": "wikidata/kmwiki-humans",
-  "attestations": 6
- },
- {
-  "khmer": "ហិរណ្យលក្ឝ្មី",
-  "latin": "Hiranyalakshmi",
-  "qid": "Q25680170",
-  "bucket": "foreign",
-  "source": "wikidata/kmwiki-humans",
-  "attestations": 6
- },
- {
-  "khmer": "ហ៊ីការូ អាកាអុ",
-  "latin": "Hikaru Akao",
-  "qid": "Q28685785",
-  "bucket": "foreign",
-  "source": "wikipedia/km-en-titles",
-  "attestations": 6
+  "attestations": 7
  },
  {
   "khmer": "ហ៊ីលឡារី គ្លីនតុន",
@@ -2329,14 +2279,186 @@
   "qid": "Q6294",
   "bucket": "foreign",
   "source": "wikipedia/km-en-titles",
+  "attestations": 7
+ },
+ {
+  "khmer": "ហ្គីឡឺម៉ូ ឡាសសូ",
+  "latin": "Guillermo Lasso",
+  "qid": "Q4414537",
+  "bucket": "foreign",
+  "source": "wikipedia/km-en-titles",
+  "attestations": 7
+ },
+ {
+  "khmer": "ឡៅ ម៉េងឃីន",
+  "latin": "Lau Ming Kan",
+  "qid": "Q19855425",
+  "bucket": "cambodian",
+  "source": "wikidata/cambodian-citizens",
+  "attestations": 7
+ },
+ {
+  "khmer": "អាណា ស៊ុយ",
+  "latin": "Anna Sui",
+  "qid": "Q262789",
+  "bucket": "foreign",
+  "source": "wikipedia/km-en-titles",
+  "attestations": 7
+ },
+ {
+  "khmer": "អាណូ អូទីស",
+  "latin": "Arnau Ortiz",
+  "qid": "Q116849701",
+  "bucket": "foreign",
+  "source": "wikipedia/km-en-titles",
+  "attestations": 7
+ },
+ {
+  "khmer": "អ៊ូច ឡេង",
+  "latin": "Leng Ouch",
+  "qid": "Q23888152",
+  "bucket": "cambodian",
+  "source": "wikidata/cambodian-citizens",
+  "attestations": 7
+ },
+ {
+  "khmer": "អៀវ កើស",
+  "latin": "Ieu Koeus",
+  "qid": "Q4073728",
+  "bucket": "cambodian",
+  "source": "wikipedia/km-en-titles",
+  "attestations": 7
+ },
+ {
+  "khmer": "ឧកញ៉ាសុត្តន្តប្រីជាឥន្ត",
+  "latin": "Suttantaprija Ind",
+  "qid": "Q6455815",
+  "bucket": "cambodian",
+  "source": "wikipedia/km-en-titles",
+  "attestations": 7
+ },
+ {
+  "khmer": "ចក្រា",
+  "latin": "Chakra",
+  "qid": "khmer_names.json (fetched 2026-10-31); unique given-name and surname tokens with their romanizations",
+  "bucket": "curated",
+  "source": "static/kname",
   "attestations": 6
  },
  {
-  "khmer": "ហ្វ្រង់ស៊ីសស្កូ ហ្គុតទែររេស",
-  "latin": "Francisco Guterres",
-  "qid": "Q897790",
+  "khmer": "ជោន ស្តាត មីល",
+  "latin": "John Stuart Mill",
+  "qid": "Q50020",
+  "bucket": "foreign",
+  "source": "wikidata/all-humans",
+  "attestations": 6
+ },
+ {
+  "khmer": "ដេមី ឡូវ៉េតូ",
+  "latin": "Demi Lovato",
+  "qid": "Q41173",
+  "bucket": "foreign",
+  "source": "wikidata/all-humans",
+  "attestations": 6,
+  "altLatin": [
+   "Demi Lavoto",
+   "Demi lavoto",
+   "Dem lovato",
+   "Demetria Lovato",
+   "Demi lavato",
+   "DD Lovato",
+   "Moves Me"
+  ]
+ },
+ {
+  "khmer": "ឌីលម៉ា រូសេហ្វ",
+  "latin": "Dilma Rousseff",
+  "qid": "Q40722",
+  "bucket": "foreign",
+  "source": "wikidata/all-humans",
+  "attestations": 6
+ },
+ {
+  "khmer": "ធរណីន្ទ្រវម៌្ម",
+  "latin": "Dharanindravarman",
+  "qid": "Q135690",
+  "bucket": "cambodian",
+  "source": "wikidata/native-names",
+  "attestations": 6
+ },
+ {
+  "khmer": "និព្វានបាទ",
+  "latin": "Borom Nipeanbot",
+  "qid": "Q3342104",
+  "bucket": "unknown",
+  "source": "wikidata/native-names",
+  "attestations": 6
+ },
+ {
+  "khmer": "ពេជ្ររតនរាជសុតា",
+  "latin": "Bejaratana",
+  "qid": "Q4881538",
   "bucket": "foreign",
   "source": "wikipedia/km-en-titles",
+  "attestations": 6,
+  "altLatin": [
+   "Beiaratana"
+  ]
+ },
+ {
+  "khmer": "មីកូឡា អាហ្សារ៉ូវ",
+  "latin": "Mykola Azarov",
+  "qid": "Q57590",
+  "bucket": "foreign",
+  "source": "wikidata/all-humans",
+  "attestations": 6
+ },
+ {
+  "khmer": "ម៉ៅណូ កូអ៊ីវីស្តូ",
+  "latin": "Mauno Koivisto",
+  "qid": "Q29021",
+  "bucket": "foreign",
+  "source": "wikidata/all-humans",
+  "attestations": 6
+ },
+ {
+  "khmer": "រីកាដូស ឡាហ្គោស",
+  "latin": "Ricardo Lagos",
+  "qid": "Q331",
+  "bucket": "foreign",
+  "source": "wikidata/all-humans",
+  "attestations": 6
+ },
+ {
+  "khmer": "សៀង",
+  "latin": "Sieng",
+  "qid": "popular-names-by-country-dataset common-surnames-by-country.csv KH rows (fetched 2026-10-31), compiled from Wikipedia's lists of most common surnames; Google-Translate artifacts filtered out",
+  "bucket": "curated",
+  "source": "static/sigpwned",
+  "attestations": 6
+ },
+ {
+  "khmer": "សៅវភាផងស៊ី",
+  "latin": "Saovabha Phongsri",
+  "qid": "Q467882",
+  "bucket": "foreign",
+  "source": "wikipedia/km-en-titles",
+  "attestations": 6
+ },
+ {
+  "khmer": "ហ្វុលហ្សេនស៊ីអូ បាទីស្តា",
+  "latin": "Fulgencio Batista",
+  "qid": "Q11270",
+  "bucket": "foreign",
+  "source": "wikidata/all-humans",
+  "attestations": 6
+ },
+ {
+  "khmer": "ឡាណា ឌែល រេយ៍",
+  "latin": "Lana Del Rey",
+  "qid": "Q37150",
+  "bucket": "foreign",
+  "source": "wikidata/all-humans",
   "attestations": 6
  },
  {
@@ -2348,99 +2470,51 @@
   "attestations": 6
  },
  {
-  "khmer": "អង្គជ័យ",
-  "latin": "Trasak Paem",
-  "qid": "Q3337600",
+  "khmer": "អូម៉ា បុងហ្គោ",
+  "latin": "Omar Bongo",
+  "qid": "Q172083",
   "bucket": "foreign",
-  "source": "wikipedia/km-en-titles",
+  "source": "wikidata/all-humans",
   "attestations": 6
  },
  {
-  "khmer": "អព្ភន្ត្រីបជា",
-  "latin": "Abbhantripaja",
-  "qid": "Q4664124",
+  "khmer": "អេវ៉ូ ម៉ូរ៉ាឡេស",
+  "latin": "Evo Morales",
+  "qid": "Q42410",
   "bucket": "foreign",
-  "source": "wikipedia/km-en-titles",
+  "source": "wikidata/all-humans",
   "attestations": 6
  },
  {
-  "khmer": "អភ័យធីបែសបែន",
-  "latin": "Chaophraya Aphaiphubet",
-  "qid": "Q59348881",
-  "bucket": "unknown",
-  "source": "wikidata/kmwiki-humans",
-  "attestations": 6
- },
- {
-  "khmer": "អភ័យភូបេស្ស",
-  "latin": "Chaophraya Aphaiphubet",
-  "qid": "Q777414",
+  "khmer": "ឃេធី ភើររី",
+  "latin": "Katy Perry",
+  "qid": "Q42493",
   "bucket": "foreign",
-  "source": "wikidata/kmwiki-humans",
-  "attestations": 6
+  "source": "wikidata/all-humans",
+  "attestations": 5
  },
  {
-  "khmer": "អាន់តូនី",
-  "latin": "Antony",
-  "qid": "Q59205608",
-  "bucket": "foreign",
-  "source": "wikipedia/km-en-titles",
-  "attestations": 6
+  "khmer": "ចន្ទ្រា",
+  "latin": "Chantrea",
+  "qid": "khmer_names.json (fetched 2026-10-31); unique given-name and surname tokens with their romanizations",
+  "bucket": "curated",
+  "source": "static/kname",
+  "attestations": 5
  },
  {
-  "khmer": "អាល់មូហ៍តាឌី ប៊ីលឡា",
-  "latin": "Al-Muhtadee Billah",
-  "qid": "Q431442",
-  "bucket": "foreign",
-  "source": "wikipedia/km-en-titles",
-  "attestations": 6
+  "khmer": "សិទ្ធិ",
+  "latin": "Sith",
+  "qid": "khmer_names.json (fetched 2026-10-31); unique given-name and surname tokens with their romanizations",
+  "bucket": "curated",
+  "source": "static/kname",
+  "attestations": 5
  },
  {
-  "khmer": "អែនជេលីណា ចូលី",
-  "latin": "Angelina Jolie",
-  "qid": "Q13909",
-  "bucket": "cambodian",
-  "source": "wikipedia/km-en-titles",
-  "attestations": 6
- },
- {
-  "khmer": "ឥន្ទ្រលោក",
-  "latin": "Indrani",
-  "qid": "Q25680135",
-  "bucket": "foreign",
-  "source": "wikidata/kmwiki-humans",
-  "attestations": 6
- },
- {
-  "khmer": "ឥន្ទ្រសាកសាជិ",
-  "latin": "Indrasakdi Sachi",
-  "qid": "Q4925277",
-  "bucket": "foreign",
-  "source": "wikidata/kmwiki-humans",
-  "attestations": 6
- },
- {
-  "khmer": "តាកាម៉ាសា",
-  "latin": "Takamasa",
-  "qid": "Q7677128",
+  "khmer": "ហាន់ស",
+  "latin": "Hans",
+  "qid": "Q632842",
   "bucket": "foreign",
   "source": "wikidata/name-items",
-  "attestations": 5
- },
- {
-  "khmer": "មីឆែល បាឆេឡេត",
-  "latin": "Michelle Bachelet",
-  "qid": "Q320",
-  "bucket": "foreign",
-  "source": "wikidata/all-humans",
-  "attestations": 5
- },
- {
-  "khmer": "ស្ទេហ្វិន ឃីង",
-  "latin": "Stephen King",
-  "qid": "Q39829",
-  "bucket": "foreign",
-  "source": "wikidata/all-humans",
   "attestations": 5
  },
  {
@@ -2452,35 +2526,51 @@
   "attestations": 5
  },
  {
-  "khmer": "ឦសាន",
-  "latin": "Ishana",
-  "qid": "Q608366",
-  "bucket": "foreign",
-  "source": "wikidata/name-items",
-  "attestations": 5
- },
- {
-  "khmer": "ជា",
-  "latin": "Chea",
-  "qid": "khmer_names.json (fetched 2026-10-31); unique given-name and surname tokens with their romanizations",
-  "bucket": "curated",
-  "source": "static/kname",
-  "attestations": 4
- },
- {
-  "khmer": "អាវីហ្គដ័រ លីប៊ែរម៉ាន់",
-  "latin": "Avigdor Lieberman",
-  "qid": "Q58311",
+  "khmer": "កាឡូស មេសា",
+  "latin": "Carlos Mesa",
+  "qid": "Q312668",
   "bucket": "foreign",
   "source": "wikidata/all-humans",
   "attestations": 4
  },
  {
-  "khmer": "កាមីល សូថង់",
-  "latin": "Camille Chautemps",
-  "qid": "Q263884",
+  "khmer": "សារ៉ា ផាលីន",
+  "latin": "Sarah Palin",
+  "qid": "Q43144",
   "bucket": "foreign",
   "source": "wikidata/all-humans",
+  "attestations": 4
+ },
+ {
+  "khmer": "កក្កដា",
+  "latin": "Kakada",
+  "qid": "compile-trusted.mjs — trusted tier of the name-list distillation pipeline",
+  "bucket": "distilled",
+  "source": "static/distill-verified",
+  "attestations": 3
+ },
+ {
+  "khmer": "កាំង ហ្គេកអ៊ាវ",
+  "latin": "Kang Kek Iew",
+  "qid": "Q336412",
+  "bucket": "cambodian",
+  "source": "wikidata/native-names",
+  "attestations": 3
+ },
+ {
+  "khmer": "កាល់លីយ៉ាន",
+  "latin": "Kalliyan",
+  "qid": "compile-trusted.mjs — trusted tier of the name-list distillation pipeline",
+  "bucket": "distilled",
+  "source": "static/distill-verified",
+  "attestations": 3
+ },
+ {
+  "khmer": "គិរី",
+  "latin": "Kiri",
+  "qid": "compile-trusted.mjs — trusted tier of the name-list distillation pipeline",
+  "bucket": "distilled",
+  "source": "static/distill-verified",
   "attestations": 3
  },
  {
@@ -2492,11 +2582,175 @@
   "attestations": 3
  },
  {
+  "khmer": "គូនីគី កូអ៊ីសូ",
+  "latin": "Kuniaki Koiso",
+  "qid": "Q315549",
+  "bucket": "foreign",
+  "source": "wikidata/all-humans",
+  "attestations": 3
+ },
+ {
+  "khmer": "គ្រឹស្តុបផើ កូឡំបូស",
+  "latin": "Christopher Columbus",
+  "qid": "Q7322",
+  "bucket": "foreign",
+  "source": "wikipedia/redirects-km",
+  "attestations": 3,
+  "altLatin": [
+   "Cristoforo Colombo",
+   "Cristopher Colombus",
+   "Cristopher Columbus",
+   "Christopher Colombus",
+   "Columbus Quincentennial",
+   "Cristoforo Columbo",
+   "Chistopher Colombus",
+   "Cristobol Colon",
+   "Crostoforo Colombo",
+   "Christofo Columbo",
+   "Christovao Columbo",
+   "Christoper Columbus",
+   "Christopher coloumbus",
+   "Christopher columb",
+   "Cristovao Colombo",
+   "Christoffa Corombo",
+   "Christobal Colon",
+   "Cristoforo Colubmo"
+  ]
+ },
+ {
+  "khmer": "ងួន ចាន់ដេវីត",
+  "latin": "G-Devith",
+  "qid": "Q37992985",
+  "bucket": "cambodian",
+  "source": "wikidata/birth-names",
+  "attestations": 3
+ },
+ {
+  "khmer": "ចក្រពង្ស",
+  "latin": "Chakrapong",
+  "qid": "compile-trusted.mjs — trusted tier of the name-list distillation pipeline",
+  "bucket": "distilled",
+  "source": "static/distill-verified",
+  "attestations": 3
+ },
+ {
+  "khmer": "ចន្ទគ្រឹស្នា",
+  "latin": "Chankrisna",
+  "qid": "compile-trusted.mjs — trusted tier of the name-list distillation pipeline",
+  "bucket": "distilled",
+  "source": "static/distill-verified",
+  "attestations": 3
+ },
+ {
+  "khmer": "ចំប៉ី",
+  "latin": "Champei",
+  "qid": "compile-trusted.mjs — trusted tier of the name-list distillation pipeline",
+  "bucket": "distilled",
+  "source": "static/distill-verified",
+  "attestations": 3
+ },
+ {
+  "khmer": "ចុឡាលង្ករណ៍",
+  "latin": "Chulalongkorn",
+  "qid": "Q158861",
+  "bucket": "foreign",
+  "source": "wikipedia/redirects-km",
+  "attestations": 3
+ },
+ {
+  "khmer": "ចូម",
+  "latin": "Choum",
+  "qid": "compile-trusted.mjs — trusted tier of the name-list distillation pipeline",
+  "bucket": "distilled",
+  "source": "static/distill-verified",
+  "attestations": 3
+ },
+ {
+  "khmer": "ចូសែហ្វ ស្តាលីន",
+  "latin": "Joseph Stalin",
+  "qid": "Q855",
+  "bucket": "foreign",
+  "source": "wikipedia/redirects-km",
+  "attestations": 3
+ },
+ {
+  "khmer": "ចេង អន",
+  "latin": "Cheng An",
+  "qid": "Q24258905",
+  "bucket": "cambodian",
+  "source": "wikidata/native-names",
+  "attestations": 3
+ },
+ {
+  "khmer": "ចេននី រីបេរ៉ា",
+  "latin": "Jenni Rivera",
+  "qid": "Q714185",
+  "bucket": "foreign",
+  "source": "wikipedia/redirects-km",
+  "attestations": 3
+ },
+ {
+  "khmer": "ចែហ្វហ្វ្រី ដាមើរ",
+  "latin": "Jeffrey Dahmer",
+  "qid": "Q298364",
+  "bucket": "foreign",
+  "source": "wikidata/all-humans",
+  "attestations": 3
+ },
+ {
+  "khmer": "ចៅ សេង",
+  "latin": "Chau Seng",
+  "qid": "Q51457052",
+  "bucket": "cambodian",
+  "source": "wikidata/native-names",
+  "attestations": 3
+ },
+ {
+  "khmer": "ជឹង",
+  "latin": "Cheung",
+  "qid": "khmer_names.json (fetched 2026-10-31); unique given-name and surname tokens with their romanizations",
+  "bucket": "curated",
+  "source": "static/kname",
+  "attestations": 3
+ },
+ {
   "khmer": "ជូលីស នីយេរេរេ",
   "latin": "Julius Nyerere",
   "qid": "Q186525",
   "bucket": "foreign",
   "source": "wikidata/all-humans",
+  "attestations": 3
+ },
+ {
+  "khmer": "ឈាន",
+  "latin": "Chhean",
+  "qid": "compile-trusted.mjs — trusted tier of the name-list distillation pipeline",
+  "bucket": "distilled",
+  "source": "static/distill-verified",
+  "attestations": 3
+ },
+ {
+  "khmer": "ដេវីដ វ៉លលៀមស៍",
+  "latin": "David Walliams",
+  "qid": "Q359665",
+  "bucket": "foreign",
+  "source": "wikidata/all-humans",
+  "attestations": 3
+ },
+ {
+  "khmer": "ឌុច សុភា",
+  "latin": "Sophea Duch",
+  "qid": "Q3236833",
+  "bucket": "cambodian",
+  "source": "wikidata/native-names",
+  "attestations": 3
+ },
+ {
+  "khmer": "ណារី",
+  "latin": "Nary",
+  "qid": "compile-trusted.mjs — trusted tier of the name-list distillation pipeline",
+  "bucket": "distilled",
+  "source": "static/distill-verified",
   "attestations": 3
  },
  {
@@ -2508,25 +2762,408 @@
   "attestations": 3
  },
  {
-  "khmer": "រ៉ាយអាន់ ហ្គូស្លីង",
-  "latin": "Ryan Gosling",
-  "qid": "Q193815",
+  "khmer": "នរៈសីហ៍",
+  "latin": "Noreaksey",
+  "qid": "compile-trusted.mjs — trusted tier of the name-list distillation pipeline",
+  "bucket": "distilled",
+  "source": "static/distill-verified",
+  "attestations": 3
+ },
+ {
+  "khmer": "នរោត្តម អរុណយុគន្ធរ",
+  "latin": "Norodom Yukanthor",
+  "qid": "Q11792945",
+  "bucket": "unknown",
+  "source": "wikidata/native-names",
+  "attestations": 3
+ },
+ {
+  "khmer": "នាង តេង",
+  "latin": "Teresa Teng",
+  "qid": "Q463945",
+  "bucket": "foreign",
+  "source": "wikipedia/redirects-km",
+  "attestations": 3
+ },
+ {
+  "khmer": "ប៉ុន សុគន្ធា",
+  "latin": "Sokun Nisa",
+  "qid": "Q25679311",
+  "bucket": "cambodian",
+  "source": "wikipedia/redirects-km",
+  "attestations": 3
+ },
+ {
+  "khmer": "ប៉ុល សារ៉ាន់",
+  "latin": "Mao Sareth",
+  "qid": "Q19752126",
+  "bucket": "cambodian",
+  "source": "wikidata/birth-names",
+  "attestations": 3
+ },
+ {
+  "khmer": "បុឝ្ករាក្",
+  "latin": "Pushkaraksha",
+  "qid": "Q3411011",
+  "bucket": "cambodian",
+  "source": "wikidata/native-names",
+  "attestations": 3
+ },
+ {
+  "khmer": "ប៉ូល រ៉េណូ",
+  "latin": "Paul Reynaud",
+  "qid": "Q161076",
   "bucket": "foreign",
   "source": "wikidata/all-humans",
   "attestations": 3
  },
  {
-  "khmer": "លេវី ម្វាណាវ៉ាសា",
-  "latin": "Levy Mwanawasa",
-  "qid": "Q212058",
+  "khmer": "ផល្លី",
+  "latin": "Phally",
+  "qid": "compile-trusted.mjs — trusted tier of the name-list distillation pipeline",
+  "bucket": "distilled",
+  "source": "static/distill-verified",
+  "attestations": 3
+ },
+ {
+  "khmer": "ផូល រ៉ដ",
+  "latin": "Paul Rudd",
+  "qid": "Q276525",
   "bucket": "foreign",
   "source": "wikidata/all-humans",
   "attestations": 3
  },
  {
-  "khmer": "ស៊ូតូមូ ហាតា",
-  "latin": "Tsutomu Hata",
-  "qid": "Q315720",
+  "khmer": "ពន្លាក់",
+  "latin": "Ponleak",
+  "qid": "compile-trusted.mjs — trusted tier of the name-list distillation pipeline",
+  "bucket": "distilled",
+  "source": "static/distill-verified",
+  "attestations": 3
+ },
+ {
+  "khmer": "ព្រះអង្គម្ចាស់ក្សត្រីជុឡាផន",
+  "latin": "Chulabhorn",
+  "qid": "Q1089410",
+  "bucket": "foreign",
+  "source": "wikipedia/redirects-km",
+  "attestations": 3,
+  "altLatin": [
+   "Chulabhornwalailak",
+   "Chulabhon",
+   "Walailak",
+   "Chulabhonwalailak",
+   "Chulaporn"
+  ]
+ },
+ {
+  "khmer": "មនោ",
+  "latin": "Manou",
+  "qid": "khmer_names.json (fetched 2026-10-31); unique given-name and surname tokens with their romanizations",
+  "bucket": "curated",
+  "source": "static/kname",
+  "attestations": 3
+ },
+ {
+  "khmer": "មហាទេវី",
+  "latin": "Devikshatri",
+  "qid": "Q107006975",
+  "bucket": "unknown",
+  "source": "wikipedia/redirects-km",
+  "attestations": 3
+ },
+ {
+  "khmer": "មហេន្ទ្រវម៌្",
+  "latin": "Mahendravarman",
+  "qid": "Q2661387",
+  "bucket": "foreign",
+  "source": "wikidata/native-names",
+  "attestations": 3
+ },
+ {
+  "khmer": "មា",
+  "latin": "Ma",
+  "qid": "popular-names-by-country-dataset common-surnames-by-country.csv KH rows (fetched 2026-10-31), compiled from Wikipedia's lists of most common surnames; Google-Translate artifacts filtered out",
+  "bucket": "curated",
+  "source": "static/sigpwned",
+  "attestations": 3
+ },
+ {
+  "khmer": "ម៉ាសេឡូ តូក្វាតូ ដេ អាល់វែអា",
+  "latin": "Marcelo Torcuato de Alvear",
+  "qid": "Q363586",
+  "bucket": "foreign",
+  "source": "wikidata/all-humans",
+  "attestations": 3
+ },
+ {
+  "khmer": "មូហាំម៉ាឌូ ប៊ូហារី",
+  "latin": "Muhammadu Buhari",
+  "qid": "Q361567",
+  "bucket": "foreign",
+  "source": "wikidata/all-humans",
+  "attestations": 3
+ },
+ {
+  "khmer": "យី",
+  "latin": "Yi",
+  "qid": "khmer_names.json (fetched 2026-10-31); unique given-name and surname tokens with their romanizations",
+  "bucket": "curated",
+  "source": "static/kname",
+  "attestations": 3
+ },
+ {
+  "khmer": "យុន",
+  "latin": "Yun",
+  "qid": "popular-names-by-country-dataset common-surnames-by-country.csv KH rows (fetched 2026-10-31), compiled from Wikipedia's lists of most common surnames; Google-Translate artifacts filtered out",
+  "bucket": "curated",
+  "source": "static/sigpwned",
+  "attestations": 3
+ },
+ {
+  "khmer": "យូគីអូ ហាតូយ៉ាម៉ា",
+  "latin": "Yukio Hatoyama",
+  "qid": "Q131077",
+  "bucket": "foreign",
+  "source": "wikidata/all-humans",
+  "attestations": 3
+ },
+ {
+  "khmer": "រស់ ញឹម",
+  "latin": "Nhim Ros",
+  "qid": "Q24958407",
+  "bucket": "unknown",
+  "source": "wikidata/native-names",
+  "attestations": 3
+ },
+ {
+  "khmer": "រីយ៉ាន ស",
+  "latin": "Ryan White",
+  "qid": "Q320163",
+  "bucket": "foreign",
+  "source": "wikidata/all-humans",
+  "attestations": 3
+ },
+ {
+  "khmer": "រីស៊ី សុណាក់",
+  "latin": "Rishi Sunak",
+  "qid": "Q20055561",
+  "bucket": "foreign",
+  "source": "wikipedia/redirects-km",
+  "attestations": 3
+ },
+ {
+  "khmer": "លិម",
+  "latin": "Lim",
+  "qid": "popular-names-by-country-dataset common-surnames-by-country.csv KH rows (fetched 2026-10-31), compiled from Wikipedia's lists of most common surnames; Google-Translate artifacts filtered out",
+  "bucket": "curated",
+  "source": "static/sigpwned",
+  "attestations": 3
+ },
+ {
+  "khmer": "លី",
+  "latin": "Ly",
+  "qid": "khmer_names.json (fetched 2026-10-31); unique given-name and surname tokens with their romanizations",
+  "bucket": "curated",
+  "source": "static/kname",
+  "attestations": 3
+ },
+ {
+  "khmer": "លីសា អាន",
+  "latin": "Lisa Ann",
+  "qid": "Q233259",
+  "bucket": "foreign",
+  "source": "wikidata/all-humans",
+  "attestations": 3
+ },
+ {
+  "khmer": "លីអូណាដូ ដា វីនស៊ី",
+  "latin": "Leonardo da Vinci",
+  "qid": "Q762",
+  "bucket": "foreign",
+  "source": "wikipedia/redirects-km",
+  "attestations": 3
+ },
+ {
+  "khmer": "លូកា វីលសុន",
+  "latin": "Luke Wilson",
+  "qid": "Q107769",
+  "bucket": "foreign",
+  "source": "wikipedia/redirects-km",
+  "attestations": 3
+ },
+ {
+  "khmer": "ល្វី ឌឺឡាប៉ូត៍",
+  "latin": "Louis Delaporte",
+  "qid": "Q349828",
+  "bucket": "foreign",
+  "source": "wikipedia/redirects-km",
+  "attestations": 3
+ },
+ {
+  "khmer": "វជិរាលង្ករណ",
+  "latin": "Vajiralongkorn",
+  "qid": "Q548733",
+  "bucket": "foreign",
+  "source": "wikipedia/redirects-km",
+  "attestations": 3
+ },
+ {
+  "khmer": "វ៉ាន់",
+  "latin": "Van",
+  "qid": "khmer_names.json (fetched 2026-10-31); unique given-name and surname tokens with their romanizations",
+  "bucket": "curated",
+  "source": "static/kname",
+  "attestations": 3
+ },
+ {
+  "khmer": "វិទូ",
+  "latin": "Vithu",
+  "qid": "compile-trusted.mjs — trusted tier of the name-list distillation pipeline",
+  "bucket": "distilled",
+  "source": "static/distill-verified",
+  "attestations": 3
+ },
+ {
+  "khmer": "វីឈៀត",
+  "latin": "Vichet",
+  "qid": "compile-trusted.mjs — trusted tier of the name-list distillation pipeline",
+  "bucket": "distilled",
+  "source": "static/distill-verified",
+  "attestations": 3
+ },
+ {
+  "khmer": "វីរលក្ស្មី",
+  "latin": "Viralakshmi",
+  "qid": "Q25680167",
+  "bucket": "foreign",
+  "source": "wikipedia/redirects-km",
+  "attestations": 3
+ },
+ {
+  "khmer": "វីរវម៌្",
+  "latin": "Vira Varman",
+  "qid": "Q25680107",
+  "bucket": "unknown",
+  "source": "wikidata/native-names",
+  "attestations": 3
+ },
+ {
+  "khmer": "វ្លាឌីមៀរ លេនីន",
+  "latin": "Vladimir Lenin",
+  "qid": "Q1394",
+  "bucket": "foreign",
+  "source": "wikipedia/redirects-km",
+  "attestations": 3
+ },
+ {
+  "khmer": "វ្លាឌីមៀរ អ៊ូលីយ៉ាណូវ",
+  "latin": "Vladimir Lenin",
+  "qid": "Q1394",
+  "bucket": "foreign",
+  "source": "wikipedia/redirects-km",
+  "attestations": 3
+ },
+ {
+  "khmer": "សង្ហា",
+  "latin": "Sangha",
+  "qid": "compile-trusted.mjs — trusted tier of the name-list distillation pipeline",
+  "bucket": "distilled",
+  "source": "static/distill-verified",
+  "attestations": 3
+ },
+ {
+  "khmer": "សត្ថា",
+  "latin": "Satha",
+  "qid": "Q3473926",
+  "bucket": "unknown",
+  "source": "wikipedia/redirects-km",
+  "attestations": 3
+ },
+ {
+  "khmer": "សិង្ខរមហាទេវី",
+  "latin": "Sukhara Mahadevi",
+  "qid": "Q97267992",
+  "bucket": "foreign",
+  "source": "wikidata/native-names",
+  "attestations": 3
+ },
+ {
+  "khmer": "សិនិនាដ",
+  "latin": "Sineenatha",
+  "qid": "Q61117470",
+  "bucket": "foreign",
+  "source": "wikipedia/redirects-km",
+  "attestations": 3
+ },
+ {
+  "khmer": "សឺន",
+  "latin": "Son",
+  "qid": "popular-names-by-country-dataset common-surnames-by-country.csv KH rows (fetched 2026-10-31), compiled from Wikipedia's lists of most common surnames; Google-Translate artifacts filtered out",
+  "bucket": "curated",
+  "source": "static/sigpwned",
+  "attestations": 3
+ },
+ {
+  "khmer": "ស៊ុំ",
+  "latin": "Sum",
+  "qid": "khmer_names.json (fetched 2026-10-31); unique given-name and surname tokens with their romanizations",
+  "bucket": "curated",
+  "source": "static/kname",
+  "attestations": 3
+ },
+ {
+  "khmer": "សុត្តន្តប្រីជា ឥន្ទ",
+  "latin": "Suttantaprija Ind",
+  "qid": "Q6455815",
+  "bucket": "cambodian",
+  "source": "wikipedia/redirects-km",
+  "attestations": 3
+ },
+ {
+  "khmer": "សុភ័ក្ត្រ",
+  "latin": "Sopheaktra",
+  "qid": "compile-trusted.mjs — trusted tier of the name-list distillation pipeline",
+  "bucket": "distilled",
+  "source": "static/distill-verified",
+  "attestations": 3
+ },
+ {
+  "khmer": "សុវណ្ណរឹទ្ធិ",
+  "latin": "Sovannarith",
+  "qid": "compile-trusted.mjs — trusted tier of the name-list distillation pipeline",
+  "bucket": "distilled",
+  "source": "static/distill-verified",
+  "attestations": 3
+ },
+ {
+  "khmer": "សឿង",
+  "latin": "Sueang",
+  "qid": "Q16139734",
+  "bucket": "foreign",
+  "source": "wikidata/native-names",
+  "attestations": 3
+ },
+ {
+  "khmer": "ស្រីមុំ",
+  "latin": "Srey Mom",
+  "qid": "compile-trusted.mjs — trusted tier of the name-list distillation pipeline",
+  "bucket": "distilled",
+  "source": "static/distill-verified",
+  "attestations": 3
+ },
+ {
+  "khmer": "ហាក់",
+  "latin": "Hak",
+  "qid": "khmer_names.json (fetched 2026-10-31); unique given-name and surname tokens with their romanizations",
+  "bucket": "curated",
+  "source": "static/kname",
+  "attestations": 3
+ },
+ {
+  "khmer": "ហាយ៉ាតូ អ៊ីកេដា",
+  "latin": "Hayato Ikeda",
+  "qid": "Q299142",
   "bucket": "foreign",
   "source": "wikidata/all-humans",
   "attestations": 3
@@ -2540,25 +3177,25 @@
   "attestations": 3
  },
  {
-  "khmer": "ហ្គាយ ស្កុត",
-  "latin": "Guy Scott",
-  "qid": "Q153986",
+  "khmer": "ហ៊ុក ឡង់ឌី",
+  "latin": "Hok Lundy",
+  "qid": "Q10986133",
+  "bucket": "cambodian",
+  "source": "wikipedia/redirects-km",
+  "attestations": 3
+ },
+ {
+  "khmer": "ហ៊ុមប៊ែរតូ កាស្តេឡូ ប្រង់កូ",
+  "latin": "Humberto Castelo Branco",
+  "qid": "Q294430",
   "bucket": "foreign",
   "source": "wikidata/all-humans",
   "attestations": 3
  },
  {
-  "khmer": "ហ្គូដឡាក់ ជូណាថាន",
-  "latin": "Goodluck Jonathan",
-  "qid": "Q57380",
-  "bucket": "foreign",
-  "source": "wikidata/all-humans",
-  "attestations": 3
- },
- {
-  "khmer": "ហ្គ្រូចូ ម៉ាក្ស",
-  "latin": "Groucho Marx",
-  "qid": "Q103846",
+  "khmer": "ហ្គាបេ ញូវែល",
+  "latin": "Gabe Newell",
+  "qid": "Q347418",
   "bucket": "foreign",
   "source": "wikidata/all-humans",
   "attestations": 3
@@ -2572,6 +3209,57 @@
   "attestations": 3
  },
  {
+  "khmer": "ហ្វ្រេដេរិក ឈីលូបា",
+  "latin": "Frederick Chiluba",
+  "qid": "Q297057",
+  "bucket": "foreign",
+  "source": "wikidata/all-humans",
+  "attestations": 3,
+  "altLatin": [
+   "Fredrick Chiluba"
+  ]
+ },
+ {
+  "khmer": "ហ្វ្លរេន អាធឿត",
+  "latin": "Florence Arthaud",
+  "qid": "Q435208",
+  "bucket": "foreign",
+  "source": "wikipedia/redirects-km",
+  "attestations": 3
+ },
+ {
+  "khmer": "ឡាវ ម៉េងឃីន",
+  "latin": "Lau Ming Kan",
+  "qid": "Q19855425",
+  "bucket": "cambodian",
+  "source": "wikidata/native-names",
+  "attestations": 3
+ },
+ {
+  "khmer": "អរុណី",
+  "latin": "Arunny",
+  "qid": "compile-trusted.mjs — trusted tier of the name-list distillation pipeline",
+  "bucket": "distilled",
+  "source": "static/distill-verified",
+  "attestations": 3
+ },
+ {
+  "khmer": "អាង",
+  "latin": "Ang",
+  "qid": "popular-names-by-country-dataset common-surnames-by-country.csv KH rows (fetched 2026-10-31), compiled from Wikipedia's lists of most common surnames; Google-Translate artifacts filtered out",
+  "bucket": "curated",
+  "source": "static/sigpwned",
+  "attestations": 3
+ },
+ {
+  "khmer": "អាឌុល អ៊ីត្លែរ",
+  "latin": "Adolf Hitler",
+  "qid": "Q352",
+  "bucket": "foreign",
+  "source": "wikipedia/redirects-km",
+  "attestations": 3
+ },
+ {
   "khmer": "អាណាស្តាស៊ីអូ សូម៉ូហ្សា ដេបៃឡេ",
   "latin": "Anastasio Somoza Debayle",
   "qid": "Q218443",
@@ -2580,251 +3268,283 @@
   "attestations": 3
  },
  {
-  "khmer": "អាម៉ាន់ដូ ហ្គេប៊ូហ្សា",
-  "latin": "Armando Guebuza",
-  "qid": "Q57392",
+  "khmer": "អាហ្មេដ ប៊ែន ប៊ែលឡា",
+  "latin": "Ahmad ibn Billah",
+  "qid": "Q179908",
   "bucket": "foreign",
   "source": "wikidata/all-humans",
   "attestations": 3
  },
  {
-  "khmer": "អាឡេហាន់ដ្រូ តូឡេដូ",
-  "latin": "Alejandro Toledo",
-  "qid": "Q207426",
+  "khmer": "អ៊ុច",
+  "latin": "Uch",
+  "qid": "popular-names-by-country-dataset common-surnames-by-country.csv KH rows (fetched 2026-10-31), compiled from Wikipedia's lists of most common surnames; Google-Translate artifacts filtered out",
+  "bucket": "curated",
+  "source": "static/sigpwned",
+  "attestations": 3
+ },
+ {
+  "khmer": "អ៊ូហូរូ កេនយ៉ាតតា",
+  "latin": "Uhuru Kenyatta",
+  "qid": "Q196070",
   "bucket": "foreign",
   "source": "wikidata/all-humans",
   "attestations": 3
  },
  {
-  "khmer": "អេរីកា អេលេនៀក",
-  "latin": "Erika Eleniak",
-  "qid": "Q230390",
-  "bucket": "foreign",
-  "source": "wikidata/all-humans",
+  "khmer": "អៀវ",
+  "latin": "Iv",
+  "qid": "popular-names-by-country-dataset common-surnames-by-country.csv KH rows (fetched 2026-10-31), compiled from Wikipedia's lists of most common surnames; Google-Translate artifacts filtered out",
+  "bucket": "curated",
+  "source": "static/sigpwned",
   "attestations": 3
  },
  {
-  "khmer": "កាំង ហ្គេកអ៊ាវ",
-  "latin": "Kang Kek Iew",
-  "qid": "Q336412",
+  "khmer": "អោ អាន",
+  "latin": "Ao An",
+  "qid": "Q122383946",
   "bucket": "cambodian",
   "source": "wikidata/native-names",
-  "attestations": 2
+  "attestations": 3
  },
  {
-  "khmer": "កៅណ្ឌិន្យវម៌្ម",
-  "latin": "Kaundinya",
-  "qid": "Q4217604",
-  "bucket": "unknown",
-  "source": "wikipedia/redirects-km",
-  "attestations": 2
- },
- {
-  "khmer": "ខៀវ",
-  "latin": "Khiev",
-  "qid": "popular-names-by-country-dataset common-surnames-by-country.csv KH rows (fetched 2026-10-31), compiled from Wikipedia's lists of most common surnames; Google-Translate artifacts filtered out",
-  "bucket": "curated",
-  "source": "static/sigpwned",
-  "attestations": 2
- },
- {
-  "khmer": "គុណវម៌្ម",
-  "latin": "Gunavarman",
-  "qid": "Q19684663",
-  "bucket": "unknown",
-  "source": "wikipedia/redirects-km",
-  "attestations": 2
- },
- {
-  "khmer": "ចេន",
-  "latin": "Chen",
-  "qid": "popular-names-by-country-dataset common-surnames-by-country.csv KH rows (fetched 2026-10-31), compiled from Wikipedia's lists of most common surnames; Google-Translate artifacts filtered out",
-  "bucket": "curated",
-  "source": "static/sigpwned",
-  "attestations": 2
- },
- {
-  "khmer": "ច្រឹង ពលរដ្ឋ",
-  "latin": "Chrerng Polroth",
-  "qid": "Q21622386",
-  "bucket": "cambodian",
-  "source": "wikidata/native-names",
-  "attestations": 2
- },
- {
-  "khmer": "ជូ ស៊ីនទី",
-  "latin": "Chou Sinti",
-  "qid": "Q112668928",
-  "bucket": "cambodian",
-  "source": "wikidata/native-names",
-  "attestations": 2
- },
- {
-  "khmer": "ជួន ជុំ",
-  "latin": "Thiounn Chum",
-  "qid": "Q135617028",
+  "khmer": "ឥសានវរ្មន័",
+  "latin": "Isanavarman",
+  "qid": "Q4205535",
   "bucket": "foreign",
   "source": "wikidata/native-names",
+  "attestations": 3
+ },
+ {
+  "khmer": "កើស",
+  "latin": "Koeus",
+  "qid": "compile-trusted.mjs — trusted tier of the name-list distillation pipeline",
+  "bucket": "distilled",
+  "source": "static/distill-verified",
   "attestations": 2
  },
  {
-  "khmer": "ជេដ្ឋាធិរត្ន័",
-  "latin": "Setthathirath",
-  "qid": "Q732557",
+  "khmer": "ខេមរៈ",
+  "latin": "Khemera",
+  "qid": "compile-trusted.mjs — trusted tier of the name-list distillation pipeline",
+  "bucket": "distilled",
+  "source": "static/distill-verified",
+  "attestations": 2
+ },
+ {
+  "khmer": "ឃែន",
+  "latin": "Khean",
+  "qid": "compile-trusted.mjs — trusted tier of the name-list distillation pipeline",
+  "bucket": "distilled",
+  "source": "static/distill-verified",
+  "attestations": 2
+ },
+ {
+  "khmer": "ចំណាន",
+  "latin": "Chamnan",
+  "qid": "compile-trusted.mjs — trusted tier of the name-list distillation pipeline",
+  "bucket": "distilled",
+  "source": "static/distill-verified",
+  "attestations": 2
+ },
+ {
+  "khmer": "ចាន់ថន",
+  "latin": "Chanthan",
+  "qid": "compile-trusted.mjs — trusted tier of the name-list distillation pipeline",
+  "bucket": "distilled",
+  "source": "static/distill-verified",
+  "attestations": 2
+ },
+ {
+  "khmer": "ចិន្ដាមណី",
+  "latin": "Chendamony",
+  "qid": "compile-trusted.mjs — trusted tier of the name-list distillation pipeline",
+  "bucket": "distilled",
+  "source": "static/distill-verified",
+  "attestations": 2
+ },
+ {
+  "khmer": "ជិនបុត្រ",
+  "latin": "Chenibot",
+  "qid": "compile-trusted.mjs — trusted tier of the name-list distillation pipeline",
+  "bucket": "distilled",
+  "source": "static/distill-verified",
+  "attestations": 2
+ },
+ {
+  "khmer": "ជោរណី",
+  "latin": "Jorani",
+  "qid": "adoption.com Cambodian baby-name list; Latin side scraped, Khmer side distilled",
+  "bucket": "distilled",
+  "source": "static/adoption",
+  "attestations": 2
+ },
+ {
+  "khmer": "ឈរវ័ន្ត",
+  "latin": "Chhorvon",
+  "qid": "compile-trusted.mjs — trusted tier of the name-list distillation pipeline",
+  "bucket": "distilled",
+  "source": "static/distill-verified",
+  "attestations": 2
+ },
+ {
+  "khmer": "ឈីកូ ម៉ាក្ស៍",
+  "latin": "Chico Marx",
+  "qid": "Q380054",
   "bucket": "foreign",
-  "source": "wikipedia/redirects-km",
+  "source": "wikidata/all-humans",
+  "attestations": 2,
+  "altLatin": [
+   "Leonard Marx",
+   "Maxine Marx",
+   "Chicko Marx"
+  ]
+ },
+ {
+  "khmer": "ឈូក",
+  "latin": "Chouk",
+  "qid": "compile-trusted.mjs — trusted tier of the name-list distillation pipeline",
+  "bucket": "distilled",
+  "source": "static/distill-verified",
   "attestations": 2
  },
  {
-  "khmer": "ឌីហ្ស ប្រាន",
-  "latin": "Dith Pran",
-  "qid": "Q469846",
-  "bucket": "cambodian",
-  "source": "wikipedia/redirects-km",
+  "khmer": "ដនាឍ",
+  "latin": "Daneath",
+  "qid": "compile-trusted.mjs — trusted tier of the name-list distillation pipeline",
+  "bucket": "distilled",
+  "source": "static/distill-verified",
   "attestations": 2
  },
  {
-  "khmer": "ណាតស៊ូគី ហាណា",
-  "latin": "Natsuki Hanae",
-  "qid": "Q2596113",
-  "bucket": "foreign",
-  "source": "wikipedia/redirects-km",
+  "khmer": "ដាវី",
+  "latin": "Davi",
+  "qid": "compile-trusted.mjs — trusted tier of the name-list distillation pipeline",
+  "bucket": "distilled",
+  "source": "static/distill-verified",
   "attestations": 2
  },
  {
-  "khmer": "តាយ឴ អរទើយ",
-  "latin": "Tai Orathai",
-  "qid": "Q467624",
-  "bucket": "foreign",
-  "source": "wikipedia/redirects-km",
+  "khmer": "ណារ៉ឺឧង",
+  "latin": "Naroeung",
+  "qid": "compile-trusted.mjs — trusted tier of the name-list distillation pipeline",
+  "bucket": "distilled",
+  "source": "static/distill-verified",
   "attestations": 2
  },
  {
-  "khmer": "តូច ភឿន",
-  "latin": "Tauch Phoeun",
-  "qid": "Q26263075",
-  "bucket": "cambodian",
-  "source": "wikidata/native-names",
+  "khmer": "ណុល",
+  "latin": "Nol",
+  "qid": "compile-trusted.mjs — trusted tier of the name-list distillation pipeline",
+  "bucket": "distilled",
+  "source": "static/distill-verified",
   "attestations": 2
  },
  {
-  "khmer": "ធងឰជយ មែគអិនឰតយ",
-  "latin": "Thongchai McIntyre",
-  "qid": "Q1365889",
-  "bucket": "foreign",
-  "source": "wikipedia/redirects-km",
-  "attestations": 2
- },
- {
-  "khmer": "ធី",
-  "latin": "Thy",
-  "qid": "popular-names-by-country-dataset common-surnames-by-country.csv KH rows (fetched 2026-10-31), compiled from Wikipedia's lists of most common surnames; Google-Translate artifacts filtered out",
-  "bucket": "curated",
-  "source": "static/sigpwned",
-  "attestations": 2
- },
- {
-  "khmer": "នរេសួរ",
-  "latin": "Naresuan",
-  "qid": "Q515704",
-  "bucket": "foreign",
-  "source": "wikipedia/redirects-km",
-  "attestations": 2
- },
- {
-  "khmer": "នរោត្តម ចន្ទរង្សី",
-  "latin": "Norodom Chantaraingsey",
-  "qid": "Q4922615",
-  "bucket": "cambodian",
-  "source": "wikipedia/redirects-km",
-  "attestations": 2
- },
- {
-  "khmer": "នរោត្តម សីហនុវរ្ម័ន",
-  "latin": "Norodom Sihanouk",
-  "qid": "Q160318",
-  "bucket": "cambodian",
-  "source": "wikipedia/redirects-km",
-  "attestations": 2
- },
- {
-  "khmer": "នាងនាគ",
-  "latin": "Soma",
-  "qid": "Q16931263",
-  "bucket": "cambodian",
-  "source": "wikipedia/redirects-km",
-  "attestations": 2
- },
- {
-  "khmer": "នារាយណ៍រាជា",
-  "latin": "Outey",
-  "qid": "Q3358615",
-  "bucket": "unknown",
-  "source": "wikipedia/redirects-km",
-  "attestations": 2
- },
- {
-  "khmer": "ប៉ាង",
-  "latin": "Pang",
-  "qid": "popular-names-by-country-dataset common-surnames-by-country.csv KH rows (fetched 2026-10-31), compiled from Wikipedia's lists of most common surnames; Google-Translate artifacts filtered out",
-  "bucket": "curated",
-  "source": "static/sigpwned",
-  "attestations": 2
- },
- {
-  "khmer": "ប៉ុក",
-  "latin": "Pok",
-  "qid": "popular-names-by-country-dataset common-surnames-by-country.csv KH rows (fetched 2026-10-31), compiled from Wikipedia's lists of most common surnames; Google-Translate artifacts filtered out",
-  "bucket": "curated",
-  "source": "static/sigpwned",
-  "attestations": 2
- },
- {
-  "khmer": "ប៉ែន",
-  "latin": "Pen",
-  "qid": "popular-names-by-country-dataset common-surnames-by-country.csv KH rows (fetched 2026-10-31), compiled from Wikipedia's lists of most common surnames; Google-Translate artifacts filtered out",
-  "bucket": "curated",
-  "source": "static/sigpwned",
-  "attestations": 2
- },
- {
-  "khmer": "ព្រំ ញ៉ែម",
-  "latin": "Prom Nhem",
-  "qid": "Q135643570",
-  "bucket": "unknown",
-  "source": "wikidata/native-names",
-  "attestations": 2
- },
- {
-  "khmer": "ព្រះបាទនរាយណ៍រាជា",
-  "latin": "Outey",
-  "qid": "Q3358615",
-  "bucket": "unknown",
-  "source": "wikipedia/redirects-km",
-  "attestations": 2
- },
- {
-  "khmer": "មាស មុត",
-  "latin": "Meas Muth",
-  "qid": "Q135524766",
-  "bucket": "foreign",
-  "source": "wikidata/native-names",
-  "attestations": 2
- },
- {
-  "khmer": "មូសា ដាឌីស កាម៉ារ៉ា",
-  "latin": "Moussa Dadis Camara",
-  "qid": "Q314271",
+  "khmer": "តូស៊ីគី កៃហ្វូ",
+  "latin": "Toshiki Kaifu",
+  "qid": "Q315579",
   "bucket": "foreign",
   "source": "wikidata/all-humans",
   "attestations": 2
  },
  {
-  "khmer": "មៃ្គ៌ ភិរមភៃ្រ",
-  "latin": "Mike Phiromphorn",
-  "qid": "Q13027773",
+  "khmer": "តេជវន្ត",
+  "latin": "Techivant",
+  "qid": "compile-trusted.mjs — trusted tier of the name-list distillation pipeline",
+  "bucket": "distilled",
+  "source": "static/distill-verified",
+  "attestations": 2
+ },
+ {
+  "khmer": "ថារុធ",
+  "latin": "Tharoth",
+  "qid": "compile-trusted.mjs — trusted tier of the name-list distillation pipeline",
+  "bucket": "distilled",
+  "source": "static/distill-verified",
+  "attestations": 2
+ },
+ {
+  "khmer": "ទីណា",
+  "latin": "Tina",
+  "qid": "compile-trusted.mjs — trusted tier of the name-list distillation pipeline",
+  "bucket": "distilled",
+  "source": "static/distill-verified",
+  "attestations": 2
+ },
+ {
+  "khmer": "ធារ",
+  "latin": "Thear",
+  "qid": "compile-trusted.mjs — trusted tier of the name-list distillation pipeline",
+  "bucket": "distilled",
+  "source": "static/distill-verified",
+  "attestations": 2
+ },
+ {
+  "khmer": "ធីណា",
+  "latin": "Tina",
+  "qid": "compile-trusted.mjs — trusted tier of the name-list distillation pipeline",
+  "bucket": "distilled",
+  "source": "static/distill-verified",
+  "attestations": 2
+ },
+ {
+  "khmer": "បូរី",
+  "latin": "Borey",
+  "qid": "compile-trusted.mjs — trusted tier of the name-list distillation pipeline",
+  "bucket": "distilled",
+  "source": "static/distill-verified",
+  "attestations": 2
+ },
+ {
+  "khmer": "បេជៈរតនា",
+  "latin": "Bejaratana",
+  "qid": "Q4881538",
   "bucket": "foreign",
   "source": "wikipedia/redirects-km",
+  "attestations": 2,
+  "altLatin": [
+   "Beiaratana"
+  ]
+ },
+ {
+  "khmer": "ផ្កាយព្រឹក",
+  "latin": "Pkaypreak",
+  "qid": "compile-trusted.mjs — trusted tier of the name-list distillation pipeline",
+  "bucket": "distilled",
+  "source": "static/distill-verified",
+  "attestations": 2
+ },
+ {
+  "khmer": "ពិរុណ",
+  "latin": "Phirun",
+  "qid": "compile-trusted.mjs — trusted tier of the name-list distillation pipeline",
+  "bucket": "distilled",
+  "source": "static/distill-verified",
+  "attestations": 2
+ },
+ {
+  "khmer": "ភិរាក",
+  "latin": "Phireak",
+  "qid": "compile-trusted.mjs — trusted tier of the name-list distillation pipeline",
+  "bucket": "distilled",
+  "source": "static/distill-verified",
+  "attestations": 2
+ },
+ {
+  "khmer": "ភូរីស្សរ៉ា",
+  "latin": "Phurissara",
+  "qid": "compile-trusted.mjs — trusted tier of the name-list distillation pipeline",
+  "bucket": "distilled",
+  "source": "static/distill-verified",
+  "attestations": 2
+ },
+ {
+  "khmer": "មេត្រីភាព",
+  "latin": "Metreypheap",
+  "qid": "compile-trusted.mjs — trusted tier of the name-list distillation pipeline",
+  "bucket": "distilled",
+  "source": "static/distill-verified",
   "attestations": 2
  },
  {
@@ -2836,262 +3556,211 @@
   "attestations": 2
  },
  {
-  "khmer": "យី",
-  "latin": "Yi",
-  "qid": "khmer_names.json (fetched 2026-10-31); unique given-name and surname tokens with their romanizations",
-  "bucket": "curated",
-  "source": "static/kname",
+  "khmer": "រ៉េត",
+  "latin": "Reth",
+  "qid": "compile-trusted.mjs — trusted tier of the name-list distillation pipeline",
+  "bucket": "distilled",
+  "source": "static/distill-verified",
   "attestations": 2
  },
  {
-  "khmer": "រស់",
-  "latin": "Ros",
-  "qid": "popular-names-by-country-dataset common-surnames-by-country.csv KH rows (fetched 2026-10-31), compiled from Wikipedia's lists of most common surnames; Google-Translate artifacts filtered out",
-  "bucket": "curated",
-  "source": "static/sigpwned",
+  "khmer": "រៅន",
+  "latin": "Roun",
+  "qid": "compile-trusted.mjs — trusted tier of the name-list distillation pipeline",
+  "bucket": "distilled",
+  "source": "static/distill-verified",
   "attestations": 2
  },
  {
-  "khmer": "លិម",
-  "latin": "Lim",
-  "qid": "popular-names-by-country-dataset common-surnames-by-country.csv KH rows (fetched 2026-10-31), compiled from Wikipedia's lists of most common surnames; Google-Translate artifacts filtered out",
-  "bucket": "curated",
-  "source": "static/sigpwned",
+  "khmer": "លៀង",
+  "latin": "Leang",
+  "qid": "compile-trusted.mjs — trusted tier of the name-list distillation pipeline",
+  "bucket": "distilled",
+  "source": "static/distill-verified",
   "attestations": 2
  },
  {
-  "khmer": "លីហ្ស ត្រ័សស៍",
-  "latin": "Liz Truss",
-  "qid": "Q272201",
-  "bucket": "foreign",
-  "source": "wikipedia/redirects-km",
+  "khmer": "វឌ្ឍនា",
+  "latin": "Vathana",
+  "qid": "compile-trusted.mjs — trusted tier of the name-list distillation pipeline",
+  "bucket": "distilled",
+  "source": "static/distill-verified",
   "attestations": 2
  },
  {
-  "khmer": "លោកអ៊ុក អ៊ូ",
-  "latin": "Krom Ngoy",
-  "qid": "Q4929923",
-  "bucket": "cambodian",
-  "source": "wikipedia/redirects-km",
+  "khmer": "សម្ផស្ស",
+  "latin": "Somphos",
+  "qid": "compile-trusted.mjs — trusted tier of the name-list distillation pipeline",
+  "bucket": "distilled",
+  "source": "static/distill-verified",
   "attestations": 2
  },
  {
-  "khmer": "វជិរាលង្ករណ",
-  "latin": "Vajiralongkorn",
-  "qid": "Q548733",
-  "bucket": "foreign",
-  "source": "wikipedia/redirects-km",
+  "khmer": "សារិកា",
+  "latin": "Sarika",
+  "qid": "compile-trusted.mjs — trusted tier of the name-list distillation pipeline",
+  "bucket": "distilled",
+  "source": "static/distill-verified",
   "attestations": 2
  },
  {
-  "khmer": "វ្លាឌីមៀរ អ៊ូលីយ៉ាណូវ",
-  "latin": "Vladimir Lenin",
-  "qid": "Q1394",
-  "bucket": "foreign",
-  "source": "wikipedia/redirects-km",
+  "khmer": "សាវឌី",
+  "latin": "Savady",
+  "qid": "compile-trusted.mjs — trusted tier of the name-list distillation pipeline",
+  "bucket": "distilled",
+  "source": "static/distill-verified",
   "attestations": 2
  },
  {
-  "khmer": "សង",
-  "latin": "Sang",
-  "qid": "popular-names-by-country-dataset common-surnames-by-country.csv KH rows (fetched 2026-10-31), compiled from Wikipedia's lists of most common surnames; Google-Translate artifacts filtered out",
-  "bucket": "curated",
-  "source": "static/sigpwned",
+  "khmer": "សិតា",
+  "latin": "Sita",
+  "qid": "compile-trusted.mjs — trusted tier of the name-list distillation pipeline",
+  "bucket": "distilled",
+  "source": "static/distill-verified",
   "attestations": 2
  },
  {
-  "khmer": "សម៉ាស សឡៃម៉ាន",
-  "latin": "Smas Slayman",
-  "qid": "Q1754038",
-  "bucket": "cambodian",
-  "source": "wikidata/native-names",
+  "khmer": "សីតា",
+  "latin": "Sita",
+  "qid": "compile-trusted.mjs — trusted tier of the name-list distillation pipeline",
+  "bucket": "distilled",
+  "source": "static/distill-verified",
   "attestations": 2
  },
  {
-  "khmer": "សាយ",
-  "latin": "Say",
-  "qid": "popular-names-by-country-dataset common-surnames-by-country.csv KH rows (fetched 2026-10-31), compiled from Wikipedia's lists of most common surnames; Google-Translate artifacts filtered out",
-  "bucket": "curated",
-  "source": "static/sigpwned",
+  "khmer": "សុជាតិ",
+  "latin": "Socheat",
+  "qid": "compile-trusted.mjs — trusted tier of the name-list distillation pipeline",
+  "bucket": "distilled",
+  "source": "static/distill-verified",
   "attestations": 2
  },
  {
-  "khmer": "សិនសី សាមុត",
-  "latin": "Sinn Sisamouth",
-  "qid": "Q3485020",
-  "bucket": "cambodian",
-  "source": "wikipedia/redirects-km",
+  "khmer": "សុភក្ត្រ",
+  "latin": "Sopheak",
+  "qid": "compile-trusted.mjs — trusted tier of the name-list distillation pipeline",
+  "bucket": "distilled",
+  "source": "static/distill-verified",
   "attestations": 2
  },
  {
-  "khmer": "សិរិនថន",
-  "latin": "Sirindhorn",
-  "qid": "Q1884754",
-  "bucket": "foreign",
-  "source": "wikipedia/redirects-km",
+  "khmer": "សុភមង្គល",
+  "latin": "Sopheakmongkol",
+  "qid": "compile-trusted.mjs — trusted tier of the name-list distillation pipeline",
+  "bucket": "distilled",
+  "source": "static/distill-verified",
   "attestations": 2
  },
  {
-  "khmer": "សុខុន",
-  "latin": "Sokhon",
-  "qid": "khmer_names.json (fetched 2026-10-31); unique given-name and surname tokens with their romanizations",
-  "bucket": "curated",
-  "source": "static/kname",
+  "khmer": "សុវណ្ណារ",
+  "latin": "Sovannar",
+  "qid": "compile-trusted.mjs — trusted tier of the name-list distillation pipeline",
+  "bucket": "distilled",
+  "source": "static/distill-verified",
   "attestations": 2
  },
  {
-  "khmer": "សោម៉ា សិរី នរោត្តម",
-  "latin": "Soma Norodom",
-  "qid": "Q21266538",
-  "bucket": "cambodian",
-  "source": "wikidata/native-names",
+  "khmer": "សួគា",
+  "latin": "Sourkea",
+  "qid": "compile-trusted.mjs — trusted tier of the name-list distillation pipeline",
+  "bucket": "distilled",
+  "source": "static/distill-verified",
   "attestations": 2
  },
  {
-  "khmer": "ស៊ុនធន ប៉ាថមម៉ាវង្ស",
-  "latin": "Sounthone Pathammavong",
-  "qid": "Q21293340",
-  "bucket": "foreign",
-  "source": "wikipedia/redirects-km",
+  "khmer": "ស្រឡន្ហ",
+  "latin": "Srolanh",
+  "qid": "compile-trusted.mjs — trusted tier of the name-list distillation pipeline",
+  "bucket": "distilled",
+  "source": "static/distill-verified",
   "attestations": 2
  },
  {
-  "khmer": "ស៊ូ ម៉េត",
-  "latin": "Sou Met",
-  "qid": "Q16185731",
-  "bucket": "cambodian",
-  "source": "wikidata/native-names",
-  "attestations": 2
- },
- {
-  "khmer": "ហាក់ ឆៃហុក",
-  "latin": "Hak Chhay Hok",
-  "qid": "Q28819575",
-  "bucket": "cambodian",
-  "source": "wikidata/native-names",
-  "attestations": 2
- },
- {
-  "khmer": "អភិសិទ្ធិ វេជាជីវៈ",
-  "latin": "Abhisit Vejjajiva",
-  "qid": "Q174267",
-  "bucket": "foreign",
-  "source": "wikipedia/redirects-km",
-  "attestations": 2,
-  "altLatin": [
-   "Abhisit Vejjejava"
-  ]
- },
- {
-  "khmer": "អាង",
-  "latin": "Ang",
-  "qid": "popular-names-by-country-dataset common-surnames-by-country.csv KH rows (fetched 2026-10-31), compiled from Wikipedia's lists of most common surnames; Google-Translate artifacts filtered out",
-  "bucket": "curated",
-  "source": "static/sigpwned",
-  "attestations": 2
- },
- {
-  "khmer": "អាឌុល អ៊ីត្លែរ",
-  "latin": "Adolf Hitler",
-  "qid": "Q352",
-  "bucket": "foreign",
-  "source": "wikipedia/redirects-km",
-  "attestations": 2
- },
- {
-  "khmer": "អុង",
-  "latin": "Ong",
-  "qid": "popular-names-by-country-dataset common-surnames-by-country.csv KH rows (fetched 2026-10-31), compiled from Wikipedia's lists of most common surnames; Google-Translate artifacts filtered out",
-  "bucket": "curated",
-  "source": "static/sigpwned",
-  "attestations": 2
- },
- {
-  "khmer": "អូឡាន់តា ហូម៉ាឡា",
-  "latin": "Ollanta Humala",
-  "qid": "Q57254",
+  "khmer": "ហាប៊ីប ប៊ឺហ្គីបា",
+  "latin": "Habib Bourguiba",
+  "qid": "Q643348",
   "bucket": "foreign",
   "source": "wikidata/all-humans",
   "attestations": 2
  },
  {
-  "khmer": "អ៊ុច",
-  "latin": "Uch",
-  "qid": "popular-names-by-country-dataset common-surnames-by-country.csv KH rows (fetched 2026-10-31), compiled from Wikipedia's lists of most common surnames; Google-Translate artifacts filtered out",
-  "bucket": "curated",
-  "source": "static/sigpwned",
-  "attestations": 2
- },
- {
-  "khmer": "អ្នកអង្គម្ចាស់ នរោត្តម កន្តុល",
-  "latin": "Norodom Kantol",
-  "qid": "Q16856690",
-  "bucket": "cambodian",
-  "source": "wikidata/native-names",
-  "attestations": 2
- },
- {
-  "khmer": "ឣោគ្សុធៃ ពិនៃឆ្តេ",
-  "latin": "Augusto Pinochet",
-  "qid": "Q368",
+  "khmer": "ហ្គោតយី",
+  "latin": "Gotye",
+  "qid": "Q489643",
   "bucket": "foreign",
-  "source": "wikipedia/redirects-km",
+  "source": "wikidata/all-humans",
   "attestations": 2
  },
  {
-  "khmer": "គ្រីស ប្រាត",
-  "latin": "Chris Pratt",
-  "qid": "Q503706",
+  "khmer": "អច្ឆរិយៈ",
+  "latin": "Acharya",
+  "qid": "compile-trusted.mjs — trusted tier of the name-list distillation pipeline",
+  "bucket": "distilled",
+  "source": "static/distill-verified",
+  "attestations": 2
+ },
+ {
+  "khmer": "អច្ឆរិយា",
+  "latin": "Achariya",
+  "qid": "compile-trusted.mjs — trusted tier of the name-list distillation pipeline",
+  "bucket": "distilled",
+  "source": "static/distill-verified",
+  "attestations": 2
+ },
+ {
+  "khmer": "គ្រាសា",
+  "latin": "Krosa",
+  "qid": "behindthename.com submitted Khmer names; Latin + Khmer side scraped where attested, Khmer distilled otherwise",
+  "bucket": "distilled",
+  "source": "static/btn",
+  "attestations": 1
+ },
+ {
+  "khmer": "ជូអាន ប៊ូទីស្តា សាកាសា",
+  "latin": "Juan Bautista Sacasa",
+  "qid": "Q650211",
   "bucket": "foreign",
   "source": "wikidata/all-humans",
   "attestations": 1
  },
  {
-  "khmer": "ប៉ាសគូអាល់ អ័រទីស រូប៊ីអូ",
-  "latin": "Pascual Ortiz Rubio",
-  "qid": "Q455683",
+  "khmer": "បេននី ហ្គានហ្ស៍",
+  "latin": "Benny Gantz",
+  "qid": "Q557436",
   "bucket": "foreign",
   "source": "wikidata/all-humans",
   "attestations": 1
  },
  {
-  "khmer": "មីតសាម៉ាសា យ៉ូណៃ",
-  "latin": "Mitsumasa Yonai",
-  "qid": "Q715231",
+  "khmer": "ម៉ាច",
+  "latin": "Mach",
+  "qid": "behindthename.com submitted Khmer names; Latin + Khmer side scraped where attested, Khmer distilled otherwise",
+  "bucket": "distilled",
+  "source": "static/btn",
+  "attestations": 1
+ },
+ {
+  "khmer": "ម៉ាទីលដេ ម៉ាស្ត្រាងហ្គី",
+  "latin": "Matilde Mastrangi",
+  "qid": "Q519225",
   "bucket": "foreign",
   "source": "wikidata/all-humans",
   "attestations": 1
  },
  {
-  "khmer": "ម៉ាក ប៊ែន",
-  "latin": "Mark Bernes",
-  "qid": "Q537854",
+  "khmer": "លីឌា ហ្គៃល័រ តេហាដា",
+  "latin": "Lidia Gueiler Tejada",
+  "qid": "Q466098",
   "bucket": "foreign",
   "source": "wikidata/all-humans",
   "attestations": 1
  },
  {
-  "khmer": "លីណា រ៉ូម៉ៃ",
-  "latin": "Lina Romay",
-  "qid": "Q465186",
-  "bucket": "foreign",
-  "source": "wikidata/all-humans",
-  "attestations": 1
- },
- {
-  "khmer": "លីសា ឌី លីវ",
-  "latin": "Lisa De Leeuw",
-  "qid": "Q448087",
-  "bucket": "foreign",
-  "source": "wikidata/all-humans",
-  "attestations": 1
- },
- {
-  "khmer": "ល្វីស សូម៉ូហ្សា ដេបាយឡេ",
-  "latin": "Luis Somoza Debayle",
-  "qid": "Q529610",
-  "bucket": "foreign",
-  "source": "wikidata/all-humans",
+  "khmer": "វណ្ណ ម៉ូលីវណ្ណ",
+  "latin": "Vann Molyvann",
+  "qid": "Q379178",
+  "bucket": "cambodian",
+  "source": "wikipedia/redirects-km",
   "attestations": 1
  },
  {
@@ -3103,19 +3772,63 @@
   "attestations": 1
  },
  {
-  "khmer": "ហ្សក គីរ៉ូហ្គា",
-  "latin": "Jorge Quiroga",
-  "qid": "Q468805",
-  "bucket": "foreign",
-  "source": "wikidata/all-humans",
+  "khmer": "វិឆ័យ",
+  "latin": "Vichhay",
+  "qid": "behindthename.com submitted Khmer names; Latin + Khmer side scraped where attested, Khmer distilled otherwise",
+  "bucket": "distilled",
+  "source": "static/btn",
   "attestations": 1
  },
  {
-  "khmer": "អ៊ីស្រាអែល កាតស៍",
-  "latin": "Israel Katz",
-  "qid": "Q487304",
+  "khmer": "សម្តេចព្រះនាងចៅ សៅវភាផង់សី ព្រះបរបមរាជនីនាថ",
+  "latin": "Saovabha Phongsri",
+  "qid": "Q467882",
+  "bucket": "foreign",
+  "source": "wikipedia/km-en-titles",
+  "attestations": 1
+ },
+ {
+  "khmer": "សុភ័ណ្ឌ",
+  "latin": "Sophan",
+  "qid": "behindthename.com submitted Khmer names; Latin + Khmer side scraped where attested, Khmer distilled otherwise",
+  "bucket": "distilled",
+  "source": "static/btn",
+  "attestations": 1
+ },
+ {
+  "khmer": "សុភឡេត",
+  "latin": "Sophalleth",
+  "qid": "behindthename.com submitted Khmer names; Latin + Khmer side scraped where attested, Khmer distilled otherwise",
+  "bucket": "distilled",
+  "source": "static/btn",
+  "attestations": 1
+ },
+ {
+  "khmer": "សុលីកា",
+  "latin": "Solikha",
+  "qid": "behindthename.com submitted Khmer names; Latin + Khmer side scraped where attested, Khmer distilled otherwise",
+  "bucket": "distilled",
+  "source": "static/btn",
+  "attestations": 1
+ },
+ {
+  "khmer": "សូម៉ាលី",
+  "latin": "Somaly",
+  "qid": "behindthename.com submitted Khmer names; Latin + Khmer side scraped where attested, Khmer distilled otherwise",
+  "bucket": "distilled",
+  "source": "static/btn",
+  "attestations": 1
+ },
+ {
+  "khmer": "អាល់ប៊ែរ សារ៉ូ",
+  "latin": "Albert Sarraut",
+  "qid": "Q460318",
   "bucket": "foreign",
   "source": "wikidata/all-humans",
-  "attestations": 1
+  "attestations": 1,
+  "altLatin": [
+   "Albert Sarrault",
+   "Albert-Pierre Sarraut"
+  ]
  }
 ]

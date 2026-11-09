@@ -111,8 +111,12 @@ function bucketReport(list) {
     }
 }
 
-const buckets = { cambodian: [], unknown: [], curated: [], foreign: [] }
+const buckets = { cambodian: [], unknown: [], curated: [], distilled: [], foreign: [] }
 for (const r of results) (buckets[r.bucket] ??= []).push(r)
+// distilled rows (adoption.com + BTN name lists) are reported on their own
+// line and deliberately kept OUT of the in-domain aggregate: their Khmer
+// side is LLM-distilled or a site transcription, not a corpus attestation,
+// and must never silently inflate the gate.
 const inDomain = [...buckets.cambodian, ...buckets.unknown, ...buckets.curated]
 
 const fmt = (label, rep) =>
@@ -126,6 +130,7 @@ console.log(fmt('IN-DOMAIN (cambodian+unknown+curated)', bucketReport(inDomain))
 console.log(fmt('  cambodian citizens', bucketReport(buckets.cambodian)))
 console.log(fmt('  unknown (ancient kings etc.)', bucketReport(buckets.unknown)))
 console.log(fmt('  curated lists (kname, CC0 surnames)', bucketReport(buckets.curated)))
+console.log(fmt('distilled (adoption+BTN, not in gate)', bucketReport(buckets.distilled)))
 console.log(fmt('foreign (out of domain)', bucketReport(buckets.foreign)))
 
 // Structurally unmatchable rows (shape mismatch) can never appear in the

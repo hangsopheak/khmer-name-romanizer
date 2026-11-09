@@ -1,0 +1,21 @@
+{
+ "origin": "Blind native-reader vocabulary (repo owner). Words chosen from the official parliament rosters (scripts/sources/kh_parliament.json), not from eval rows or eval misses; shown Khmer-only, with no engine guess or corpus answer. Spellings are the common ID-card romanization, most common first.",
+ "rounds": [
+  {
+   "round": 5,
+   "date": "2026-11-09",
+   "entries": [
+    { "khmer": "គីម", "spellings": ["Kim"] },
+    { "khmer": "ស៊ឹម", "spellings": ["Sim"] },
+    { "khmer": "ឡាវ", "spellings": ["Lao"] },
+    { "khmer": "កង", "spellings": ["Korng"] },
+    { "khmer": "ចន្ទ", "spellings": ["Chan"] },
+    { "khmer": "ឈីវ", "spellings": ["Chhiv"] },
+    { "khmer": "ថង", "spellings": ["Thorng"] },
+    { "khmer": "ប៉េង", "spellings": ["Peng"] },
+    { "khmer": "ម៉ុង", "spellings": ["Mong"] },
+    { "khmer": "ប៊ុនឈឿន", "spellings": ["Bunchhoeun"] }
+   ]
+  }
+ ]
+}

@@ -13,6 +13,10 @@
  * which the official spelling is found — a rank-1 hit is an exact match,
  * ranks 2..10 are "found, but not the first guess".
  *
+ * IN-SAMPLE: scores the shipped dictionary on the corpus it was mined
+ * from — an upper bound for names the dictionary already knows. The
+ * honest unseen-name match rate is the "match mode" line of eval:kfold.
+ *
  * Usage: node scripts/eval-match.mjs [--max 10]
  */
 import { readFileSync, writeFileSync } from 'node:fs'
@@ -62,6 +66,7 @@ const fmt = (label, r) =>
         : `${label.padEnd(36)} n=0`
 
 console.log(`MATCH-MODE eval (flipOrderCandidates, order-insensitive, top-${maxRank}) on scraped in-domain rows`)
+console.log('IN-SAMPLE (shipped dictionary on its own mining corpus) — unseen-name match rate: npm run eval:kfold')
 console.log(`eval rows: ${rows.length}\n`)
 console.log(fmt('IN-DOMAIN (cambodian+unknown+curated)', overall))
 console.log(fmt('  cambodian citizens', report(byBucket('cambodian'))))

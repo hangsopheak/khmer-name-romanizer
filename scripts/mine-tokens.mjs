@@ -2,8 +2,10 @@
 /**
  * Token miner: turns the scraped corpus into candidate dictionary entries.
  *
- * Aligns in-domain pairs whose Khmer token count equals the Latin word
- * count (strict 1:1 alignment), counts Khmer-token -> Latin-word
+ * Aligns in-domain pairs whose token shapes the composer can produce:
+ * 1:1 (token count = word count) or tail-run rows (Khmer spellings that
+ * run syllables together; the tail token absorbs up to 2 extra Latin
+ * words as a multi-word variant). Counts Khmer-token -> Latin-word
  * attestations, and compares the result with the bundled dictionary:
  *
  *   new       — tokens the bundled dictionary does not know
@@ -18,7 +20,8 @@
  * learn from held-out rows.
  */
 import { readFileSync, writeFileSync } from 'node:fs'
-import { defaultTokenDict } from '../dist/index.js'
+import { defaultTokenDict, normalizeName, splitTokens, stripHonorifics } from '../dist/index.js'
+import { countAttestations, alignRow } from './lib/corpus-tools.mjs'
 
 const top = Number(process.argv.includes('--top')
     ? process.argv[process.argv.indexOf('--top') + 1]
@@ -32,36 +35,14 @@ try {
     console.error('(The dev split excludes the frozen test split, so mining never learns from it.)')
     process.exit(1)
 }
-const inDomain = pairs.filter((p) => ['cambodian', 'unknown', 'curated'].includes(p.bucket))
+const inDomain = pairs.filter((p) => ['cambodian', 'unknown', 'curated', 'distilled'].includes(p.bucket))
 
-const counts = new Map()
+const counts = countAttestations(inDomain)
 let aligned = 0
-const countAttestation = (kt, words, source) => {
-    kt.forEach((k, i) => {
-        const word = words[i]
-        const latin = word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()
-        if (!counts.has(k)) counts.set(k, new Map())
-        const m = counts.get(k)
-        const hit = m.get(latin) ?? { count: 0, sources: new Set() }
-        hit.count += 1
-        hit.sources.add(source)
-        m.set(latin, hit)
-    })
-}
 for (const p of inDomain) {
-    const kt = p.khmer.split(' ')
-    const lw = p.latin.split(' ')
-    if (kt.length === lw.length) {
-        aligned++
-        countAttestation(kt, lw, p.source ?? 'unknown')
-    }
-    // alternate Latin spellings harvested from en.wikipedia redirects:
-    // extra attestations (variant material), never counted as alignments
-    for (const alt of p.altLatin ?? []) {
-        const aw = alt.split(' ')
-        if (aw.length !== kt.length) continue
-        countAttestation(kt, aw, 'wikipedia/redirects-en')
-    }
+    const kt = splitTokens(stripHonorifics(normalizeName(p.khmer)).name)
+    const lw = p.latin.split(/\s+/).filter(Boolean)
+    if (alignRow(kt.length, lw.length)) aligned++
 }
 
 const titleCase = (w) => w.split(' ').map((x) => x[0].toUpperCase() + x.slice(1).toLowerCase()).join(' ')
@@ -69,7 +50,11 @@ const mined = []
 for (const [khmer, spellings] of counts) {
     const ranked = [...spellings.entries()].sort((a, b) => b[1].count - a[1].count || a[0].localeCompare(b[0]))
     const [canonical, canonicalHit] = ranked[0]
-    const variants = Object.fromEntries(ranked.slice(1).map(([sp, hit]) => [sp, hit.count]))
+    const isTail = ([, hit]) => hit.tail
+    // tail-run spellings: separate evidence class (see corpus-tools.mjs)
+    const canonicalTail = canonicalHit.tail || undefined
+    const variants = Object.fromEntries(ranked.filter((sp) => !isTail(sp)).slice(1).map(([sp, hit]) => [sp, hit.count]))
+    const tailVariants = Object.fromEntries(ranked.filter(isTail).map(([sp, hit]) => [sp, hit.count]))
     const sources = [...new Set(ranked.flatMap(([, hit]) => [...hit.sources]))]
     const bundled = defaultTokenDict[khmer]
     const status = !bundled ? 'new' : titleCase(bundled.latin) === canonical ? 'agree' : 'conflict'
@@ -77,7 +62,9 @@ for (const [khmer, spellings] of counts) {
         khmer,
         latin: canonical,
         count: canonicalHit.count,
+        canonicalTail,
         variants,
+        tailVariants: Object.keys(tailVariants).length ? tailVariants : undefined,
         sources,
         status,
         bundledLatin: bundled ? titleCase(bundled.latin) : undefined,

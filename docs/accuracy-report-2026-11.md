@@ -1,5 +1,58 @@
 # Accuracy Report — November 2026
 
+> **Superseded numbers.** Sections 1–7 use the v1 eval (row-hashed
+> lockbox, round-robin k-fold over the full corpus). Section 0 below
+> shows the pre-release audit (2026-11-09) that found leaks in it, and
+> the v2 baseline that replaces it. Compare only v2 numbers with v2
+> numbers.
+
+## 0. Eval v2 — the 0.4.0 baseline (2026-11-09)
+
+| Benchmark | v1 method | v2 method |
+|---|---|---|
+| K-fold CV, in-domain exact | 29.6% (251/848) | **24.4%** (169/692, CI 21.4–27.8) |
+| K-fold CV, top-5 | 38.1% | **32.4%** (CI 29.0–35.9) |
+| K-fold CV, match mode (top-10, order-insensitive) | 59.7% (in-sample `eval:match`) | **33.2%** (CI 29.8–36.8) |
+| Lockbox, exact | 25.7% (28/109) | **24.0%** (31/129, CI 17.5–32.1) |
+| Lockbox, top-5 | 34.9% | **30.2%** |
+
+What v2 changed, and why:
+
+1. **Person-grouped splits.** v1 hashed each `khmer\tlatin` row, so
+   different spellings of one person landed on both sides. v2 groups
+   rows by normalized Khmer name (honorifics stripped, spaces removed),
+   Wikidata QID, and multi-word Latin name, then splits whole groups.
+   v1 k-fold assigned folds round-robin over Khmer-sorted rows, which
+   put adjacent near-duplicates in different folds by construction.
+2. **Hand-authored rows are training-only.** Native-review pairs were
+   scored against the dictionary pins the same reviewer wrote. They now
+   stay in dev (with their whole group) and are never scored.
+3. **Stricter counterfactual.** A bundled key that test rows attest
+   survives only if the train rows alone would have admitted it: at
+   least one independent (non-hand-authored) attestation, and min-2 or
+   a trusted static list. v1 stripped a key only when ALL its support
+   was in test, so keys lifted past min-2 by a test row, and manual
+   pairs whose only evidence was a lockbox row (វេជ្ជរ៉ា → Vichara,
+   ធាមតេង → Theam Teng), survived.
+4. **K-fold reads the dev split only**, so development decisions never
+   touch lockbox rows. `eval:holdout` no longer prints lockbox misses.
+
+Attribution of the v1 lockbox's rise from 21/108 to 28/109 during the
+native-review rounds: 2 hits were the reviewer's own manual rows, 2
+came from manual pairs whose only evidence was a lockbox row, 1 was a
+cross-split duplicate (Prom Nhem), and 3 miss rows were deleted from
+the corpus. About 2 were genuine gains (for example ស៊ូ → Sou, with
+independent dev support).
+
+**0.4.0 release (after the singleton merge class, see CHANGELOG):**
+k-fold **25.6%** exact (177/692, CI 22.5–29.0), 34.1% top-5, 35.1%
+match mode; paired vs. the v2 baseline +9/−1 exact, +12/−1 top-5.
+Lockbox release read **24.8%** (32/129, CI 18.2–32.9), 31.0% top-5.
+
+Process rules from v2 on: judge every round on `eval:kfold`; read the
+lockbox once per release; never choose correction candidates from
+lockbox rows.
+
 State of accuracy after the algorithm improvement arc (Phases 3–6) and the
 2026-11-01 refresh round, measured against the committed eval reports at
 commit `c65ea84` (arc) and this round's regenerated reports.
@@ -99,7 +152,58 @@ The full loop ran: `scrape:names` → `split:corpus` (lockbox verified) →
   (30.3%)** vs 28.7% raw. Gate numbers (exact/mean/top-5 over all rows)
   are unchanged and remain the judge.
 
-## 6. Conclusion — what is left
+## 6. The 2026-11-08 hygiene round — the unmatchable-shape tail-run pass
+
+Triage of the 148 unmatchable-shape eval rows (the round-5 class everyone
+wrote off as junk) showed ~90% is one systematic phenomenon, not noise:
+Khmer orthography runs a full given name into one solid token while the
+standard romanization spaces it — ប៉ុលពត → "Pol Pot",
+រស់ សេរីសុទ្ធា → "Ros Serey Sothea", គឹមហួន → "Kim Hourn". The engine
+already carries multi-word dictionary entries (internal spaces pass
+straight through the composer); the gap was purely the miner, which
+aligned strictly 1:1 and could never produce them.
+
+What shipped:
+
+- **Tail-run alignment** (`alignRow` in `scripts/lib/corpus-tools.mjs`):
+  for rows with `0 < lw − kt ≤ 2`, prefix tokens zip 1:1 and the LAST
+  token absorbs the remaining words as a multi-word spelling. The
+  ingestion hygiene filters (`isShapeMatchable`, `classifyMiss`) went to
+  lockstep, so the 148 rows are now 99% in-scope eval rows instead of
+  write-offs.
+- **A separate evidence class**: tail-run spellings enter at min-1
+  (a solid full-name token's row cannot repeat, so count-2 promotion
+  would never fire), gated by hand-reviewed junk blocklists and two
+  mechanical spelling guards — function-word prefixes ("Of Assisi",
+  "The Buddha", "Of Cambodia") and dotted Latin initials ("S. Ngor",
+  "L. Hammond", "J. Quach", artifacts of Latin-first rows).
+- **Entity-linked production merge**: 823 → **927** bundled tokens
+  (+104 added, +7 enriched; spellings equal to the canonical are
+  deduped). The eval counterfactuals (`applyMergePolicy`) mirror the
+  mechanics, so kfold/holdout saw the same change.
+
+Measured (all honest reads; gate numbers unchanged in character):
+
+| Benchmark | Before (c5d9f1a) | After |
+|---|---|---|
+| Lockbox gate (the judge) | 21/108 exact · 31 top-5 · 0.721 | **22/108 (20.4%) · 32 top-5 · 0.724** — gate held, first improvement |
+| Lockbox matchable rows | 89/108 | **107/108** (unmatchable 15 → 1) |
+| kfold CV, in-domain | 24.6% exact · 33.2% top-5 | 24.8% · **34.0%** |
+| kfold CV, citizens | 22.3% · 33.5% · matchable 407 | 21.7% · 33.9% · matchable **483** |
+| kfold CV, regnal names | 7.4% exact · 9.7% top-5 | **9.2% · 11.5%** |
+| Shipped eval, in-domain | 34.0% exact · 43.8% top-5 | **44.6% · 53.5%** |
+| Match-mode (KYC) in-domain | 45.4% matched@10 | **55.1%** (citizens 48.3 → **54.0%**) |
+| Unmatchable-shape misses (in-domain) | 120 | **9** |
+| Famous names | 70/72 | 70/72 (held) |
+
+Cost: CV exact in the citizens bucket moved 109 → 106 (a few candidates
+re-ranked when the richer variant surface entered folds) — top-5 and
+mean rose with the honest reads, and the lockbox — the judge — improved
+on every axis. Matchable-ceiling footnotes updated accordingly: the
+"fair recall" view is now nearly the raw view (34.4% CV / 29.9% lockbox
+over matchable vs 34.0% / 29.6% raw).
+
+## 7. Conclusion — what is left
 
 Phases 5 and 6 probed the remaining algorithmic ideas and the evidence
 rejected both: the rules and the distilled FST already sit near the
@@ -109,7 +213,10 @@ Wikidata/Wikipedia seam is now saturated: a full re-scrape moved the
 honest kfold number by +3/835 and the dictionary by one variant. The
 loop (`scrape:names` → `split:corpus` → `eval:scraped` → `mine:tokens`
 → `merge:tokens` → `node scripts/fst-distill.mjs`) stays in place as
-maintenance, but closing the remaining ~560-token gap needs a
-qualitatively different source — civil-registry extracts, news bylines,
-or partner rosters — not more of the same queries. The lockbox gate
-(≥21/108 exact, mean not worse) passes as shipped.
+maintenance, but closing the remaining token gap needs a qualitatively
+different source — civil-registry extracts (do not scrape the NEC
+voterlist live site; sampled rosters are scanned Khmer-only images with
+no Latin), news bylines, or partner rosters — not more of the same
+queries. The lockbox gate (≥21/108 exact, mean not worse) passes as
+shipped, and the 2026-11-08 hygiene round (section 6) is the first
+improvement round to move it (+1 exact, +1 top-5, mean 0.721 → 0.724).

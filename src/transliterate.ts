@@ -164,9 +164,13 @@ function titleCaseWords(value: string): string {
         .join(' ')
 }
 
-/** A Khmer token renders as one Latin word; the FST emits syllable spaces. */
+/**
+ * Collapse syllable spaces inside one token reading (dictionary entries
+ * may carry multi-word runs like "Pol Pot" with their own internal
+ * spaces — they must be preserved, see joinSyllables' callers).
+ */
 function joinSyllables(value: string): string {
-    return value.split(/\s+/).join('')
+    return value.split(/ +/).join('')
 }
 
 /** given<->surname swap: first and last word exchange (Ung Loung -> Loung Ung). */

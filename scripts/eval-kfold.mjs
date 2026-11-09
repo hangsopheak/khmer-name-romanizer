@@ -1,29 +1,36 @@
 #!/usr/bin/env node
 /**
- * K-fold cross-validated accuracy on the scraped corpus.
+ * K-fold cross-validated accuracy on the DEV split (scripts/dev-split.json).
+ *
+ * This is the number development decisions are made on. The lockbox
+ * (scripts/test-split.json) is never read here, so it stays a clean
+ * once-per-release judge.
  *
  * The shipped eval (`eval:scraped`) scores the bundled dictionary on the
  * whole corpus at once — but that dictionary already contains tokens mined
  * from this corpus (>= 2 attestations merged), so those numbers are partly
  * in-sample. This script measures leakage-free generalization:
  *
- *   for each fold i of the in-domain rows:
+ *   folds are assigned by PERSON GROUP (groupRows): every spelling of one
+ *   name/person lands in the same fold — a near-duplicate in the train
+ *   folds can never answer for a test row.
+ *
+ *   for each fold i:
  *     1. mine tokens from the OTHER folds only — same strict 1:1
  *        alignment and attestation counting as mine-tokens.mjs
  *     2. build the counterfactual dictionary the package would ship if
- *        fold i had never been scraped:
- *          base  = bundled dictionary minus keys whose corpus
- *                  attestations ALL come from fold i (they would never
- *                  have met the merge threshold)
- *          dict  = base + train-fold merges under the merge-tokens.mjs
- *                  policy (>= min attestations, trusted static lists
- *                  excepted, canonicals never touched)
- *     3. evaluate fold i with that dictionary
+ *        fold i had never been scraped (counterfactualDict: bundled keys
+ *        the train folds alone would not have admitted are stripped, then
+ *        train-fold merges are applied under the merge-tokens.mjs policy)
+ *     3. evaluate fold i's eval rows (in-domain, hygiene-clean, not
+ *        hand-authored) with that dictionary — suggest mode (exact /
+ *        top-5) and match mode (flipOrderCandidates, order-insensitive,
+ *        top-10: the honest version of eval:match)
  *
  * Known limits, kept honest:
- *   - canonical-level leakage is stripped exactly; variant-level leakage
- *     (a test-fold spelling previously folded into an entry's variants)
- *     is not attributable and remains — top-5 is slightly optimistic
+ *   - variant-level leakage (a test-fold spelling previously folded into
+ *     an entry's variants) is not attributable and remains — top-5 is
+ *     slightly optimistic
  *   - a removed key might independently be gold/roster-sourced — exact
  *     is then slightly pessimistic
  *
@@ -35,14 +42,16 @@ import {
     classifyMiss,
     counterfactualDict,
     distillMapFor,
+    fnv1a,
+    groupRows,
+    isEvalRow,
     isInDomain,
     isShapeMatchable,
+    isTrainable,
     norm,
-    passesHygiene,
     similarity,
     sortedNorm,
     strictEqual,
-    supportOf,
     wilson,
 } from './lib/corpus-tools.mjs'
 
@@ -60,15 +69,24 @@ if (!Number.isInteger(K) || K < 2) {
 }
 
 /* ------------------------------------------------------------------ */
-/* corpus, hygiene filter, folds (deterministic assignment)            */
+/* dev split, eval rows, folds (deterministic, by person group)         */
 /* ------------------------------------------------------------------ */
-const pairs = JSON.parse(readFileSync(new URL('./scraped-names.json', import.meta.url), 'utf8'))
+let pairs
+try {
+    pairs = JSON.parse(readFileSync(new URL('./dev-split.json', import.meta.url), 'utf8'))
+} catch {
+    console.error('scripts/dev-split.json not found — run `npm run split:corpus` first.')
+    process.exit(1)
+}
+const trainable = pairs.filter(isTrainable)
 const inDomain = pairs.filter(isInDomain)
-const evalRows = inDomain.filter(passesHygiene)
+const evalRows = pairs.filter(isEvalRow)
 
-// stable order -> fold = index % K: balanced, reproducible, no RNG
-const ordered = [...evalRows].sort((a, b) => a.khmer.localeCompare(b.khmer) || a.latin.localeCompare(b.latin))
-const foldOf = new Map(ordered.map((p, i) => [p, i % K]))
+// fold = hash(person group) % K: reproducible, no RNG, and every spelling
+// of one person shares a fold (round-robin over sorted rows did the
+// opposite — near-duplicates sort adjacent and were split on purpose)
+const groupOf = groupRows(trainable)
+const foldOf = new Map(trainable.map((p) => [p, fnv1a(groupOf.get(p)) % K]))
 
 /* ------------------------------------------------------------------ */
 /* evaluation                                                          */
@@ -115,29 +133,40 @@ const report = (rows) => {
         top5Matchable,
         top5MatchablePct: matchable.length ? +((100 * top5Matchable) / matchable.length).toFixed(1) : 0,
         missTaxonomy: taxonomy,
+        ...(rows.some((r) => r.matched !== undefined)
+            ? { matched: rows.filter((r) => r.matched).length, matchedPct: +((100 * rows.filter((r) => r.matched).length) / rows.length).toFixed(1), matchedCI: wilson(rows.filter((r) => r.matched).length, rows.length) }
+            : {}),
     }
 }
 
 /* ------------------------------------------------------------------ */
 /* k-fold loop                                                         */
 /* ------------------------------------------------------------------ */
-const fullSupport = supportOf(inDomain) // what the shipped dictionary was mined from
+const MATCH_MAX = 10
 const foldResults = []
 const foldMeta = []
 
 for (let f = 0; f < K; f++) {
     const testRows = evalRows.filter((p) => foldOf.get(p) === f)
-    const trainRows = inDomain.filter((p) => foldOf.get(p) !== f)
+    const trainRows = trainable.filter((p) => foldOf.get(p) !== f)
+    const heldOut = inDomain.filter((p) => foldOf.get(p) === f)
 
     const { dict, removed, added, enriched } = counterfactualDict({
         bundled: defaultTokenDict,
+        fstDistill: defaultFstDistill,
         trainRows,
-        testRows,
-        fullSupport,
+        testRows: heldOut,
         min: MIN,
     })
-    const t = createTransliterator({ tokenDict: dict, fstResults: distillMapFor(defaultFstDistill, trainRows, dict) })
+    const fstResults = distillMapFor(defaultFstDistill, trainRows, dict)
+    const t = createTransliterator({ tokenDict: dict, fstResults })
     const results = evaluate(testRows, t)
+    // match mode (KYC/dedup): same counterfactual, order-swapped candidates
+    const tm = createTransliterator({ tokenDict: dict, fstResults, flipOrderCandidates: true })
+    for (const [i, p] of testRows.entries()) {
+        const c = tm.transliterate(p.khmer).candidates.slice(0, MATCH_MAX)
+        results[i].matched = c.some((x) => norm(x) === norm(p.latin) || sortedNorm(x) === sortedNorm(p.latin))
+    }
     foldResults.push(...results)
     foldMeta.push({ fold: f, testRows: testRows.length, dictSize: Object.keys(dict).length, removed, addedByTrain: added, enrichedByTrain: enriched, perFold: report(results) })
 }
@@ -159,11 +188,11 @@ const fmt = (label, r) =>
         ? `${label.padEnd(34)} n=${String(r.n).padStart(4)}  exact ${String(r.exact).padStart(4)} (${r.exactPct}%)  top-5 ${String(r.top5).padStart(4)} (${r.top5Pct}%)  mean ${r.meanSim}`
         : `${label.padEnd(34)} n=0`
 
-console.log(`K-fold cross-validation (k=${K}, min ${MIN} attestations) on scraped in-domain rows`)
-console.log(`eval rows: ${evalRows.length} (of ${inDomain.length} in-domain), deterministic fold assignment\n`)
+console.log(`K-fold cross-validation (k=${K}, min ${MIN} attestations) on the DEV split, folds by person group`)
+console.log(`eval rows: ${evalRows.length} (of ${inDomain.length} in-domain; hygiene-filtered, hand-authored excluded)\n`)
 
 for (const m of foldMeta)
-    console.log(`  fold ${m.fold}: test ${m.testRows}  dict ${m.dictSize} (-${m.removed} test-only, +${m.addedByTrain} train-mined, ~${m.enrichedByTrain} enriched)`)
+    console.log(`  fold ${m.fold}: test ${m.testRows}  dict ${m.dictSize} (-${m.removed} not admissible, +${m.addedByTrain} train-mined, ~${m.enrichedByTrain} enriched)`)
 
 const kfold = bucketize(foldResults)
 const shipped = bucketize(shippedResults)
@@ -174,7 +203,7 @@ console.log(fmt('  in-domain', shipped.inDomain))
 console.log(fmt('  cambodian citizens', shipped.cambodian))
 console.log(fmt('  unknown (ancient kings etc.)', shipped.unknown))
 
-console.log(`\nK-FOLD (leakage-free counterfactual dictionary per fold):`)
+console.log(`\nK-FOLD (counterfactual dictionary per fold):`)
 console.log(fmt('  in-domain', kfold.inDomain))
 console.log(fmt('  cambodian citizens', kfold.cambodian))
 console.log(fmt('  unknown (ancient kings etc.)', kfold.unknown))
@@ -187,6 +216,9 @@ console.log(
 )
 console.log(
     `  in-domain exact 95% CI: ${kfold.inDomain.exactCI.low}–${kfold.inDomain.exactCI.high}% · top-5 CI: ${kfold.inDomain.top5CI.low}–${kfold.inDomain.top5CI.high}% · strict (word-aligned) top-5: ${kfold.inDomain.strictTop5}/${kfold.inDomain.n}`,
+)
+console.log(
+    `  match mode (order-insensitive, top-${MATCH_MAX}): in-domain ${kfold.inDomain.matched}/${kfold.inDomain.n} (${kfold.inDomain.matchedPct}%, CI ${kfold.inDomain.matchedCI.low}–${kfold.inDomain.matchedCI.high}%) · citizens ${kfold.cambodian.matchedPct}%`,
 )
 console.log(
     `  in-domain miss autopsy: ${Object.entries(kfold.inDomain.missTaxonomy).sort((a, b) => b[1] - a[1]).map(([k, v]) => `${k} ${v}`).join(' · ')}`,

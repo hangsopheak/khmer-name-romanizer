@@ -1,7 +1,10 @@
 #!/usr/bin/env python3
 """Scrape Khmer <-> Latin person-name pairs for khmer-name-romanizer.
 
-Sources (all openly licensed — no election/government sites are touched):
+Sources (Wikidata/Wikipedia/curated static files are openly licensed — no
+election/government sites are touched; the two name-list distillation
+sources under "Curated static datasets" below are facts-with-attribution
+scrapes, not openly licensed data — see their file headers for details):
 
   Wikidata SPARQL (CC0):
   1. humans with a Khmer Wikipedia article, Khmer and English labels as
@@ -169,6 +172,25 @@ STATIC_SOURCES = [
      "kname: MIT-licensed Cambodian name tokens with romanizations"),
     ("scripts/sources/sigpwned-kh.json", "static/sigpwned",
      "sigpwned most-common KH surnames (CC0), translate-junk filtered"),
+    ("scripts/sources/manual-verified.json", "static/manual",
+     "hand-verified pairs from manual CLI testing of this repo"),
+    # name-list distillation sources (bucket "distilled" inside the files):
+    # facts scraped with attribution, Khmer from site transcriptions where
+    # available (BTN) and LLM-distilled otherwise; every pair passed a
+    # round-trip check against this package's own romanizer, and flagged
+    # rows are excluded until reviewed (docs/distill-review.md). NOT
+    # openly licensed like the sources above — names/genders are facts,
+    # meanings stay in the source file, never in the corpus.
+    # distill-verified.json is FIRST of the four so it owns shared Khmer
+    # keys with its trusted tag (its tag is in TRUSTED_STATIC for merging).
+    ("scripts/sources/distill-verified.json", "static/distill-verified",
+     "trusted tier of the distillation pipeline: corrected + btn-attested pairs"),
+    ("scripts/sources/adoption-com.json", "static/adoption",
+     "adoption.com Cambodian name list; LLM-distilled Khmer, round-trip validated"),
+    ("scripts/sources/behindthename-khmer.json", "static/btn",
+     "behindthename.com submitted Khmer names; site transcriptions + LLM fills"),
+    ("scripts/sources/ai-common-names.json", "static/ai-common",
+     "AI-generated common given-name list; LLM Khmer, user-approved, round-trip validated"),
 ]
 
 # (query, per-query limit, source tag, human note) — processed in order of
