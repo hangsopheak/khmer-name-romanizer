@@ -67,13 +67,14 @@ Same v2 method, same 692 dev eval rows. Every step was judged on
 | French conventions, round 1 | 186 | 278 | +16/−7 | +8/−3 |
 | Round 2 (ឆ ឌ ប, final ា) | 196 | 289 | +11/−1 | +12/−1 |
 | Round 3 (សំ, inner ា, ៃ, ាំង, ុយ) | 200 | 297 | +4/−0 | +8/−0 |
-| Round 4 (ិត្រ, ឌ្ឍ, ភា, ូ, ែន/ែម) | **208 (30.1%)** | **302 (43.6%)** | +10/−2 | +5/−0 |
+| Round 4 (ិត្រ, ឌ្ឍ, ភា, ូ, ែន/ែម) | 208 (30.1%) | 302 (43.6%) | +10/−2 | +5/−0 |
+| Dictionary + rules only (no FST tier; singletons fill every gap) | **204 (29.5%)** | **300 (43.4%)** | inside noise | inside noise |
 
-0.5.0 vs. 0.4.0, paired: exact +41/−10 rows (sign test p = 0.00002),
-top-5 +71/−5, match mode 243 → 311 (35.1% → 44.9%). Counted once per
-person group (one person can have several Khmer spellings, e.g. Dith
-Pran has five rows): exact +35/−10, top-5 +65/−5. Citizens exact
-95 → 122 (23.9% → 30.7%).
+0.5.0 as released vs. 0.4.0, paired: exact +39/−12 rows (sign test
+p = 0.0002), top-5 +71/−7, match mode 243 → 309 (35.1% → 44.7%).
+Counted once per person group (one person can have several Khmer
+spellings, e.g. Dith Pran has five rows): exact +34/−12, top-5 +65/−7.
+Citizens exact 95 → 120 (23.9% → 30.2%).
 
 **Lockbox release read:** exact 32 → **37/129** (24.8% → 28.7%, CI
 21.6–37.0), top-5 40 → **50/129** (31.0% → 38.8%), citizens 23/79

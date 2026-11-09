@@ -6,7 +6,18 @@ project versions semver-style. Accuracy numbers cited below are
 reproducible via `npm run eval:famous · eval:scraped · eval:kfold ·
 eval:holdout` — see `docs/accuracy-report-2026-11.md`.
 
-## [Unreleased]
+## [0.5.0] - 2026-11-09
+
+Unseen-name accuracy, person-grouped k-fold on the dev split (692 rows),
+0.4.0 → 0.5.0: exact **25.6% → 29.5%** (177 → 204, CI 26.2–33.0), top-5
+**34.1% → 43.4%** (236 → 300, CI 39.7–47.1), match mode **35.1% →
+44.7%** (243 → 309); citizens exact 23.9% → 30.2%. Paired vs. 0.4.0:
+exact +39/−12 rows (sign test p = 0.0002), top-5 +71/−7; counted once
+per person: exact +34/−12, top-5 +65/−7. Lockbox: exact **24.8% →
+28.7%** (32 → 37 of 129, CI 21.6–37.0), top-5 **31.0% → 38.8%** (40 →
+50). Famous 70/72 held. The per-step numbers below were measured in
+order; the last step (dictionary + rules only) moved the k-fold from
+30.1% to 29.5% exact, inside the noise.
 
 ### Changed — the engine is dictionary + rules only (breaking)
 - Removed the optional pre-computed readings option, its bundled
@@ -15,7 +26,7 @@ eval:holdout` — see `docs/accuracy-report-2026-11.md`.
 - **Singletons fill every gap.** A word seen once in the corpus now
   enters the dictionary whenever it fills a gap: `merge:tokens` adds 122
   such words (dictionary 1,485 → 1,607).
-- **Measured:** k-fold exact **30.1% → 29.5%** (208 → 204, CI
+- **Measured** (against the state before this change): k-fold exact **30.1% → 29.5%** (208 → 204, CI
   26.2–33.0), top-5 **43.6% → 43.4%** (302 → 300), match mode 44.9% →
   44.7%: inside the noise. Lockbox unchanged (37 / 50 of 129). Famous
   70/72 held. In-sample `eval:scraped` exact 59.9% → 65.2%, because the
@@ -24,17 +35,6 @@ eval:holdout` — see `docs/accuracy-report-2026-11.md`.
 - Not measured by any eval: tokens of the parliamentary rosters
   (`scripts/sources/kh_parliament.json`) that the corpus does not cover
   now fall back to the rules.
-
-## [0.5.0] - 2026-11-09
-
-Unseen-name accuracy, person-grouped k-fold on the dev split (692 rows),
-0.4.0 → 0.5.0: exact **25.6% → 30.1%** (177 → 208, CI 26.8–33.6), top-5
-**34.1% → 43.6%** (236 → 302, CI 40.0–47.4), match mode **35.1% →
-44.9%** (243 → 311). Paired vs. 0.4.0: exact +41/−10 rows (sign test
-p = 0.00002), top-5 +71/−5; counted once per person: exact +35/−10,
-top-5 +65/−5. Release lockbox read: exact **24.8% → 28.7%** (32 → 37 of
-129, CI 21.6–37.0), top-5 **31.0% → 38.8%** (40 → 50). Famous 70/72
-held.
 
 ### Added — learned spelling alternatives for unknown words
 - **A learned rewrite table** (`src/learned-alternations-data.ts`, 457
@@ -90,7 +90,8 @@ held.
   split moved and the k-fold is unchanged by them.
 - 4 corpus words that now pass the singleton round-trip gate against
   the French-style reading: កៅ Kao, ឌីហ្ស Dith, and two spellings of
-  Kaundinya. Dictionary 1471 → 1485.
+  Kaundinya. Dictionary 1471 → 1485, then 1,607 with the gap-filling
+  singletons above.
 
 ### Added — eval tooling
 - `eval-kfold.mjs --rows <file>` dumps per-row results;
@@ -102,8 +103,8 @@ held.
   (`learn-alternations.mjs --check`).
 
 ### Notes
-- Package 52.6 kB → 61.5 kB packed. Throughput about 40k names/s
-  locally (more candidates are composed per name).
+- Package 52.6 kB (0.4.0) → 53.4 kB packed. Throughput about 40k
+  names/s locally (more candidates are composed per name).
 
 ## [0.4.0] - 2026-11-09
 
