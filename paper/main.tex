@@ -1,0 +1,248 @@
+% Compile with XeLaTeX (Khmer script needs HarfBuzz shaping):
+%   tectonic main.tex        or        latexmk -xelatex main.tex
+\documentclass[10pt,twocolumn,a4paper]{article}
+\usepackage[margin=1.8cm,columnsep=0.6cm]{geometry}
+\usepackage{fontspec}
+\setmainfont{texgyretermes}[Extension=.otf,UprightFont=*-regular,
+  BoldFont=*-bold,ItalicFont=*-italic,BoldItalicFont=*-bolditalic]
+\newfontfamily\khmerfont{NotoSansKhmer-Regular.ttf}[Path=fonts/,Script=Khmer,Scale=0.85]
+\newcommand{\kh}[1]{{\khmerfont #1}}
+\usepackage{booktabs}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{url}
+\usepackage[hidelinks]{hyperref}
+\usepackage{enumitem}
+\setlist{nosep,leftmargin=*}
+\usepackage{titlesec}
+\titlespacing*{\section}{0pt}{6pt plus 2pt}{3pt}
+\titlespacing*{\subsection}{0pt}{4pt plus 2pt}{2pt}
+\titleformat*{\section}{\large\bfseries}
+\titleformat*{\subsection}{\normalsize\bfseries}
+\setlength{\textfloatsep}{8pt plus 2pt}
+\setlength{\abovecaptionskip}{3pt}
+\renewcommand{\bibfont}{\small}
+\setlength{\bibsep}{1pt}
+
+\title{\vspace{-1.2cm}\bfseries Suggest, Don't Decide: A Dictionary-First Romanizer for\\
+Khmer Personal Names and a Leakage-Aware Evaluation}
+\author{Hang Sopheak (\kh{ហង្ស សុភ័ក្រ្ត})\\
+\small \texttt{hangsopheak.hod@gmail.com}}
+\date{\vspace{-0.9cm}}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+\noindent
+Khmer personal names have no single Latin spelling: \kh{តាំង} is
+officially \emph{Taing} for some families and \emph{Tang} for others, and
+only the name owner knows which. We present \textsf{khmer-name-romanizer},
+an open-source, zero-dependency TypeScript library that returns a ranked
+list of candidate spellings rather than a single answer. It combines a
+learned token dictionary, dictionary-guided segmentation, a rule engine
+with spelling conventions confirmed by a native reader, and learned
+spelling alternations, with no third-party model or library. It ranks full-name candidates by summed log-probability. We
+also report an evaluation audit: splitting by row instead of by person,
+scoring the reviewer's own rows, and folding over held-out data inflated
+accuracy on unseen names from 24.4\% to 29.6\% for the same code. Under
+the corrected protocol the system reaches 29.5\% exact and 43.4\% top-5
+on unseen names (5-fold cross-validation), against 16.5\% exact for
+plain grapheme rules, and 28.7\% exact on a lockbox read once per
+release.
+\end{abstract}
+
+\section{Introduction}
+Cambodian schools, employers, banks, and registries keep the same person
+in two scripts. Khmer is an abugida with stacked subscript consonants and
+vowel signs written around the base, so letter-by-letter conversion fails.
+Scholarly schemes such as ALA-LC~\cite{alalc_khmer} give diacritic-heavy
+output that no passport uses. The practical convention is a loose, mostly
+French-influenced spelling chosen at registration, and it is one-to-many:
+\kh{ប៉ែន} is \emph{Penn} (Penn Nouth) and \emph{Pan} (Pan Ron).
+A single-output transliterator~\cite{knight1998machine,li2009news} is
+therefore wrong by construction for part of the population.
+
+We treat the task as \emph{suggestion}: return ranked candidates for a
+person or a registrar to confirm, and a match score for search and
+know-your-customer (KYC) checks. Our contributions are: (1)~an offline,
+dependency-free engine with calibrated candidate ranking, which matters
+because names are personal data; (2)~a leakage-aware protocol for small
+name corpora, with an audit that measures how much a naive protocol
+overstates accuracy; and (3)~a measured method to turn a native reader's
+spelling knowledge into rules, which accepts a rule only when it helps
+on held-out folds.
+
+\section{System}
+\textbf{Pre-processing.} The engine removes zero-width characters and
+leading honorifics (e.g.\ \kh{សម្តេច}, \kh{លោក}, \kh{ឯកឧត្តម}). It reports
+the honorifics separately and splits the name on spaces.
+
+\textbf{Token resolution.} Each token goes through three tiers, and the
+first tier that knows the token gives the leading spelling.
+(a)~A \emph{token dictionary} of 1,607 Khmer$\to$Latin entries with a
+canonical spelling and attested variants, mined from aligned bilingual
+pairs. A spelling needs two independent attestations, or one when it
+fills a gap and agrees with the rule reading. A native reader reviews
+the canonicals.
+(b)~\emph{Segmentation}: a longest-match dynamic program splits unspaced
+tokens (\kh{ចាន់ដារា} $\to$ Chan Dara). It is trusted only when
+every unknown remainder has at least three characters.
+(c)~A grapheme-level \emph{rule engine} (below).
+
+\textbf{Name conventions.} A plain phonetic reading gives
+\emph{Saret}, \emph{Kaev}, \emph{Lieng}, \emph{Chai}, \emph{Tang}, but
+registries write \emph{Sareth}, \emph{Keo}, \emph{Leang}, \emph{Chhay},
+\emph{Taing}. In four rounds, we showed a native reader the most
+frequent residual edits on the development split and asked for the
+convention behind them. Each proposed convention was tested alone on
+paired cross-validation and kept only if it raised exact matches without
+losing famous names. 21 became default readings (e.g.\ final dental
+$\to$ \emph{th}, \kh{ម៉ៅ} $\to$ \emph{Mao}, \kh{ឆៃ} $\to$ \emph{Chhay},
+\kh{តាំង} $\to$ \emph{Taing}). Five that the reader endorsed were
+rejected because they lowered exact accuracy, e.g.\ reading \kh{ចិន} as
+\emph{Chen} lost 15 rows (Chin, Sin, Rith). The plain reading stays
+as an equal-weight alternative, because both spellings are in use.
+
+\textbf{Learned alternations.} For tokens that only the rules can read,
+we learn 457 context-dependent rewrites (left context, from, to, right
+context, probability) by aligning the plain rule reading with the
+official spelling, e.g.\ \emph{Lav}$\to$\emph{Lao}. Up to two rewrites
+per token join the candidates, ranked below the rule reading. Promoting
+likely rewrites to the first guess gave +12/$-$8 rows (sign test
+$p{=}0.5$), so we did not ship it.
+
+\textbf{Ranking.} Each token also collects dictionary variants and
+attested alternations (\emph{nh/gn}, \emph{n/nn}, \emph{i/y}). A
+full-name candidate scores $\sum_i \log P(s_i \mid k_i)$, where the
+masses come from attestation counts, rule readings act as a
+prior, and unattested spellings get a small floor. Corpus counts cannot
+demote reviewed canonicals: allowing it lowered famous-name accuracy
+from 70/72 to 52/72. An order-flip mode handles Khmer's surname-first
+order for matching.
+
+\section{Data and Evaluation Protocol}
+The corpus has 2,897 Khmer--Latin name pairs from
+Wikidata/Wikipedia~\cite{vrandecic2014wikidata}, openly licensed name
+lists, and distilled name lists. Foreign names written in Khmer (1,590)
+are out of scope. We score in-domain rows (Cambodian citizens, curated
+name lists, historical/regnal names) after hygiene filtering: 692
+development rows and a 129-row frozen \emph{lockbox}. The protocol has
+four rules:
+\begin{itemize}
+\item \textbf{Person-grouped splits.} Rows that share a normalized Khmer
+name, a Wikidata ID, or a multi-word Latin name form one group, and
+splits never divide a group~\cite{gorman2019standard}.
+\item \textbf{Counterfactual training.} In each fold, a dictionary entry
+survives only if the training rows alone would have admitted it, and the
+alternation table is re-learned from the training rows.
+\item \textbf{No self-scoring.} Pairs written by the native reviewer are
+training-only, because the same person pins the canonicals.
+\item \textbf{Lockbox.} The lockbox is never mined or tuned on, and we
+read it once per release.
+\end{itemize}
+Metrics are exact match, top-5 recall, match@10 (order-insensitive), and
+mean similarity ($1 -$ normalized Levenshtein distance), with 95\% Wilson
+intervals~\cite{wilson1927probable}.
+
+\section{Results}
+\begin{table}[t]
+\centering\small
+\begin{tabular}{@{}lccc@{}}
+\toprule
+System (unseen names) & Exact & Top-5 & Sim. \\
+\midrule
+\multicolumn{4}{@{}l}{\textit{5-fold CV, dev split ($n{=}692$)}} \\
+Plain rules, single reading & 16.5 & -- & .699 \\
+Rules with name conventions & 23.6 & 31.6 & .732 \\
+\quad + dictionary, segm., ranking & \textbf{29.5} & 39.9 & \textbf{.755} \\
+\quad + learned alternations & \textbf{29.5} & \textbf{43.4} & \textbf{.755} \\
+v0.5.0 & 30.1 & 43.6 & .757 \\
+v0.4.0 (no conventions/alternations) & 25.6 & 34.1 & .743 \\
+\multicolumn{4}{@{}l}{\textit{Lockbox, read once per release ($n{=}129$)}} \\
+v0.4.0 & 24.8 & 31.0 & .707 \\
+v0.5.0 & 28.7 & 38.8 & .715 \\
+v0.6.0 & 28.7 & 38.8 & .715 \\
+\midrule
+\multicolumn{4}{@{}l}{\textit{In-sample (names in the dictionary)}} \\
+Famous Cambodians ($n{=}72$) & 97.2 & 97.2 & -- \\
+Shipped dictionary, dev rows & 67.1 & 74.9 & .869 \\
+\bottomrule
+\end{tabular}
+\caption{Accuracy (\%). 95\% CIs: CV exact 26.2--33.0, CV top-5
+39.7--47.1, lockbox exact 21.6--37.0. Rule rows use no dictionary.
+Conventions were selected on dev CV, so CV gains for them are
+optimistic; the lockbox was not used for selection.}
+\label{tab:main}
+\end{table}
+
+\textbf{Main results} (Table~\ref{tab:main}). The name conventions are
+the largest single gain: +6.5 points exact as a single reading
+(16.5$\to$23.0\%). The
+dictionary, segmentation, and ranking add 5.9 points exact over the
+rules, and the learned alternations add 3.5 points top-5 without
+changing the first guess. Against v0.4.0 on the same 692 rows, exact
+rises 25.6$\to$29.5\% and match@10 rises 35.1$\to$44.7\% (CI
+41.0--48.4). The lockbox, which no selection step saw, confirms the gain
+(24.8$\to$28.7\% exact, 31.0$\to$38.8\% top-5). By category, CV exact is
+30.2\% for citizens ($n{=}397$, top-5 47.6\%), 60.6\% for curated lists
+($n{=}109$), and 9.7\% for historical/regnal names ($n{=}186$).
+
+\begin{table}[t]
+\centering\small
+\begin{tabular}{@{}lcc@{}}
+\toprule
+Same code, exact (\%) & Naive (v1) & Corrected (v2) \\
+\midrule
+5-fold CV & 29.6 & 24.4 \\
+Lockbox & 25.7 & 24.0 \\
+\bottomrule
+\end{tabular}
+\caption{Leakage audit on pre-release code. v1 hashed single rows into
+splits, folded round-robin over sorted rows (placing near-duplicates in
+different folds), scored reviewer-written pairs, and ran CV over the
+lockbox.}
+\label{tab:audit}
+\end{table}
+
+\textbf{Leakage audit} (Table~\ref{tab:audit}). Before release, an audit
+found four leaks in the ``leakage-free'' protocol: two spellings of one
+person on both sides of a split, the reviewer's own pairs scored against
+the reviewer's pins, dictionary keys whose only evidence was a lockbox
+row, and CV folds that contained lockbox rows. Fixing them lowered CV
+exact by 5.2 points for the same code. Of seven lockbox ``gains'' from
+manual correction rounds, about two were genuine. Small name corpora
+contain many near-duplicates, so such leaks are easy to
+make~\cite{kapoor2023leakage}.
+
+\textbf{Where the errors are.} Of the 392 CV rows whose correct spelling
+is not in the top-5, 364 (93\%) contain a token that the dictionary does
+not know. Only 15 have the correct option generated but ranked out. The
+conventions and learned alternations moved 74 rows out of this class
+(438$\to$364), so better readings for unknown tokens still pay. Two other ideas did not: a learned
+syllable compositor lost to the rules as a single guess (72 vs.\ 76 exact
+on 248 leave-one-out tokens), and segmentation changes rescued at most 3
+of 102 misses.
+
+\section{Discussion and Limitations}
+Misses are mostly near misses (mean similarity 0.76, e.g.\ \emph{Penn Rorn}
+for \emph{Pan Ron}). Two limits remain that algorithms cannot remove:
+the correct spelling is a family's decision at registration, and public
+sources have limited vocabulary. The conventions come from one native
+reader, and their selection on dev CV makes CV slightly optimistic; the
+lockbox interval is wide ($n{=}129$). Variants merged into dictionary
+entries can still leak, so top-5 is slightly optimistic. The corpus
+over-represents public figures. Because the engine cannot know an
+official spelling, the library is a pre-fill for human confirmation and
+must not write spellings onto identity documents automatically. It runs
+fully offline, so names never leave the host process.
+
+{\raggedright\textbf{Availability.} MIT license. npm: \texttt{khmer-name-romanizer}
+v0.6.0. Code, corpus tools, and evaluation scripts:
+\url{https://github.com/hangsopheak/khmer-name-romanizer}.
+\par}
+
+{\small\raggedright
+\bibliographystyle{plainnat}
+\bibliography{refs}
+}
+\end{document}
