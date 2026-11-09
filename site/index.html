@@ -12,7 +12,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kantumruy+Pro:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
 <style>
 /* Layout: one working column. A use-case switcher sits under a short hero;
-   each use case is a live tool on the left and "how to build it" on the right. */
+   each tab is one live tool. Docs live in the README. */
 :root {
   --bg: #f4f6f9;
   --surface: #ffffff;
@@ -115,6 +115,8 @@ a { color: var(--accent); text-underline-offset: 3px; }
 .uc-head p { margin: 0; color: var(--muted); max-width: 70ch; }
 .uc-grid { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 20px; align-items: start; }
 @media (max-width: 860px) { .uc-grid { grid-template-columns: minmax(0, 1fr); } }
+.uc-body { max-width: 760px; display: flex; flex-direction: column; gap: 20px; }
+#uc-search .uc-body { max-width: none; }
 .col { display: flex; flex-direction: column; gap: 20px; min-width: 0; }
 
 .panel { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 20px; min-width: 0; }
@@ -141,6 +143,7 @@ input[type="text"]:focus, textarea:focus { outline: none; border-color: var(--ac
 
 /* Latin → Khmer helper */
 .latin-helper { margin-top: 10px; }
+.latin-helper + .field { margin-top: 16px; }
 .latin-helper summary { cursor: pointer; font-weight: 600; font-size: 0.92rem; color: var(--accent); width: fit-content; }
 .lh-body { margin-top: 10px; padding: 14px; border: 1px dashed var(--line); border-radius: 8px; display: flex; flex-direction: column; gap: 10px; }
 .lh-body input[type="text"] { font-size: var(--step-0); }
@@ -187,19 +190,6 @@ input[type="text"]:focus, textarea:focus { outline: none; border-color: var(--ac
 .verdict.bad { background: var(--bad-soft); color: var(--bad); }
 .verdict b { font-weight: 700; }
 .verdict .sub { display: block; font-size: var(--step--1); margin-top: 4px; opacity: 0.9; }
-
-/* Explain column */
-.explain h3 { margin-bottom: 8px; }
-.explain p { margin: 0 0 12px; color: var(--muted); font-size: 0.95rem; }
-.explain ul { margin: 0 0 12px; padding-left: 1.1em; color: var(--muted); font-size: 0.95rem; }
-.explain li + li { margin-top: 4px; }
-pre.code {
-  margin: 0; overflow-x: auto;
-  background: var(--bg); border: 1px solid var(--line); border-radius: 8px;
-  padding: 14px 16px; font: 0.8rem/1.65 var(--font-mono); color: var(--ink);
-}
-pre.code .c { color: var(--muted); }
-pre.code .s { color: var(--accent); }
 
 /* Look-up: passport card */
 .passport {
@@ -310,22 +300,6 @@ details.own[open] summary { margin-bottom: 10px; }
 .phone-list .more, .phone-list .none { display: block; text-align: center; color: var(--muted); font-size: 0.85rem; padding: 18px 10px; border: 0; }
 @media (max-width: 480px) { .phone { height: 560px; border-width: 8px; border-radius: 36px; } }
 
-/* Info + install */
-.info { border-top: 1px solid var(--line); background: var(--surface); }
-.info .wrap { padding-block: 40px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; }
-@media (max-width: 860px) { .info .wrap { grid-template-columns: minmax(0, 1fr); } }
-.info h3 { margin: 0 0 8px; font-size: var(--step-1); }
-.info p { margin: 0 0 10px; color: var(--muted); font-size: 0.95rem; max-width: 60ch; }
-.acc { width: 100%; border-collapse: collapse; font-size: var(--step--1); font-variant-numeric: tabular-nums; }
-.acc td { padding: 5px 0; border-bottom: 1px solid var(--line); }
-.acc td:last-child { text-align: right; font-family: var(--font-mono); }
-
-.install { padding-block: 40px; }
-.install h2 { font-size: var(--step-2); margin: 0 0 16px; }
-.code-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr); gap: 16px; }
-@media (max-width: 860px) { .code-grid { grid-template-columns: minmax(0, 1fr); } }
-.install pre.code { background: var(--surface); font-size: 0.85rem; }
-
 footer { border-top: 1px solid var(--line); }
 footer .wrap { padding-block: 22px; display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; font-size: var(--step--1); color: var(--muted); }
 
@@ -352,7 +326,6 @@ footer .wrap { padding-block: 22px; display: flex; justify-content: space-betwee
       <span class="ver" id="ver"></span>
     </a>
     <nav class="links">
-      <a href="#install">Install</a>
       <a href="https://github.com/hangsopheak/khmer-name-romanizer">GitHub</a>
       <a href="https://www.npmjs.com/package/khmer-name-romanizer">npm</a>
     </nav>
@@ -362,14 +335,14 @@ footer .wrap { padding-block: 22px; display: flex; justify-content: space-betwee
 <main>
   <section class="hero wrap">
     <h1>Khmer names, spelled the way <span class="kh">passports</span> write them</h1>
-    <p>Try each thing the library does for an app, with live examples. It all runs in your browser, so the names you type never leave this page.</p>
+    <p>Pick a use case and try it. Everything runs in your browser.</p>
   </section>
 
   <div class="tabs-wrap">
     <nav class="tabs wrap" id="tabs" aria-label="Use cases">
-      <a class="tab" href="#lookup">Look up a name</a>
+      <a class="tab" href="#lookup">Look up</a>
       <a class="tab" href="#prefill">Pre-fill a form</a>
-      <a class="tab" href="#validate">Check a typed name</a>
+      <a class="tab" href="#validate">Check a name</a>
       <a class="tab" href="#audit">Audit records</a>
       <a class="tab" href="#link">Link records</a>
       <a class="tab" href="#screen">Screen a list</a>
@@ -454,7 +427,7 @@ footer .wrap { padding-block: 22px; display: flex; justify-content: space-betwee
       <h2>Pre-fill a form</h2>
       <p>For enrolment, HR onboarding and registration forms. The Latin field fills itself while the person types in Khmer. They pick or correct the spelling, then confirm.</p>
     </div>
-    <div class="uc-grid">
+    <div class="uc-body">
       <form class="panel mock" id="pf-form" novalidate>
         <div class="mock-head"><strong>Student enrolment</strong><span>Example form</span></div>
         <div class="field">
@@ -470,22 +443,6 @@ footer .wrap { padding-block: 22px; display: flex; justify-content: space-betwee
         <button class="btn primary" type="submit">Save</button>
         <div class="verdict" id="pf-out" hidden></div>
       </form>
-      <div class="panel explain">
-        <h3>How it works</h3>
-        <ul>
-          <li>The first suggestion goes into the Latin field until the person edits it.</li>
-          <li>The other spellings appear as buttons, so a person whose ID says <i>Boppha</i> can pick it with one tap.</li>
-          <li>The form asks for confirmation. The library suggests a spelling. The person decides.</li>
-        </ul>
-        <pre class="code"><span class="c">import</span> { createDefaultTransliterator } <span class="c">from</span> <span class="s">'khmer-name-romanizer'</span>
-<span class="c">const</span> t = createDefaultTransliterator()
-
-khmerInput.oninput = () =&gt; {
-  <span class="c">const</span> { value, candidates } = t.transliterate(khmerInput.value)
-  <span class="c">if</span> (!latinInput.dataset.edited) latinInput.value = value
-  showSuggestions(candidates)   <span class="c">// buttons the person can tap</span>
-}</pre>
-      </div>
     </div>
   </section>
 
@@ -495,7 +452,7 @@ khmerInput.oninput = () =&gt; {
       <h2>Check a typed name</h2>
       <p>For KYC, exams and diplomas. Compare the Latin name someone typed with the Khmer name on their National ID. A match passes. Anything else goes to a person, not straight to a rejection.</p>
     </div>
-    <div class="uc-grid">
+    <div class="uc-body">
       <div class="panel">
         <div class="field">
           <label for="v-kh">Khmer name on the ID card</label>
@@ -516,21 +473,6 @@ khmerInput.oninput = () =&gt; {
         </div>
         <div class="verdict" id="v-out" hidden></div>
       </div>
-      <div class="panel explain">
-        <h3>How it works</h3>
-        <p>The check looks for the typed name among the ranked spellings, in either name order. The score tells you how common that spelling is: 0 is the usual spelling, and far below 0 means a real but uncommon one.</p>
-        <pre class="code"><span class="c">const</span> t = createDefaultTransliterator({
-  flipOrderCandidates: <span class="s">true</span>,   <span class="c">// "Sophea Chhim" also matches</span>
-  maxCandidates: <span class="s">10</span>,
-})
-<span class="c">const</span> norm = (s) =&gt; s.toLowerCase().replace(<span class="s">/[^a-z]+/g</span>, <span class="s">' '</span>).trim()
-
-<span class="c">function</span> check(khmer, latin) {
-  <span class="c">const</span> hit = t.transliterate(khmer).scoredCandidates
-    ?.find((c) =&gt; norm(c.value) === norm(latin))
-  <span class="c">return</span> hit ? hit.score : <span class="s">null</span>   <span class="c">// null → send to review</span>
-}</pre>
-      </div>
     </div>
   </section>
 
@@ -540,7 +482,7 @@ khmerInput.oninput = () =&gt; {
       <h2>Audit records</h2>
       <p>For data-quality work on any database that stores both scripts. Find the rows where the Latin name does not fit the Khmer name: typos, rare spellings to confirm, and rows that belong to a different person.</p>
     </div>
-    <div class="uc-grid">
+    <div class="uc-body">
       <div class="panel">
         <div class="summary" id="au-sum"></div>
         <div class="table-wrap">
@@ -560,21 +502,6 @@ khmerInput.oninput = () =&gt; {
           <div class="row" style="margin-top:10px"><button class="btn primary" type="button" id="au-run">Audit these records</button></div>
         </details>
       </div>
-      <div class="panel explain">
-        <h3>How it works</h3>
-        <ul>
-          <li><span class="pill ok">Matches</span> The Latin name is one of the known spellings.</li>
-          <li><span class="pill rare">Rare spelling</span> Valid, but uncommon. Confirm it with the person.</li>
-          <li><span class="pill typo">Likely typo</span> One letter away from a known spelling.</li>
-          <li><span class="pill bad">Mismatch</span> Does not fit the Khmer name. It may be the wrong person.</li>
-        </ul>
-        <pre class="code"><span class="c">for</span> (<span class="c">const</span> row <span class="c">of</span> records) {
-  <span class="c">const</span> score = check(row.khmer, row.latin)  <span class="c">// see "Check a typed name"</span>
-  <span class="c">if</span> (score === <span class="s">null</span>) flag(row, <span class="s">'mismatch'</span>)
-  <span class="c">else if</span> (score &lt; <span class="s">-3</span>) flag(row, <span class="s">'rare'</span>)
-}</pre>
-        <p style="margin-top:12px">This demo also counts how many letters a mismatch is away from the nearest spelling. One letter off is treated as a typo.</p>
-      </div>
     </div>
   </section>
 
@@ -584,7 +511,7 @@ khmerInput.oninput = () =&gt; {
       <h2>Link records</h2>
       <p>For dedup and record linkage. One system stores a person in Khmer, another in Latin, written by different clerks in different ways. Find the Latin records that belong to the same person.</p>
     </div>
-    <div class="uc-grid">
+    <div class="uc-body">
       <div class="panel">
         <div class="field">
           <label for="l-kh">Record in system A (Khmer)</label>
@@ -597,18 +524,6 @@ khmerInput.oninput = () =&gt; {
         <h3 style="margin-top:18px">Result</h3>
         <ul class="hits" id="l-out"></ul>
       </div>
-      <div class="panel explain">
-        <h3>How it works</h3>
-        <ul>
-          <li><b>Same person</b>: the Latin record equals one of the spellings, in either name order.</li>
-          <li><b>Possible</b>: one letter away from a spelling, probably a typo. A person should look.</li>
-          <li><b>Different</b>: further away than that, so most likely another person.</li>
-        </ul>
-        <pre class="code"><span class="c">const</span> t = createDefaultTransliterator({ flipOrderCandidates: <span class="s">true</span> })
-<span class="c">const</span> keys = <span class="c">new</span> Set(t.transliterate(khmerName).candidates.map(norm))
-
-<span class="c">const</span> same = latinRecords.filter((r) =&gt; keys.has(norm(r.name)))</pre>
-      </div>
     </div>
   </section>
 
@@ -618,7 +533,7 @@ khmerInput.oninput = () =&gt; {
       <h2>Screen a list</h2>
       <p>For sanctions, AML and fraud screening. A watchlist is written in Latin letters. Screen every spelling of a Khmer name, not only the first guess, or you miss real hits.</p>
     </div>
-    <div class="uc-grid">
+    <div class="uc-body">
       <div class="panel">
         <div class="field">
           <label for="s-kh">Customer name (Khmer)</label>
@@ -640,16 +555,6 @@ khmerInput.oninput = () =&gt; {
         <ul class="hits" id="s-out"></ul>
         <div class="callout" id="s-callout" hidden></div>
       </div>
-      <div class="panel explain">
-        <h3>How it works</h3>
-        <p>Pass each spelling to the fuzzy matcher you already use. This demo uses a simple Jaro–Winkler similarity and flags anything at 92% or above.</p>
-        <pre class="code"><span class="c">const</span> t = createDefaultTransliterator({
-  flipOrderCandidates: <span class="s">true</span>, maxCandidates: <span class="s">10</span>,
-})
-<span class="c">for</span> (<span class="c">const</span> spelling <span class="c">of</span> t.transliterate(name).candidates) {
-  hits.push(...watchlistMatcher.search(spelling))
-}</pre>
-      </div>
     </div>
   </section>
 
@@ -659,7 +564,7 @@ khmerInput.oninput = () =&gt; {
       <h2>Quick search</h2>
       <p>Most phones in Cambodia save contacts in Khmer, so finding someone means switching keyboards first. With the library, type the name in Latin letters on any keyboard, in any common spelling, even with a typo.</p>
     </div>
-    <div class="uc-grid">
+    <div class="uc-body">
       <div class="phone-stage">
         <div class="phone" role="region" aria-label="Example contacts app">
           <div class="phone-status"><span>9:41</span><span class="phone-notch"></span><span>4G</span></div>
@@ -683,29 +588,6 @@ khmerInput.oninput = () =&gt; {
           <button class="chip" type="button" data-q="ke s">ke s <small>first letters</small></button>
         </div>
       </div>
-      <div class="panel explain">
-        <h3>What the search understands</h3>
-        <ul>
-          <li><b>Any common spelling.</b> <i>panha</i> and <i>pagna</i> both find <span lang="km">បញ្ញា</span>. <i>chhoem</i> finds <span lang="km">ឈឹម</span> (Chhim).</li>
-          <li><b>Typos.</b> When nothing matches exactly, one wrong, missing or swapped letter still finds the name.</li>
-          <li><b>Any order and first letters.</b> <i>dara chan</i> finds Chan Dara. <i>ke s</i> finds Keo Sophal and Keo Sothea.</li>
-          <li><b>Khmer too.</b> If the user has a Khmer keyboard, Khmer search still works.</li>
-        </ul>
-        <p>The library runs once per contact to build the index. After that every keystroke is a plain lookup, fast enough for thousands of contacts on a cheap phone.</p>
-        <pre class="code"><span class="c">// once, when contacts load</span>
-<span class="c">const</span> index = contacts.map((c) =&gt; ({
-  contact: c,
-  words: t.transliterate(c.khmerName).tokens.map((w) =&gt;
-    [w.latin, ...w.alternatives].map(norm)),
-}))
-
-<span class="c">// on every keystroke</span>
-<span class="c">const</span> terms = norm(query).split(<span class="s">' '</span>)
-<span class="c">const</span> hits = index.filter((e) =&gt; terms.every((term) =&gt;
-  e.words.some((spellings) =&gt;
-    spellings.some((s) =&gt; s.startsWith(term)))))</pre>
-        <p style="margin-top:12px">This demo adds typo tolerance and ranking on top. The contacts are made-up combinations of common names.</p>
-      </div>
     </div>
   </section>
 
@@ -715,7 +597,7 @@ khmerInput.oninput = () =&gt; {
       <h2>Convert a list</h2>
       <p>For migrations and display. Give Latin names to records that only have Khmer, for a new system, an SMS without Khmer fonts, or staff who do not read Khmer. Uncertain rows go to a review queue.</p>
     </div>
-    <div class="uc-grid">
+    <div class="uc-body">
       <div class="panel">
         <div class="field">
           <label for="b-in">Khmer names, one per line</label>
@@ -733,72 +615,15 @@ khmerInput.oninput = () =&gt; {
           <span class="notice" id="b-copied" hidden></span>
         </div>
       </div>
-      <div class="panel explain">
-        <h3>How it works</h3>
-        <ul>
-          <li><span class="pill ok">High</span> Every word is a known name word and one spelling clearly leads.</li>
-          <li><span class="pill rare">Check</span> Known words, but other spellings are also common.</li>
-          <li><span class="pill bad">Review</span> At least one word is new and was read by rules only.</li>
-        </ul>
-        <pre class="code"><span class="c">for</span> (<span class="c">const</span> row <span class="c">of</span> rows) {
-  <span class="c">const</span> r = t.transliterate(row.khmerName)
-  row.latinName = r.value
-  <span class="c">if</span> (r.source === <span class="s">'rules'</span>) reviewQueue.push(row)
-}</pre>
-      </div>
     </div>
   </section>
 
-  <section class="info">
-    <div class="wrap">
-      <div>
-        <h3>It suggests. You decide.</h3>
-        <p>Only the person knows how their name is officially spelled. Use the results to pre-fill a form or to flag a mismatch, and let a person confirm before anything goes on an ID, diploma or registry record.</p>
-      </div>
-      <div>
-        <h3>How accurate is it?</h3>
-        <table class="acc">
-          <tr><td>Name in the dictionary, first guess right</td><td>83–97%</td></tr>
-          <tr><td>New name, first guess right</td><td>~30%</td></tr>
-          <tr><td>New name, correct spelling in top 5</td><td>~43%</td></tr>
-        </table>
-        <p style="margin-top:10px">Most misses are close, such as <i>Penn Rorn</i> for <i>Pan Ron</i>. Every reported spelling makes it better.</p>
-      </div>
-      <div>
-        <h3>Private by design</h3>
-        <p>Names are personal data. The whole engine and dictionary load into this page, and nothing is sent to a server. The same is true in your app: no API key, no network calls, no dependencies.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="install wrap" id="install">
-    <h2>Use it in your app</h2>
-    <div class="code-grid">
-      <div>
-        <div class="label">Install</div>
-        <pre class="code">npm install khmer-name-romanizer
-
-<span class="c"># or try it from the terminal</span>
-npx khmer-name-romanizer <span class="s">"សូ បញ្ញា"</span></pre>
-      </div>
-      <div>
-        <div class="label">TypeScript / JavaScript</div>
-        <pre class="code"><span class="c">import</span> { createDefaultTransliterator } <span class="c">from</span> <span class="s">'khmer-name-romanizer'</span>
-
-<span class="c">const</span> t = createDefaultTransliterator()
-<span class="c">const</span> r = t.transliterate(<span class="s">'សូ បញ្ញា'</span>)
-
-r.value       <span class="c">// 'So Panha'</span>
-r.candidates  <span class="c">// ['So Panha', 'So Banha', 'So Pagna', …]</span></pre>
-      </div>
-    </div>
-  </section>
 </main>
 
 <footer>
   <div class="wrap">
     <span>MIT license · made by Hang Sopheak (<span lang="km">ហង្ស សុភ័ក្រ្ត</span>)</span>
-    <span><a href="https://github.com/hangsopheak/khmer-name-romanizer">Source code</a> · <a href="https://github.com/hangsopheak/khmer-name-romanizer/issues">Report an issue</a></span>
+    <span>Install, API and accuracy: <a href="https://github.com/hangsopheak/khmer-name-romanizer#readme">README</a> · <a href="https://github.com/hangsopheak/khmer-name-romanizer/issues">Report an issue</a></span>
   </div>
 </footer>
 

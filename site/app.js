@@ -198,7 +198,6 @@ const csvCell = (s) => /[",\n]/.test(s) ? '"' + String(s).replace(/"/g, '""') + 
 const UCS = ['lookup', 'prefill', 'validate', 'audit', 'link', 'screen', 'search', 'bulk']
 function route() {
   const h = location.hash.slice(1)
-  if (h === 'install') return
   const uc = UCS.includes(h) ? h : 'lookup'
   document.querySelectorAll('[data-uc]').forEach((s) => { s.hidden = s.dataset.uc !== uc })
   document.querySelectorAll('.tab').forEach((a) => {
