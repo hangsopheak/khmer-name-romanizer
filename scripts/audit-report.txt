@@ -1,0 +1,68 @@
+in-domain rows: 613  unique qids: 419
+batch 1/7 done
+batch 2/7 done
+batch 3/7 done
+batch 4/7 done
+batch 5/7 done
+batch 6/7 done
+batch 6 failed: HTTP Error 400: Bad Request
+
+domestic (has KH citizenship):      360 rows / 360 qids
+foreign  (no KH citizenship):        0 rows / 0 qids
+  of which source=kmwiki-humans:     0 rows
+missing citizenship data:            59 rows / 59 qids
+  of which source=kmwiki-humans:     50 rows
+
+--- FOREIGN (has citizenship, none KH) ---
+
+--- MISSING (no citizenship claim) kmwiki-humans only ---
+កែ ពក  ->  Ke Pauk  [Q919785  src=wikidata/kmwiki-humans  n=21]
+កែវ មាស  ->  Keo Meas  [Q6668957  src=wikidata/kmwiki-humans  n=24]
+ចេង ហេង  ->  Cheng Heng  [Q953209  src=wikidata/kmwiki-humans  n=21]
+ឈាន វ៉ម  ->  Chhean Vam  [Q9189638  src=wikidata/kmwiki-humans  n=21]
+ញឹក ប៊ុនឆៃ  ->  Nhek Bun Chhay  [Q7023348  src=wikidata/kmwiki-humans  n=21]
+ញ៉ុក ថែម  ->  Nhok Them  [Q6577862  src=wikidata/kmwiki-humans  n=24]
+ណូយ វ៉ាន់ណេត  ->  Noy Vanneth  [Q7067332  src=wikidata/kmwiki-humans  n=14]
+ត្រាំ អ៊ីវតឹក  ->  Tram Iv Teuk  [Q7833112  src=wikidata/kmwiki-humans  n=21]
+ថោង ខុន  ->  Thong Khon  [Q7795953  src=wikidata/kmwiki-humans  n=21]
+ទីវ អុល  ->  Tiv Ol  [Q6578792  src=wikidata/kmwiki-humans  n=21]
+ទេព រិនដារ៉ូ  ->  Tep Rundaro  [Q7701212  src=wikidata/kmwiki-humans  n=21]
+ទេព វង្ស  ->  Tep Vong  [Q7701215  src=wikidata/kmwiki-humans  n=21]
+នរោត្តម នរិន្ទដេត  ->  Norodom Norindeth  [Q6579553  src=wikidata/kmwiki-humans  n=21]
+នរោត្តម នរិន្រ្ទពង្ស  ->  Norodom Narindrapong  [Q6636185  src=wikidata/kmwiki-humans  n=20]
+នរោត្តម យុវនាថ  ->  Norodom Yuvaneath  [Q7053178  src=wikidata/kmwiki-humans  n=21]
+នរោត្តម រតនាទេវី  ->  Norodom Rattana Devi  [Q7053176  src=wikidata/kmwiki-humans  n=21]
+នរោត្តម វេជ្ជរ៉ា  ->  Norodom Vichara  [Q6581557  src=wikidata/kmwiki-humans  n=21]
+នួន កន  ->  Nuon Kan  [Q6683781  src=wikidata/kmwiki-humans  n=21]
+ប៉េង ប៊ុនឆាយ  ->  Peng Bunchay  [Q7162666  src=wikidata/kmwiki-humans  n=24]
+ប្រាក់ មុន្នីឧត្តម  ->  Prak Mony Udom  [Q7238154  src=wikidata/kmwiki-humans  n=24]
+ពិសិដ្ឋ ពីលីកា  ->  Pisith Pilika  [Q7198353  src=wikidata/kmwiki-humans  n=21]
+ព្រះឧទ័យរាជាអង្គចន្ទ  ->  Ang Chan  [Q963899  src=wikidata/kmwiki-humans  n=14]
+មាស សុខសោភា  ->  Meas Soksophea  [Q97268355  src=wikidata/kmwiki-humans  n=21]
+ម៉ម សូណង់ដូ  ->  Mam Sonando  [Q6745231  src=wikidata/kmwiki-humans  n=21]
+ម៉ានីវណ្ណ ផានីវង្ស  ->  Mam Manivan Phanivong  [Q6641773  src=wikidata/kmwiki-humans  n=24]
+ម៉ែន សំអន  ->  Men Sam An  [Q6816221  src=wikidata/kmwiki-humans  n=21]
+យសោវរ្ម័ន  ->  Yasovarman  [Q888887  src=wikidata/kmwiki-humans  n=34]
+យុន យ៉ាត  ->  Yun Yat  [Q946026  src=wikidata/kmwiki-humans  n=24]
+រាជ សម្បត្តិ  ->  Reach Sambath  [Q7300193  src=wikidata/kmwiki-humans  n=21]
+លីវយី  ->  Liuye  [Q79921961  src=wikidata/kmwiki-humans  n=17]
+វណ្ណ វណ្ណៈ  ->  Vann Vannak  [Q7915083  src=wikidata/kmwiki-humans  n=21]
+វ៉ាន់ឌី កាអុន  ->  Vandy Kaonn  [Q7914562  src=wikidata/kmwiki-humans  n=21]
+វ៉េត រតនា  ->  Veth Rattana  [Q7923737  src=wikidata/kmwiki-humans  n=21]
+សាក់ ស៊ីស្បោង  ->  Saksi Sbong  [Q7403100  src=wikidata/kmwiki-humans  n=21]
+សាយ ឈុំ  ->  Say Chhum  [Q7428913  src=wikidata/kmwiki-humans  n=21]
+សុខ ស្រីមុំ  ->  Sok Sreymom  [Q7555067  src=wikidata/kmwiki-humans  n=21]
+សុះ ស៊ូហាណា  ->  Sos Suhana  [Q7563813  src=wikidata/kmwiki-humans  n=24]
+សូកាំ ខូយ  ->  Saukam Khoy  [Q7427256  src=wikidata/kmwiki-humans  n=21]
+សោម វណ្ណសូដានី  ->  Saom Vansodany  [Q7420859  src=wikidata/kmwiki-humans  n=21]
+ស៊ីសុវតិ្ថ រីតារ៉ាវង្ស  ->  Sisowath Ritharavong  [Q6640210  src=wikidata/kmwiki-humans  n=21]
+ស៊ីសុវត្ថិ វឌ្ឍឆាយាវង្ស  ->  Sisowath Watchayavong  [Q9337266  src=wikidata/kmwiki-humans  n=24]
+ស៊ឹម វ៉ា  ->  Sim Var  [Q9337018  src=wikidata/kmwiki-humans  n=21]
+ស៊ុន ចាន់ថុល  ->  Sun Chanthol  [Q7638222  src=wikidata/kmwiki-humans  n=21]
+ស៊ូ យ៉ាទី  ->  Sou Yaty  [Q7564047  src=wikidata/kmwiki-humans  n=21]
+ហ៊ុយ កន្ធុល  ->  Huy Kanthoul  [Q9295276  src=wikidata/kmwiki-humans  n=24]
+ឡូតូ  ->  Loto  [Q6684807  src=wikidata/kmwiki-humans  n=21]
+អង្គម៉ី  ->  Ang Mey  [Q769218  src=wikidata/kmwiki-humans  n=14]
+អ៊ឹង ហួត  ->  Ung Huot  [Q7884430  src=wikidata/kmwiki-humans  n=24]
+អ៊ូ វីរៈ  ->  Virak Ou  [Q7933586  src=wikidata/kmwiki-humans  n=21]
+ឥន្ទ្រវរ្ម័ន  ->  Indravarman  [Q880886  src=wikidata/kmwiki-humans  n=76]
