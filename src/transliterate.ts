@@ -15,6 +15,7 @@
  */
 
 import { spellingAlternates } from './alternatives.js'
+import { createLearnedAlternator } from './learned-alternations.js'
 import { romanizeKhmerName } from './rules.js'
 import { normalizeName, segmentToken, splitTokens, stripHonorifics } from './tokenizer.js'
 import type { Segment } from './tokenizer.js'
@@ -62,6 +63,14 @@ const UNSEEN_OPTION_MASS = 0.25
  *  3 keeps every reviewed canonical on the famous set (70/72) while still
  *  letting a variant with ~3+ more attestations than the canonical win. */
 const CANONICAL_MASS_BONUS = 3
+/** Learned rewrites of a rules-only reading offered per token (more
+ *  crowd correct spellings of other tokens out of the top-5). */
+const DEFAULT_MAX_LEARNED = 2
+/** A learned rewrite's mass is its learned probability times the rules
+ *  prior, capped below the rules reading so `value` never changes
+ *  (promoting p >= 0.5 rewrites to `value` measured +12/-8 exact rows in
+ *  the k-fold, sign test p = 0.5: not shipped). */
+const LEARNED_P_CAP = 0.99
 
 interface ScoredOption {
     value: string
@@ -192,6 +201,14 @@ export function createTransliterator(options: TransliteratorOptions = {}): Trans
     const fst = options.fstResults
     const maxCandidates = Math.max(1, options.maxCandidates ?? DEFAULT_MAX_CANDIDATES)
     const flipOrderCandidates = options.flipOrderCandidates ?? false
+    const learned = createLearnedAlternator(options.learnedAlternations ?? [])
+    const maxLearned = Math.max(0, options.maxLearnedAlternates ?? DEFAULT_MAX_LEARNED)
+    /** Learned rewrites of a rules reading, as options below it. */
+    const learnedOptions = (rules: string): ScoredOption[] =>
+        learned.alternates(rules, maxLearned).map((a) => ({
+            value: titleCaseWords(a.value),
+            mass: RULES_PRIOR_MASS * Math.min(a.p, LEARNED_P_CAP),
+        }))
 
     // Longest dictionary key, computed once: segmentation calls reuse it
     // instead of rescanning every key per call.
@@ -203,6 +220,7 @@ export function createTransliterator(options: TransliteratorOptions = {}): Trans
     const MEMO_LIMIT = 5000
     const segCache = new Map<string, Segment[] | null>()
     const rulesCache = new Map<string, string>()
+    const plainCache = new Map<string, string>()
     const cachedSegment = (key: string, compute: () => Segment[] | null): Segment[] | null => {
         if (segCache.has(key)) return segCache.get(key) ?? null
         if (segCache.size >= MEMO_LIMIT) segCache.clear()
@@ -229,14 +247,19 @@ export function createTransliterator(options: TransliteratorOptions = {}): Trans
         return value ? titleCaseWords(joinSyllables(value)) : ''
     }
 
-    const rulesReading = (text: string): string => {
-        const hit = rulesCache.get(text)
+    const readingWith = (cache: Map<string, string>, plain: boolean) => (text: string): string => {
+        const hit = cache.get(text)
         if (hit !== undefined) return hit
-        if (rulesCache.size >= MEMO_LIMIT) rulesCache.clear()
-        const value = titleCaseWords(joinSyllables(romanizeKhmerName(text)))
-        rulesCache.set(text, value)
+        if (cache.size >= MEMO_LIMIT) cache.clear()
+        const value = titleCaseWords(joinSyllables(romanizeKhmerName(text, { plain })))
+        cache.set(text, value)
         return value
     }
+    /** French-style rules reading (the first guess). */
+    const rulesReading = readingWith(rulesCache, false)
+    /** Plain rules reading: the alternative to the French one, and the
+     *  base the learned table rewrites (it is learned on plain readings). */
+    const plainReading = readingWith(plainCache, true)
 
     /** Best reading + alternatives for one Khmer token, with the
      *  probability mass of every option (for full-name scoring). */
@@ -321,7 +344,14 @@ export function createTransliterator(options: TransliteratorOptions = {}): Trans
                 wholeTokenFst,
             )
         }
-        return scoredToken(token, 'rules', [{ value: rules, mass: RULES_PRIOR_MASS }], rules)
+        // French-style first guess; the plain reading stays an equal-mass
+        // alternative (both spellings are in use: Sareth / Saret, Keo / Kaev)
+        const plain = plainReading(token)
+        return scoredToken(token, 'rules', [
+            { value: rules, mass: RULES_PRIOR_MASS },
+            { value: plain, mass: RULES_PRIOR_MASS },
+            ...learnedOptions(plain),
+        ], rules)
     }
 
     /** Ranked full-name candidates with scores, best first. */

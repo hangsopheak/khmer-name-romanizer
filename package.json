@@ -1,6 +1,6 @@
 {
   "name": "khmer-name-romanizer",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "description": "Khmer script to Latin transliteration for Cambodian personal names - token dictionary + rule engine, zero dependencies",
   "license": "MIT",
   "author": "hangsopheak",
@@ -42,6 +42,7 @@
     "compile:trusted": "node scripts/compile-trusted.mjs",
     "eval:scraped": "node scripts/eval-scraped.mjs",
     "eval:kfold": "node scripts/eval-kfold.mjs",
+    "learn:alternations": "node scripts/learn-alternations.mjs",
     "eval:holdout": "node scripts/eval-holdout.mjs",
     "fst:readings": "node scripts/fst-readings.mjs",
     "split:corpus": "npm run build && node scripts/split-corpus.mjs",

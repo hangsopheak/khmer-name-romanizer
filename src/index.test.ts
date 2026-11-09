@@ -1,5 +1,14 @@
 import { describe, it, expect } from 'vitest'
-import { transliterateName, createDefaultTransliterator, createTransliterator, romanizeKhmerName, defaultFstDistill } from '.'
+import {
+    transliterateName,
+    createDefaultTransliterator,
+    createTransliterator,
+    createLearnedAlternator,
+    romanizeKhmerName,
+    defaultFstDistill,
+    defaultLearnedAlternations,
+} from '.'
+import type { LearnedRule } from '.'
 
 describe('khmer-name-romanizer', () => {
     it('one-shot transliteration uses the bundled dictionary', () => {
@@ -25,7 +34,7 @@ describe('khmer-name-romanizer', () => {
 
     it('romanizes the vowel ើ (U+17BE) instead of dropping it', () => {
         expect(romanizeKhmerName('ត្រើន')).toBe('Troeun') // was "Trano" — vowel dropped
-        expect(romanizeKhmerName('កើត')).toBe('Koeut') // attested Koeut Rith
+        expect(romanizeKhmerName('កើត', { plain: true })).toBe('Koeut') // attested Koeut Rith (French default: Koeuth)
         expect(romanizeKhmerName('រើន')).toBe('Roeun') // attested
         expect(romanizeKhmerName('កើស')).toBe('Koeus') // attested Ieu Koeus
         expect(romanizeKhmerName('កើ')).toBe('Keu') // open syllable (Keuky)
@@ -89,8 +98,8 @@ describe('khmer-name-romanizer', () => {
     })
 
     it('reads muusikatoan-shifted ែ as "e" (attested spellings)', () => {
-        expect(romanizeKhmerName('ប៉ែត')).toBe('Pet') // attested
-        expect(romanizeKhmerName('ង៉ែត')).toBe('Nget') // attested
+        expect(romanizeKhmerName('ប៉ែត', { plain: true })).toBe('Pet') // attested (French default: Peth)
+        expect(romanizeKhmerName('ង៉ែត', { plain: true })).toBe('Nget') // attested
         expect(romanizeKhmerName('ប៉ែន')).toBe('Pen') // Penn/Pen dominate attestations
     })
 
@@ -103,7 +112,7 @@ describe('khmer-name-romanizer', () => {
 
     it('drops tokens that render empty instead of double-spacing', () => {
         const r = createDefaultTransliterator().transliterate('ចន្ទ ៈ បុត្រ')
-        expect(r.value).toBe('Chan Pot') // single space, was "Chan␣␣Pot"
+        expect(r.value).toBe('Chan Both') // single space, was "Chan␣␣Pot"
         expect(r.candidates.every((c) => !/\s{2,}/.test(c))).toBe(true)
     })
 
@@ -118,9 +127,11 @@ describe('khmer-name-romanizer', () => {
         const plainFlip = createDefaultTransliterator({ flipOrderCandidates: false }).transliterate('អ៊ឹង លឿង')
         expect(plain.candidates).not.toContain('Loung Ung')
         expect(plainFlip.candidates).toEqual(plain.candidates)
-        // single-token names gain nothing
-        const one = t.transliterate('តាំងលាងខៃ')
-        expect(one.candidates.length).toBeLessThanOrEqual(5)
+        // one-word names gain nothing (an unspaced name such as តាំងលាងខៃ
+        // segments into two words, so it does get flips)
+        const one = t.transliterate('សុខា')
+        expect(one.tokens).toHaveLength(1)
+        expect(one.candidates).toEqual(createDefaultTransliterator().transliterate('សុខា').candidates)
     })
 
     it('extends the bundled dictionary with caller tokenDict entries', () => {
@@ -211,5 +222,121 @@ describe('khmer-name-romanizer', () => {
         expect(transliterateName('នរោត្តម សីហមុនី')).toBe('Norodom Sihamoni')
         expect(transliterateName('ហ៊ុន ម៉ាណែត')).toBe('Hun Manet')
         expect(transliterateName('ហ៊ុន សែន')).toBe('Hun Sen')
+    })
+
+    describe('French-style conventions (0.5.0)', () => {
+        it('reads the French-style spelling first', () => {
+            expect(romanizeKhmerName('សារ៉េត')).toBe('Sareth') // word-final dental -> th
+            expect(romanizeKhmerName('ចៅ')).toBe('Chao') // ៅ -> ao
+            expect(romanizeKhmerName('លៀង')).toBe('Leang') // ៀ -> ea
+            expect(romanizeKhmerName('កែវ')).toBe('Keo') // ែវ -> eo
+            expect(romanizeKhmerName('កែ')).toBe('Ke') // open ែ -> e
+            expect(romanizeKhmerName('កែក')).toBe('Kaek') // ែ before another final keeps ae
+            expect(romanizeKhmerName('ញឹម')).toBe('Nhim') // initial ញ -> nh
+            expect(romanizeKhmerName('បញ្ញា', { plain: true })).toBe('Panha') // ញ្ញ stays nh
+            expect(romanizeKhmerName('បញ្ញា')).toBe('Banha') // not "Bnhha" (ញ + ញ្ញ)
+            expect(createDefaultTransliterator().transliterate('បញ្ញា').value).toBe('Panha') // dictionary wins
+        })
+
+        it('applies the round-2 consonant and vowel rules', () => {
+            expect(romanizeKhmerName('ឆាក')).toBe('Chhak') // ឆ -> chh
+            expect(romanizeKhmerName('ឌីណា')).toBe('Dina') // ឌ -> d
+            expect(romanizeKhmerName('បូរ៉ា')).toBe('Bora') // word-initial ប -> b
+            expect(romanizeKhmerName('ប៉ុក')).toBe('Pok') // ប៉ is /p/
+            expect(romanizeKhmerName('ប្រាក់')).toBe('Prak') // ប + subscript keeps p
+            expect(romanizeKhmerName('កែប')).toBe('Kaeb') // word-final ប -> b
+            expect(romanizeKhmerName('ចន្ធា')).toBe('Chanthea') // final open ា after ធ -> ea
+            expect(romanizeKhmerName('ខឹម')).toBe('Khim') // ឹ stays i (e measured worse)
+        })
+
+        it('applies the round-3 rules', () => {
+            expect(romanizeKhmerName('សំណាង')).toBe('Samnang') // សំ -> sam
+            expect(romanizeKhmerName('ធារ៉ា')).toBe('Theara') // inner ា after ធ -> ea
+            expect(romanizeKhmerName('ឆៃ')).toBe('Chhay') // final ៃ -> ay
+            expect(romanizeKhmerName('តាំង')).toBe('Taing') // ាំង -> aing
+            expect(romanizeKhmerName('កុយ')).toBe('Koy') // ុយ -> oy
+            expect(romanizeKhmerName('ណូយ')).toBe('Nouy') // ូយ stays ouy
+            expect(romanizeKhmerName('ជិន')).toBe('Chin') // ិ stays i (e measured worse)
+        })
+
+        it('applies the round-4 rules', () => {
+            expect(romanizeKhmerName('វិចិត្រ')).toBe('Vichet') // ិត្រ -> et (no -th)
+            expect(romanizeKhmerName('សុចិត្រា')).toBe('Sochetra')
+            expect(romanizeKhmerName('វឌ្ឍនៈ')).toBe('Vathanak') // ឌ្ឍ inside a word -> tha
+            expect(romanizeKhmerName('សុភា')).toBe('Sophea') // word-final ភា -> phea
+            expect(romanizeKhmerName('ជូ')).toBe('Chou') // open ូ after o-series -> ou
+            expect(romanizeKhmerName('សូ')).toBe('So') // ... after a-series stays o
+            expect(romanizeKhmerName('សែន')).toBe('Sen') // ែ before ន -> e
+            expect(createTransliterator().transliterate('ហ៊ុន សែន').candidates).toContain('Hun Saen') // ae kept
+        })
+
+        it('keeps the plain reading available', () => {
+            expect(romanizeKhmerName('សារ៉េត កែវ ចៅ', { plain: true })).toBe('Saret Kaev Chov')
+            const r = createTransliterator().transliterate('សារ៉េត')
+            expect(r.value).toBe('Sareth')
+            expect(r.candidates).toContain('Saret')
+        })
+
+        it('offers final "ou" for final "o"', () => {
+            expect(createTransliterator().transliterate('សូ').candidates).toContain('Sou')
+        })
+    })
+
+    describe('learned alternations', () => {
+        // ឡាវ / កង read "Lav" / "Kang" by the rules (no dictionary here)
+        const table: LearnedRule[] = [
+            ['', 'v', 'o', '$', 0.6],
+            ['', 'a', 'or', 'n', 0.4],
+            ['k', 'a', '', '', 0.3],
+            ['', 'a', 'e', '', 0.1],
+        ]
+
+        it('ranks rewrites by learned probability, deterministically', () => {
+            const alt = createLearnedAlternator(table)
+            expect(alt.alternates('lav', 5)).toEqual([
+                { value: 'lao', p: 0.6 },
+                { value: 'lev', p: 0.1 },
+                { value: 'leo', p: 0.06 },
+            ])
+            expect(alt.alternates('kang', 5).map((a) => a.value)).toEqual(['korng', 'keng'])
+            expect(createLearnedAlternator(table).alternates('kang', 5)).toEqual(alt.alternates('kang', 5))
+        })
+
+        it('never offers the input, a vowelless word, or rewrites of an empty reading', () => {
+            const alt = createLearnedAlternator(table)
+            expect(alt.alternates('kang', 10).map((a) => a.value)).not.toContain('kng')
+            expect(alt.alternates('kang', 10).map((a) => a.value)).not.toContain('kang')
+            expect(createLearnedAlternator([['^', '', 'h', '$', 0.9]]).alternates('', 5)).toEqual([])
+        })
+
+        it('adds learned spellings below the rules reading without changing value', () => {
+            const plain = createTransliterator().transliterate('ឡាវ កង')
+            const learned = createTransliterator({ learnedAlternations: table }).transliterate('ឡាវ កង')
+            expect(learned.value).toBe(plain.value)
+            expect(learned.value).toBe('Lav Kang')
+            expect(learned.tokens[0].alternatives[0]).toBe('Lao')
+            expect(learned.candidates).toEqual(expect.arrayContaining(['Lao Kang', 'Lav Korng']))
+        })
+
+        it('respects the per-token cap', () => {
+            const count = (n: number) =>
+                createTransliterator({ learnedAlternations: table, maxLearnedAlternates: n })
+                    .transliterate('ឡាវ')
+                    .tokens[0].alternatives.length
+            expect(count(0)).toBe(0)
+            expect(count(1)).toBe(1)
+            expect(count(2)).toBe(2)
+        })
+
+        it('ships a table the default transliterator uses', () => {
+            expect(defaultLearnedAlternations.length).toBeGreaterThan(0)
+            expect(defaultLearnedAlternations.every(([, , , , p]) => p > 0 && p < 1)).toBe(true)
+            const plain = createTransliterator({ fstResults: new Map(Object.entries(defaultFstDistill)) })
+            const name = 'ឡាវ កង'
+            const withTable = createDefaultTransliterator().transliterate(name)
+            expect(withTable.candidates.length).toBeGreaterThan(plain.transliterate(name).candidates.length)
+            expect(createDefaultTransliterator({ maxLearnedAlternates: 0 }).transliterate(name).candidates)
+                .toEqual(createDefaultTransliterator({ learnedAlternations: [] }).transliterate(name).candidates)
+        })
     })
 })

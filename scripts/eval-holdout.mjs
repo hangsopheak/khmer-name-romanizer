@@ -45,6 +45,7 @@ import {
     strictEqual,
     wilson,
 } from './lib/corpus-tools.mjs'
+import { learnRules, trainingPairs } from './lib/learn-alternations.mjs'
 
 const showMisses = process.argv.includes('--show-misses')
 const top = Number(process.argv.includes('--top')
@@ -120,7 +121,10 @@ const report = (rows) => {
     }
 }
 
-const holdoutResults = evaluate(testInDomain, createTransliterator({ tokenDict: dict, fstResults: distillMapFor(defaultFstDistill, devTrain, dict) }))
+// learned alternations from the dev train rows only (what the shipped
+// table learns from) — the lockbox never feeds the table
+const learnedAlternations = learnRules(trainingPairs(devTrain))
+const holdoutResults = evaluate(testInDomain, createTransliterator({ tokenDict: dict, fstResults: distillMapFor(defaultFstDistill, devTrain, dict), learnedAlternations }))
 const shippedResults = evaluate(testInDomain, createDefaultTransliterator())
 const foreignResults = evaluate(testForeign, createTransliterator({ tokenDict: dict }))
 

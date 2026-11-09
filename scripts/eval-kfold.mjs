@@ -34,7 +34,13 @@
  *   - a removed key might independently be gold/roster-sourced — exact
  *     is then slightly pessimistic
  *
- * Usage: node scripts/eval-kfold.mjs [--k 5] [--min 2]
+ * Usage: node scripts/eval-kfold.mjs [--k 5] [--min 2] [--rows <file>]
+ *
+ *   --no-learned   turn the learned alternation tier off (0.4.0 behavior)
+ *   --max-learned N  learned rewrites per rules-only token (default: engine's)
+ *   --rows <file>  also write per-row results (fold, khmer, gold, value,
+ *                  candidates, hit / top-5 / match flags) as JSON, so two
+ *                  runs can be compared row by row (scripts/diff-kfold-rows.mjs)
  */
 import { readFileSync, writeFileSync } from 'node:fs'
 import { createDefaultTransliterator, createTransliterator, defaultFstDistill, defaultTokenDict } from '../dist/index.js'
@@ -54,6 +60,7 @@ import {
     strictEqual,
     wilson,
 } from './lib/corpus-tools.mjs'
+import { learnRules, trainingPairs } from './lib/learn-alternations.mjs'
 
 const args = process.argv.slice(2)
 const value = (name, fallback) => {
@@ -62,6 +69,14 @@ const value = (name, fallback) => {
 }
 const K = value('--k', 5)
 const MIN = value('--min', 2)
+const LEARNED = !args.includes('--no-learned')
+const MAX_LEARNED = args.includes('--max-learned') ? value('--max-learned', undefined) : undefined
+const rowsIdx = args.indexOf('--rows')
+const ROWS_FILE = rowsIdx !== -1 ? args[rowsIdx + 1] : undefined
+if (rowsIdx !== -1 && !ROWS_FILE) {
+    console.error('--rows needs a file path')
+    process.exit(1)
+}
 
 if (!Number.isInteger(K) || K < 2) {
     console.error('--k must be an integer >= 2')
@@ -145,6 +160,7 @@ const report = (rows) => {
 const MATCH_MAX = 10
 const foldResults = []
 const foldMeta = []
+const rowDump = []
 
 for (let f = 0; f < K; f++) {
     const testRows = evalRows.filter((p) => foldOf.get(p) === f)
@@ -159,16 +175,37 @@ for (let f = 0; f < K; f++) {
         min: MIN,
     })
     const fstResults = distillMapFor(defaultFstDistill, trainRows, dict)
-    const t = createTransliterator({ tokenDict: dict, fstResults })
+    // learned alternations: TRAIN folds only (the shipped table learns
+    // from the whole dev split, so a test fold would leak through it)
+    const learned = LEARNED
+        ? { learnedAlternations: learnRules(trainingPairs(trainRows)), maxLearnedAlternates: MAX_LEARNED }
+        : {}
+    const t = createTransliterator({ tokenDict: dict, fstResults, ...learned })
     const results = evaluate(testRows, t)
     // match mode (KYC/dedup): same counterfactual, order-swapped candidates
-    const tm = createTransliterator({ tokenDict: dict, fstResults, flipOrderCandidates: true })
+    const tm = createTransliterator({ tokenDict: dict, fstResults, flipOrderCandidates: true, ...learned })
     for (const [i, p] of testRows.entries()) {
         const c = tm.transliterate(p.khmer).candidates.slice(0, MATCH_MAX)
         results[i].matched = c.some((x) => norm(x) === norm(p.latin) || sortedNorm(x) === sortedNorm(p.latin))
     }
+    if (ROWS_FILE)
+        for (const [i, p] of testRows.entries()) {
+            const r = t.transliterate(p.khmer)
+            rowDump.push({
+                fold: f,
+                khmer: p.khmer,
+                gold: p.latin,
+                bucket: p.bucket,
+                value: r.value,
+                candidates: r.candidates,
+                sources: r.tokens.map((x) => x.source),
+                hit: results[i].hit,
+                inTop5: results[i].inTop5,
+                matched: results[i].matched,
+            })
+        }
     foldResults.push(...results)
-    foldMeta.push({ fold: f, testRows: testRows.length, dictSize: Object.keys(dict).length, removed, addedByTrain: added, enrichedByTrain: enriched, perFold: report(results) })
+    foldMeta.push({ fold: f, learnedRules: learned.learnedAlternations?.length ?? 0, testRows: testRows.length, dictSize: Object.keys(dict).length, removed, addedByTrain: added, enrichedByTrain: enriched, perFold: report(results) })
 }
 
 /* ------------------------------------------------------------------ */
@@ -192,7 +229,7 @@ console.log(`K-fold cross-validation (k=${K}, min ${MIN} attestations) on the DE
 console.log(`eval rows: ${evalRows.length} (of ${inDomain.length} in-domain; hygiene-filtered, hand-authored excluded)\n`)
 
 for (const m of foldMeta)
-    console.log(`  fold ${m.fold}: test ${m.testRows}  dict ${m.dictSize} (-${m.removed} not admissible, +${m.addedByTrain} train-mined, ~${m.enrichedByTrain} enriched)`)
+    console.log(`  fold ${m.fold}: test ${m.testRows}  dict ${m.dictSize} (-${m.removed} not admissible, +${m.addedByTrain} train-mined, ~${m.enrichedByTrain} enriched)  learned rules ${m.learnedRules}`)
 
 const kfold = bucketize(foldResults)
 const shipped = bucketize(shippedResults)
@@ -242,3 +279,7 @@ writeFileSync(
     ),
 )
 console.log('\nfull report -> scripts/eval-kfold-report.json')
+if (ROWS_FILE) {
+    writeFileSync(ROWS_FILE, JSON.stringify(rowDump, null, 1))
+    console.log(`per-row results -> ${ROWS_FILE}`)
+}

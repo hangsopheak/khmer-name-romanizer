@@ -2,6 +2,8 @@
  * Shared types for the Khmer -> Latin transliteration module.
  */
 
+import type { LearnedRule } from './learned-alternations.js'
+
 /** How an individual name token was resolved. */
 export type TokenSource = 'tokenDict' | 'fst' | 'rules'
 
@@ -88,4 +90,14 @@ export interface TransliteratorOptions {
      * Default false.
      */
     flipOrderCandidates?: boolean
+    /**
+     * Learned rewrite table for words the dictionary does not know (see
+     * learned-alternations.ts). Rules-only tokens get up to
+     * `maxLearnedAlternates` extra spellings, ranked below the rules
+     * reading — `value` is never changed by them.
+     * createDefaultTransliterator passes the bundled table.
+     */
+    learnedAlternations?: readonly LearnedRule[]
+    /** Learned rewrites offered per rules-only token (default 2; 0 = off). */
+    maxLearnedAlternates?: number
 }

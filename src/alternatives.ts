@@ -11,6 +11,8 @@
  *   (o|oeu)n <-> rn  Thoeun / Thoeurn, Soeun / Soeurn, Thon / Thorn
  *   initial ou <-> u Ouch / Uch
  *   i <-> y          Lina / Lyna
+ *   final o -> ou    So / Sou, Chantho / Chanthou (French "ou"; a native
+ *                    reader confirmed both are used)
  */
 
 interface Alternation {
@@ -33,6 +35,7 @@ const ALTERNATIONS: Alternation[] = [
     { pattern: /^u/, replace: 'ou' },
     { pattern: /^([^aeiouy]+)i(?=[^aeiouy])/, replace: '$1y' },
     { pattern: /^([^aeiouy]+)y(?=[^aeiouy])/, replace: '$1i' },
+    { pattern: /([^aeiouy])o$/, replace: '$1ou' },
 ]
 
 function capitalize(word: string): string {

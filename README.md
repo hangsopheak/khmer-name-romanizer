@@ -2,11 +2,11 @@
 
 Khmer script → Latin transliteration for **Cambodian personal names** (passport/roster style romanization). Zero runtime dependencies. TypeScript.
 
-**Accuracy, honestly tiered:** for a Cambodian name it has *never seen*, the first guess is the official spelling about **1 time in 4**, and the official spelling is in the top-5 candidates about **1 time in 3**. Names already in its dictionary do much better (97% on 72 famous names, 85% on curated name lists). ([How these are measured](#accuracy).)
+**Accuracy, honestly tiered:** for a Cambodian name it has *never seen*, the first guess is the official spelling about **3 times in 10**, and the official spelling is in the top-5 candidates about **4 times in 10**. Names already in its dictionary do much better (97% on 72 famous names, 86% on curated name lists). Khmer names have several official spellings, so even a perfect guesser would match one chosen spelling only about half the time ([How these are measured](#accuracy)).
 
 ```bash
 npx khmer-name-romanizer "ហង្ស សុភ័ក្រ្ត"     # Hang Sopheak
-npx khmer-name-romanizer --all "សូ បញ្ញា"     # So Panha | So Pagna
+npx khmer-name-romanizer --all "សូ បញ្ញា"     # So Panha | So Banha | So Pagna | Sou Panha | …
 ```
 
 ```ts
@@ -33,6 +33,89 @@ Only the name owner knows their official spelling — no algorithm can know what
 | **Display** | Readable Latin alongside Khmer for non-Khmer-reading staff; batch migration — propose candidates, flag low-confidence rows for review |
 
 **Not for:** deciding anyone's official spelling, general prose transliteration, Sanskrit-derived regnal names (*-varman* kings), or foreign names written in Khmer.
+
+## Use cases
+
+The library helps most where one "correct" spelling is not enough and you need the set of spellings people really use. The outputs below come from real runs. In all three examples, a non-match is a signal for review, not a rejection.
+
+### 1. KYC: does the Latin name match the Khmer ID?
+
+A bank or wallet app reads ហង្ស សុភ័ក្រ្ត from a National ID card, and the user types their name in Latin script. Check the typed name against the ranked candidates, not only the top guess.
+
+```ts
+import { createDefaultTransliterator } from 'khmer-name-romanizer'
+
+const t = createDefaultTransliterator({ flipOrderCandidates: true, maxCandidates: 10 })
+const norm = (s: string) => s.toLowerCase().replace(/[^a-z]+/g, ' ').trim()
+
+function matchIdName(khmerOnId: string, latinTyped: string) {
+    const typed = norm(latinTyped)
+    const hit = t.transliterate(khmerOnId).scoredCandidates?.find((c) => norm(c.value) === typed)
+    return hit ? { match: true, score: hit.score } : { match: false }
+}
+
+matchIdName('ហង្ស សុភ័ក្រ្ត', 'HANG SOPHEAK')  // { match: true, score: 0 }
+matchIdName('ហង្ស សុភ័ក្រ្ត', 'Sopheak Hang')  // { match: true, score: 0 }    (given name first)
+matchIdName('សូ បញ្ញា', 'So Pagna')           // { match: true, score: -3.18 } (less common spelling)
+matchIdName('ហង្ស សុភ័ក្រ្ត', 'Hang Dara')     // { match: false }              → send to manual review
+```
+
+Use `score` as a confidence signal. A match far from 0 is a valid spelling that is less common, so it can need a second look.
+
+### 2. Sanctions and AML screening: expand a name into its spellings
+
+Watchlists and payment records spell one Khmer name in many ways. Expand the Khmer name into all of its candidate spellings, then give each one to your fuzzy matcher (Jaro-Winkler, your screening vendor and so on). Honorifics are removed, and the result reports them.
+
+```ts
+const screen = createDefaultTransliterator({ flipOrderCandidates: true, maxCandidates: 20 })
+
+screen.transliterate('ចាន់ ធីតា').candidates
+// ['Chan Thida', 'Chan Thyda', 'Chan Thita', 'Chann Thida', 'Chann Thyda', 'Chann Thita',
+//  'Thida Chan', 'Thyda Chan', 'Thita Chan', 'Thida Chann', 'Thyda Chann', 'Thita Chann']
+
+screen.transliterate('លោកស្រី ចាន់ ធីតា').honorifics  // ['លោកស្រី']
+```
+
+The candidates do not replace fuzzy matching. They give it better input, because "Chann Thyda" against "Chan Thida" no longer depends on edit distance alone.
+
+### 3. Record dedup: link Khmer-script and Latin-script records
+
+A CRM, hospital system or NGO beneficiary list often holds one person several times: once in Khmer script and in different Latin spellings. Give each record a set of match keys, and group the records whose keys overlap.
+
+```ts
+type Rec = { id: number; script: 'km' | 'latin'; name: string }
+
+const keys = (r: Rec) => r.script === 'km'
+    ? new Set(screen.transliterate(r.name).candidates.map(norm))
+    : new Set([norm(r.name)])
+
+const records: Rec[] = [
+    { id: 1, script: 'km',    name: 'សូ បញ្ញា' },
+    { id: 2, script: 'latin', name: 'SO PAGNA' },
+    { id: 3, script: 'latin', name: 'Panha So' },
+    { id: 4, script: 'latin', name: 'Sok Dara' },
+]
+
+const owner = new Map<string, number>()
+const groups = new Map<number, number[]>()
+for (const r of records) {
+    const ks = [...keys(r)]
+    const group = ks.map((k) => owner.get(k)).find((g) => g !== undefined) ?? r.id
+    for (const k of ks) if (!owner.has(k)) owner.set(k, group)
+    groups.set(group, [...(groups.get(group) ?? []), r.id])
+}
+// [[1, 2, 3], [4]] — the Khmer record and both Latin spellings are one person
+```
+
+At scale, use the candidate keys as blocking keys and run your normal pairwise comparison inside each block.
+
+### More places it fits
+
+- **Forms and onboarding** (passport and visa forms, university admission, HR systems): pre-fill a suggested Latin spelling, and the person confirms it.
+- **Search boxes**: typing "sopheak" finds សុភ័ក្រ្ត in a contact list, school roster or order lookup.
+- **Display for staff who do not read Khmer**: delivery drivers, airline and travel booking (the PNR must match the passport), SMS gateways without Khmer fonts.
+- **Data migration**: propose candidates for a whole roster, and flag rows with low scores for a person to review.
+- **Diaspora and genealogy search**: relatives abroad often have different spellings of one name. Some French-style spellings (Touch, Choeun) are covered, but not all.
 
 ## Pipeline
 
@@ -149,23 +232,26 @@ Khmer romanization is one-to-many — តាំង is Taing *and* Tang; ប៉�
 
 | The name you type is… | Top-1 exact | Official spelling in top-5 |
 |---|---|---|
-| **Unseen — not in the dictionary (5-fold CV)** | **26%** (177/692, CI 23–29) | **34%** (CI 31–38) |
-| Unseen — frozen lockbox, read once per release | 25% (32/129, CI 18–33) | 31% (40/129) |
+| **Unseen — not in the dictionary (5-fold CV)** | **30%** (208/692, CI 27–34) | **44%** (CI 40–47) |
+| Unseen — frozen lockbox, read once per release | 29% (37/129, CI 22–37) | 39% (50/129) |
 | Already in the dictionary: famous people\* | 97% (70/72) | 97% |
-| Already in the dictionary: curated name lists\* | 85% (132/156) | 93% (145/156) |
-| Mixed corpus, shipped dictionary\* | 59% (499/848) | 67% (566/848) |
+| Already in the dictionary: curated name lists\* | 86% (142/166) | 92% (152/166) |
+| Mixed corpus, shipped dictionary\* | 60% (514/858) | 68% (587/858) |
+
+**The ceiling.** 62% of the Khmer name words that the corpus attests twice or more have more than one official spelling (សែន is Sen *and* Saen). Always choosing the most common real spelling of each word matches only 72% of official word spellings — roughly half of two-word names. Unseen-name exact at 30% is measured against that strict bar.
 
 \* In-sample: scored on names the dictionary was built from (famous-name canonicals are hand-pinned). They show what to expect for names the dictionary already knows — not accuracy on new names.
 
 Three things to know when reading those numbers:
 
-- **Even misses are near-misses.** Mean similarity on unseen names is 0.74 — the engine returns `Penn Rorn` when the truth is `Pan Ron`, not gibberish. The dominant miss class (438 of 692 under CV) is *vocabulary the engine hasn't learned yet*, not wrong logic; that's what the [corpus loop](#the-optional-fst-tier) grows.
-- **Top-5 is the working metric.** The library is a suggestion engine by design — it returns ranked `candidates` for a human to pick from. For KYC-style matching (order-insensitive, top-10, `flipOrderCandidates: true`) an unseen name is recognized **35%** of the time (CV, CI 32–39); names already in the dictionary, about 68%.
+- **Even misses are near-misses.** Mean similarity on unseen names is 0.76 — the engine returns `Penn Rorn` when the truth is `Pan Ron`, not gibberish. The dominant miss class (362 of 692 under CV) is *vocabulary the engine hasn't learned yet*, not wrong logic; that's what the [corpus loop](#the-optional-fst-tier) grows.
+- **Top-5 is the working metric.** The library is a suggestion engine by design — it returns ranked `candidates` for a human to pick from. For a word it doesn't know, the candidates include learned spelling rewrites of the rule reading and the plain (pre-French-convention) reading. For KYC-style matching (order-insensitive, top-10, `flipOrderCandidates: true`) an unseen name is recognized **45%** of the time (CV, CI 41–49); names already in the dictionary, about 69%.
+- **French-style by default.** The rule engine follows the French-style conventions most Cambodian names use (Sareth, Chhay, Keo, Theara, Sophea, Taing, Hun Sen), each confirmed by a native reader and kept only when it measured better. `romanizeKhmer(text, { plain: true })` returns the older plain reading.
 - **How "unseen" is measured.** Rows are grouped by person — every Khmer spelling of one person, or of one normalized name, stays on the same side of a split. Each fold rebuilds the dictionary without any entry the training rows alone would not have admitted. The repo owner's own spelling corrections are training data only and are never scored. A frozen lockbox (person-grouped, never mined, never tuned on) is read once per release. Known limit: alternative spellings can still leak through dictionary variants, so top-5 is slightly optimistic. Full methodology: [docs/accuracy-report-2026-11.md](docs/accuracy-report-2026-11.md).
 
 When you know a person's official spelling, don't rely on any of the above — override it via `tokenDict` (see [Extending the dictionary](#extending-the-dictionary)).
 
-Benchmark corpus: 2,887 scraped Khmer↔Latin pairs (Wikidata/Wikipedia + MIT/CC0 name lists + distilled name lists); 848 scored in-domain rows are Cambodian personal names, the rest are foreign names written in Khmer — out of scope by declaration (2% exact, reported for honesty).
+Benchmark corpus: 2,897 Khmer↔Latin pairs (Wikidata/Wikipedia + MIT/CC0 name lists + distilled name lists + owner-verified pairs); 858 scored in-domain rows are Cambodian personal names, the rest are foreign names written in Khmer — out of scope by declaration (2% exact, reported for honesty).
 
 ## Extending the dictionary
 

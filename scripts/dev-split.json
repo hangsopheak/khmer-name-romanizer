@@ -20570,5 +20570,85 @@
   "bucket": "distilled",
   "source": "static/btn",
   "attestations": 1
+ },
+ {
+  "khmer": "រដ្ឋ",
+  "latin": "Roth",
+  "qid": "manual",
+  "bucket": "curated",
+  "source": "static/manual",
+  "attestations": 1
+ },
+ {
+  "khmer": "ផ្កា",
+  "latin": "Phka",
+  "qid": "manual",
+  "bucket": "curated",
+  "source": "static/manual",
+  "attestations": 1
+ },
+ {
+  "khmer": "មាលតី",
+  "latin": "Mealtey",
+  "qid": "manual",
+  "bucket": "curated",
+  "source": "static/manual",
+  "attestations": 1
+ },
+ {
+  "khmer": "នាថ",
+  "latin": "Neath",
+  "qid": "manual",
+  "bucket": "curated",
+  "source": "static/manual",
+  "attestations": 1
+ },
+ {
+  "khmer": "មាគ៌ា",
+  "latin": "Meakea",
+  "qid": "manual",
+  "bucket": "curated",
+  "source": "static/manual",
+  "attestations": 1
+ },
+ {
+  "khmer": "វុន",
+  "latin": "Vun",
+  "qid": "manual",
+  "bucket": "curated",
+  "source": "static/manual",
+  "attestations": 1
+ },
+ {
+  "khmer": "មច្ឆា",
+  "latin": "Machha",
+  "qid": "manual",
+  "bucket": "curated",
+  "source": "static/manual",
+  "attestations": 1
+ },
+ {
+  "khmer": "និរតី",
+  "latin": "Nirti",
+  "qid": "manual",
+  "bucket": "curated",
+  "source": "static/manual",
+  "attestations": 1
+ },
+ {
+  "khmer": "ធាវរី",
+  "latin": "Theavri",
+  "qid": "manual",
+  "bucket": "curated",
+  "source": "static/manual",
+  "attestations": 1
+ },
+ {
+  "khmer": "ត្រីកា",
+  "latin": "Treyka",
+  "qid": "manual",
+  "bucket": "curated",
+  "source": "static/manual",
+  "attestations": 1
  }
 ]

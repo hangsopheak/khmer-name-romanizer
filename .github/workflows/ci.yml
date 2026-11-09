@@ -29,6 +29,9 @@ jobs:
       # Lockbox integrity: the frozen person-grouped split must still match
       # the corpus (catches a corpus edit that silently reshuffles it).
       - run: node scripts/split-corpus.mjs --check
+      # The learned alternation table must match the dev split and the
+      # current rule engine (regenerate: npm run learn:alternations).
+      - run: node scripts/learn-alternations.mjs --check
       # Package budget: accuracy gates cannot see a data explosion or a
       # pathological slowdown — caps carry big headroom (baseline 38 kB
       # packed, ~76k names/s local; CI runners are slower).

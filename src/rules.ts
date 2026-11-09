@@ -81,12 +81,39 @@ function finalSound(consonant: string): string {
     return CONS[consonant]
 }
 
+export interface RomanizeOptions {
+    /**
+     * Skip the name conventions (0.5.0, see romanizeKhmer) and return the
+     * engine's plain reading: final dental stops as "t" (Saret), ៅ "ov"
+     * (Pov), ៀ "ie" (Lieng), ែ "ae" (Kae, Kaev), ញ "n" (Nim), ឆ "ch", ឌ "t",
+     * ប "p", សំ "som", ៃ "ai", ាំង "ang", ុយ "ouy", ែន "aen", ឌ្ឍ "t". The transliterator
+     * offers this reading as an alternative.
+     */
+    plain?: boolean
+}
+
 /**
  * Transliterate a Khmer string to Latin, syllable by syllable.
  * Handles coeng (subscript) clusters, register marks, inherent vowels,
  * and common name-final consonant reductions.
+ *
+ * Name conventions on by default (confirmed by a native reader, each
+ * measured on the person-grouped k-fold; 0.5.0: +41/-10 exact rows):
+ *   French-style: a word-final dental stop reads "th" (Sareth), ៅ "ao"
+ *   (Mao), ៀ "ea" (Leang), ែវ "eo" (Keo), open ែ "e" (Ke), initial ញ "nh"
+ *   (Nhim).
+ *   Round 2: ឆ "chh" (Chhak), ឌ "d" (Dina), word-initial ប "b" (Bora;
+ *   not ប៉ or ប + subscript), word-final ប "b" (Keb), word-final open ា
+ *   after ធ ទ ព គ "ea" (Chanthea).
+ *   Round 3: សំ "sam" (Samnang), open ា inside a word after ធ ភ ព គ ទ ជ
+ *   "ea" (Theara), word-final ៃ "ay" (Chhay), ាំង "aing" (Taing), ុយ "oy" (Koy).
+ * Rejected after measuring: final ី -> "y" (-2 exact), ឹ -> "e" (-4:
+ * Chim, Kim, Yim, Phim), final ត -> "t" (-2: Sarath, Neth, Nath), ិ +
+ * final -> "e" (-15: Chin, Sin, Rith, Tith), open final ោ -> "or" (-1: So).
+ * `{ plain: true }` turns them all off.
  */
-export function romanizeKhmer(input: string): string {
+export function romanizeKhmer(input: string, options: RomanizeOptions = {}): string {
+    const french = !options.plain
     const s = normalizeKhmerText(input)
     const out: string[] = []
     let i = 0
@@ -120,6 +147,13 @@ export function romanizeKhmer(input: string): string {
         }
 
         let base = CONS[ch]
+        if (french && ch === 'ញ') base = 'nh'
+        if (french && ch === 'ឆ') base = 'chh'
+        if (french && ch === 'ឌ') base = 'd'
+        // word-initial ប is "b" (Bora, Ban) — but ប៉ is /p/ (Pok, Pen) and a
+        // ប + subscript cluster keeps "p" (Pran, Prak)
+        if (french && ch === 'ប' && (out.length === 0 || out[out.length - 1].endsWith(' '))
+            && s[i + 1] !== COENG && s[i + 1] !== MUUSIKATOAN) base = 'b'
         i++
         // ប + triisap is the voiced "b" (ប៊ុន -> bun)
         if (ch === 'ប' && s[i] === TRIISAP) base = 'b'
@@ -139,7 +173,7 @@ export function romanizeKhmer(input: string): string {
                 // Geminate subscript (ក្ក, ស្ស, ជ្ជ, ណ្ណ ...): Khmer doubles the
                 // consonant but names romanize it single. ញ្ញ is the notable
                 // exception, read "nh".
-                if (ch === 'ញ') cluster += 'h'
+                if (ch === 'ញ' && base !== 'nh') cluster += 'h'
             } else {
                 cluster += CONS[s[i + 1]]
             }
@@ -171,6 +205,15 @@ export function romanizeKhmer(input: string): string {
             i++
         }
 
+        // ិ before ត + subscript រ reads "e" (Vichet, Sochetra)
+        const etr = french && vow === 'ិ' && s[i] === 'ត' && s[i + 1] === COENG && s[i + 2] === 'រ'
+        // bare consonant + ឌ្ឍ inside a word: open "a" syllable, ឌ្ឍ opens "tha" (Vathanak)
+        if (french && vow === '' && s[i] === 'ឌ' && s[i + 1] === COENG && s[i + 2] === 'ឍ' && i + 3 < n && s[i + 3] !== ' ') {
+            out.push(base + cluster + 'a', 'tha')
+            i += 3
+            continue
+        }
+
         if (vow === '' && s[i] === YUUKALEAPINTU) {
             // bare consonant + ៈ -> short "a" + glottal "k" (នៈ -> nak)
             out.push(base + cluster + 'ak')
@@ -179,10 +222,13 @@ export function romanizeKhmer(input: string): string {
         }
 
         let final = ''
+        let finalCh = ''
+        let nikahitNg = false
         let killedFinal = false
         let geminateFinal = false
         if (i < n && s[i] === COENG && i + 1 < n && isConsonant(s[i + 1])) {
             final = CONS[s[i + 1]]
+            finalCh = s[i + 1]
             i += 2
             while (i < n && (isVowelSign(s[i]) || KILLING_MARKS.has(s[i]) || s[i] === NIKAHIT || REGISTER_MARKS.has(s[i]))) {
                 i++
@@ -217,6 +263,7 @@ export function romanizeKhmer(input: string): string {
                 // candidate is the initial of the next syllable, not a final
             } else {
                 final = finalSound(candidate)
+                finalCh = candidate
                 // inherent vowel before ណ្ណ is "a" (សុវណ្ណថា -> sovantha)
                 if (geminateNn) geminateFinal = true
                 if (candidate === 'យ' && vow === 'ុ') final = 'y'
@@ -229,10 +276,12 @@ export function romanizeKhmer(input: string): string {
                 i++
                 if (i < n && s[i] === 'ង') {
                     final = 'ng'
+                    nikahitNg = true
                     i++
                 }
             } else {
-                const inherent = inherentO ? 'o' : 'a'
+                // សំ reads "sam" (Samnang, Sambour); plain keeps "som"
+                const inherent = inherentO && !(french && ch === 'ស' && cluster === '') ? 'o' : 'a'
                 out.push(base + cluster + inherent + 'm')
                 i++
                 continue
@@ -264,7 +313,8 @@ export function romanizeKhmer(input: string): string {
             // ូ reads "o" when open (សូ so, បូ bo, សូរិយា soriya) and "ou" when
             // closed (ទូច touch, ឡូត lout)
             if (vow === 'ូ') v = final === '' ? 'o' : 'ou'
-            if (vow === 'ុ' && final === 'y') v = 'ou'
+            // ុយ reads "oy" (Koy, Hoy); ូយ stays "ouy" (Nouy)
+            if (vow === 'ុ' && final === 'y') v = french ? 'o' : 'ou'
             // ើ reads "oeu" when closed (កើត Koeut, រើន Roeun, កើស Koeus,
             // ឆ្នើម Chhnoeum — both series) and "eu" when open (កើ Keuky)
             if (vow === 'ើ') v = final === '' ? 'eu' : 'oeu'
@@ -273,6 +323,16 @@ export function romanizeKhmer(input: string): string {
             // ញ៉ែម Nhem, ប៉ែត Pet, យ៉ែម Yem — and e-spellings dominate ប៉ែន
             // attestations too (Penn/Pen vs Pan)
             if (vow === 'ែ' && muusikatoan) v = 'e'
+            if (french) {
+                // ែវ -> "eo" (Keo); open ែ -> "e" (Ke); before another final
+                // ែ keeps "ae" (Saen). "ae" stays an alternative via the plain reading.
+                if (vow === 'ែ' && final === 'v') {
+                    v = 'e'
+                    final = 'o'
+                } else if (vow === 'ែ' && final === '') v = 'e'
+                if (vow === 'ៅ') v = 'ao'
+                if (vow === 'ៀ') v = 'ea'
+            }
             // ័ + final ក after a 2nd-series consonant reads "eak" (សុភ័ក្ត ->
             // sopheak, ល័ក្ខណ៍ -> leak)
             if (vow === '័' && final === 'k' && secondSeries) v = 'ea'
@@ -288,8 +348,29 @@ export function romanizeKhmer(input: string): string {
             if (vow === 'ា' && secondSeries && !killedFinal && (closed || seriesOf === 'ជ')) {
                 v = 'ea'
             }
+            if (french) {
+                // open ា inside a word after ធ ភ ព គ ទ ជ reads "ea" (Theara, Phearath)
+                if (vow === 'ា' && final === '' && !wordFinal && 'ធភពគទជ'.includes(seriesOf)) v = 'ea'
+                // word-final ៃ reads "ay" (Chhay, Nay); "ai" stays via the plain reading
+                if (vow === 'ៃ' && final === '' && wordFinal) v = 'ay'
+                // ាំង reads "aing" (Taing, Haing)
+                if (vow === 'ា' && nikahitNg) v = 'ai'
+            }
+            // word-final open ា after ធ ទ ព គ ភ reads "ea" (Chanthea, Sothea, Sophea)
+            if (french && vow === 'ា' && final === '' && wordFinal && !wordInitial && 'ធទពគភ'.includes(seriesOf)) v = 'ea'
+            if (etr) v = 'e'
+            // word-final open ូ after an o-series consonant reads "ou" (Chou, Nou,
+            // Sou for ស៊ូ); after an a-series one it stays "o" (So for សូ)
+            if (french && vow === 'ូ' && final === '' && wordFinal && secondSeries) v = 'ou'
+            // ែ before final ន / ម reads "e" (Sen, Sem); "ae" stays via the plain reading
+            if (french && vow === 'ែ' && (finalCh === 'ន' || finalCh === 'ម')) v = 'e'
             syllable = base + cluster + v + final
         }
+        // word-final ប reads "b" (Keb, Teab); "p" stays via the plain reading
+        if (french && finalCh === 'ប' && (i >= n || s[i] === ' ') && syllable.endsWith('p')) syllable = syllable.slice(0, -1) + 'b'
+        // a word-final dental stop reads "th" (Saret -> Sareth); final "t"
+        // only ever comes from a dental (តថទធដឋឌឍ)
+        if (french && final === 't' && (i >= n || s[i] === ' ') && !etr) syllable += 'h'
         out.push(syllable)
     }
 
@@ -298,10 +379,10 @@ export function romanizeKhmer(input: string): string {
 
 /**
  * Transliterate a Khmer full name and capitalize each part
- * (e.g. "កែ ប៊ុនឡុង" -> "Kae Bunlong").
+ * (e.g. "កែ ប៊ុនឡុង" -> "Ke Bunlong"; plain: "Kae Bunlong").
  */
-export function romanizeKhmerName(name: string): string {
-    return romanizeKhmer(name)
+export function romanizeKhmerName(name: string, options: RomanizeOptions = {}): string {
+    return romanizeKhmer(name, options)
         .split(/\s+/)
         .filter(Boolean)
         .map((part) => part.charAt(0).toUpperCase() + part.slice(1))

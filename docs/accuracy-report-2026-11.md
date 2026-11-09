@@ -53,6 +53,61 @@ Process rules from v2 on: judge every round on `eval:kfold`; read the
 lockbox once per release; never choose correction candidates from
 lockbox rows.
 
+## 0.5.0 — learned alternatives and French-style conventions (2026-11-09)
+
+Same v2 method, same 692 dev eval rows. Every step was judged on
+`eval:kfold` with a paired row-by-row diff (`--rows` +
+`scripts/diff-kfold-rows.mjs`); the lockbox was read once, at the end.
+
+| Step | K-fold exact | K-fold top-5 | Paired exact | Paired top-5 |
+|---|---|---|---|---|
+| 0.4.0 baseline | 177 (25.6%) | 236 (34.1%) | — | — |
+| Learned spelling alternatives | 177 | 273 | +0/−0 | +38/−1 |
+| 10 owner-spelled words | 177 | 273 | +0/−0 | +0/−0 |
+| French conventions, round 1 | 186 | 278 | +16/−7 | +8/−3 |
+| Round 2 (ឆ ឌ ប, final ា) | 196 | 289 | +11/−1 | +12/−1 |
+| Round 3 (សំ, inner ា, ៃ, ាំង, ុយ) | 200 | 297 | +4/−0 | +8/−0 |
+| Round 4 (ិត្រ, ឌ្ឍ, ភា, ូ, ែន/ែម) | **208 (30.1%)** | **302 (43.6%)** | +10/−2 | +5/−0 |
+
+0.5.0 vs. 0.4.0, paired: exact +41/−10 rows (sign test p = 0.00002),
+top-5 +71/−5, match mode 243 → 311 (35.1% → 44.9%). Counted once per
+person group (one person can have several Khmer spellings, e.g. Dith
+Pran has five rows): exact +35/−10, top-5 +65/−5. Citizens exact
+95 → 122 (23.9% → 30.7%).
+
+**Lockbox release read:** exact 32 → **37/129** (24.8% → 28.7%, CI
+21.6–37.0), top-5 40 → **50/129** (31.0% → 38.8%), citizens 23/79
+exact. Consistent with the k-fold, with top-5 a little lower; the
+lockbox has 129 rows, so its CI is wide.
+
+**How the learned tier stays leakage-free.** Each k-fold fold learns
+its rewrite table from its train folds only; `eval:holdout` learns it
+from the dev rows; the shipped table learns from the dev split and
+never from `test-split.json`.
+
+**How the conventions were chosen.** The repo owner, a native reader,
+answered four rounds of yes / both / no questions about spelling
+conventions. The candidate list came from the most frequent rules-vs-
+official edits on the dev split, so each round carries some risk of
+fitting those rows; the guard was to test each rule on its own, keep
+only rules with a net gain, and count per person. Rejected: final ី →
+y (−2), ឹ → e (−4), final ត → t (−2), ិ + final → e (−15), open final
+ោ → or (−1). The French reading is the first guess; the plain reading
+stays an equal-weight alternative, so a rule that is wrong for a name
+still leaves its old spelling in the candidates.
+
+**The exact-match ceiling.** Of the 165 Khmer words with two or more
+official attestations in the dev split (cambodian + curated rows), 103
+(62%) have more than one official spelling. An oracle that always
+picks each word's most common official spelling matches 72.0% of the
+attestations — roughly half of two-word names. Unseen-name exact
+should be read against that bar, not against 100%.
+
+**Remaining misses.** Of the 390 k-fold rows that miss the top-5, 362
+are vocabulary gaps (miss autopsy: the official word is not reachable
+from any option). Most are several letters away from the rules
+reading, which letter rules cannot fix; new dictionary words can.
+
 State of accuracy after the algorithm improvement arc (Phases 3–6) and the
 2026-11-01 refresh round, measured against the committed eval reports at
 commit `c65ea84` (arc) and this round's regenerated reports.
