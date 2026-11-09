@@ -13,6 +13,7 @@
  */
 
 import { spellingAlternates } from './alternatives.js'
+import { indicReading, looksIndic } from './indic.js'
 import { createLearnedAlternator } from './learned-alternations.js'
 import { romanizeKhmerName } from './rules.js'
 import { normalizeName, segmentToken, splitTokens, stripHonorifics } from './tokenizer.js'
@@ -47,6 +48,9 @@ const OPTIONS_PER_TOKEN = 4
  * only when they outweigh the canonical decisively.
  */
 const RULES_PRIOR_MASS = 0.5
+/** The Indic reading of a regnal name ranks below both Khmer readings
+ *  (rules/plain, 0.5) but above unattested mass (0.25). */
+const INDIC_PRIOR_MASS = 0.35
 const UNSEEN_OPTION_MASS = 0.25
 /** Canonical pseudo-count, calibrated on dev + famous (scripts/calibrate-scoring.mjs):
  *  3 keeps every reviewed canonical on the famous set (70/72) while still
@@ -287,8 +291,19 @@ export function createTransliterator(options: TransliteratorOptions = {}): Trans
                 mass: Math.exp(r.score),
             }))
             const composed = readings[0]?.value ?? ''
+            // A regnal token also carries its whole-word Indic reading
+            // (ឧទយាទិត្យវម៌្ម segments, but Udayadityavarman is one
+            // word). It sits at slot 2: inside the per-token option cap,
+            // below the composed Khmer reading.
+            const indic = looksIndic(token) ? titleCaseWords(indicReading(token)) : ''
+            const indicOption =
+                indic && indic !== composed && !readings.some((r) => r.value === indic)
+                    ? [{ value: indic, mass: INDIC_PRIOR_MASS }]
+                    : []
             return scoredToken(token, source, [
-                ...readings.slice(0, 3),
+                ...readings.slice(0, 1),
+                ...indicOption,
+                ...readings.slice(1, 3),
                 { value: rules, mass: RULES_PRIOR_MASS },
                 ...readings.slice(3),
             ], composed)
@@ -297,9 +312,15 @@ export function createTransliterator(options: TransliteratorOptions = {}): Trans
         // French-style first guess; the plain reading stays an equal-mass
         // alternative (both spellings are in use: Sareth / Saret, Keo / Kaev)
         const plain = plainReading(token)
+        // Regnal/Sanskrit tokens also carry their plain Indic reading
+        // (Mahendravarman, Kaundinya) below both Khmer readings
+        const indic = looksIndic(token) ? titleCaseWords(indicReading(token)) : ''
+        const indicOption =
+            indic && indic !== rules && indic !== plain ? [{ value: indic, mass: INDIC_PRIOR_MASS }] : []
         return scoredToken(token, 'rules', [
             { value: rules, mass: RULES_PRIOR_MASS },
             { value: plain, mass: RULES_PRIOR_MASS },
+            ...indicOption,
             ...learnedOptions(plain),
         ], rules)
     }
