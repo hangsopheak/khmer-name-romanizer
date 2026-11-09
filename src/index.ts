@@ -3,7 +3,7 @@
  * Cambodian personal names (passport/roster style romanization).
  *
  * Chain: token dictionary (with segmentation for unspaced names)
- * -> optional injected FST results -> rule-based fallback.
+ * -> rule-based fallback.
  */
 
 export { romanizeKhmer, romanizeKhmerName, normalizeKhmerText } from './rules.js'
@@ -14,7 +14,6 @@ export { createTransliterator } from './transliterate.js'
 export { spellingAlternates } from './alternatives.js'
 export type { Transliterator } from './transliterate.js'
 export { defaultTokenDict } from './token-data.js'
-export { defaultFstDistill } from './fst-distill-data.js'
 export { createLearnedAlternator } from './learned-alternations.js'
 export type { LearnedRule, LearnedAlternate, LearnedAlternator } from './learned-alternations.js'
 export { defaultLearnedAlternations } from './learned-alternations-data.js'

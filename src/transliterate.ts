@@ -2,16 +2,14 @@
  * Token-level transliteration chain:
  *
  *   per-token dictionary (with segmentation for unspaced names)
- *     -> injected FST results
  *     -> rule-based fallback
  *
- * The core is pure and synchronous; the optional pynini FST tier runs
- * out-of-process, so callers batch it beforehand and inject a lookup map.
+ * The core is pure and synchronous, with no runtime dependencies.
  *
  * Besides the best spelling, every result carries ranked `candidates`:
  * Khmer names have several official romanizations, so callers can offer
- * the alternatives (dictionary variants, FST/rule readings, attested
- * spelling alternations, whole-name FST) as choices.
+ * the alternatives (dictionary variants, rule readings, learned and
+ * attested spelling alternations) as choices.
  */
 
 import { spellingAlternates } from './alternatives.js'
@@ -23,11 +21,6 @@ import { TokenEntry, TokenSource, TranslitResult, TranslitToken, TransliteratorO
 
 export interface Transliterator {
     transliterate: (nameKh: string) => TranslitResult
-    /**
-     * All strings the caller should feed to the FST batch: full names, their
-     * tokens, and the non-dictionary chunks left over by segmentation.
-     */
-    fstInputs: (names: string[]) => string[]
 }
 
 /** Keys this short may only drive segmentation of a fully covered unspaced
@@ -39,15 +32,12 @@ const MIN_REMAINDER_LEN = 3
 
 const DEFAULT_MAX_CANDIDATES = 5
 
-/** A whole-name FST reading shorter than this share of the best reading lost syllables. */
-const MIN_WHOLE_FST_LENGTH_RATIO = 0.8
-
 /** Per-token options considered when composing full-name candidates. */
 const OPTIONS_PER_TOKEN = 4
 
 /* Probability model for candidate ranking: every per-token spelling option
  * carries a positive "mass" — corpus attestations from the dictionary, one
- * attestation's worth of trust for rule/FST readings, and a small floor for
+ * attestation's worth of trust for rule readings, and a small floor for
  * spellings offered without evidence (attested alternations). A full-name
  * candidate scores Σ log P(option | token), options normalized per token.
  *
@@ -57,7 +47,6 @@ const OPTIONS_PER_TOKEN = 4
  * only when they outweigh the canonical decisively.
  */
 const RULES_PRIOR_MASS = 0.5
-const FST_PRIOR_MASS = 0.5
 const UNSEEN_OPTION_MASS = 0.25
 /** Canonical pseudo-count, calibrated on dev + famous (scripts/calibrate-scoring.mjs):
  *  3 keeps every reviewed canonical on the famous set (70/72) while still
@@ -155,7 +144,7 @@ function scoredToken(
     return { token, masses }
 }
 
-const SOURCE_RANK: Record<TokenSource, number> = { tokenDict: 0, fst: 1, rules: 2 }
+const SOURCE_RANK: Record<TokenSource, number> = { tokenDict: 0, rules: 1 }
 
 /** The least reliable source among the parts ("weakest link"). */
 function weakestSource(sources: TokenSource[]): TokenSource {
@@ -198,7 +187,6 @@ function variantOptions(entry: TokenEntry): ScoredOption[] {
 
 export function createTransliterator(options: TransliteratorOptions = {}): Transliterator {
     const tokenDict = new Map<string, TokenEntry>(Object.entries(options.tokenDict ?? {}))
-    const fst = options.fstResults
     const maxCandidates = Math.max(1, options.maxCandidates ?? DEFAULT_MAX_CANDIDATES)
     const flipOrderCandidates = options.flipOrderCandidates ?? false
     const learned = createLearnedAlternator(options.learnedAlternations ?? [])
@@ -242,11 +230,6 @@ export function createTransliterator(options: TransliteratorOptions = {}): Trans
         return segments.every((seg) => seg.inDict || seg.text.length >= MIN_REMAINDER_LEN) ? segments : null
     }
 
-    const fstReading = (text: string): string => {
-        const value = fst?.get(text)
-        return value ? titleCaseWords(joinSyllables(value)) : ''
-    }
-
     const readingWith = (cache: Map<string, string>, plain: boolean) => (text: string): string => {
         const hit = cache.get(text)
         if (hit !== undefined) return hit
@@ -265,14 +248,12 @@ export function createTransliterator(options: TransliteratorOptions = {}): Trans
      *  probability mass of every option (for full-name scoring). */
     const resolveToken = (token: string): ScoredToken => {
         const direct = tokenDict.get(token)
-        const wholeTokenFst = fstReading(token)
         const rules = rulesReading(token)
         if (direct) {
             const latin = titleCaseWords(direct.latin)
             return scoredToken(token, 'tokenDict', [
                 { value: latin, mass: direct.count + CANONICAL_MASS_BONUS },
                 ...variantOptions(direct),
-                { value: wholeTokenFst, mass: FST_PRIOR_MASS },
                 { value: rules, mass: RULES_PRIOR_MASS },
             ], latin)
         }
@@ -281,25 +262,18 @@ export function createTransliterator(options: TransliteratorOptions = {}): Trans
         if (segments) {
             // Per-segment options, best first: the first option of each
             // segment forms the primary reading. Segment masses are dict
-            // attestations (or prior mass for FST/rule readings), so a
+            // attestations (or prior mass for rule readings), so a
             // composed reading's mass is the product of its segments'.
             const segmentOptions: ScoredOption[][] = []
             const sources: TokenSource[] = []
             for (const seg of segments) {
                 const entry = seg.inDict ? tokenDict.get(seg.text) : undefined
-                const segFst = entry ? '' : fstReading(seg.text)
                 if (entry) {
                     segmentOptions.push([
                         { value: titleCaseWords(entry.latin), mass: entry.count + CANONICAL_MASS_BONUS },
                         ...variantOptions(entry),
                     ])
                     sources.push('tokenDict')
-                } else if (segFst) {
-                    segmentOptions.push([
-                        { value: segFst, mass: FST_PRIOR_MASS },
-                        { value: rulesReading(seg.text), mass: RULES_PRIOR_MASS },
-                    ])
-                    sources.push('fst')
                 } else {
                     segmentOptions.push([{ value: rulesReading(seg.text), mass: RULES_PRIOR_MASS }])
                     sources.push('rules')
@@ -312,38 +286,14 @@ export function createTransliterator(options: TransliteratorOptions = {}): Trans
                 value: titleCaseWords(r.value),
                 mass: Math.exp(r.score),
             }))
-            // A rules-only remainder is weaker than the FST reading the whole
-            // token's syllable stream, so let the whole-token FST win then.
-            if (source !== 'rules' || !wholeTokenFst) {
-                const composed = readings[0]?.value ?? ''
-                return scoredToken(token, source, [
-                    ...readings.slice(0, 3),
-                    { value: wholeTokenFst, mass: FST_PRIOR_MASS },
-                    { value: rules, mass: RULES_PRIOR_MASS },
-                    ...readings.slice(3),
-                ], composed)
-            }
-            // The FST primary must not be outscored by the composed
-            // readings it beat: it keeps at least prior-grade mass.
-            const fstMass = Math.max(FST_PRIOR_MASS, ...readings.map((r) => r.mass))
-            return scoredToken(token, 'fst', [
-                { value: wholeTokenFst, mass: fstMass },
-                ...readings,
+            const composed = readings[0]?.value ?? ''
+            return scoredToken(token, source, [
+                ...readings.slice(0, 3),
                 { value: rules, mass: RULES_PRIOR_MASS },
-            ], wholeTokenFst)
+                ...readings.slice(3),
+            ], composed)
         }
 
-        if (wholeTokenFst) {
-            return scoredToken(
-                token,
-                'fst',
-                [
-                    { value: wholeTokenFst, mass: FST_PRIOR_MASS },
-                    { value: rules, mass: RULES_PRIOR_MASS },
-                ],
-                wholeTokenFst,
-            )
-        }
         // French-style first guess; the plain reading stays an equal-mass
         // alternative (both spellings are in use: Sareth / Saret, Keo / Kaev)
         const plain = plainReading(token)
@@ -355,7 +305,7 @@ export function createTransliterator(options: TransliteratorOptions = {}): Trans
     }
 
     /** Ranked full-name candidates with scores, best first. */
-    const candidatesFor = (resolved: ScoredToken[], wholeFstValue: string): ScoredCandidate[] => {
+    const candidatesFor = (resolved: ScoredToken[]): ScoredCandidate[] => {
         const optionLists = resolved.map(({ token, masses }) =>
             [token.latin, ...token.alternatives]
                 .slice(0, OPTIONS_PER_TOKEN)
@@ -363,7 +313,7 @@ export function createTransliterator(options: TransliteratorOptions = {}): Trans
         )
         const composed = composeScored(optionLists, maxCandidates)
         // The per-token cap discards tail options: once a token offers
-        // variants plus FST/rule readings, its attested spelling
+        // variants plus rule readings, its attested spelling
         // alternations sit beyond it (alternates always join last), so an
         // official spelling one alternation away from the primary ("Sin"
         // -> "Sinn") can never compose into a full-name candidate. Inject
@@ -392,20 +342,9 @@ export function createTransliterator(options: TransliteratorOptions = {}): Trans
         }
         // Stable sort keeps composed candidates ahead of equal-scored swaps.
         const ranked = swaps.length ? [...composed, ...swaps].sort((a, b) => b.score - a.score) : composed
-        // The whole-name FST (a different segmentation of the syllable
-        // stream) goes right after the best composed reading, unless it
-        // dropped syllables (ហង្ស ចាន់វត្តី -> "Hang Vatey"). It has no
-        // per-token evidence, so it borrows the leader's score — offered
-        // as an equal-trust alternative, not a counted spelling.
-        const letters = (value: string) => value.replace(/\s/g, '').length
-        const keepFst =
-            ranked.length > 0 && wholeFstValue !== '' && letters(wholeFstValue) >= MIN_WHOLE_FST_LENGTH_RATIO * letters(ranked[0].value)
-        const withFst = keepFst
-            ? [ranked[0], { value: wholeFstValue, score: ranked[0].score }, ...ranked.slice(1)]
-            : ranked
         // Case-insensitive dedupe keeps the first (best-scored) spelling.
         const seen = new Set<string>()
-        return withFst.filter((c) => {
+        return ranked.filter((c) => {
             if (!c.value) return false
             const key = c.value.toLowerCase()
             if (seen.has(key)) return false
@@ -420,8 +359,6 @@ export function createTransliterator(options: TransliteratorOptions = {}): Trans
         // them before resolving (they are reported in `honorifics`).
         const { name, honorifics } = stripHonorifics(normalized)
         const tokens = splitTokens(name)
-        const wholeFst = fst?.get(name)
-        const wholeFstValue = wholeFst ? wholeFst.split(/\s+/).map(titleCaseWords).join(' ') : ''
 
         // A completely unspaced name: if it fully segments into dictionary
         // words, those words are the name components -> join with spaces.
@@ -444,11 +381,9 @@ export function createTransliterator(options: TransliteratorOptions = {}): Trans
         resolved = resolved.filter(({ token }) => token.latin.length > 0)
 
         // Name-level source is the weakest token source: 'tokens' only when
-        // every token came from the dictionary. Per-token composition beats
-        // the whole-name FST even when no token is known (leave-one-out
-        // 153 vs 149 exact), so the whole-name FST is only a candidate.
+        // every token came from the dictionary.
         const weakest = weakestSource(resolved.map(({ token }) => token.source))
-        const scored = candidatesFor(resolved, wholeFstValue)
+        const scored = candidatesFor(resolved)
         // The best full-name spelling is the top-scored candidate; it is
         // the join of each token's top-mass option by construction.
         const value = scored[0]?.value ?? ''
@@ -487,22 +422,5 @@ export function createTransliterator(options: TransliteratorOptions = {}): Trans
         }
     }
 
-    const fstInputs = (names: string[]): string[] => {
-        const inputs = new Set<string>()
-        for (const raw of names) {
-            const { name } = stripHonorifics(normalizeName(raw))
-            if (!name) continue
-            inputs.add(name)
-            for (const token of splitTokens(name)) {
-                inputs.add(token)
-                if (tokenDict.has(token)) continue
-                for (const seg of partialSegments(token) ?? []) {
-                    if (!seg.inDict) inputs.add(seg.text)
-                }
-            }
-        }
-        return [...inputs]
-    }
-
-    return { transliterate, fstInputs }
+    return { transliterate }
 }

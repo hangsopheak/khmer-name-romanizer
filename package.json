@@ -44,7 +44,6 @@
     "eval:kfold": "node scripts/eval-kfold.mjs",
     "learn:alternations": "node scripts/learn-alternations.mjs",
     "eval:holdout": "node scripts/eval-holdout.mjs",
-    "fst:readings": "node scripts/fst-readings.mjs",
     "split:corpus": "npm run build && node scripts/split-corpus.mjs",
     "mine:tokens": "node scripts/mine-tokens.mjs",
     "merge:tokens": "node scripts/merge-tokens.mjs && npm run build",

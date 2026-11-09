@@ -119,8 +119,6 @@ All numbers are reproducible: `npm run eval:famous` · `eval:scraped` ·
 | Improvement | Effect on lockbox (108 held-out names) | Effect elsewhere |
 |---|---|---|
 | Phase 3: probability scoring + `scoredCandidates` | 0 — held 21 exact, mean 0.717 **by design**: probability-promoting dictionary variants cost 18 famous exacts in calibration (70→52), so reviewed canonicals stay pinned | Exposed Σ log P scores for matching workflows |
-| Phase 4 (T4.1): FST tier vendored | — | Bridge + `npm run fst:readings` reproducible from this repo |
-| Phase 4 (T4.2): FST distillation, 314 tokens | **mean 0.717 → 0.721, top-5 30 → 31**, exact held 21 | kfold CV +2 exact; shipped eval **+22 exact** (259→281) |
 | Phase 5: syllable lexicon + compositor | *Not shipped* — loses to the rules as a single guess (72 vs 76 exact, LOO) | Probe committed: `scripts/probe-syllable-compositor.mjs` |
 | Phase 6: segmentation upgrades | *Not shipped* — the DP already beats rules (18 vs 13); trust relaxation gains 0; n-best rescues ≤3/102 | Probe committed: `scripts/probe-segmentation.mjs` |
 | 2026-11-01: alternation-swap injection | 0 — gate held 21/31/0.721 (swaps cannot outscore the leader by construction) | Structural fix: official alternation spellings the per-token option cap discarded ("Sin"→"Sinn") can now appear as candidates; measured dev-CV rescue count 0 today |
@@ -170,7 +168,7 @@ against real Cambodian name distributions hit this tier often.
 
 The full loop ran: `scrape:names` → `split:corpus` (lockbox verified) →
 `eval:scraped` → `mine:tokens` → human review → `merge:tokens` →
-`fst-distill` → eval ladder → gate read.
+eval ladder → gate read.
 
 - **Corpus 2,390 → 2,432 pairs** (+42: 3 cambodian, 4 unknown, 47 foreign,
   −12 junk exclusions net). The family-name SPARQL source was lost to
@@ -261,13 +259,13 @@ over matchable vs 34.0% / 29.6% raw).
 ## 7. Conclusion — what is left
 
 Phases 5 and 6 probed the remaining algorithmic ideas and the evidence
-rejected both: the rules and the distilled FST already sit near the
+rejected both: the rules already sit near the
 quality ceiling of the available supervision. The dominant fixable
 class is vocabulary — and the 2026-11-01 refresh (section 5) showed the
 Wikidata/Wikipedia seam is now saturated: a full re-scrape moved the
 honest kfold number by +3/835 and the dictionary by one variant. The
 loop (`scrape:names` → `split:corpus` → `eval:scraped` → `mine:tokens`
-→ `merge:tokens` → `node scripts/fst-distill.mjs`) stays in place as
+→ `merge:tokens`) stays in place as
 maintenance, but closing the remaining token gap needs a qualitatively
 different source — civil-registry extracts (do not scrape the NEC
 voterlist live site; sampled rosters are scanned Khmer-only images with

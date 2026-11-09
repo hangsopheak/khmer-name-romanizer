@@ -6,6 +6,25 @@ project versions semver-style. Accuracy numbers cited below are
 reproducible via `npm run eval:famous · eval:scraped · eval:kfold ·
 eval:holdout` — see `docs/accuracy-report-2026-11.md`.
 
+## [Unreleased]
+
+### Changed — the engine is dictionary + rules only (breaking)
+- Removed the optional pre-computed readings option, its bundled
+  readings map and the scripts that built it. Token and name `source`
+  is now `tokens` / `tokenDict` or `rules`.
+- **Singletons fill every gap.** A word seen once in the corpus now
+  enters the dictionary whenever it fills a gap: `merge:tokens` adds 122
+  such words (dictionary 1,485 → 1,607).
+- **Measured:** k-fold exact **30.1% → 29.5%** (208 → 204, CI
+  26.2–33.0), top-5 **43.6% → 43.4%** (302 → 300), match mode 44.9% →
+  44.7%: inside the noise. Lockbox unchanged (37 / 50 of 129). Famous
+  70/72 held. In-sample `eval:scraped` exact 59.9% → 65.2%, because the
+  new singletons are scored on the rows they were mined from — not an
+  unseen-name gain. Package 59.4 → 53.9 kB packed.
+- Not measured by any eval: tokens of the parliamentary rosters
+  (`scripts/sources/kh_parliament.json`) that the corpus does not cover
+  now fall back to the rules.
+
 ## [0.5.0] - 2026-11-09
 
 Unseen-name accuracy, person-grouped k-fold on the dev split (692 rows),
@@ -107,9 +126,8 @@ held.
   attested once when the rule engine's own reading is >= 0.55 similar
   to the corpus spelling (the repo's existing round-trip bar). That
   gate rejects one-shot mis-alignments like ខាន់ → "Jessa".
-- **Gap-only by design.** A singleton never overrides a distilled FST
-  reading (k-fold cannot exercise that case, so it is not shipped),
-  never comes from the machine-translated `sigpwned` surname
+- **Gap-only by design.** A singleton never comes from the
+  machine-translated `sigpwned` surname
   list (it produced ចន្ទ → "Chhan"), and never touches existing
   canonicals or variants (those keep the min-2 rule).
 - **Dictionary 1266 → 1461** (166 singletons + 29 regular min-2 words
@@ -299,8 +317,7 @@ the 0.2.0 internal state.
 
 ### Changed
 - Dictionary: 823 entries (+153 over 0.2.0's mining rounds, one
-  review-approved variant this round); FST distill map unchanged (314
-  tokens — all 10 new candidates failed the syllable-length guard).
+  review-approved variant this round).
 - Honest unseen-name accuracy rose: 5-fold CV 201 → 204/835 exact,
   270 → 276 top-5, mean 0.732 → 0.733. Lockbox gate held exactly
   (21/108 exact, 31 top-5, 0.721 mean); famous 70/72.
@@ -316,8 +333,6 @@ Internal release: scale-up and measurement honesty.
   + counterfactual holdout eval + leakage-free 5-fold CV.
 - Probability scoring: `scoredCandidates` (Σ log P(spelling | token)),
   reviewed canonicals pinned via a calibrated pseudo-count.
-- Optional pynini FST tier vendored (out-of-process, zero-dep core)
-  and distilled into a bundled 314-token prior-grade map.
 - Probes committed with findings: syllable compositor and segmentation
   upgrades evaluated on evidence and **not shipped**.
 

@@ -1,6 +1,6 @@
 {
  "provenance": {
-  "note": "Official parliamentary rosters of Cambodia, Khmer-script names only. These names never enter the corpus or dictionary (the sites publish no official Latin spellings); they join the FST distill scope only (scripts/fst-distill.mjs).",
+  "note": "Official parliamentary rosters of Cambodia, Khmer-script names only. These names never enter the corpus or dictionary (the sites publish no official Latin spellings); they are a word source for blind native-reader review (scripts/sources/native-vocab.json).",
   "sources": [
    {
     "chamber": "senate",

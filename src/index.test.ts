@@ -5,7 +5,6 @@ import {
     createTransliterator,
     createLearnedAlternator,
     romanizeKhmerName,
-    defaultFstDistill,
     defaultLearnedAlternations,
 } from '.'
 import type { LearnedRule } from '.'
@@ -196,28 +195,6 @@ describe('khmer-name-romanizer', () => {
         expect(ung.score).toBe(source.score) // same spelling, other word order
     })
 
-    it('injects the distilled FST map into the default transliterator only', () => {
-        // កាង is not in the dictionary; its distilled FST reading leads
-        // the default chain, the pure chain still uses the rules.
-        expect(createDefaultTransliterator().transliterate('កាង ដារា').value).toBe('Kaing Dara')
-        expect(createTransliterator({}).transliterate('កាង ដារា').value).toBe('Kang Dara')
-    })
-
-    it('lets caller fstResults override distilled readings per key', () => {
-        const t = createDefaultTransliterator({ fstResults: new Map([['កាង', 'Kiang']]) })
-        expect(t.transliterate('កាង ដារា').value).toBe('Kiang Dara')
-    })
-
-    it('ships no distilled reading that dropped syllables', () => {
-        // guards the generator's length rule: a reading at least half the
-        // Khmer token's length, or it lost syllables (regnal garbage).
-        for (const [khmer, latin] of Object.entries(defaultFstDistill)) {
-            const letters = latin.replace(/[^A-Za-z]/g, '').length
-            expect(letters).toBeGreaterThanOrEqual(khmer.length > 2 ? Math.ceil(khmer.length / 2) : 1)
-        }
-        expect(Object.keys(defaultFstDistill).length).toBeGreaterThan(250)
-    })
-
     it('romanizes well-known names (king, prime minister)', () => {
         expect(transliterateName('នរោត្តម សីហមុនី')).toBe('Norodom Sihamoni')
         expect(transliterateName('ហ៊ុន ម៉ាណែត')).toBe('Hun Manet')
@@ -331,7 +308,7 @@ describe('khmer-name-romanizer', () => {
         it('ships a table the default transliterator uses', () => {
             expect(defaultLearnedAlternations.length).toBeGreaterThan(0)
             expect(defaultLearnedAlternations.every(([, , , , p]) => p > 0 && p < 1)).toBe(true)
-            const plain = createTransliterator({ fstResults: new Map(Object.entries(defaultFstDistill)) })
+            const plain = createTransliterator({})
             const name = 'ឡាវ កង'
             const withTable = createDefaultTransliterator().transliterate(name)
             expect(withTable.candidates.length).toBeGreaterThan(plain.transliterate(name).candidates.length)

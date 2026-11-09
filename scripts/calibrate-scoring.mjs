@@ -6,8 +6,8 @@
  *
  *   CANONICAL_MASS_BONUS (kappa) — pseudo-count backing the dictionary's
  *       reviewed canonical spelling against raw corpus variant counts
- *   RULES_PRIOR_MASS / FST_PRIOR_MASS (lambda) — prior-grade trust granted
- *       to rule/FST readings when no dictionary count exists
+ *   RULES_PRIOR_MASS (lambda) — prior-grade trust granted to rule
+ *       readings when no dictionary count exists
  *   UNSEEN_OPTION_MASS (epsilon) — floor mass for spellings offered
  *       without evidence (attested alternations)
  *
@@ -84,7 +84,6 @@ try {
         const patched = original
             .replace(/const CANONICAL_MASS_BONUS = [\d.]+/, `const CANONICAL_MASS_BONUS = ${kappa}`)
             .replace(/const RULES_PRIOR_MASS = [\d.]+/, `const RULES_PRIOR_MASS = ${lambda}`)
-            .replace(/const FST_PRIOR_MASS = [\d.]+/, `const FST_PRIOR_MASS = ${lambda}`)
             .replace(/const UNSEEN_OPTION_MASS = [\d.]+/, `const UNSEEN_OPTION_MASS = ${epsilon}`)
         if (patched === original && kappa !== 3) throw new Error('constant patterns not found — script out of date')
         execSync(`printf '%s' "${Buffer.from(patched).toString('base64')}" | base64 -d > '${SRC}'`)

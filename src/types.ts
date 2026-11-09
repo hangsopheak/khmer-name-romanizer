@@ -5,10 +5,10 @@
 import type { LearnedRule } from './learned-alternations.js'
 
 /** How an individual name token was resolved. */
-export type TokenSource = 'tokenDict' | 'fst' | 'rules'
+export type TokenSource = 'tokenDict' | 'rules'
 
 /** How a full name was resolved. */
-export type NameSource = 'tokens' | 'fst' | 'rules'
+export type NameSource = 'tokens' | 'rules'
 
 export interface TranslitToken {
     /** Original Khmer token (or segmented sub-tokens rendered as one). */
@@ -18,7 +18,7 @@ export interface TranslitToken {
     source: TokenSource
     /**
      * Other plausible spellings of this token, best first (dictionary
-     * variants, FST/rule readings, attested spelling alternations).
+     * variants, rule readings, learned and attested spelling alternations).
      */
     alternatives: string[]
 }
@@ -74,12 +74,6 @@ export type TokenDictionaryData = Record<string, TokenEntry>
 export interface TransliteratorOptions {
     /** Token-level dictionary (Khmer word -> canonical Latin word). */
     tokenDict?: TokenDictionaryData
-    /**
-     * Pre-computed FST results keyed by input string (full names or single
-     * tokens). The pynini FST runs out-of-process; callers batch it and
-     * inject the map. Missing keys simply fall through to the rules.
-     */
-    fstResults?: Map<string, string>
     /** Maximum number of full-name `candidates` returned (default 5). */
     maxCandidates?: number
     /**

@@ -24,20 +24,17 @@
  *     reading reaches 107/248 tokens — real recall value, ONLY in the
  *     unseen-token scenario: against the counterfactual 5-fold pipeline
  *     the name-level top-5 ceiling is +61/726 rows (+8.4pp), with
- *     composition crowd-out likely halving it. Against the shipped
- *     pipeline (FST distill in-sample) the value is near zero.
- *   - Conclusion: T4.2's FST distillation absorbed most of the intended
- *     value (same token population, better readings: FST 88/288 vs rules
- *     67/288 on uncovered citizen tokens). Documented here instead of
- *     shipped (2026-11-01 decision); re-evaluate if the corpus grows
- *     several-fold (composable coverage 248/447 would rise).
+ *     composition crowd-out likely halving it.
+ *   - Conclusion: documented here instead of shipped (2026-11-01
+ *     decision); re-evaluate if the corpus grows several-fold
+ *     (composable coverage 248/447 would rise).
  *
  * Usage: npm run build && node scripts/probe-syllable-compositor.mjs
  */
 import { readFileSync } from 'node:fs'
-import { createTransliterator, defaultTokenDict, defaultFstDistill } from '../dist/index.js'
+import { createTransliterator, defaultTokenDict } from '../dist/index.js'
 import { romanizeKhmer } from '../dist/rules.js'
-import { counterfactualDict, distillMapFor, isInDomain, passesHygiene, supportOf } from './lib/corpus-tools.mjs'
+import { counterfactualDict, isInDomain, passesHygiene, supportOf } from './lib/corpus-tools.mjs'
 
 /* ---- syllable machinery (probe-grade) ---- */
 const CONS = new Set('កខគឃងចឆជឈញដឋឌឍណតថទធនបផពភមយរលវសហឡអឝឞ'.split(''))
@@ -223,8 +220,7 @@ for (let f = 0; f < K_FOLDS; f++) {
     const testRows = evalRows.filter((p) => foldOf.get(p) === f)
     const trainRows = inDomain.filter((p) => foldOf.get(p) !== f)
     const { dict } = counterfactualDict({ bundled: defaultTokenDict, trainRows, testRows, fullSupport })
-    const distill = distillMapFor(defaultFstDistill, trainRows, dict)
-    const t = createTransliterator({ tokenDict: dict, fstResults: distill })
+    const t = createTransliterator({ tokenDict: dict })
 
     const store = new Map()
     for (const [kh, entry] of Object.entries(dict)) {
@@ -254,7 +250,7 @@ for (let f = 0; f < K_FOLDS; f++) {
         if (words.length !== r.tokens.length) continue
         // compositor readings join ONLY their own token's options
         const extras = r.tokens.map((tok) =>
-            !dict[tok.khmer] && !distill.has(tok.khmer) ? compositorReadings(tok.khmer, store) : [],
+            !dict[tok.khmer] ? compositorReadings(tok.khmer, store) : [],
         )
         const reachable = (withExtra) =>
             words.every((w, i) => {

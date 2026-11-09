@@ -22,9 +22,8 @@
  * corpus spelling that passes the gate is right far more often. Measured
  * on person-grouped k-fold: +10/-2 exact, +11/-1 top-5. The gate rejects
  * one-shot mis-alignments (ខាន់ -> "Jessa"); existing canonicals and
- * variants keep the min-2 rule. Singletons only fill gaps: never over a
- * distilled FST reading (k-fold cannot exercise that case) and never from
- * machine-translated lists (static/sigpwned).
+ * variants keep the min-2 rule. Singletons only fill gaps, and never
+ * from machine-translated lists (static/sigpwned).
  *
  * Before 0.4.0, a single attestation was never enough from SCRAPED sources: Wikidata's
  * name items are foreign transcriptions (it barely models Khmer names),
@@ -40,7 +39,7 @@
  * Usage: node scripts/merge-tokens.mjs [--min 2] [--dry]
  */
 import { readFileSync, writeFileSync } from 'node:fs'
-import { defaultFstDistill, defaultTokenDict } from '../dist/index.js'
+import { defaultTokenDict } from '../dist/index.js'
 import { SINGLETON_SIM, SINGLETON_SKIP_SOURCES, loadNativeVocab, singletonOk } from './lib/corpus-tools.mjs'
 
 const TRUSTED_STATIC = new Set(['static/kname', 'static/manual', 'static/distill-verified'])
@@ -173,10 +172,8 @@ for (const m of mined) {
     const tailCanonical = m.canonicalTail && m.count >= tailMin
         && !isJunkSpelling(m.latin)
     if (!m.canonicalTail && isJunkSpelling(m.latin)) continue
-    // singletons fill gaps only: never over a distilled FST reading (k-fold
-    // cannot measure that case), never from machine-translated lists
+    // singletons fill gaps only, never from machine-translated lists
     const singleton = !m.canonicalTail && m.count >= 1
-        && !(m.khmer in defaultFstDistill)
         && !(m.sources ?? []).every((src) => SINGLETON_SKIP_SOURCES.has(src))
         && singletonOk(m.khmer, m.latin)
     if (singleton && m.count < min) singletons.push(m)

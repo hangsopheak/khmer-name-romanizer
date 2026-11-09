@@ -186,7 +186,7 @@ export const wilson = (successes, n, z = 1.96) => {
  *                       no candidate can ever equal it
  *   vocab-gap           some differing expected word is in NO option
  *                       list of its token — the engine does not know the
- *                       spelling (dictionary/FST/rules all miss)
+ *                       spelling (dictionary/rules all miss)
  *   option-not-chosen   every differing word IS an option of its token —
  *                       the spelling is known but ranking/composition did
  *                       not surface it (includes one-to-many walls)
@@ -336,7 +336,7 @@ export const singletonOk = (khmer, latin, threshold = SINGLETON_SIM) =>
 // attestation of a real person's spelling (it produced ចន្ទ -> "Chhan")
 export const SINGLETON_SKIP_SOURCES = new Set(['static/sigpwned'])
 
-export const applyMergePolicy = (base, mined, min = MERGE_MIN, { singletons = true, singletonSkip = new Set() } = {}) => {
+export const applyMergePolicy = (base, mined, min = MERGE_MIN, { singletons = true } = {}) => {
     // Tail-run spellings enter at min 1 (blocklist-gated in the production
     // merge; the eval counterfactuals mirror the mechanics, not the list).
     const TAIL_MIN = 1
@@ -370,7 +370,6 @@ export const applyMergePolicy = (base, mined, min = MERGE_MIN, { singletons = tr
         }
         const tailCanonical = !!m.canonicalTail && m.count >= 1
         const singleton = singletons && m.count >= 1 && !m.canonicalTail
-            && !singletonSkip.has(m.khmer)
             && !(m.sources ?? []).every((src) => SINGLETON_SKIP_SOURCES.has(src))
             && singletonOk(m.khmer, m.latin)
         if (m.count < min && !(m.count >= 1 && (m.sources ?? []).some((s) => TRUSTED_STATIC.has(s))) && !tailCanonical && !singleton) continue
@@ -412,7 +411,7 @@ export const applyMergePolicy = (base, mined, min = MERGE_MIN, { singletons = tr
  *
  * `fullSupport` is accepted for backward compatibility and ignored.
  */
-export const counterfactualDict = ({ bundled, trainRows, testRows, min = MERGE_MIN, fstDistill }) => {
+export const counterfactualDict = ({ bundled, trainRows, testRows, min = MERGE_MIN }) => {
     const testSupport = supportOf(testRows)
     const trainCounts = countAttestations(trainRows)
     const independentSupport = supportOf(trainRows.filter((p) => !isHandAuthored(p)))
@@ -431,39 +430,6 @@ export const counterfactualDict = ({ bundled, trainRows, testRows, min = MERGE_M
         }
         base[khmer] = entry
     }
-    // singletons never override a distilled FST reading the train rows make eligible
-    const eligible = fstDistill ? distillCandidates(trainRows) : new Set()
-    const singletonSkip = new Set(Object.keys(fstDistill ?? {}).filter((k) => eligible.has(k)))
-    const { dict, added, enriched } = applyMergePolicy(base, mineTokens(trainRows), min, { singletonSkip })
+    const { dict, added, enriched } = applyMergePolicy(base, mineTokens(trainRows), min)
     return { dict, removed, added, enriched }
-}
-
-/**
- * Khmer tokens eligible for the bundled FST distillation, recomputed from
- * the caller's OWN train rows (1:1-aligned cambodian+curated rows — the
- * same scope scripts/fst-distill.mjs distilled from). Counterfactual
- * evals filter the bundled map down to these keys so a fold's or the
- * frozen split's rows can never ride along as distilled readings.
- */
-export const distillCandidates = (rows) => {
-    const tokens = new Set()
-    for (const p of rows) {
-        if (!['cambodian', 'curated'].includes(p.bucket)) continue
-        const kt = p.khmer.split(' ')
-        const lw = p.latin.split(' ')
-        if (kt.length !== lw.length) continue
-        for (const k of kt) tokens.add(k)
-    }
-    return tokens
-}
-
-/** Filter a bundled distill map to keys eligible for the given train rows
- *  and not already covered by the caller's (counterfactual) dictionary. */
-export const distillMapFor = (bundledMap, trainRows, dict) => {
-    const eligible = distillCandidates(trainRows)
-    const out = new Map()
-    for (const [k, v] of Object.entries(bundledMap)) {
-        if (eligible.has(k) && !dict[k]) out.set(k, v)
-    }
-    return out
 }

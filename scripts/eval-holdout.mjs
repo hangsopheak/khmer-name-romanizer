@@ -29,11 +29,10 @@
  * Usage: node scripts/eval-holdout.mjs [--show-misses] [--top 15]
  */
 import { readFileSync, writeFileSync } from 'node:fs'
-import { createDefaultTransliterator, createTransliterator, defaultFstDistill, defaultTokenDict } from '../dist/index.js'
+import { createDefaultTransliterator, createTransliterator, defaultTokenDict } from '../dist/index.js'
 import {
     classifyMiss,
     counterfactualDict,
-    distillMapFor,
     isEvalRow,
     isInDomain,
     isTrainable,
@@ -65,7 +64,6 @@ const testForeign = test.filter((p) => p.bucket === 'foreign').filter(passesHygi
 /* ------------------------------------------------------------------ */
 const { dict, removed, added, enriched } = counterfactualDict({
     bundled: defaultTokenDict,
-    fstDistill: defaultFstDistill,
     trainRows: devTrain,
     testRows: test.filter(isInDomain),
 })
@@ -124,7 +122,7 @@ const report = (rows) => {
 // learned alternations from the dev train rows only (what the shipped
 // table learns from) — the lockbox never feeds the table
 const learnedAlternations = learnRules(trainingPairs(devTrain))
-const holdoutResults = evaluate(testInDomain, createTransliterator({ tokenDict: dict, fstResults: distillMapFor(defaultFstDistill, devTrain, dict), learnedAlternations }))
+const holdoutResults = evaluate(testInDomain, createTransliterator({ tokenDict: dict, learnedAlternations }))
 const shippedResults = evaluate(testInDomain, createDefaultTransliterator())
 const foreignResults = evaluate(testForeign, createTransliterator({ tokenDict: dict }))
 

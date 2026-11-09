@@ -43,11 +43,10 @@
  *                  runs can be compared row by row (scripts/diff-kfold-rows.mjs)
  */
 import { readFileSync, writeFileSync } from 'node:fs'
-import { createDefaultTransliterator, createTransliterator, defaultFstDistill, defaultTokenDict } from '../dist/index.js'
+import { createDefaultTransliterator, createTransliterator, defaultTokenDict } from '../dist/index.js'
 import {
     classifyMiss,
     counterfactualDict,
-    distillMapFor,
     fnv1a,
     groupRows,
     isEvalRow,
@@ -169,21 +168,19 @@ for (let f = 0; f < K; f++) {
 
     const { dict, removed, added, enriched } = counterfactualDict({
         bundled: defaultTokenDict,
-        fstDistill: defaultFstDistill,
         trainRows,
         testRows: heldOut,
         min: MIN,
     })
-    const fstResults = distillMapFor(defaultFstDistill, trainRows, dict)
     // learned alternations: TRAIN folds only (the shipped table learns
     // from the whole dev split, so a test fold would leak through it)
     const learned = LEARNED
         ? { learnedAlternations: learnRules(trainingPairs(trainRows)), maxLearnedAlternates: MAX_LEARNED }
         : {}
-    const t = createTransliterator({ tokenDict: dict, fstResults, ...learned })
+    const t = createTransliterator({ tokenDict: dict, ...learned })
     const results = evaluate(testRows, t)
     // match mode (KYC/dedup): same counterfactual, order-swapped candidates
-    const tm = createTransliterator({ tokenDict: dict, fstResults, flipOrderCandidates: true, ...learned })
+    const tm = createTransliterator({ tokenDict: dict, flipOrderCandidates: true, ...learned })
     for (const [i, p] of testRows.entries()) {
         const c = tm.transliterate(p.khmer).candidates.slice(0, MATCH_MAX)
         results[i].matched = c.some((x) => norm(x) === norm(p.latin) || sortedNorm(x) === sortedNorm(p.latin))

@@ -30,10 +30,10 @@
  * Usage: npm run build && node scripts/probe-segmentation.mjs
  */
 import { readFileSync } from 'node:fs'
-import { createTransliterator, defaultTokenDict, defaultFstDistill } from '../dist/index.js'
+import { createTransliterator, defaultTokenDict } from '../dist/index.js'
 import { segmentToken } from '../dist/tokenizer.js'
 import { romanizeKhmer } from '../dist/rules.js'
-import { counterfactualDict, distillMapFor, isInDomain, passesHygiene, supportOf } from './lib/corpus-tools.mjs'
+import { counterfactualDict, isInDomain, passesHygiene, supportOf } from './lib/corpus-tools.mjs'
 
 const dev = JSON.parse(readFileSync(new URL('./dev-split.json', import.meta.url), 'utf8'))
 const inDomain = dev.filter(isInDomain)
@@ -86,8 +86,7 @@ for (let f = 0; f < K_FOLDS; f++) {
     const testRows = evalRows.filter((p) => foldOf.get(p) === f)
     const trainRows = inDomain.filter((p) => foldOf.get(p) !== f)
     const { dict } = counterfactualDict({ bundled: defaultTokenDict, trainRows, testRows, fullSupport })
-    const distill = distillMapFor(defaultFstDistill, trainRows, dict)
-    const t = createTransliterator({ tokenDict: dict, fstResults: distill })
+    const t = createTransliterator({ tokenDict: dict })
     const dictMap = new Map(Object.entries(dict))
 
     for (const p of testRows) {
