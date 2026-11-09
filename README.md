@@ -34,7 +34,6 @@ It suggests. It never decides. Only the person knows their official spelling, so
 | **Name validation** | Check that a typed Latin name fits the Khmer name: KYC against the National ID, exam and diploma forms. |
 | **Data-quality audit** | Scan records that hold both scripts and flag pairs that do not match (typos, wrong person). |
 | **Dedup and record linkage** | Link a Khmer record to Latin records of the same person ("SO PAGNA", "Panha So"). |
-| **Screening (sanctions, AML)** | Give every candidate spelling to your fuzzy matcher, not one guess. |
 | **Search** | "sopheak" finds សុភ័ក្រ្ត. |
 | **Migration** | Propose Latin names for Khmer-only records. Send low scores to review. |
 | **Display** | Readable Latin names for staff who do not read Khmer, or for SMS without Khmer fonts. |
