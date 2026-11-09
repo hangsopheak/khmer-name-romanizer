@@ -273,6 +273,23 @@ details.own { margin-top: 14px; }
 details.own summary { cursor: pointer; font-weight: 600; font-size: 0.95rem; color: var(--accent); }
 details.own[open] summary { margin-bottom: 10px; }
 
+/* Sanctions check: before / after */
+.ex h3 { margin-bottom: 10px; }
+.ex-who { display: flex; flex-wrap: wrap; gap: 6px 24px; margin-bottom: 14px; font-size: 0.95rem; }
+.ex-who b { font-weight: 600; }
+.ex-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr); gap: 12px; }
+@media (max-width: 640px) { .ex-grid { grid-template-columns: minmax(0, 1fr); } }
+.ex-card { border: 1px solid var(--line); border-radius: 8px; padding: 12px 14px; display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+.ex-card.bad { border-color: var(--bad); background: var(--bad-soft); }
+.ex-card.ok { border-color: var(--good); background: var(--good-soft); }
+.ex-card .label { margin: 0; }
+.ex-spell { display: flex; flex-wrap: wrap; gap: 6px; }
+.ex-spell span { font-size: 0.9rem; padding: 2px 9px; border-radius: 999px; background: var(--surface); border: 1px solid var(--line); }
+.ex-spell span.hit { border-color: var(--good); color: var(--good); font-weight: 700; }
+.ex-res { font-weight: 600; font-size: 0.95rem; }
+.ex-card.bad .ex-res { color: var(--bad); }
+.ex-card.ok .ex-res { color: var(--good); }
+
 /* Example lists with a try box (Link, Screen) */
 .try-row { display: flex; gap: 8px; }
 .try-row input { flex: 1; min-width: 0; }
@@ -368,7 +385,7 @@ footer .wrap { padding-block: 22px; display: flex; justify-content: space-betwee
       <a class="tab" href="#validate" data-i18n="tab.validate">Check a name</a>
       <a class="tab" href="#audit" data-i18n="tab.audit">Audit records</a>
       <a class="tab" href="#link" data-i18n="tab.link">Link records</a>
-      <a class="tab" href="#screen" data-i18n="tab.screen">Screen a list</a>
+      <a class="tab" href="#screen" data-i18n="tab.screen">Sanctions check</a>
       <a class="tab" href="#search" data-i18n="tab.search">Quick search</a>
       <a class="tab" href="#bulk" data-i18n="tab.bulk">Convert a list</a>
     </nav>
@@ -555,11 +572,13 @@ footer .wrap { padding-block: 22px; display: flex; justify-content: space-betwee
   <!-- 6. Screen -->
   <section class="uc wrap" id="uc-screen" data-uc="screen" hidden>
     <div class="uc-head">
-      <h2 data-i18n="s.h">Screen a list</h2>
-      <p data-i18n="s.p">For sanctions, AML and fraud screening. Each watchlist name below, in Latin letters, is already screened against 2,000 customers stored in Khmer, using every spelling of each name. Try your own.</p>
+      <h2 data-i18n="s.h">Sanctions check</h2>
+      <p data-i18n="s.p">Banks and money-transfer companies must check every customer against watchlists of people they may not serve. The lists are in Latin letters, but customers are stored in Khmer. Checking only one spelling of each name misses real matches.</p>
     </div>
     <div class="uc-body">
+      <div class="panel ex" id="s-example"></div>
       <div class="panel">
+        <p class="hint" style="margin:0 0 12px" data-i18n="s.listIntro">Below, a made-up watchlist is checked against 2,000 customers. Add a name to try.</p>
         <div class="try-row">
           <input id="s-q" type="text" autocomplete="off" spellcheck="false" placeholder="Try a watchlist name, e.g. SOU PAGNA" data-i18n-ph="s.tryPh" aria-label="Watchlist name">
           <button class="btn primary" type="button" id="s-add" data-i18n="list.add">Add to list</button>
@@ -668,7 +687,7 @@ footer .wrap { padding-block: 22px; display: flex; justify-content: space-betwee
       'tab.validate': 'Check a name',
       'tab.audit': 'Audit records',
       'tab.link': 'Link records',
-      'tab.screen': 'Screen a list',
+      'tab.screen': 'Sanctions check',
       'tab.search': 'Quick search',
       'tab.bulk': 'Convert a list',
 
@@ -804,8 +823,16 @@ footer .wrap { padding-block: 22px; display: flex; justify-content: space-betwee
       'l.whyDiff': 'No spelling of this name comes close.',
 
       'l.partial': '{n} customers start with this. Keep typing.',
-      's.h': 'Screen a list',
-      's.p': 'For sanctions, AML and fraud screening. Each watchlist name below, in Latin letters, is already screened against 2,000 customers stored in Khmer, using every spelling of each name. Try your own.',
+      's.h': 'Sanctions check',
+      's.p': 'Banks and money-transfer companies must check every customer against watchlists of people they may not serve. The lists are in Latin letters, but customers are stored in Khmer. Checking only one spelling of each name misses real matches.',
+      's.exH': 'Why every spelling matters',
+      's.exCustomer': 'Customer',
+      's.exList': 'Watchlist',
+      's.exOne': 'Checking one guess',
+      's.exAll': 'Checking every spelling',
+      's.exMissed': '{a} is not {b}. Missed: the bank keeps serving a listed person.',
+      's.exCaught': 'Caught through spelling {rank}.',
+      's.listIntro': 'Below, a made-up watchlist is checked against 2,000 customers. Add a name to try.',
       's.tryPh': 'Try a watchlist name, e.g. SOU PAGNA',
       's.listH': 'Watchlist: {n} made-up names',
       's.thName': 'Watchlist name',
@@ -869,7 +896,7 @@ footer .wrap { padding-block: 22px; display: flex; justify-content: space-betwee
       'tab.validate': 'ផ្ទៀងផ្ទាត់ឈ្មោះ',
       'tab.audit': 'ពិនិត្យទិន្នន័យ',
       'tab.link': 'ភ្ជាប់កំណត់ត្រា',
-      'tab.screen': 'ពិនិត្យបញ្ជីឃ្លាំមើល',
+      'tab.screen': 'ពិនិត្យទណ្ឌកម្ម',
       'tab.search': 'ស្វែងរករហ័ស',
       'tab.bulk': 'បម្លែងបញ្ជីឈ្មោះ',
 
@@ -1001,8 +1028,16 @@ footer .wrap { padding-block: 22px; display: flex; justify-content: space-betwee
       'l.whyDiff': 'គ្មានការសរសេរណាមួយនៃឈ្មោះនេះជិតនោះទេ។',
 
       'l.partial': 'មានអតិថិជន {n} នាក់ចាប់ផ្តើមដូចនេះ។ សូមវាយបន្ត។',
-      's.h': 'ពិនិត្យបញ្ជីឃ្លាំមើល',
-      's.p': 'សម្រាប់ការពិនិត្យទណ្ឌកម្ម AML និងការក្លែងបន្លំ។ ឈ្មោះនីមួយៗក្នុងបញ្ជីឃ្លាំមើលខាងក្រោម (អក្សរឡាតាំង) ត្រូវបានពិនិត្យរួចហើយជាមួយអតិថិជន 2,000 នាក់ដែលរក្សាទុកជាអក្សរខ្មែរ ដោយប្រើគ្រប់ការសរសេរនៃឈ្មោះនីមួយៗ។ សាកល្បងឈ្មោះរបស់អ្នក។',
+      's.h': 'ពិនិត្យទណ្ឌកម្ម',
+      's.p': 'ធនាគារ និងក្រុមហ៊ុនផ្ទេរប្រាក់ ត្រូវពិនិត្យអតិថិជនគ្រប់រូបជាមួយបញ្ជីឃ្លាំមើល ដែលមានឈ្មោះមនុស្សដែលគេមិនអាចផ្តល់សេវាបាន។ បញ្ជីទាំងនោះសរសេរជាអក្សរឡាតាំង ប៉ុន្តែអតិថិជនត្រូវបានរក្សាទុកជាអក្សរខ្មែរ។ បើពិនិត្យតែការសរសេរមួយនៃឈ្មោះនីមួយៗ នឹងរំលងករណីពិត។',
+      's.exH': 'ហេតុអ្វីត្រូវពិនិត្យគ្រប់ការសរសេរ',
+      's.exCustomer': 'អតិថិជន',
+      's.exList': 'បញ្ជីឃ្លាំមើល',
+      's.exOne': 'ពិនិត្យតែការទាយមួយ',
+      's.exAll': 'ពិនិត្យគ្រប់ការសរសេរ',
+      's.exMissed': '{a} មិនមែន {b} ទេ។ រំលង៖ ធនាគារនៅតែផ្តល់សេវាដល់មនុស្សក្នុងបញ្ជី។',
+      's.exCaught': 'រកឃើញតាមរយៈការសរសេរទី {rank}។',
+      's.listIntro': 'ខាងក្រោម បញ្ជីឃ្លាំមើលប្រឌិតមួយត្រូវបានពិនិត្យជាមួយអតិថិជន 2,000 នាក់។ បញ្ចូលឈ្មោះដើម្បីសាកល្បង។',
       's.tryPh': 'សាកល្បងឈ្មោះក្នុងបញ្ជីឃ្លាំមើល ឧ. SOU PAGNA',
       's.listH': 'បញ្ជីឃ្លាំមើល៖ ឈ្មោះប្រឌិត {n}',
       's.thName': 'ឈ្មោះក្នុងបញ្ជីឃ្លាំមើល',
@@ -1665,7 +1700,19 @@ footer .wrap { padding-block: 22px; display: flex; justify-content: space-betwee
       (hits.length > 3 ? `<div class="why">${t('list.more', { n: hits.length - 3 })}</div>` : '') +
       (missed ? `<div class="miss">${t('s.rowMissed', { n: missed })}</div>` : '')
   }
-  const WATCHLIST = ['CHHOEM SOPHEA', 'SOU PAGNA', 'NGUON SOVAN', 'TOUCH RATHA', 'LIM CHANTHA', 'MEAS VANNA']
+  function renderScreenExample() {
+  const kh = 'សូ បញ្ញា', listed = 'SOU PAGNA'
+  const cands = match.transliterate(kh).candidates
+  const rank = cands.findIndex((c) => sortWords(c) === sortWords(listed)) + 1
+  const chips = cands.slice(0, Math.max(rank, 4)).map((c, i) => `<span class="${i + 1 === rank ? 'hit' : ''}">${esc(c)}</span>`).join('')
+  $('s-example').innerHTML = `<h3>${t('s.exH')}</h3>
+    <div class="ex-who"><span>${t('s.exCustomer')}: <b lang="km">${kh}</b></span><span>${t('s.exList')}: <b>${listed}</b></span></div>
+    <div class="ex-grid">
+      <div class="ex-card bad"><div class="label">${t('s.exOne')}</div><div class="ex-spell"><span>${esc(cands[0])}</span></div><div class="ex-res">${t('s.exMissed', { a: esc(cands[0]), b: listed })}</div></div>
+      <div class="ex-card ok"><div class="label">${t('s.exAll')}</div><div class="ex-spell">${chips}</div><div class="ex-res">${t('s.exCaught', { rank })}</div></div>
+    </div>`
+}
+const WATCHLIST = ['CHHOEM SOPHEA', 'SOU PAGNA', 'NGUON SOVAN', 'TOUCH RATHA', 'LIM CHANTHA', 'MEAS VANNA']
   const screenList = tryList({
     input: 's-q', add: 's-add', live: 's-live', rows: 's-rows', sample: WATCHLIST,
     renderLive(q) {
@@ -1820,7 +1867,7 @@ footer .wrap { padding-block: 22px; display: flex; justify-content: space-betwee
   attachLatinHelper($('v-kh'), renderValidate)
 
   const renderAll = () => {
-    for (const fn of [renderLookup, renderPrefill, renderValidate, () => renderAudit(auditInput), linkList.render, screenList.render, renderSearch, renderBulk]) {
+    for (const fn of [renderLookup, renderPrefill, renderValidate, () => renderAudit(auditInput), linkList.render, renderScreenExample, screenList.render, renderSearch, renderBulk]) {
       try { fn() } catch (err) { console.error(err) }
     }
   }
