@@ -73,6 +73,7 @@ body {
 a { color: var(--accent); text-underline-offset: 3px; }
 :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
 [lang="km"] { line-height: 1.7; }
+mark { background: var(--accent-soft); color: var(--accent); border-radius: 3px; padding: 0 2px; }
 
 .wrap {
   max-width: 1080px;
@@ -271,6 +272,21 @@ ul.hits mark { background: var(--accent-soft); color: var(--accent); border-radi
 details.own { margin-top: 14px; }
 details.own summary { cursor: pointer; font-weight: 600; font-size: 0.95rem; color: var(--accent); }
 details.own[open] summary { margin-bottom: 10px; }
+
+/* Example lists with a try box (Link, Screen) */
+.try-row { display: flex; gap: 8px; }
+.try-row input { flex: 1; min-width: 0; }
+.live { margin-top: 12px; padding: 12px 14px; border: 1px dashed var(--accent); border-radius: 8px; background: var(--accent-soft); display: flex; flex-direction: column; gap: 6px; }
+.live-label { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: var(--accent); }
+table.data.list td { vertical-align: top; }
+table.data.list td.lat { white-space: nowrap; padding-top: 12px; }
+table.data .m { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 8px; padding: 3px 0; }
+table.data .m .why, .live .m .why { flex-basis: 100%; margin-top: 0; }
+table.data .miss { font-size: var(--step--1); color: var(--accent); font-weight: 600; margin-top: 4px; }
+.live .m { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 8px; }
+.row-x { border: 0; background: transparent; color: var(--muted); font-size: 1.2rem; line-height: 1; cursor: pointer; padding: 6px 8px; border-radius: 6px; }
+.row-x:hover { color: var(--bad); background: var(--bad-soft); }
+@media (max-width: 480px) { .try-row { flex-direction: column; } }
 
 /* Quick search: phone mock */
 .phone-stage { display: flex; flex-direction: column; align-items: center; gap: 14px; min-width: 0; }
@@ -516,23 +532,22 @@ footer .wrap { padding-block: 22px; display: flex; justify-content: space-betwee
   <section class="uc wrap" id="uc-link" data-uc="link" hidden>
     <div class="uc-head">
       <h2 data-i18n="l.h">Link records</h2>
-      <p data-i18n="l.p">System A stores 2,000 customers in Khmer. System B wrote the same people in Latin letters, each clerk in their own way. Type a name from system B and see which customers it links to.</p>
+      <p data-i18n="l.p">System A stores 2,000 customers in Khmer. System B wrote the same people in Latin letters, each clerk in their own way. Each record from system B below is already linked to system A. Try your own.</p>
     </div>
     <div class="uc-body">
       <div class="panel">
-        <div class="field">
-          <label for="l-q" data-i18n="l.input">Name from system B, in Latin letters</label>
-          <input id="l-q" type="text" autocomplete="off" spellcheck="false" placeholder="e.g. chhoem sophea" data-i18n-ph="l.ph">
+        <div class="try-row">
+          <input id="l-q" type="text" autocomplete="off" spellcheck="false" placeholder="Try a name from system B, e.g. chhoem sophea" data-i18n-ph="l.tryPh" aria-label="Name from system B">
+          <button class="btn primary" type="button" id="l-add" data-i18n="list.add">Add to list</button>
         </div>
-        <div class="chips" id="l-chips">
-          <span data-i18n="try">Try:</span>
-          <button class="chip" type="button" data-q="CHHIM SOPHEA">CHHIM SOPHEA</button>
-          <button class="chip" type="button" data-q="Sophea Chhim">Sophea Chhim <small data-i18n="chip.givenFirst">given name first</small></button>
-          <button class="chip" type="button" data-q="CHHOEM SOPHEA">CHHOEM SOPHEA <small data-i18n="chip.other">other spelling</small></button>
-          <button class="chip" type="button" data-q="Chhim Sopea">Chhim Sopea <small data-i18n="chip.typo">typo</small></button>
+        <div class="live" id="l-live" hidden></div>
+        <h3 style="margin-top:18px" id="l-list-h"></h3>
+        <div class="table-wrap">
+          <table class="data list">
+            <thead><tr><th data-i18n="l.thB">System B (Latin)</th><th data-i18n="l.thA">Links to system A (Khmer)</th><th></th></tr></thead>
+            <tbody id="l-rows"></tbody>
+          </table>
         </div>
-        <h3 style="margin-top:18px" id="l-count"></h3>
-        <ul class="hits" id="l-out"></ul>
       </div>
     </div>
   </section>
@@ -541,24 +556,23 @@ footer .wrap { padding-block: 22px; display: flex; justify-content: space-betwee
   <section class="uc wrap" id="uc-screen" data-uc="screen" hidden>
     <div class="uc-head">
       <h2 data-i18n="s.h">Screen a list</h2>
-      <p data-i18n="s.p">For sanctions, AML and fraud screening. A new name was added to a watchlist in Latin letters. Screen all 2,000 customers stored in Khmer against it, using every spelling of each name, not only the first guess.</p>
+      <p data-i18n="s.p">For sanctions, AML and fraud screening. Each watchlist name below, in Latin letters, is already screened against 2,000 customers stored in Khmer, using every spelling of each name. Try your own.</p>
     </div>
     <div class="uc-body">
       <div class="panel">
-        <div class="field">
-          <label for="s-q" data-i18n="s.input">New watchlist name, in Latin letters</label>
-          <input id="s-q" type="text" autocomplete="off" spellcheck="false" placeholder="e.g. SOU PAGNA" data-i18n-ph="s.ph">
+        <div class="try-row">
+          <input id="s-q" type="text" autocomplete="off" spellcheck="false" placeholder="Try a watchlist name, e.g. SOU PAGNA" data-i18n-ph="s.tryPh" aria-label="Watchlist name">
+          <button class="btn primary" type="button" id="s-add" data-i18n="list.add">Add to list</button>
         </div>
-        <div class="chips" id="s-chips">
-          <span data-i18n="try">Try:</span>
-          <button class="chip" type="button" data-q="SOU PAGNA">SOU PAGNA</button>
-          <button class="chip" type="button" data-q="CHHOEM SOPHEA">CHHOEM SOPHEA</button>
-          <button class="chip" type="button" data-q="NGUON SOVAN">NGUON SOVAN</button>
-          <button class="chip" type="button" data-q="SAMDECH TEST">SAMDECH TEST <small data-i18n="chip.noHit">no hit</small></button>
-        </div>
-        <h3 style="margin-top:18px" id="s-count"></h3>
-        <ul class="hits" id="s-out"></ul>
+        <div class="live" id="s-live" hidden></div>
         <div class="callout" id="s-callout" hidden></div>
+        <h3 style="margin-top:18px" id="s-list-h"></h3>
+        <div class="table-wrap">
+          <table class="data list">
+            <thead><tr><th data-i18n="s.thName">Watchlist name</th><th data-i18n="s.thHits">Customers who match</th><th></th></tr></thead>
+            <tbody id="s-rows"></tbody>
+          </table>
+        </div>
       </div>
     </div>
   </section>
@@ -632,6 +646,1191 @@ footer .wrap { padding-block: 22px; display: flex; justify-content: space-betwee
   </div>
 </footer>
 
-<script type="module" src="./app.js"></script>
+<script type="module">
+  // ---- UI strings (English / Khmer)
+  // UI strings for the demo, English and Khmer.
+  // Technical and product terms (KYC, AML, CSV, SMS, GitHub, npm, README, MIT,
+  // library) stay in English in both languages; so do the example names.
+  // {name} is a placeholder; callers escape values before passing them in.
+
+  const REPO = 'https://github.com/hangsopheak/khmer-name-romanizer'
+
+  const STRINGS = {
+    en: {
+      'lang.switch': 'ខ្មែរ',
+      'lang.switchAria': 'ប្តូរទៅភាសាខ្មែរ',
+
+      'hero.title': 'A small library that <span class="kh">powers up</span> Khmer apps',
+      'hero.sub': 'Give any app with a Khmer name field faster sign-up, safer KYC checks, cleaner records and search in Latin letters. Pick a use case below and try it.',
+      'tabs.aria': 'Use cases',
+      'tab.lookup': 'Look up',
+      'tab.prefill': 'Pre-fill a form',
+      'tab.validate': 'Check a name',
+      'tab.audit': 'Audit records',
+      'tab.link': 'Link records',
+      'tab.screen': 'Screen a list',
+      'tab.search': 'Quick search',
+      'tab.bulk': 'Convert a list',
+
+      'try': 'Try:',
+      'khmer': 'Khmer',
+      'latin': 'Latin',
+      'result': 'Result',
+
+      'lk.h': 'Look up a name',
+      'lk.p': 'Type a Cambodian name in Khmer script. You get the Latin spellings people really use, ranked from most to least common.',
+      'lk.label': 'Name in Khmer',
+      'lk.clear': 'Clear',
+      'lk.clearAria': 'Clear the name',
+      'chip.many': 'many spellings',
+      'chip.nospace': 'no space',
+      'chip.title': 'with a title',
+      'chip.unknown': 'unknown word',
+      'chip.one': 'one word',
+      'lk.passport': 'Best guess · passport style',
+      'lk.surname': 'Surname',
+      'lk.given': 'Given names',
+      'lk.mrzNote': 'Example machine-readable line, for illustration only.',
+      'lk.copy': 'Copy name',
+      'lk.share': 'Copy link to this name',
+      'lk.candsH': 'All spellings, most likely first',
+      'lk.candsHint': 'The bar shows how often each spelling appears in real records. Many names have more than one correct spelling. Ask the person which one is on their ID.',
+      'lk.wordsH': 'Word by word',
+      'lk.reportH': 'Spelling wrong?',
+      'lk.reportP': 'If you know the official spelling, for example from an ID or a diploma, send it to us. We add it to the dictionary so the next person gets it right.',
+      'lk.officialPh': 'Official spelling, e.g. Sou Pagna',
+      'lk.officialAria': 'Official spelling',
+      'lk.reportBtn': 'Report on GitHub',
+      'lk.typeKhmer': 'Type the name in Khmer script',
+      'lk.typeAbove': 'Type a name above',
+      'lk.candsEmpty': 'Suggestions appear here as you type.',
+      'lk.wordsEmpty': 'Each word of the name, and where its spelling came from.',
+      'lk.titleRemoved': 'Title removed: {t}',
+      'lk.also': 'Also: {list}',
+      'lk.noAlts': 'No other spellings seen',
+      'lk.known': 'Known name word',
+      'lk.rules': 'New word, read by rules',
+      'copied.name': 'Name copied',
+      'copied.link': 'Link copied',
+      'copied.csv': 'CSV copied',
+      'copy.failed': 'Copy failed. Select the text and copy it yourself.',
+
+      'lh.summary': 'No Khmer keyboard? Type the name in Latin letters',
+      'lh.ph': 'e.g. hang sopheak',
+      'lh.aria': 'Name in Latin letters',
+      'lh.hint': 'Pick the Khmer spelling of each word. It goes into the Khmer box above.',
+      'lh.none': 'No Khmer word found. Check the spelling. The word may not be in the dictionary yet.',
+
+      'pf.h': 'Pre-fill a form',
+      'pf.p': 'For enrolment, HR onboarding and registration forms. The Latin field fills itself while the person types in Khmer. They pick or correct the spelling, then confirm.',
+      'pf.form': 'Student enrolment',
+      'pf.example': 'Example form',
+      'pf.kh': 'Full name in Khmer',
+      'pf.lat': 'Full name in Latin letters, as on the ID',
+      'pf.ok': 'The student confirmed this spelling',
+      'pf.save': 'Save',
+      'pf.suggEmpty': 'Suggestions appear as you type the Khmer name.',
+      'pf.sugg': 'Suggestions:',
+      'pf.fillBoth': '<b>Fill in both names.</b>',
+      'pf.askConfirm': '<b>Ask the student to confirm the spelling first.</b><span class="sub">Only they know which spelling is on their ID.</span>',
+      'pf.saved': '<b>Saved:</b>',
+      'pf.notInList': 'This spelling is not among the suggestions. That is fine because the student confirmed it.',
+      'pf.nothingSent': 'Example form. Nothing was sent anywhere.',
+
+      'v.h': 'Check a typed name',
+      'v.p': 'For KYC, exams and diplomas. Compare the Latin name someone typed with the Khmer name on their National ID. A match passes. Anything else goes to a person, not straight to a rejection.',
+      'v.kh': 'Khmer name on the ID card',
+      'v.lat': 'Latin name the customer typed',
+      'chip.givenFirst': 'given name first',
+      'chip.typo': 'typo',
+      'chip.rare': 'rare spelling',
+      'chip.wrong': 'wrong name',
+      'v.okTitle': 'Match. Accept.',
+      'v.okSub': '“{s}” is spelling {rank} of {total}{swap}. Score {score}.',
+      'v.swap': ', with the given name first',
+      'v.rareTitle': 'Match, but a rare spelling. Accept, or confirm with the customer.',
+      'v.rareSub': '“{s}” is spelling {rank} of {total}. Score {score}. The usual spelling is {best}.',
+      'v.typoTitle': 'Close, but not a known spelling. Send to review.',
+      'v.typoSub': 'One letter away from {near}. Probably a typo.',
+      'v.badTitle': 'No match. Send to review.',
+      'v.badSub': 'None of the {total} spellings is close. Expected something like {best}. It may be a different person, or a spelling the dictionary has not seen yet.',
+
+      'au.h': 'Audit records',
+      'au.p': 'For data-quality work on any database that stores both scripts. Find the rows where the Latin name does not fit the Khmer name: typos, rare spellings to confirm, and rows that belong to a different person.',
+      'au.thLatin': 'Latin on record',
+      'au.copy': 'Copy results as CSV',
+      'au.own': 'Audit your own records',
+      'au.ownHint': 'One record per line: Khmer name, a comma, then the Latin name. Your data stays in this browser.',
+      'au.inAria': 'Records to audit',
+      'au.run': 'Audit these records',
+      'au.ok': 'Matches',
+      'au.rare': 'Rare spelling',
+      'au.typo': 'Likely typo',
+      'au.bad': 'Mismatch',
+      'au.sum.ok.1': '{n} match',
+      'au.sum.ok': '{n} matches',
+      'au.sum.rare.1': '{n} rare spelling',
+      'au.sum.rare': '{n} rare spellings',
+      'au.sum.typo.1': '{n} likely typo',
+      'au.sum.typo': '{n} likely typos',
+      'au.sum.bad.1': '{n} mismatch',
+      'au.sum.bad': '{n} mismatches',
+      'au.whyInvalid': 'Needs a Khmer name and a Latin name.',
+      'au.whyGivenFirst': 'Given name first',
+      'au.whyRank': 'Spelling {rank} of {total}',
+      'au.whyUsual': 'Usual spelling: {best}',
+      'au.whyTypo': 'Did they mean {near}?',
+      'au.whyBad': 'Expected something like {best}',
+
+      'l.h': 'Link records',
+      'list.add': 'Add to list',
+      'list.remove': 'Remove',
+      'list.live': 'Your name, checked live',
+      'list.more': 'and {n} more',
+      'l.p': 'System A stores 2,000 customers in Khmer. System B wrote the same people in Latin letters, each clerk in their own way. Each record from system B below is already linked to system A. Try your own.',
+      'l.tryPh': 'Try a name from system B, e.g. chhoem sophea',
+      'l.listH': '{n} records from system B',
+      'l.thB': 'System B (Latin)',
+      'l.thA': 'Links to system A (Khmer)',
+      'l.noLink': 'No link',
+      'l.same': 'Same name',
+      'l.possible': 'Possible typo',
+      'l.startsWith': 'Starts with this',
+      'l.diff': 'Different',
+      'l.whySwap': 'Same name, given name written first.',
+      'l.whyUsual': 'Same as the usual spelling.',
+      'l.whyOther': 'Same name, spelled the other common way: {s}.',
+      'l.whyTypo': 'One letter away from {near}. Probably a typo, but a person should check.',
+      'l.whyDiff': 'No spelling of this name comes close.',
+
+      'l.partial': '{n} customers start with this. Keep typing.',
+      's.h': 'Screen a list',
+      's.p': 'For sanctions, AML and fraud screening. Each watchlist name below, in Latin letters, is already screened against 2,000 customers stored in Khmer, using every spelling of each name. Try your own.',
+      's.tryPh': 'Try a watchlist name, e.g. SOU PAGNA',
+      's.listH': 'Watchlist: {n} made-up names',
+      's.thName': 'Watchlist name',
+      's.thHits': 'Customers who match',
+      's.rowNone': 'No customer matches',
+      's.rowMissed': '{n} found only through another spelling',
+      's.summary': '<b>Screening only the first guess of each name would miss {m} of {h} hits</b> on this watchlist. They match through another common spelling.',
+      'chip.noHit': 'no hit',
+      's.exact': 'Exact hit',
+      's.similar': 'One letter off',
+      's.via': 'Found through spelling {rank}: <mark>{s}</mark>',
+
+      'sr.h': 'Quick search',
+      'sr.p': 'Most phones in Cambodia save contacts in Khmer, so finding someone means switching keyboards first. With the library, type the name in Latin letters on any keyboard, in any common spelling, even with a typo.',
+      'sr.phoneAria': 'Example contacts app',
+      'sr.contacts': 'Contacts',
+      'sr.ph': 'Search in Latin, e.g. sopheak',
+      'chip.other': 'other spelling',
+      'chip.order': 'any order',
+      'chip.first': 'first letters',
+      'sr.total': '{n} contacts',
+      'sr.idle': 'Ready in {ms} ms. Start typing.',
+      'sr.more': 'and {n} more',
+      'sr.fuzzy': 'No exact match. Close spellings: ',
+      'sr.found': '{n} found in {ms} ms',
+      'sr.under': 'under 0.1',
+      'sr.none': 'No contact matches. Try another spelling.',
+      'sr.spelled': 'spelled {s}',
+      'sr.typo': 'typo of {s}',
+
+      'b.h': 'Convert a list',
+      'b.p': 'For migrations and display. Give Latin names to records that only have Khmer, for a new system, an SMS without Khmer fonts, or staff who do not read Khmer. Uncertain rows go to a review queue.',
+      'b.in': 'Khmer names, one per line',
+      'b.thConf': 'Confidence',
+      'b.copy': 'Copy as CSV',
+      'b.ok': 'High',
+      'b.rare': 'Check',
+      'b.bad': 'Review',
+      'b.sumOk': '{n} high',
+      'b.sumRare': '{n} to check',
+      'b.sumBad': '{n} to review',
+      'b.whyNotKhmer': 'Not Khmer script',
+      'b.whyNew': 'New word: {w}',
+      'b.whyAlso': 'Also common: {w}',
+      'b.empty': 'Add Khmer names above, one per line.',
+
+      'footer.made': 'MIT license · made by Hang Sopheak (<span lang="km">ហង្ស សុភ័ក្រ្ត</span>)',
+      'footer.links': `Install, API and accuracy: <a href="${REPO}#readme">README</a> · <a href="${REPO}/issues">Report an issue</a>`,
+      'load.error': `The romanizer could not load. Reload the page. If it still fails, <a href="${REPO}/issues">report the problem</a>.`,
+    },
+
+    km: {
+      'lang.switch': 'English',
+      'lang.switchAria': 'Switch to English',
+
+      'hero.title': 'Library តូចមួយ ដែល<span class="kh">លើកកម្ពស់</span>កម្មវិធីខ្មែរ',
+      'hero.sub': 'ជួយកម្មវិធីណាដែលមានប្រអប់ឈ្មោះជាភាសាខ្មែរ ឱ្យចុះឈ្មោះបានលឿនជាងមុន ពិនិត្យ KYC បានសុវត្ថិភាពជាងមុន ទិន្នន័យស្អាតជាងមុន និងស្វែងរកដោយអក្សរឡាតាំងបាន។ សូមជ្រើសករណីប្រើប្រាស់ខាងក្រោម ហើយសាកល្បងមើល។',
+      'tabs.aria': 'ករណីប្រើប្រាស់',
+      'tab.lookup': 'រកមើលឈ្មោះ',
+      'tab.prefill': 'បំពេញទម្រង់',
+      'tab.validate': 'ផ្ទៀងផ្ទាត់ឈ្មោះ',
+      'tab.audit': 'ពិនិត្យទិន្នន័យ',
+      'tab.link': 'ភ្ជាប់កំណត់ត្រា',
+      'tab.screen': 'ពិនិត្យបញ្ជីឃ្លាំមើល',
+      'tab.search': 'ស្វែងរករហ័ស',
+      'tab.bulk': 'បម្លែងបញ្ជីឈ្មោះ',
+
+      'try': 'សាកល្បង៖',
+      'khmer': 'ខ្មែរ',
+      'latin': 'ឡាតាំង',
+      'result': 'លទ្ធផល',
+
+      'lk.h': 'រកមើលឈ្មោះ',
+      'lk.p': 'វាយឈ្មោះខ្មែរជាអក្សរខ្មែរ។ អ្នកនឹងឃើញការសរសេរជាអក្សរឡាតាំងដែលគេប្រើពិតប្រាកដ តម្រៀបពីប្រើញឹកញាប់បំផុត ទៅតិចបំផុត។',
+      'lk.label': 'ឈ្មោះជាអក្សរខ្មែរ',
+      'lk.clear': 'លុប',
+      'lk.clearAria': 'លុបឈ្មោះ',
+      'chip.many': 'សរសេរបានច្រើនបែប',
+      'chip.nospace': 'គ្មានដកឃ្លា',
+      'chip.title': 'មានងារ',
+      'chip.unknown': 'ពាក្យថ្មី',
+      'chip.one': 'មួយពាក្យ',
+      'lk.passport': 'ការទាយល្អបំផុត · តាមទម្រង់លិខិតឆ្លងដែន',
+      'lk.surname': 'នាមត្រកូល',
+      'lk.given': 'នាមខ្លួន',
+      'lk.mrzNote': 'ឧទាហរណ៍បន្ទាត់សម្រាប់ម៉ាស៊ីនអាន សម្រាប់បង្ហាញប៉ុណ្ណោះ។',
+      'lk.copy': 'ចម្លងឈ្មោះ',
+      'lk.share': 'ចម្លងតំណទៅឈ្មោះនេះ',
+      'lk.candsH': 'ការសរសេរទាំងអស់ ដែលទំនងបំផុតនៅមុនគេ',
+      'lk.candsHint': 'របារបង្ហាញថា ការសរសេរនីមួយៗលេចឡើងញឹកញាប់ប៉ុណ្ណាក្នុងកំណត់ត្រាពិត។ ឈ្មោះជាច្រើនមានការសរសេរត្រឹមត្រូវច្រើនជាងមួយ។ សូមសួរម្ចាស់ឈ្មោះ ថាមួយណាដែលមាននៅលើអត្តសញ្ញាណប័ណ្ណរបស់គាត់។',
+      'lk.wordsH': 'តាមពាក្យនីមួយៗ',
+      'lk.reportH': 'សរសេរខុសមែនទេ?',
+      'lk.reportP': 'ប្រសិនបើអ្នកដឹងការសរសេរផ្លូវការ ឧទាហរណ៍ពីអត្តសញ្ញាណប័ណ្ណ ឬសញ្ញាបត្រ សូមផ្ញើមកយើង។ យើងនឹងបញ្ចូលវាទៅក្នុងវចនានុក្រម ដើម្បីឱ្យអ្នកបន្ទាប់ទទួលបានលទ្ធផលត្រឹមត្រូវ។',
+      'lk.officialPh': 'ការសរសេរផ្លូវការ ឧ. Sou Pagna',
+      'lk.officialAria': 'ការសរសេរផ្លូវការ',
+      'lk.reportBtn': 'រាយការណ៍នៅលើ GitHub',
+      'lk.typeKhmer': 'សូមវាយឈ្មោះជាអក្សរខ្មែរ',
+      'lk.typeAbove': 'វាយឈ្មោះនៅខាងលើ',
+      'lk.candsEmpty': 'ការណែនាំនឹងបង្ហាញនៅទីនេះ ពេលអ្នកវាយ។',
+      'lk.wordsEmpty': 'ពាក្យនីមួយៗនៃឈ្មោះ និងប្រភពនៃការសរសេររបស់វា។',
+      'lk.titleRemoved': 'បានដកងារចេញ៖ {t}',
+      'lk.also': 'ក៏អាចសរសេរ៖ {list}',
+      'lk.noAlts': 'មិនទាន់ឃើញការសរសេរផ្សេង',
+      'lk.known': 'ពាក្យឈ្មោះដែលស្គាល់',
+      'lk.rules': 'ពាក្យថ្មី អានតាមច្បាប់',
+      'copied.name': 'បានចម្លងឈ្មោះ',
+      'copied.link': 'បានចម្លងតំណ',
+      'copied.csv': 'បានចម្លង CSV',
+      'copy.failed': 'ចម្លងមិនបាន។ សូមជ្រើសអត្ថបទ ហើយចម្លងដោយខ្លួនឯង។',
+
+      'lh.summary': 'គ្មានក្តារចុចខ្មែរ? វាយឈ្មោះជាអក្សរឡាតាំង',
+      'lh.ph': 'ឧ. hang sopheak',
+      'lh.aria': 'ឈ្មោះជាអក្សរឡាតាំង',
+      'lh.hint': 'ជ្រើសការសរសេរខ្មែររបស់ពាក្យនីមួយៗ។ វានឹងចូលទៅក្នុងប្រអប់ខ្មែរខាងលើ។',
+      'lh.none': 'រកមិនឃើញពាក្យខ្មែរ។ សូមពិនិត្យការសរសេរ។ ពាក្យនេះប្រហែលមិនទាន់មានក្នុងវចនានុក្រមនៅឡើយ។',
+
+      'pf.h': 'បំពេញទម្រង់ស្វ័យប្រវត្តិ',
+      'pf.p': 'សម្រាប់ទម្រង់ចុះឈ្មោះចូលរៀន ទទួលបុគ្គលិកថ្មី និងការចុះឈ្មោះផ្សេងៗ។ ប្រអប់អក្សរឡាតាំងបំពេញដោយខ្លួនឯង ពេលអ្នកប្រើវាយជាភាសាខ្មែរ។ គាត់ជ្រើស ឬកែការសរសេរ រួចបញ្ជាក់។',
+      'pf.form': 'ការចុះឈ្មោះសិស្ស',
+      'pf.example': 'ទម្រង់គំរូ',
+      'pf.kh': 'ឈ្មោះពេញជាអក្សរខ្មែរ',
+      'pf.lat': 'ឈ្មោះពេញជាអក្សរឡាតាំង ដូចនៅលើអត្តសញ្ញាណប័ណ្ណ',
+      'pf.ok': 'សិស្សបានបញ្ជាក់ការសរសេរនេះ',
+      'pf.save': 'រក្សាទុក',
+      'pf.suggEmpty': 'ការណែនាំនឹងបង្ហាញ ពេលអ្នកវាយឈ្មោះខ្មែរ។',
+      'pf.sugg': 'ការណែនាំ៖',
+      'pf.fillBoth': '<b>សូមបំពេញឈ្មោះទាំងពីរ។</b>',
+      'pf.askConfirm': '<b>សូមឱ្យសិស្សបញ្ជាក់ការសរសេរជាមុនសិន។</b><span class="sub">មានតែគាត់ទេដែលដឹងថា ការសរសេរមួយណានៅលើអត្តសញ្ញាណប័ណ្ណរបស់គាត់។</span>',
+      'pf.saved': '<b>បានរក្សាទុក៖</b>',
+      'pf.notInList': 'ការសរសេរនេះមិនមាននៅក្នុងការណែនាំទេ។ មិនអីទេ ព្រោះសិស្សបានបញ្ជាក់រួចហើយ។',
+      'pf.nothingSent': 'ទម្រង់គំរូ។ គ្មានអ្វីត្រូវបានផ្ញើទៅណាទេ។',
+
+      'v.h': 'ផ្ទៀងផ្ទាត់ឈ្មោះដែលបានវាយ',
+      'v.p': 'សម្រាប់ KYC ការប្រឡង និងសញ្ញាបត្រ។ ប្រៀបធៀបឈ្មោះអក្សរឡាតាំងដែលគេវាយ ជាមួយឈ្មោះខ្មែរនៅលើអត្តសញ្ញាណប័ណ្ណ។ បើត្រូវគ្នា គឺឆ្លងកាត់។ ករណីផ្សេងទៀត ត្រូវបញ្ជូនទៅមនុស្សពិនិត្យ មិនមែនបដិសេធភ្លាមៗទេ។',
+      'v.kh': 'ឈ្មោះខ្មែរនៅលើអត្តសញ្ញាណប័ណ្ណ',
+      'v.lat': 'ឈ្មោះអក្សរឡាតាំងដែលអតិថិជនបានវាយ',
+      'chip.givenFirst': 'នាមខ្លួននៅមុន',
+      'chip.typo': 'វាយខុស',
+      'chip.rare': 'ការសរសេរកម្រ',
+      'chip.wrong': 'ឈ្មោះខុស',
+      'v.okTitle': 'ត្រូវគ្នា។ ទទួលយក។',
+      'v.okSub': '“{s}” ជាការសរសេរទី {rank} ក្នុងចំណោម {total}{swap}។ ពិន្ទុ {score}។',
+      'v.swap': ' ដោយនាមខ្លួននៅមុន',
+      'v.rareTitle': 'ត្រូវគ្នា ប៉ុន្តែជាការសរសេរកម្រ។ ទទួលយក ឬបញ្ជាក់ជាមួយអតិថិជន។',
+      'v.rareSub': '“{s}” ជាការសរសេរទី {rank} ក្នុងចំណោម {total}។ ពិន្ទុ {score}។ ការសរសេរទូទៅគឺ {best}។',
+      'v.typoTitle': 'ជិតត្រូវ ប៉ុន្តែមិនមែនជាការសរសេរដែលស្គាល់។ បញ្ជូនទៅពិនិត្យ។',
+      'v.typoSub': 'ខុសតែមួយអក្សរពី {near}។ ប្រហែលជាវាយខុស។',
+      'v.badTitle': 'មិនត្រូវគ្នា។ បញ្ជូនទៅពិនិត្យ។',
+      'v.badSub': 'គ្មានការសរសេរណាមួយក្នុងចំណោម {total} ដែលជិតនោះទេ។ រំពឹងថាប្រហែលជា {best}។ អាចជាមនុស្សផ្សេង ឬជាការសរសេរដែលវចនានុក្រមមិនទាន់ស្គាល់។',
+
+      'au.h': 'ពិនិត្យទិន្នន័យ',
+      'au.p': 'សម្រាប់ពិនិត្យគុណភាពទិន្នន័យ ដែលរក្សាឈ្មោះទាំងអក្សរខ្មែរ និងអក្សរឡាតាំង។ រកជួរដែលឈ្មោះឡាតាំងមិនត្រូវនឹងឈ្មោះខ្មែរ៖ វាយខុស ការសរសេរកម្រដែលត្រូវបញ្ជាក់ និងជួរដែលជារបស់មនុស្សផ្សេង។',
+      'au.thLatin': 'ឡាតាំងក្នុងកំណត់ត្រា',
+      'au.copy': 'ចម្លងលទ្ធផលជា CSV',
+      'au.own': 'ពិនិត្យទិន្នន័យរបស់អ្នកផ្ទាល់',
+      'au.ownHint': 'មួយកំណត់ត្រាក្នុងមួយបន្ទាត់៖ ឈ្មោះខ្មែរ សញ្ញាក្បៀស (,) រួចឈ្មោះឡាតាំង។ ទិន្នន័យរបស់អ្នកនៅតែក្នុងកម្មវិធីរុករកនេះ។',
+      'au.inAria': 'ទិន្នន័យត្រូវពិនិត្យ',
+      'au.run': 'ពិនិត្យទិន្នន័យទាំងនេះ',
+      'au.ok': 'ត្រូវគ្នា',
+      'au.rare': 'ការសរសេរកម្រ',
+      'au.typo': 'ប្រហែលវាយខុស',
+      'au.bad': 'មិនត្រូវគ្នា',
+      'au.sum.ok': '{n} ត្រូវគ្នា',
+      'au.sum.rare': '{n} ការសរសេរកម្រ',
+      'au.sum.typo': '{n} ប្រហែលវាយខុស',
+      'au.sum.bad': '{n} មិនត្រូវគ្នា',
+      'au.whyInvalid': 'ត្រូវការទាំងឈ្មោះខ្មែរ និងឈ្មោះឡាតាំង។',
+      'au.whyGivenFirst': 'នាមខ្លួននៅមុន',
+      'au.whyRank': 'ការសរសេរទី {rank} ក្នុងចំណោម {total}',
+      'au.whyUsual': 'ការសរសេរទូទៅ៖ {best}',
+      'au.whyTypo': 'តើចង់សំដៅលើ {near} មែនទេ?',
+      'au.whyBad': 'រំពឹងថាប្រហែលជា {best}',
+
+      'l.h': 'ភ្ជាប់កំណត់ត្រា',
+      'list.add': 'បញ្ចូលក្នុងបញ្ជី',
+      'list.remove': 'លុបចេញ',
+      'list.live': 'ឈ្មោះរបស់អ្នក ពិនិត្យភ្លាមៗ',
+      'list.more': 'និង {n} ទៀត',
+      'l.p': 'ប្រព័ន្ធ A រក្សាទុកអតិថិជន 2,000 នាក់ជាអក្សរខ្មែរ។ ប្រព័ន្ធ B សរសេរឈ្មោះមនុស្សដដែលជាអក្សរឡាតាំង តាមរបៀបរៀងៗខ្លួនរបស់បុគ្គលិកម្នាក់ៗ។ កំណត់ត្រានីមួយៗពីប្រព័ន្ធ B ខាងក្រោម ត្រូវបានភ្ជាប់ទៅប្រព័ន្ធ A រួចហើយ។ សាកល្បងឈ្មោះរបស់អ្នក។',
+      'l.tryPh': 'សាកល្បងឈ្មោះពីប្រព័ន្ធ B ឧ. chhoem sophea',
+      'l.listH': 'កំណត់ត្រា {n} ពីប្រព័ន្ធ B',
+      'l.thB': 'ប្រព័ន្ធ B (ឡាតាំង)',
+      'l.thA': 'ភ្ជាប់ទៅប្រព័ន្ធ A (ខ្មែរ)',
+      'l.noLink': 'មិនមានការភ្ជាប់',
+      'l.same': 'ឈ្មោះដូចគ្នា',
+      'l.possible': 'ប្រហែលវាយខុស',
+      'l.startsWith': 'ចាប់ផ្តើមដូចនេះ',
+      'l.diff': 'មនុស្សផ្សេង',
+      'l.whySwap': 'ឈ្មោះដូចគ្នា ដោយសរសេរនាមខ្លួននៅមុន។',
+      'l.whyUsual': 'ដូចការសរសេរទូទៅ។',
+      'l.whyOther': 'ឈ្មោះដូចគ្នា សរសេរតាមបែបទូទៅមួយទៀត៖ {s}។',
+      'l.whyTypo': 'ខុសតែមួយអក្សរពី {near}។ ប្រហែលជាវាយខុស ប៉ុន្តែគួរឱ្យមនុស្សពិនិត្យ។',
+      'l.whyDiff': 'គ្មានការសរសេរណាមួយនៃឈ្មោះនេះជិតនោះទេ។',
+
+      'l.partial': 'មានអតិថិជន {n} នាក់ចាប់ផ្តើមដូចនេះ។ សូមវាយបន្ត។',
+      's.h': 'ពិនិត្យបញ្ជីឃ្លាំមើល',
+      's.p': 'សម្រាប់ការពិនិត្យទណ្ឌកម្ម AML និងការក្លែងបន្លំ។ ឈ្មោះនីមួយៗក្នុងបញ្ជីឃ្លាំមើលខាងក្រោម (អក្សរឡាតាំង) ត្រូវបានពិនិត្យរួចហើយជាមួយអតិថិជន 2,000 នាក់ដែលរក្សាទុកជាអក្សរខ្មែរ ដោយប្រើគ្រប់ការសរសេរនៃឈ្មោះនីមួយៗ។ សាកល្បងឈ្មោះរបស់អ្នក។',
+      's.tryPh': 'សាកល្បងឈ្មោះក្នុងបញ្ជីឃ្លាំមើល ឧ. SOU PAGNA',
+      's.listH': 'បញ្ជីឃ្លាំមើល៖ ឈ្មោះប្រឌិត {n}',
+      's.thName': 'ឈ្មោះក្នុងបញ្ជីឃ្លាំមើល',
+      's.thHits': 'អតិថិជនដែលត្រូវគ្នា',
+      's.rowNone': 'គ្មានអតិថិជនត្រូវគ្នា',
+      's.rowMissed': '{n} រកឃើញតែតាមរយៈការសរសេរផ្សេង',
+      's.summary': '<b>បើពិនិត្យតែការទាយទីមួយនៃឈ្មោះនីមួយៗ នឹងរំលងករណី {m} ក្នុងចំណោម {h}</b> ក្នុងបញ្ជីឃ្លាំមើលនេះ។ ពួកវាត្រូវគ្នាតាមរយៈការសរសេរទូទៅផ្សេងទៀត។',
+      'chip.noHit': 'មិនត្រូវ',
+      's.exact': 'ត្រូវគ្នាពិតប្រាកដ',
+      's.similar': 'ខុសមួយអក្សរ',
+      's.via': 'រកឃើញតាមរយៈការសរសេរទី {rank}៖ <mark>{s}</mark>',
+
+      'sr.h': 'ស្វែងរករហ័ស',
+      'sr.p': 'ទូរស័ព្ទភាគច្រើននៅកម្ពុជារក្សាទុកឈ្មោះទំនាក់ទំនងជាអក្សរខ្មែរ ដូច្នេះចង់រកនរណាម្នាក់ ត្រូវប្តូរក្តារចុចសិន។ ជាមួយ library នេះ អ្នកអាចវាយឈ្មោះជាអក្សរឡាតាំងលើក្តារចុចណាក៏បាន តាមការសរសេរណាក៏បាន ទោះវាយខុសក៏ដោយ។',
+      'sr.phoneAria': 'កម្មវិធីទំនាក់ទំនងគំរូ',
+      'sr.contacts': 'ទំនាក់ទំនង',
+      'sr.ph': 'ស្វែងរកជាអក្សរឡាតាំង ឧ. sopheak',
+      'chip.other': 'ការសរសេរផ្សេង',
+      'chip.order': 'លំដាប់ណាក៏បាន',
+      'chip.first': 'អក្សរដំបូង',
+      'sr.total': '{n} ទំនាក់ទំនង',
+      'sr.idle': 'រួចរាល់ក្នុង {ms} ms។ ចាប់ផ្តើមវាយ។',
+      'sr.more': 'និង {n} ទៀត',
+      'sr.fuzzy': 'មិនមានត្រូវគ្នាពិតប្រាកដ។ ការសរសេរជិតគ្នា៖ ',
+      'sr.found': 'រកឃើញ {n} ក្នុង {ms} ms',
+      'sr.under': 'តិចជាង 0.1',
+      'sr.none': 'រកមិនឃើញទំនាក់ទំនង។ សាកល្បងការសរសេរផ្សេង។',
+      'sr.spelled': 'សរសេរ {s}',
+      'sr.typo': 'វាយខុសពី {s}',
+
+      'b.h': 'បម្លែងបញ្ជីឈ្មោះ',
+      'b.p': 'សម្រាប់ផ្ទេរទិន្នន័យ និងការបង្ហាញ។ ផ្តល់ឈ្មោះឡាតាំងដល់កំណត់ត្រាដែលមានតែឈ្មោះខ្មែរ សម្រាប់ប្រព័ន្ធថ្មី សារ SMS ដែលគ្មានពុម្ពអក្សរខ្មែរ ឬបុគ្គលិកដែលមិនអានភាសាខ្មែរ។ ជួរដែលមិនច្បាស់ ត្រូវដាក់ឱ្យមនុស្សពិនិត្យ។',
+      'b.in': 'ឈ្មោះខ្មែរ មួយក្នុងមួយបន្ទាត់',
+      'b.thConf': 'កម្រិតជឿជាក់',
+      'b.copy': 'ចម្លងជា CSV',
+      'b.ok': 'ខ្ពស់',
+      'b.rare': 'គួរពិនិត្យ',
+      'b.bad': 'ត្រូវពិនិត្យ',
+      'b.sumOk': '{n} ខ្ពស់',
+      'b.sumRare': '{n} គួរពិនិត្យ',
+      'b.sumBad': '{n} ត្រូវពិនិត្យ',
+      'b.whyNotKhmer': 'មិនមែនអក្សរខ្មែរ',
+      'b.whyNew': 'ពាក្យថ្មី៖ {w}',
+      'b.whyAlso': 'ក៏ប្រើញឹកញាប់៖ {w}',
+      'b.empty': 'បញ្ចូលឈ្មោះខ្មែរខាងលើ មួយក្នុងមួយបន្ទាត់។',
+
+      'footer.made': 'អាជ្ញាប័ណ្ណ MIT · បង្កើតដោយ <span lang="km">ហង្ស សុភ័ក្រ្ត</span> (Hang Sopheak)',
+      'footer.links': `ការដំឡើង API និងភាពត្រឹមត្រូវ៖ <a href="${REPO}#readme">README</a> · <a href="${REPO}/issues">រាយការណ៍បញ្ហា</a>`,
+      'load.error': `មិនអាចដំណើរការបានទេ។ សូមផ្ទុកទំព័រឡើងវិញ។ បើនៅតែមិនបាន សូម<a href="${REPO}/issues">រាយការណ៍បញ្ហា</a>។`,
+    },
+  }
+
+  const LANGS = ['en', 'km']
+  let lang = 'en'
+
+  /** Pick the start language: ?lang=, then the saved choice, then the browser. */
+  function initLang() {
+    const fromUrl = new URLSearchParams(location.search).get('lang')
+    let saved = null
+    try { saved = localStorage.getItem('lang') } catch { /* storage blocked */ }
+    const browser = (navigator.language || '').toLowerCase().startsWith('km') ? 'km' : 'en'
+    lang = [fromUrl, saved, browser].find((l) => LANGS.includes(l)) ?? 'en'
+    return lang
+  }
+
+  function getLang() { return lang }
+
+  function setLang(next) {
+    if (!LANGS.includes(next)) return
+    lang = next
+    try { localStorage.setItem('lang', next) } catch { /* storage blocked */ }
+  }
+
+  /** Translate a key. Values in `vars` are inserted as given (escape them first). */
+  function t(key, vars = {}) {
+    const s = STRINGS[lang][key] ?? STRINGS.en[key] ?? key
+    return s.replace(/\{(\w+)\}/g, (_, k) => (vars[k] ?? ''))
+  }
+
+  /** English plural helper: uses `key.1` for one when that key exists. */
+  function tn(key, n, vars = {}) {
+    const one = n === 1 && STRINGS[lang][key + '.1'] ? key + '.1' : key
+    return t(one, { n, ...vars })
+  }
+
+  /** Apply translations to every marked element in the page. */
+  function applyStatic(root = document) {
+    document.documentElement.lang = lang
+    root.querySelectorAll('[data-i18n]').forEach((el) => { el.innerHTML = t(el.dataset.i18n) })
+    root.querySelectorAll('[data-i18n-ph]').forEach((el) => { el.placeholder = t(el.dataset.i18nPh) })
+    root.querySelectorAll('[data-i18n-aria]').forEach((el) => { el.setAttribute('aria-label', t(el.dataset.i18nAria)) })
+  }
+
+  // ---- App
+  // Demo page logic. Every romanization comes from the library itself,
+  // loaded from npm through jsDelivr (LIB_URL below).
+  // The only demo-side helper is a small Jaro-Winkler similarity, used where
+  // a real app would plug in its own fuzzy matcher (typos, screening).
+
+  const $ = (id) => document.getElementById(id)
+  initLang()
+  applyStatic()
+
+  // The library itself, as published on npm. One retry: a dropped connection
+  // on a weak mobile network should not end the demo.
+  const LIB_VERSION = '0.6.0'
+  const LIB_URL = `https://cdn.jsdelivr.net/npm/khmer-name-romanizer@${LIB_VERSION}/dist/index.js`
+  let lib
+  try {
+    lib = await import(LIB_URL).catch(() => new Promise((r) => setTimeout(r, 800)).then(() => import(LIB_URL)))
+  } catch (err) {
+    const box = $('load-error')
+    box.innerHTML = '<div class="load-error">' + t('load.error') + '</div>'
+    box.hidden = false
+    throw err
+  }
+  $('ver').textContent = 'v' + LIB_VERSION
+
+  // ---------------------------------------------------------------- engine
+  const show = lib.createDefaultTransliterator({ maxCandidates: 8 })
+  const match = lib.createDefaultTransliterator({ maxCandidates: 10, flipOrderCandidates: true })
+
+  const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]))
+  const norm = (s) => s.toLowerCase().replace(/[^a-z]+/g, ' ').trim()
+  const sortWords = (s) => norm(s).split(' ').filter(Boolean).sort().join(' ')
+  const hasKhmer = (s) => /[ក-៿]/.test(s)
+  const RARE_SCORE = -3
+
+  /** Jaro-Winkler similarity in [0, 1]. Demo helper, not part of the library. */
+  function jaroWinkler(a, b) {
+    if (a === b) return 1
+    const la = a.length, lb = b.length
+    if (!la || !lb) return 0
+    const range = Math.max(0, Math.floor(Math.max(la, lb) / 2) - 1)
+    const ma = new Array(la).fill(false), mb = new Array(lb).fill(false)
+    let m = 0
+    for (let i = 0; i < la; i++) {
+      for (let j = Math.max(0, i - range); j < Math.min(lb, i + range + 1); j++) {
+        if (!mb[j] && a[i] === b[j]) { ma[i] = mb[j] = true; m++; break }
+      }
+    }
+    if (!m) return 0
+    let t = 0, k = 0
+    for (let i = 0; i < la; i++) {
+      if (!ma[i]) continue
+      while (!mb[k]) k++
+      if (a[i] !== b[k]) t++
+      k++
+    }
+    const jaro = (m / la + m / lb + (m - t / 2) / m) / 3
+    let p = 0
+    while (p < Math.min(4, la, lb) && a[p] === b[p]) p++
+    return jaro + p * 0.1 * (1 - jaro)
+  }
+  /** Edit distance counting a swap of two neighbouring letters as one edit. */
+  function editDistance(a, b) {
+    const d = Array.from({ length: a.length + 1 }, (_, i) => [i, ...new Array(b.length).fill(0)])
+    for (let j = 1; j <= b.length; j++) d[0][j] = j
+    for (let i = 1; i <= a.length; i++) {
+      for (let j = 1; j <= b.length; j++) {
+        const cost = a[i - 1] === b[j - 1] ? 0 : 1
+        d[i][j] = Math.min(d[i - 1][j] + 1, d[i][j - 1] + 1, d[i - 1][j - 1] + cost)
+        if (i > 1 && j > 1 && a[i - 1] === b[j - 2] && a[i - 2] === b[j - 1]) d[i][j] = Math.min(d[i][j], d[i - 2][j - 2] + 1)
+      }
+    }
+    return d[a.length][b.length]
+  }
+  /** Name similarity that ignores word order. */
+  const nameSim = (a, b) => jaroWinkler(sortWords(a), sortWords(b))
+
+  /** Classify a Latin spelling against a Khmer name. */
+  function judge(khmer, latin) {
+    const r = match.transliterate(khmer)
+    const scored = r.scoredCandidates ?? r.candidates.map((value) => ({ value, score: 0 }))
+    const i = scored.findIndex((c) => norm(c.value) === norm(latin))
+    if (i >= 0) {
+      const c = scored[i]
+      const swapped = sortWords(c.value) === sortWords(r.value) && norm(c.value) !== norm(r.value)
+      return { kind: c.score < RARE_SCORE ? 'rare' : 'ok', rank: i + 1, total: scored.length, score: c.score, spelling: c.value, swapped, best: r.value }
+    }
+    // A typo is one letter off a known spelling (any name order).
+    let near = null
+    for (const c of scored) {
+      const dist = editDistance(sortWords(c.value), sortWords(latin))
+      if (!near || dist < near.dist) near = { value: c.value, dist }
+    }
+    return { kind: near && near.dist <= 1 ? 'typo' : 'bad', near, best: r.value, total: scored.length }
+  }
+
+  /** Run fn on typing, but never in the middle of an input-method composition
+   *  (Khmer keyboards on phones and some desktops compose characters). */
+  function onType(el, fn) {
+    let composing = false
+    const run = () => { try { fn() } catch (err) { console.error(err) } }
+    el.addEventListener('compositionstart', () => { composing = true })
+    el.addEventListener('compositionend', () => { composing = false; run() })
+    el.addEventListener('input', (e) => { if (!composing && !e.isComposing) run() })
+  }
+
+  function flash(el, msg) {
+    el.textContent = msg; el.hidden = false
+    clearTimeout(el._t); el._t = setTimeout(() => { el.hidden = true }, 1800)
+  }
+  async function copyText(text, noticeEl, msg) {
+    try { await navigator.clipboard.writeText(text); flash(noticeEl, msg) }
+    catch { flash(noticeEl, t('copy.failed')) }
+  }
+  // ---------------------------------------------------------------- Latin → Khmer helper
+  // Typing Khmer is hard without a Khmer keyboard. This reads the library's
+  // own dictionary backwards: type "hang sopheak", pick the Khmer word for each.
+  const latinKey = (s) => s.toLowerCase().replace(/[^a-z]/g, '')
+  const khmerKey = (kh) => lib.normalizeKhmerKey(kh.replace(/[\u200B-\u200D\uFEFF]/g, ''))
+  const reverse = new Map()
+  for (const [kh, e] of Object.entries(lib.defaultTokenDict)) {
+    const add = (lat, w) => {
+      const k = latinKey(lat); if (!k) return
+      if (!reverse.has(k)) reverse.set(k, [])
+      reverse.get(k).push({ kh, w })
+    }
+    add(e.latin, e.count + 3)
+    for (const [v, c] of Object.entries(e.variants ?? {})) add(v, c)
+  }
+  const reverseKeys = [...reverse.keys()].sort()
+
+  /** Khmer words for one Latin word: exact spellings first, else words that start with it. */
+  function khmerOptions(word) {
+    const k = latinKey(word)
+    if (!k) return { opts: [], exact: false }
+    let opts = (reverse.get(k) ?? []).map((o) => ({ ...o, lat: '' }))
+    const exact = opts.length > 0
+    if (!exact && k.length >= 2) {
+      opts = reverseKeys.filter((x) => x.startsWith(k)).flatMap((x) => reverse.get(x).map((o) => ({ ...o, lat: x })))
+    }
+    opts.sort((a, b) => b.w - a.w)
+    const seen = new Set(), out = []
+    for (const o of opts) {
+      const key = khmerKey(o.kh)
+      if (seen.has(key)) continue
+      seen.add(key); out.push(o)
+      if (out.length >= 6) break
+    }
+    return { opts: out, exact }
+  }
+
+  /** Adds "No Khmer keyboard? Type it in Latin letters" under a Khmer input. */
+  function attachLatinHelper(input, onChange, { open = false } = {}) {
+    const box = document.createElement('details')
+    box.className = 'latin-helper'
+    box.open = open
+    const uid = input.id + '-latin'
+    box.innerHTML = `<summary data-i18n="lh.summary">${t('lh.summary')}</summary>
+      <div class="lh-body">
+        <input type="text" id="${uid}" autocomplete="off" spellcheck="false" placeholder="${t('lh.ph')}" aria-label="${t('lh.aria')}" data-i18n-ph="lh.ph" data-i18n-aria="lh.aria">
+        <div class="lh-words"></div>
+        <p class="hint" data-i18n="lh.hint">${t('lh.hint')}</p>
+      </div>`
+    input.closest('.field').after(box)
+    const lat = box.querySelector('input'), wordsEl = box.querySelector('.lh-words')
+    let words = [], picks = []
+
+    const compose = () => {
+      const kh = words.map((w, i) => w.opts[picks[i]]?.kh).filter(Boolean).join(' ')
+      input.value = kh
+      try { onChange() } catch (err) { console.error(err) }
+    }
+    const draw = () => {
+      wordsEl.innerHTML = words.map((w, i) => {
+        if (!w.opts.length) return `<div class="lh-word"><span class="w">${esc(w.text)}</span><span class="hint">${t('lh.none')}</span></div>`
+        return `<div class="lh-word"><span class="w">${esc(w.text)}</span>` + w.opts.map((o, j) =>
+          `<button type="button" class="chip kh-opt${j === picks[i] ? ' on' : ''}" data-i="${i}" data-j="${j}" lang="km">${esc(o.kh)}${o.lat ? `<small>${esc(o.lat)}</small>` : ''}</button>`).join('') + '</div>'
+      }).join('')
+    }
+    const update = () => {
+      const texts = lat.value.trim().split(/\s+/).filter(Boolean)
+      const prev = words
+      words = texts.map((text, i) => prev[i]?.text === text ? prev[i] : { text, ...khmerOptions(text) })
+      picks = words.map((w, i) => prev[i] === w ? picks[i] : 0)
+      draw()
+      if (words.length) compose()
+    }
+    lat.addEventListener('input', update)
+    wordsEl.addEventListener('click', (e) => {
+      const b = e.target.closest('.kh-opt'); if (!b) return
+      picks[+b.dataset.i] = +b.dataset.j
+      draw(); compose()
+    })
+  }
+
+  const csvCell = (s) => /[",\n]/.test(s) ? '"' + String(s).replace(/"/g, '""') + '"' : String(s)
+
+  // ---------------------------------------------------------------- tabs
+  const UCS = ['lookup', 'prefill', 'validate', 'audit', 'link', 'screen', 'search', 'bulk']
+  function route() {
+    const h = location.hash.slice(1)
+    const uc = UCS.includes(h) ? h : 'lookup'
+    document.querySelectorAll('[data-uc]').forEach((s) => { s.hidden = s.dataset.uc !== uc })
+    document.querySelectorAll('.tab').forEach((a) => {
+      const on = a.getAttribute('href') === '#' + uc
+      if (on) { a.setAttribute('aria-current', 'page'); a.scrollIntoView({ block: 'nearest', inline: 'nearest' }) }
+      else a.removeAttribute('aria-current')
+    })
+  }
+  window.addEventListener('hashchange', route)
+
+  // ---------------------------------------------------------------- 1. look up
+  let current = null
+
+  function mrzLine(value) {
+    const words = value.toUpperCase().replace(/[^A-Z ]+/g, '').split(/\s+/).filter(Boolean)
+    const [sur = '', ...given] = words
+    return ('P<KHM' + sur + '<<' + given.join('<') + '<'.repeat(44)).slice(0, 44)
+  }
+
+  function renderLookup() {
+    const q = $('q').value.trim()
+    if (!q || !hasKhmer(q)) {
+      current = null
+      $('surname').textContent = '—'
+      $('given').textContent = '—'
+      $('khname').textContent = q ? t('lk.typeKhmer') : t('lk.typeAbove')
+      $('mrz').textContent = 'P<KHM' + '<'.repeat(39)
+      $('cands').innerHTML = `<li class="empty" style="display:block">${t('lk.candsEmpty')}</li>`
+      $('words').innerHTML = `<p class="empty">${t('lk.wordsEmpty')}</p>`
+      $('titles').hidden = true
+      updateReport()
+      return
+    }
+    const r = show.transliterate(q)
+    current = { q, r }
+    const [sur = '', ...given] = r.value.split(/\s+/)
+    $('surname').textContent = sur || '—'
+    $('given').textContent = given.join(' ') || '—'
+    $('khname').textContent = q
+    $('mrz').textContent = mrzLine(r.value)
+    if (r.honorifics?.length) { $('titles').textContent = t('lk.titleRemoved', { t: r.honorifics.join(' ') }); $('titles').hidden = false }
+    else $('titles').hidden = true
+
+    const scored = r.scoredCandidates ?? r.candidates.map((value) => ({ value, score: 0 }))
+    $('cands').innerHTML = scored.map((c, i) => {
+      const pct = Math.max(2, Math.round(Math.exp(c.score) * 100))
+      return `<li class="${i === 0 ? 'top' : ''}">
+        <span class="rank">${i + 1}</span>
+        <span class="cand">${esc(c.value)}</span>
+        <span class="bar" title="${pct}%"><i style="width:${pct}%"></i></span>
+        <span class="score" title="log-probability score">${c.score === 0 ? '0' : c.score.toFixed(2)}</span>
+      </li>`
+    }).join('')
+
+    $('words').innerHTML = r.tokens.map((tk) => {
+      const known = tk.source === 'tokenDict'
+      const alts = tk.alternatives.length ? t('lk.also', { list: tk.alternatives.map(esc).join(', ') }) : t('lk.noAlts')
+      return `<div class="word">
+        <span class="kh" lang="km">${esc(tk.khmer)}</span>
+        <span class="lat">${esc(tk.latin)}</span>
+        <div class="meta">
+          <span class="pill ${known ? 'dict' : 'rules'}">${known ? t('lk.known') : t('lk.rules')}</span>
+          <span>${alts}</span>
+        </div>
+      </div>`
+    }).join('')
+    updateReport()
+  }
+
+  function updateReport() {
+    const official = $('official').value.trim()
+    const q = current?.q ?? $('q').value.trim()
+    const title = `Spelling: ${q || '(name)'} → ${official || '?'}`
+    const body = [
+      `**Khmer name:** ${q}`,
+      `**Official Latin spelling:** ${official}`,
+      `**Source (ID, diploma, roster…):** `,
+      '',
+      `Demo suggested: ${current ? current.r.candidates.join(' · ') : '—'}`,
+    ].join('\n')
+    $('report').href = `${REPO}/issues/new?title=${encodeURIComponent(title)}&body=${encodeURIComponent(body)}`
+  }
+
+  onType($('q'), renderLookup)
+  onType($('official'), updateReport)
+  $('copy').addEventListener('click', () => current && copyText(current.r.value, $('copied'), t('copied.name')))
+  $('share').addEventListener('click', () => {
+    const url = new URL(location.pathname, location.origin)
+    if (current) url.searchParams.set('q', current.q)
+    url.hash = 'lookup'
+    copyText(url.href, $('copied'), t('copied.link'))
+  })
+  $('q-clear').addEventListener('click', () => { $('q').value = ''; renderLookup(); $('q').focus() })
+  $('q-chips').addEventListener('click', (e) => {
+    const b = e.target.closest('.chip'); if (!b) return
+    $('q').value = b.dataset.q; renderLookup()
+  })
+
+  // ---------------------------------------------------------------- 2. pre-fill
+  let pfEdited = false
+  function renderPrefill() {
+    const kh = $('pf-kh').value.trim()
+    const sugg = $('pf-sugg')
+    $('pf-out').hidden = true
+    if (!kh || !hasKhmer(kh)) {
+      if (!pfEdited) $('pf-lat').value = ''
+      sugg.innerHTML = `<span>${t('pf.suggEmpty')}</span>`
+      return
+    }
+    const r = show.transliterate(kh)
+    if (!pfEdited) $('pf-lat').value = r.value
+    const cur = norm($('pf-lat').value)
+    sugg.innerHTML = `<span>${t('pf.sugg')}</span>` + r.candidates.slice(0, 5).map((c) =>
+      `<button class="chip pick${norm(c) === cur ? ' on' : ''}" type="button" data-v="${esc(c)}">${esc(c)}</button>`).join('')
+  }
+  onType($('pf-kh'), renderPrefill)
+  onType($('pf-lat'), () => { pfEdited = $('pf-lat').value.trim() !== ''; renderPrefill() })
+  $('pf-sugg').addEventListener('click', (e) => {
+    const b = e.target.closest('.chip.pick'); if (!b) return
+    $('pf-lat').value = b.dataset.v; pfEdited = true; renderPrefill()
+  })
+  $('pf-ok').addEventListener('change', () => { $('pf-out').hidden = true })
+  $('pf-form').addEventListener('submit', (e) => {
+    e.preventDefault()
+    const out = $('pf-out')
+    const kh = $('pf-kh').value.trim(), lat = $('pf-lat').value.trim()
+    out.hidden = false
+    if (!kh || !lat) { out.className = 'verdict bad'; out.innerHTML = t('pf.fillBoth'); return }
+    if (!$('pf-ok').checked) { out.className = 'verdict warn'; out.innerHTML = t('pf.askConfirm'); return }
+    const inList = show.transliterate(kh).candidates.some((c) => norm(c) === norm(lat))
+    out.className = 'verdict ok'
+    out.innerHTML = `${t('pf.saved')} <span lang="km">${esc(kh)}</span> → ${esc(lat)}` +
+      (inList ? '' : `<span class="sub">${t('pf.notInList')}</span>`) +
+      `<span class="sub">${t('pf.nothingSent')}</span>`
+  })
+
+  // ---------------------------------------------------------------- 3. validate
+  function renderValidate() {
+    const kh = $('v-kh').value.trim(), lat = $('v-lat').value.trim()
+    const out = $('v-out')
+    if (!kh || !lat || !hasKhmer(kh)) { out.hidden = true; return }
+    const j = judge(kh, lat)
+    out.hidden = false
+    if (j.kind === 'ok') {
+      out.className = 'verdict ok'
+      out.innerHTML = `<b>${t('v.okTitle')}</b><span class="sub">${t('v.okSub', { s: esc(j.spelling), rank: j.rank, total: j.total, swap: j.swapped ? t('v.swap') : '', score: j.score.toFixed(2) })}</span>`
+    } else if (j.kind === 'rare') {
+      out.className = 'verdict warn'
+      out.innerHTML = `<b>${t('v.rareTitle')}</b><span class="sub">${t('v.rareSub', { s: esc(j.spelling), rank: j.rank, total: j.total, score: j.score.toFixed(2), best: esc(j.best) })}</span>`
+    } else if (j.kind === 'typo') {
+      out.className = 'verdict warn'
+      out.innerHTML = `<b>${t('v.typoTitle')}</b><span class="sub">${t('v.typoSub', { near: esc(j.near.value) })}</span>`
+    } else {
+      out.className = 'verdict bad'
+      out.innerHTML = `<b>${t('v.badTitle')}</b><span class="sub">${t('v.badSub', { total: j.total, best: esc(j.best) })}</span>`
+    }
+  }
+  onType($('v-kh'), renderValidate)
+  onType($('v-lat'), renderValidate)
+  $('v-chips').addEventListener('click', (e) => {
+    const b = e.target.closest('.chip'); if (!b) return
+    $('v-kh').value = b.dataset.kh; $('v-lat').value = b.dataset.lat; renderValidate()
+  })
+
+  // ---------------------------------------------------------------- 4. audit
+  const AUDIT_SAMPLE = [
+    ['ចាន់ ដារា', 'CHAN DARA'],
+    ['កែវ សុផល', 'KEO SOPHAL'],
+    ['ហេង រតនា', 'HENG RATANA'],
+    ['ម៉ៅ វិចិត្រ', 'MAO VICHEAT'],
+    ['ឈឹម សុភា', 'SOPHEA CHHIM'],
+    ['ព្រំ បុប្ផា', 'PROM BOPHA'],
+    ['សៀង ស្រីមុំ', 'SEANG SREYMOM'],
+    ['យឹម ពិសិដ្ឋ', 'KONG VEASNA'],
+    ['ឡុង ចិន្តា', 'LONG CHENDA'],
+    ['ពេជ្រ មុន្នី', 'PECH MONI'],
+    ['ទេព សុធា', 'TEP SOHTEA'],
+    ['គង់ វាសនា', 'KUNG VEASNA'],
+  ]
+  const auditLabel = (kind) => t('au.' + kind)
+  let auditResults = []
+
+  function parseRecords(text) {
+    return text.split('\n').map((l) => l.trim()).filter(Boolean).map((l) => {
+      const i = l.search(/[,\t;]/)
+      return i < 0 ? [l, ''] : [l.slice(0, i).trim(), l.slice(i + 1).trim()]
+    })
+  }
+
+  function renderAudit(records) {
+    auditResults = records.map(([kh, lat]) => {
+      if (!kh || !lat || !hasKhmer(kh)) return { kh, lat, j: { kind: 'bad', invalid: true } }
+      return { kh, lat, j: judge(kh, lat) }
+    })
+    const counts = { ok: 0, rare: 0, typo: 0, bad: 0 }
+    auditResults.forEach((r) => counts[r.j.kind]++)
+    $('au-sum').innerHTML = Object.entries(counts).map(([k, n]) => `<span class="pill ${k}">${tn('au.sum.' + k, n)}</span>`).join('')
+    $('au-rows').innerHTML = auditResults.map((r, i) => {
+      const j = r.j
+      let why = ''
+      if (j.invalid) why = t('au.whyInvalid')
+      else if (j.kind === 'ok') why = j.swapped ? t('au.whyGivenFirst') : (j.rank > 1 ? t('au.whyRank', { rank: j.rank, total: j.total }) : '')
+      else if (j.kind === 'rare') why = t('au.whyUsual', { best: esc(j.best) })
+      else if (j.kind === 'typo') why = t('au.whyTypo', { near: esc(j.near.value) })
+      else why = t('au.whyBad', { best: esc(j.best) })
+      return `<tr>
+        <td class="rank">${i + 1}</td>
+        <td class="kh" lang="km">${esc(r.kh)}</td>
+        <td class="lat">${esc(r.lat)}</td>
+        <td><span class="pill ${j.kind}">${auditLabel(j.kind)}</span>${why ? `<span class="why">${why}</span>` : ''}</td>
+      </tr>`
+    }).join('')
+  }
+  $('au-in').value = AUDIT_SAMPLE.map(([k, l]) => `${k}, ${l}`).join('\n')
+  let auditInput = AUDIT_SAMPLE
+  $('au-run').addEventListener('click', () => { auditInput = parseRecords($('au-in').value); renderAudit(auditInput) })
+  $('au-copy').addEventListener('click', () => {
+    const lines = [['khmer', 'latin', 'result', 'suggestion'].join(',')]
+    for (const r of auditResults) lines.push([r.kh, r.lat, auditLabel(r.j.kind), r.j.near?.value ?? r.j.best ?? ''].map(csvCell).join(','))
+    copyText(lines.join('\n'), $('au-copied'), t('copied.csv'))
+  })
+
+  // ---------------------------------------------------------------- shared customer list
+  // 2,000 made-up customers: common surnames x common given names, in a fixed
+  // order. Every word is one the dictionary knows (វណ្ណា is left out: the
+  // dictionary reads it "Hay"). A few fixed names keep the examples working.
+  const SURNAMES = ('ហង្ស សូ ចាន់ សុខ កែវ ហេង លី ម៉ៅ ឈឹម ព្រំ សៀង យឹម ឡុង ទេព ពេជ្រ ជា អ៊ុំ គង់ មាស តាំង ស៊ុន ឯក ខៀវ ទូច នួន ' +
+    'សេង ឃឹម ម៉ម ពៅ ផាន់ លឹម តាន់ ឆាយ អ៊ឹង ឈុន គឹម ជួន ស៊ិន ប៊ុន ទិត្យ ម៉េង ឡេង អ៊ុក សាន ថាច់ ញឹម ស្រេង ឃាង ហុង ណុប').split(' ')
+  const GIVEN = ('សុភ័ក្រ្ត បញ្ញា ដារា សុខា សុផល រតនា វិចិត្រ សុភា បុប្ផា ស្រីមុំ ពិសិដ្ឋ ចិន្តា សុធា មុន្នី វណ្ណៈ វាសនា សុភាព សុវណ្ណ ' +
+    'លាងខៃ សោភា រស្មី សុជាតា ពិសី វិបុល សុខុម ចន្ថា ចាន់ណា ដាលីន ណារិទ្ធ តុលា បូរី ផានិត ពិសាល ធីតា ស្រីនិច ស្រីពៅ វុទ្ធី សំណាង ' +
+    'រិទ្ធី ចំរើន សុខលី កញ្ញា ម៉ាលី លក្ខិណា វិសាល រដ្ឋា ធារី និមល កុសល ផល្លា មករា រក្សា វិច្ឆិកា សុខហេង គីមហេង ដាណែត ផល្លី ' +
+    'ចាន់ថា សម្បត្តិ សុវត្ថិ រ៉ាវី ស្រីលីន ស៊ីណា ចាន់ធូ ពិសិទ្ធ សុផាត វិទូ ប៊ុនថន មេសា').split(' ')
+  const CONTACT_COUNT = 2000
+  function makeContacts(n) {
+    let seed = 7
+    const rnd = () => (seed = (seed * 48271) % 2147483647) / 2147483647
+    const set = new Set(['ហង្ស សុភ័ក្រ្ត', 'ឈឹម សុភា', 'សូ បញ្ញា', 'ចាន់ ដារា', 'ងួន សុវណ្ណ', 'កែវ សុផល'])
+    while (set.size < n) set.add(SURNAMES[Math.floor(rnd() * SURNAMES.length)] + ' ' + GIVEN[Math.floor(rnd() * GIVEN.length)])
+    return [...set]
+  }
+  const t0 = performance.now()
+  const contactIndex = makeContacts(CONTACT_COUNT).map((kh) => {
+    const r = match.transliterate(kh)
+    return {
+      kh, value: r.value,
+      cands: r.candidates,                          // every spelling, both name orders
+      keys: r.candidates.map(sortWords),            // order-free keys for linking
+      tokens: r.tokens.map((tk) => ({
+        khmer: tk.khmer,
+        primary: norm(tk.latin).replace(/ /g, ''),
+        spellings: [tk.latin, ...tk.alternatives].map((x) => norm(x).replace(/ /g, '')),
+      })),
+    }
+  }).sort((a, b) => a.value.localeCompare(b.value))
+  const indexMs = performance.now() - t0
+  const fmt = (n) => n.toLocaleString('en-US')
+  const khRow = (c, pill, why) => `<li><span class="name"><span lang="km">${esc(c.kh)}</span> <span class="notice">${esc(c.value)}</span></span>${pill}${why ? `<span class="why">${why}</span>` : ''}</li>`
+  const RESULT_LIMIT = 30
+
+  // One letter off counts as a typo, except a letter added at the end of a word:
+  // Sophea and Sopheak are different names, not a typo of each other.
+  const isSuffixVariant = (a, b) => {
+    const A = a.split(' '), B = b.split(' ')
+    return A.length === B.length && A.every((w, i) => w.startsWith(B[i]) || B[i].startsWith(w))
+  }
+  const isTypo = (a, b) => a !== b && Math.abs(a.length - b.length) <= 1 && editDistance(a, b) <= 1 && !isSuffixVariant(a, b)
+  /** Every typed word starts a different word of the spelling (any order). */
+  function startsMatch(terms, spelling) {
+    const words = norm(spelling).split(' '), used = new Set()
+    return terms.every((term) => {
+      const i = words.findIndex((w, j) => !used.has(j) && w.startsWith(term))
+      if (i < 0) return false
+      used.add(i); return true
+    })
+  }
+
+  // ---------------------------------------------------------------- list helper
+  // Link and Screen both start from an example list that is already checked.
+  // A "try" box checks a typed name live; Enter or Add puts it on the list.
+  function tryList({ input, add, live, rows, sample, renderLive, renderRows }) {
+    let items = [...sample]
+    const draw = () => { try { renderRows(items) } catch (err) { console.error(err) } }
+    const push = () => {
+      const v = $(input).value.trim()
+      if (!v) return
+      items = [v, ...items.filter((x) => norm(x) !== norm(v))]
+      $(input).value = ''
+      renderLive(''); draw()
+    }
+    onType($(input), () => renderLive($(input).value))
+    $(input).addEventListener('keydown', (e) => { if (e.key === 'Enter') { e.preventDefault(); push() } })
+    $(add).addEventListener('click', push)
+    $(rows).addEventListener('click', (e) => {
+      const b = e.target.closest('[data-remove]'); if (!b) return
+      items = items.filter((_, i) => i !== +b.dataset.remove); draw()
+    })
+    return { render: () => { renderLive($(input).value); draw() } }
+  }
+  const removeBtn = (i) => `<button class="row-x" type="button" data-remove="${i}" aria-label="${t('list.remove')}" title="${t('list.remove')}">×</button>`
+  const khCell = (c) => `<span class="kh" lang="km">${esc(c.kh)}</span> <span class="notice">${esc(c.value)}</span>`
+
+  // ---------------------------------------------------------------- 5. link
+  function linkMatches(q) {
+    const key = sortWords(q)
+    const same = [], near = []
+    if (!key) return { key, same, near }
+    for (const c of contactIndex) {
+      const i = c.keys.indexOf(key)
+      if (i >= 0) { same.push({ c, i }); continue }
+      if (key.length >= 6) {
+        const k = c.keys.findIndex((x) => isTypo(x, key))
+        if (k >= 0) near.push({ c, k })
+      }
+    }
+    return { key, same, near }
+  }
+  function linkWhy(c, i) {
+    const spelled = c.cands[i]
+    if (norm(spelled) === norm(c.value)) return t('l.whyUsual')
+    if (sortWords(spelled) === sortWords(c.value)) return t('l.whySwap')
+    return t('l.whyOther', { s: esc(spelled) })
+  }
+  function linkCell(m) {
+    const parts = m.same.map(({ c, i }) => `<div class="m">${khCell(c)} <span class="pill ok">${t('l.same')}</span><span class="why">${linkWhy(c, i)}</span></div>`)
+      .concat(m.near.map(({ c, k }) => `<div class="m">${khCell(c)} <span class="pill typo">${t('l.possible')}</span><span class="why">${t('l.whyTypo', { near: esc(c.cands[k]) })}</span></div>`))
+    if (!parts.length) return `<span class="pill bad">${t('l.noLink')}</span>`
+    return parts.slice(0, 3).join('') + (parts.length > 3 ? `<div class="why">${t('list.more', { n: parts.length - 3 })}</div>` : '')
+  }
+  const LINK_SAMPLE = ['CHHIM SOPHEA', 'Sophea Chhim', 'CHHOEM SOPHEA', 'Chhim Sopea', 'HANG SOPHEAK', 'Sou Pagna', 'CHAN DARA', 'Keo Sopal', 'LY HOK']
+  const linkList = tryList({
+    input: 'l-q', add: 'l-add', live: 'l-live', rows: 'l-rows', sample: LINK_SAMPLE,
+    renderLive(q) {
+      const box = $('l-live')
+      if (!q.trim()) { box.hidden = true; return }
+      box.hidden = false
+      const m = linkMatches(q)
+      if (m.same.length || m.near.length) { box.innerHTML = `<div class="live-label">${t('list.live')}</div>${linkCell(m)}`; return }
+      const terms = norm(q).split(' ').filter(Boolean)
+      const partial = contactIndex.filter((c) => c.cands.some((x) => startsMatch(terms, x)))
+      box.innerHTML = `<div class="live-label">${t('list.live')}</div>` + (partial.length
+        ? `<div class="why">${t('l.partial', { n: fmt(partial.length) })}</div>` + partial.slice(0, 5).map((c) => `<div class="m">${khCell(c)}</div>`).join('')
+        : `<span class="pill bad">${t('l.noLink')}</span>`)
+    },
+    renderRows(items) {
+      $('l-list-h').textContent = t('l.listH', { n: items.length })
+      $('l-rows').innerHTML = items.map((q, i) => `<tr><td class="lat">${esc(q)}</td><td>${linkCell(linkMatches(q))}</td><td>${removeBtn(i)}</td></tr>`).join('')
+    },
+  })
+
+  // ---------------------------------------------------------------- 6. screen
+  function screenHits(q) {
+    const key = sortWords(q)
+    const hits = []
+    if (!key) return hits
+    for (const c of contactIndex) {
+      let i = c.keys.indexOf(key), exact = true
+      if (i < 0) { i = c.keys.findIndex((x) => isTypo(x, key)); exact = false }
+      if (i >= 0) hits.push({ c, exact, spelling: c.cands[i], rank: i + 1, firstOnly: c.keys[0] === key || isTypo(c.keys[0], key) })
+    }
+    return hits.sort((a, b) => (b.exact - a.exact) || a.c.value.localeCompare(b.c.value))
+  }
+  function screenCell(hits) {
+    if (!hits.length) return `<span class="pill ok">${t('s.rowNone')}</span>`
+    const missed = hits.filter((h) => !h.firstOnly).length
+    return hits.slice(0, 3).map((h) => `<div class="m">${khCell(h.c)} <span class="pill ${h.exact ? 'bad' : 'typo'}">${h.exact ? t('s.exact') : t('s.similar')}</span><span class="why">${t('s.via', { rank: h.rank, s: esc(h.spelling) })}</span></div>`).join('') +
+      (hits.length > 3 ? `<div class="why">${t('list.more', { n: hits.length - 3 })}</div>` : '') +
+      (missed ? `<div class="miss">${t('s.rowMissed', { n: missed })}</div>` : '')
+  }
+  const WATCHLIST = ['CHHOEM SOPHEA', 'SOU PAGNA', 'NGUON SOVAN', 'TOUCH RATHA', 'LIM CHANTHA', 'MEAS VANNA']
+  const screenList = tryList({
+    input: 's-q', add: 's-add', live: 's-live', rows: 's-rows', sample: WATCHLIST,
+    renderLive(q) {
+      const box = $('s-live')
+      if (!q.trim()) { box.hidden = true; return }
+      box.hidden = false
+      box.innerHTML = `<div class="live-label">${t('list.live')}</div>${screenCell(screenHits(q))}`
+    },
+    renderRows(items) {
+      $('s-list-h').textContent = t('s.listH', { n: items.length })
+      let hitsTotal = 0, missedTotal = 0
+      $('s-rows').innerHTML = items.map((q, i) => {
+        const hits = screenHits(q)
+        hitsTotal += hits.length; missedTotal += hits.filter((h) => !h.firstOnly).length
+        return `<tr><td class="lat">${esc(q)}</td><td>${screenCell(hits)}</td><td>${removeBtn(i)}</td></tr>`
+      }).join('')
+      const call = $('s-callout')
+      call.hidden = !missedTotal
+      if (missedTotal) call.innerHTML = t('s.summary', { m: missedTotal, h: hitsTotal })
+    },
+  })
+
+  // ---------------------------------------------------------------- 7. quick search
+  /** How well one typed term matches one word: 4 exact, 3 prefix, 2 other spelling, 1 typo. */
+  function termMatch(term, tok, allowTypo) {
+    if (hasKhmer(term)) return tok.khmer.includes(term) ? { score: 4 } : null
+    if (tok.primary === term) return { score: 4 }
+    if (tok.primary.startsWith(term)) return { score: 3 }
+    const alt = tok.spellings.find((x) => x.startsWith(term))
+    if (alt) return { score: 2, alt }
+    if (allowTypo && term.length >= 4) {
+      for (const x of tok.spellings) {
+        if (editDistance(term, x) <= 1 || editDistance(term, x.slice(0, term.length)) <= 1) return { score: 1, typo: x }
+      }
+    }
+    return null
+  }
+
+  function searchContacts(query, allowTypo = false) {
+    const terms = hasKhmer(query)
+      ? query.trim().split(/\s+/).filter(Boolean)
+      : norm(query).split(' ').filter(Boolean)
+    if (!terms.length) return null
+    const out = []
+    for (const c of contactIndex) {
+      const used = new Set(), how = []
+      let total = 0, ok = true
+      for (const term of terms) {
+        let best = null
+        c.tokens.forEach((tok, i) => {
+          if (used.has(i)) return
+          const m = termMatch(term, tok, allowTypo)
+          if (m && (!best || m.score > best.m.score)) best = { i, m }
+        })
+        if (!best) { ok = false; break }
+        used.add(best.i); total += best.m.score; how.push(best.m)
+      }
+      if (ok) out.push({ c, total, used, how })
+    }
+    return out.sort((a, b) => b.total - a.total || a.c.value.localeCompare(b.c.value))
+  }
+
+  function contactRow(c, used = new Set(), how = []) {
+    const kh = c.tokens.map((tk, i) => used.has(i) ? `<mark>${esc(tk.khmer)}</mark>` : esc(tk.khmer)).join(' ')
+    const tags = []
+    for (const m of how) {
+      if (m.alt) tags.push(`<span class="tag">${t('sr.spelled', { s: esc(m.alt) })}</span>`)
+      else if (m.typo) tags.push(`<span class="tag">${t('sr.typo', { s: esc(m.typo) })}</span>`)
+    }
+    return `<li><span class="avatar" lang="km">${esc([...c.tokens[0].khmer][0])}</span>
+      <span class="kh" lang="km">${kh}</span>
+      <span class="lat"><b>${esc(c.value)}</b>${tags.join('')}</span></li>`
+  }
+
+  const LIST_LIMIT = 40
+  function renderSearch() {
+    const q = $('sr-q').value
+    const out = $('sr-out'), meta = $('qs-meta')
+    $('qs-total').textContent = t('sr.total', { n: contactIndex.length })
+    const started = performance.now()
+    // Typo tolerance is a fallback: Sopheap is a different name from Sopheak,
+    // so close spellings show only when nothing matches exactly.
+    let hits = searchContacts(q), fuzzy = false
+    if (hits && !hits.length) { hits = searchContacts(q, true); fuzzy = true }
+    const ms = performance.now() - started
+    if (!hits) {
+      meta.textContent = t('sr.idle', { ms: indexMs.toFixed(0) })
+      out.innerHTML = contactIndex.slice(0, LIST_LIMIT).map((c) => contactRow(c)).join('') +
+        `<li class="more">${t('sr.more', { n: contactIndex.length - LIST_LIMIT })}</li>`
+      return
+    }
+    meta.textContent = (fuzzy && hits.length ? t('sr.fuzzy') : '') + t('sr.found', { n: hits.length, ms: ms < 0.1 ? t('sr.under') : ms.toFixed(1) })
+    if (!hits.length) { out.innerHTML = `<li class="none">${t('sr.none')}</li>`; return }
+    out.innerHTML = hits.slice(0, LIST_LIMIT).map((h) => contactRow(h.c, h.used, h.how)).join('') +
+      (hits.length > LIST_LIMIT ? `<li class="more">${t('sr.more', { n: hits.length - LIST_LIMIT })}</li>` : '')
+  }
+  onType($('sr-q'), renderSearch)
+  $('sr-chips').addEventListener('click', (e) => {
+    const b = e.target.closest('.chip'); if (!b) return
+    $('sr-q').value = b.dataset.q; renderSearch()
+  })
+
+  // ---------------------------------------------------------------- 8. bulk
+  const BULK_SAMPLE = ['ចាន់ ដារា', 'ជា វណ្ណៈ', 'ហេង រតនា', 'សុខ ចន្ទា', 'ពេជ្រ មុន្នី', 'ងួន សុវណ្ណ', 'អ៊ុំ ច័ន្ទតារា', 'តាន់ ហុកហ៊ី']
+  const confLabel = (c) => t('b.' + c)
+  let bulkRows = []
+
+  function confidence(r) {
+    if (r.source === 'rules') return 'bad'
+    const top = r.scoredCandidates?.[0]?.score ?? 0
+    return top >= -0.7 ? 'ok' : 'rare'
+  }
+  function renderBulk() {
+    const names = $('b-in').value.split('\n').map((s) => s.trim()).filter(Boolean)
+    bulkRows = names.map((kh) => {
+      if (!hasKhmer(kh)) return { kh, latin: '', conf: 'bad', why: t('b.whyNotKhmer') }
+      const r = show.transliterate(kh)
+      const conf = confidence(r)
+      const why = conf === 'bad'
+        ? t('b.whyNew', { w: r.tokens.filter((tk) => tk.source === 'rules').map((tk) => tk.khmer).join(', ') })
+        : conf === 'rare' ? t('b.whyAlso', { w: r.candidates.slice(1, 3).join(', ') }) : ''
+      return { kh, latin: r.value, conf, why }
+    })
+    const counts = { ok: 0, rare: 0, bad: 0 }
+    bulkRows.forEach((r) => counts[r.conf]++)
+    $('b-sum').innerHTML = `<span class="pill ok">${t('b.sumOk', { n: counts.ok })}</span><span class="pill rare">${t('b.sumRare', { n: counts.rare })}</span><span class="pill bad">${t('b.sumBad', { n: counts.bad })}</span>`
+    $('b-rows').innerHTML = bulkRows.length
+      ? bulkRows.map((r) => `<tr>
+          <td class="kh" lang="km">${esc(r.kh)}</td>
+          <td class="lat">${esc(r.latin) || '—'}</td>
+          <td><span class="pill ${r.conf}">${confLabel(r.conf)}</span>${r.why ? `<span class="why" ${r.conf === 'bad' ? 'lang="km"' : ''}>${esc(r.why)}</span>` : ''}</td>
+        </tr>`).join('')
+      : `<tr><td colspan="3" class="empty">${t('b.empty')}</td></tr>`
+  }
+  $('b-in').value = BULK_SAMPLE.join('\n')
+  onType($('b-in'), renderBulk)
+  $('b-copy').addEventListener('click', () => {
+    const lines = [['khmer', 'latin', 'confidence'].join(',')]
+    for (const r of bulkRows) lines.push([r.kh, r.latin, confLabel(r.conf)].map(csvCell).join(','))
+    copyText(lines.join('\n'), $('b-copied'), t('copied.csv'))
+  })
+
+  // ---------------------------------------------------------------- start
+  const initial = new URLSearchParams(location.search).get('q')
+  $('q').value = initial ?? 'ហង្ស សុភ័ក្រ្ត'
+  $('pf-kh').value = 'ហង្ស សុភ័ក្រ្ត'
+  $('v-kh').value = 'ហង្ស សុភ័ក្រ្ត'; $('v-lat').value = 'SOPHEAK HANG'
+  $('sr-q').value = 'sopheak'
+
+  attachLatinHelper($('q'), renderLookup, { open: true })
+  attachLatinHelper($('pf-kh'), renderPrefill)
+  attachLatinHelper($('v-kh'), renderValidate)
+
+  const renderAll = () => {
+    for (const fn of [renderLookup, renderPrefill, renderValidate, () => renderAudit(auditInput), linkList.render, screenList.render, renderSearch, renderBulk]) {
+      try { fn() } catch (err) { console.error(err) }
+    }
+  }
+  renderAll()
+  $('lang-toggle').addEventListener('click', () => {
+    setLang(getLang() === 'km' ? 'en' : 'km')
+    applyStatic()
+    renderAll()
+  })
+  route()
+</script>
 </body>
 </html>
