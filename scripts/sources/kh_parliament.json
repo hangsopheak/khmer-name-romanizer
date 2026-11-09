@@ -12,8 +12,8 @@
    {
     "chamber": "assembly",
     "publisher": "National Assembly of the Kingdom of Cambodia (រដ្ឋសភា)",
-    "url": "https://nac.org.kh/",
-    "method": "NOT YET HARVESTED - the site flaps between serving and site-wide 500s (observed 2026-11-02..04). Recipe when stable: legislature pages /group-article/{47,48,49,50,57,115,117} (legislatures 1-7; 1-4 are scanned images), revisions under /article/NNNN, the roster being the revision whose page contains the column header នាម និង គោត្តនាម; columns ល.រ (number) / នាម និង គោត្តនាម (name) / មណ្ឌល (constituency) / គណបក្សនយោបាយ (party). Legislatures 5/6/7 confirmed live. Wayback holds snapshots but rate-limits bulk fetches.",
+    "url": "https://nac.org.kh/ (legislature pages /group-article/{57,115,117} = legislatures 5, 6, 7)",
+    "method": "Wayback Machine fetch 2026-11-09 (live site flaps 500): web.archive.org/web/20260608121702/ nac.org.kh/group-article/57 (leg. 5), web.archive.org/web/20260608015056/ /group-article/115 (leg. 6), web.archive.org/web/20260612012007/ /group-article/117 (leg. 7). Roster tables (ល.រ | នាម និង គោត្តនាម | មណ្ឌល | គណបក្សនយោបាយ); Khmer-script names only — word source for blind native-reader review, never corpus pairs. Legislatures 1-4 are scanned images, not harvested.",
     "license": "Official government publication of a member list (facts)"
    }
   ]
@@ -2559,6 +2559,2617 @@
    "name": "ព្រះអង្គម្ចាស់ ស៊ីសុវត្ថិ ធម្មិកោ",
    "party": "ព្រះបរមរាជវាំង",
    "status": "1"
+  },
+  {
+   "chamber": "assembly",
+   "session": 5,
+   "name": "ឯកឧត្តម កែ គឹមយ៉ាន",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 5,
+   "name": "ឯកឧត្តម យឹម ឆៃលី",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 5,
+   "name": "ឯកឧត្តម ប៉ាល់ សំអឿន",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 5,
+   "name": "លោកជំទាវ នួម សុភ័ណ",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 5,
+   "name": "ឯកឧត្តម ហេង ចាន់ថា",
+   "party": "គណបក្សហ៊្វុនស៊ិនប៉ិច",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 5,
+   "name": "ឯកឧត្តម ផន ចន្ថា",
+   "party": "គណបក្សហ៊្វុនស៊ិនប៉ិច",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 5,
+   "name": "សម្តេចក្រឡាហោម ស ខេង",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 5,
+   "name": "ឯកឧត្តម ងិន ឃន",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 5,
+   "name": "លោកជំទាវ លី គឹមលៀង",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 5,
+   "name": "ឯកឧត្តម ឈាង វុន",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 5,
+   "name": "ឯកឧត្តម ឡោក ហ៊ួរ",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 5,
+   "name": "ឯកឧត្តម ញ៉េប ប៊ុនជិន",
+   "party": "គណបក្សហ៊្វុនស៊ិនប៉ិច",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 5,
+   "name": "ឯកឧត្តម អ៊ូ ឡងឌី",
+   "party": "គណបក្សហ៊្វុនស៊ិនប៉ិច",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 5,
+   "name": "ឯកឧត្តម សៀង ស៊ុតថង",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 5,
+   "name": "សម្តេចក្រុមព្រះ នរោត្តម រណឫទ្ធិ",
+   "party": "គណបក្សហ៊្វុនស៊ិនប៉ិច",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 5,
+   "name": "ឯកឧត្តម យូ ហុកគ្រី",
+   "party": "គណបក្សហ៊្វុនស៊ិនប៉ិច",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 5,
+   "name": "ឯកឧត្តម យ៉ង់ សារីម",
+   "party": "គណបក្សហ៊្វុនស៊ិនប៉ិច",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 5,
+   "name": "ឯកឧត្តម ខាត់ ទីន",
+   "party": "គណបក្សហ៊្វុនស៊ិនប៉ិច",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 5,
+   "name": "ឯកឧត្តម យិម វឿនថន",
+   "party": "គណបក្សហ៊្វុនស៊ិនប៉ិច",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 5,
+   "name": "ឯកឧត្តម ហុង ប៊ុនហ៊ាង",
+   "party": "គណបក្សហ៊្វុនស៊ិនប៉ិច",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 5,
+   "name": "ឯកឧត្តម សេង សុខេង",
+   "party": "គណបក្សសញ្ជាតិកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 5,
+   "name": "ឯកឧត្តម អីុ សំអុល",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 5,
+   "name": "ឯកឧត្តម ម៉ា ឈឿន",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 5,
+   "name": "លោកជំទាវ ខុង ស៊ុនអេង",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 5,
+   "name": "សម្តេចអគ្គមហាពញាចក្រី ហេង សំរិន",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 5,
+   "name": "ឯកឧត្តម ហោ ណាំហុង",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 5,
+   "name": "ឯកឧត្តម ហ៊ុន ណេង",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 5,
+   "name": "ឯកឧត្តម យិន ប៊ុនណាង",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 5,
+   "name": "ឯកឧត្តម ចាយ បូរិន",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 5,
+   "name": "ឯកឧត្តម កែវ ពិសិដ្ឋ",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 5,
+   "name": "ឯកឧត្តម ងួន ស៊ីមអាន",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 5,
+   "name": "ឯកឧត្តម ម៉ែន កួន",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 5,
+   "name": "សម្តេចចៅហ្វាវាំងវរវៀងជ័យអធិបតីស្រឹង្គារ គង់ សំអុល",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 5,
+   "name": "លោកជំទាវ កែ ច័ន្ទមុនី",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 5,
+   "name": "ឯកឧត្តម ប៉ោ ប៊ុនស្រឺុ",
+   "party": "គណបក្សហ៊្វុនស៊ិនប៉ិច",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 5,
+   "name": "ឯកឧត្តម អ៊ុក ខុត",
+   "party": "គណបក្សហ៊្វុនស៊ិនប៉ិច",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 5,
+   "name": "ឯកឧត្តម ពៅ អៀងគ្រី",
+   "party": "គណបក្សហ៊្វុនស៊ិនប៉ិច",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 5,
+   "name": "ឯកឧត្តម សោម ណារិន្ទ",
+   "party": "គណបក្សហ៊្វុនស៊ិនប៉ិច",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 5,
+   "name": "ឯកឧត្តម ឡុង ឬទ្ធីយ៉ា",
+   "party": "គណបក្សហ៊្វុនស៊ិនប៉ិច",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 5,
+   "name": "ឯកឧត្តម សត្យា វុធ",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 5,
+   "name": "ឯកឧត្តម ហ៊ុន ម៉ានី",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 5,
+   "name": "ឯកឧត្តម សុក ប៊ន",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 5,
+   "name": "ឯកឧត្តមបណ្ឌិត ងួន ញ៉ិល",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 5,
+   "name": "ឯកឧត្តម ញ៉ែម ថ្ថាវី",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 5,
+   "name": "ឯកឧត្តម ជា អឿង",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 5,
+   "name": "ឯកឧត្តម នាង ចាន់ណាក់",
+   "party": "គណបក្សហ៊្វុនស៊ិនប៉ិច",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 5,
+   "name": "ឯកឧត្តម ស៊ន់ សេក",
+   "party": "គណបក្សហ៊្វុនស៊ិនប៉ិច",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 5,
+   "name": "ឯកឧត្តម ប៉ុន ណារ៉ែន",
+   "party": "គណបក្សហ៊្វុនស៊ិនប៉ិច",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 5,
+   "name": "ឯកឧត្តម សោម ចិន",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 5,
+   "name": "ឯកឧត្តម នឹម ច័ន្ទតារា",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 5,
+   "name": "លោកជំទាវ អ៊ុន សុគន្ធា",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 5,
+   "name": "ឯកឧត្តម សៅ រ៉ានី",
+   "party": "គណបក្សហ៊្វុនស៊ិនប៉ិច",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 5,
+   "name": "ឯកឧត្តម កៅ ល្អប្រពៃ",
+   "party": "គណបក្សហ៊្វុនស៊ិនប៉ិច",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 5,
+   "name": "ឯកឧត្តម ទេព វាសនា",
+   "party": "គណបក្សហ៊្វុនស៊ិនប៉ិច",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 5,
+   "name": "ឯកឧត្តម ច័ន្ទ នរ៉ា",
+   "party": "គណបក្សហ៊្វុនស៊ិនប៉ិច",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 5,
+   "name": "ឯកឧត្តម យ៉ាន់ សោគុណ",
+   "party": "គណបក្សហ៊្វុនស៊ិនប៉ិច",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 5,
+   "name": "ឯកឧត្តម អាំង សំបូរ",
+   "party": "គណបក្សហ៊្វុនស៊ិនប៉ិច",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 5,
+   "name": "ឯកឧត្តម ហួន រាជចំរើន",
+   "party": "គណបក្សខ្មែរអភិវឌ្ឍន៍សេដ្ឋកិច្ច",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 5,
+   "name": "ឯកឧត្តម វ៉ាន សំអឿន",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 5,
+   "name": "ឯកឧត្តម គោស៊ុំ សារឿត",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 5,
+   "name": "សម្តេចអគ្គមហាសេនាបតីតេជោ ហ៊ុន សែន",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 5,
+   "name": "លោកជំទាវ ឃួន សុដារី",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 5,
+   "name": "ឯកឧត្តម អ៊ុក ដាមរី",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 5,
+   "name": "លោកជំទាវ ហូ ណូន",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 5,
+   "name": "ឯកឧត្តមបណ្ឌិត ឈុន ស៊ីរុន",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 5,
+   "name": "ឯកឧត្តម ដុំ យុហៀន",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 5,
+   "name": "លោកជំទាវ ត្រឹង ថាវី",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 5,
+   "name": "លោកជំទាវ ស៊ុន សាភឿន",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 5,
+   "name": "ឯកឧត្តម វ៉ោន សាហាក់",
+   "party": "គណបក្សហ៊្វុនស៊ិនប៉ិច",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 5,
+   "name": "ឯកឧត្តម ចាន់ យឿន",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 5,
+   "name": "ឯកឧត្តម ឆឹង ចំរើន",
+   "party": "គណបក្សហ៊្វុនស៊ិនប៉ិច",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 5,
+   "name": "ឯកឧត្តម ផាន់ សិទ្ធី",
+   "party": "គណបក្សហ៊្វុនស៊ិនប៉ិច",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 5,
+   "name": "លោកជំទាវ កង បូរាណ",
+   "party": "គណបក្សហ៊្វុនស៊ិនប៉ិច",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 5,
+   "name": "ឯកឧត្តម សុខ ច័ន្ទក្រិស្ណា",
+   "party": "គណបក្សហ៊្វុនស៊ិនប៉ិច",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 5,
+   "name": "ឯកឧត្តម ជៀប ស៊ីវន",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 5,
+   "name": "ឯកឧត្តម ពេជ្រ គឹមស្រ៊ាង",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 5,
+   "name": "ឯកឧត្តម លី ឆេង",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 5,
+   "name": "ឯកឧត្តម គាត ឈន់",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 5,
+   "name": "ឯកឧត្តម កែប ជុតិមា",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 5,
+   "name": "ឯកឧត្តម ហ៊ូ ស្រីុ",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 5,
+   "name": "លោកជំទាវ គ្រួច សំអាន",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 5,
+   "name": "លោកជំទាវ ឡោក ខេង",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 5,
+   "name": "ឯកឧត្តម សួស យ៉ារ៉ា",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 5,
+   "name": "ឯកឧត្តម សាយ ហាក់",
+   "party": "គណបក្សហ៊្វុនស៊ិនប៉ិច",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 5,
+   "name": "ឯកឧត្តម រស់ សាផន",
+   "party": "គណបក្សហ៊្វុនស៊ិនប៉ិច",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 5,
+   "name": "ឯកឧត្តម ថាវ គឹមឡុង",
+   "party": "គណបក្សហ៊្វុនស៊ិនប៉ិច",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 5,
+   "name": "ឯកឧត្តម គង្គ សាវ៉ន",
+   "party": "គណបក្សសញ្ជាតិកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 5,
+   "name": "ឯកឧត្តម ឡុង ប៊ុន្នី",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 5,
+   "name": "ឯកឧត្តម មុំម ស៊ីបុន",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 5,
+   "name": "ឯកឧត្តម ប៊ិន ឈិន",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 5,
+   "name": "ឯកឧត្តមបណ្ឌិតរដ្ឋ ជាម យៀប",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 5,
+   "name": "ឯកឧត្តមបណ្ឌិត ប៉ែន បញ្ញា",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 5,
+   "name": "ឯកឧត្តម ស សុខា",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 5,
+   "name": "ឯកឧត្តម ពៅ សាមី",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 5,
+   "name": "ឯកឧត្តម តាន់ គឹមវិន",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 5,
+   "name": "លោកជំទាវ ឯម ប៉ុណ្ណា",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 5,
+   "name": "ឯកឧត្តម សារី កោសល្យ",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 5,
+   "name": "ឯកឧត្តម អ៊ា ឃីម៉េង",
+   "party": "គណបក្សហ៊្វុនស៊ិនប៉ិច",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 5,
+   "name": "ឯកឧត្តម ប៊ូ ឡាំ",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 5,
+   "name": "សម្តេចពិជ័យសេនា ទៀ បាញ់",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 5,
+   "name": "ឯកឧត្តម សៀង ណាំ",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 5,
+   "name": "ឯកឧត្តម ឈឹម ម៉ា",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 5,
+   "name": "លោកជំទាវ ពៅ សាវឿន",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 5,
+   "name": "ឯកឧត្តម យឹម សាវី",
+   "party": "គណបក្សហ៊្វុនស៊ិនប៉ិច",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 5,
+   "name": "ឯកឧត្តម វ៉ាន់ សុផាន់ណា",
+   "party": "គណបក្សហ៊្វុនស៊ិនប៉ិច",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 5,
+   "name": "ឯកឧត្តម ចេវ គឹមហេង",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 5,
+   "name": "ឯកឧត្តម ឡូយ សុផាត",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 5,
+   "name": "លោកជំទាវ ម៉ែន សំអន",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 5,
+   "name": "លោកជំទាវ ឈុន សារឹម",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 5,
+   "name": "លោកជំទាវ ដួង វណ្ណា",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 5,
+   "name": "ឯកឧត្តម យោគ ស៊ីថុន",
+   "party": "គណបក្សហ៊្វុនស៊ិនប៉ិច",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 5,
+   "name": "ឯកឧត្តម ឈឿន តែមួយ",
+   "party": "គណបក្សហ៊្វុនស៊ិនប៉ិច",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 5,
+   "name": "ឯកឧត្តម ជា វ៉ាន់ដេត",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 5,
+   "name": "លោកជំទាវ និន សាផុន",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 5,
+   "name": "ឯកឧត្តមបណ្ឌិត ម៉ុក ម៉ារ៉េត",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 5,
+   "name": "ឯកឧត្តម សុខ សូកាន",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 5,
+   "name": "ឯកឧត្តម ចាប ញ៉ាលីវុធ",
+   "party": "គណបក្សហ៊្វុនស៊ិនប៉ិច",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 5,
+   "name": "ឯកឧត្តម គីង សំណាង",
+   "party": "គណបក្សហ៊្វុនស៊ិនប៉ិច",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 5,
+   "name": "ឯកឧត្តម អីុ ជឿន",
+   "party": "គណបក្សហ៊្វុនស៊ិនប៉ិច",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 5,
+   "name": "ឯកឧត្តម សំ វុឌ្ឍី",
+   "party": "គណបក្សហ៊្វុនស៊ិនប៉ិច",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 5,
+   "name": "ឯកឧត្តម ងួន ប៊ៀន",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 5,
+   "name": "លោកជំទាវ បាន ស្រីមុំ",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 5,
+   "name": "ឯកឧត្តម នៅ សំ",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 6,
+   "name": "ឯកឧត្តម កែ គឹមយ៉ាន",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 6,
+   "name": "ឯកឧត្តម គោស៊ុំ សារឿត",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 6,
+   "name": "ឯកឧត្តម ប៉ាល់ សំអឿន",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 6,
+   "name": "លោកជំទាវ នួម សុភ័ណ",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 6,
+   "name": "ឯកឧត្តម សេរី កុសល",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 6,
+   "name": "ឯកឧត្តម អុី ឡុង",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 6,
+   "name": "សម្តេចក្រឡាហោម ស ខេង",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 6,
+   "name": "ឯកឧត្តម ងិន ឃន",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 6,
+   "name": "លោកជំទាវ លី គឹមលៀង",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 6,
+   "name": "ឯកឧត្តម ឈាង វុន",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 6,
+   "name": "ឯកឧត្តម ឡោក ហ៊ួរ",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 6,
+   "name": "ឯកឧត្តម ភួ ពុយ",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 6,
+   "name": "ឯកឧត្តម សៀង ស៊ុតថង",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 6,
+   "name": "ឯកឧត្តម ច័ន្ទ សុផល",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 6,
+   "name": "ឯកឧត្តម យឹម ឆៃលី",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 6,
+   "name": "ឯកឧត្តម ស្លេះ ពុនយ៉ាម៉ីន",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 6,
+   "name": "ឯកឧត្តម ម៉ា ឈឿន",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 6,
+   "name": "ឯកឧត្តម អុី សំអុល",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 6,
+   "name": "លោកជំទាវ ស្រី គឹមឆយ",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 6,
+   "name": "លោកជំទាវ ខុង ស៊ុនអេង",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 6,
+   "name": "ឯកឧត្តម លន់ លឹមថៃ",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 6,
+   "name": "លោកជំទាវ កុល ធារិន",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 6,
+   "name": "ឯកឧត្តម ងួន សុជាតិ",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 6,
+   "name": "ឯកឧត្តម ងួន ស៊ីមអាន",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 6,
+   "name": "សម្តេចអគ្គមហាពញាចក្រី ហេង សំរិន",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 6,
+   "name": "ឯកឧត្តម ជា សុផារ៉ា",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 6,
+   "name": "ឯកឧត្តម យិន ប៊ុនណាង",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 6,
+   "name": "ឯកឧត្តម សន សារ៉ាណា",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 6,
+   "name": "ឯកឧត្តម ចាយ បូរិន",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 6,
+   "name": "ឯកឧត្តម កែវ ពិសិដ្ឋ",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 6,
+   "name": "ឯកឧត្តម ម៉ែន កួន",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 6,
+   "name": "ឯកឧត្តម ម៉ូត យូសុះ",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 6,
+   "name": "សម្តេចចៅហ្វាវាំងវរវៀងជ័យអធិបតីស្រឹង្គារ គង់ សំអុល",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 6,
+   "name": "លោកជំទាវ កែ ច័ន្ទមុនី",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 6,
+   "name": "ឯកឧត្តម ឌួង សុវ៉ាង",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 6,
+   "name": "លោកជំទាវ កុប ម៉ារីយ៉ាស",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 6,
+   "name": "ឯកឧត្តម អ៊ូ សំអួន",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 6,
+   "name": "ឯកឧត្តម ហ៊ុន ម៉ានី",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 6,
+   "name": "ឯកឧត្តម សត្យា វុធ",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 6,
+   "name": "ឯកឧត្តម សុខ ប៊ន",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 6,
+   "name": "ឯកឧត្តម សំ រិទ្ធី",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 6,
+   "name": "ឯកឧត្តម តុង សេង",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 6,
+   "name": "ឯកឧត្តម អ៊ុន ប៊ុនហាន",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 6,
+   "name": "លោកជំទាវ លឹម ផល្លា",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 6,
+   "name": "ឯកឧត្តម ជា អឿង",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 6,
+   "name": "ឯកឧត្តម យឹម លាត",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 6,
+   "name": "ឯកឧត្តម ឃឹង នុភាព",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 6,
+   "name": "ឯកឧត្តម នង វាសនា",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 6,
+   "name": "ឯកឧត្តម ប៉ែន ស៊ីម៉ន",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 6,
+   "name": "លោកជំទាវ អ៊ុន សុគន្ធា",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 6,
+   "name": "ឯកឧត្តម សោម ចិន",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 6,
+   "name": "ឯកឧត្តម នឹម ច័ន្ទតារា",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 6,
+   "name": "ឯកឧត្តម កៀង វ៉ាង",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 6,
+   "name": "ឯកឧត្តម ម៉ាត់ សេត",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 6,
+   "name": "សម្តេចអគ្គមហាសេនាបតីតេជោ ហ៊ុន សែន",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 6,
+   "name": "លោកជំទាវកិត្តិសង្គហបណ្ឌិត ឃួន សុដារី",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 6,
+   "name": "ឯកឧត្តម ប្រាក់ សុខុន",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 6,
+   "name": "ឯកឧត្តមអគ្គបណ្ឌិតសភាចារ្យ អូន ព័ន្ធមុនីរ័ត្ន",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 6,
+   "name": "ឯកឧត្តម ខឹម ច័ន្ទគីរី",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 6,
+   "name": "ឯកឧត្តម អ៊ុក ដាមរី",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 6,
+   "name": "ឯកឧត្តម ចាប ម៉ុច",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 6,
+   "name": "ឯកឧត្តម សុះ មុះសិន",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 6,
+   "name": "ឯកឧត្តមបណ្ឌិត ឈុន ស៊ីរុន",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 6,
+   "name": "ឯកឧត្តម ជឹម សុខខុន",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 6,
+   "name": "ឯកឧត្តម ទី សុគន្ធ",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 6,
+   "name": "ឯកឧត្តម ដុំ យុហៀន",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 6,
+   "name": "លោកជំទាវ ស៊ុន សាភឿន",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 6,
+   "name": "ឯកឧត្តម សរ ចំរុង",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 6,
+   "name": "លោកជំទាវ ត្រឹង ថាវី",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 6,
+   "name": "ឯកឧត្តម ចាន់ យឿន",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 6,
+   "name": "លោកជំទាវ គឹម សុវណ្ណា",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 6,
+   "name": "ឯកឧត្តម សួន រិនឌី",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 6,
+   "name": "ឯកឧត្តម ឃុត ចាន់ដារ៉ា",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 6,
+   "name": "លោកជំទាវ ម៉ក់ វណ្ណស៊ីថា",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 6,
+   "name": "ឯកឧត្តម កែប ជុតិមា",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 6,
+   "name": "ឯកឧត្តម ហ៊ូ ស្រ៊ី",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 6,
+   "name": "លោកជំទាវ គ្រួច សំអាន",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 6,
+   "name": "លោកជំទាវ ឡោក ខេង",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 6,
+   "name": "លោកជំទាវ ម៉ាណ ណាវី",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 6,
+   "name": "ឯកឧត្តម នុត ជា",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 6,
+   "name": "ឯកឧត្តម ពេជ្រ គឹមស្រ៊ាង",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 6,
+   "name": "ឯកឧត្តម លី ឆេង",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 6,
+   "name": "ឯកឧត្តម សួស យ៉ារ៉ា",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 6,
+   "name": "ឯកឧត្តមកិត្តិសេដ្ឋាបណ្ឌិត ជាម យៀប",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 6,
+   "name": "ឯកឧត្តមកិត្តិនីតិកោសលបណ្ឌិត ប៉ែន បញ្ញា",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 6,
+   "name": "ឯកឧត្តម ជាម ប៉េអា",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 6,
+   "name": "ឯកឧត្តម ទេព សាម៉ន",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 6,
+   "name": "ឯកឧត្តម មុំម ស៊ីបុន",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 6,
+   "name": "ឯកឧត្តម ឡុង ប៊ុន្នី",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 6,
+   "name": "ឯកឧត្តម ពេជ្រ ជីវ័ន",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 6,
+   "name": "ឯកឧត្តម ថោង វរលក្ខណ៍",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 6,
+   "name": "ឯកឧត្តម ខៀវ ភារិទ្ធ",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 6,
+   "name": "លោកជំទាវ គង់ សាឡន",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 6,
+   "name": "ឯកឧត្តម សុខ ផេង",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 6,
+   "name": "ឯកឧត្តម សារី កោសល្យ",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 6,
+   "name": "ឯកឧត្តម រ៉ូហ្វី អូស្មាន",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 6,
+   "name": "ឯកឧត្តម ទី ថានី",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 6,
+   "name": "លោកជំទាវ ឯម ប៉ុណ្ណា",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 6,
+   "name": "ឯកឧត្តម ហេង ប៊ុនថាន់",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 6,
+   "name": "សម្តេចពិជ័យសេនា ទៀ បាញ់",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 6,
+   "name": "ឯកឧត្តម សៀង ណាំ",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 6,
+   "name": "ឯកឧត្តម ឈឹម ម៉ា",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 6,
+   "name": "លោកជំទាវ ពៅ សាវឿន",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 6,
+   "name": "ឯកឧត្តម នូ ផល្លា",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 6,
+   "name": "ឯកឧត្តម យិន គឹមស៊ាន",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 6,
+   "name": "ឯកឧត្តម នេន ម៉ាល័យ",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 6,
+   "name": "ឯកឧត្តម តាក វណ្ណថា",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 6,
+   "name": "ឯកឧត្តម ចេវ គឹមហេង",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 6,
+   "name": "ឯកឧត្តម ឡូយ សុផាត",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 6,
+   "name": "លោកជំទាវកិត្តិសង្គហបណ្ឌិត ម៉ែន សំអន",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 6,
+   "name": "លោកជំទាវ ដួង វណ្ណា",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 6,
+   "name": "ឯកឧត្តម ជ័យ សុន",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 6,
+   "name": "លោកជំទាវ ឈុន សារឹម",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 6,
+   "name": "លោកជំទាវ ពៅ សុភាព",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 6,
+   "name": "ឯកឧត្តមកិត្តិនីតិកោសលបណ្ឌិត ប៊ិន ឈិន",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 6,
+   "name": "លោកជំទាវ និន សាផុន",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 6,
+   "name": "ឯកឧត្តមបណ្ឌិត ម៉ុក ម៉ារ៉េត",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 6,
+   "name": "ឯកឧត្តម លី ស៊ុគ្រី",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 6,
+   "name": "លោកជំទាវ នូ សុវណ្ណនី",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 6,
+   "name": "ឯកឧត្តម ស៊ូ ភិរិន្ទ",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 6,
+   "name": "ឯកឧត្តម ច័ន្ទ សារុន",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 6,
+   "name": "ឯកឧត្តម អុិត សុខ",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 6,
+   "name": "ឯកឧត្តម ងួន ប៊ៀន",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 6,
+   "name": "ឯកឧត្តម សៅ សារ៉ាត់",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 6,
+   "name": "ឯកឧត្តម នៅ សំ",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 7,
+   "name": "ឯកឧត្តម កែ គឹមយ៉ាន",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 7,
+   "name": "ឯកឧត្តម គោស៊ុំ សារឿត",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 7,
+   "name": "ឯកឧត្តម អុី ឡុង",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 7,
+   "name": "លោកជំទាវ នួម សុភ័ណ",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 7,
+   "name": "ឯកឧត្តម សេរី កុសល",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 7,
+   "name": "ឯកឧត្តម ខេង ស៊ុម",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 7,
+   "name": "សម្តេចក្រឡាហោម ស ខេង",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 7,
+   "name": "ឯកឧត្តម ងិន ឃន",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 7,
+   "name": "ឯកឧត្តម ឡោក ហ៊ួរ",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 7,
+   "name": "ឯកឧត្តម អង្គ វង្ស វឌ្ឍានា",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 7,
+   "name": "ឯកឧត្តម ឈាង វុន",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 7,
+   "name": "ឯកឧត្តម ច័ន្ទ សុផល",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 7,
+   "name": "លោកជំទាវ លី គឹមលៀង",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 7,
+   "name": "ឯកឧត្តម ភួ ពុយ",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 7,
+   "name": "ឯកឧត្តម យឹម ឆៃលី",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 7,
+   "name": "ឯកឧត្តម ខៀវ កាញារីទ្ធ",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 7,
+   "name": "ឯកឧត្តម ប៉ាន សូរស័ក្តិ",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 7,
+   "name": "ឯកឧត្តម វេង សាខុន",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 7,
+   "name": "ឯកឧត្តម លន់ លឹមថៃ",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 7,
+   "name": "ឯកឧត្តម ងួន សុជាតិ",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 7,
+   "name": "ឯកឧត្តមបណ្ឌិត ម៉ា ឈឿន",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 7,
+   "name": "ឯកឧត្តម ណៅ ធួក",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 7,
+   "name": "លោកជំទាវ កុល ធារិន",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 7,
+   "name": "ឯកឧត្តម ញឿន រ៉ាដែន",
+   "party": "គណបក្សហ៊្វុនស៊ិនប៉ិច",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 7,
+   "name": "ឯកឧត្តមបណ្ឌិត ហ៊ឺ វីរៈ",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 7,
+   "name": "លោកជំទាវ កែ ច័ន្ទមុនី",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 7,
+   "name": "ឯកឧត្តម ឡុង ឈុនឡៃ",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 7,
+   "name": "លោកជំទាវ កុប ម៉ារីយ៉ាស",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 7,
+   "name": "ឯកឧត្តមកិត្តិសេដ្ឋាបណ្ឌិត ឆាយ ថន",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 7,
+   "name": "ឯកឧត្តម សត្យា វុធ",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 7,
+   "name": "ឯកឧត្តម សេង ញ៉ក់",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 7,
+   "name": "លោកជំទាវ ខេង សំវ៉ាដា",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 7,
+   "name": "ឯកឧត្តម សុខ ប៊ន",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 7,
+   "name": "ឯកឧត្តម អ៊ូ សំអួន",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 7,
+   "name": "លោកជំទាវ យស ថានារី",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 7,
+   "name": "ឯកឧត្តម សួស យ៉ារ៉ា",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 7,
+   "name": "ឯកឧត្តម ឃឹង នុភាព",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 7,
+   "name": "ឯកឧត្តម នង វាសនា",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 7,
+   "name": "ឯកឧត្តម ថា យ៉ាវ",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 7,
+   "name": "ឯកឧត្តម នាង ចាន់ណាក់",
+   "party": "គណបក្សហ៊្វុនស៊ិនប៉ិច",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 7,
+   "name": "ឯកឧត្តមបណ្ឌិត ប៉ែន ស៊ីម៉ន",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 7,
+   "name": "លោកជំទាវ អ៊ុន សុគន្ធា",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 7,
+   "name": "ឯកឧត្តម សោម ចិន",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 7,
+   "name": "ឯកឧត្តម នឹម ច័ន្ទតារា",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 7,
+   "name": "ឯកឧត្តម ម៉ាត់ សេត",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 7,
+   "name": "ឯកឧត្តម វ៉ាន់ ដារ៉ា",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 7,
+   "name": "ឯកឧត្តម ចាប ម៉ុច",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 7,
+   "name": "សម្តេចមហារដ្ឋសភាធិការធិបតី ឃួន សុដារី",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 7,
+   "name": "ឯកឧត្តមអគ្គបណ្ឌិតសភាចារ្យ អូន ព័ន្ធមុនីរ័ត្ន",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 7,
+   "name": "ឯកឧត្តម ទេព សុធីរ",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 7,
+   "name": "ឯកឧត្តមបណ្ឌិត ម៉ៅ ភិរុណ",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 7,
+   "name": "ឯកឧត្តមកិត្តិបណ្ឌិត លឹម គានហោ",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 7,
+   "name": "ឯកឧត្តម ទី សុគន្ធ",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 7,
+   "name": "ឯកឧត្តម សុះ មុះសិន",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 7,
+   "name": "ឯកឧត្តមបណ្ឌិត ឈុន ស៊ីរុន",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 7,
+   "name": "ឯកឧត្តម ខឹម ច័ន្ទគីរី",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 7,
+   "name": "ឯកឧត្តម គង់ បណ្តូល",
+   "party": "គណបក្សហ៊្វុនស៊ិនប៉ិច",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 7,
+   "name": "ឯកឧត្តម ដុំ យុហៀន",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 7,
+   "name": "ឯកឧត្តមកិត្តិបណ្ឌិត ពេជ្រ ប៊ុនធិន",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 7,
+   "name": "ឯកឧត្តម សរ ចំរុង",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 7,
+   "name": "ឯកឧត្តម អ៊ឹម ចាន់ថុល",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 7,
+   "name": "ឯកឧត្តម ចាន់ យឿន",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 7,
+   "name": "សម្តេចមហាបវរធិបតី ហ៊ុន ម៉ាណែត",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 7,
+   "name": "ឯកឧត្តម ប៉ា សុជាតិវង្ស",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 7,
+   "name": "ឯកឧត្តមបណ្ឌិត អ៊ិត សំហេង",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 7,
+   "name": "ឯកឧត្តមសាស្រ្តាចារ្យ ម៉ម ប៊ុនហេង",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 7,
+   "name": "ឯកឧត្តម កែប ជុតិមា",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 7,
+   "name": "លោកជំទាវ ឡោក ខេង",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 7,
+   "name": "លោកជំទាវ គ្រួច សំអាន",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 7,
+   "name": "ឯកឧត្តម ឃុត ចាន់ដារ៉ា",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 7,
+   "name": "ឯកឧត្តមបណ្ឌិត លី ឆេង",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 7,
+   "name": "ឯកឧត្តមបណ្ឌិត សួន រិនឌី",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 7,
+   "name": "ឯកឧត្តម ហ៊ូ ស្រ៊ី",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 7,
+   "name": "ព្រះអង្គម្ចាស់ នរោត្តម ចក្រាវុធ",
+   "party": "គណបក្សហ៊្វុនស៊ិនប៉ិច",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 7,
+   "name": "ឯកឧត្តម មាស សុភា",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 7,
+   "name": "ឯកឧត្តមកិត្តិសេដ្ឋាបណ្ឌិត ជាម យៀប",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 7,
+   "name": "ឯកឧត្តមអភិសន្តិបណ្ឌិត ស សុខា",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 7,
+   "name": "ឯកឧត្តម មុំម ស៊ីបុន",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 7,
+   "name": "ឯកឧត្តម ឡុង ប៊ុន្នី",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 7,
+   "name": "ឯកឧត្តម ជាម ប៉េអា",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 7,
+   "name": "ឯកឧត្តម ញឹម វណ្ណដា",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 7,
+   "name": "លោកជំទាវ គង់ សាឡន",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 7,
+   "name": "ឯកឧត្តម អ៊ុក សិទ្ធិជាតិ",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 7,
+   "name": "ឯកឧត្តម ពេជ្រ ជីវ័ន",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 7,
+   "name": "ឯកឧត្តម ម៉ៅ ប៊ុនណារិន",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 7,
+   "name": "ឯកឧត្តម អាំង សំបូរ",
+   "party": "គណបក្សហ៊្វុនស៊ិនប៉ិច",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 7,
+   "name": "ឯកឧត្តម ស៊ុយ សែម",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 7,
+   "name": "ឯកឧត្តម ទី ថានី",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 7,
+   "name": "ឯកឧត្តម កែវ វីរៈ",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 7,
+   "name": "ឯកឧត្តម រ៉ូហ្វី អូស្មាន",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 7,
+   "name": "ឯកឧត្តម គិត ទ្រី",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 7,
+   "name": "សម្តេចពិជ័យសេនា ទៀ បាញ់",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 7,
+   "name": "ឯកឧត្តម សៀង ណាំ",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 7,
+   "name": "ឯកឧត្តម ទៀ សីហា",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 7,
+   "name": "ឯកឧត្តម ឈឹម ម៉ា",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 7,
+   "name": "ឯកឧត្តម នូ ផល្លា",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 7,
+   "name": "ឯកឧត្តម ប៊ុន ថាឫទ្ធិ",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 7,
+   "name": "ឯកឧត្តម ចេវ គឹមហេង",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 7,
+   "name": "ឯកឧត្តម នេន ម៉ាល័យ",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 7,
+   "name": "ឯកឧត្តម តាក វណ្ណថា",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 7,
+   "name": "ឯកឧត្តមសន្តិបណ្ឌិត ឡូយ សុផាត",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 7,
+   "name": "សម្តេចកិត្តិសង្គហបណ្ឌិត ម៉ែន សំអន",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 7,
+   "name": "លោកជំទាវ ដួង វណ្ណា",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 7,
+   "name": "ឯកឧត្តមបណ្ឌិត ជ័យ សុន",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 7,
+   "name": "ឯកឧត្តមបណ្ឌិត សម តារា",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 7,
+   "name": "លោកជំទាវ ឯក សុវណ្ណភារៈ",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 7,
+   "name": "ឯកឧត្តមកិត្តិនីតិកោសលបណ្ឌិត ប៊ិន ឈិន",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 7,
+   "name": "លោកជំទាវ និន សាផុន",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 7,
+   "name": "ឯកឧត្តមបណ្ឌិត ម៉ុក ម៉ារ៉េត",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 7,
+   "name": "ឯកឧត្តម ស៊ូ ភិរិន្ទ",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 7,
+   "name": "ឯកឧត្តម ច័ន្ទ សារុន",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 7,
+   "name": "ឯកឧត្តម អ៊ិត សុខ",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 7,
+   "name": "លោកជំទាវ នូ សុវណ្ណនី",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 7,
+   "name": "ឯកឧត្តម លី ស៊ុគ្រី",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 7,
+   "name": "ឯកឧត្តមកិត្តិសេដ្ឋាបណ្ឌិត ចម ប្រសិទ្ធ",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 7,
+   "name": "ឯកឧត្តម សៅ សារ៉ាត់",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 7,
+   "name": "ឯកឧត្តម នៅ សំ",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 7,
+   "name": "សម្តេចអគ្គមហាពញាចក្រី ហេង សំរិន",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 7,
+   "name": "ឯកឧត្តម ជា សុផារ៉ា",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 7,
+   "name": "ឯកឧត្តម វង សូត",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 7,
+   "name": "ឯកឧត្តម កែវ ពិសិដ្ឋ",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 7,
+   "name": "លោកជំទាវ សាន្ត អរុណ",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 7,
+   "name": "ឯកឧត្តម ម៉ូត យូសុះ",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 7,
+   "name": "ឯកឧត្តម យិន ប៊ុនណាង",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
+  },
+  {
+   "chamber": "assembly",
+   "session": 7,
+   "name": "ឯកឧត្តម សន សារ៉ាណា",
+   "party": "គណបក្សប្រជាជនកម្ពុជា",
+   "status": "0"
   }
  ]
 }
