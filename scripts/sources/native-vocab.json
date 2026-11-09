@@ -16,6 +16,32 @@
     { "khmer": "ម៉ុង", "spellings": ["Mong"] },
     { "khmer": "ប៊ុនឈឿន", "spellings": ["Bunchhoeun"] }
    ]
+  },
+  {
+   "round": 6,
+   "date": "2026-11-09",
+   "entries": [
+    { "khmer": "សំអាន", "spellings": ["Saman"] },
+    { "khmer": "កុក", "spellings": ["Kok"] },
+    { "khmer": "គឹមយាត", "spellings": ["Kimkheat"] },
+    { "khmer": "ចន់", "spellings": ["Chon"] },
+    { "khmer": "សារាជ", "spellings": ["Sareach"] },
+    { "khmer": "ស៊ើយ", "spellings": ["Soeury"] },
+    { "khmer": "គាំ", "spellings": ["Koim"] },
+    { "khmer": "ងន", "spellings": ["Ngorn"] },
+    { "khmer": "ជីវ័នមុនីរ័ក្ស", "spellings": ["Chivorn Monireak"] },
+    { "khmer": "ឈឿន", "spellings": ["Chheoun"] },
+    { "khmer": "បណ្ណាការ", "spellings": ["Bonnaka"] },
+    { "khmer": "ប៉ាត់", "spellings": ["Pat"] },
+    { "khmer": "ប៊ុននាង", "spellings": ["Bunneang"] },
+    { "khmer": "ភិន", "spellings": ["Phin"] },
+    { "khmer": "ម៉ាត់", "spellings": ["Mat"] },
+    { "khmer": "ម៉ាន់", "spellings": ["Mann"] },
+    { "khmer": "ម៉ាន្នូរីន", "spellings": ["Manorin"] },
+    { "khmer": "រាម", "spellings": ["Ream"] },
+    { "khmer": "ស៊ីចាន់", "spellings": ["Sithan"] },
+    { "khmer": "ស៊ីផាន់", "spellings": ["Siphan"] }
+   ]
   }
  ]
 }

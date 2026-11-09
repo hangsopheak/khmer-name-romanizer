@@ -53,6 +53,19 @@ describe('khmer-name-romanizer', () => {
         }
     })
 
+    it('does not let a dictionary prefix shred a word into an orphan vowel sign', () => {
+        // រាម is a dictionary word (Ream); រាមាធិបតី must not segment as
+        // រាម + ាធិបតី — the orphan sign would be dropped (Reamthiptey)
+        expect(transliterateName('រាមាធិបតី')).toBe('Reameathiptei')
+    })
+
+    it('ships the blind round-6 native vocabulary', () => {
+        const t = createDefaultTransliterator()
+        expect(t.transliterate('សំអាន').value).toBe('Saman')
+        expect(t.transliterate('គឹមយាត').value).toBe('Kimkheat')
+        expect(t.transliterate('ជីវ័នមុនីរ័ក្ស').value).toBe('Chivorn Monireak')
+    })
+
     it('strips leading honorifics from the value and reports them', () => {
         const r = createDefaultTransliterator().transliterate('សម្តេច ហ៊ុន សេន')
         expect(r.value).toBe('Hun Sen')

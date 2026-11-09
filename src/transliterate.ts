@@ -225,13 +225,22 @@ export function createTransliterator(options: TransliteratorOptions = {}): Trans
      * Partial segmentation of a token, or null when it is not trustworthy:
      * orphan vowel signs (មិនា -> មិន + ា) would be shredded by the rules.
      */
+    const ORPHAN_SIGN = /[\u{17B6}-\u{17C5}\u{17D0}]/u
     const partialSegments = (token: string) => {
         if (tokenDict.size === 0) return null
         const segments = cachedSegment(`p|${token}`, () =>
             segmentToken(token, tokenDict, { maxKeyLen: maxDictKeyLen })
         )
         if (!segments) return null
-        return segments.every((seg) => seg.inDict || seg.text.length >= MIN_REMAINDER_LEN) ? segments : null
+        return segments.every(
+            (seg) =>
+                seg.inDict ||
+                // a remainder must be long enough AND start on a
+                // consonant: រាមាធិបតី must not shred into រាម + ាធិបតី
+                (seg.text.length >= MIN_REMAINDER_LEN && !ORPHAN_SIGN.test(seg.text[0])),
+        )
+            ? segments
+            : null
     }
 
     const readingWith = (cache: Map<string, string>, plain: boolean) => (text: string): string => {
