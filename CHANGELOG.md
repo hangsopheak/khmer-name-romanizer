@@ -6,6 +6,61 @@ project versions semver-style. Accuracy numbers cited below are
 reproducible via `npm run eval:famous · eval:scraped · eval:kfold ·
 eval:holdout` — see `docs/accuracy-report-2026-11.md`.
 
+## [0.7.0] - 2026-11-09
+
+Unseen-name accuracy, person-grouped k-fold on the dev split (692 rows),
+0.6.0 → 0.7.0: exact **31.5% → 31.6%** (218 → 219), top-5
+**45.4% → 48.6%** (314 → 336), match mode **46.8% → 50.0%**
+(324 → 346); regnal top-5 33 → 48. Paired vs. 0.6.0: top-5 **+22/−0**
+(sign test p ≈ 5×10⁻⁷), exact +1/−0; propose folds 0–2 +11/−0,
+confirm folds 3–4 +11/−0; **zero value changes** from the reading tiers
+(suggest-mode only — not a breaking change). Lockbox (read once, at
+release): top-5 **40.3% → 45.0%** (52 → 58 of 129), exact 31.8% → 31.0%
+(41 → 40, inside the CI). Famous 70/72 held.
+
+### Added — Indic reading tier for regnal names
+- `src/indic.ts`: a plain Sanskrit/Pali transliteration emitted as one
+  extra candidate for tokens that look Indic — obsolete sibilants (ឝ ឞ),
+  robat, the វម៌្ម/វរ្ម័ន suffixes, the ក្ឝ (kṣ) and ន្ឫ (nri) clusters,
+  or an independent-vowel onset (ឧបាលិ, ឧទ័យ); ~120 dev words, almost
+  all regnal or Pali. Angkorian royal names romanize from Sanskrit
+  (មហេន្ទ្រវម៌្ម = Mahendravarman, not the Khmer reading "Mohenvom"),
+  which letter rules over Khmer readings cannot produce. Voiced series
+  kept (ទ→d គ→g ជ→j ព→b), inter-consonant and final inherent "a"
+  (មហេន្ទ្រ → mahendra, កៅណ្ឌិន្យ → kaundinya), វម៌្ម/វរ្ម័ន → varman,
+  ឝ→s, លក្ឝ្មី → lakshmi, កម្វុជ → Kambuja, ន្ឫបតេន្ទ្រ → Nripatendra.
+  The reading always ranks below both Khmer readings.
+- Regnal bucket top-5 on the k-fold: 33/186 → **48/186**.
+
+### Added — blind native vocabulary round 6
+- 20 owner-spelled parliament words (សំអាន Saman, គឹមយាត Kimkheat,
+  ស៊ីផាន់ Siphan…), chosen blind from the official rosters and spelled
+  without seeing any engine guess (scripts/sources/native-vocab.json).
+  Dictionary 1,617 → 1,637 entries.
+
+### Fixed
+- `compile-trusted.mjs` no longer lets a stale alias hide a native-reader
+  correction: selection is tier-ranked (native correction > its alt
+  spelling > everything else, first-seen within a tier) in
+  `scripts/lib/trusted-select.mjs`, with regression tests.
+- Partial segmentation rejects a remainder that starts with a vowel
+  sign: the new short key រាម (Ream) shredded រាមាធិបតី into
+  រាម + ាធិបតី and dropped the orphan sign.
+
+### Data
+- National Assembly rosters (legislatures 5–7, +373 members) from the
+  official nac.org.kh member lists, read via public archive snapshots
+  (the live site flaps 500s), into `scripts/sources/kh_parliament.json`
+  as a blind word source.
+- Measured and dropped this round: the full 364-word parliament vocab
+  round (only ~6 of 692 eval rows contain any of the words — the miss
+  mass is person-specific singleton words); the cross-fold admission
+  audit (0 wrongly-blocked pairs — the merge policy is airtight);
+  probe-B second spellings (+4/−1, p = 0.38, below the per-step bar).
+
+### Notes
+- Package 56.0 → 59.7 kB packed (cap 80 kB). Throughput ~40k names/s.
+
 ## [0.6.0] - 2026-11-09
 
 Unseen-name accuracy, person-grouped k-fold on the dev split (692 rows),

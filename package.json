@@ -1,6 +1,6 @@
 {
   "name": "khmer-name-romanizer",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "description": "Khmer script to Latin transliteration for Cambodian personal names - token dictionary + rule engine, zero dependencies",
   "license": "MIT",
   "author": "hangsopheak",

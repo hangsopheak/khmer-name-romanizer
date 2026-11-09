@@ -153,7 +153,47 @@ correction: `compile-trusted.mjs` keeps the first entry per Khmer key,
 never replaces a canonical, so a wrong pair survives every rerun. The
 fix needs the source files, the corpus row and `src/token-data.ts`.
 
-State of accuracy after the algorithm improvement arc (Phases 3–6) and the
+## 0.7.0 — round 3: Indic reading tier and round-6 vocabulary (2026-11-09)
+
+Same v2 method, same 692 dev eval rows, propose-on-0–2 /
+confirm-on-3–4 discipline. The lockbox was read once, at the end.
+
+| Step | K-fold exact | K-fold top-5 | Folds 3–4 (confirm) | Result |
+|---|---|---|---|---|
+| 0.6.0 baseline | 218 (31.5%) | 314 (45.4%) | — | — |
+| Trusted-tier precedence fix (native corrections outrank earlier pairs) | 218 | 314 | — | shipped (hygiene; recompile reproduces the released file + រាជា Reach) |
+| Indic reading tier for regnal names | 218 | **336 (48.6%)** | top-5 +11/−0 | **shipped** (+22/−0 overall, p ≈ 5×10⁻⁷; zero value changes) |
+| Native vocab round 6 (20 owner-spelled words) + orphan-sign segmentation guard | **219 (31.6%)** | 336 | exact +1/−0 | shipped |
+
+0.7.0 vs. 0.6.0, paired: top-5 +22/−0 (p ≈ 5×10⁻⁷), exact +1/−0,
+match mode 324 → 346 (46.8% → 50.0%). Regnal top-5 33/186 → 48/186.
+Citizens exact 128 → 128, top-5 195 → 202.
+
+**Lockbox release read:** top-5 52 → **58/129 (40.3% → 45.0%)**, exact
+37 → 40 → 41 → **40/129 (31.0%, CI 23.7–39.4)** — the one-row exact
+move is far inside the interval. Consistent with the k-fold direction.
+
+**Why the Indic tier worked where ranking probes failed.** The regnal
+bucket's official romanizations transliterate the SANSKRIT form of the
+name (Mahendravarman, Kaundinya, Udayadityavarman); the Khmer
+pronunciation (Mohenvom, Konnhak, Otayatithvom) is several letters away,
+so no learned rewrite can bridge it — but the Sanskrit reading is
+systematic (voiced series, inherent vowels, varman suffix), so a second
+reading table over the same script reaches it. 27 of 153 missed regnal
+rows were exactly reachable by the prototype; the engine wiring
+realized 22 (the rest sit behind the per-token option cap).
+
+**Measured dead ends this round.** The 364-word parliament vocabulary
+round: only ~6 of 692 eval rows contain any of the words — the vocab-gap
+miss mass is person-specific singleton words, not common name words
+(the top-20 words were still shipped as round 6 for product value).
+The cross-fold admission audit found 0 wrongly-blocked pairs — of the
+356 missed rows' missing word pairs, 399 have no second attestation
+anywhere, 20 are attested only within the test fold (person grouping),
+and 1 singleton is correctly blocked by the similarity gate. New
+external data can only help when DIFFERENT people attest the same word.
+
+**State of accuracy after the algorithm improvement arc (Phases 3–6) and the
 2026-11-01 refresh round, measured against the committed eval reports at
 commit `c65ea84` (arc) and this round's regenerated reports.
 All numbers are reproducible: `npm run eval:famous` · `eval:scraped` ·
