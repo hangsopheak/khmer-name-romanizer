@@ -6,7 +6,7 @@
 <title>Khmer Name Romanizer</title>
 <meta name="description" content="Type a Cambodian name in Khmer script and get the Latin spellings passports and rosters use. Try form pre-fill, KYC checks, record audits, dedup, screening and search. Free, open source, runs in your browser.">
 <meta property="og:title" content="Khmer Name Romanizer">
-<meta property="og:description" content="សូ បញ្ញា → So Panha · So Pagna · Sou Panha … Khmer names to passport-style Latin spellings, in your browser.">
+<meta property="og:description" content="ហង្ស សុភ័ក្រ្ត → Hang Sopheak. Khmer names to passport-style Latin spellings, in your browser.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kantumruy+Pro:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
@@ -135,6 +135,21 @@ input[type="text"], textarea {
 textarea { font-size: var(--step-0); line-height: 1.7; resize: vertical; }
 input[type="text"]:focus, textarea:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-soft); }
 #q { font-size: 1.9rem; padding: 14px 18px; border-width: 2px; }
+.input-row { display: flex; gap: 8px; align-items: stretch; }
+.input-row input { flex: 1; }
+.btn.clear { flex: none; }
+
+/* Latin → Khmer helper */
+.latin-helper { margin-top: 10px; }
+.latin-helper summary { cursor: pointer; font-weight: 600; font-size: 0.92rem; color: var(--accent); width: fit-content; }
+.lh-body { margin-top: 10px; padding: 14px; border: 1px dashed var(--line); border-radius: 8px; display: flex; flex-direction: column; gap: 10px; }
+.lh-body input[type="text"] { font-size: var(--step-0); }
+.lh-words { display: flex; flex-direction: column; gap: 8px; }
+.lh-words:empty { display: none; }
+.lh-word { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+.lh-word .w { font-family: var(--font-mono); font-size: 0.8rem; color: var(--muted); min-width: 6em; }
+.chip.kh-opt { font-size: 1.05rem; }
+.chip.kh-opt.on { border-color: var(--accent); background: var(--accent-soft); color: var(--accent); }
 
 .chips { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-top: 10px; font-size: var(--step--1); color: var(--muted); }
 .chip {
@@ -261,6 +276,40 @@ details.own { margin-top: 14px; }
 details.own summary { cursor: pointer; font-weight: 600; font-size: 0.95rem; color: var(--accent); }
 details.own[open] summary { margin-bottom: 10px; }
 
+/* Quick search: phone mock */
+.phone-stage { display: flex; flex-direction: column; align-items: center; gap: 14px; min-width: 0; }
+.phone-stage .chips { justify-content: center; }
+.phone {
+  width: 100%; max-width: 380px; height: 640px;
+  display: flex; flex-direction: column;
+  background: var(--surface); color: var(--ink);
+  border: 10px solid var(--ink); border-radius: 44px;
+  overflow: hidden; box-shadow: 0 18px 40px -18px rgba(26, 33, 50, 0.45);
+}
+.phone-status { display: flex; justify-content: space-between; align-items: center; padding: 8px 22px 4px; font: 600 0.78rem var(--font-ui); }
+.phone-notch { width: 84px; height: 22px; background: var(--ink); border-radius: 0 0 14px 14px; margin-top: -8px; }
+.phone-head { display: flex; justify-content: space-between; align-items: baseline; padding: 8px 18px 6px; }
+.phone-head strong { font-size: 1.6rem; }
+.phone-head span { font-size: 0.78rem; color: var(--muted); }
+.phone-search {
+  display: flex; align-items: center; gap: 8px; margin: 4px 14px 6px; padding: 0 12px;
+  background: var(--bg); border-radius: 12px; color: var(--muted); border: 1px solid transparent;
+}
+.phone-search:focus-within { border-color: var(--accent); }
+.phone-search input { flex: 1; min-width: 0; border: 0; background: transparent; color: var(--ink); font: 500 1rem var(--font-ui); padding: 10px 0; outline: none; }
+.phone-meta { padding: 2px 18px 6px; font-size: 0.72rem; color: var(--muted); min-height: 1.4em; font-variant-numeric: tabular-nums; }
+.phone-list { list-style: none; margin: 0; padding: 0 6px 10px; overflow-y: auto; flex: 1; }
+.phone-list li { display: grid; grid-template-columns: 40px minmax(0, 1fr); gap: 2px 12px; align-items: center; padding: 8px 10px; border-radius: 10px; }
+.phone-list li + li { border-top: 1px solid var(--line); }
+.avatar { grid-row: span 2; width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center; background: var(--accent-soft); color: var(--accent); font-size: 1.1rem; line-height: 1; }
+.phone-list .kh { font-size: 1.08rem; line-height: 1.5; overflow-wrap: anywhere; }
+.phone-list .kh mark { background: var(--accent-soft); color: var(--accent); border-radius: 4px; padding: 0 3px; }
+.phone-list .lat { font-size: 0.82rem; color: var(--muted); display: flex; flex-wrap: wrap; gap: 4px 8px; align-items: center; }
+.phone-list .lat b { color: var(--ink); font-weight: 600; }
+.phone-list .tag { font-size: 0.66rem; font-weight: 600; padding: 1px 7px; border-radius: 999px; background: var(--warn-soft); color: var(--warn); }
+.phone-list .more, .phone-list .none { display: block; text-align: center; color: var(--muted); font-size: 0.85rem; padding: 18px 10px; border: 0; }
+@media (max-width: 480px) { .phone { height: 560px; border-width: 8px; border-radius: 36px; } }
+
 /* Info + install */
 .info { border-top: 1px solid var(--line); background: var(--surface); }
 .info .wrap { padding-block: 40px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; }
@@ -324,7 +373,7 @@ footer .wrap { padding-block: 22px; display: flex; justify-content: space-betwee
       <a class="tab" href="#audit">Audit records</a>
       <a class="tab" href="#link">Link records</a>
       <a class="tab" href="#screen">Screen a list</a>
-      <a class="tab" href="#search">Search in Latin</a>
+      <a class="tab" href="#search">Quick search</a>
       <a class="tab" href="#bulk">Convert a list</a>
     </nav>
   </div>
@@ -339,10 +388,14 @@ footer .wrap { padding-block: 22px; display: flex; justify-content: space-betwee
     </div>
     <div class="field">
       <label for="q">Name in Khmer</label>
-      <input id="q" type="text" lang="km" autocomplete="off" spellcheck="false" placeholder="សូ បញ្ញា">
+      <div class="input-row">
+        <input id="q" type="text" lang="km" autocomplete="off" spellcheck="false" placeholder="ហង្ស សុភ័ក្រ្ត">
+        <button class="btn clear" type="button" id="q-clear" aria-label="Clear the name">Clear</button>
+      </div>
     </div>
     <div class="chips" id="q-chips">
       <span>Try:</span>
+      <button class="chip" type="button" data-q="ហង្ស សុភ័ក្រ្ត">ហង្ស សុភ័ក្រ្ត <small>Hang Sopheak</small></button>
       <button class="chip" type="button" data-q="សូ បញ្ញា">សូ បញ្ញា <small>many spellings</small></button>
       <button class="chip" type="button" data-q="តាំងលាងខៃ">តាំងលាងខៃ <small>no space</small></button>
       <button class="chip" type="button" data-q="លោកស្រី ចាន់ សុខា">លោកស្រី ចាន់ សុខា <small>with a title</small></button>
@@ -455,10 +508,11 @@ khmerInput.oninput = () =&gt; {
         <div class="chips" id="v-chips">
           <span>Try:</span>
           <button class="chip" type="button" data-kh="ហង្ស សុភ័ក្រ្ត" data-lat="HANG SOPHEAK">HANG SOPHEAK</button>
-          <button class="chip" type="button" data-kh="ឈឹម សុភា" data-lat="Sophea Chhim">Sophea Chhim <small>given name first</small></button>
+          <button class="chip" type="button" data-kh="ហង្ស សុភ័ក្រ្ត" data-lat="SOPHEAK HANG">SOPHEAK HANG <small>given name first</small></button>
+          <button class="chip" type="button" data-kh="ហង្ស សុភ័ក្រ្ត" data-lat="HANG SOPHEAP">HANG SOPHEAP <small>typo</small></button>
           <button class="chip" type="button" data-kh="ពេជ្រ មុន្នី" data-lat="Pech Moni">Pech Moni <small>rare spelling</small></button>
-          <button class="chip" type="button" data-kh="ម៉ៅ វិចិត្រ" data-lat="Mao Vicheat">Mao Vicheat <small>typo</small></button>
-          <button class="chip" type="button" data-kh="ចាន់ ដារា" data-lat="Chan Sokha">Chan Sokha <small>wrong name</small></button>
+          
+          <button class="chip" type="button" data-kh="ហង្ស សុភ័ក្រ្ត" data-lat="HANG DARA">HANG DARA <small>wrong name</small></button>
         </div>
         <div class="verdict" id="v-out" hidden></div>
       </div>
@@ -599,39 +653,58 @@ khmerInput.oninput = () =&gt; {
     </div>
   </section>
 
-  <!-- 7. Search -->
+  <!-- 7. Quick search -->
   <section class="uc wrap" id="uc-search" data-uc="search" hidden>
     <div class="uc-head">
-      <h2>Search in Latin</h2>
-      <p>For staff who cannot type Khmer. Typing <i>sophea</i> finds names written in Khmer, whichever way the name is usually spelled.</p>
+      <h2>Quick search</h2>
+      <p>Most phones in Cambodia save contacts in Khmer, so finding someone means switching keyboards first. With the library, type the name in Latin letters on any keyboard, in any common spelling, even with a typo.</p>
     </div>
     <div class="uc-grid">
-      <div class="panel">
-        <div class="field">
-          <label for="sr-q">Search contacts</label>
-          <input id="sr-q" type="text" autocomplete="off" spellcheck="false" placeholder="Type a name in Latin letters">
+      <div class="phone-stage">
+        <div class="phone" role="region" aria-label="Example contacts app">
+          <div class="phone-status"><span>9:41</span><span class="phone-notch"></span><span>4G</span></div>
+          <div class="phone-head">
+            <strong>Contacts</strong>
+            <span id="qs-total"></span>
+          </div>
+          <label class="phone-search" for="sr-q">
+            <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"/><path d="M20 20l-4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            <input id="sr-q" type="search" autocomplete="off" spellcheck="false" autocapitalize="off" placeholder="Search in Latin, e.g. sopheak">
+          </label>
+          <div class="phone-meta" id="qs-meta"></div>
+          <ul class="phone-list" id="sr-out"></ul>
         </div>
         <div class="chips" id="sr-chips">
           <span>Try:</span>
-          <button class="chip" type="button" data-q="sophea">sophea</button>
-          <button class="chip" type="button" data-q="pagna">pagna</button>
-          <button class="chip" type="button" data-q="chhoem">chhoem</button>
-          <button class="chip" type="button" data-q="vichet">vichet</button>
+          <button class="chip" type="button" data-q="sopheak">sopheak</button>
+          <button class="chip" type="button" data-q="pagna">pagna <small>other spelling</small></button>
+          <button class="chip" type="button" data-q="sopehak">sopehak <small>typo</small></button>
+          <button class="chip" type="button" data-q="dara chan">dara chan <small>any order</small></button>
+          <button class="chip" type="button" data-q="ke s">ke s <small>first letters</small></button>
         </div>
-        <h3 style="margin-top:18px" id="sr-count">Contacts</h3>
-        <ul class="hits" id="sr-out"></ul>
       </div>
       <div class="panel explain">
-        <h3>How it works</h3>
-        <p>Build a search index once: for each Khmer record, store every spelling of every word. Then match what staff type against those spellings.</p>
-        <pre class="code"><span class="c">const</span> index = contacts.map((c) =&gt; {
-  <span class="c">const</span> r = t.transliterate(c.khmerName)
-  <span class="c">const</span> words = r.tokens.flatMap((w) =&gt; [w.latin, ...w.alternatives])
-  <span class="c">return</span> { contact: c, words: words.map(norm) }
-})
+        <h3>What the search understands</h3>
+        <ul>
+          <li><b>Any common spelling.</b> <i>panha</i> and <i>pagna</i> both find <span lang="km">បញ្ញា</span>. <i>chhoem</i> finds <span lang="km">ឈឹម</span> (Chhim).</li>
+          <li><b>Typos.</b> When nothing matches exactly, one wrong, missing or swapped letter still finds the name.</li>
+          <li><b>Any order and first letters.</b> <i>dara chan</i> finds Chan Dara. <i>ke s</i> finds Keo Sophal and Keo Sothea.</li>
+          <li><b>Khmer too.</b> If the user has a Khmer keyboard, Khmer search still works.</li>
+        </ul>
+        <p>The library runs once per contact to build the index. After that every keystroke is a plain lookup, fast enough for thousands of contacts on a cheap phone.</p>
+        <pre class="code"><span class="c">// once, when contacts load</span>
+<span class="c">const</span> index = contacts.map((c) =&gt; ({
+  contact: c,
+  words: t.transliterate(c.khmerName).tokens.map((w) =&gt;
+    [w.latin, ...w.alternatives].map(norm)),
+}))
 
-<span class="c">const</span> find = (q) =&gt; index.filter((e) =&gt;
-  e.words.some((w) =&gt; w.startsWith(norm(q))))</pre>
+<span class="c">// on every keystroke</span>
+<span class="c">const</span> terms = norm(query).split(<span class="s">' '</span>)
+<span class="c">const</span> hits = index.filter((e) =&gt; terms.every((term) =&gt;
+  e.words.some((spellings) =&gt;
+    spellings.some((s) =&gt; s.startsWith(term)))))</pre>
+        <p style="margin-top:12px">This demo adds typo tolerance and ranking on top. The contacts are made-up combinations of common names.</p>
       </div>
     </div>
   </section>

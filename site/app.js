@@ -6,9 +6,11 @@
 const REPO = 'https://github.com/hangsopheak/khmer-name-romanizer'
 const $ = (id) => document.getElementById(id)
 
+// One retry: a dropped connection on a weak mobile network should not end the demo.
+const loadLib = () => import('./lib/index.js')
 let lib
 try {
-  lib = await import('./lib/index.js')
+  lib = await loadLib().catch(() => new Promise((r) => setTimeout(r, 800)).then(() => import('./lib/index.js?retry=1')))
 } catch (err) {
   const box = $('load-error')
   box.innerHTML = '<div class="load-error">The romanizer could not load. Reload the page. If it still fails, <a href="' + REPO + '/issues">report the problem</a>.</div>'
@@ -109,6 +111,87 @@ async function copyText(text, noticeEl, msg) {
   try { await navigator.clipboard.writeText(text); flash(noticeEl, msg) }
   catch { flash(noticeEl, 'Copy failed. Select the text and copy it yourself.') }
 }
+// ---------------------------------------------------------------- Latin → Khmer helper
+// Typing Khmer is hard without a Khmer keyboard. This reads the library's
+// own dictionary backwards: type "hang sopheak", pick the Khmer word for each.
+const latinKey = (s) => s.toLowerCase().replace(/[^a-z]/g, '')
+const khmerKey = (kh) => lib.normalizeKhmerKey(kh.replace(/[\u200B-\u200D\uFEFF]/g, ''))
+const reverse = new Map()
+for (const [kh, e] of Object.entries(lib.defaultTokenDict)) {
+  const add = (lat, w) => {
+    const k = latinKey(lat); if (!k) return
+    if (!reverse.has(k)) reverse.set(k, [])
+    reverse.get(k).push({ kh, w })
+  }
+  add(e.latin, e.count + 3)
+  for (const [v, c] of Object.entries(e.variants ?? {})) add(v, c)
+}
+const reverseKeys = [...reverse.keys()].sort()
+
+/** Khmer words for one Latin word: exact spellings first, else words that start with it. */
+function khmerOptions(word) {
+  const k = latinKey(word)
+  if (!k) return { opts: [], exact: false }
+  let opts = (reverse.get(k) ?? []).map((o) => ({ ...o, lat: '' }))
+  const exact = opts.length > 0
+  if (!exact && k.length >= 2) {
+    opts = reverseKeys.filter((x) => x.startsWith(k)).flatMap((x) => reverse.get(x).map((o) => ({ ...o, lat: x })))
+  }
+  opts.sort((a, b) => b.w - a.w)
+  const seen = new Set(), out = []
+  for (const o of opts) {
+    const key = khmerKey(o.kh)
+    if (seen.has(key)) continue
+    seen.add(key); out.push(o)
+    if (out.length >= 6) break
+  }
+  return { opts: out, exact }
+}
+
+/** Adds "No Khmer keyboard? Type it in Latin letters" under a Khmer input. */
+function attachLatinHelper(input, onChange, { open = false } = {}) {
+  const box = document.createElement('details')
+  box.className = 'latin-helper'
+  box.open = open
+  const uid = input.id + '-latin'
+  box.innerHTML = `<summary>No Khmer keyboard? Type the name in Latin letters</summary>
+    <div class="lh-body">
+      <input type="text" id="${uid}" autocomplete="off" spellcheck="false" placeholder="e.g. hang sopheak" aria-label="Name in Latin letters">
+      <div class="lh-words"></div>
+      <p class="hint">Pick the Khmer spelling of each word. It goes into the Khmer box above.</p>
+    </div>`
+  input.closest('.field').after(box)
+  const lat = box.querySelector('input'), wordsEl = box.querySelector('.lh-words')
+  let words = [], picks = []
+
+  const compose = () => {
+    const kh = words.map((w, i) => w.opts[picks[i]]?.kh).filter(Boolean).join(' ')
+    input.value = kh
+    try { onChange() } catch (err) { console.error(err) }
+  }
+  const draw = () => {
+    wordsEl.innerHTML = words.map((w, i) => {
+      if (!w.opts.length) return `<div class="lh-word"><span class="w">${esc(w.text)}</span><span class="hint">No Khmer word found. Check the spelling. The word may not be in the dictionary yet.</span></div>`
+      return `<div class="lh-word"><span class="w">${esc(w.text)}</span>` + w.opts.map((o, j) =>
+        `<button type="button" class="chip kh-opt${j === picks[i] ? ' on' : ''}" data-i="${i}" data-j="${j}" lang="km">${esc(o.kh)}${o.lat ? `<small>${esc(o.lat)}</small>` : ''}</button>`).join('') + '</div>'
+    }).join('')
+  }
+  const update = () => {
+    const texts = lat.value.trim().split(/\s+/).filter(Boolean)
+    const prev = words
+    words = texts.map((text, i) => prev[i]?.text === text ? prev[i] : { text, ...khmerOptions(text) })
+    picks = words.map((w, i) => prev[i] === w ? picks[i] : 0)
+    draw()
+    if (words.length) compose()
+  }
+  lat.addEventListener('input', update)
+  wordsEl.addEventListener('click', (e) => {
+    const b = e.target.closest('.kh-opt'); if (!b) return
+    picks[+b.dataset.i] = +b.dataset.j
+    draw(); compose()
+  })
+}
+
 const csvCell = (s) => /[",\n]/.test(s) ? '"' + String(s).replace(/"/g, '""') + '"' : String(s)
 
 // ---------------------------------------------------------------- tabs
@@ -208,6 +291,7 @@ $('share').addEventListener('click', () => {
   url.hash = 'lookup'
   copyText(url.href, $('copied'), 'Link copied')
 })
+$('q-clear').addEventListener('click', () => { $('q').value = ''; renderLookup(); $('q').focus() })
 $('q-chips').addEventListener('click', (e) => {
   const b = e.target.closest('.chip'); if (!b) return
   $('q').value = b.dataset.q; renderLookup()
@@ -413,42 +497,103 @@ $('s-chips').addEventListener('click', (e) => {
   $('s-kh').value = b.dataset.q; renderScreen()
 })
 
-// ---------------------------------------------------------------- 7. search
-const CONTACTS = [
-  'ហង្ស សុភ័ក្រ្ត', 'ឈឹម សុភា', 'មាស សុភាព', 'សូ បញ្ញា', 'ម៉ៅ វិចិត្រ', 'ឡុង ចិន្តា',
-  'ព្រំ បុប្ផា', 'គង់ វាសនា', 'ហេង រតនា', 'ចាន់ ដារា', 'ជា វណ្ណៈ', 'សៀង ស្រីមុំ',
-]
-const searchIndex = CONTACTS.map((kh) => {
+// ---------------------------------------------------------------- 7. quick search
+// Made-up contacts: common surnames x common given names, in a fixed order.
+const SURNAMES = 'ហង្ស សូ ចាន់ សុខ កែវ ហេង លី ម៉ៅ ឈឹម ព្រំ សៀង យឹម ឡុង ទេព ពេជ្រ ជា អ៊ុំ គង់ មាស តាំង ស៊ុន ឯក ខៀវ'.split(' ')
+const GIVEN = 'សុភ័ក្រ្ត បញ្ញា ដារា សុខា សុផល រតនា វិចិត្រ សុភា បុប្ផា ស្រីមុំ ពិសិដ្ឋ ចិន្តា សុធា មុន្នី វណ្ណៈ វាសនា សុភាព សុវណ្ណ លាងខៃ សោភា រស្មី សុជាតា ពិសី វិបុល'.split(' ')
+function makeContacts(n) {
+  let seed = 7
+  const rnd = () => (seed = (seed * 48271) % 2147483647) / 2147483647
+  const set = new Set(['ហង្ស សុភ័ក្រ្ត', 'ចាន់ ដារា', 'សូ បញ្ញា'])
+  while (set.size < n) set.add(SURNAMES[Math.floor(rnd() * SURNAMES.length)] + ' ' + GIVEN[Math.floor(rnd() * GIVEN.length)])
+  return [...set]
+}
+const t0 = performance.now()
+const contactIndex = makeContacts(240).map((kh) => {
   const r = show.transliterate(kh)
-  const words = r.tokens.flatMap((t) => [t.latin, ...t.alternatives]).flatMap((w) => norm(w).split(' '))
-  return { kh, value: r.value, words: [...new Set(words)] }
-})
+  return {
+    kh, value: r.value,
+    tokens: r.tokens.map((tk) => ({
+      khmer: tk.khmer,
+      primary: norm(tk.latin).replace(/ /g, ''),
+      spellings: [tk.latin, ...tk.alternatives].map((x) => norm(x).replace(/ /g, '')),
+    })),
+  }
+}).sort((a, b) => a.value.localeCompare(b.value))
+const indexMs = performance.now() - t0
 
-function renderSearch() {
-  const raw = $('sr-q').value.trim()
-  const out = $('sr-out')
-  let rows
-  if (!raw) rows = searchIndex.map((e) => ({ e, via: [] }))
-  else if (hasKhmer(raw)) rows = searchIndex.filter((e) => e.kh.includes(raw)).map((e) => ({ e, via: [] }))
-  else {
-    const terms = norm(raw).split(' ').filter(Boolean)
-    rows = []
-    for (const e of searchIndex) {
-      const via = []
-      const okAll = terms.every((t) => { const w = e.words.find((w) => w.startsWith(t)); if (w) via.push(w); return !!w })
-      if (okAll) rows.push({ e, via })
+/** How well one typed term matches one word: 4 exact, 3 prefix, 2 other spelling, 1 typo. */
+function termMatch(term, tok, allowTypo) {
+  if (hasKhmer(term)) return tok.khmer.includes(term) ? { score: 4 } : null
+  if (tok.primary === term) return { score: 4 }
+  if (tok.primary.startsWith(term)) return { score: 3 }
+  const alt = tok.spellings.find((x) => x.startsWith(term))
+  if (alt) return { score: 2, alt }
+  if (allowTypo && term.length >= 4) {
+    for (const x of tok.spellings) {
+      if (editDistance(term, x) <= 1 || editDistance(term, x.slice(0, term.length)) <= 1) return { score: 1, typo: x }
     }
   }
-  $('sr-count').textContent = raw ? `${rows.length} of ${CONTACTS.length} contacts` : `All ${CONTACTS.length} contacts`
-  if (!rows.length) { out.innerHTML = '<li class="empty" style="display:block">No contact matches. Try another spelling.</li>'; return }
-  out.innerHTML = rows.map(({ e, via }) => {
-    const shownWords = norm(e.value).split(' ')
-    const viaAlt = via.filter((w) => !shownWords.includes(w))
-    const why = via.length
-      ? 'Matched ' + via.map((w) => `<mark>${esc(w)}</mark>`).join(' + ') + (viaAlt.length ? ', another common spelling' : '')
-      : ''
-    return `<li><span class="name" lang="km">${esc(e.kh)}</span><span class="notice">${esc(e.value)}</span>${why ? `<span class="why">${why}</span>` : ''}</li>`
-  }).join('')
+  return null
+}
+
+function searchContacts(query, allowTypo = false) {
+  const terms = hasKhmer(query)
+    ? query.trim().split(/\s+/).filter(Boolean)
+    : norm(query).split(' ').filter(Boolean)
+  if (!terms.length) return null
+  const out = []
+  for (const c of contactIndex) {
+    const used = new Set(), how = []
+    let total = 0, ok = true
+    for (const term of terms) {
+      let best = null
+      c.tokens.forEach((tok, i) => {
+        if (used.has(i)) return
+        const m = termMatch(term, tok, allowTypo)
+        if (m && (!best || m.score > best.m.score)) best = { i, m }
+      })
+      if (!best) { ok = false; break }
+      used.add(best.i); total += best.m.score; how.push(best.m)
+    }
+    if (ok) out.push({ c, total, used, how })
+  }
+  return out.sort((a, b) => b.total - a.total || a.c.value.localeCompare(b.c.value))
+}
+
+function contactRow(c, used = new Set(), how = []) {
+  const kh = c.tokens.map((tk, i) => used.has(i) ? `<mark>${esc(tk.khmer)}</mark>` : esc(tk.khmer)).join(' ')
+  const tags = []
+  for (const m of how) {
+    if (m.alt) tags.push(`<span class="tag">spelled ${esc(m.alt)}</span>`)
+    else if (m.typo) tags.push(`<span class="tag">typo of ${esc(m.typo)}</span>`)
+  }
+  return `<li><span class="avatar" lang="km">${esc([...c.tokens[0].khmer][0])}</span>
+    <span class="kh" lang="km">${kh}</span>
+    <span class="lat"><b>${esc(c.value)}</b>${tags.join('')}</span></li>`
+}
+
+const LIST_LIMIT = 40
+function renderSearch() {
+  const q = $('sr-q').value
+  const out = $('sr-out'), meta = $('qs-meta')
+  $('qs-total').textContent = `${contactIndex.length} contacts`
+  const t = performance.now()
+  // Typo tolerance is a fallback: Sopheap is a different name from Sopheak,
+  // so close spellings show only when nothing matches exactly.
+  let hits = searchContacts(q), fuzzy = false
+  if (hits && !hits.length) { hits = searchContacts(q, true); fuzzy = true }
+  const ms = performance.now() - t
+  if (!hits) {
+    meta.textContent = `Index built in ${indexMs.toFixed(0)} ms. Start typing.`
+    out.innerHTML = contactIndex.slice(0, LIST_LIMIT).map((c) => contactRow(c)).join('') +
+      `<li class="more">and ${contactIndex.length - LIST_LIMIT} more</li>`
+    return
+  }
+  meta.textContent = (fuzzy && hits.length ? 'No exact match. Close spellings: ' : '') + `${hits.length} found in ${ms < 0.1 ? 'under 0.1' : ms.toFixed(1)} ms`
+  if (!hits.length) { out.innerHTML = '<li class="none">No contact matches. Try another spelling.</li>'; return }
+  out.innerHTML = hits.slice(0, LIST_LIMIT).map((h) => contactRow(h.c, h.used, h.how)).join('') +
+    (hits.length > LIST_LIMIT ? `<li class="more">and ${hits.length - LIST_LIMIT} more</li>` : '')
 }
 onType($('sr-q'), renderSearch)
 $('sr-chips').addEventListener('click', (e) => {
@@ -498,11 +643,18 @@ $('b-copy').addEventListener('click', () => {
 
 // ---------------------------------------------------------------- start
 const initial = new URLSearchParams(location.search).get('q')
-$('q').value = initial ?? 'សូ បញ្ញា'
-$('pf-kh').value = 'ព្រំ បុប្ផា'
-$('v-kh').value = 'ឈឹម សុភា'; $('v-lat').value = 'Sophea Chhim'
+$('q').value = initial ?? 'ហង្ស សុភ័ក្រ្ត'
+$('pf-kh').value = 'ហង្ស សុភ័ក្រ្ត'
+$('v-kh').value = 'ហង្ស សុភ័ក្រ្ត'; $('v-lat').value = 'SOPHEAK HANG'
 $('l-kh').value = LINK_SAMPLE_KH; $('l-recs').value = LINK_SAMPLE.join('\n')
 $('s-kh').value = 'ឈឹម សុភា'
+$('sr-q').value = 'sopheak'
+
+attachLatinHelper($('q'), renderLookup, { open: true })
+attachLatinHelper($('pf-kh'), renderPrefill)
+attachLatinHelper($('v-kh'), renderValidate)
+attachLatinHelper($('l-kh'), renderLink)
+attachLatinHelper($('s-kh'), renderScreen)
 
 for (const fn of [renderLookup, renderPrefill, renderValidate, () => renderAudit(AUDIT_SAMPLE), renderLink, renderScreen, renderSearch, renderBulk]) {
   try { fn() } catch (err) { console.error(err) }
