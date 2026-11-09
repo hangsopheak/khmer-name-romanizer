@@ -2,6 +2,8 @@
 
 Turn **Cambodian personal names** in Khmer script into Latin spellings, the way passports and rosters write them. TypeScript, zero dependencies, fully offline.
 
+**[Try it in your browser →](https://hangsopheak.github.io/khmer-name-romanizer/)**
+
 ```bash
 npx khmer-name-romanizer "ហង្ស សុភ័ក្រ្ត"     # Hang Sopheak
 npx khmer-name-romanizer --all "សូ បញ្ញា"     # So Panha | So Banha | So Pagna | Sou Panha | …

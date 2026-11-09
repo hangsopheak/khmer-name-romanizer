@@ -1,0 +1,734 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Khmer Name Romanizer</title>
+<meta name="description" content="Type a Cambodian name in Khmer script and get the Latin spellings passports and rosters use. Try form pre-fill, KYC checks, record audits, dedup, screening and search. Free, open source, runs in your browser.">
+<meta property="og:title" content="Khmer Name Romanizer">
+<meta property="og:description" content="សូ បញ្ញា → So Panha · So Pagna · Sou Panha … Khmer names to passport-style Latin spellings, in your browser.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kantumruy+Pro:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: one working column. A use-case switcher sits under a short hero;
+   each use case is a live tool on the left and "how to build it" on the right. */
+:root {
+  --bg: #f4f6f9;
+  --surface: #ffffff;
+  --ink: #1a2132;
+  --muted: #5a6478;
+  --line: #dde2ea;
+  --accent: #8c1d30;          /* passport-cover maroon */
+  --accent-soft: #f6e9eb;
+  --on-accent: #ffffff;
+  --good: #1f6b4a;
+  --good-soft: #e5f2ec;
+  --warn: #8a5a00;
+  --warn-soft: #fbf1dc;
+  --bad: #a3261b;
+  --bad-soft: #fbe7e4;
+  --guilloche: rgba(140, 29, 48, 0.06);
+
+  --font-ui: "Kantumruy Pro", "Noto Sans Khmer", "Khmer OS", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+
+  --step--1: 0.8125rem;
+  --step-0: 1rem;
+  --step-1: 1.25rem;
+  --step-2: 1.75rem;
+  --step-3: 2.5rem;
+  --radius: 10px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #11141b; --surface: #191e28; --ink: #e7eaf0; --muted: #9aa3b4;
+    --line: #2a3140; --accent: #e8798a; --accent-soft: #3a1f26; --on-accent: #1a0d10;
+    --good: #6fcf9f; --good-soft: #17302a; --warn: #f0c060; --warn-soft: #352a14;
+    --bad: #f28b80; --bad-soft: #3a1c19;
+    --guilloche: rgba(232, 121, 138, 0.07);
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #11141b; --surface: #191e28; --ink: #e7eaf0; --muted: #9aa3b4;
+  --line: #2a3140; --accent: #e8798a; --accent-soft: #3a1f26; --on-accent: #1a0d10;
+  --good: #6fcf9f; --good-soft: #17302a; --warn: #f0c060; --warn-soft: #352a14;
+  --bad: #f28b80; --bad-soft: #3a1c19;
+  --guilloche: rgba(232, 121, 138, 0.07);
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-ui);
+  font-size: var(--step-0);
+  line-height: 1.55;
+}
+a { color: var(--accent); text-underline-offset: 3px; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
+[lang="km"] { line-height: 1.7; }
+
+.wrap {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+
+/* Top bar */
+.top { border-bottom: 1px solid var(--line); background: var(--surface); }
+.top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-block: 14px; flex-wrap: wrap; }
+.brand { display: flex; align-items: baseline; gap: 10px; font-weight: 700; color: var(--ink); text-decoration: none; }
+.brand .kh { color: var(--accent); }
+.brand .ver { font-family: var(--font-mono); font-size: var(--step--1); font-weight: 400; color: var(--muted); }
+.links { display: flex; gap: 18px; font-size: var(--step--1); }
+.links a { color: var(--muted); text-decoration: none; }
+.links a:hover { color: var(--accent); }
+
+/* Hero */
+.hero { padding-block: 36px 18px; }
+.hero h1 { font-size: var(--step-3); line-height: 1.15; margin: 0 0 10px; text-wrap: balance; letter-spacing: -0.01em; }
+.hero h1 .kh { color: var(--accent); }
+.hero p { margin: 0; color: var(--muted); max-width: 64ch; font-size: var(--step-1); line-height: 1.5; }
+
+/* Use-case switcher */
+.tabs-wrap { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--bg); border-bottom: 1px solid var(--line); }
+.tabs { display: flex; gap: 4px; overflow-x: auto; scrollbar-width: none; padding-block: 10px; }
+.tabs::-webkit-scrollbar { display: none; }
+@media (min-width: 861px) { .tabs { flex-wrap: wrap; overflow-x: visible; } }
+.tab {
+  flex: none; font: 600 0.9rem var(--font-ui); color: var(--muted); text-decoration: none;
+  padding: 7px 14px; border-radius: 999px; border: 1px solid transparent; white-space: nowrap;
+}
+.tab:hover { color: var(--ink); border-color: var(--line); }
+.tab[aria-current="page"] { background: var(--accent); color: var(--on-accent); }
+
+.uc { padding-block: 28px 44px; }
+.uc-head { display: flex; flex-direction: column; gap: 4px; margin-bottom: 20px; }
+.uc-head h2 { margin: 0; font-size: var(--step-2); line-height: 1.2; text-wrap: balance; }
+.uc-head p { margin: 0; color: var(--muted); max-width: 70ch; }
+.uc-grid { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 20px; align-items: start; }
+@media (max-width: 860px) { .uc-grid { grid-template-columns: minmax(0, 1fr); } }
+.col { display: flex; flex-direction: column; gap: 20px; min-width: 0; }
+
+.panel { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 20px; min-width: 0; }
+.panel h3, .label { font-size: var(--step--1); font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); margin: 0 0 12px; }
+.empty { color: var(--muted); }
+.hint { font-size: var(--step--1); color: var(--muted); margin: 0; }
+
+/* Inputs */
+.field { display: flex; flex-direction: column; gap: 6px; }
+.field + .field { margin-top: 14px; }
+.field > label { font-size: var(--step--1); font-weight: 600; color: var(--muted); }
+input[type="text"], textarea {
+  width: 100%; min-width: 0;
+  font: 500 var(--step-1) var(--font-ui);
+  padding: 10px 14px; border: 1px solid var(--line); border-radius: 8px;
+  background: var(--surface); color: var(--ink);
+}
+textarea { font-size: var(--step-0); line-height: 1.7; resize: vertical; }
+input[type="text"]:focus, textarea:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-soft); }
+#q { font-size: 1.9rem; padding: 14px 18px; border-width: 2px; }
+
+.chips { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-top: 10px; font-size: var(--step--1); color: var(--muted); }
+.chip {
+  font: inherit; font-size: 0.95rem;
+  border: 1px solid var(--line); background: var(--surface); color: var(--ink);
+  padding: 4px 12px; border-radius: 999px; cursor: pointer;
+  display: inline-flex; gap: 6px; align-items: baseline;
+}
+.chip small { color: var(--muted); font-size: 0.75rem; }
+.chip:hover { border-color: var(--accent); }
+.chip.pick { font-weight: 600; }
+.chip.pick.on { border-color: var(--accent); background: var(--accent-soft); color: var(--accent); }
+
+.btn {
+  font: 600 var(--step--1) var(--font-ui);
+  border: 1px solid var(--line); background: var(--surface); color: var(--ink);
+  padding: 8px 14px; border-radius: 8px; cursor: pointer; text-decoration: none; display: inline-block;
+}
+.btn:hover { border-color: var(--accent); color: var(--accent); }
+.btn.primary { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+.btn.primary:hover { filter: brightness(1.08); color: var(--on-accent); }
+.row { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+.notice { font-size: var(--step--1); color: var(--muted); }
+
+/* Status */
+.pill { display: inline-block; font-size: 0.72rem; font-weight: 600; padding: 2px 9px; border-radius: 999px; letter-spacing: 0.02em; white-space: nowrap; }
+.pill.ok { background: var(--good-soft); color: var(--good); }
+.pill.rare, .pill.typo { background: var(--warn-soft); color: var(--warn); }
+.pill.bad { background: var(--bad-soft); color: var(--bad); }
+.pill.dict { background: var(--good-soft); color: var(--good); }
+.pill.rules { background: var(--warn-soft); color: var(--warn); }
+.verdict { margin-top: 14px; padding: 12px 14px; border-radius: 8px; font-size: 0.95rem; }
+.verdict.ok { background: var(--good-soft); color: var(--good); }
+.verdict.warn { background: var(--warn-soft); color: var(--warn); }
+.verdict.bad { background: var(--bad-soft); color: var(--bad); }
+.verdict b { font-weight: 700; }
+.verdict .sub { display: block; font-size: var(--step--1); margin-top: 4px; opacity: 0.9; }
+
+/* Explain column */
+.explain h3 { margin-bottom: 8px; }
+.explain p { margin: 0 0 12px; color: var(--muted); font-size: 0.95rem; }
+.explain ul { margin: 0 0 12px; padding-left: 1.1em; color: var(--muted); font-size: 0.95rem; }
+.explain li + li { margin-top: 4px; }
+pre.code {
+  margin: 0; overflow-x: auto;
+  background: var(--bg); border: 1px solid var(--line); border-radius: 8px;
+  padding: 14px 16px; font: 0.8rem/1.65 var(--font-mono); color: var(--ink);
+}
+pre.code .c { color: var(--muted); }
+pre.code .s { color: var(--accent); }
+
+/* Look-up: passport card */
+.passport {
+  position: relative; overflow: hidden;
+  border: 1px solid var(--line); border-radius: var(--radius);
+  background:
+    repeating-radial-gradient(circle at 85% 20%, transparent 0 9px, var(--guilloche) 9px 10px),
+    var(--surface);
+  padding: 20px 20px 0;
+}
+.passport .doc-head { display: flex; justify-content: space-between; gap: 12px; font-size: var(--step--1); color: var(--muted); letter-spacing: 0.04em; }
+.passport .doc-head b { color: var(--accent); font-weight: 600; }
+.fields { display: grid; grid-template-columns: 1fr 1fr; gap: 14px 20px; margin: 16px 0 18px; }
+.fields .f { min-width: 0; }
+.fields .f span { display: block; font-size: 0.72rem; color: var(--muted); letter-spacing: 0.05em; text-transform: uppercase; }
+.fields .f strong { display: block; font-size: var(--step-2); line-height: 1.2; font-weight: 700; overflow-wrap: anywhere; }
+.fields .f.kh-name { grid-column: 1 / -1; }
+.fields .f.kh-name strong { font-size: var(--step-1); font-weight: 500; color: var(--muted); }
+.mrz-wrap { margin: 0 -20px; padding: 10px 20px 12px; border-top: 1px dashed var(--line); overflow-x: auto; }
+.mrz { font-family: var(--font-mono); font-size: 0.85rem; letter-spacing: 0.12em; white-space: pre; color: var(--ink); }
+.mrz-note { font-size: 0.72rem; color: var(--muted); margin-top: 4px; }
+.title-note { display: inline-block; font-size: var(--step--1); background: var(--accent-soft); color: var(--accent); padding: 2px 10px; border-radius: 999px; }
+
+/* Ranked candidates */
+ol.cands { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; }
+ol.cands li { display: grid; grid-template-columns: 1.6em minmax(0, 1fr) 90px 3.6em; align-items: center; gap: 10px; padding: 7px 0; border-bottom: 1px solid var(--line); }
+ol.cands li:last-child { border-bottom: 0; }
+.rank { font-family: var(--font-mono); font-size: var(--step--1); color: var(--muted); }
+.cand { font-weight: 600; overflow-wrap: anywhere; }
+li.top .cand { color: var(--accent); }
+.bar { height: 6px; background: var(--line); border-radius: 3px; overflow: hidden; }
+.bar i { display: block; height: 100%; background: var(--accent); border-radius: 3px; }
+.score { font-family: var(--font-mono); font-size: 0.75rem; color: var(--muted); text-align: right; font-variant-numeric: tabular-nums; }
+
+/* Per-word */
+.words { display: flex; flex-direction: column; gap: 12px; }
+.word { display: grid; grid-template-columns: minmax(0, auto) minmax(0, 1fr); gap: 4px 14px; align-items: baseline; padding-bottom: 12px; border-bottom: 1px solid var(--line); }
+.word:last-child { border-bottom: 0; padding-bottom: 0; }
+.word .kh { font-size: var(--step-1); }
+.word .lat { font-weight: 700; font-size: var(--step-1); }
+.word .meta { grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: 6px 10px; align-items: center; font-size: var(--step--1); color: var(--muted); }
+
+/* Mock enrolment form */
+.mock { border-top: 4px solid var(--accent); }
+.mock-head { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; margin-bottom: 16px; }
+.mock-head strong { font-size: var(--step-1); }
+.mock-head span { font-size: 0.72rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; }
+.confirm { display: flex; gap: 10px; align-items: flex-start; margin: 16px 0; font-size: 0.95rem; cursor: pointer; }
+.confirm input { width: 18px; height: 18px; margin-top: 3px; accent-color: var(--accent); flex: none; }
+
+/* Tables */
+.table-wrap { overflow-x: auto; margin: 0 -4px; }
+table.data { width: 100%; border-collapse: collapse; font-size: 0.92rem; }
+table.data th { text-align: left; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: var(--muted); padding: 6px 8px; border-bottom: 1px solid var(--line); white-space: nowrap; }
+table.data td { padding: 9px 8px; border-bottom: 1px solid var(--line); vertical-align: top; }
+table.data tr:last-child td { border-bottom: 0; }
+table.data td.kh { white-space: nowrap; }
+table.data td.lat { font-weight: 600; white-space: nowrap; }
+table.data .why { display: block; font-size: var(--step--1); color: var(--muted); margin-top: 2px; }
+.summary { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+.summary .pill { font-size: var(--step--1); padding: 4px 12px; }
+
+/* Result lists (link, screen, search) */
+ul.hits { list-style: none; margin: 0; padding: 0; }
+ul.hits li { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 4px 12px; align-items: baseline; padding: 10px 0; border-bottom: 1px solid var(--line); }
+ul.hits li:last-child { border-bottom: 0; }
+ul.hits .name { font-weight: 600; overflow-wrap: anywhere; }
+ul.hits .why { grid-column: 1 / -1; font-size: var(--step--1); color: var(--muted); }
+ul.hits mark { background: var(--accent-soft); color: var(--accent); border-radius: 3px; padding: 0 2px; }
+.callout { margin-top: 14px; padding: 12px 14px; border-radius: 8px; border: 1px dashed var(--accent); color: var(--ink); font-size: 0.95rem; }
+.callout b { color: var(--accent); }
+
+details.own { margin-top: 14px; }
+details.own summary { cursor: pointer; font-weight: 600; font-size: 0.95rem; color: var(--accent); }
+details.own[open] summary { margin-bottom: 10px; }
+
+/* Info + install */
+.info { border-top: 1px solid var(--line); background: var(--surface); }
+.info .wrap { padding-block: 40px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; }
+@media (max-width: 860px) { .info .wrap { grid-template-columns: minmax(0, 1fr); } }
+.info h3 { margin: 0 0 8px; font-size: var(--step-1); }
+.info p { margin: 0 0 10px; color: var(--muted); font-size: 0.95rem; max-width: 60ch; }
+.acc { width: 100%; border-collapse: collapse; font-size: var(--step--1); font-variant-numeric: tabular-nums; }
+.acc td { padding: 5px 0; border-bottom: 1px solid var(--line); }
+.acc td:last-child { text-align: right; font-family: var(--font-mono); }
+
+.install { padding-block: 40px; }
+.install h2 { font-size: var(--step-2); margin: 0 0 16px; }
+.code-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr); gap: 16px; }
+@media (max-width: 860px) { .code-grid { grid-template-columns: minmax(0, 1fr); } }
+.install pre.code { background: var(--surface); font-size: 0.85rem; }
+
+footer { border-top: 1px solid var(--line); }
+footer .wrap { padding-block: 22px; display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; font-size: var(--step--1); color: var(--muted); }
+
+.load-error { background: var(--warn-soft); color: var(--warn); padding: 12px 16px; border-radius: 8px; margin-block: 20px; }
+
+@media (max-width: 480px) {
+  .hero h1 { font-size: 1.9rem; }
+  #q { font-size: 1.5rem; }
+  .fields .f strong { font-size: 1.4rem; }
+  ol.cands li { grid-template-columns: 1.4em minmax(0, 1fr) 56px 3.4em; gap: 8px; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .bar i { transition: width 240ms ease-out; }
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="./">
+      <span>Khmer Name Romanizer</span>
+      <span class="kh" lang="km">ឈ្មោះខ្មែរ</span>
+      <span class="ver" id="ver"></span>
+    </a>
+    <nav class="links">
+      <a href="#install">Install</a>
+      <a href="https://github.com/hangsopheak/khmer-name-romanizer">GitHub</a>
+      <a href="https://www.npmjs.com/package/khmer-name-romanizer">npm</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero wrap">
+    <h1>Khmer names, spelled the way <span class="kh">passports</span> write them</h1>
+    <p>Try each thing the library does for an app, with live examples. It all runs in your browser, so the names you type never leave this page.</p>
+  </section>
+
+  <div class="tabs-wrap">
+    <nav class="tabs wrap" id="tabs" aria-label="Use cases">
+      <a class="tab" href="#lookup">Look up a name</a>
+      <a class="tab" href="#prefill">Pre-fill a form</a>
+      <a class="tab" href="#validate">Check a typed name</a>
+      <a class="tab" href="#audit">Audit records</a>
+      <a class="tab" href="#link">Link records</a>
+      <a class="tab" href="#screen">Screen a list</a>
+      <a class="tab" href="#search">Search in Latin</a>
+      <a class="tab" href="#bulk">Convert a list</a>
+    </nav>
+  </div>
+
+  <div id="load-error" class="wrap" hidden></div>
+
+  <!-- 1. Look up -->
+  <section class="uc wrap" id="uc-lookup" data-uc="lookup">
+    <div class="uc-head">
+      <h2>Look up a name</h2>
+      <p>Type a Cambodian name in Khmer script. You get the Latin spellings people really use, ranked from most to least common.</p>
+    </div>
+    <div class="field">
+      <label for="q">Name in Khmer</label>
+      <input id="q" type="text" lang="km" autocomplete="off" spellcheck="false" placeholder="សូ បញ្ញា">
+    </div>
+    <div class="chips" id="q-chips">
+      <span>Try:</span>
+      <button class="chip" type="button" data-q="សូ បញ្ញា">សូ បញ្ញា <small>many spellings</small></button>
+      <button class="chip" type="button" data-q="តាំងលាងខៃ">តាំងលាងខៃ <small>no space</small></button>
+      <button class="chip" type="button" data-q="លោកស្រី ចាន់ សុខា">លោកស្រី ចាន់ សុខា <small>with a title</small></button>
+      <button class="chip" type="button" data-q="តាន់ ហុកហ៊ី">តាន់ ហុកហ៊ី <small>unknown word</small></button>
+      <button class="chip" type="button" data-q="ស៊ីសុវត្ថិ">ស៊ីសុវត្ថិ <small>one word</small></button>
+    </div>
+
+    <div class="uc-grid" style="margin-top:22px">
+      <div class="col">
+        <div class="passport">
+          <div class="doc-head"><span>Best guess · passport style</span><b>KHM</b></div>
+          <div class="fields">
+            <div class="f"><span>Surname</span><strong id="surname">…</strong></div>
+            <div class="f"><span>Given names</span><strong id="given">…</strong></div>
+            <div class="f kh-name"><span>Khmer</span><strong id="khname" lang="km">…</strong></div>
+          </div>
+          <div class="mrz-wrap">
+            <div class="mrz" id="mrz"></div>
+            <div class="mrz-note">Example machine-readable line, for illustration only.</div>
+          </div>
+        </div>
+        <div class="row">
+          <button class="btn" type="button" id="copy">Copy name</button>
+          <button class="btn" type="button" id="share">Copy link to this name</button>
+          <span class="title-note" id="titles" hidden></span>
+          <span class="notice" id="copied" hidden></span>
+        </div>
+        <div class="panel">
+          <h3>All spellings, most likely first</h3>
+          <ol class="cands" id="cands"></ol>
+          <p class="hint" style="margin-top:10px">The bar shows how often each spelling appears in real records. Many names have more than one correct spelling. Ask the person which one is on their ID.</p>
+        </div>
+      </div>
+      <div class="col">
+        <div class="panel">
+          <h3>Word by word</h3>
+          <div class="words" id="words"></div>
+        </div>
+        <div class="panel">
+          <h3>Spelling wrong?</h3>
+          <p class="hint" style="margin-bottom:12px">If you know the official spelling, for example from an ID or a diploma, send it to us. We add it to the dictionary so the next person gets it right.</p>
+          <div class="field">
+            <input id="official" type="text" autocomplete="off" placeholder="Official spelling, e.g. Sou Pagna" aria-label="Official spelling">
+          </div>
+          <div class="row" style="margin-top:10px">
+            <a class="btn primary" id="report" href="https://github.com/hangsopheak/khmer-name-romanizer/issues/new" target="_blank" rel="noopener">Report on GitHub</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. Pre-fill -->
+  <section class="uc wrap" id="uc-prefill" data-uc="prefill" hidden>
+    <div class="uc-head">
+      <h2>Pre-fill a form</h2>
+      <p>For enrolment, HR onboarding and registration forms. The Latin field fills itself while the person types in Khmer. They pick or correct the spelling, then confirm.</p>
+    </div>
+    <div class="uc-grid">
+      <form class="panel mock" id="pf-form" novalidate>
+        <div class="mock-head"><strong>Student enrolment</strong><span>Example form</span></div>
+        <div class="field">
+          <label for="pf-kh">Full name in Khmer</label>
+          <input id="pf-kh" type="text" lang="km" autocomplete="off" spellcheck="false">
+        </div>
+        <div class="field">
+          <label for="pf-lat">Full name in Latin letters, as on the ID</label>
+          <input id="pf-lat" type="text" autocomplete="off" spellcheck="false">
+        </div>
+        <div class="chips" id="pf-sugg"></div>
+        <label class="confirm"><input type="checkbox" id="pf-ok"> <span>The student confirmed this spelling</span></label>
+        <button class="btn primary" type="submit">Save</button>
+        <div class="verdict" id="pf-out" hidden></div>
+      </form>
+      <div class="panel explain">
+        <h3>How it works</h3>
+        <ul>
+          <li>The first suggestion goes into the Latin field until the person edits it.</li>
+          <li>The other spellings appear as buttons, so a person whose ID says <i>Boppha</i> can pick it with one tap.</li>
+          <li>The form asks for confirmation. The library suggests a spelling. The person decides.</li>
+        </ul>
+        <pre class="code"><span class="c">import</span> { createDefaultTransliterator } <span class="c">from</span> <span class="s">'khmer-name-romanizer'</span>
+<span class="c">const</span> t = createDefaultTransliterator()
+
+khmerInput.oninput = () =&gt; {
+  <span class="c">const</span> { value, candidates } = t.transliterate(khmerInput.value)
+  <span class="c">if</span> (!latinInput.dataset.edited) latinInput.value = value
+  showSuggestions(candidates)   <span class="c">// buttons the person can tap</span>
+}</pre>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. Validate -->
+  <section class="uc wrap" id="uc-validate" data-uc="validate" hidden>
+    <div class="uc-head">
+      <h2>Check a typed name</h2>
+      <p>For KYC, exams and diplomas. Compare the Latin name someone typed with the Khmer name on their National ID. A match passes. Anything else goes to a person, not straight to a rejection.</p>
+    </div>
+    <div class="uc-grid">
+      <div class="panel">
+        <div class="field">
+          <label for="v-kh">Khmer name on the ID card</label>
+          <input id="v-kh" type="text" lang="km" autocomplete="off" spellcheck="false">
+        </div>
+        <div class="field">
+          <label for="v-lat">Latin name the customer typed</label>
+          <input id="v-lat" type="text" autocomplete="off" spellcheck="false">
+        </div>
+        <div class="chips" id="v-chips">
+          <span>Try:</span>
+          <button class="chip" type="button" data-kh="ហង្ស សុភ័ក្រ្ត" data-lat="HANG SOPHEAK">HANG SOPHEAK</button>
+          <button class="chip" type="button" data-kh="ឈឹម សុភា" data-lat="Sophea Chhim">Sophea Chhim <small>given name first</small></button>
+          <button class="chip" type="button" data-kh="ពេជ្រ មុន្នី" data-lat="Pech Moni">Pech Moni <small>rare spelling</small></button>
+          <button class="chip" type="button" data-kh="ម៉ៅ វិចិត្រ" data-lat="Mao Vicheat">Mao Vicheat <small>typo</small></button>
+          <button class="chip" type="button" data-kh="ចាន់ ដារា" data-lat="Chan Sokha">Chan Sokha <small>wrong name</small></button>
+        </div>
+        <div class="verdict" id="v-out" hidden></div>
+      </div>
+      <div class="panel explain">
+        <h3>How it works</h3>
+        <p>The check looks for the typed name among the ranked spellings, in either name order. The score tells you how common that spelling is: 0 is the usual spelling, and far below 0 means a real but uncommon one.</p>
+        <pre class="code"><span class="c">const</span> t = createDefaultTransliterator({
+  flipOrderCandidates: <span class="s">true</span>,   <span class="c">// "Sophea Chhim" also matches</span>
+  maxCandidates: <span class="s">10</span>,
+})
+<span class="c">const</span> norm = (s) =&gt; s.toLowerCase().replace(<span class="s">/[^a-z]+/g</span>, <span class="s">' '</span>).trim()
+
+<span class="c">function</span> check(khmer, latin) {
+  <span class="c">const</span> hit = t.transliterate(khmer).scoredCandidates
+    ?.find((c) =&gt; norm(c.value) === norm(latin))
+  <span class="c">return</span> hit ? hit.score : <span class="s">null</span>   <span class="c">// null → send to review</span>
+}</pre>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Audit -->
+  <section class="uc wrap" id="uc-audit" data-uc="audit" hidden>
+    <div class="uc-head">
+      <h2>Audit records</h2>
+      <p>For data-quality work on any database that stores both scripts. Find the rows where the Latin name does not fit the Khmer name: typos, rare spellings to confirm, and rows that belong to a different person.</p>
+    </div>
+    <div class="uc-grid">
+      <div class="panel">
+        <div class="summary" id="au-sum"></div>
+        <div class="table-wrap">
+          <table class="data">
+            <thead><tr><th>#</th><th>Khmer</th><th>Latin on record</th><th>Result</th></tr></thead>
+            <tbody id="au-rows"></tbody>
+          </table>
+        </div>
+        <div class="row" style="margin-top:14px">
+          <button class="btn" type="button" id="au-copy">Copy results as CSV</button>
+          <span class="notice" id="au-copied" hidden></span>
+        </div>
+        <details class="own" id="au-own">
+          <summary>Audit your own records</summary>
+          <p class="hint" style="margin-bottom:8px">One record per line: Khmer name, a comma, then the Latin name. Your data stays in this browser.</p>
+          <textarea id="au-in" rows="7" lang="km" spellcheck="false" aria-label="Records to audit"></textarea>
+          <div class="row" style="margin-top:10px"><button class="btn primary" type="button" id="au-run">Audit these records</button></div>
+        </details>
+      </div>
+      <div class="panel explain">
+        <h3>How it works</h3>
+        <ul>
+          <li><span class="pill ok">Matches</span> The Latin name is one of the known spellings.</li>
+          <li><span class="pill rare">Rare spelling</span> Valid, but uncommon. Confirm it with the person.</li>
+          <li><span class="pill typo">Likely typo</span> One letter away from a known spelling.</li>
+          <li><span class="pill bad">Mismatch</span> Does not fit the Khmer name. It may be the wrong person.</li>
+        </ul>
+        <pre class="code"><span class="c">for</span> (<span class="c">const</span> row <span class="c">of</span> records) {
+  <span class="c">const</span> score = check(row.khmer, row.latin)  <span class="c">// see "Check a typed name"</span>
+  <span class="c">if</span> (score === <span class="s">null</span>) flag(row, <span class="s">'mismatch'</span>)
+  <span class="c">else if</span> (score &lt; <span class="s">-3</span>) flag(row, <span class="s">'rare'</span>)
+}</pre>
+        <p style="margin-top:12px">This demo also counts how many letters a mismatch is away from the nearest spelling. One letter off is treated as a typo.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. Link -->
+  <section class="uc wrap" id="uc-link" data-uc="link" hidden>
+    <div class="uc-head">
+      <h2>Link records</h2>
+      <p>For dedup and record linkage. One system stores a person in Khmer, another in Latin, written by different clerks in different ways. Find the Latin records that belong to the same person.</p>
+    </div>
+    <div class="uc-grid">
+      <div class="panel">
+        <div class="field">
+          <label for="l-kh">Record in system A (Khmer)</label>
+          <input id="l-kh" type="text" lang="km" autocomplete="off" spellcheck="false">
+        </div>
+        <div class="field">
+          <label for="l-recs">Records in system B (Latin), one per line</label>
+          <textarea id="l-recs" rows="7" spellcheck="false"></textarea>
+        </div>
+        <h3 style="margin-top:18px">Result</h3>
+        <ul class="hits" id="l-out"></ul>
+      </div>
+      <div class="panel explain">
+        <h3>How it works</h3>
+        <ul>
+          <li><b>Same person</b>: the Latin record equals one of the spellings, in either name order.</li>
+          <li><b>Possible</b>: one letter away from a spelling, probably a typo. A person should look.</li>
+          <li><b>Different</b>: further away than that, so most likely another person.</li>
+        </ul>
+        <pre class="code"><span class="c">const</span> t = createDefaultTransliterator({ flipOrderCandidates: <span class="s">true</span> })
+<span class="c">const</span> keys = <span class="c">new</span> Set(t.transliterate(khmerName).candidates.map(norm))
+
+<span class="c">const</span> same = latinRecords.filter((r) =&gt; keys.has(norm(r.name)))</pre>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. Screen -->
+  <section class="uc wrap" id="uc-screen" data-uc="screen" hidden>
+    <div class="uc-head">
+      <h2>Screen a list</h2>
+      <p>For sanctions, AML and fraud screening. A watchlist is written in Latin letters. Screen every spelling of a Khmer name, not only the first guess, or you miss real hits.</p>
+    </div>
+    <div class="uc-grid">
+      <div class="panel">
+        <div class="field">
+          <label for="s-kh">Customer name (Khmer)</label>
+          <input id="s-kh" type="text" lang="km" autocomplete="off" spellcheck="false">
+        </div>
+        <div class="chips" id="s-chips">
+          <span>Try:</span>
+          <button class="chip" type="button" data-q="ឈឹម សុភា">ឈឹម សុភា</button>
+          <button class="chip" type="button" data-q="សូ បញ្ញា">សូ បញ្ញា</button>
+          <button class="chip" type="button" data-q="ងួន សុវណ្ណ">ងួន សុវណ្ណ</button>
+          <button class="chip" type="button" data-q="ចាន់ ដារា">ចាន់ ដារា <small>no hit</small></button>
+        </div>
+        <details class="own">
+          <summary>Watchlist (made-up names)</summary>
+          <p class="hint" style="margin-bottom:8px">These names are invented for this demo. Edit them, one per line.</p>
+          <textarea id="s-list" rows="6" spellcheck="false" aria-label="Watchlist"></textarea>
+        </details>
+        <h3 style="margin-top:18px">Hits</h3>
+        <ul class="hits" id="s-out"></ul>
+        <div class="callout" id="s-callout" hidden></div>
+      </div>
+      <div class="panel explain">
+        <h3>How it works</h3>
+        <p>Pass each spelling to the fuzzy matcher you already use. This demo uses a simple Jaro–Winkler similarity and flags anything at 92% or above.</p>
+        <pre class="code"><span class="c">const</span> t = createDefaultTransliterator({
+  flipOrderCandidates: <span class="s">true</span>, maxCandidates: <span class="s">10</span>,
+})
+<span class="c">for</span> (<span class="c">const</span> spelling <span class="c">of</span> t.transliterate(name).candidates) {
+  hits.push(...watchlistMatcher.search(spelling))
+}</pre>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. Search -->
+  <section class="uc wrap" id="uc-search" data-uc="search" hidden>
+    <div class="uc-head">
+      <h2>Search in Latin</h2>
+      <p>For staff who cannot type Khmer. Typing <i>sophea</i> finds names written in Khmer, whichever way the name is usually spelled.</p>
+    </div>
+    <div class="uc-grid">
+      <div class="panel">
+        <div class="field">
+          <label for="sr-q">Search contacts</label>
+          <input id="sr-q" type="text" autocomplete="off" spellcheck="false" placeholder="Type a name in Latin letters">
+        </div>
+        <div class="chips" id="sr-chips">
+          <span>Try:</span>
+          <button class="chip" type="button" data-q="sophea">sophea</button>
+          <button class="chip" type="button" data-q="pagna">pagna</button>
+          <button class="chip" type="button" data-q="chhoem">chhoem</button>
+          <button class="chip" type="button" data-q="vichet">vichet</button>
+        </div>
+        <h3 style="margin-top:18px" id="sr-count">Contacts</h3>
+        <ul class="hits" id="sr-out"></ul>
+      </div>
+      <div class="panel explain">
+        <h3>How it works</h3>
+        <p>Build a search index once: for each Khmer record, store every spelling of every word. Then match what staff type against those spellings.</p>
+        <pre class="code"><span class="c">const</span> index = contacts.map((c) =&gt; {
+  <span class="c">const</span> r = t.transliterate(c.khmerName)
+  <span class="c">const</span> words = r.tokens.flatMap((w) =&gt; [w.latin, ...w.alternatives])
+  <span class="c">return</span> { contact: c, words: words.map(norm) }
+})
+
+<span class="c">const</span> find = (q) =&gt; index.filter((e) =&gt;
+  e.words.some((w) =&gt; w.startsWith(norm(q))))</pre>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. Bulk -->
+  <section class="uc wrap" id="uc-bulk" data-uc="bulk" hidden>
+    <div class="uc-head">
+      <h2>Convert a list</h2>
+      <p>For migrations and display. Give Latin names to records that only have Khmer, for a new system, an SMS without Khmer fonts, or staff who do not read Khmer. Uncertain rows go to a review queue.</p>
+    </div>
+    <div class="uc-grid">
+      <div class="panel">
+        <div class="field">
+          <label for="b-in">Khmer names, one per line</label>
+          <textarea id="b-in" rows="8" lang="km" spellcheck="false"></textarea>
+        </div>
+        <div class="summary" id="b-sum" style="margin-top:16px"></div>
+        <div class="table-wrap">
+          <table class="data">
+            <thead><tr><th>Khmer</th><th>Latin</th><th>Confidence</th></tr></thead>
+            <tbody id="b-rows"></tbody>
+          </table>
+        </div>
+        <div class="row" style="margin-top:14px">
+          <button class="btn" type="button" id="b-copy">Copy as CSV</button>
+          <span class="notice" id="b-copied" hidden></span>
+        </div>
+      </div>
+      <div class="panel explain">
+        <h3>How it works</h3>
+        <ul>
+          <li><span class="pill ok">High</span> Every word is a known name word and one spelling clearly leads.</li>
+          <li><span class="pill rare">Check</span> Known words, but other spellings are also common.</li>
+          <li><span class="pill bad">Review</span> At least one word is new and was read by rules only.</li>
+        </ul>
+        <pre class="code"><span class="c">for</span> (<span class="c">const</span> row <span class="c">of</span> rows) {
+  <span class="c">const</span> r = t.transliterate(row.khmerName)
+  row.latinName = r.value
+  <span class="c">if</span> (r.source === <span class="s">'rules'</span>) reviewQueue.push(row)
+}</pre>
+      </div>
+    </div>
+  </section>
+
+  <section class="info">
+    <div class="wrap">
+      <div>
+        <h3>It suggests. You decide.</h3>
+        <p>Only the person knows how their name is officially spelled. Use the results to pre-fill a form or to flag a mismatch, and let a person confirm before anything goes on an ID, diploma or registry record.</p>
+      </div>
+      <div>
+        <h3>How accurate is it?</h3>
+        <table class="acc">
+          <tr><td>Name in the dictionary, first guess right</td><td>83–97%</td></tr>
+          <tr><td>New name, first guess right</td><td>~30%</td></tr>
+          <tr><td>New name, correct spelling in top 5</td><td>~43%</td></tr>
+        </table>
+        <p style="margin-top:10px">Most misses are close, such as <i>Penn Rorn</i> for <i>Pan Ron</i>. Every reported spelling makes it better.</p>
+      </div>
+      <div>
+        <h3>Private by design</h3>
+        <p>Names are personal data. The whole engine and dictionary load into this page, and nothing is sent to a server. The same is true in your app: no API key, no network calls, no dependencies.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="install wrap" id="install">
+    <h2>Use it in your app</h2>
+    <div class="code-grid">
+      <div>
+        <div class="label">Install</div>
+        <pre class="code">npm install khmer-name-romanizer
+
+<span class="c"># or try it from the terminal</span>
+npx khmer-name-romanizer <span class="s">"សូ បញ្ញា"</span></pre>
+      </div>
+      <div>
+        <div class="label">TypeScript / JavaScript</div>
+        <pre class="code"><span class="c">import</span> { createDefaultTransliterator } <span class="c">from</span> <span class="s">'khmer-name-romanizer'</span>
+
+<span class="c">const</span> t = createDefaultTransliterator()
+<span class="c">const</span> r = t.transliterate(<span class="s">'សូ បញ្ញា'</span>)
+
+r.value       <span class="c">// 'So Panha'</span>
+r.candidates  <span class="c">// ['So Panha', 'So Banha', 'So Pagna', …]</span></pre>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>MIT license · made by Hang Sopheak (<span lang="km">ហង្ស សុភ័ក្រ្ត</span>)</span>
+    <span><a href="https://github.com/hangsopheak/khmer-name-romanizer">Source code</a> · <a href="https://github.com/hangsopheak/khmer-name-romanizer/issues">Report an issue</a></span>
+  </div>
+</footer>
+
+<script type="module" src="./app.js"></script>
+</body>
+</html>

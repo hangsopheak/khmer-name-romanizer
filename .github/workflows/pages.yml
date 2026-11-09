@@ -1,0 +1,44 @@
+name: Demo site
+
+# Builds the library from source and publishes site/ to GitHub Pages,
+# so the demo always runs the code on main.
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      # Same npm pin as ci.yml (npm 10 crashes on vitest 4's optional peers)
+      - run: npm install -g npm@11
+      - run: npm install
+      - run: npm run build
+      - name: Copy the built library into the site
+        run: |
+          rm -rf site/lib
+          cp -r dist site/lib
+          echo "export default '$(node -p "require('./package.json').version")'" > site/lib/version.js
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+      - id: deployment
+        uses: actions/deploy-pages@v4
