@@ -130,7 +130,7 @@ t.transliterate('តាំង ដារា')
 |---|---|---|
 | **Popular names** (well-known Cambodians) | **97%** | **97%** |
 | In the dictionary: curated name lists | 83% | 93% |
-| **Not in the dictionary** (5-fold CV) | **31.4%** | **45%** |
+| **Not in the dictionary** (5-fold CV) | **31.5%** | **45%** |
 | Not in the dictionary (frozen lockbox) | 32% | 40% |
 
 - **The bar is strict.** Most common Khmer name words have more than one official spelling (សែន is *Sen* and *Saen*). Even a perfect guesser matches the chosen spelling only about half the time on two-word names.

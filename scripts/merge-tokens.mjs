@@ -62,10 +62,13 @@ const TRUSTED_STATIC = new Set(['static/kname', 'static/manual', 'static/distill
 // alphabetical tie-break (លក្ខិណា -> "In" overrode the correct Lakhena).
 // 2026-11-01 refresh: បូរេ៉ត is a combining-mark reordering of the
 // junk-blocked បូរ៉េត (same Long Boret mis-alignment, different bytes).
+// 2026-11-09: ស៊ីធី -> "City" is the English word from a football-club row
+// (Lion City Sailors F.C.), not a name; it passed the round-trip gate once
+// ធី started reading "thy".
 const REVIEWED_JUNK = new Set([
     'សាវក', 'សាវ័កបាថូឡូមេ', 'ប៊ុនណាល់', 'បូរ៉េត', 'បូរេ៉ត', 'មីចឡែន', 'ម៉ូឌី',
     'លោកឌីអូហ្គូ', 'សឺវ៉ាន់ដ្សទីយាន', 'ហ្គារីហ្គិន', 'វេឡូសូ', 'អ៊ូ', 'សាមុត',
-    'លក្ខិណា', 'ញ៉ែម', 'ង៉ោ', 'អេលែន',
+    'លក្ខិណា', 'ញ៉ែម', 'ង៉ោ', 'អេលែន', 'ស៊ីធី',
 ])
 // Mechanical spelling guards, applied to every admitted spelling (canonical
 // or variant, tail-run or not): no sane name romanization starts with a

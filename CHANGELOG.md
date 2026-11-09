@@ -9,11 +9,11 @@ eval:holdout` — see `docs/accuracy-report-2026-11.md`.
 ## [0.6.0] - 2026-11-09
 
 Unseen-name accuracy, person-grouped k-fold on the dev split (692 rows),
-0.5.0 → 0.6.0: exact **29.5% → 31.4%** (204 → 217, CI 28.0–34.9), top-5
+0.5.0 → 0.6.0: exact **29.5% → 31.5%** (204 → 218, CI 28.2–35.1), top-5
 **43.4% → 45.4%** (300 → 314, CI 41.7–49.1), match mode **44.7% →
 46.8%** (309 → 324); citizens exact 30.2% → 32.2%. Paired vs. 0.5.0:
-exact +14/−1 rows (sign test p = 0.001), top-5 +18/−4 (p = 0.004);
-counted once per person: exact +14/−1, top-5 +18/−3. Lockbox: exact
+exact +15/−1 rows (sign test p = 0.0005), top-5 +18/−4 (p = 0.004);
+counted once per person: exact +15/−1, top-5 +18/−3. Lockbox: exact
 **28.7% → 31.8%** (37 → 41 of 129, CI 24.4–40.2), top-5 **38.8% →
 40.3%** (50 → 52). Famous 70/72 held.
 
@@ -27,11 +27,14 @@ counted once per person: exact +14/−1, top-5 +18/−3. Lockbox: exact
   - an o-series consonant with no vowel sign before ន់ ំ ល → `o`
     (ឈន់ Chhon, ព្រំ Prom, ពល Pol); ៉ + ន → `orn` (រ៉ន Rorn)
   - word-final ី → `ey` after an a-series consonant or រ (ម៉ី Mey,
-    បូរី Borey), → `y` after ៊ (ស៊ី Sy, ហុកហ៊ី Hokhy)
+    បូរី Borey), → `y` after ៊ or ធ (ស៊ី Sy, ហុកហ៊ី Hokhy, ធី Thy,
+    យុទ្ធី Yutthy)
   - open ា inside a word after an o-series ម ល រ → `ea` (មាលី Meali,
     រាជា Reachea)
-  - word-final ញ → `nh` (ដាញ់ Danh) and word-final ូវ → `ov` (ឡូវ Lov):
-    no measurable effect, kept on the reader's word
+  - word-final ញ → `nh` (ដាញ់ Danh), word-final ូវ → `ov` (ឡូវ Lov),
+    ឹ before final ង → `oe` (គឹង Koeng), and open ុ of an o-series
+    consonant before a subscript cluster → `u` (យុទ្ធី Yutthy; a-series
+    keeps `o`, សុទ្ធ Soth): no measurable effect, kept on the reader's word
 - **The old reading stays available** as an equal-weight alternative
   (Khun, Chhan, Siri), and `romanizeKhmer(text, { plain: true })`
   returns it.
@@ -51,7 +54,9 @@ counted once per person: exact +14/−1, top-5 +18/−3. Lockbox: exact
   stays a variant).
 - Added បញ្ចពណ៍ **Panhchapor** (owner-spelled, training-only row).
 - The new readings let 9 more single-attestation corpus words pass the
-  round-trip gate (dictionary 1,608 → 1,617).
+  round-trip gate (dictionary 1,608 → 1,617). A tenth, ស៊ីធី → "City"
+  (the English word, from a football-club row), is now on the reviewed
+  junk list.
 
 ### Added — eval tooling
 - `diff-kfold-rows.mjs --folds 0,1,2` reports one half of the folds

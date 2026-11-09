@@ -45,7 +45,7 @@ spelling alternations, with no third-party model or library. It ranks full-name 
 also report an evaluation audit: splitting by row instead of by person,
 scoring the reviewer's own rows, and folding over held-out data inflated
 accuracy on unseen names from 24.4\% to 29.6\% for the same code. Under
-the corrected protocol the system reaches 31.4\% exact and 45.4\% top-5
+the corrected protocol the system reaches 31.5\% exact and 45.4\% top-5
 on unseen names (5-fold cross-validation), against 16.5\% exact for
 plain grapheme rules, and 31.8\% exact on a lockbox read once per
 release.
@@ -98,11 +98,11 @@ convention behind them. Each proposed convention was tested alone on
 paired cross-validation and kept only if it raised exact or top-5
 matches without losing famous names. In the fifth round, candidates
 came from three of the five folds, and a convention was kept only if it
-also helped on the other two. 30 became default readings (e.g.\ final
+also helped on the other two. 33 became default readings (e.g.\ final
 dental $\to$ \emph{th}, \kh{ម៉ៅ} $\to$ \emph{Mao}, \kh{ឆៃ} $\to$
 \emph{Chhay}, \kh{តាំង} $\to$ \emph{Taing}, and \emph{o} or \emph{u} by
-consonant series: \kh{ខុន} \emph{Khon}, \kh{ហ៊ុន} \emph{Hun}); two with
-no measurable effect were kept on the reader's word. Six that the
+consonant series: \kh{ខុន} \emph{Khon}, \kh{ហ៊ុន} \emph{Hun}); four
+with no measurable effect were kept on the reader's word. Six that the
 reader endorsed were rejected because they lowered accuracy, e.g.\
 reading \kh{ចិន} as \emph{Chen} lost 15 rows (Chin, Sin, Rith). The
 plain reading stays as an equal-weight alternative, because both
@@ -158,22 +158,22 @@ System (unseen names) & Exact & Top-5 & Sim. \\
 \midrule
 \multicolumn{4}{@{}l}{\textit{5-fold CV, dev split ($n{=}692$)}} \\
 Plain rules, single reading & 16.5 & -- & .699 \\
-Rules with name conventions & 25.4 & 34.1 & .742 \\
-\quad + dictionary, segm., ranking & \textbf{31.4} & 42.6 & \textbf{.763} \\
-\quad + learned alternations (v0.6.0) & \textbf{31.4} & \textbf{45.4} & \textbf{.763} \\
+Rules with name conventions & 25.6 & 34.1 & .742 \\
+\quad + dictionary, segm., ranking & \textbf{31.5} & 42.6 & \textbf{.764} \\
+\quad + learned alternations (v0.6.0) & \textbf{31.5} & \textbf{45.4} & \textbf{.764} \\
 v0.5.0 & 29.5 & 43.4 & .755 \\
 v0.4.0 (no conventions/alternations) & 25.6 & 34.1 & .743 \\
 \multicolumn{4}{@{}l}{\textit{Lockbox, read once per release ($n{=}129$)}} \\
 v0.4.0 & 24.8 & 31.0 & .707 \\
 v0.5.0 & 28.7 & 38.8 & .715 \\
-v0.6.0 & \textbf{31.8} & \textbf{40.3} & \textbf{.724} \\
+v0.6.0 & \textbf{31.8} & \textbf{40.3} & \textbf{.725} \\
 \midrule
 \multicolumn{4}{@{}l}{\textit{In-sample (names in the dictionary)}} \\
 Famous Cambodians ($n{=}72$) & 97.2 & 97.2 & -- \\
-Shipped dictionary, dev rows & 68.1 & 75.9 & .875 \\
+Shipped dictionary, dev rows & 68.1 & 75.7 & .874 \\
 \bottomrule
 \end{tabular}
-\caption{Accuracy (\%). 95\% CIs (v0.6.0): CV exact 28.0--34.9, CV
+\caption{Accuracy (\%). 95\% CIs (v0.6.0): CV exact 28.2--35.1, CV
 top-5 41.7--49.1, lockbox exact 24.4--40.2. Rule rows use no dictionary.
 Conventions were selected on dev CV, so CV gains for them are
 optimistic; the lockbox was not used for selection.}
@@ -181,18 +181,18 @@ optimistic; the lockbox was not used for selection.}
 \end{table}
 
 \textbf{Main results} (Table~\ref{tab:main}). The name conventions are
-the largest single gain: +8.4 points exact as a single reading
-(16.5$\to$24.9\%). The dictionary, segmentation, and ranking add 6.0
+the largest single gain: +8.5 points exact as a single reading
+(16.5$\to$25.0\%). The dictionary, segmentation, and ranking add 5.9
 points exact over the rules, and the learned alternations add 2.8
 points top-5 without changing the first guess. Against v0.4.0 on the
-same 692 rows, exact rises 25.6$\to$31.4\% and match@10 rises
+same 692 rows, exact rises 25.6$\to$31.5\% and match@10 rises
 35.1$\to$46.8\% (CI 43.1--50.5). The fifth convention round alone
-gives exact +14/$-$1 rows (sign test $p{=}0.001$) and top-5 +18/$-$4
-($p{=}0.004$) against v0.5.0, and +4/$-$1 and +8/$-$2 on the two
+gives exact +15/$-$1 rows (sign test $p{=}0.0005$) and top-5 +18/$-$4
+($p{=}0.004$) against v0.5.0, and +5/$-$1 and +8/$-$2 on the two
 confirmation folds. The lockbox, which no selection step saw, confirms
 the gains (24.8$\to$28.7$\to$31.8\% exact, 31.0$\to$38.8$\to$40.3\%
 top-5). By category, CV exact is 32.2\% for citizens ($n{=}397$, top-5
-49.1\%), 65.1\% for curated lists ($n{=}109$), and 9.7\% for
+49.1\%), 66.1\% for curated lists ($n{=}109$), and 9.7\% for
 historical/regnal names ($n{=}186$).
 
 \begin{table}[t]

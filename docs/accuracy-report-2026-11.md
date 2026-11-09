@@ -124,16 +124,16 @@ these rows. The lockbox was read once, at the end.
 | C: space compound given names | −4 to −2 | 300 | exact −1 to −2 | not shipped |
 | Data fixes (នារី Neary, សោភ័ណ Soaphoan, បញ្ចពណ៍ Panhchapor) | 204 | 300 | +0/−0 | shipped |
 | E: conventions round 5 (7 of 8 kept) | 216 | 314 | exact +4/−1, top-5 +8/−2 | shipped |
-| + final ី → y after ៊, final ូវ → ov | **217 (31.4%)** | **314 (45.4%)** | exact +0/−0 | shipped |
+| + final ី → y after ៊ / ធ, ូវ → ov, ឹង → oeng, ុ before a cluster → u | **218 (31.5%)** | **314 (45.4%)** | exact +1/−0 | shipped |
 
-0.6.0 vs. 0.5.0, paired: exact +14/−1 (p = 0.001), top-5 +18/−4
-(p = 0.004), match mode 309 → 324. Per person: exact +14/−1, top-5
+0.6.0 vs. 0.5.0, paired: exact +15/−1 (p = 0.0005), top-5 +18/−4
+(p = 0.004), match mode 309 → 324. Per person: exact +15/−1, top-5
 +18/−3. Citizens exact 120 → 128 (32.2%).
 
 **Lockbox release read:** exact 37 → **41/129** (28.7% → 31.8%, CI
-24.4–40.2), top-5 50 → **52/129** (38.8% → 40.3%). The ឡូវ → Lov rule
-came after the read; a confirmation re-run gave the same 41 / 52, and no
-decision used it.
+24.4–40.2), top-5 50 → **52/129** (38.8% → 40.3%). Four owner-reported
+rules came after the read (ឡូវ Lov, គឹង Koeng, យុទ្ធី Yutthy, ធី Thy);
+confirmation re-runs gave the same 41 / 52, and no decision used them.
 
 **Why A, B and C failed.** Only 24 of the 392 missed rows had the
 official spelling among the generated options, mostly at option rank

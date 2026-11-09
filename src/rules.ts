@@ -110,7 +110,8 @@ export interface RomanizeOptions {
  *   Round 6 (0.6.0): closed ុ by series (Khon / Hun, Hul), o-series bare
  *   consonant before ន់ ំ ល "o" (Chhon, Prom, Pol), ៉ + ន "orn" (Rorn),
  *   final ញ "nh" (Danh), final ី "ey" after a-series or រ (Mey, Borey) and
- *   "y" after ៊ (Sy, Hokhy), final ូវ "ov" (Lov),
+ *   "y" after ៊ or ធ (Sy, Hokhy, Thy), final ូវ "ov" (Lov), ឹង "oeng"
+ *   (Koeng), o-series open ុ before a cluster "u" (Yutthy),
  *   open ា inside a word after o-series ម ល រ "ea" (Mealy).
  * Rejected after measuring: final ី -> "y" (-2 exact), ឹ -> "e" (-4:
  * Chim, Kim, Yim, Phim), final ត -> "t" (-2: Sarath, Neth, Nath), ិ +
@@ -325,6 +326,11 @@ export function romanizeKhmer(input: string, options: RomanizeOptions = {}): str
         } else {
             let v = VOWELS[vow]
             if (vow === 'ុ' && (final === 'n' || final === 'm')) v = 'u'
+            // open ុ of an o-series consonant before a subscript cluster reads
+            // "u" (យុទ្ធី Yutthy, ពុទ្ធី Putthy); a-series keeps "o" (សុទ្ធី Sotthy)
+            if (french && vow === 'ុ' && final === '' && secondSeries && isConsonant(s[i]) && s[i + 1] === COENG) v = 'u'
+            // ឹ before final ង reads "oe" (គឹង Koeng); plain keeps "i"
+            if (french && vow === 'ឹ' && final === 'ng') v = 'oe'
             if (french && vow === 'ុ' && final !== '' && final !== 'y' && final !== 'ng') {
                 // closed ុ follows the series: a-series "o" before ន / ម (ខុន Khon,
                 // សុន Son), o-series and ៊ "u" before any final (ហ៊ុន Hun, ហ៊ុល Hul, លុច Luch)
@@ -384,10 +390,10 @@ export function romanizeKhmer(input: string, options: RomanizeOptions = {}): str
             if (french && vow === 'ា' && final === '' && wordFinal && !wordInitial && 'ធទពគភ'.includes(seriesOf)) v = 'ea'
             if (etr) v = 'e'
             // word-final ី after an a-series consonant or រ reads "ey" (ម៉ី Mey,
-            // បូរី Borey), after ៊ "y" (ស៊ី Sy, ហុកហ៊ី Hokhy); after other
+            // បូរី Borey), after ៊ or ធ "y" (ស៊ី Sy, ហុកហ៊ី Hokhy, ធី Thy, យុទ្ធី Yutthy); after other
             // o-series ones it stays "i" (ទី Ti / Ty, មនី Moni)
             if (french && vow === 'ី' && final === '' && wordFinal) {
-                if (triisap) v = 'y'
+                if (triisap || seriesOf === 'ធ') v = 'y'
                 else if (!secondSeries || ch === 'រ') v = 'ey'
             }
             // open ា inside a word after an o-series ម ល រ reads "ea" (មាលី Mealy, រាជា Reachea)

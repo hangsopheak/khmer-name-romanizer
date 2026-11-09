@@ -108,6 +108,9 @@ describe('khmer-name-romanizer', () => {
         expect(romanizeKhmerName('បូរី')).toBe('Borey') // final ី after រ
         expect(romanizeKhmerName('ហុកហ៊ី')).toBe('Hokhy') // final ី after ៊
         expect(romanizeKhmerName('ឡូវ')).toBe('Lov') // final ូវ
+        expect(romanizeKhmerName('គឹង')).toBe('Koeng') // ឹ + final ង
+        expect(romanizeKhmerName('យុទ្ធី')).toBe('Yutthy') // o-series ុ before a cluster; ី after ធ
+        expect(romanizeKhmerName('សុទ្ធ')).toBe('Soth') // a-series keeps "o"
         expect(romanizeKhmerName('មាលី')).toBe('Meali') // open ា after ម; final ី after o-series ល stays "i"
         // the plain reading keeps the 0.5.0 spellings
         expect(romanizeKhmerName('ខុន', { plain: true })).toBe('Khun')
